@@ -1555,6 +1555,24 @@ const wikiTitles = {
   wangtao:"Frank_Wang",lizexiang:"Li_Zexiang",carlpei:"Carl_Pei",
   yangmeng:"Steven_Yang_(entrepreneur)",wangxingxing:"Wang_Xingxing",
   brettadcock:"Brett_Adcock",pengzhihui:"Peng_Zhihui",wangning:"Wang_Ning_(businessman)",
+  changjing:"Chang_Jing_(entrepreneur)",pengbin:"Peng_Bin_(entrepreneur)",
+  qiandongqi:"Qian_Dongqi",shijinbo:"Shi_Jinbo",
+};
+
+// Baidu Baike search names (Chinese name for baike lookup)
+const baikeTitles = {
+  wangtao:"汪滔",lizexiang:"李泽湘",taoye:"陶冶",wanglei:"王雷",
+  pengbin:"彭斌",yuhao:"俞浩",changjing:"昌敬",zhangjunbin:"张峻彬",
+  pengzhihui:"彭志辉",liujingkang:"刘靖康",yangmeng:"阳萌",
+  yehongxin:"叶洪新",zhangqingsen:"张清森",wangning:"王宁",
+  xuchi:"徐驰",zhushanming:"祝铭明",lihongwei:"李宏伟",
+  wangxingxing:"王兴兴",gujie:"顾捷",zhoujianping:"周剑",
+  chenjianyu:"陈建宇",wanghe:"王鹤",zhangwei:"张巍",
+  gaojiyuang:"高继扬",chenyilun:"陈亦伦",xiaopenghe:"何小鹏",
+  wangjianjun:"王建军",tangwenxuan:"唐文轩",zhongbo:"钟波",
+  gaolufeng:"高禄峰",qiandongqi:"钱东奇",shijinbo:"石金博",
+  lizhichen:"李志晨",chenyuqi:"陈宇奇",
+  carlpei:"Carl_Pei",brettadcock:"Brett_Adcock",
 };
 
 // Photo cache
@@ -1562,16 +1580,34 @@ const photoCache = {};
 
 async function fetchPhoto(scholarId) {
   if (photoCache[scholarId]) return photoCache[scholarId];
+
+  // 1. Try Wikipedia first
   const wiki = wikiTitles[scholarId];
-  if (!wiki) return null;
-  try {
-    const resp = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`);
-    if (!resp.ok) return null;
-    const data = await resp.json();
-    const url = data.thumbnail?.source || null;
-    if (url) photoCache[scholarId] = url;
-    return url;
-  } catch(e) { return null; }
+  if (wiki) {
+    try {
+      const resp = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`);
+      if (resp.ok) {
+        const data = await resp.json();
+        const url = data.thumbnail?.source || null;
+        if (url) { photoCache[scholarId] = url; return url; }
+      }
+    } catch(e) {}
+  }
+
+  // 2. Try Chinese Wikipedia (zh.wikipedia)
+  const bkName = baikeTitles[scholarId];
+  if (bkName && !bkName.includes('_')) {
+    try {
+      const resp = await fetch(`https://zh.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(bkName)}`);
+      if (resp.ok) {
+        const data = await resp.json();
+        const url = data.thumbnail?.source || null;
+        if (url) { photoCache[scholarId] = url; return url; }
+      }
+    } catch(e) {}
+  }
+
+  return null;
 }
 
 // openDetail with i18n support
