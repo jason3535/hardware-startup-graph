@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware Startup Graph</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+/* ===== Apple Design System Foundation ===== */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'), local('.SFNSDisplay'), local('SFProDisplay-Regular'),
+       local('Helvetica Neue'), local('Helvetica');
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: 'SF Pro Text';
+  src: local('SF Pro Text'), local('.SFNSText'), local('SFProText-Regular'),
+       local('Helvetica Neue'), local('Helvetica');
+  font-weight: 100 900;
+}
+
+:root {
+  /* Apple Colors */
+  --apple-black: #000000;
+  --apple-white: #ffffff;
+  --apple-gray-bg: #f5f5f7;
+  --apple-near-black: #1d1d1f;
+  --apple-blue: #0071e3;
+  --apple-link-blue: #0066cc;
+  --apple-link-blue-dark: #2997ff;
+  --apple-text-secondary: rgba(255, 255, 255, 0.56);
+  --apple-text-tertiary: rgba(255, 255, 255, 0.32);
+  --apple-surface-dark-1: #161617;
+  --apple-surface-dark-2: #1c1c1e;
+  --apple-surface-dark-3: #2c2c2e;
+
+  /* Organization Colors — desaturated, Apple-refined */
+  --org-dji: #64d2ff;
+  --org-robotics: #30d158;
+  --org-huawei: #ff6482;
+  --org-arvr: #5e9eff;
+  --org-xiaomi: #ff9f0a;
+  --org-overseas: #bf5af2;
+  --org-consumer: #ffd60a;
+  --org-independent: #98989d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--apple-black);
+  color: var(--apple-white);
+  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Navigation — Apple Glass ===== */
+#nav-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 1000;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+}
+.nav-title {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.374px;
+  color: var(--apple-white);
+  white-space: nowrap;
+}
+.nav-separator {
+  width: 0.5px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.16);
+  margin: 0 16px;
+}
+.nav-stats {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: var(--apple-text-secondary);
+}
+
+/* Search — Apple Style */
+.nav-search-wrapper {
+  margin-left: 24px;
+  position: relative;
+}
+#search-input {
+  width: 220px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: var(--apple-white);
+  padding: 0 12px 0 32px;
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+#search-input::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+#search-input:focus {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px var(--apple-blue);
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* Filter Pills — Apple Pill CTA */
+.filter-group {
+  display: flex;
+  gap: 6px;
+  margin-left: 20px;
+}
+.filter-pill {
+  padding: 5px 14px;
+  border-radius: 980px;
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  line-height: 1.33;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.56);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  white-space: nowrap;
+}
+.filter-pill:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, 0.8);
+}
+.filter-pill.active {
+  background: var(--apple-blue);
+  border-color: var(--apple-blue);
+  color: var(--apple-white);
+}
+.nav-spacer { flex: 1; }
+
+/* Language Toggle — Apple Segmented Control */
+.lang-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 2px;
+  gap: 0;
+  margin-left: 12px;
+}
+.lang-btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.12px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  white-space: nowrap;
+}
+.lang-btn:hover {
+  color: rgba(255, 255, 255, 0.64);
+}
+.lang-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--apple-white);
+}
+
+/* ===== Graph Canvas ===== */
+#graph-container {
+  position: fixed;
+  top: 48px; left: 0; right: 0; bottom: 0;
+}
+#graph-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ===== Legend — Bottom Left ===== */
+#legend {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 100;
+  pointer-events: all;
+}
+.legend-card {
+  background: rgba(28, 28, 30, 0.88);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 160px;
+}
+.legend-heading {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--apple-text-tertiary);
+  margin-bottom: 10px;
+}
+.legend-heading:not(:first-child) { margin-top: 14px; }
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  cursor: default;
+}
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-line-sample {
+  width: 16px;
+  height: 0;
+  flex-shrink: 0;
+}
+.legend-label {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+/* ===== Detail Panel — Apple Sidebar ===== */
+#detail-panel {
+  position: fixed;
+  top: 48px;
+  right: 0;
+  width: 380px;
+  height: calc(100vh - 48px);
+  background: var(--apple-surface-dark-1);
+  border-left: 0.5px solid rgba(255, 255, 255, 0.08);
+  z-index: 500;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#detail-panel.open {
+  transform: translateX(0);
+}
+#detail-panel::-webkit-scrollbar { width: 0; }
+
+.detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 1;
+}
+.detail-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.detail-header {
+  padding: 40px 24px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.detail-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+.detail-avatar.loading {
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 100%);
+  background-size: 200% 200%;
+  animation: shimmer 1.5s ease infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+.detail-avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'SF Pro Display', -apple-system, sans-serif;
+}
+.detail-header-info {
+  flex: 1;
+  min-width: 0;
+}
+.detail-name {
+  font-family: 'SF Pro Display', -apple-system, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.196px;
+  line-height: 1.14;
+  color: var(--apple-white);
+  margin-bottom: 6px;
+}
+.detail-title {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  line-height: 1.43;
+  color: var(--apple-text-secondary);
+}
+.detail-org-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 980px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.12px;
+}
+
+.detail-section {
+  padding: 20px 24px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+.detail-section-title {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--apple-text-tertiary);
+  margin-bottom: 12px;
+}
+.detail-section p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Paper items */
+.paper-entry {
+  padding: 8px 0;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.paper-year {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.12px;
+  color: var(--apple-link-blue-dark);
+  flex-shrink: 0;
+  min-width: 36px;
+}
+.paper-title {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  line-height: 1.38;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+/* Connection items */
+.conn-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  transition: background 0.2s;
+}
+.conn-entry:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+.conn-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.conn-info {
+  flex: 1;
+  min-width: 0;
+}
+.conn-name {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  color: var(--apple-white);
+}
+.conn-relation {
+  font-size: 11px;
+  letter-spacing: -0.08px;
+  color: var(--apple-text-tertiary);
+  margin-top: 1px;
+}
+.conn-type-badge {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  color: var(--apple-text-tertiary);
+  padding: 2px 8px;
+  border-radius: 980px;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+/* ===== SVG Styles ===== */
+
+/* Links — 4 tiers of visual weight */
+.link-line {
+  transition: stroke-opacity 0.35s ease, stroke-width 0.35s ease;
+  stroke-linecap: round;
+}
+/* Cofounder: strongest bond, solid bright green */
+.link-line.type-cofounder {
+  stroke: #30d158;
+  stroke-width: 2.5;
+  stroke-opacity: 0.5;
+}
+/* Coauthor: strong academic tie, solid blue */
+.link-line.type-former-colleague {
+  stroke: #2997ff;
+  stroke-width: 1.8;
+  stroke-opacity: 0.35;
+}
+/* Advisor: mentor line, dashed cyan */
+.link-line.type-mentor {
+  stroke: #64d2ff;
+  stroke-width: 1.8;
+  stroke-opacity: 0.4;
+  stroke-dasharray: 8 5;
+}
+/* Colleague: weakest, subtle dotted */
+.link-line.type-industry-peer {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 0.8;
+  stroke-opacity: 0.15;
+  stroke-dasharray: 2 6;
+}
+
+.node-group {
+  transition: opacity 0.3s ease;
+}
+.node-glow {
+  transition: opacity 0.3s ease;
+}
+.node-label {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-weight: 500;
+  fill: rgba(255, 255, 255, 0.64);
+  text-anchor: middle;
+  pointer-events: none;
+  transition: fill 0.3s, font-size 0.3s;
+}
+
+/* Dim / Highlight states */
+.node-group.dimmed { opacity: 0.06; }
+.node-group.highlighted { opacity: 1; }
+.node-group.highlighted .node-label {
+  fill: var(--apple-white);
+  font-weight: 600;
+}
+.node-group.highlighted .node-glow { opacity: 0.5; }
+
+.link-line.dimmed { stroke-opacity: 0.015 !important; }
+.link-line.highlighted.type-cofounder { stroke-opacity: 0.85 !important; stroke-width: 3.5px !important; }
+.link-line.highlighted.type-former-colleague { stroke-opacity: 0.75 !important; stroke-width: 3px !important; }
+.link-line.highlighted.type-mentor { stroke-opacity: 0.7 !important; stroke-width: 2.5px !important; }
+.link-line.highlighted.type-industry-peer { stroke-opacity: 0.5 !important; stroke-width: 1.5px !important; stroke-dasharray: none !important; }
+
+/* ===== Tooltip ===== */
+#tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: rgba(28, 28, 30, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 8px;
+  padding: 8px 12px;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.15s;
+  max-width: 240px;
+}
+#tooltip.visible { opacity: 1; }
+.tooltip-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.12px;
+  color: var(--apple-white);
+}
+.tooltip-org {
+  font-size: 11px;
+  letter-spacing: -0.08px;
+  color: var(--apple-text-secondary);
+  margin-top: 2px;
+}
+
+/* ===== Keyboard hint ===== */
+#keyboard-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+}
+.hint-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: -0.08px;
+  color: var(--apple-text-tertiary);
+}
+.hint-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+</style>
+</head>
+<body>
+
+<!-- Tooltip -->
+<div id="tooltip">
+  <div class="tooltip-name" id="tooltip-name"></div>
+  <div class="tooltip-org" id="tooltip-org"></div>
+</div>
+
+<!-- Navigation Bar — Apple Glass -->
+<nav id="nav-bar">
+  <span class="nav-title">Hardware Startup Graph</span>
+  <span class="nav-separator"></span>
+  <span class="nav-stats" id="nav-stats"></span>
+
+  <div class="nav-search-wrapper">
+    <span class="search-icon">&#x2315;</span>
+    <input type="text" id="search-input" placeholder="Search scholars..." autocomplete="off" spellcheck="false">
+  </div>
+
+  <div class="filter-group">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="drones">Drones</button>
+    <button class="filter-pill" data-filter="robotics">Robotics</button>
+    <button class="filter-pill" data-filter="consumer">Consumer</button>
+    <button class="filter-pill" data-filter="ar-vr">AR/VR</button>
+    <button class="filter-pill" data-filter="smart-home">Smart Home</button>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <div class="lang-toggle">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn active" data-lang="zh">中文</button>
+  </div>
+</nav>
+
+<!-- Legend -->
+<div id="legend">
+  <div class="legend-card">
+    <div class="legend-heading">Organizations</div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-dji)"></div><span class="legend-label">DJI Alumni</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-xiaomi)"></div><span class="legend-label">Xiaomi Ecosystem</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-huawei)"></div><span class="legend-label">Huawei / OPPO</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-robotics)"></div><span class="legend-label">Robotics</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-consumer)"></div><span class="legend-label">Consumer Electronics</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-arvr)"></div><span class="legend-label">AR / VR</span></div>
+    <div class="legend-row"><div class="legend-dot" style="background:var(--org-overseas)"></div><span class="legend-label">Overseas</span></div>
+    <div class="legend-heading">Connections</div>
+    <div class="legend-row"><div class="legend-line-sample" style="border-top:2.5px solid #30d158; opacity:0.7"></div><span class="legend-label">Co-founded</span></div>
+    <div class="legend-row"><div class="legend-line-sample" style="border-top:2px solid #2997ff; opacity:0.6"></div><span class="legend-label">Former Colleagues</span></div>
+    <div class="legend-row"><div class="legend-line-sample" style="border-top:2px dashed #64d2ff; opacity:0.6"></div><span class="legend-label">Mentor / Investor</span></div>
+    <div class="legend-row"><div class="legend-line-sample" style="border-top:1px dotted rgba(255,255,255,0.5); opacity:0.5"></div><span class="legend-label">Industry Peers</span></div>
+  </div>
+</div>
+
+<!-- Detail Panel -->
+<div id="detail-panel">
+  <button class="detail-close" id="detail-close">&#10005;</button>
+  <div class="detail-header">
+    <div class="detail-avatar-placeholder" id="detail-avatar"><span id="detail-avatar-initial"></span></div>
+    <div class="detail-header-info">
+      <div class="detail-name" id="detail-name"></div>
+      <div class="detail-title" id="detail-title"></div>
+      <div class="detail-org-badge" id="detail-org"></div>
+    </div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-section-title">About</div>
+    <p id="detail-bio"></p>
+  </div>
+  <div class="detail-section" id="detail-papers-section">
+    <div class="detail-section-title">Key Contributions</div>
+    <div id="detail-papers"></div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-section-title">Connections</div>
+    <div id="detail-connections"></div>
+  </div>
+</div>
+
+<!-- Keyboard Hints -->
+<div id="keyboard-hint">
+  <div class="hint-item"><span class="hint-key">Scroll</span> Zoom</div>
+  <div class="hint-item"><span class="hint-key">Drag</span> Pan</div>
+  <div class="hint-item"><span class="hint-key">Click</span> Details</div>
+  <div class="hint-item"><span class="hint-key">Esc</span> Close</div>
+</div>
+
+<!-- Graph -->
+<div id="graph-container">
+  <svg id="main-svg"></svg>
+</div>
+
+<script>
+// ===================================================================
+// DATA
+// ===================================================================
+const scholars = [
+  {id:"wangtao",name:"Frank Wang",org:"DJI",title:"Founder & CEO of DJI",field:["drones"],bio:"Born 1980 in Hangzhou. Attended HKUST where professor Li Zexiang noticed his talent. Built DJI prototypes in his dorm room. Released Phantom in 2013, igniting the global drone revolution. DJI dominates 70%+ of the global commercial drone market. Net worth ~$5B.",papers:[{y:"2013",t:"DJI Phantom"},{y:"2016",t:"DJI Mavic Pro"},{y:"2020",t:"DJI Mini series"}]},
+  {id:"lizexiang",name:"Li Zexiang",org:"HKUST / XbotPark",title:"Father of Shenzhen Hardware Startups",field:["drones","robotics"],bio:"Born 1961 Hunan. Central South Univ BS, UC Berkeley EECS PhD. HKUST professor, Frank Wang's thesis advisor. Created XbotPark (Songshan Lake Robot Base) incubating 60+ hardware startups including DJI, Narwal. The godfather of Shenzhen hardware entrepreneurship.",papers:[]},
+  {id:"taoye",name:"Tao Ye",org:"Bambu Lab",title:"Founder of Bambu Lab · Ex-DJI Exec",field:["consumer"],bio:"USTC Astronomy+Physics BS 2006, Konstanz PhD 2012. At DJI: engineer to power systems mgr to Mavic Pro PM to consumer drone head (60%+ revenue). Left Nov 2020 with 4 colleagues. Bambu Lab X1 (2022) praised as iPhone of 3D printing. 1.5B yuan revenue 2024. MIT 50 Smartest 2025. DJI+Tencent invested.",papers:[{y:"2022",t:"Bambu Lab X1"},{y:"2023",t:"Bambu Lab P1P"},{y:"2024",t:"MakerWorld + Tencent AI"}]},
+  {id:"wanglei",name:"Wang Lei",org:"EcoFlow",title:"Founder of EcoFlow · Ex-DJI Battery Chief",field:["consumer"],bio:"HK PolyU BS, HKU PhD (battery tech). Founded DJI battery R&D dept 2014. Left at 29 (2017), founded EcoFlow. Global #1 portable power station brand. 5M+ users, ~8B yuan 2024 revenue. Considering US IPO $300M+.",papers:[{y:"2018",t:"EcoFlow RIVER"},{y:"2021",t:"EcoFlow DELTA Pro"},{y:"2023",t:"DELTA Pro Ultra"}]},
+  {id:"pengbin",name:"Peng Bin",org:"XAG",title:"Founder of XAG · Agricultural Drone Pioneer",field:["drones"],bio:"Born 1982 Fujian. Xidian Univ CS 2004. Microsoft 2 years. Founded XAG predecessor 2007. Xinjiang trip 2013 pivoted to agri-drones. 157 patents. 1.07B yuan revenue 2024 (+73%). 7.3B valuation. HK IPO planned.",papers:[{y:"2013",t:"XAG P-series agri-drones"},{y:"2020",t:"XAG R150 agri-robot"},{y:"2025",t:"XAG 2026 P-series"}]},
+  {id:"wangtaom",name:"Wang Tao M.",org:"Mammotion",title:"Founder of Mammotion · DJI Alumni",field:["smart-home","drones"],bio:"Ex-DJI engineer. Applied drone navigation tech (RTK, visual SLAM) to robotic lawn mowers for EU/US markets. LUBA series became a crowdfunding and VC hit.",papers:[{y:"2023",t:"LUBA RTK lawn mower"},{y:"2024",t:"LUBA 2 AWD"}]},
+  {id:"weijidong",name:"Wei Jidong",org:"AgileX Robotics",title:"Founder of AgileX · Ex-DJI",field:["robotics"],bio:"Former DJI engineer. Founded AgileX Robotics (Songling) in Shenzhen. SCOUT, RANGER, BUNKER mobile robot platforms. Leading mobile robot platform provider globally.",papers:[{y:"2019",t:"AgileX SCOUT"},{y:"2023",t:"AgileX RANGER MINI"}]},
+  {id:"zhipai",name:"Chen Yiqi",org:"Zhipai",title:"Founder of Zhipai · DJI-Invested",field:["consumer"],bio:"Post-90s Chaoshan entrepreneur. Founded Zhipai 3D printing. 1.6B yuan revenue 2024. DJI strategic investment 2025 (triggered Bambu Lab founder public response). Target 5B yuan revenue in 3 years.",papers:[{y:"2023",t:"Zhipai 3D printers"},{y:"2025",t:"DJI strategic investment"}]},
+  {id:"yuhao",name:"Yu Hao",org:"Dreame",title:"Founder of Dreame · Tsinghua Aerospace",field:["smart-home","robotics"],bio:"Born Nantong. Physics olympiad into Tsinghua aerospace BS+MS. China's first quadrotor 2007. Founded Sky Factory. Cracked high-speed motor tech 2017 (150K RPM). Lei Jun invested. 15B yuan revenue 2024. 8.5B wealth. Plans EV to rival Bugatti by 2027.",papers:[{y:"2017",t:"Dreame high-speed motor"},{y:"2021",t:"Dreame Bot W10"},{y:"2025",t:"Dreame whole-house ecosystem"}]},
+  {id:"changjing",name:"Chang Jing",org:"Roborock",title:"Founder of Roborock · Ex-Microsoft/Tencent",field:["smart-home"],bio:"Born 1982. South China UT CS BS+MS. Microsoft Innovation Cup winner. Microsoft PM, Tencent PM, 1st startup acquired by Baidu. Roborock 2014, 40-day first demo, Xiaomi ecosystem. STAR Board IPO Feb 2020. Also Jishi Auto EV.",papers:[{y:"2016",t:"Xiaomi Mi Robot Vacuum"},{y:"2020",t:"Roborock S7"},{y:"2024",t:"Roborock Saros Z70"}]},
+  {id:"zhangjunbin",name:"Zhang Junbin",org:"Narwal",title:"Founder of Narwal · Li Zexiang Mentee",field:["smart-home","robotics"],bio:"Born 1990 Chaoshan. Robot Olympiad gold 2006. HUST+SJTU. Li Zexiang mentee at XbotPark 2016. J1 self-cleaning mop robot hit 2019 Double 11. Poached DJI edu-robot dept. 10B+ valuation. $100M new round for global expansion.",papers:[{y:"2019",t:"Narwal J1"},{y:"2023",t:"Narwal Freo"},{y:"2025",t:"Narwal Xiaoyao 002"}]},
+  {id:"pengzhihui",name:"Peng Zhihui",org:"Agibot",title:"Founder of Agibot · Huawei Genius Youth",field:["robotics"],bio:"Born 1993. UESTC BS+MS 2018. OPPO AI Lab. Huawei Genius Youth 2020 (~2M salary). Bilibili Top100 as Zhihuijun. Left Huawei Dec 2022. Agibot Feb 2023. Yuanzheng A1 in 6 months <200K yuan. Lingxi X2 2025. 15B valuation. BYD/SAIC backed.",papers:[{y:"2023",t:"Agibot Yuanzheng A1"},{y:"2025",t:"Agibot Lingxi X2"},{y:"2025",t:"ARIO learning platform"}]},
+  {id:"carlpei",name:"Carl Pei",org:"Nothing",title:"Founder of Nothing · OnePlus Co-founder",field:["consumer"],bio:"Born 1989 Beijing, grew up Sweden. Stockholm Sch of Econ dropout. Nokia intern, Meizu, OPPO 2012. Co-founded OnePlus Dec 2013 with Pete Lau. Left Oct 2020. Nothing London Jan 2021. Tony Fadell/GV/EQT. $250M+ raised. Transparent Glyph Interface design.",papers:[{y:"2014",t:"OnePlus One"},{y:"2022",t:"Nothing Phone (1)"},{y:"2024",t:"Nothing Phone (2a)"}]},
+  {id:"liujingkang",name:"Liu Jingkang",org:"Insta360",title:"Founder of Insta360 · 1st Post-90 STAR Board",field:["consumer","drones"],bio:"Born 1991 Zhongshan. Nanjing Univ Software 2014. Rejected Tencent. IDG angel $1M. Insta360 2015 Shenzhen. 360-cam global #1 5 years 50%+. 5.57B yuan 2024. STAR Board IPO Jun 2025 +285% record. 1st post-90 STAR Board founder.",papers:[{y:"2016",t:"Insta360 Nano"},{y:"2020",t:"Insta360 ONE R"},{y:"2023",t:"Insta360 X3"}]},
+  {id:"yangmeng",name:"Yang Meng",org:"Anker",title:"Founder of Anker Innovations",field:["consumer"],bio:"Born 1982 Changsha. Peking Univ CS, UT Austin MS. Google senior engineer + Founder's Award. Resigned 2011. Anker brand California. Global #1 charging. Shenzhen IPO 2020. Expanded: Eufy, Soundcore, Nebula. 28.5B wealth 2026.",papers:[{y:"2011",t:"Anker portable chargers"},{y:"2018",t:"Eufy RoboVac"},{y:"2020",t:"Anker IPO"}]},
+  {id:"yehongxin",name:"Ye Hongxin",org:"Laifen",title:"Founder of Laifen · Dyson Challenger",field:["consumer"],bio:"Born 1986 Lishui Zhejiang. Poor family, collected garbage with father. Age 8 made lightbulbs from batteries. 1st million on Taobao. Built manned flying vehicle prototypes. Sold electric skateboard co. Mastered high-speed motor 2017. Laifen Dongguan 2019. Dyson killer at 1/3 price. Swift 4 CES 2026 115K RPM. Fortune 40 Under 40 China 2024.",papers:[{y:"2021",t:"Laifen LF03 hair dryer"},{y:"2025",t:"Laifen Swift 4 CES 2026"},{y:"2025",t:"Laifen 1st flagship Shenzhen"}]},
+  {id:"zhangqingsen",name:"Zhang Qingsen",org:"UGREEN",title:"Founder of UGREEN · Data Cable to IPO",field:["consumer"],bio:"Born 1983 Putian Fujian. International Finance degree. Came to Shenzhen 2007 for foreign trade. Started in Huaqiangbei with 250K yuan 2009. UGREEN 2011 with a data cable. Top Tmall digital seller in 2yrs. 100+ countries. Overseas 50.4% surpassed domestic 2023. ChiNext IPO Jul 2024 +114%. 13B wealth 2025.",papers:[{y:"2011",t:"UGREEN data cables"},{y:"2023",t:"UGREEN NAS/storage expansion"},{y:"2024",t:"UGREEN ChiNext IPO +114%"}]},
+  {id:"jesselyu",name:"Jesse Lyu",org:"Rabbit",title:"Founder of Rabbit · Ex-Baidu Hardware",field:["consumer","ar-vr"],bio:"Chinese-born, US-based. Founded Raven Tech, acquired by Baidu. Led Baidu hardware briefly. Founded Rabbit Inc. Rabbit R1 AI device with Large Action Model. CES 2024 sensation. 100K+ units. $30M Khosla Ventures.",papers:[{y:"2017",t:"Raven H smart speaker"},{y:"2024",t:"Rabbit R1 CES 2024"}]},
+  {id:"xugao",name:"Xu Gao",org:"PLAUD",title:"Founder of PLAUD.AI · Global #1 AI Recorder",field:["consumer"],bio:"Born 1991 Xiangyang Hubei. Wuhan Univ. 3 failed startups. 4th with co-founder Liu Ye. PLAUD Note AI recorder 112 languages. 300K+ units. $250M projected 2025. 10x growth 2 consecutive years.",papers:[{y:"2023",t:"PLAUD Note"},{y:"2024",t:"PLAUD NotePin"},{y:"2025",t:"$250M revenue projected"}]},
+  {id:"liyong",name:"Li Yong",org:"Haivivi",title:"Founder of Haivivi · AI Toy Pioneer",field:["consumer"],bio:"Smartisan 1st marketing director. 360 IoT VP. iQiyi Smart CMO. Tmall Genie co-founder. Left Alibaba 2021. Haivivi AI toys 90%+ margins. 200K units year 1. 200M A round CICC+Sequoia 2024. Another 200M 2025.",papers:[{y:"2024",t:"Haivivi AI companion toys"},{y:"2025",t:"200M new round, Sequoia doubled"}]},
+  {id:"tianli",name:"Tian Li",org:"Timekettle",title:"Founder of Timekettle · AI Translation Pioneer",field:["consumer"],bio:"Ex-Huawei. Founded Timekettle 2016 Shenzhen. Parents' Europe illness inspired Babel Fish earbuds. Angel 2018. Japan crowdfund 70M yen 2019. W4 Pro 40 languages 96% accuracy 2024. Babel OS CES. 200M yuan 2024. 6yrs industry #1. 1M users 170 countries.",papers:[{y:"2019",t:"Timekettle WT2"},{y:"2024",t:"Timekettle W4 Pro"},{y:"2025",t:"Babel OS"}]},
+  {id:"wangning",name:"Wang Ning",org:"Pop Mart",title:"Founder of Pop Mart · Labubu Creator",field:["consumer"],bio:"Born 1987 Xinxiang Henan. Zhengzhou West Asia Intl College advertising 2009. PKU Guanghua MBA. Pop Mart 2010. HKEX IPO Dec 2020 +100%. Labubu at Macy's Parade 2024. 13B yuan 2024. Overseas to surpass domestic 2025. Henan richest 146.7B yuan.",papers:[{y:"2016",t:"Pop Mart blind box model"},{y:"2020",t:"Pop Mart HKEX IPO"},{y:"2024",t:"Labubu global phenomenon"}]},
+  {id:"youyanji",name:"You Yanji",org:"Aqara",title:"Founder of Aqara (LuMi) · Smart Home Pioneer",field:["smart-home"],bio:"US citizen, IEEE member. Utah State Univ engineering MS. Worked Enocean, Trulite, Rio Tinto in US. Founded LuMi United (Aqara). Xiaomi smart home ecosystem. 10B yuan C round. 5 rounds 10B+ total. Global smart home in 100+ countries.",papers:[{y:"2016",t:"Aqara smart home devices"},{y:"2021",t:"Aqara 10B yuan C round"},{y:"2024",t:"Aqara U100 smart lock #2 global"}]},
+  {id:"xuchi",name:"Xu Chi",org:"XREAL",title:"Founder of XREAL · Ex-Magic Leap",field:["ar-vr"],bio:"UIUC alumnus. Ex-Magic Leap AR experience. Founded XREAL (formerly Nreal). Consumer AR glasses. $100M+ raised incl Alibaba. Leading Chinese AR glasses company.",papers:[{y:"2020",t:"Nreal Light"},{y:"2023",t:"XREAL Air 2"},{y:"2025",t:"XREAL One"}]},
+  {id:"zhushanming",name:"Zhu Shanming",org:"Rokid",title:"Founder of Rokid · Ex-Alibaba iDST",field:["ar-vr"],bio:"Known as M-ge. Former Alibaba iDST. Founded Rokid. AR glasses (Max, AR Studio). Multiple rounds, Alibaba backing.",papers:[{y:"2018",t:"Rokid Glass"},{y:"2023",t:"Rokid Max"},{y:"2024",t:"Rokid AR Studio"}]},
+  {id:"lihongwei",name:"Li Hongwei",org:"RayNeo",title:"Founder of RayNeo · China AR #1",field:["ar-vr","consumer"],bio:"PKU CS MS, Beihang BBA. Cisco, iQiyi Smart TV Sr Dir. RayNeo/TCL 2018. RayNeo Innovation 2021. X2 MicroLED 2023. X3 Pro CES 2026. 10B+ yuan round 2026. 35% China #1 3yrs. #3 global XR. China Mobile+Moutai investors. Predicted AR iPhone moment 2027.",papers:[{y:"2023",t:"RayNeo X2 MicroLED"},{y:"2025",t:"RayNeo X3"},{y:"2026",t:"10B+ yuan mega-round"}]},
+  {id:"inmoceo",name:"INMO Founder",org:"INMO",title:"Founder of INMO · AR Glasses IDC #1",field:["ar-vr","consumer"],bio:"Founded INMO 2020. 3 rounds 500M yuan 2025. 2B valuation. IDC China AR #1 47.6% output 39.7% sales. China Mobile partner. INMO GO2 on CCTV Boao. AR Four Dragons.",papers:[{y:"2023",t:"INMO Air2"},{y:"2024",t:"INMO GO2 AI translation"},{y:"2025",t:"3 rounds 500M in 1 year"}]},
+  {id:"zhangbo",name:"Zhang Bo",org:"Sharge",title:"Founder of SHARGE · AI Glasses Disruptor",field:["consumer","ar-vr"],bio:"Founded SHARGE Shenzhen 2020. Team from phone+drone cos (DJI alumni). Hermes of power banks 1299 yuan. 200M yuan charging 2024 60% overseas. CES 2025 AI glasses sold out pre-show 999 yuan price disruptor. ~100M A+ round Dec 2025.",papers:[{y:"2022",t:"SHARGE premium power banks"},{y:"2025",t:"SHARGE loomos AI glasses 999 yuan"}]},
+  {id:"wangxingxing",name:"Wang Xingxing",org:"Unitree",title:"Founder of Unitree · Quadruped #1",field:["robotics"],bio:"Born 1990 Ningbo. Built jet engines in middle school. Zhejiang Sci-Tech mechatronics. Shanghai Univ MS quadrupeds 2013. DJI 2 months quit 2016. 50sqm Hangzhou office. Global quadruped #1 70%. G1 humanoid 99K yuan 2024. 5500 shipped 2025. Mid-2026 IPO. 12B valuation.",papers:[{y:"2019",t:"Unitree A1"},{y:"2023",t:"Unitree Go2"},{y:"2024",t:"Unitree G1 humanoid"}]},
+  {id:"brettadcock",name:"Brett Adcock",org:"Figure AI",title:"Founder of Figure AI · $39B Valuation",field:["robotics"],bio:"Florida, UIUC. Vettery (sold), Archer Aviation (public). Figure AI 2022. Figure 01/02/03. $39B valuation. Microsoft/OpenAI/NVIDIA/Bezos. White House 2026. Also founded Hark.",papers:[{y:"2023",t:"Figure 01"},{y:"2024",t:"Figure 02"},{y:"2025",t:"Figure 03"}]},
+  {id:"gujie",name:"Gu Jie",org:"Fourier Intelligence",title:"Founder of Fourier Intelligence",field:["robotics"],bio:"Shanghai. Rehab robotics exoskeletons. Pivoted to GR-1 general-purpose humanoid 2023 leveraging actuator expertise.",papers:[{y:"2019",t:"Fourier ExoMotus"},{y:"2023",t:"Fourier GR-1"},{y:"2024",t:"GR-2 humanoid"}]},
+  {id:"zhoujianping",name:"Zhou Jianping",org:"UBTECH",title:"Founder of UBTECH · Humanoid Robot First Stock",field:["robotics"],bio:"Founded UBTECH Shenzhen. Walker humanoid series. HKEX IPO Dec 2023 earning Humanoid Robot First Stock title. Pivoting to industrial/service humanoids.",papers:[{y:"2018",t:"Walker humanoid"},{y:"2023",t:"UBTECH HKEX IPO"},{y:"2024",t:"Walker S industrial"}]},
+  {id:"chenjianyu",name:"Chen Jianyu",org:"Robotera",title:"Founder of Robotera · Tsinghua PhD Advisor at 28",field:["robotics"],bio:"Born 1992. Tsinghua Precision Instruments. UC Berkeley PhD under Tomizuka. Waymo/Nutonomy intern. Recruited by Turing winner Yao Qizhi to Tsinghua IIIS at 28 as doctoral advisor. Robotera Aug 2023 (Tsinghua equity). 1B yuan 2 rounds. 10B+ valuation. 200 delivered 2025 50%+ overseas.",papers:[{y:"2024",t:"Robotera Xiao Xing family"},{y:"2025",t:"Ctrl-World with Stanford"}]},
+  {id:"wanghe",name:"Wang He",org:"Galbot",title:"Founder of Galbot · PKU Professor",field:["robotics"],bio:"Born 1992. Tsinghua Electronics. Stanford PhD 2021. PKU assistant prof. Galbot May 2023. Galbot G1 dual-arm wheeled 2024. 2.4B+ yuan cumulative. ~$3B valuation. One of largest embodied AI fundings globally.",papers:[{y:"2024",t:"Galbot G1"},{y:"2025",t:"Galbot embodied multimodal model"}]},
+  {id:"zhangwei",name:"Zhang Wei",org:"LimX Dynamics",title:"Founder of LimX · SUSTech Professor",field:["robotics"],bio:"USTC Automation. Purdue stats MS+ECE PhD. UC Berkeley postdoc. Ohio State tenured prof. SUSTech Shenzhen. LimX Jan 2022. Oli humanoid 2025. 500M yuan Series A. Alibaba/NIO Capital/Lenovo/JD.",papers:[{y:"2024",t:"LimX W1"},{y:"2025",t:"LimX Oli humanoid"}]},
+  {id:"gaojiyuang",name:"Gao Jiyang",org:"XingHaiTu",title:"Founder of XingHaiTu · Ex-Waymo/Momenta",field:["robotics"],bio:"Physics olympiad. Tsinghua EE. USC CV PhD 3yrs. Waymo 2018. Momenta. XingHaiTu Sep 2023. G0 Aug 2025. G0 Plus VLA Jan 2026 first plug-and-play VLA. 1000+ unit orders automakers. 1B Series B Feb 2026. ~3B cumulative. 10B+ valuation.",papers:[{y:"2025",t:"XingHaiTu G0"},{y:"2026",t:"G0 Plus VLA"}]},
+  {id:"chenyilun",name:"Chen Yilun",org:"TaShi ZhiHang",title:"Ex-Huawei AD CTO · DJI Vision Chief",field:["robotics"],bio:"PhD. Tsinghua intelligent industry chief scientist (robotics). Huawei autonomous driving CTO. DJI chief vision engineer. Chairman Li Zhenyu: Baidu intelligent driving president, built Apollo + Luobo Kuaipao. Founded 2024. Angel $122M Mar 2025 (Chinese embodied AI angel record).",papers:[{y:"2025",t:"TaShi ZhiHang embodied AI"}]},
+  {id:"chenjunbo",name:"Chen Junbo",org:"YouLu Robot",title:"Ex-Alibaba DAMO Academy · Xiao Man Lu",field:["robotics","smart-home"],bio:"Alibaba DAMO Academy autonomous driving key figure. Led Xiao Man Lu unmanned delivery robot. Left 2023. YouLu Robot Hangzhou. Outdoor cleaning robots. 100M+ from Alibaba+Baidu.",papers:[{y:"2024",t:"YouLu outdoor cleaning robot"}]},
+  {id:"hanfengtao",name:"Han Fengtao",org:"Qianxun Intelligence",title:"Ex-Luoshi Robotics CTO · 2B Yuan Round",field:["robotics"],bio:"Former Luoshi Robotics co-founder+CTO. 10yrs 20K+ industrial robots. Co-founder Gao Yang Tsinghua IIIS prof PhD UC Berkeley under Trevor Darrell. 2B yuan round Feb 2026 opening embodied AI. 10B+ valuation.",papers:[{y:"2026",t:"Qianxun 2B yuan round"}]},
+  {id:"xiaopenghe",name:"He Xiaopeng",org:"XPeng Robotics",title:"XPeng CEO · Iron Humanoid",field:["robotics","consumer"],bio:"XPeng Motors CEO. Iron humanoid 2024. Mass production end 2026. World's first production-grade VLA physical world model Mar 2026. Represents EV companies entering humanoid robotics.",papers:[{y:"2024",t:"XPeng Iron humanoid"},{y:"2026",t:"XPeng VLA model"}]},
+  {id:"sunzhaozhi",name:"Sun Zhaozhi",org:"Robopoet",title:"Founder of Robopoet (Fuzozo)",field:["consumer","robotics"],bio:"Ex-XPeng Robotics product lead. Robopoet 2024. Fuzozo AI pet: 120K units in 6 months (#1). Huawei co-brand. Sequoia China angel+.",papers:[{y:"2025",t:"Fuzozo 120K units"},{y:"2026",t:"Fuzozo x Huawei"}]},
+  {id:"hejiabin",name:"He Jiabin",org:"Ropet",title:"Co-founder of Ropet",field:["consumer","robotics"],bio:"Ex-Luka product lead. Ropet Mar 2022. ROPET 37-degree AI pet. Kickstarter $100K in 4hrs. A1: Beijing AI Fund.",papers:[{y:"2024",t:"ROPET Kickstarter"},{y:"2025",t:"Ropet A1 round"}]},
+  {id:"yangjianbo",name:"Yang Jianbo",org:"KEYi Tech",title:"Founder of Loona · Beihang",field:["consumer","robotics"],bio:"Beihang. KEYi Tech 2014. Loona Pixar AI pet + ChatGPT. Kickstarter $2M+. 5 rounds: Xiaomi/Shunwei/Bluerun/Source Code.",papers:[{y:"2023",t:"Loona $2M+ Kickstarter"}]},
+  {id:"ringconn",name:"RingConn Founders",org:"RingConn",title:"China Smart Ring #1",field:["consumer"],bio:"SJTU prof + Dr. Wu Hao (2021). Gen 2: $4.4M Kickstarter. Amazon #2 globally. 150K+ users 80+ countries. Li Zexiang invested.",papers:[{y:"2024",t:"RingConn Gen 2 $4.4M"}]},
+  {id:"wangxiaoyi",name:"Wang Xiaoyi",org:"Even Realities",title:"Founder of Even Realities",field:["ar-vr","consumer"],bio:"Ex-Jianguo Projector CPO. Even 2023. G1 MicroLED AR. G2 36g + smart ring $659. Sequoia China invested.",papers:[{y:"2024",t:"Even G1"},{y:"2025",t:"Even G2 36g"}]},
+  {id:"yuanqian",name:"Yuan Qian",org:"Photon Leap",title:"President of Photon Leap",field:["consumer","drones"],bio:"Ex-P&G/vivo. CTO ex-Dreame+Tsinghua. Founded Mar 2025. Multi-100M angel in 3 months. AI action camera vs Insta360/DJI.",papers:[{y:"2025",t:"Photon Leap AI camera"}]},
+  {id:"luoyuanjue",name:"Luo Yuanjue",org:"Apeman",title:"Founder of Apeman · Unicorn",field:["consumer"],bio:"Apeman 2016 Shenzhen. Monthly >100M by yr 3. Walmart 2019. >2B yuan/yr overseas. Unicorn 2021 (Midea Capital).",papers:[{y:"2019",t:"Apeman Walmart"},{y:"2021",t:"Apeman unicorn"}]},
+  {id:"liangxiaoling",name:"Liang Xiaoling",org:"TENWAYS",title:"Founder of TENWAYS · E-Bike",field:["consumer"],bio:"85-gen. E-bike for Europe 97.7%. Hillhouse 21%/Tencent/Alibaba. HK IPO Feb 2026. ~1.7B yuan.",papers:[{y:"2026",t:"TENWAYS HK IPO filing"}]},
+  {id:"heshiyou",name:"He Shiyou",org:"Baseus",title:"Founder of Baseus",field:["consumer"],bio:"Baseus 2011 Shenzhen. 90M+ units/yr. GaN charger global #1. 2100+ patents. Anker's #1 Chinese rival.",papers:[{y:"2018",t:"Baseus GaN #1"},{y:"2025",t:"Baseus vs Anker"}]},
+  {id:"yehongxin",name:"Ye Hongxin",org:"Laifen",title:"Founder of Laifen · Dyson Killer",field:["consumer"],bio:"Born 1986. High-speed motor 2017. Laifen 2019. Dyson 1/3 price. Swift 4 CES 2026 115K RPM. Fortune 40U40.",papers:[{y:"2021",t:"Laifen LF03"},{y:"2025",t:"Swift 4 CES 2026"}]},
+  {id:"zhangqingsen",name:"Zhang Qingsen",org:"UGREEN",title:"Founder of UGREEN",field:["consumer"],bio:"Huaqiangbei 250K 2009. UGREEN 2011. ChiNext IPO Jul 2024 +114%. Market cap ~26.6B yuan.",papers:[{y:"2024",t:"UGREEN IPO +114%"}]},
+  {id:"zhongbo",name:"Zhong Bo",org:"XGIMI",title:"Founder of XGIMI · Projector King",field:["consumer"],bio:"UESTC. Tencent stock 2M to 100M+. XGIMI 2012 Chengdu. China #1 projector. STAR Board 2021.",papers:[{y:"2021",t:"XGIMI STAR Board IPO"}]},
+  {id:"gaolufeng",name:"Gao Lufeng",org:"Ninebot-Segway",title:"Co-founder Ninebot · Acquired Segway",field:["consumer","robotics"],bio:"Beihang. 2015 acquired Segway. Xiaomi ecosystem. STAR Board 2020. ~25B yuan market cap.",papers:[{y:"2015",t:"Acquired Segway"},{y:"2020",t:"STAR Board IPO"}]},
+  {id:"qiandongqi",name:"Qian Dongqi",org:"Ecovacs",title:"Founder of Ecovacs · Robot Vacuum 1st IPO",field:["smart-home","robotics"],bio:"Ecovacs 1998 Suzhou OEM. DEEBOT. Shanghai IPO 2018 robot vacuum first. Global top 3. ~15B yuan.",papers:[{y:"2018",t:"Ecovacs Shanghai IPO"}]},
+];
+
+const connections = [
+  {source:"lizexiang",target:"wangtao",type:"mentor",label:"HKUST thesis advisor, mentored DJI founding"},
+  {source:"lizexiang",target:"zhangjunbin",type:"mentor",label:"XbotPark incubation, angel investor"},
+  {source:"lizexiang",target:"liujingkang",type:"mentor",label:"XbotPark / Shenzhen hardware ecosystem"},
+  {source:"wangtao",target:"taoye",type:"former-colleague",label:"Tao Ye was DJI consumer drone head"},
+  {source:"wangtao",target:"wanglei",type:"former-colleague",label:"Wang Lei founded DJI battery R&D dept"},
+  {source:"wangtao",target:"wangxingxing",type:"former-colleague",label:"Wang Xingxing briefly at DJI (2 months)"},
+  {source:"wangtao",target:"wangtaom",type:"former-colleague",label:"DJI alumni, Mammotion lawn mowers"},
+  {source:"wangtao",target:"pengbin",type:"industry-peer",label:"DJI vs XAG drone industry rivals"},
+  {source:"taoye",target:"wanglei",type:"former-colleague",label:"DJI executives turned category creators"},
+  {source:"taoye",target:"zhipai",type:"industry-peer",label:"3D printing rivals (Bambu Lab vs Zhipai)"},
+  {source:"zhipai",target:"wangtao",type:"mentor",label:"DJI strategic investment in Zhipai"},
+  {source:"weijidong",target:"wangtao",type:"former-colleague",label:"DJI alumni, AgileX robot platforms"},
+  {source:"yuhao",target:"changjing",type:"industry-peer",label:"Xiaomi ecosystem, robot vacuum rivals"},
+  {source:"yuhao",target:"zhangjunbin",type:"industry-peer",label:"Smart home / robot vacuum competitors"},
+  {source:"changjing",target:"zhangjunbin",type:"industry-peer",label:"Roborock vs Narwal rivals"},
+  {source:"youyanji",target:"changjing",type:"industry-peer",label:"Xiaomi smart home ecosystem"},
+  {source:"youyanji",target:"yuhao",type:"industry-peer",label:"Xiaomi ecosystem peers"},
+  {source:"pengzhihui",target:"carlpei",type:"industry-peer",label:"Both OPPO alumni era, hardware founders"},
+  {source:"pengzhihui",target:"wangxingxing",type:"industry-peer",label:"Agibot vs Unitree humanoid rivals"},
+  {source:"pengzhihui",target:"brettadcock",type:"industry-peer",label:"Global humanoid robot competitors"},
+  {source:"pengzhihui",target:"zhoujianping",type:"industry-peer",label:"Chinese humanoid robot companies"},
+  {source:"wangxingxing",target:"brettadcock",type:"industry-peer",label:"Unitree vs Figure AI humanoid"},
+  {source:"wangxingxing",target:"gujie",type:"industry-peer",label:"Chinese humanoid robot companies"},
+  {source:"gujie",target:"zhoujianping",type:"industry-peer",label:"Shanghai robotics companies"},
+  {source:"carlpei",target:"liujingkang",type:"industry-peer",label:"Consumer electronics startup founders"},
+  {source:"yangmeng",target:"liujingkang",type:"industry-peer",label:"Cross-border hardware brands"},
+  {source:"yangmeng",target:"wanglei",type:"industry-peer",label:"Cross-border DTC hardware brands"},
+  {source:"yangmeng",target:"zhangqingsen",type:"industry-peer",label:"Anker vs UGREEN charging rivals"},
+  {source:"xuchi",target:"zhushanming",type:"industry-peer",label:"Chinese AR glasses competitors"},
+  {source:"jesselyu",target:"xuchi",type:"industry-peer",label:"AI hardware / wearable founders"},
+  {source:"yuhao",target:"pengzhihui",type:"industry-peer",label:"Both pivoting to embodied AI"},
+  {source:"yuhao",target:"yehongxin",type:"industry-peer",label:"High-speed motor, Dyson challengers"},
+  {source:"yehongxin",target:"yangmeng",type:"industry-peer",label:"Consumer brand disruption"},
+  {source:"chenjianyu",target:"wanghe",type:"industry-peer",label:"Both 1992, professor robot founders"},
+  {source:"chenjianyu",target:"pengzhihui",type:"industry-peer",label:"Chinese humanoid robot founders"},
+  {source:"chenjianyu",target:"wangxingxing",type:"industry-peer",label:"Humanoid robot rivals"},
+  {source:"wanghe",target:"pengzhihui",type:"industry-peer",label:"Embodied AI unicorns"},
+  {source:"wanghe",target:"wangxingxing",type:"industry-peer",label:"Embodied AI competitors"},
+  {source:"zhangwei",target:"wangxingxing",type:"industry-peer",label:"Shenzhen robot companies"},
+  {source:"zhangwei",target:"pengzhihui",type:"industry-peer",label:"Shenzhen embodied AI founders"},
+  {source:"gaojiyuang",target:"chenyilun",type:"industry-peer",label:"Auto driving to embodied AI founders"},
+  {source:"gaojiyuang",target:"chenjunbo",type:"industry-peer",label:"Autonomous driving alumni to robots"},
+  {source:"chenyilun",target:"wangtao",type:"former-colleague",label:"Chen Yilun was DJI Chief Vision Eng"},
+  {source:"chenjunbo",target:"yuhao",type:"industry-peer",label:"Smart home / service robot founders"},
+  {source:"hanfengtao",target:"pengzhihui",type:"industry-peer",label:"Humanoid robot industrial deployment"},
+  {source:"hanfengtao",target:"gujie",type:"industry-peer",label:"Industrial robot founders"},
+  {source:"xiaopenghe",target:"pengzhihui",type:"industry-peer",label:"EV to humanoid (XPeng vs Agibot)"},
+  {source:"xiaopenghe",target:"wangxingxing",type:"industry-peer",label:"EV entering humanoid robots"},
+  {source:"xiaopenghe",target:"brettadcock",type:"industry-peer",label:"Global humanoid robot race"},
+  {source:"lihongwei",target:"xuchi",type:"industry-peer",label:"AR glasses rivals (RayNeo vs XREAL)"},
+  {source:"lihongwei",target:"zhushanming",type:"industry-peer",label:"AR glasses (RayNeo vs Rokid)"},
+  {source:"lihongwei",target:"inmoceo",type:"industry-peer",label:"AR Four Dragons rivals"},
+  {source:"inmoceo",target:"xuchi",type:"industry-peer",label:"AR Four Dragons competitors"},
+  {source:"zhangbo",target:"inmoceo",type:"industry-peer",label:"AI glasses (SHARGE vs INMO)"},
+  {source:"zhangbo",target:"yangmeng",type:"industry-peer",label:"Charging brands, DJI alumni in team"},
+  {source:"xugao",target:"tianli",type:"industry-peer",label:"AI hardware DTC (recorder vs translator)"},
+  {source:"xugao",target:"yangmeng",type:"industry-peer",label:"Global DTC hardware brands"},
+  {source:"tianli",target:"yangmeng",type:"industry-peer",label:"Shenzhen DTC hardware export"},
+  {source:"liyong",target:"jesselyu",type:"industry-peer",label:"AI consumer hardware founders"},
+  {source:"liyong",target:"carlpei",type:"industry-peer",label:"Consumer design-driven brands"},
+  {source:"wangning",target:"liyong",type:"industry-peer",label:"Consumer culture brands"},
+
+  {source:"sunzhaozhi",target:"liyong",type:"industry-peer",label:"AI toy/companion founders"},
+  {source:"sunzhaozhi",target:"xiaopenghe",type:"former-colleague",label:"Sun was XPeng Robotics product lead"},
+  {source:"hejiabin",target:"sunzhaozhi",type:"industry-peer",label:"AI companion robots (Ropet vs Fuzozo)"},
+  {source:"hejiabin",target:"yangjianbo",type:"industry-peer",label:"AI pet robots (Ropet vs Loona)"},
+  {source:"yangjianbo",target:"liyong",type:"industry-peer",label:"AI toy/companion brands"},
+  {source:"ringconn",target:"lizexiang",type:"mentor",label:"Li Zexiang Qingshuiwan Fund invested"},
+  {source:"wangxiaoyi",target:"lihongwei",type:"industry-peer",label:"AR glasses (Even vs RayNeo)"},
+  {source:"wangxiaoyi",target:"inmoceo",type:"industry-peer",label:"AR glasses (Even vs INMO)"},
+  {source:"yuanqian",target:"liujingkang",type:"industry-peer",label:"AI camera (Photon Leap vs Insta360)"},
+  {source:"yuanqian",target:"yuhao",type:"former-colleague",label:"CTO from Dreame algorithm team"},
+  {source:"luoyuanjue",target:"yangmeng",type:"industry-peer",label:"Cross-border unicorns (Apeman vs Anker)"},
+  {source:"luoyuanjue",target:"liujingkang",type:"industry-peer",label:"Action cameras (Apeman vs Insta360)"},
+  {source:"liangxiaoling",target:"yangmeng",type:"industry-peer",label:"Cross-border DTC to Europe"},
+  {source:"heshiyou",target:"yangmeng",type:"industry-peer",label:"Baseus vs Anker charging rivals"},
+  {source:"heshiyou",target:"zhangqingsen",type:"industry-peer",label:"Baseus vs UGREEN competitors"},
+  {source:"heshiyou",target:"zhangbo",type:"industry-peer",label:"Charging/accessories brands"},
+  {source:"yehongxin",target:"yuhao",type:"industry-peer",label:"High-speed motor Dyson challengers"},
+  {source:"yehongxin",target:"zhongbo",type:"industry-peer",label:"Consumer brand innovators"},
+  {source:"zhongbo",target:"changjing",type:"industry-peer",label:"Smart home IPO brands"},
+  {source:"gaolufeng",target:"changjing",type:"industry-peer",label:"Xiaomi ecosystem IPO peers"},
+  {source:"gaolufeng",target:"yuhao",type:"industry-peer",label:"Xiaomi ecosystem hardware"},
+  {source:"qiandongqi",target:"changjing",type:"industry-peer",label:"Robot vacuum pioneers (Ecovacs vs Roborock)"},
+  {source:"qiandongqi",target:"zhangjunbin",type:"industry-peer",label:"Robot vacuum (Ecovacs vs Narwal)"},
+  {source:"qiandongqi",target:"yuhao",type:"industry-peer",label:"Robot vacuum (Ecovacs vs Dreame)"},
+  {source:"wangning",target:"liyong",type:"industry-peer",label:"Consumer culture brands"},
+];
+
+// ===================================================================
+// COLOR SYSTEM
+// ===================================================================
+const orgColorMap = {
+  "DJI":"var(--org-dji)","HKUST / XbotPark":"var(--org-dji)","Bambu Lab":"var(--org-dji)","EcoFlow":"var(--org-dji)","XAG":"var(--org-dji)","Mammotion":"var(--org-dji)","AgileX Robotics":"var(--org-dji)","Zhipai":"var(--org-dji)",
+  "Dreame":"var(--org-xiaomi)","Roborock":"var(--org-xiaomi)","Narwal":"var(--org-xiaomi)","Aqara":"var(--org-xiaomi)",
+  "Agibot":"var(--org-huawei)","Nothing":"var(--org-consumer)",
+  "Insta360":"var(--org-consumer)","Anker":"var(--org-consumer)","Rabbit":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","PLAUD":"var(--org-consumer)","Haivivi":"var(--org-consumer)","Timekettle":"var(--org-consumer)","Pop Mart":"var(--org-consumer)","Sharge":"var(--org-consumer)","XPeng Robotics":"var(--org-consumer)",
+  "XREAL":"var(--org-arvr)","Rokid":"var(--org-arvr)","RayNeo":"var(--org-arvr)","INMO":"var(--org-arvr)",
+  "Unitree":"var(--org-robotics)","Fourier Intelligence":"var(--org-robotics)","UBTECH":"var(--org-robotics)","Robotera":"var(--org-robotics)","Galbot":"var(--org-robotics)","LimX Dynamics":"var(--org-robotics)","XingHaiTu":"var(--org-robotics)","TaShi ZhiHang":"var(--org-robotics)","YouLu Robot":"var(--org-robotics)","Qianxun Intelligence":"var(--org-robotics)",
+  "Figure AI":"var(--org-overseas)","Robopoet":"var(--org-consumer)","Ropet":"var(--org-consumer)","KEYi Tech":"var(--org-xiaomi)","RingConn":"var(--org-consumer)","Even Realities":"var(--org-arvr)","Photon Leap":"var(--org-consumer)","Apeman":"var(--org-consumer)","TENWAYS":"var(--org-consumer)","Baseus":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","XGIMI":"var(--org-consumer)","Ninebot-Segway":"var(--org-xiaomi)","Ecovacs":"var(--org-xiaomi)",
+};
+const orgRawColors = {
+  "DJI":"#64d2ff","HKUST / XbotPark":"#64d2ff","Bambu Lab":"#64d2ff","EcoFlow":"#64d2ff","XAG":"#64d2ff","Mammotion":"#64d2ff","AgileX Robotics":"#64d2ff","Zhipai":"#64d2ff",
+  "Dreame":"#ff9f0a","Roborock":"#ff9f0a","Narwal":"#ff9f0a","Aqara":"#ff9f0a",
+  "Agibot":"#ff6482","Nothing":"#ffd60a",
+  "Insta360":"#ffd60a","Anker":"#ffd60a","Rabbit":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","PLAUD":"#ffd60a","Haivivi":"#ffd60a","Timekettle":"#ffd60a","Pop Mart":"#ffd60a","Sharge":"#ffd60a","XPeng Robotics":"#ffd60a",
+  "XREAL":"#5e9eff","Rokid":"#5e9eff","RayNeo":"#5e9eff","INMO":"#5e9eff",
+  "Unitree":"#30d158","Fourier Intelligence":"#30d158","UBTECH":"#30d158","Robotera":"#30d158","Galbot":"#30d158","LimX Dynamics":"#30d158","XingHaiTu":"#30d158","TaShi ZhiHang":"#30d158","YouLu Robot":"#30d158","Qianxun Intelligence":"#30d158",
+  "Figure AI":"#bf5af2","Robopoet":"#ffd60a","Ropet":"#ffd60a","KEYi Tech":"#ff9f0a","RingConn":"#ffd60a","Even Realities":"#5e9eff","Photon Leap":"#ffd60a","Apeman":"#ffd60a","TENWAYS":"#ffd60a","Baseus":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","XGIMI":"#ffd60a","Ninebot-Segway":"#ff9f0a","Ecovacs":"#ff9f0a",
+};
+const linkColorMap = {cofounder:"#30d158","former-colleague":"#2997ff",mentor:"#64d2ff","industry-peer":"rgba(255,255,255,0.5)"};
+
+function getColor(org) { return orgRawColors[org] || "#98989d"; }
+
+// ===================================================================
+// D3 GRAPH
+// ===================================================================
+const W = window.innerWidth;
+const H = window.innerHeight - 48;
+
+const svg = d3.select("#main-svg");
+const g = svg.append("g");
+
+// Zoom
+const zoomBehavior = d3.zoom().scaleExtent([0.15, 5])
+  .on("zoom", ({transform}) => g.attr("transform", transform));
+svg.call(zoomBehavior);
+
+// Glow filter
+const defs = svg.append("defs");
+const glowFilter = defs.append("filter").attr("id","glow").attr("x","-50%").attr("y","-50%").attr("width","200%").attr("height","200%");
+glowFilter.append("feGaussianBlur").attr("stdDeviation","5").attr("result","blur");
+const glowMerge = glowFilter.append("feMerge");
+glowMerge.append("feMergeNode").attr("in","blur");
+glowMerge.append("feMergeNode").attr("in","SourceGraphic");
+
+// Force simulation
+const simulation = d3.forceSimulation(scholars)
+  .force("link", d3.forceLink(connections).id(d=>d.id).distance(d=>{
+    if(d.type==="cofounder")return 70;if(d.type==="coauthor")return 95;if(d.type==="advisor")return 110;return 140;
+  }).strength(d=>{
+    if(d.type==="cofounder")return 0.8;if(d.type==="coauthor")return 0.4;if(d.type==="advisor")return 0.5;return 0.12;
+  }))
+  .force("charge", d3.forceManyBody().strength(-380))
+  .force("center", d3.forceCenter(W/2, H/2))
+  .force("collision", d3.forceCollide().radius(36))
+  .force("x", d3.forceX(W/2).strength(0.03))
+  .force("y", d3.forceY(H/2).strength(0.03));
+
+// Links — use <path> for curved lines
+const linkG = g.append("g");
+const linkLines = linkG.selectAll("path").data(connections).join("path")
+  .attr("class", d => `link-line type-${d.type}`)
+  .attr("fill", "none");
+
+// Nodes
+const nodeG = g.append("g");
+const nodeGroups = nodeG.selectAll("g").data(scholars).join("g")
+  .attr("class","node-group")
+  .call(d3.drag().on("start",(e,d)=>{if(!e.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
+    .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
+    .on("end",(e,d)=>{if(!e.active)simulation.alphaTarget(0);d.fx=null;d.fy=null;}));
+
+function nodeSize(d){
+  const c=connections.filter(c=>{
+    const s=typeof c.source==='object'?c.source.id:c.source;
+    const t=typeof c.target==='object'?c.target.id:c.target;
+    return s===d.id||t===d.id;
+  }).length;
+  return Math.min(Math.max(c*1.3+4,5),16);
+}
+
+// Glow
+nodeGroups.append("circle").attr("class","node-glow")
+  .attr("r",d=>nodeSize(d)+8)
+  .attr("fill",d=>getColor(d.org))
+  .attr("opacity",0.15)
+  .attr("filter","url(#glow)");
+
+// Circle
+nodeGroups.append("circle").attr("class","node-circle")
+  .attr("r",d=>nodeSize(d))
+  .attr("fill",d=>getColor(d.org))
+  .attr("stroke","rgba(255,255,255,0.08)")
+  .attr("stroke-width",0.5)
+  .style("cursor","pointer");
+
+// Labels
+nodeGroups.append("text").attr("class","node-label")
+  .attr("dy",d=>nodeSize(d)+13)
+  .attr("font-size","10px")
+  .attr("letter-spacing","-0.08px")
+  .text(d=>d.name);
+
+// Tick — straight lines
+simulation.on("tick",()=>{
+  linkLines.attr("d", d => `M${d.source.x},${d.source.y} L${d.target.x},${d.target.y}`);
+  nodeGroups.attr("transform",d=>`translate(${d.x},${d.y})`);
+});
+
+// ===================================================================
+// INTERACTIONS
+// ===================================================================
+const tooltip = document.getElementById("tooltip");
+
+// Hover highlight
+nodeGroups.on("mouseenter",(event,d)=>{
+  const connected = new Set([d.id]);
+  connections.forEach(c=>{
+    const s=typeof c.source==='object'?c.source.id:c.source;
+    const t=typeof c.target==='object'?c.target.id:c.target;
+    if(s===d.id)connected.add(t);if(t===d.id)connected.add(s);
+  });
+  nodeGroups.classed("dimmed",n=>!connected.has(n.id)).classed("highlighted",n=>connected.has(n.id));
+  linkLines.classed("dimmed",l=>{
+    const s=typeof l.source==='object'?l.source.id:l.source;
+    const t=typeof l.target==='object'?l.target.id:l.target;
+    return s!==d.id&&t!==d.id;
+  }).classed("highlighted",l=>{
+    const s=typeof l.source==='object'?l.source.id:l.source;
+    const t=typeof l.target==='object'?l.target.id:l.target;
+    return s===d.id||t===d.id;
+  });
+  // Tooltip
+  const zhTip = scholarZh[d.id];
+  document.getElementById("tooltip-name").textContent = (currentLang === "zh" && zhTip && zhTip.zhName) ? zhTip.zhName + "  " + d.name : d.name;
+  document.getElementById("tooltip-org").textContent=d.org;
+  tooltip.classList.add("visible");
+}).on("mousemove",(event)=>{
+  tooltip.style.left=(event.clientX+14)+"px";
+  tooltip.style.top=(event.clientY-10)+"px";
+}).on("mouseleave",()=>{
+  nodeGroups.classed("dimmed",false).classed("highlighted",false);
+  linkLines.classed("dimmed",false).classed("highlighted",false);
+  tooltip.classList.remove("visible");
+});
+
+// Click → Detail Panel (openDetail defined later in i18n section)
+nodeGroups.on("click",(event,d)=>{
+  event.stopPropagation();
+  openDetail(d);
+});
+svg.on("click",()=>closeDetail());
+
+function closeDetail(){
+  document.getElementById("detail-panel").classList.remove("open");
+}
+document.getElementById("detail-close").addEventListener("click",e=>{e.stopPropagation();closeDetail();});
+
+// ===================================================================
+// SEARCH
+// ===================================================================
+document.getElementById("search-input").addEventListener("input",e=>{
+  const q=e.target.value.toLowerCase().trim();
+  if(!q){
+    nodeGroups.style("opacity",null);linkLines.style("opacity",null);return;
+  }
+  const match=new Set();
+  scholars.forEach(s=>{
+    if(s.name.toLowerCase().includes(q)||s.org.toLowerCase().includes(q)||s.title.toLowerCase().includes(q))match.add(s.id);
+  });
+  const expanded=new Set(match);
+  connections.forEach(c=>{
+    const s=typeof c.source==='object'?c.source.id:c.source;
+    const t=typeof c.target==='object'?c.target.id:c.target;
+    if(match.has(s))expanded.add(t);if(match.has(t))expanded.add(s);
+  });
+  nodeGroups.style("opacity",d=>match.has(d.id)?1:expanded.has(d.id)?0.4:0.04);
+  linkLines.style("opacity",l=>{
+    const s=typeof l.source==='object'?l.source.id:l.source;
+    const t=typeof l.target==='object'?l.target.id:l.target;
+    return(match.has(s)||match.has(t))?0.5:0.02;
+  });
+});
+
+// ===================================================================
+// FILTER PILLS
+// ===================================================================
+document.querySelectorAll(".filter-pill").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-pill").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const f=btn.dataset.filter;
+    if(f==="all"){nodeGroups.style("opacity",null);linkLines.style("opacity",null);return;}
+    const match=new Set();
+    scholars.forEach(s=>{if(s.field&&s.field.includes(f))match.add(s.id);});
+    nodeGroups.style("opacity",d=>match.has(d.id)?1:0.04);
+    linkLines.style("opacity",l=>{
+      const s=typeof l.source==='object'?l.source.id:l.source;
+      const t=typeof l.target==='object'?l.target.id:l.target;
+      return(match.has(s)&&match.has(t))?0.5:0.02;
+    });
+  });
+});
+
+// ===================================================================
+// KEYBOARD
+// ===================================================================
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeDetail();
+  if(e.key==="/"&&document.activeElement!==document.getElementById("search-input")){
+    e.preventDefault();document.getElementById("search-input").focus();
+  }
+});
+
+// ===================================================================
+// I18N — LANGUAGE SYSTEM
+// ===================================================================
+let currentLang = "zh";
+
+const i18n = {
+  en: {
+    navTitle: "Hardware Startup Graph", searchPlaceholder: "Search founders...",
+    filterAll: "All", filterDL: "Drones", filterNLP: "Robotics", filterRL: "Consumer", filterVision: "AR/VR", filterSafety: "Smart Home",
+    stats: (s, c) => `${s} founders · ${c} connections`,
+    legendOrgs: "Background", legendConns: "Connections",
+    legendDeepMind: "DJI Alumni", legendOpenAI: "Xiaomi Ecosystem", legendAnthropic: "Huawei/OPPO", legendMeta: "Robotics", legendStanford: "Consumer Electronics", legendUniversity: "AR/VR", legendStartup: "Overseas",
+    legendCoauthor: "Former Colleagues", legendAdvisor: "Mentor/Investor", legendCofounder: "Co-founded", legendColleague: "Industry Peers",
+    sectionAbout: "About", sectionPapers: "Key Products", sectionConnections: "Connections",
+    hintZoom: "Zoom", hintPan: "Pan", hintDetails: "Details", hintClose: "Close",
+    typeLabels: {cofounder:"Co-founded","former-colleague":"Ex-Colleague",mentor:"Mentor","industry-peer":"Peer"},
+  },
+  zh: {
+    navTitle: "智能硬件创业图谱", searchPlaceholder: "搜索创始人...",
+    filterAll: "全部", filterDL: "无人机", filterNLP: "机器人", filterRL: "消费电子", filterVision: "AR/VR", filterSafety: "智能家居",
+    stats: (s, c) => `${s} 位创始人 · ${c} 条关系`,
+    legendOrgs: "背景来源", legendConns: "关系类型",
+    legendDeepMind: "大疆系", legendOpenAI: "小米生态", legendAnthropic: "华为/OPPO系", legendMeta: "机器人", legendStanford: "消费电子", legendUniversity: "AR/VR", legendStartup: "海外",
+    legendCoauthor: "前同事", legendAdvisor: "导师/投资人", legendCofounder: "联合创业", legendColleague: "行业同行",
+    sectionAbout: "简介", sectionPapers: "代表产品", sectionConnections: "关系网络",
+    hintZoom: "缩放", hintPan: "平移", hintDetails: "详情", hintClose: "关闭",
+    typeLabels: {cofounder:"联合创业","former-colleague":"前同事",mentor:"导师","industry-peer":"同行"},
+  }
+};
+
+// Chinese scholar data
+const scholarZh = {
+  wangtao:{zhName:"汪滔",title:"DJI 创始人兼 CEO",bio:"1980年生于杭州。港科大就读，教授李泽湘发现其才华。宿舍打造原型机，2006年移师深圳。2013年发布 Phantom，引爆全球无人机革命。DJI 占全球 70%+ 商用无人机市场。身家约 50 亿美元。"},
+  lizexiang:{zhName:"李泽湘",title:"深圳硬件创业教父 · 港科大教授",bio:"1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。"},
+  taoye:{zhName:"陶冶",title:"拓竹科技创始人 · 前大疆高管",bio:"中科大天文物理学士（2006），德国康斯坦茨大学博士（2012）。大疆：工程师→动力系统经理→Mavic Pro 产品经理→消费无人机负责人（贡献 60%+ 营收）。2020年11月带4人离职创办拓竹。2022年发布 X1，被誉为3D打印界iPhone。2024年营收 15 亿。MIT 50 最聪明公司 2025。获大疆和腾讯投资。"},
+  wanglei:{zhName:"王雷",title:"正浩 EcoFlow 创始人 · 前大疆电池负责人",bio:"港理工本科，港大博士（电池技术）。2014年创建大疆电池研发部。29岁（2017）离职创办正浩。全球第一便携储能品牌，500万+用户，2024营收近80亿。考虑赴美 IPO 融资3亿美元+。"},
+  pengbin:{zhName:"彭斌",title:"极飞科技创始人 · 农业无人机先驱",bio:"1982年生于福建三明。西电计算机学士（2004）。微软2年。2007年创业。2013年新疆之行转型农业无人机。157项专利。2024营收10.66亿（+73%）。73亿估值。计划港股IPO。"},
+  wangtaom:{zhName:"汪韬",title:"Mammotion 创始人 · 大疆系",bio:"前大疆工程师。将无人机导航技术（RTK、视觉SLAM）应用于割草机器人，瞄准欧美庭院市场。LUBA 系列众筹+VC大获成功。"},
+  weijidong:{zhName:"魏基栋",title:"松灵机器人创始人 · 前大疆",bio:"前大疆工程师。创办松灵机器人（AgileX），打造 SCOUT/RANGER 移动机器人底盘平台。全球领先移动机器人平台供应商。"},
+  zhipai:{zhName:"陈逸奇",title:"智能派创始人 · 获大疆投资",bio:"90后潮汕创业者。3D打印。2024营收16亿。2025获大疆战略投资（引发拓竹创始人公开回应）。计划3年内营收超50亿。"},
+  yuhao:{zhName:"俞浩",title:"追觅科技创始人 · 清华航空",bio:"生于南通。物理竞赛→清华航空本硕。2007中国最早四旋翼。天空工场。2017攻克高速电机（15万转）。雷军投资加入小米生态。2024营收约150亿。85亿身家。计划2027推出对标布加迪超豪华电车。"},
+  changjing:{zhName:"昌敬",title:"石头科技创始人 · 前微软/腾讯",bio:"1982年生。华南理工CS本硕。微软创新杯。微软PM→腾讯PM→首次创业被百度收购。2014创办石头。40天首个Demo。小米生态。2020科创板上市。也创办极石汽车。"},
+  zhangjunbin:{zhName:"张峻彬",title:"云鲸智能创始人 · 李泽湘门生",bio:"1990年生于潮汕。2006机器人奥赛金牌。华科+上交。李泽湘门生，松山湖2016。J1自清洁拖布2019双11爆款。挖走大疆教育机器人部门。百亿估值。1亿美元新轮全球扩张。"},
+  pengzhihui:{zhName:"彭志辉(稚晖君)",title:"智元机器人创始人 · 华为天才少年",bio:"1993年生。电子科大本硕（2018）。OPPO AI实验室。华为天才少年200万年薪（2020）。B站百大稚晖君。2022.12放弃200万离开华为。2023.2创办智元。6个月造远征A1（<20万）。灵犀X2（2025）。150亿估值。比亚迪/上汽投资。"},
+  carlpei:{zhName:"裴宇",title:"Nothing 创始人 · 一加联合创始人",bio:"1989生于北京，瑞典长大。斯德哥尔摩经济学院辍学。诺基亚实习→魅族→OPPO 2012。与刘作虎联合创办一加（2013.12）。2020.10离开。2021.1在伦敦创办Nothing。Tony Fadell/GV/EQT。2.5亿美元+。透明Glyph设计。"},
+  liujingkang:{zhName:"刘靖康",title:"影石Insta360创始人 · 90后科创板第一人",bio:"1991.7生于广东中山。南大软件工程（2014）。拒绝腾讯。IDG天使100万美元。2015深圳创办影石。全景相机全球第一5年50%+。2024营收55.74亿。2025.6科创板IPO+285%创纪录。90后科创板敲钟第一人。"},
+  yangmeng:{zhName:"阳萌",title:"安克创新创始人",bio:"1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。"},
+  yehongxin:{zhName:"叶洪新",title:"徕芬创始人 · 戴森挑战者",bio:"1986生于浙江丽水。穷人家庭，跟父亲捡垃圾。8岁用废电池做灯泡。淘宝赚第一个百万。造过载人飞行器。卖过电动滑板公司。2017攻克高速电机。2019东莞创办徕芬。戴森1/3价格。Swift 4 CES 2026 11.5万转。财富40 Under 40中国2024。2025深圳首家旗舰店。"},
+  zhangqingsen:{zhName:"张清森",title:"绿联科技创始人 · 从数据线到IPO",bio:"1983生于福建莆田。国际金融专业。2007来深圳做外贸。2009华强北起步25万。2011绿联一根数据线。2年天猫数码配件TOP。100+国家。2023海外营收首超国内50.4%。2024.7创业板IPO+114%。2025胡润130亿身家。"},
+  jesselyu:{zhName:"吕骋",title:"Rabbit创始人 · 前百度硬件",bio:"中国出生美国发展。渡鸦科技→百度收购→硬件负责人→离开。Rabbit R1大动作模型AI设备。CES 2024轰动。10万+台。Khosla 3000万美元。"},
+  xugao:{zhName:"许高",title:"PLAUD.AI创始人 · 全球第一AI录音笔",bio:"1991生于湖北襄阳。武大毕业。3次创业失败。第4次与联创刘烨合伙。PLAUD Note AI录音笔112种语言。30万+台。2025预计2.5亿美元营收。连续2年10倍增长。"},
+  liyong:{zhName:"李勇",title:"跃然创新创始人 · AI玩具先驱",bio:"锤子首任营销总监→360 IoT副总裁→爱奇艺智能CMO→天猫精灵联创。2021离开阿里创办跃然。AI玩具毛利90%+。首年20万+台。2024 A轮2亿（中金+红杉）。2025再获2亿。单品数万元仍热卖。"},
+  tianli:{zhName:"田力",title:"时空壶创始人 · AI翻译耳机先驱",bio:"前华为。2016深圳大学城创办时空壶。父母欧洲旅游生病启发巴别鱼耳机。2018天使轮。2019日本众筹7000万日元。W4 Pro 40语言96%准确率。Babel OS CES。2024营收2亿。连续6年行业第一。百万用户170国。"},
+  wangning:{zhName:"王宁",title:"泡泡玛特创始人 · Labubu之父",bio:"1987生于河南新乡。郑州西亚斯学院广告（2009）。北大光华MBA。2010创办泡泡玛特。2020.12港交所IPO+100%。Labubu 2024梅西感恩节花车。2024营收130亿。2025海外将超国内。河南首富1467亿。"},
+  youyanji:{zhName:"游延筠",title:"绿米Aqara创始人 · 智能家居先驱",bio:"美籍华人，IEEE会员。犹他州立大学工程硕士。曾在美国Enocean/Trulite/Rio Tinto工作。创办绿米联创（Aqara）。小米智能家居生态。C轮10亿元。5轮累计10亿+。全球100+国家。"},
+  xuchi:{zhName:"徐驰",title:"XREAL创始人 · 前Magic Leap",bio:"UIUC校友。Magic Leap经验。XREAL消费级AR眼镜。融资超1亿美元（含阿里）。中国领先AR眼镜公司。"},
+  zhushanming:{zhName:"祝铭明",title:"Rokid创始人 · 前阿里iDST",bio:"M哥。前阿里iDST。Rokid AR眼镜（Max/AR Studio）。多轮融资，阿里支持。"},
+  lihongwei:{zhName:"李宏伟",title:"雷鸟创新创始人 · AR眼镜中国第一",bio:"北大计算机硕士/北航BBA。思科→爱奇艺智能电视高级总监。雷鸟/TCL 2018。雷鸟创新2021。X2 MicroLED 2023。X3 Pro CES 2026。2026开年超10亿融资。国内35%份额连续3年第一。全球XR第三。中国移动+茅台投资。预言2027 AR iPhone时刻。"},
+  inmoceo:{zhName:"影目创始人",title:"影目科技创始人 · AR眼镜IDC第一",bio:"2020创办影目。2025一年三轮5亿。20亿估值。IDC中国AR出货47.6%销售额39.7%双第一。中国移动合作。INMO GO2登央视博鳌。AR四小龙。"},
+  zhangbo:{zhName:"张波",title:"闪极科技创始人 · AI眼镜价格屠夫",bio:"2020深圳创办闪极。团队来自手机厂和无人机公司（含大疆系）。充电宝爱马仕1299元。2024充电2亿60%海外。CES 2025 AI眼镜未上台就售罄999元击穿底线。2025.12近亿A+轮。计划年出货10万+AI眼镜。"},
+  wangxingxing:{zhName:"王兴兴",title:"宇树科技创始人 · 四足机器人全球第一",bio:"1990生于宁波。中学造涡喷发动机。浙江理工机电。上海大学硕士做四足2013。大疆2个月辞职2016。杭州50平办公室起步。全球四足70%。G1人形9.9万2024。出货5500台2025。筹备2026年中IPO。120亿估值。"},
+  brettadcock:{title:"Figure AI创始人 · 390亿美元估值",bio:"佛罗里达，UIUC。Vettery→Archer Aviation→Figure AI 2022。Figure 01/02/03。390亿估值。微软/OpenAI/英伟达/贝索斯。白宫2026。还创办Hark。"},
+  gujie:{zhName:"顾捷",title:"傅利叶智能创始人",bio:"上海。康复机器人外骨骼。2023转向通用人形GR-1，利用执行器经验。"},
+  zhoujianping:{zhName:"周剑",title:"优必选创始人 · 人形机器人第一股",bio:"深圳创办优必选。Walker人形系列。2023.12港交所IPO获人形机器人第一股。转向工业服务场景。"},
+  chenjianyu:{zhName:"陈建宇",title:"星动纪元创始人 · 28岁清华博导",bio:"1992生。19岁清华精仪→Berkeley博士（Tomizuka门下）→Waymo/Nutonomy实习→姚期智招入清华叉院28岁博导。2023.8创办星动（清华持股）。两轮10亿。百亿估值。2025交付200台50%+海外。与斯坦福Chelsea Finn合作Ctrl-World。"},
+  wanghe:{zhName:"王鹤",title:"银河通用创始人 · 北大博导",bio:"1992生。清华电子→斯坦福博士2021→北大助理教授。2023.5创办银河通用。Galbot G1双臂轮式2024。累计融资超24亿。估值约200亿（~$30亿）。全球具身AI最大融资之一。"},
+  zhangwei:{zhName:"张巍",title:"逐际动力创始人 · 南科大教授",bio:"中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。"},
+  gaojiyuang:{zhName:"高继扬",title:"星海图创始人 · 前Waymo/Momenta",bio:"物理竞赛→清华电子→USC CV博士3年→Waymo 2018→Momenta→2023.9创办星海图。G0（2025.8）。G0 Plus VLA（2026.1）首个即插即用VLA。千台级车企订单。B轮10亿（2026.2）。累计~30亿。百亿估值。"},
+  chenyilun:{zhName:"陈亦伦",title:"它石智航创始人 · 前华为自驾CTO",bio:"博士。清华智能产业院机器人首席科学家。华为自动驾驶CTO。大疆机器视觉总工。董事长李震宇：百度智驾总裁，造Apollo+萝卜快跑。2024创办。天使轮1.22亿美元（2025.3）创中国具身智能天使轮纪录。"},
+  chenjunbo:{zhName:"陈俊波",title:"有鹿机器人创始人 · 前达摩院",bio:"阿里达摩院自驾关键人物，主导小蛮驴。2023离开创办有鹿（杭州）。户外清洁机器人。阿里+百度超亿元投资。"},
+  hanfengtao:{zhName:"韩峰涛",title:"千寻智能创始人 · 2026开年20亿",bio:"前珞石机器人联创+CTO，10年2万+台工业机器人。联创高阳清华叉院教授（Berkeley Trevor Darrell门下博士）。2026.2完成20亿融资引爆具身智能。百亿+估值。"},
+
+  sunzhaozhi:{zhName:"孙兆治",title:"珞博智能创始人 · 芙崽Fuzozo",bio:"原小鹏机器人产品设计负责人。2024年初创办珞博智能。芙崽Fuzozo——AI养成宠物，性格演化+长期记忆。半年12万台（行业第一）。华为联名。天使轮上影+金沙江（2025.6）。天使+红杉领投（2025.9）。CES 2026涂鸦合作。"},
+  hejiabin:{zhName:"何嘉斌",title:"萌友/Ropet联合创始人 · AI宠物机器人",bio:"10年工业设计。前Luka儿童机器人产品负责人。2022.3与周玉黍博士联创萌友。ROPET 37度体温毛绒AI宠物。Kickstarter 4小时破$10万。A1轮北京AI产业基金领投。"},
+  yangjianbo:{zhName:"杨健勃",title:"可以科技/Loona创始人 · 北航",bio:"北航。大学生创新创业大赛金奖。2014创办可以科技。Loona皮克斯风AI宠物+ChatGPT。Kickstarter半月$200万+。5轮：小米/顺为/蓝驰/源码。"},
+  ringconn:{zhName:"RingConn创始人",title:"RingConn · 中国智能戒指第一",bio:"上交大教授王国兴+AI专家吴昊博士（2021.7）。Gen 2 Kickstarter $440万。亚马逊全球智能戒指第二。80+国15万+用户。李泽湘清水湾基金投资。对标Oura。"},
+  wangxiaoyi:{zhName:"王骁逸",title:"Even Realities创始人 · 前坚果CPO",bio:"前坚果投影CPO。2023深圳创办。G1双目MicroLED AR。G2 36克钛镁+智能戒指$659。Pre-A博源+华创。红杉中国（2024.9）。"},
+  yuanqian:{zhName:"袁谦",title:"光子跃迁总裁 · AI相机新势力",bio:"前宝洁/vivo产品总监。CTO杨盛清华+前追觅算法。2025.3深圳创办。3个月数亿天使轮。首款AI运动相机3-5项行业首创。100+人。对标影石+大疆Action。"},
+  luoyuanjue:{zhName:"罗元觉",title:"猿人科技创始人 · 出海独角兽",bio:"此前做过投影和扫地机。2016深圳与侯俊联创猿人。第3年月销破亿。沃尔玛2019。年海外销售超20亿。B+轮美的资本，2021独角兽。500人深圳+美德日。"},
+  liangxiaoling:{zhName:"梁霄凌",title:"TENWAYS创始人 · E-Bike第一股",bio:"85后。前TRINX市场总监。2021.5深圳创办，荷兰总部。欧洲97.7%营收。高瓴21%+腾讯A轮+阿里。2026.2递表港交所。估值~17亿。"},
+  heshiyou:{zhName:"何世友",title:"倍思创始人 · 安克最大对手",bio:"广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。"},
+  yehongxin:{zhName:"叶洪新",title:"徕芬创始人 · 戴森杀手",bio:"1986浙江丽水。穷人家庭跟父亲捡垃圾。8岁废电池做灯泡。淘宝赚百万。造过载人飞行器。2017高速电机。2019东莞徕芬。戴森1/3价。Swift 4 CES 2026 11.5万转。财富40U40。"},
+  zhangqingsen:{zhName:"张清森",title:"绿联创始人 · 数据线到IPO",bio:"1983莆田。2007深圳外贸。华强北25万起步。2011绿联一根数据线。100+国。2023海外超国内50.4%。2024.7创业板IPO+114%。市值~266亿。身家130亿。"},
+  zhongbo:{zhName:"钟波",title:"极米创始人 · 投影之王",bio:"1980四川。电子科大。海信→Mstar西南总监。投腾讯赚过亿。2012成都创办极米。无屏电视开创者。2021科创板IPO。汪涵早期投资。海外1.32亿。"},
+  gaolufeng:{zhName:"高禄峰",title:"九号联合创始人 · 收购Segway",bio:"与王野联创九号。北航。2015收购Segway。全球电动滑板车/卡丁车领导者。小米生态。2020科创板。市值~250亿。"},
+  qiandongqi:{zhName:"钱东奇",title:"科沃斯创始人 · 扫地机器人第一股",bio:"1998苏州创办，最初代工。自创DEEBOT。2018上交所IPO——中国扫地机第一股。全球前三。GOAT割草/WINBOT擦窗。分拆一喜。市值~150亿。"},
+  xiaopenghe:{zhName:"何小鹏",title:"小鹏汽车CEO · Iron人形机器人",bio:"小鹏汽车创始人CEO。2024发布Iron人形。承诺2026底量产。2026.3发布全球首个量产级VLA物理世界大模型。代表车企进军人形机器人趋势。"},
+};
+
+// Chinese connection labels
+const connLabelZh = {
+  "HKUST thesis advisor, mentored DJI founding":"港科大导师，孵化大疆",
+  "XbotPark incubation, angel investor":"松山湖孵化，天使投资",
+  "XbotPark / Shenzhen hardware ecosystem":"松山湖/深圳硬件生态",
+  "Tao Ye was DJI consumer drone head":"陶冶曾任大疆消费无人机负责人",
+  "Wang Lei founded DJI battery R&D dept":"王雷创建大疆电池研发部",
+  "Wang Xingxing briefly at DJI (2 months)":"王兴兴短暂入职大疆（2个月）",
+  "DJI alumni, Mammotion lawn mowers":"大疆系，Mammotion割草机",
+  "DJI vs XAG drone industry rivals":"大疆vs极飞无人机竞争",
+  "DJI executives turned category creators":"大疆高管变身品类创造者",
+  "3D printing rivals (Bambu Lab vs Zhipai)":"3D打印竞争（拓竹vs智能派）",
+  "DJI strategic investment in Zhipai":"大疆战略投资智能派",
+  "DJI alumni, AgileX robot platforms":"大疆系，松灵机器人平台",
+  "Xiaomi ecosystem, robot vacuum rivals":"小米生态，扫地机竞品",
+  "Smart home / robot vacuum competitors":"智能家居/扫地机竞品",
+  "Roborock vs Narwal rivals":"石头vs云鲸竞品",
+  "Xiaomi smart home ecosystem":"小米智能家居生态",
+  "Xiaomi ecosystem peers":"小米生态同行",
+  "Both OPPO alumni era, hardware founders":"均有OPPO经历，硬件创始人",
+  "Agibot vs Unitree humanoid rivals":"智元vs宇树人形机器人竞争",
+  "Global humanoid robot competitors":"全球人形机器人竞争",
+  "Chinese humanoid robot companies":"中国人形机器人公司",
+  "Unitree vs Figure AI humanoid":"宇树vs Figure AI人形",
+  "Shanghai robotics companies":"上海机器人公司",
+  "Consumer electronics startup founders":"消费电子创始人",
+  "Cross-border hardware brands":"跨境硬件品牌",
+  "Cross-border DTC hardware brands":"跨境DTC硬件品牌",
+  "Anker vs UGREEN charging rivals":"安克vs绿联充电竞争",
+  "Chinese AR glasses competitors":"中国AR眼镜竞品",
+  "AI hardware / wearable founders":"AI硬件/可穿戴创始人",
+  "Both pivoting to embodied AI":"均转向具身智能",
+  "High-speed motor, Dyson challengers":"高速电机，戴森挑战者",
+  "Consumer brand disruption":"消费品牌颠覆",
+  "Both 1992, professor robot founders":"同为92年，教授创业造机器人",
+  "Chinese humanoid robot founders":"中国人形机器人创始人",
+  "Humanoid robot rivals":"人形机器人竞争",
+  "Embodied AI unicorns":"具身智能独角兽",
+  "Embodied AI competitors":"具身智能竞品",
+  "Shenzhen robot companies":"深圳机器人公司",
+  "Shenzhen embodied AI founders":"深圳具身智能创始人",
+  "Auto driving to embodied AI founders":"自动驾驶转具身智能",
+  "Autonomous driving alumni to robots":"自动驾驶系→机器人",
+  "Chen Yilun was DJI Chief Vision Eng":"陈亦伦曾任大疆视觉总工",
+  "Smart home / service robot founders":"智能家居/服务机器人创始人",
+  "Humanoid robot industrial deployment":"人形机器人工业部署",
+  "Industrial robot founders":"工业机器人创始人",
+  "EV to humanoid (XPeng vs Agibot)":"车企→人形（小鹏vs智元）",
+  "EV entering humanoid robots":"车企进军人形机器人",
+  "Global humanoid robot race":"全球人形机器人竞赛",
+  "AR glasses rivals (RayNeo vs XREAL)":"AR眼镜竞品（雷鸟vsXREAL）",
+  "AR glasses (RayNeo vs Rokid)":"AR眼镜（雷鸟vsRokid）",
+  "AR Four Dragons rivals":"AR四小龙竞争",
+  "AR Four Dragons competitors":"AR四小龙竞品",
+  "AI glasses (SHARGE vs INMO)":"AI眼镜（闪极vs影目）",
+  "Charging brands, DJI alumni in team":"充电品牌，团队含大疆系",
+  "AI hardware DTC (recorder vs translator)":"AI硬件DTC（录音vs翻译）",
+  "Global DTC hardware brands":"全球DTC硬件品牌",
+  "Shenzhen DTC hardware export":"深圳DTC硬件出海",
+  "AI consumer hardware founders":"AI消费硬件创始人",
+  "Consumer design-driven brands":"设计驱动消费品牌",
+
+  "AI toy/companion founders":"AI玩具/陪伴创始人",
+  "Sun was XPeng Robotics product lead":"孙兆治曾任小鹏机器人产品负责人",
+  "AI companion robots (Ropet vs Fuzozo)":"AI陪伴机器人（Ropet vs 芙崽）",
+  "AI pet robots (Ropet vs Loona)":"AI宠物（Ropet vs Loona）",
+  "AI toy/companion brands":"AI玩具/陪伴品牌",
+  "Li Zexiang Qingshuiwan Fund invested":"李泽湘清水湾基金投资",
+  "AR glasses (Even vs RayNeo)":"AR眼镜（Even vs 雷鸟）",
+  "AR glasses (Even vs INMO)":"AR眼镜（Even vs 影目）",
+  "AI camera (Photon Leap vs Insta360)":"AI相机（光子跃迁 vs 影石）",
+  "CTO from Dreame algorithm team":"CTO来自追觅算法团队",
+  "Cross-border unicorns (Apeman vs Anker)":"跨境独角兽（猿人 vs 安克）",
+  "Action cameras (Apeman vs Insta360)":"运动相机（猿人 vs 影石）",
+  "Cross-border DTC to Europe":"跨境DTC出海欧洲",
+  "Baseus vs Anker charging rivals":"倍思vs安克充电竞争",
+  "Baseus vs UGREEN competitors":"倍思vs绿联竞品",
+  "Charging/accessories brands":"充电/配件品牌",
+  "High-speed motor Dyson challengers":"高速电机戴森挑战者",
+  "Consumer brand innovators":"消费品牌创新者",
+  "Smart home IPO brands":"智能家居上市品牌",
+  "Xiaomi ecosystem IPO peers":"小米生态上市同行",
+  "Xiaomi ecosystem hardware":"小米生态硬件",
+  "Robot vacuum pioneers (Ecovacs vs Roborock)":"扫地机先驱（科沃斯vs石头）",
+  "Robot vacuum (Ecovacs vs Narwal)":"扫地机（科沃斯vs云鲸）",
+  "Robot vacuum (Ecovacs vs Dreame)":"扫地机（科沃斯vs追觅）",
+  "Consumer culture brands":"消费文化品牌",
+};
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  const t = i18n[lang];
+
+  // Nav
+  document.querySelector(".nav-title").textContent = t.navTitle;
+  document.getElementById("search-input").placeholder = t.searchPlaceholder;
+  document.getElementById("nav-stats").textContent = t.stats(scholars.length, connections.length);
+
+  // Filter pills
+  const pillMap = { all: t.filterAll, "drones": t.filterDL, robotics: t.filterNLP, consumer: t.filterRL, "ar-vr": t.filterVision, "smart-home": t.filterSafety };
+  document.querySelectorAll(".filter-pill").forEach(btn => {
+    btn.textContent = pillMap[btn.dataset.filter] || btn.textContent;
+  });
+
+  // Legend
+  const legendLabels = document.querySelectorAll("#legend .legend-label");
+  const legendTexts = [t.legendDeepMind, t.legendOpenAI, t.legendAnthropic, t.legendMeta, t.legendStanford, t.legendUniversity, t.legendStartup, t.legendCoauthor, t.legendAdvisor, t.legendCofounder, t.legendColleague];
+  legendLabels.forEach((el, i) => { if (legendTexts[i]) el.textContent = legendTexts[i]; });
+
+  const legendHeadings = document.querySelectorAll("#legend .legend-heading");
+  if (legendHeadings[0]) legendHeadings[0].textContent = t.legendOrgs;
+  if (legendHeadings[1]) legendHeadings[1].textContent = t.legendConns;
+
+  // Detail panel section titles
+  const sectionTitles = document.querySelectorAll(".detail-section-title");
+  if (sectionTitles[0]) sectionTitles[0].textContent = t.sectionAbout;
+  if (sectionTitles[1]) sectionTitles[1].textContent = t.sectionPapers;
+  if (sectionTitles[2]) sectionTitles[2].textContent = t.sectionConnections;
+
+  // Keyboard hints
+  const hints = document.querySelectorAll(".hint-item");
+  const hintTexts = [t.hintZoom, t.hintPan, t.hintDetails, t.hintClose];
+  hints.forEach((el, i) => {
+    const key = el.querySelector(".hint-key");
+    if (key && hintTexts[i]) {
+      el.innerHTML = "";
+      el.appendChild(key);
+      el.append(" " + hintTexts[i]);
+    }
+  });
+
+  // Update graph node labels with Chinese names
+  nodeGroups.selectAll(".node-label").text(d => {
+    const zhData = scholarZh[d.id];
+    if (lang === "zh" && zhData && zhData.zhName) return zhData.zhName;
+    return d.name;
+  });
+
+  // If detail panel is open, refresh it
+  if (document.getElementById("detail-panel").classList.contains("open") && window._currentDetailScholar) {
+    openDetail(window._currentDetailScholar);
+  }
+
+  // Toggle buttons
+  document.querySelectorAll(".lang-btn").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+}
+
+// Wikipedia article title mapping for avatar fetching
+const wikiTitles = {
+  wangtao:"Frank_Wang",lizexiang:"Li_Zexiang",carlpei:"Carl_Pei",
+  yangmeng:"Steven_Yang_(entrepreneur)",wangxingxing:"Wang_Xingxing",
+  brettadcock:"Brett_Adcock",pengzhihui:"Peng_Zhihui",wangning:"Wang_Ning_(businessman)",
+};
+
+// Photo cache
+const photoCache = {};
+
+async function fetchPhoto(scholarId) {
+  if (photoCache[scholarId]) return photoCache[scholarId];
+  const wiki = wikiTitles[scholarId];
+  if (!wiki) return null;
+  try {
+    const resp = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wiki)}`);
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const url = data.thumbnail?.source || null;
+    if (url) photoCache[scholarId] = url;
+    return url;
+  } catch(e) { return null; }
+}
+
+// openDetail with i18n support
+function openDetail(d) {
+  const panel = document.getElementById("detail-panel");
+  panel.classList.add("open");
+  window._currentDetailScholar = d;
+
+  // Avatar — always reset to placeholder first
+  const initials = d.name.split(" ").map(w => w[0]).join("").slice(0, 2);
+  const oldAvatar = document.getElementById("detail-avatar");
+  const placeholder = document.createElement("div");
+  placeholder.className = "detail-avatar-placeholder";
+  placeholder.id = "detail-avatar";
+  placeholder.innerHTML = `<span>${initials}</span>`;
+  oldAvatar.replaceWith(placeholder);
+
+  // Load photo
+  const currentId = d.id;
+  if (photoCache[d.id]) {
+    const img = document.createElement("img");
+    img.className = "detail-avatar";
+    img.id = "detail-avatar";
+    img.alt = d.name;
+    img.src = photoCache[d.id];
+    placeholder.replaceWith(img);
+  } else {
+    fetchPhoto(d.id).then(url => {
+      // Only update if panel still shows same person
+      const nameEl = document.getElementById("detail-name");
+      if (!nameEl || nameEl.textContent !== d.name) return;
+      const el = document.getElementById("detail-avatar");
+      if (el && url) {
+        const img = document.createElement("img");
+        img.className = "detail-avatar";
+        img.id = "detail-avatar";
+        img.alt = d.name;
+        img.src = url;
+        el.replaceWith(img);
+      }
+    });
+  }
+
+  const t = i18n[currentLang];
+  const zh = scholarZh[d.id];
+  const displayName = (currentLang === "zh" && zh && zh.zhName) ? zh.zhName + "  " + d.name : d.name;
+
+  document.getElementById("detail-name").textContent = displayName;
+
+  if (currentLang === "zh" && zh) {
+    document.getElementById("detail-title").textContent = zh.title;
+    document.getElementById("detail-bio").textContent = zh.bio;
+  } else {
+    document.getElementById("detail-title").textContent = d.title;
+    document.getElementById("detail-bio").textContent = d.bio;
+  }
+
+  const orgEl = document.getElementById("detail-org");
+  const c = getColor(d.org);
+  orgEl.textContent = d.org;
+  orgEl.style.background = c + "18";
+  orgEl.style.color = c;
+  orgEl.style.border = `0.5px solid ${c}32`;
+
+  // Papers
+  const papersEl = document.getElementById("detail-papers");
+  const papersSection = document.getElementById("detail-papers-section");
+  if (d.papers && d.papers.length) {
+    papersSection.style.display = "block";
+    papersEl.innerHTML = d.papers.map(p => `<div class="paper-entry"><span class="paper-year">${p.y}</span><span class="paper-title">${p.t}</span></div>`).join("");
+  } else {
+    papersSection.style.display = "none";
+  }
+
+  // Section titles
+  const sectionTitles = document.querySelectorAll(".detail-section-title");
+  if (sectionTitles[0]) sectionTitles[0].textContent = t.sectionAbout;
+  if (sectionTitles[1]) sectionTitles[1].textContent = t.sectionPapers;
+  if (sectionTitles[2]) sectionTitles[2].textContent = t.sectionConnections;
+
+  // Connections
+  const connsEl = document.getElementById("detail-connections");
+  const related = connections.filter(c => {
+    const s = typeof c.source === 'object' ? c.source.id : c.source;
+    const tt = typeof c.target === 'object' ? c.target.id : c.target;
+    return s === d.id || tt === d.id;
+  });
+  connsEl.innerHTML = related.map(c => {
+    const s = typeof c.source === 'object' ? c.source.id : c.source;
+    const tt = typeof c.target === 'object' ? c.target.id : c.target;
+    const oid = s === d.id ? tt : s;
+    const o = scholars.find(sc => sc.id === oid);
+    if (!o) return '';
+    const label = currentLang === "zh" ? (connLabelZh[c.label] || c.label) : c.label;
+    const typeBadge = t.typeLabels[c.type];
+    return `<div class="conn-entry" data-id="${o.id}">
+      <div class="conn-dot" style="background:${getColor(o.org)}"></div>
+      <div class="conn-info"><div class="conn-name">${(currentLang === "zh" && scholarZh[o.id] && scholarZh[o.id].zhName) ? scholarZh[o.id].zhName + "  " + o.name : o.name}</div><div class="conn-relation">${label}</div></div>
+      <span class="conn-type-badge">${typeBadge}</span>
+    </div>`;
+  }).join("");
+
+  connsEl.querySelectorAll(".conn-entry").forEach(el => {
+    el.addEventListener("click", () => {
+      const target = scholars.find(s => s.id === el.dataset.id);
+      if (target) {
+        openDetail(target);
+        const tr = d3.zoomTransform(svg.node());
+        svg.transition().duration(600).ease(d3.easeCubicInOut).call(
+          zoomBehavior.transform,
+          d3.zoomIdentity.translate(W / 2 - target.x * tr.k, H / 2 - target.y * tr.k).scale(tr.k)
+        );
+      }
+    });
+  });
+};
+
+// Language toggle event
+document.querySelectorAll(".lang-btn").forEach(btn => {
+  btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+});
+
+// ===================================================================
+// STATS
+// ===================================================================
+document.getElementById("nav-stats").textContent = i18n[currentLang].stats(scholars.length, connections.length);
+
+// Initial position
+setTimeout(()=>{
+  svg.transition().duration(1200).ease(d3.easeCubicInOut).call(
+    zoomBehavior.transform,
+    d3.zoomIdentity.translate(W*0.08,H*0.02).scale(0.88)
+  );
+},1800);
+
+// Resize
+window.addEventListener("resize",()=>{
+  const w=window.innerWidth,h=window.innerHeight-48;
+  simulation.force("center",d3.forceCenter(w/2,h/2));
+  simulation.force("x",d3.forceX(w/2).strength(0.03));
+  simulation.force("y",d3.forceY(h/2).strength(0.03));
+  simulation.alpha(0.3).restart();
+});
+
+applyLanguage("zh");
+</script>
+</body>
+</html>
