@@ -853,6 +853,12 @@ const scholars = [
   {id:"zhongbo",name:"Zhong Bo",org:"XGIMI",title:"Founder of XGIMI · Projector King",field:["consumer"],bio:"UESTC. Tencent stock 2M to 100M+. XGIMI 2012 Chengdu. China #1 projector. STAR Board 2021.",papers:[{y:"2021",t:"XGIMI STAR Board IPO"}]},
   {id:"gaolufeng",name:"Gao Lufeng",org:"Ninebot-Segway",title:"Co-founder Ninebot · Acquired Segway",field:["consumer","robotics"],bio:"Beihang. 2015 acquired Segway. Xiaomi ecosystem. STAR Board 2020. ~25B yuan market cap.",papers:[{y:"2015",t:"Acquired Segway"},{y:"2020",t:"STAR Board IPO"}]},
   {id:"qiandongqi",name:"Qian Dongqi",org:"Ecovacs",title:"Founder of Ecovacs · Robot Vacuum 1st IPO",field:["smart-home","robotics"],bio:"Ecovacs 1998 Suzhou OEM. DEEBOT. Shanghai IPO 2018 robot vacuum first. Global top 3. ~15B yuan.",papers:[{y:"2018",t:"Ecovacs Shanghai IPO"}]},
+  {id:"wangjianjun",name:"Wang Jianjun",org:"xTool / Makeblock",title:"Founder of xTool · Laser Engraver King",field:["consumer"],bio:"80-gen from Anhui. Northwestern Polytechnical Univ aircraft design 2010. Came to Shenzhen to build robots. Founded Makeblock 2013 for STEAM education, raised 1B+ yuan at 2.5B valuation. After education market crashed (double reduction policy), pivoted to xTool laser engravers 2021 targeting global consumers. Near 100% growth YoY since. 2024 H1: revenue +90%, profit +80%. Revenue exceeds 2B yuan. Kickstarter crowdfund $2.6M+ for laser cutter. Forbes 30 Under 30 China 2013.",papers:[{y:"2013",t:"Makeblock STEAM education platform"},{y:"2021",t:"xTool laser engraver launch"},{y:"2025",t:"xTool revenue >2B yuan"}]},
+  {id:"tangwenxuan",name:"Tang Wenxuan",org:"LiberLive",title:"Founder of LiberLive · Stringless Guitar 1B Revenue",field:["consumer"],bio:"Former DJI engineer. Met co-founder Jinsen while sharing a dorm at DJI in 2016. Founded Unknown Planet (Weizhi Xingqiu) in Songshan Lake 2016. Backed by Li Zexiang through Songshan Lake International Robot Research Institute (A round). After 5 years of R&D, launched LiberLive C1 stringless guitar Apr 2023 — users learn to play in 5 minutes via app. 2023 revenue: 110M yuan. 2024 revenue: 570M yuan (5x growth). #1 in instruments on Tmall/JD/Douyin. C2 launched Aug 2025. Cumulative sales exceeded 1B yuan. Another DJI-alumni success from Li Zexiang's XbotPark.",papers:[{y:"2023",t:"LiberLive C1 stringless guitar"},{y:"2025",t:"LiberLive C2 + 1B cumulative sales"}]},
+  {id:"taoshizheng",name:"Tao Shizheng",org:"ePropulsion",title:"Co-founder of ePropulsion · Electric Outboard Motors",field:["consumer"],bio:"HKUST graduate, fellow lab member with DJI founder Frank Wang under Prof. Li Zexiang. All 4 co-founders from HKUST. Started researching electric outboard motors in Li Zexiang's lab 2012. Founded ePropulsion in Songshan Lake 2014 on Li's advice. Self-developed core components after supply chain issues. Products: 1-140kW electric outboard + inboard motors + batteries. Global #2 in electric outboard shipments. HQ moved to new 10K sqm factory in Songshan Lake Robot Base 2022.",papers:[{y:"2014",t:"ePropulsion founded in Songshan Lake"},{y:"2022",t:"ePropulsion new 10K sqm factory"}]},
+  {id:"zhongzhifeng",name:"Zhong Zhifeng",org:"AEKE",title:"Co-founder of AEKE · Smart Home Gym",field:["consumer"],bio:"Co-founded AEKE (Qudon Weilai) in Shenzhen 2022 with COO Long Chunling and CTO Fan Wei. AEKE Smart Home Gym K1: AI fitness mirror with strength training focus, designed for Asian body types. Kickstarter Dec 2024: $1.4M in 40 days (2959% of goal), breaking multiple category records. Represents the trend of AI + fitness hardware for home use.",papers:[{y:"2024",t:"AEKE K1 — $1.4M Kickstarter"},{y:"2026",t:"AEKE Smart Home Gym launch"}]},
+  {id:"gaobingqiang",name:"Gao Bingqiang",org:"HKUST / Angel Investor",title:"HKUST Professor · Hardware Angel Investor",field:["consumer"],bio:"Professor at Hong Kong University of Science and Technology. Prolific angel investor in the Shenzhen hardware ecosystem alongside Li Zexiang and Gan Jie. Notable investments include Haivivi/Yueran ($1M angel that saved the company from bankruptcy in 2023), RingConn (via Brizan Ventures II + Future Tech Fund). Part of the HKUST professor trio (with Li Zexiang and Gan Jie) that forms the backbone of XbotPark's investment network.",papers:[]},
+  {id:"ganjie",name:"Gan Jie",org:"HKUST / XbotPark",title:"HKUST Professor · XbotPark Co-founder",field:["drones","robotics"],bio:"Professor at HKUST. Co-founded XbotPark (Songshan Lake Robot Base) with Li Zexiang. Invested in RingConn via Virtu International. Part of the HKUST professor network that has incubated 60+ hardware startups. Key judge and mentor for hardware entrepreneurs in the Greater Bay Area.",papers:[]},
 ];
 
 const connections = [
@@ -943,6 +949,18 @@ const connections = [
   {source:"qiandongqi",target:"zhangjunbin",type:"industry-peer",label:"Robot vacuum (Ecovacs vs Narwal)"},
   {source:"qiandongqi",target:"yuhao",type:"industry-peer",label:"Robot vacuum (Ecovacs vs Dreame)"},
   {source:"wangning",target:"liyong",type:"industry-peer",label:"Consumer culture brands"},
+  {source:"wangjianjun",target:"yangmeng",type:"industry-peer",label:"Cross-border hardware (xTool vs Anker)"},
+  {source:"wangjianjun",target:"taoye",type:"industry-peer",label:"Maker/3D/laser hardware brands"},
+  {source:"tangwenxuan",target:"wangtao",type:"former-colleague",label:"DJI alumni, met co-founder at DJI dorm"},
+  {source:"tangwenxuan",target:"lizexiang",type:"mentor",label:"Li Zexiang A round via Songshan Lake"},
+  {source:"taoshizheng",target:"wangtao",type:"former-colleague",label:"HKUST labmates under Li Zexiang"},
+  {source:"taoshizheng",target:"lizexiang",type:"mentor",label:"Founded in Li Zexiang lab, Songshan Lake"},
+  {source:"zhongzhifeng",target:"yehongxin",type:"industry-peer",label:"Home hardware (fitness vs beauty)"},
+  {source:"gaobingqiang",target:"lizexiang",type:"cofounder",label:"HKUST professor trio, XbotPark network"},
+  {source:"gaobingqiang",target:"liyong",type:"mentor",label:"Angel $1M in Haivivi, saved from bankruptcy"},
+  {source:"gaobingqiang",target:"ringconn",type:"mentor",label:"Invested in RingConn via Brizan Ventures"},
+  {source:"ganjie",target:"lizexiang",type:"cofounder",label:"Co-founded XbotPark"},
+  {source:"ganjie",target:"ringconn",type:"mentor",label:"Invested in RingConn"},
 ];
 
 // ===================================================================
@@ -955,7 +973,7 @@ const orgColorMap = {
   "Insta360":"var(--org-consumer)","Anker":"var(--org-consumer)","Rabbit":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","PLAUD":"var(--org-consumer)","Haivivi":"var(--org-consumer)","Timekettle":"var(--org-consumer)","Pop Mart":"var(--org-consumer)","Sharge":"var(--org-consumer)","XPeng Robotics":"var(--org-consumer)",
   "XREAL":"var(--org-arvr)","Rokid":"var(--org-arvr)","RayNeo":"var(--org-arvr)","INMO":"var(--org-arvr)",
   "Unitree":"var(--org-robotics)","Fourier Intelligence":"var(--org-robotics)","UBTECH":"var(--org-robotics)","Robotera":"var(--org-robotics)","Galbot":"var(--org-robotics)","LimX Dynamics":"var(--org-robotics)","XingHaiTu":"var(--org-robotics)","TaShi ZhiHang":"var(--org-robotics)","YouLu Robot":"var(--org-robotics)","Qianxun Intelligence":"var(--org-robotics)",
-  "Figure AI":"var(--org-overseas)","Robopoet":"var(--org-consumer)","Ropet":"var(--org-consumer)","KEYi Tech":"var(--org-xiaomi)","RingConn":"var(--org-consumer)","Even Realities":"var(--org-arvr)","Photon Leap":"var(--org-consumer)","Apeman":"var(--org-consumer)","TENWAYS":"var(--org-consumer)","Baseus":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","XGIMI":"var(--org-consumer)","Ninebot-Segway":"var(--org-xiaomi)","Ecovacs":"var(--org-xiaomi)",
+  "Figure AI":"var(--org-overseas)","xTool / Makeblock":"var(--org-consumer)","LiberLive":"var(--org-dji)","ePropulsion":"var(--org-dji)","AEKE":"var(--org-consumer)","HKUST / Angel Investor":"var(--org-dji)","Robopoet":"var(--org-consumer)","Ropet":"var(--org-consumer)","KEYi Tech":"var(--org-xiaomi)","RingConn":"var(--org-consumer)","Even Realities":"var(--org-arvr)","Photon Leap":"var(--org-consumer)","Apeman":"var(--org-consumer)","TENWAYS":"var(--org-consumer)","Baseus":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","XGIMI":"var(--org-consumer)","Ninebot-Segway":"var(--org-xiaomi)","Ecovacs":"var(--org-xiaomi)",
 };
 const orgRawColors = {
   "DJI":"#64d2ff","HKUST / XbotPark":"#64d2ff","Bambu Lab":"#64d2ff","EcoFlow":"#64d2ff","XAG":"#64d2ff","Mammotion":"#64d2ff","AgileX Robotics":"#64d2ff","Zhipai":"#64d2ff",
@@ -964,7 +982,7 @@ const orgRawColors = {
   "Insta360":"#ffd60a","Anker":"#ffd60a","Rabbit":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","PLAUD":"#ffd60a","Haivivi":"#ffd60a","Timekettle":"#ffd60a","Pop Mart":"#ffd60a","Sharge":"#ffd60a","XPeng Robotics":"#ffd60a",
   "XREAL":"#5e9eff","Rokid":"#5e9eff","RayNeo":"#5e9eff","INMO":"#5e9eff",
   "Unitree":"#30d158","Fourier Intelligence":"#30d158","UBTECH":"#30d158","Robotera":"#30d158","Galbot":"#30d158","LimX Dynamics":"#30d158","XingHaiTu":"#30d158","TaShi ZhiHang":"#30d158","YouLu Robot":"#30d158","Qianxun Intelligence":"#30d158",
-  "Figure AI":"#bf5af2","Robopoet":"#ffd60a","Ropet":"#ffd60a","KEYi Tech":"#ff9f0a","RingConn":"#ffd60a","Even Realities":"#5e9eff","Photon Leap":"#ffd60a","Apeman":"#ffd60a","TENWAYS":"#ffd60a","Baseus":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","XGIMI":"#ffd60a","Ninebot-Segway":"#ff9f0a","Ecovacs":"#ff9f0a",
+  "Figure AI":"#bf5af2","xTool / Makeblock":"#ffd60a","LiberLive":"#64d2ff","ePropulsion":"#64d2ff","AEKE":"#ffd60a","HKUST / Angel Investor":"#64d2ff","Robopoet":"#ffd60a","Ropet":"#ffd60a","KEYi Tech":"#ff9f0a","RingConn":"#ffd60a","Even Realities":"#5e9eff","Photon Leap":"#ffd60a","Apeman":"#ffd60a","TENWAYS":"#ffd60a","Baseus":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","XGIMI":"#ffd60a","Ninebot-Segway":"#ff9f0a","Ecovacs":"#ff9f0a",
 };
 const linkColorMap = {cofounder:"#30d158","former-colleague":"#2997ff",mentor:"#64d2ff","industry-peer":"rgba(255,255,255,0.5)"};
 
@@ -1247,6 +1265,12 @@ const scholarZh = {
   zhongbo:{zhName:"钟波",title:"极米创始人 · 投影之王",bio:"1980四川。电子科大。海信→Mstar西南总监。投腾讯赚过亿。2012成都创办极米。无屏电视开创者。2021科创板IPO。汪涵早期投资。海外1.32亿。"},
   gaolufeng:{zhName:"高禄峰",title:"九号联合创始人 · 收购Segway",bio:"与王野联创九号。北航。2015收购Segway。全球电动滑板车/卡丁车领导者。小米生态。2020科创板。市值~250亿。"},
   qiandongqi:{zhName:"钱东奇",title:"科沃斯创始人 · 扫地机器人第一股",bio:"1998苏州创办，最初代工。自创DEEBOT。2018上交所IPO——中国扫地机第一股。全球前三。GOAT割草/WINBOT擦窗。分拆一喜。市值~150亿。"},
+  wangjianjun:{zhName:"王建军",title:"xTool/Makeblock创始人 · 激光雕刻之王",bio:"80后安徽人。西北工业大学飞行器设计（2010）。来深圳造机器人。2013创办Makeblock做STEAM教育，融资超10亿估值25亿。双减后转型，2021推出xTool激光雕刻机面向全球消费者。此后年近100%增长。2024上半年营收+90%利润+80%。营收超20亿。Kickstarter众筹$260万+。福布斯中国30 Under 30（2013）。"},
+  tangwenxuan:{zhName:"唐文轩",title:"LiberLive创始人 · 无弦吉他10亿营收",bio:"前大疆工程师。2016年在大疆宿舍与联合创始人劲森结识。同年在东莞松山湖创办未知星球。李泽湘通过松山湖机器人研究院A轮投资。经过5年研发，2023.4推出LiberLive C1无弦吉他——5分钟学会弹唱。2023营收1.1亿，2024营收5.7亿（5倍增长）。天猫/京东/抖音乐器类目第一。2025.8推出C2。累计销售超10亿。又一个大疆系+李泽湘松山湖的成功案例。"},
+  taoshizheng:{zhName:"陶师正",title:"逸动科技联合创始人 · 电动船外机",bio:"港科大毕业，与大疆创始人汪滔同为李泽湘教授实验室师兄弟。4位创始人均来自港科大。2012年在李泽湘实验室开始研究电动船外机。2014年在松山湖创办逸动科技。自研核心零部件。产品覆盖1-140千瓦电动船外机/船内机+电池。全球电动船外机出货量第二。2022年搬入松山湖1万平新工厂。"},
+  zhongzhifeng:{zhName:"钟质峰",title:"AEKE联合创始人 · 智能健身镜",bio:"2022年与龙春泠(COO)、范炜(CTO)在深圳联合创办AEKE（趣动未来）。AEKE K1智能健身镜：AI力量训练，针对东方人体型。Kickstarter 2024.12：40天$140万（目标的2959%），打破品类多项纪录。代表AI+居家健身硬件趋势。"},
+  gaobingqiang:{zhName:"高秉强",title:"港科大教授 · 硬件天使投资人",bio:"港科大教授。与李泽湘、甘洁组成港科大教授三人组，构成XbotPark投资网络的骨干。代表性投资：跃然创新Haivivi（100万美元天使轮，2023年公司濒临破产时出手挽救）、RingConn（通过Brizan Ventures II和未来科技基金）。"},
+  ganjie:{zhName:"甘洁",title:"港科大教授 · XbotPark联合创始人",bio:"港科大教授。与李泽湘联合创办松山湖机器人基地XbotPark。通过Virtu International投资RingConn。港科大教授网络已孵化60+家硬件创业公司。大湾区硬件创业者的关键导师和评委。"},
   xiaopenghe:{zhName:"何小鹏",title:"小鹏汽车CEO · Iron人形机器人",bio:"小鹏汽车创始人CEO。2024发布Iron人形。承诺2026底量产。2026.3发布全球首个量产级VLA物理世界大模型。代表车企进军人形机器人趋势。"},
 };
 
@@ -1337,6 +1361,18 @@ const connLabelZh = {
   "Robot vacuum (Ecovacs vs Narwal)":"扫地机（科沃斯vs云鲸）",
   "Robot vacuum (Ecovacs vs Dreame)":"扫地机（科沃斯vs追觅）",
   "Consumer culture brands":"消费文化品牌",
+  "Cross-border hardware (xTool vs Anker)":"跨境硬件（xTool vs 安克）",
+  "Maker/3D/laser hardware brands":"创客/3D/激光硬件品牌",
+  "DJI alumni, met co-founder at DJI dorm":"大疆系，在大疆宿舍认识联创",
+  "Li Zexiang A round via Songshan Lake":"李泽湘通过松山湖研究院A轮投资",
+  "HKUST labmates under Li Zexiang":"港科大李泽湘实验室师兄弟",
+  "Founded in Li Zexiang lab, Songshan Lake":"在李泽湘实验室起步，松山湖创办",
+  "Home hardware (fitness vs beauty)":"居家硬件（健身 vs 美容）",
+  "HKUST professor trio, XbotPark network":"港科大教授三人组，XbotPark投资网络",
+  "Angel $1M in Haivivi, saved from bankruptcy":"天使投100万美元救跃然创新于破产边缘",
+  "Invested in RingConn via Brizan Ventures":"通过Brizan Ventures投资RingConn",
+  "Co-founded XbotPark":"联合创办XbotPark松山湖基地",
+  "Invested in RingConn":"投资RingConn",
 };
 
 function applyLanguage(lang) {
