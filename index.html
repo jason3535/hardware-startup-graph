@@ -631,6 +631,60 @@ body {
 }
 
 /* ===== Mobile Responsive ===== */
+/* ===== Mini Map — Bottom Right ===== */
+#geo-map {
+  position: fixed;
+  bottom: 44px;
+  right: 24px;
+  z-index: 100;
+  width: 220px;
+  pointer-events: none;
+}
+.geo-card {
+  background: rgba(28, 28, 30, 0.88);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 12px;
+  padding: 12px 14px 8px;
+}
+.geo-heading {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--apple-text-tertiary);
+  margin-bottom: 8px;
+}
+.geo-svg { width: 100%; display: block; }
+.geo-bubble {
+  fill: var(--apple-blue);
+  fill-opacity: 0.5;
+  stroke: var(--apple-blue);
+  stroke-width: 1;
+  stroke-opacity: 0.8;
+}
+.geo-label {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 8px;
+  fill: rgba(255, 255, 255, 0.6);
+  text-anchor: middle;
+  pointer-events: none;
+}
+.geo-count {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 7px;
+  fill: rgba(255, 255, 255, 0.9);
+  text-anchor: middle;
+  font-weight: 600;
+  pointer-events: none;
+}
+.geo-outline {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 0.5;
+}
+
 @media (max-width: 768px) {
   #nav-bar {
     height: auto;
@@ -657,6 +711,7 @@ body {
   .nav-spacer { display: none; }
   #graph-container { top: 90px; }
   #legend { display: none; }
+  #geo-map { display: none; }
   #detail-panel {
     width: 100vw;
     top: 0;
@@ -778,6 +833,14 @@ body {
   <div class="hint-item"><span class="hint-key">Drag</span> Pan</div>
   <div class="hint-item"><span class="hint-key">Click</span> Details</div>
   <div class="hint-item"><span class="hint-key">Esc</span> Close</div>
+</div>
+
+<!-- Geo Map -->
+<div id="geo-map">
+  <div class="geo-card">
+    <div class="geo-heading" id="geo-heading">Location Distribution</div>
+    <svg class="geo-svg" id="geo-svg" viewBox="0 0 200 160"></svg>
+  </div>
 </div>
 
 <!-- Quick Links -->
@@ -1600,6 +1663,92 @@ window.addEventListener("resize",()=>{
 });
 
 applyLanguage("zh");
+
+// ===================================================================
+// GEO MAP — City distribution of founders
+// ===================================================================
+const cityMap = {
+  // Shenzhen
+  wangtao:"shenzhen",taoye:"shenzhen",wanglei:"shenzhen",wangtaom:"shenzhen",weijidong:"shenzhen",
+  zhipai:"shenzhen",liujingkang:"shenzhen",yangmeng:"shenzhen",zhangbo:"shenzhen",xugao:"shenzhen",
+  tianli:"shenzhen",heshiyou:"shenzhen",zhangqingsen:"shenzhen",luoyuanjue:"shenzhen",
+  wangjianjun:"shenzhen",carlpei:"shenzhen",pengzhihui:"shenzhen",xuchi:"shenzhen",
+  zhushanming:"shenzhen",lihongwei:"shenzhen",inmoceo:"shenzhen",wangxiaoyi:"shenzhen",
+  yuanqian:"shenzhen",zhangwei:"shenzhen",gaojiyuang:"shenzhen",liangxiaoling:"shenzhen",
+  sunzhaozhi:"shenzhen",hejiabin:"shenzhen",zhongzhifeng:"shenzhen",
+  // Dongguan / Songshan Lake
+  lizexiang:"dongguan",tangwenxuan:"dongguan",taoshizheng:"dongguan",yehongxin:"dongguan",
+  gaobingqiang:"dongguan",ganjie:"dongguan",
+  // Hangzhou
+  wangxingxing:"hangzhou",zhangjunbin:"hangzhou",
+  // Beijing
+  pengbin:"beijing",chenjianyu:"beijing",wanghe:"beijing",xiaopenghe:"beijing",
+  yangjianbo:"beijing",chenyilun:"beijing",hanfengtao:"beijing",
+  // Shanghai
+  gujie:"shanghai",gaolufeng:"shanghai",ringconn:"shanghai",
+  // Suzhou
+  qiandongqi:"suzhou",
+  // Chengdu
+  zhongbo:"chengdu",
+  // Nantong/other
+  yuhao:"suzhou",changjing:"beijing",youyanji:"shenzhen",wangning:"beijing",
+  liyong:"shenzhen",jesselyu:"usa",brettadcock:"usa",chenjunbo:"hangzhou",
+};
+
+// Simplified China map city positions (x,y in 200x160 viewBox)
+const cityPositions = {
+  shenzhen: {x:128, y:132, label:"深圳", labelEn:"Shenzhen"},
+  dongguan: {x:122, y:125, label:"东莞", labelEn:"Dongguan"},
+  hangzhou: {x:152, y:88, label:"杭州", labelEn:"Hangzhou"},
+  beijing:  {x:130, y:42, label:"北京", labelEn:"Beijing"},
+  shanghai: {x:160, y:82, label:"上海", labelEn:"Shanghai"},
+  suzhou:   {x:153, y:78, label:"苏州", labelEn:"Suzhou"},
+  chengdu:  {x:82, y:95, label:"成都", labelEn:"Chengdu"},
+  usa:      {x:20, y:30, label:"美国", labelEn:"USA"},
+};
+
+function renderGeoMap() {
+  const svg = document.getElementById("geo-svg");
+  if (!svg) return;
+
+  // Count per city
+  const counts = {};
+  Object.values(cityMap).forEach(city => {
+    counts[city] = (counts[city] || 0) + 1;
+  });
+
+  // Draw simplified China outline
+  const chinaPath = "M60,20 L80,15 L100,18 L120,12 L140,20 L160,25 L175,35 L180,50 L175,65 L170,75 L175,85 L165,95 L160,105 L150,110 L145,120 L135,130 L130,140 L120,145 L110,140 L100,135 L90,140 L80,135 L70,125 L60,120 L50,110 L45,95 L40,80 L42,65 L45,50 L50,35 Z";
+
+  let html = `<path class="geo-outline" d="${chinaPath}"/>`;
+
+  // Draw bubbles
+  Object.entries(cityPositions).forEach(([city, pos]) => {
+    const count = counts[city] || 0;
+    if (count === 0) return;
+    const r = Math.max(Math.min(Math.sqrt(count) * 5, 22), 6);
+    html += `<circle class="geo-bubble" cx="${pos.x}" cy="${pos.y}" r="${r}"/>`;
+    html += `<text class="geo-count" x="${pos.x}" y="${pos.y + 2.5}">${count}</text>`;
+    const labelY = pos.y + r + 9;
+    const label = currentLang === "zh" ? pos.label : pos.labelEn;
+    html += `<text class="geo-label" x="${pos.x}" y="${labelY}">${label}</text>`;
+  });
+
+  svg.innerHTML = html;
+
+  // Update heading
+  const heading = document.getElementById("geo-heading");
+  if (heading) heading.textContent = currentLang === "zh" ? "创始人地域分布" : "Location Distribution";
+}
+
+renderGeoMap();
+
+// Re-render on language change
+const origApply = applyLanguage;
+applyLanguage = function(lang) {
+  origApply(lang);
+  renderGeoMap();
+};
 </script>
 </body>
 </html>
