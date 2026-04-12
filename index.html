@@ -209,7 +209,7 @@ body {
 /* ===== Legend — Bottom Left ===== */
 #legend {
   position: fixed;
-  bottom: 24px;
+  bottom: 44px;
   left: 24px;
   z-index: 100;
   pointer-events: all;
@@ -554,9 +554,54 @@ body {
 }
 
 /* ===== Keyboard hint ===== */
+/* ===== Bottom Quick Links ===== */
+#quick-links {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1000;
+  padding: 0 16px;
+}
+.quick-link {
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 980px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  white-space: nowrap;
+}
+.quick-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+}
+.quick-link.active {
+  color: var(--apple-link-blue-dark);
+  border-color: rgba(41, 151, 255, 0.3);
+}
+.quick-link-sep {
+  color: rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+}
+
 #keyboard-hint {
   position: fixed;
-  bottom: 24px;
+  bottom: 44px;
   right: 24px;
   z-index: 100;
   display: flex;
@@ -671,6 +716,15 @@ body {
   <div class="hint-item"><span class="hint-key">Drag</span> Pan</div>
   <div class="hint-item"><span class="hint-key">Click</span> Details</div>
   <div class="hint-item"><span class="hint-key">Esc</span> Close</div>
+</div>
+
+<!-- Quick Links -->
+<div id="quick-links">
+  <a class="quick-link" href="https://jason3535.github.io/ai-scholar-graph/">AI Scholar Graph</a>
+  <span class="quick-link-sep">·</span>
+  <a class="quick-link active" href="https://jason3535.github.io/hardware-startup-graph/">Hardware Startup Graph</a>
+  <span class="quick-link-sep">·</span>
+  <a class="quick-link" href="https://jasonlin.tech">jasonlin.tech</a>
 </div>
 
 <!-- Graph -->
