@@ -922,6 +922,10 @@ const scholars = [
   {id:"zhongzhifeng",name:"Zhong Zhifeng",org:"AEKE",title:"Co-founder of AEKE · Smart Home Gym",field:["consumer"],bio:"Co-founded AEKE (Qudon Weilai) in Shenzhen 2022 with COO Long Chunling and CTO Fan Wei. AEKE Smart Home Gym K1: AI fitness mirror with strength training focus, designed for Asian body types. Kickstarter Dec 2024: $1.4M in 40 days (2959% of goal), breaking multiple category records. Represents the trend of AI + fitness hardware for home use.",papers:[{y:"2024",t:"AEKE K1 — $1.4M Kickstarter"},{y:"2026",t:"AEKE Smart Home Gym launch"}]},
   {id:"gaobingqiang",name:"Gao Bingqiang",org:"HKUST / Angel Investor",title:"HKUST Professor · Hardware Angel Investor",field:["consumer"],bio:"Professor at Hong Kong University of Science and Technology. Prolific angel investor in the Shenzhen hardware ecosystem alongside Li Zexiang and Gan Jie. Notable investments include Haivivi/Yueran ($1M angel that saved the company from bankruptcy in 2023), RingConn (via Brizan Ventures II + Future Tech Fund). Part of the HKUST professor trio (with Li Zexiang and Gan Jie) that forms the backbone of XbotPark's investment network.",papers:[]},
   {id:"ganjie",name:"Gan Jie",org:"HKUST / XbotPark",title:"HKUST Professor · XbotPark Co-founder",field:["drones","robotics"],bio:"Professor at HKUST. Co-founded XbotPark (Songshan Lake Robot Base) with Li Zexiang. Invested in RingConn via Virtu International. Part of the HKUST professor network that has incubated 60+ hardware startups. Key judge and mentor for hardware entrepreneurs in the Greater Bay Area.",papers:[]},
+  {id:"chenyuqi",name:"Chen Yuqi",org:"Hai Robotics",title:"Founder of Hai Robotics · Warehouse Robot Unicorn",field:["robotics"],bio:"Born 1989. HK PolyU Electronics BS, ETH Zurich Robotics MS. Founded precision optics company in HK 2014 (global #1 smallest EOM Bias Controller). Started researching warehouse robots 2015, founded Hai Robotics (Hairou) 2016. Invented ACR (Autonomous Case-handling Robot) system — 'tote-to-person' warehouse automation. China market share >90% in box-type warehouse robots. D+ round 2022: valuation $2B+. XbotPark seed investment. Products deployed globally. Valuation ~20B yuan.",papers:[{y:"2017",t:"Hai Robotics first ACR system"},{y:"2022",t:"$2B+ valuation, 90% China market share"}]},
+  {id:"shijinbo",name:"Shi Jinbo",org:"QKM Technology",title:"Founder of QKM (Liqun) · DJI's Sister Disciple",field:["robotics"],bio:"Born 1982 Harbin. Parents at aerospace state factory. HIT (Harbin Institute of Technology) BS+MS. HKUST PhD in ECE under Li Zexiang — Frank Wang's junior fellow disciple (tong men shi mei). Founded QKM Technology (Liqun Automation) 2011 after visiting Japan/US robot factories with Li. Built world's first high-performance drive-control integrated parallel robot (2013). Early survival: got projects from senior fellow Frank Wang at DJI. Strategic round 2022: valuation >20B yuan. Pioneer of lightweight industrial robots in China.",papers:[{y:"2013",t:"World's first drive-control parallel robot"},{y:"2022",t:"QKM strategic round, >20B valuation"}]},
+  {id:"lizhichen",name:"Li Zhichen",org:"OneRobotics",title:"Co-founder of OneRobotics · AI Home Robot First Stock",field:["robotics","smart-home"],bio:"Born ~1991, 90s generation. HIT (Harbin Institute of Technology) graduate. Co-founded OneRobotics (Woan) in Shenzhen 2015 with HIT classmate Pan Yang. XbotPark incubated. Focus: embodied AI home robots for daily life scenarios. 7 rounds of funding from Source Code Capital, Fortune Capital, Hillhouse Ventures. C round May 2025: 60M yuan from Brizan Ventures V, post-money 4.05B yuan. HKEX IPO Dec 30, 2025 at HK$73.8/share, raising HK$1.64B — becoming 'AI Embodied Home Robot First Stock'. Market cap HK$16.4B. Revenue: 2.7B(2022)→6.1B(2024), CAGR 49%. 95% revenue from overseas. Turned profitable H1 2025.",papers:[{y:"2020",t:"OneRobotics home robot platform"},{y:"2025",t:"HKEX IPO — AI Home Robot First Stock, HK$16.4B"}]},
+  {id:"sunxuefeng",name:"Sun Xuefeng",org:"Xiaoshui Smart",title:"Founder of Xiaoshui Smart · AI Children's Watch",field:["consumer"],bio:"Previously in cloud communications, serving China's three major telecoms, Hikvision, Dahua. Founded Xiaoshui Smart (Xiao Shui Zhineng). Among the first to deploy DeepSeek LLM privately in early 2025, developing a children-specific vertical small model. Produces AI children's smartwatch shipping 1M+ units/year. Also expanding into smart elderly care hardware (AI wheelchairs, smart canes). Represents the 'AI + traditional hardware' upgrade wave.",papers:[{y:"2025",t:"AI children's watch — 1M+ units/yr, DeepSeek integrated"}]},
 ];
 
 const connections = [
@@ -1024,6 +1028,14 @@ const connections = [
   {source:"gaobingqiang",target:"ringconn",type:"mentor",label:"Invested in RingConn via Brizan Ventures"},
   {source:"ganjie",target:"lizexiang",type:"cofounder",label:"Co-founded XbotPark"},
   {source:"ganjie",target:"ringconn",type:"mentor",label:"Invested in RingConn"},
+  {source:"chenyuqi",target:"lizexiang",type:"mentor",label:"XbotPark seed investment"},
+  {source:"chenyuqi",target:"weijidong",type:"industry-peer",label:"Warehouse/logistics robot peers"},
+  {source:"shijinbo",target:"wangtao",type:"former-colleague",label:"HKUST fellow disciples under Li Zexiang"},
+  {source:"shijinbo",target:"lizexiang",type:"advisor",label:"PhD advisor, co-founded after factory visits"},
+  {source:"lizhichen",target:"lizexiang",type:"mentor",label:"XbotPark incubated"},
+  {source:"lizhichen",target:"gaobingqiang",type:"mentor",label:"Brizan Ventures C round investor"},
+  {source:"lizhichen",target:"zhangjunbin",type:"industry-peer",label:"Home robot competitors (OneRobotics vs Narwal)"},
+  {source:"sunxuefeng",target:"tianli",type:"industry-peer",label:"AI consumer hardware for families"},
 ];
 
 // ===================================================================
@@ -1036,7 +1048,7 @@ const orgColorMap = {
   "Insta360":"var(--org-consumer)","Anker":"var(--org-consumer)","Rabbit":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","PLAUD":"var(--org-consumer)","Haivivi":"var(--org-consumer)","Timekettle":"var(--org-consumer)","Pop Mart":"var(--org-consumer)","Sharge":"var(--org-consumer)","XPeng Robotics":"var(--org-consumer)",
   "XREAL":"var(--org-arvr)","Rokid":"var(--org-arvr)","RayNeo":"var(--org-arvr)","INMO":"var(--org-arvr)",
   "Unitree":"var(--org-robotics)","Fourier Intelligence":"var(--org-robotics)","UBTECH":"var(--org-robotics)","Robotera":"var(--org-robotics)","Galbot":"var(--org-robotics)","LimX Dynamics":"var(--org-robotics)","XingHaiTu":"var(--org-robotics)","TaShi ZhiHang":"var(--org-robotics)","YouLu Robot":"var(--org-robotics)","Qianxun Intelligence":"var(--org-robotics)",
-  "Figure AI":"var(--org-overseas)","xTool / Makeblock":"var(--org-consumer)","LiberLive":"var(--org-dji)","ePropulsion":"var(--org-dji)","AEKE":"var(--org-consumer)","HKUST / Angel Investor":"var(--org-dji)","Robopoet":"var(--org-consumer)","Ropet":"var(--org-consumer)","KEYi Tech":"var(--org-xiaomi)","RingConn":"var(--org-consumer)","Even Realities":"var(--org-arvr)","Photon Leap":"var(--org-consumer)","Apeman":"var(--org-consumer)","TENWAYS":"var(--org-consumer)","Baseus":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","XGIMI":"var(--org-consumer)","Ninebot-Segway":"var(--org-xiaomi)","Ecovacs":"var(--org-xiaomi)",
+  "Figure AI":"var(--org-overseas)","Hai Robotics":"var(--org-robotics)","QKM Technology":"var(--org-robotics)","OneRobotics":"var(--org-robotics)","Xiaoshui Smart":"var(--org-consumer)","xTool / Makeblock":"var(--org-consumer)","LiberLive":"var(--org-dji)","ePropulsion":"var(--org-dji)","AEKE":"var(--org-consumer)","HKUST / Angel Investor":"var(--org-dji)","Robopoet":"var(--org-consumer)","Ropet":"var(--org-consumer)","KEYi Tech":"var(--org-xiaomi)","RingConn":"var(--org-consumer)","Even Realities":"var(--org-arvr)","Photon Leap":"var(--org-consumer)","Apeman":"var(--org-consumer)","TENWAYS":"var(--org-consumer)","Baseus":"var(--org-consumer)","Laifen":"var(--org-consumer)","UGREEN":"var(--org-consumer)","XGIMI":"var(--org-consumer)","Ninebot-Segway":"var(--org-xiaomi)","Ecovacs":"var(--org-xiaomi)",
 };
 const orgRawColors = {
   "DJI":"#64d2ff","HKUST / XbotPark":"#64d2ff","Bambu Lab":"#64d2ff","EcoFlow":"#64d2ff","XAG":"#64d2ff","Mammotion":"#64d2ff","AgileX Robotics":"#64d2ff","Zhipai":"#64d2ff",
@@ -1045,7 +1057,7 @@ const orgRawColors = {
   "Insta360":"#ffd60a","Anker":"#ffd60a","Rabbit":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","PLAUD":"#ffd60a","Haivivi":"#ffd60a","Timekettle":"#ffd60a","Pop Mart":"#ffd60a","Sharge":"#ffd60a","XPeng Robotics":"#ffd60a",
   "XREAL":"#5e9eff","Rokid":"#5e9eff","RayNeo":"#5e9eff","INMO":"#5e9eff",
   "Unitree":"#30d158","Fourier Intelligence":"#30d158","UBTECH":"#30d158","Robotera":"#30d158","Galbot":"#30d158","LimX Dynamics":"#30d158","XingHaiTu":"#30d158","TaShi ZhiHang":"#30d158","YouLu Robot":"#30d158","Qianxun Intelligence":"#30d158",
-  "Figure AI":"#bf5af2","xTool / Makeblock":"#ffd60a","LiberLive":"#64d2ff","ePropulsion":"#64d2ff","AEKE":"#ffd60a","HKUST / Angel Investor":"#64d2ff","Robopoet":"#ffd60a","Ropet":"#ffd60a","KEYi Tech":"#ff9f0a","RingConn":"#ffd60a","Even Realities":"#5e9eff","Photon Leap":"#ffd60a","Apeman":"#ffd60a","TENWAYS":"#ffd60a","Baseus":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","XGIMI":"#ffd60a","Ninebot-Segway":"#ff9f0a","Ecovacs":"#ff9f0a",
+  "Figure AI":"#bf5af2","Hai Robotics":"#30d158","QKM Technology":"#30d158","OneRobotics":"#30d158","Xiaoshui Smart":"#ffd60a","xTool / Makeblock":"#ffd60a","LiberLive":"#64d2ff","ePropulsion":"#64d2ff","AEKE":"#ffd60a","HKUST / Angel Investor":"#64d2ff","Robopoet":"#ffd60a","Ropet":"#ffd60a","KEYi Tech":"#ff9f0a","RingConn":"#ffd60a","Even Realities":"#5e9eff","Photon Leap":"#ffd60a","Apeman":"#ffd60a","TENWAYS":"#ffd60a","Baseus":"#ffd60a","Laifen":"#ffd60a","UGREEN":"#ffd60a","XGIMI":"#ffd60a","Ninebot-Segway":"#ff9f0a","Ecovacs":"#ff9f0a",
 };
 const linkColorMap = {cofounder:"#30d158","former-colleague":"#2997ff",mentor:"#64d2ff","industry-peer":"rgba(255,255,255,0.5)"};
 
@@ -1334,6 +1346,10 @@ const scholarZh = {
   zhongzhifeng:{zhName:"钟质峰",title:"AEKE联合创始人 · 智能健身镜",bio:"2022年与龙春泠(COO)、范炜(CTO)在深圳联合创办AEKE（趣动未来）。AEKE K1智能健身镜：AI力量训练，针对东方人体型。Kickstarter 2024.12：40天$140万（目标的2959%），打破品类多项纪录。代表AI+居家健身硬件趋势。"},
   gaobingqiang:{zhName:"高秉强",title:"港科大教授 · 硬件天使投资人",bio:"港科大教授。与李泽湘、甘洁组成港科大教授三人组，构成XbotPark投资网络的骨干。代表性投资：跃然创新Haivivi（100万美元天使轮，2023年公司濒临破产时出手挽救）、RingConn（通过Brizan Ventures II和未来科技基金）。"},
   ganjie:{zhName:"甘洁",title:"港科大教授 · XbotPark联合创始人",bio:"港科大教授。与李泽湘联合创办松山湖机器人基地XbotPark。通过Virtu International投资RingConn。港科大教授网络已孵化60+家硬件创业公司。大湾区硬件创业者的关键导师和评委。"},
+  chenyuqi:{zhName:"陈宇奇",title:"海柔创新创始人 · 仓储机器人独角兽",bio:"1989年生。港理工电子本科，苏黎世联邦理工机器人硕士。2014香港创办精密光学公司（全球最小EOM Bias Controller）。2015研究仓储机器人，2016创办海柔创新。发明ACR箱式仓储机器人系统。中国箱式仓储机器人市占率超90%。D+轮2022估值超20亿美元。XbotPark种子投资。"},
+  shijinbo:{zhName:"石金博",title:"李群自动化创始人 · 汪滔同门师妹",bio:"1982年生于哈尔滨。父母在航天国企工厂。哈工大本硕连读。港科大电子与计算机工程博士，师从李泽湘——与汪滔同门师妹。2009年随李泽湘考察日本美国机器人工厂后，2011年创办李群自动化。2013年研发出全球首台高性能驱控一体并联机器人。创业初期找师兄汪滔拿大疆项目度过困难期。2022年战略融资估值超200亿元。中国轻量级工业机器人领军者。"},
+  lizhichen:{zhName:"李志晨",title:"卧安机器人联合创始人 · AI家庭机器人第一股",bio:"约1991年生，90后。哈工大毕业。2015年与哈工大同学潘阳在深圳联合创办卧安机器人。XbotPark孵化。专注具身AI家庭机器人。7轮融资（源码/达晨/高瓴）。C轮2025.5：6000万，投后40.48亿。2025.12.30港交所IPO 73.8港元/股，募资16.4亿港元——AI具身家庭机器人第一股。市值164亿港元。营收CAGR 49%。95%海外。2025上半年扭亏。"},
+  sunxuefeng:{zhName:"孙雪峰",title:"小水智能创始人 · AI儿童手表",bio:"此前从事云通讯，服务三大运营商、海康威视、大华等。创办小水智能。2025年初率先私有化部署DeepSeek大模型，开发儿童专属垂类小模型。AI儿童腕表年出货100万+。也拓展智能适老硬件（AI轮椅、智能拐杖）。代表AI+传统硬件升级浪潮。"},
   xiaopenghe:{zhName:"何小鹏",title:"小鹏汽车CEO · Iron人形机器人",bio:"小鹏汽车创始人CEO。2024发布Iron人形。承诺2026底量产。2026.3发布全球首个量产级VLA物理世界大模型。代表车企进军人形机器人趋势。"},
 };
 
@@ -1436,6 +1452,14 @@ const connLabelZh = {
   "Invested in RingConn via Brizan Ventures":"通过Brizan Ventures投资RingConn",
   "Co-founded XbotPark":"联合创办XbotPark松山湖基地",
   "Invested in RingConn":"投资RingConn",
+  "XbotPark seed investment":"XbotPark种子投资",
+  "Warehouse/logistics robot peers":"仓储/物流机器人同行",
+  "HKUST fellow disciples under Li Zexiang":"港科大李泽湘门下师兄妹",
+  "PhD advisor, co-founded after factory visits":"博士导师，考察工厂后创业",
+  "XbotPark incubated":"XbotPark孵化",
+  "Brizan Ventures C round investor":"Brizan Ventures C轮投资人",
+  "Home robot competitors (OneRobotics vs Narwal)":"家庭机器人竞品（卧安vs云鲸）",
+  "AI consumer hardware for families":"面向家庭的AI消费硬件",
 };
 
 function applyLanguage(lang) {
@@ -1693,6 +1717,9 @@ const cityMap = {
   // Nantong/other
   yuhao:"suzhou",changjing:"beijing",youyanji:"shenzhen",wangning:"beijing",
   liyong:"shenzhen",jesselyu:"usa",brettadcock:"usa",chenjunbo:"hangzhou",
+  wangjianjun:"shenzhen",tangwenxuan:"dongguan",taoshizheng:"dongguan",zhongzhifeng:"shenzhen",
+  gaobingqiang:"dongguan",ganjie:"dongguan",
+  chenyuqi:"shenzhen",shijinbo:"dongguan",lizhichen:"shenzhen",sunxuefeng:"shenzhen",
 };
 
 // Simplified China map city positions (x,y in 200x160 viewBox)
