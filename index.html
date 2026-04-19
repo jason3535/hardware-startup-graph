@@ -369,6 +369,59 @@ body {
   letter-spacing: -0.12px;
 }
 
+/* Funding Timeline */
+.funding-round {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.04);
+  align-items: flex-start;
+}
+.funding-round:last-child { border-bottom: none; }
+.funding-badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 980px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: -0.08px;
+  background: rgba(48, 209, 88, 0.15);
+  color: #30d158;
+  border: 0.5px solid rgba(48, 209, 88, 0.25);
+  min-width: 50px;
+  text-align: center;
+}
+.funding-info { flex: 1; min-width: 0; }
+.funding-amount {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.12px;
+  color: var(--apple-white);
+}
+.funding-investors {
+  font-size: 11px;
+  letter-spacing: -0.08px;
+  color: var(--apple-text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.funding-investor-link {
+  color: var(--apple-link-blue-dark);
+  cursor: pointer;
+  text-decoration: none;
+}
+.funding-investor-link:hover { text-decoration: underline; }
+.funding-date {
+  font-size: 10px;
+  color: var(--apple-text-tertiary);
+  flex-shrink: 0;
+}
+.funding-none {
+  font-size: 12px;
+  color: var(--apple-text-tertiary);
+  padding: 4px 0;
+}
+
 .detail-section {
   padding: 20px 24px;
   border-top: 0.5px solid rgba(255, 255, 255, 0.06);
@@ -820,6 +873,10 @@ body {
   <div class="detail-section" id="detail-papers-section">
     <div class="detail-section-title">Key Contributions</div>
     <div id="detail-papers"></div>
+  </div>
+  <div class="detail-section" id="detail-funding-section">
+    <div class="detail-section-title" id="detail-funding-title">Funding History</div>
+    <div id="detail-funding"></div>
   </div>
   <div class="detail-section">
     <div class="detail-section-title">Connections</div>
@@ -1568,7 +1625,8 @@ function applyLanguage(lang) {
   const sectionTitles = document.querySelectorAll(".detail-section-title");
   if (sectionTitles[0]) sectionTitles[0].textContent = t.sectionAbout;
   if (sectionTitles[1]) sectionTitles[1].textContent = t.sectionPapers;
-  if (sectionTitles[2]) sectionTitles[2].textContent = t.sectionConnections;
+  // sectionTitles[2] = funding (handled by renderFunding)
+  if (sectionTitles[3]) sectionTitles[3].textContent = t.sectionConnections;
 
   // Keyboard hints
   const hints = document.querySelectorAll(".hint-item");
@@ -1730,11 +1788,15 @@ function openDetail(d) {
     papersSection.style.display = "none";
   }
 
+  // Funding
+  if (typeof renderFunding === 'function') renderFunding(d);
+
   // Section titles
   const sectionTitles = document.querySelectorAll(".detail-section-title");
   if (sectionTitles[0]) sectionTitles[0].textContent = t.sectionAbout;
   if (sectionTitles[1]) sectionTitles[1].textContent = t.sectionPapers;
-  if (sectionTitles[2]) sectionTitles[2].textContent = t.sectionConnections;
+  // sectionTitles[2] is funding title (set by renderFunding)
+  if (sectionTitles[3]) sectionTitles[3].textContent = t.sectionConnections;
 
   // Connections
   const connsEl = document.getElementById("detail-connections");
@@ -1799,6 +1861,208 @@ window.addEventListener("resize",()=>{
   simulation.force("y",d3.forceY(h/2).strength(0.03));
   simulation.alpha(0.3).restart();
 });
+
+// ===================================================================
+// FUNDING DATA
+// ===================================================================
+const fundingData = {
+  wangtao: [
+    {round:"Pre-IPO",amount:"$1.5B",date:"2018",investors:["Sequoia China","Hillhouse Capital","IDG Capital"]},
+  ],
+  taoye: [
+    {round:"Series C",amount:"Undisclosed",date:"2024",investors:["IDG Capital","Shunwei Capital"]},
+    {round:"Strategic",amount:"Undisclosed",date:"2025",investors:["DJI","Tencent"]},
+  ],
+  wanglei: [
+    {round:"Series B",amount:"$100M",date:"2021",investors:["Sequoia China","China Intl Capital"]},
+    {round:"Pre-IPO",amount:"Undisclosed",date:"2025",investors:["Planning US IPO $300M+"]},
+  ],
+  pengbin: [
+    {round:"Series C++",amount:"Undisclosed",date:"2023",investors:["SoftBank Vision Fund","Hillhouse"]},
+  ],
+  yuhao: [
+    {round:"Series C",amount:"3.6B yuan",date:"2021",investors:["IDG Capital","Xiaomi/Shunwei","Tiger Global"]},
+  ],
+  changjing: [
+    {round:"IPO",amount:"STAR Board",date:"2020.2",investors:["Xiaomi/Shunwei (early)","Sequoia China"]},
+  ],
+  zhangjunbin: [
+    {round:"Series E",amount:"10B+ valuation",date:"2021",investors:["Li Zexiang/Qingshuiwan","Tencent","ByteDance"]},
+    {round:"Latest",amount:"$100M",date:"2025",investors:["Global expansion round"]},
+  ],
+  pengzhihui: [
+    {round:"Series A+",amount:"Undisclosed",date:"2024",investors:["BYD","SAIC Motor","Northern Light VC"]},
+  ],
+  carlpei: [
+    {round:"Series C",amount:"$96M",date:"2024",investors:["GV (Google)","EQT Ventures"]},
+  ],
+  liujingkang: [
+    {round:"Angel",amount:"$1M",date:"2014",investors:["IDG Capital"]},
+    {round:"IPO",amount:"1.94B yuan",date:"2025.6",investors:["STAR Board IPO +285%"]},
+  ],
+  yangmeng: [
+    {round:"IPO",amount:"Shenzhen SE",date:"2020",investors:["Google Founder's Award alumni"]},
+  ],
+  wangxingxing: [
+    {round:"Series C+",amount:"700M yuan total",date:"2025",investors:["Shunwei Capital","SIG","Miracle Plus"]},
+  ],
+  brettadcock: [
+    {round:"Series B",amount:"$675M",date:"2024",investors:["Jeff Bezos","Microsoft","OpenAI","NVIDIA"]},
+  ],
+  chenjianyu: [
+    {round:"Series A+B",amount:"1B yuan",date:"2025-2026",investors:["Tsinghua equity","Geely","BAIC"]},
+  ],
+  wanghe: [
+    {round:"Cumulative",amount:"2.4B+ yuan",date:"2025",investors:["Qiming VC","Source Code","Sequoia China"]},
+  ],
+  zhangwei: [
+    {round:"Series A",amount:"500M yuan",date:"2025",investors:["Alibaba","NIO Capital","Lenovo","JD.com"]},
+  ],
+  gaojiyuang: [
+    {round:"Series B",amount:"1B yuan",date:"2026.2",investors:["Hillhouse","GL Ventures","Starmap investors"]},
+  ],
+  chenyilun: [
+    {round:"Angel",amount:"$122M",date:"2025.3",investors:["BlueRun Ventures","Qiming VC","Lenovo Capital","Hillhouse"]},
+  ],
+  hanfengtao: [
+    {round:"Pre-A",amount:"2B yuan",date:"2026.2",investors:["Undisclosed, 10B+ valuation"]},
+  ],
+  sunzhaozhi: [
+    {round:"Angel",amount:"Tens of M",date:"2025.6",investors:["Shanghai Film Group","GSR Ventures"]},
+    {round:"Angel+",amount:"Tens of M",date:"2025.9",investors:["Sequoia China"]},
+  ],
+  hejiabin: [
+    {round:"A1",amount:"Undisclosed",date:"2025",investors:["Beijing AI Industry Fund"]},
+  ],
+  yangjianbo: [
+    {round:"5 rounds",amount:"Undisclosed",date:"2014-2025",investors:["Xiaomi","Shunwei","BlueRun","Source Code"]},
+  ],
+  ringconn: [
+    {round:"Angel+",amount:"Tens of M",date:"2024",investors:["Gao Bingqiang/Brizan","Li Zexiang/Qingshuiwan","Gan Jie"]},
+  ],
+  lizhichen: [
+    {round:"C",amount:"60M yuan",date:"2025.5",investors:["Brizan Ventures V (Gao Bingqiang)"]},
+    {round:"IPO",amount:"HK$1.64B",date:"2025.12",investors:["HKEX IPO, HK$16.4B market cap"]},
+  ],
+  chenyuqi: [
+    {round:"Series D+",amount:"$2B+ valuation",date:"2022",investors:["XbotPark seed","Source Code","Matrix Partners"]},
+  ],
+  shijinbo: [
+    {round:"Strategic",amount:">20B valuation",date:"2022",investors:["Strategic investors"]},
+  ],
+  guorenjie: [
+    {round:"Angel",amount:"~2B yuan",date:"2024.12",investors:["IDG Capital","Jingwei Ventures","ZhenFund"]},
+  ],
+  lihongwei: [
+    {round:"B++",amount:"10B+ total",date:"2026",investors:["China Mobile","Kweichow Moutai"]},
+  ],
+  zhangbo: [
+    {round:"A+",amount:"~100M yuan",date:"2025.12",investors:["Undisclosed"]},
+  ],
+  xugao: [
+    {round:"Series A",amount:"Undisclosed",date:"2024",investors:["Carbide Ventures (Japan)"]},
+  ],
+  liyong: [
+    {round:"Series A",amount:"200M yuan",date:"2024.8",investors:["CICC Capital","Sequoia China"]},
+    {round:"Follow-on",amount:"200M yuan",date:"2025.8",investors:["Sequoia China doubled down"]},
+  ],
+  wangning: [
+    {round:"IPO",amount:"HKEX",date:"2020.12",investors:["HKEX IPO +100%, peak 300B HKD"]},
+  ],
+  qiandongqi: [
+    {round:"IPO",amount:"Shanghai SE",date:"2018",investors:["China robot vacuum first IPO"]},
+  ],
+  gaolufeng: [
+    {round:"IPO",amount:"STAR Board",date:"2020",investors:["Xiaomi/Shunwei ecosystem"]},
+  ],
+  zhangqingsen: [
+    {round:"IPO",amount:"ChiNext",date:"2024.7",investors:["Hillhouse (pre-IPO), +114% day 1"]},
+  ],
+  tangwenxuan: [
+    {round:"Series A",amount:"Undisclosed",date:"2019",investors:["Li Zexiang/Songshan Lake Institute"]},
+  ],
+  taoshizheng: [
+    {round:"Series D+",amount:"Undisclosed",date:"2024",investors:["Li Zexiang ecosystem"]},
+  ],
+  wangjianjun: [
+    {round:"Series B",amount:"Undisclosed",date:"2018",investors:["Shunwei","Hillhouse (Makeblock era, 2.5B valuation)"]},
+  ],
+  jeffcardenas: [
+    {round:"Series A",amount:"~$520M",date:"2025",investors:["$5.5B valuation"]},
+  ],
+  karolhausman: [
+    {round:"Seed",amount:"$70M",date:"2024.3",investors:["Thrive Capital"]},
+    {round:"Series A",amount:"$400M",date:"2024.11",investors:["Jeff Bezos (led)","Thrive"]},
+    {round:"Series B",amount:"$600M",date:"2025.11",investors:["Alphabet CapitalG, $5.6B valuation"]},
+  ],
+  kylevogt: [
+    {round:"Seed",amount:"$150M",date:"2024.5",investors:["Spark Capital","Nat Friedman"]},
+    {round:"Round 2",amount:"$150M",date:"2025.3",investors:["$2B valuation"]},
+  ],
+  petteri: [
+    {round:"Series E",amount:"$900M",date:"2025.10",investors:["Fidelity, $11B valuation"]},
+  ],
+  willahmed: [
+    {round:"Series F",amount:"$900M+",date:"2025",investors:["$10.1B valuation"]},
+  ],
+};
+
+const INVESTOR_GRAPH_URL = "https://jason3535.github.io/investor-graph/";
+
+// Map investor names to IDs in the investor graph
+const investorLinkMap = {
+  "Sequoia China": "shennp", "Hillhouse Capital": "zhanglei", "Hillhouse": "zhanglei",
+  "IDG Capital": "xiongxg", "Sequoia China": "shennp",
+  "Xiaomi/Shunwei": "leijun", "Shunwei Capital": "xudl", "Shunwei": "xudl",
+  "GSR Ventures": "zhuxiaohu", "Source Code": "caoyi",
+  "BlueRun Ventures": "chenwg", "BlueRun": "chenwg",
+  "Qiming VC": "kuangzp", "Northern Light VC": "dengfeng",
+  "Li Zexiang/Qingshuiwan": "lizexiang2", "Li Zexiang/Songshan Lake Institute": "lizexiang2",
+  "Gao Bingqiang/Brizan": "gaobq2",
+  "Jeff Bezos": "jeffbezos", "Jeff Bezos (led)": "jeffbezos",
+  "Microsoft": "jensenhuang", "NVIDIA": "jensenhuang", "OpenAI": "natfriedman",
+  "Nat Friedman": "natfriedman",
+  "Jingwei Ventures": "zhangying", "ZhenFund": "daiyusen",
+  "Sequoia China doubled down": "shennp", "CICC Capital": null,
+  "Lenovo Capital": "hezhiqiang", "Lenovo": "hezhiqiang",
+  "GL Ventures": "gaorong",
+  "NIO Capital": null, "Alibaba": null, "JD.com": null,
+  "Fidelity": null, "Tencent": null, "BYD": null, "SAIC Motor": null,
+};
+
+function renderFunding(d) {
+  const section = document.getElementById("detail-funding-section");
+  const el = document.getElementById("detail-funding");
+  const titleEl = document.getElementById("detail-funding-title");
+  const rounds = fundingData[d.id];
+
+  if (titleEl) titleEl.textContent = currentLang === "zh" ? "融资历程" : "Funding History";
+
+  if (!rounds || rounds.length === 0) {
+    section.style.display = "none";
+    return;
+  }
+  section.style.display = "block";
+
+  el.innerHTML = rounds.map(r => {
+    const investorHtml = r.investors.map(inv => {
+      const linkId = investorLinkMap[inv];
+      if (linkId) {
+        return `<a class="funding-investor-link" href="${INVESTOR_GRAPH_URL}#${linkId}" target="_blank">${inv}</a>`;
+      }
+      return `<span>${inv}</span>`;
+    }).join(", ");
+
+    return `<div class="funding-round">
+      <span class="funding-badge">${r.round}</span>
+      <div class="funding-info">
+        <div class="funding-amount">${r.amount}</div>
+        <div class="funding-investors">${investorHtml}</div>
+      </div>
+      <span class="funding-date">${r.date}</span>
+    </div>`;
+  }).join("");
+}
 
 applyLanguage("zh");
 
