@@ -1247,12 +1247,18 @@ nodeGroups.append("circle").attr("class","node-circle")
   .attr("stroke-width",0.5)
   .style("cursor","pointer");
 
-// Labels
+// Labels — name + org
 nodeGroups.append("text").attr("class","node-label")
   .attr("dy",d=>nodeSize(d)+13)
   .attr("font-size","10px")
   .attr("letter-spacing","-0.08px")
   .text(d=>d.name);
+nodeGroups.append("text").attr("class","node-label node-org-label")
+  .attr("dy",d=>nodeSize(d)+23)
+  .attr("font-size","8px")
+  .attr("letter-spacing","-0.06px")
+  .attr("fill","rgba(255,255,255,0.35)")
+  .text(d=>d.org);
 
 // Tick — straight lines
 simulation.on("tick",()=>{
@@ -1677,7 +1683,7 @@ function applyLanguage(lang) {
   });
 
   // Update graph node labels with Chinese names
-  nodeGroups.selectAll(".node-label").text(d => {
+  nodeGroups.selectAll(".node-label:not(.node-org-label)").text(d => {
     const zhData = scholarZh[d.id];
     if (lang === "zh" && zhData && zhData.zhName) return zhData.zhName;
     return d.name;
