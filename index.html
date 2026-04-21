@@ -738,6 +738,21 @@ body {
   stroke-width: 0.5;
 }
 
+/* Medium narrow screens */
+@media (max-width: 1024px) {
+  #nav-bar { height: auto; flex-wrap: wrap; padding: 8px 16px; gap: 6px; }
+  .nav-separator { display: none; }
+  .nav-stats { font-size: 11px; order: 5; width: 100%; }
+  .nav-search-wrapper { margin-left: 0; flex: 1; min-width: 140px; order: 3; }
+  #search-input { width: 100%; }
+  #search-input:focus { width: 100%; }
+  .filter-group { order: 6; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-left: 0; padding-bottom: 2px; }
+  .filter-pill { flex-shrink: 0; }
+  .lang-toggle { order: 4; margin-left: auto; }
+  .nav-spacer { display: none; }
+  #graph-container { top: 88px; }
+}
+
 @media (max-width: 768px) {
   #nav-bar {
     height: auto;
