@@ -93,15 +93,23 @@ body {
   font-weight: 400;
   letter-spacing: -0.12px;
   color: var(--apple-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  max-width: 120px;
 }
 
 /* Search — Apple Style */
 .nav-search-wrapper {
-  margin-left: 24px;
+  margin-left: 16px;
   position: relative;
+  flex-shrink: 1;
+  min-width: 120px;
 }
 #search-input {
-  width: 220px;
+  width: 180px;
   height: 32px;
   background: rgba(255, 255, 255, 0.1);
   border: none;
@@ -137,7 +145,10 @@ body {
 .filter-group {
   display: flex;
   gap: 6px;
-  margin-left: 20px;
+  margin-left: 16px;
+  flex-shrink: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .filter-pill {
   padding: 5px 14px;
