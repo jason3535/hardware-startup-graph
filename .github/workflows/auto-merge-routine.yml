@@ -1,0 +1,56 @@
+name: Auto-merge stale routine PRs
+
+on:
+  schedule:
+    # 每天北京时间 11:00 (UTC 03:00) 检查
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+            const now = Date.now();
+            let merged = 0;
+
+            for (const pr of prs) {
+              const labels = (pr.labels || []).map(l => l.name);
+              if (!labels.includes('routine')) continue;
+
+              const ageMs = now - new Date(pr.created_at).getTime();
+              if (ageMs < sevenDaysMs) {
+                console.log(`PR #${pr.number} 还没满 7 天 (${Math.floor(ageMs/86400000)} 天),跳过`);
+                continue;
+              }
+
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  merge_method: 'squash',
+                  commit_title: `${pr.title} (auto-merged after 7 days)`,
+                });
+                console.log(`✓ Auto-merged PR #${pr.number}: ${pr.title}`);
+                merged++;
+              } catch (e) {
+                console.log(`✗ Failed to merge PR #${pr.number}: ${e.message}`);
+              }
+            }
+
+            console.log(`Done. Auto-merged ${merged} PR(s).`);
