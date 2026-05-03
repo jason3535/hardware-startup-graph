@@ -64,7 +64,7 @@ body {
 /* ===== Navigation — Apple Glass ===== */
 #nav-bar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 36px; left: 0; right: 0;
   height: 48px;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
@@ -211,9 +211,15 @@ body {
 /* ===== Graph Canvas ===== */
 #graph-container {
   position: relative;
-  margin-top: 48px;
-  height: calc(100vh - 48px);
+  margin-top: 84px;
+  height: calc(100vh - 204px);
+  min-height: 480px;
   width: 100%;
+}
+/* When no insights for current graph (e.g. AI scholar pre-content), expand graph to fill below nav */
+body.no-insights #graph-container {
+  height: calc(100vh - 84px);
+  min-height: unset;
 }
 #graph-container svg {
   width: 100%;
@@ -224,7 +230,7 @@ body {
 /* ===== Legend — Bottom Left ===== */
 #legend {
   position: fixed;
-  bottom: 44px;
+  bottom: 16px;
   left: 24px;
   z-index: 100;
   pointer-events: all;
@@ -625,14 +631,14 @@ body {
 /* ===== Bottom Quick Links ===== */
 #quick-links {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   height: 36px;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-top: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -669,7 +675,7 @@ body {
 
 #keyboard-hint {
   position: fixed;
-  bottom: 44px;
+  bottom: 16px;
   right: 24px;
   z-index: 100;
   display: flex;
@@ -701,7 +707,7 @@ body {
 /* ===== Mini Map — Bottom Right ===== */
 #geo-map {
   position: fixed;
-  bottom: 44px;
+  bottom: 16px;
   right: 24px;
   z-index: 100;
   width: 220px;
@@ -933,7 +939,7 @@ body {
 
 <!-- Insights Section (rendered by insights-widget.js) -->
 <section id="insights-section" data-graph="hardware"></section>
-<script src="insights-widget.js?v=1" defer></script>
+<script src="insights-widget.js?v=2" defer></script>
 
 <script>
 // ===================================================================

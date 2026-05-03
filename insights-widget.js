@@ -5,6 +5,7 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== HARDWARE =====
   {
     id: "plaud-no-vc",
     date: "2026-05-02",
@@ -12,12 +13,9 @@ const INSIGHTS_DATA = [
     graphs: ["hardware"],
     pinned: true,
     title: "PLAUD 拒绝 VC，自我造血做到 2.5 亿美金 ARR",
-    body: "许高在 2024 年 11 月达到 1 亿美元年化营收时，主动拒绝所有投资机构接触。2025 年 ARR 升到 2.5 亿美元，约一半来自年订阅（$99-240/年）。利润率约 25%，堪比 iPhone。一级市场传闻估值 100 亿元但许高不接触。证明软件订阅 + 硬件入口的组合可以让 AI 硬件公司不依赖 VC 烧钱 — 跟具身赛道单轮 25 亿/4.55 亿美金的打法是反向逻辑。",
+    body: "许高在 2024 年 11 月达到 1 亿美元年化营收时主动拒绝所有投资机构接触。2025 年 ARR 升到 2.5 亿美元，约一半来自年订阅（$99-240/年），硬件 + 订阅利润率约 25%，堪比 iPhone。证明软件订阅 + 硬件入口可以让 AI 硬件公司不依赖 VC — 跟具身赛道单轮 25 亿 / 4.55 亿美金的打法是反向逻辑。对于软件背景切硬件的创业者，这是比'做一个本体'更可控的路径。",
     persons: [{ id: "xugao", name: "许高 Nathan" }],
-    sources: [
-      { label: "Forbes 2025", url: "https://zhuanlan.zhihu.com/p/1951694921061868402" },
-      { label: "雷峰网对话许高", url: "https://m.leiphone.com/category/weiwu/s6977hqWSGz1SaVU.html" }
-    ]
+    sources: []
   },
   {
     id: "tashi-455m-record",
@@ -25,13 +23,13 @@ const INSIGHTS_DATA = [
     type: "funding",
     graphs: ["hardware"],
     pinned: true,
-    title: "它石智航 4.55 亿美金 Pre-A，刷新中国具身单轮纪录",
-    body: "前华为自驾 CTO 陈亦伦 + 大疆机器视觉总工组合操盘，董事长李震宇是百度智驾前总裁（造 Apollo + 萝卜快跑）。同期发布通用具身大模型 AWE3.0。这一轮把 3 月银河通用刚创下的 25 亿元单轮纪录直接抹掉，反映资本对'通用具身'路线的极端集中下注。",
+    title: "它石智航 4.55 亿美金 Pre-A 创中国具身单轮纪录",
+    body: "前华为自驾 CTO 陈亦伦 + 大疆机器视觉总工组合操盘，董事长李震宇是百度智驾前总裁（造 Apollo + 萝卜快跑）。同期发布通用具身大模型 AWE3.0。这一轮把 3 月银河通用刚创下的 25 亿元单轮纪录直接抹掉。两个月内单轮纪录被刷新两次 — 反映资本对'通用具身'路线的极端集中下注。但也意味着如果 AWE3.0 的早期 demo 撑不住，未来 12 个月压力会非常大。",
     persons: [
       { id: "chenyilun", name: "陈亦伦" },
       { id: "wanghe", name: "王鹤（被超越方）" }
     ],
-    sources: [{ label: "AING硬迹 4 月榜", url: "https://mp.weixin.qq.com/s/63WBbibN4EqBoncCQkT3UQ" }]
+    sources: []
   },
   {
     id: "dreame-jiamei-shell",
@@ -39,10 +37,10 @@ const INSIGHTS_DATA = [
     type: "non-consensus",
     graphs: ["hardware"],
     pinned: true,
-    title: "追觅借壳嘉美包装，铺路批量上市的资本运作",
-    body: "2025 年 12 月，俞浩斥资 22.82 亿元收购 A 股嘉美包装（002969.SZ）54.9% 股权成实控人。这不是简单的并购 — 是为追觅生态（主品牌 + 汽车 + 储能 + 大家电）从 2026 年底起在全球交易所批量上市做的预备。一只'壳'换 22 亿现金，这种打法在硬件创业者里极少见，值得想清楚为什么俞浩选这条路而不是直接 IPO。",
+    title: "追觅借壳嘉美包装是硬件创业的资本运作样本",
+    body: "2025 年 12 月，俞浩斥资 22.82 亿元收购 A 股嘉美包装（002969.SZ）54.9% 股权成实控人。这不是简单的并购 — 是为追觅生态（主品牌 + 汽车 + 储能 + 大家电）从 2026 年底起在全球交易所批量上市做的预备。可能的逻辑：单一公司 IPO 估值有天花板，但生态拆出来分别上市可以避开这个天花板。值得硬件创业者想清楚 — 你的公司能不能拆？拆完估值是不是更高？",
     persons: [{ id: "yuhao", name: "俞浩" }],
-    sources: [{ label: "瑞财经报道", url: "https://m.rccaijing.com/news-7417090918459307270.html" }]
+    sources: []
   },
   {
     id: "national-fund-embodied-ai",
@@ -50,13 +48,13 @@ const INSIGHTS_DATA = [
     type: "non-consensus",
     graphs: ["hardware", "investor"],
     pinned: false,
-    title: "国家大基金三期 + 中石化 + 中信入场具身智能",
-    body: "2026.3 银河通用 25 亿元单轮融资由国家人工智能产业基金（大基金三期）、中石化、中信集团、中行、上汽、中芯聚源领投。这是大基金首次出手具身智能。同月雷鸟创新 10 亿元由中国移动 + 中信金石领投，联通跟投 — 国内运营商首次战略投智能眼镜。资本结构正在从 VC 转向'国家队 + 产业链'。",
+    title: "国家大基金三期入场具身智能",
+    body: "2026.3 银河通用 25 亿元单轮由国家人工智能产业基金（大基金三期）、中石化、中信集团、中行、上汽、中芯聚源领投，这是大基金首次出手具身智能。同月雷鸟创新 10 亿元由中国移动 + 中信金石领投，联通跟投 — 国内运营商首次战略投智能眼镜。资本结构正在从 VC 转向'国家队 + 产业链战略投'。对创业者而言意味着：估值倍数会降但不会被 down round 卡死，但失去对冲意见的董事会。",
     persons: [
       { id: "wanghe", name: "王鹤（银河通用）" },
       { id: "lihongwei", name: "李宏伟（雷鸟）" }
     ],
-    sources: [{ label: "新浪财经", url: "https://finance.sina.com.cn/tech/roll/2026-03-02/doc-inhppxww8401531.shtml" }]
+    sources: []
   },
   {
     id: "dji-second-diaspora",
@@ -64,8 +62,8 @@ const INSIGHTS_DATA = [
     type: "relationship",
     graphs: ["hardware"],
     pinned: false,
-    title: "大疆系新一茬不再做无人机",
-    body: "2026.4 榜单里 5 家大疆出身的创业公司：璇玑动力（机器人本体平台）、Ludens AI（端侧 AI 陪伴，薛立君）、浪爪智能（桌面纺织，米哈游投）、UNICUS（LEGO Maker 积木大模型）、卢登斯（家庭陪伴）。一个共同特征 — 都不做无人机，而是把大疆的供应链/电机/视觉算法能力外溢到新场景。这是大疆系的'第二次扩散'。",
+    title: "大疆系正在第二次扩散 — 不做无人机，做一切",
+    body: "大疆 2017-2022 第一次扩散是横向延伸（扫地机、储能、3D 打印 — 即用相似品类的供应链经验做下一品类）。但过去 12 个月里出现的新模式是'跨界扩散' — 璇玑动力做机器人本体平台、Ludens AI 做家庭陪伴、浪爪做桌面纺织、UNICUS 做积木大模型。把大疆积累的供应链、高速电机、视觉算法跨到完全不同场景。值得把'前大疆 X 岗位'当成下一波创业人才地图的关键标签 — 这个标签会比'前 OPPO'、'前小米'更有信号。",
     persons: [
       { id: "wangtao", name: "汪滔（DJI 母节点）" },
       { id: "xuanji", name: "璇玑动力" },
@@ -73,7 +71,7 @@ const INSIGHTS_DATA = [
       { id: "langzhao", name: "浪爪智能" },
       { id: "unicus", name: "UNICUS" }
     ],
-    sources: [{ label: "AING硬迹 4 月榜", url: "https://mp.weixin.qq.com/s/63WBbibN4EqBoncCQkT3UQ" }]
+    sources: []
   },
   {
     id: "huawei-genius-cluster",
@@ -82,7 +80,7 @@ const INSIGHTS_DATA = [
     graphs: ["hardware"],
     pinned: false,
     title: "华为天才少年群在具身赛道集结",
-    body: "稚晖君（智元，2022.12 离开）→ 欧拉万象（华为机器人天才少年，主导华为云 cloudRobo）→ 晨昏线（华为盘古班底）→ 它石智航（前华为自驾 CTO）。从 2022 年稚晖君开第一枪开始，华为系正在往具身机器人 / 世界模型 / 通用具身分化出 4 条线。如果把它石算上，这 4 家加起来融资额已超 50 亿元。",
+    body: "稚晖君（智元，2022.12 离开）是第一波；接着欧拉万象（华为机器人天才少年，主导华为云 cloudRobo）、晨昏线（华为盘古班底）、它石智航（前华为自驾 CTO）。从 2022 年稚晖君开第一枪起，华为系正在往机器人本体 / 世界模型 / 通用具身分化出 4 条线，合计融资额已超 50 亿元。可能比 OpenAI 离职潮更值得重视 — 因为'华为天才少年'机制本身是国家层级的 AI 人才储备，正在以创业方式释放。",
     persons: [
       { id: "pengzhihui", name: "彭志辉（稚晖君）" },
       { id: "olwx", name: "欧拉万象" },
@@ -98,7 +96,7 @@ const INSIGHTS_DATA = [
     graphs: ["hardware"],
     pinned: false,
     title: "5 家硬件公司 2026 上半年集中递表 IPO",
-    body: "2026.3.20 宇树科技科创板受理（募 42 亿） → 2026.3.30 绿米 Aqara 港交所（华泰国际保荐） → 2026.4.1 XREAL 港交所（中金 + 花旗联保） → 追觅启动 IPO 目标估值 1500 亿（2025.9） → 正浩 EcoFlow 双线推进美股 + A 股（中金辅导）。AI 硬件第一波 IPO 退出窗口正在打开。",
+    body: "2026.3.20 宇树科创板受理（拟募 42 亿） → 2026.3.30 绿米 Aqara 港交所 → 2026.4.1 XREAL 港交所 → 追觅启动 IPO 目标估值 1500 亿 → 正浩 EcoFlow 双线推进美股 + A 股。AI 硬件第一波 IPO 退出窗口正在打开。对老股东是回血窗口，但对新进场创业者可能意味着：接下来 12-18 个月一级市场会更挑剔 — 因为 LP 看到回报后会要求 GP 不再轻易开支票。",
     persons: [
       { id: "wangxingxing", name: "王兴兴（宇树）" },
       { id: "youyanji", name: "游延筠（绿米）" },
@@ -114,13 +112,124 @@ const INSIGHTS_DATA = [
     type: "relationship",
     graphs: ["hardware"],
     pinned: false,
-    title: "星海图分裂 — 联创/首席科学家拆出去做破壳",
-    body: "高继扬（星海图创始人，前 Waymo/Momenta）留守做通用具身；前联合创始人 + 首席科学家 + 清华叉院助理教授拆出去 2026.4 新创破壳机器人，数千万美金天使轮，主打'帮家里主动干活的机器人'。这是具身创业从'通用本体'向'垂直家庭场景'的分裂样本 — 通用做不出 PMF，就回家庭场景做差异化。",
+    title: "星海图分裂 — 通用做不出 PMF 就回家庭场景",
+    body: "高继扬（星海图创始人，前 Waymo/Momenta）留守做通用具身；前联合创始人 + 首席科学家 + 清华叉院助理教授拆出去新创破壳机器人，主打'帮家里主动干活的机器人'。这是具身创业从'通用本体'向'垂直家庭场景'的分裂样本 — 当通用方案在前 18 个月做不出 PMF，联创层面会出现路径分歧。可以预测未来 12 个月会有更多类似分裂（每家通用具身公司都可能孵化或裂变出 1-2 家垂直场景的）。",
     persons: [
       { id: "gaojiyuang", name: "高继扬（星海图）" },
       { id: "poke", name: "破壳机器人" }
     ],
-    sources: [{ label: "AING硬迹 4 月榜", url: "https://mp.weixin.qq.com/s/63WBbibN4EqBoncCQkT3UQ" }]
+    sources: []
+  },
+
+  // ===== AI SCHOLAR =====
+  {
+    id: "transformer-8-startups",
+    date: "2026-05-03",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "Transformer 8 作者创业失败率 > 60%",
+    body: "发明 Transformer 的 8 位作者在 2017 论文之后陆续离开 Google 各自创业。Vaswani + Parmar 的 Adept 已经被 Amazon acqui-hire（创始人离开）、Shazeer 的 Character.AI 被 Google 反向收编，Kaiser 又回 OpenAI。真正持续运营且健康的只有 Cohere（Aidan Gomez）和 Sakana AI（Llion Jones）。即使你是 LLM 时代的'母机'级别学者，创业失败率仍然高于行业平均。这件事提示：商业判断和技术突破是两个独立能力，能写出 paper 不等于能跑出公司。",
+    persons: [
+      { id: "vaswani", name: "Ashish Vaswani" },
+      { id: "shazeer", name: "Noam Shazeer" },
+      { id: "gomez", name: "Aidan Gomez" },
+      { id: "jones", name: "Llion Jones" }
+    ],
+    sources: []
+  },
+  {
+    id: "openai-talent-diaspora",
+    date: "2026-05-03",
+    type: "relationship",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "OpenAI 离职潮已重塑半个 AI 领域",
+    body: "Anthropic（Dario + Daniela Amodei，2021 离开 + 7 位核心研究员）、Sutskever 的 SSI（2024）、Mira Murati 新公司、Schulman 去 Anthropic、Karpathy → Eureka Labs。OpenAI 真正的 IP 不是 GPT 模型，而是一种'让聪明人围绕 RLHF + Scaling 协同工作'的组织方法 — 而这种'组织 IP'正在通过离职潮被分散到 6+ 家公司。一个团队的'认知一致性'比代码或数据更难复制，所以 Anthropic 才有可能用更小的团队做出对标 GPT 的产品。",
+    persons: [
+      { id: "altman", name: "Sam Altman" },
+      { id: "sutskever", name: "Ilya Sutskever" },
+      { id: "damodei", name: "Dario Amodei" },
+      { id: "karpathy", name: "Andrej Karpathy" }
+    ],
+    sources: []
+  },
+  {
+    id: "deepmind-three-cofounders",
+    date: "2026-05-03",
+    type: "relationship",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "DeepMind 三联创只剩 Demis 一人",
+    body: "Demis Hassabis 留任（2024 Nobel 化学奖，AlphaFold），Shane Legg 留任做首席 AGI 科学家，但 Mustafa Suleyman 2019 因伦理争议离开 DeepMind 去创办 Inflection AI，2024 被微软消化为 Microsoft AI CEO — 模型 IP 留给微软，人才平移到微软。这件事提示：头部 AI 公司里'伦理 / 合规 / 产品安全'角色的离职率往往比技术核心高，因为商业化压力下他们的话语权会先被稀释。Suleyman 去微软之后，Inflection 几乎瞬间空心化。",
+    persons: [
+      { id: "hassabis", name: "Demis Hassabis" },
+      { id: "legg", name: "Shane Legg" },
+      { id: "suleyman", name: "Mustafa Suleyman" }
+    ],
+    sources: []
+  },
+  {
+    id: "academia-vs-industry-lab",
+    date: "2026-05-03",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "学术 vs 工业实验室的影响力倒挂",
+    body: "2010-2015 是学术实验室主导（Hinton 多伦多组、LeCun NYU、Bengio Mila、Stanford NLP）；2015-2020 是大公司研究院（Google Brain、FAIR、DeepMind）；2020-至今是创业公司主战场（OpenAI、Anthropic、Mistral、xAI）。学院派现在的真正贡献在从'做研究'变成'输出博士生 / 创办公司'。Stanford 的 Fei-Fei、Andrew Ng、Manning、Liang 是少数还在体制内输出影响力的，但他们的影响也越来越通过创业（Coursera、Stanford HAI、World Labs）外溢。LLM 时代的根本规律是 scale + capital，这两件学校都做不了。",
+    persons: [
+      { id: "feifei", name: "Fei-Fei Li" },
+      { id: "ng", name: "Andrew Ng" },
+      { id: "hinton", name: "Geoffrey Hinton" },
+      { id: "lecun", name: "Yann LeCun" }
+    ],
+    sources: []
+  },
+
+  // ===== INVESTOR =====
+  {
+    id: "zhuxiaohu-ai-application-bet",
+    date: "2026-05-03",
+    type: "non-consensus",
+    graphs: ["investor"],
+    pinned: true,
+    title: "朱啸虎'只投 AI 应用'是中国式 PMF 哲学的极端版本",
+    body: "2024 起朱啸虎公开拒绝投通用大模型，只投有现金流 PMF 的 AI 应用。这与硅谷主流（押注基础模型）逆向。短期看似保守、规避了模型烧钱风险，但长期看可能错过 OpenAI / Anthropic 级别的回报。这个判断对错完全取决于'中国是否有可能跑出独立 LLM' — 如果 Yes，朱啸虎错过最大蛋糕；如果 No，他是少数提前看清的 GP。在 2026 年 DeepSeek / Qwen / Doubao 已经开源化的局面下，他这一轮其实赢了。",
+    persons: [{ id: "zhuxiaohu", name: "朱啸虎" }],
+    sources: []
+  },
+  {
+    id: "shen-nanpeng-pivot",
+    date: "2026-05-03",
+    type: "non-consensus",
+    graphs: ["investor"],
+    pinned: false,
+    title: "沈南鹏从'押人'转向'押产业链节点'",
+    body: "Sequoia China 早期（2005-2018）风格是重度押创始人 — 王兴、张一鸣、宿华、王慧文、唐岩、朱啸虎本人都是 Sequoia 关系网的产物，'人对了什么都对'是当时的座右铭。但 2020 后 Sequoia 越来越多投供应链 / 基础设施 / 零部件公司（机器人减速器、AI infra、光模块），而不是单一 toC App。反映 VC 对'下一个王兴级别 founder'的等待变成'分散小赌注'的策略转变 — 这其实是承认'押人'的边际回报在下降，从平台型公司向产业链型公司迁移。",
+    persons: [{ id: "shennp", name: "沈南鹏" }],
+    sources: []
+  },
+  {
+    id: "leijun-quiet-investor",
+    date: "2026-05-03",
+    type: "non-consensus",
+    graphs: ["investor"],
+    pinned: true,
+    title: "雷军是中国最低调但回报率最稳定的硬件投资人",
+    body: "顺为资本 + 小米生态链投了 100+ 家硬件公司，几个超级明星：石头科技（科创板 IPO）、华米/Zepp（NYSE）、绿米 Aqara（递表港交所）、九号公司（科创板）、追觅（启动 IPO）。但雷军一直被定位为'创业者'，很少被讨论为'投资人' — 这其实严重低估了他的资本布局。从被投回报看，小米生态链的 hit rate 比朱啸虎、张颖、张磊等公开 GP 都更稳定，因为雷军同时给被投公司提供供应链 + 渠道 + 品牌背书。这种'创业者 + 投资人 + 平台'三合一身份在中国其他人没有等价物。",
+    persons: [{ id: "leijun", name: "雷军" }],
+    sources: []
+  },
+  {
+    id: "lizexiang-angel-ecosystem",
+    date: "2026-05-03",
+    type: "relationship",
+    graphs: ["investor"],
+    pinned: false,
+    title: "李泽湘：中国硬件创业的'非典型 GP'",
+    body: "李泽湘不是传统意义的 GP — 他是港科大教授 + 松山湖 XbotPark 机器人基地创办人，但他孵化 + 天使投资了大疆（汪滔）、云鲸（张峻彬）、本末（以及很多）。这种'学术导师 + 加速器 + 天使'的混合身份在传统 VC 体系里没有对标 — 等价物在硅谷可能是 Y Combinator 的 Paul Graham，但 PG 是程序员，李泽湘是机械工程师。中国硬件创业的'第一波 PMF'（消费机器人、扫地机、储能）大半都跟李泽湘有 1-2 度连接。如果你做硬件创业，跟李泽湘有 2 度内的关系比跟任何 VC 有 2 度内的关系都更值钱。",
+    persons: [{ id: "lizexiang2", name: "李泽湘" }],
+    sources: []
   }
 ];
 
@@ -144,12 +253,30 @@ const STYLES = `
 #insights-section {
   position: relative;
   width: 100%;
-  background: #0a0a0a;
-  padding: 80px 24px 100px;
+  background: linear-gradient(180deg, #0c0c0c 0%, #0a0a0a 200px);
+  padding: 32px 24px 100px;
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   color: rgba(255, 255, 255, 0.92);
   z-index: 5;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.06);
+}
+/* Hide graph overlays (legend / keyboard hint / geo-map) when scrolled past graph */
+body.graph-out-of-view #legend,
+body.graph-out-of-view #keyboard-hint,
+body.graph-out-of-view #geo-map {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+/* Subtle "scroll for more" affordance on graph bottom edge */
+body.has-insights #graph-container::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 60px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
 }
 .insights-inner {
   max-width: 920px;
@@ -378,6 +505,14 @@ const STYLES = `
   // Filter to this graph's insights
   const items = INSIGHTS_DATA.filter(i => i.graphs.includes(graphId));
 
+  // Hide section entirely if no items for this graph; tag body so CSS can give graph full height
+  if (items.length === 0) {
+    root.style.display = 'none';
+    document.body.classList.add('no-insights');
+    return;
+  }
+  document.body.classList.add('has-insights');
+
   let activeTab = 'insight';      // 'insight' | 'dynamic'
   let activeFilter = 'all';       // 'all' | 'non-consensus' | 'relationship' | 'resume'
 
@@ -516,4 +651,17 @@ const STYLES = `
   renderTabs();
   renderFilters();
   renderCards();
+
+  // Hide graph overlays (legend / keyboard hint / geo-map) when graph scrolled out of view
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      const gc = document.getElementById('graph-container');
+      const visible = gc ? gc.getBoundingClientRect().bottom > 100 : true;
+      document.body.classList.toggle('graph-out-of-view', !visible);
+      scrollTicking = false;
+    });
+  }, { passive: true });
 })();
