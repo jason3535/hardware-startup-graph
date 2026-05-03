@@ -185,6 +185,85 @@ const INSIGHTS_DATA = [
     ],
     sources: []
   },
+  {
+    id: "schmidhuber-credit-narrative",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "Schmidhuber 的'我先发明的'是 AI 学术圈最大的非共识",
+    body: "Jürgen Schmidhuber 长期声称自己 1990 年代就发明了 LSTM（Hochreiter+Schmidhuber 1997 论文确实是 LSTM 起源）、GAN 的雏形（1990 PM-GAN）、attention 机制等。主流 AI 圈选择性忽视他 — 2018 图灵奖给了 Hinton/LeCun/Bengio，没他。但他的论文都是真的。这件事反映：学术信用不是看谁先发明，而是看谁有平台（Hinton 在多伦多+Google、LeCun 在 NYU+Meta、Bengio 在 Mila+Element AI），Schmidhuber 困在瑞士小机构没扩散。提醒任何科研人员：研究本身不是终点，把研究'能扩散的体系'比研究质量更决定影响力。",
+    persons: [
+      { id: "schmidhuber", name: "Jürgen Schmidhuber" },
+      { id: "hochreiter", name: "Sepp Hochreiter" },
+      { id: "hinton", name: "Geoffrey Hinton" },
+      { id: "lecun", name: "Yann LeCun" },
+      { id: "bengio", name: "Yoshua Bengio" }
+    ],
+    sources: []
+  },
+  {
+    id: "karpathy-edu-leverage",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "Karpathy 一个人重塑了 LLM 时代的 AI 教育",
+    body: "Andrew Ng 的 Coursera 是 AI 入门的事实标准（基础+通用），但 Karpathy 的 YouTube 系列（makemore / micrograd / GPT-from-scratch / nanoGPT）才是 LLM 时代的入门事实标准。区别在更新速度：预录的 MOOC 跟不上前沿，Karpathy 的'边讲边写'模式跟着 LLM 一起进化。Karpathy 现在创办 Eureka Labs 把这个模式产品化。一个人 + YouTube + 顶级技术认知 = 比任何 EdTech 公司都更高的杠杆 — 这是软件时代'教学即产品'的典型样本。",
+    persons: [
+      { id: "karpathy", name: "Andrej Karpathy" },
+      { id: "ng", name: "Andrew Ng" }
+    ],
+    sources: []
+  },
+  {
+    id: "constitutional-vs-rlhf",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "Anthropic Constitutional AI vs OpenAI RLHF — 路线分歧的本质",
+    body: "Amodei 兄妹从 OpenAI 出来后，Anthropic 推出 Constitutional AI（让模型用一组宪法式规则自我评估和纠正），而 OpenAI 继续 RLHF（人类标注偏好做反馈）。哲学差异是：Anthropic 团队认为'人类标注'天然不可 scale 到超人类智能（你怎么标注比你聪明的模型？），Constitutional 才是真正可扩展的 alignment 方法。OpenAI 团队（Schulman 在内）则相信 RLHF 加上 process reward 可以走得更远。这两条路在 2026 年 GPT-5 vs Claude 4 还没决出胜负。但创业角度看 — 这是真正的'第一性原理之争'，比'谁的模型大'重要得多。",
+    persons: [
+      { id: "damodei", name: "Dario Amodei" },
+      { id: "daniela", name: "Daniela Amodei" },
+      { id: "schulman", name: "John Schulman" },
+      { id: "altman", name: "Sam Altman" }
+    ],
+    sources: []
+  },
+  {
+    id: "deepseek-counter-narrative",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "DeepSeek 梁文锋:工程师驱动+开源+低估值的反叙事",
+    body: "梁文锋从量化基金（幻方）切到大模型，DeepSeek 用极致工程优化做出对标 GPT-4 级别的开源模型，估值远低于同期 Moonshot/智谱/MiniMax。这个模式跟 OpenAI 完全相反：OpenAI 是组织化（强 PR + 估值跃迁 + 闭源），DeepSeek 是工程师导向（无 PR + 开源 + 低估值）。如果 DeepSeek 模式可复制 — 即'小团队+工程极致+开源生态'打得过'大团队+巨额融资+闭源'，那会重塑整个 AI 公司治理。2026 年初 V3/R1 在全球开源社区已经有了对标 Llama 的影响力，这是中国 AI 第一次在'方法论'层面输出全球。",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋" },
+      { id: "altman", name: "Sam Altman" },
+      { id: "mensch", name: "Arthur Mensch" }
+    ],
+    sources: []
+  },
+  {
+    id: "individual-vs-collective-ai",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "AI 公司治理:个人主导 vs 集体决策的隐形分裂",
+    body: "OpenAI / Anthropic / Google DeepMind 是'集体决策制' — 研究员多人投票决定方向，CEO 只是协调者。但 xAI（Musk）、Mistral（Mensch）、DeepSeek（梁文锋）是'个人主导制' — 一个核心人物决定一切技术路线和产品策略。短期看个人主导制效率高（决策快、不内耗），长期看集体决策制更稳（避免单点失败）。Musk 的 xAI 是个公开实验:Grok 开源、X 平台数据、Memphis 巨型 GPU 集群、Musk 个人意志贯穿整个公司。如果 xAI 在 2026-2027 跑出来,会颠覆'AI 公司必须研究员主导'的共识。",
+    persons: [
+      { id: "musk", name: "Elon Musk" },
+      { id: "mensch", name: "Arthur Mensch" },
+      { id: "liangwenfeng", name: "梁文锋" },
+      { id: "altman", name: "Sam Altman" },
+      { id: "damodei", name: "Dario Amodei" }
+    ],
+    sources: []
+  },
 
   // ===== INVESTOR =====
   {
