@@ -121,6 +121,54 @@ const INSIGHTS_DATA = [
     sources: []
   },
 
+  // ===== WEEKLY TRENDS 2026-05-03 =====
+  {
+    id: "trend-2026-05-03-embodied-factory",
+    date: "2026-05-03",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "具身智能进厂：从「试点」升级为「量产交付」",
+    body: "本周多个渠道确认，具身机器人正从 2025 年的工厂 Demo 迈入批量落地阶段。星动纪元已在顺丰/中国邮政 10+ 物流中心部署 L7 人形，单笔订单超 5000 万元；银河通用 Galbot S1 在宁德时代产线实现行业唯一零遥操稳定运行；国家电网 2026 年采购计划 8500 台机器人，预算 68 亿元。此前赛道核心指标是「融资额」，这周开始已明确切换为「订单量 + 毛利率」。对还在叙事阶段的公司，这意味着 12 个月内会被要求交出实际 GMV 数字。",
+    persons: [
+      { id: "chenjianyu", name: "陈建宇（星动纪元）" },
+      { id: "wanghe", name: "王鹤（银河通用）" }
+    ],
+    sources: [
+      { label: "人民日报 2026-04-29", url: "http://finance.people.com.cn/n1/2026/0429/c1004-40711056.html" }
+    ]
+  },
+  {
+    id: "trend-2026-05-03-meta-physical-ai",
+    date: "2026-05-03",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "Meta 收购 ARI：大厂从软件 AI 转向物理 AI 的信号枪",
+    body: "5 月 1 日，Meta 收购机器人 AI 初创公司 Assured Robot Intelligence（ARI），联创 Lerrel Pinto（前 Fauna Robotics）和 Xiaolong Wang（前英伟达研究员）加入 Meta 超级智能实验室，核心技术是让机器人理解并适应真实物理环境中的人类行为。这是 Google DeepMind 消化 Everyday Robots 团队之后，第二次大厂通过 acqui-hire 切入物理 AI。微软（Nuance + Azure robotics）、谷歌（Everyday Robots + pi 合作）、Meta（ARI）已形成三足鼎立。大厂虹吸效应会让物理 AI 的顶尖人才越来越贵，中国具身赛道的海外竞争成本将进一步提升。",
+    persons: [],
+    sources: [
+      { label: "TechCrunch 2026-05-01", url: "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/" }
+    ]
+  },
+  {
+    id: "trend-2026-05-03-humanoid-shakeout",
+    date: "2026-05-03",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "人形赛道清场：千台产能成生死分水岭",
+    body: "本周多个信号显示具身赛道正在分化进入清场阶段。宇树 IPO 申请受理后被证监会随机抽中现场检查，2026 年目标出货 2 万台人形；智元 2026 年 Q1 已完成累计万台下线，2025 年营收 10.5 亿元，年出货量预计占行业 40%+。与此同时，钛媒体「具身智能开始清场」报道指出：部分中小玩家已在变卖 GPU 服务器，具身研讨者比具身创业者更多。清场逻辑与 2023 年 LLM 大模型一致——产能 + 营收 + 资本结构是三道筛子，只有三道都过的才有资格进入 2027 年。",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" },
+      { id: "pengzhihui", name: "彭志辉（智元）" }
+    ],
+    sources: [
+      { label: "钛媒体 具身智能清场", url: "https://www.tmtpost.com/7928180.html" },
+      { label: "宇树 IPO 受理 Caixin", url: "https://www.caixinglobal.com/2026-03-21/unitree-robotics-files-for-608-million-star-market-ipo-102425491.html" }
+    ]
+  },
+
   // ===== AI SCHOLAR =====
   {
     id: "transformer-8-startups",
