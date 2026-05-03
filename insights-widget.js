@@ -606,6 +606,65 @@ body.has-insights #graph-container::after {
   border: 0.5px dashed rgba(255, 255, 255, 0.12);
   border-radius: 18px;
 }
+/* Subscribe form */
+.insights-subscribe {
+  margin: 24px 0 36px;
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+.insights-subscribe-pitch {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.insights-subscribe-pitch strong { color: #fff; font-weight: 600; }
+.insights-subscribe-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.insights-subscribe-form input[type="email"] {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 10px 14px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  font-family: inherit;
+}
+.insights-subscribe-form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(41, 151, 255, 0.6);
+}
+.insights-subscribe-form input[type="email"]::placeholder { color: rgba(255, 255, 255, 0.35); }
+.insights-subscribe-form button {
+  padding: 10px 22px;
+  font-size: 13px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.insights-subscribe-form button:hover { background: rgba(255, 255, 255, 0.85); }
+.insights-subscribe-form button:disabled { background: rgba(255, 255, 255, 0.35); cursor: not-allowed; }
+.insights-subscribe-status {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 10px;
+  min-height: 14px;
+  letter-spacing: 0.2px;
+}
+.insights-subscribe-status.ok { color: #7be592; }
+.insights-subscribe-status.err { color: #ff8b6b; }
 @media (max-width: 600px) {
   #insights-section { padding: 56px 16px 100px; }
   .insights-title { font-size: 24px; }
@@ -658,11 +717,22 @@ body.has-insights #graph-container::after {
       <div class="insights-eyebrow">INSIGHTS</div>
       <h2 class="insights-title">最新洞察</h2>
       <p class="insights-subtitle">非共识洞察 + 人物关系 + 投资动态。</p>
+      <div class="insights-subscribe">
+        <p class="insights-subscribe-pitch">每周一收到 <strong>Jason's Hardware Notes</strong>。中国 AI 硬件创业的人物 / 融资 / 非共识洞察。免费,一键退订。</p>
+        <form class="insights-subscribe-form" id="insights-subscribe-form">
+          <input type="email" name="email" required placeholder="your@email.com" autocomplete="email" spellcheck="false">
+          <button type="submit">订阅</button>
+        </form>
+        <div class="insights-subscribe-status" id="insights-subscribe-status">不发送任何垃圾。</div>
+      </div>
       <div class="insights-tabs" id="insights-tabs"></div>
       <div class="insights-filter-row" id="insights-filter-row"></div>
       <div class="insights-cards" id="insights-cards-container"></div>
     </div>
   `;
+
+  // Wire subscribe form
+  bindSubscribeForm();
 
   function getInsightItems()  { return items.filter(i => ['non-consensus','relationship','resume'].includes(i.type)); }
   function getDynamicItems()  { return items.filter(i => ['funding','trend'].includes(i.type)); }
@@ -755,6 +825,50 @@ body.has-insights #graph-container::after {
         ${sourceChips ? `<div class="insight-card-row"><span class="insight-card-label">来源</span>${sourceChips}</div>` : ''}
       </article>
     `;
+  }
+
+  function bindSubscribeForm() {
+    const form = document.getElementById('insights-subscribe-form');
+    const status = document.getElementById('insights-subscribe-status');
+    if (!form || !status) return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const email = form.email.value.trim();
+      btn.disabled = true; btn.textContent = '提交中...';
+      status.className = 'insights-subscribe-status'; status.textContent = '';
+      trackEvent('subscribe_clicked', { email_domain: email.split('@')[1] || '' });
+      try {
+        const res = await fetch('https://insights.jasonlin.tech/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: graphId }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          if (data.status === 'already_subscribed') {
+            status.className = 'insights-subscribe-status ok';
+            status.textContent = '你已经订阅过了 ✓';
+          } else if (data.status === 'confirmation_resent') {
+            status.className = 'insights-subscribe-status ok';
+            status.textContent = '确认邮件已重发,请查收 ✓';
+          } else {
+            status.className = 'insights-subscribe-status ok';
+            status.textContent = '已发送确认邮件到你邮箱,点确认链接完成订阅 ✓';
+          }
+          btn.textContent = '已发送';
+          trackEvent('subscribe_completed', { status: data.status });
+        } else {
+          status.className = 'insights-subscribe-status err';
+          status.textContent = data.error || '提交失败,请重试';
+          btn.disabled = false; btn.textContent = '订阅';
+        }
+      } catch (err) {
+        status.className = 'insights-subscribe-status err';
+        status.textContent = '网络错误,请重试';
+        btn.disabled = false; btn.textContent = '订阅';
+      }
+    });
   }
 
   function renderFooter(activeGraph) {
