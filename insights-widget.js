@@ -325,7 +325,8 @@ const TYPE_LABELS = {
   "non-consensus": "非共识",
   "relationship":  "关系",
   "resume":        "履历",
-  "funding":       "投资动态"
+  "funding":       "融资",
+  "trend":         "最新情况"
 };
 
 const STYLES = `
@@ -495,6 +496,7 @@ body.has-insights #graph-container::after {
 .insight-type-badge.insight-type-relationship  { background: rgba(94, 158, 255, 0.12); border-color: rgba(94, 158, 255, 0.4); color: #8fb6ff; }
 .insight-type-badge.insight-type-resume        { background: rgba(191, 90, 242, 0.12); border-color: rgba(191, 90, 242, 0.4); color: #d09fff; }
 .insight-type-badge.insight-type-funding       { background: rgba(48, 209, 88, 0.12); border-color: rgba(48, 209, 88, 0.4); color: #7be592; }
+.insight-type-badge.insight-type-trend         { background: rgba(100, 210, 255, 0.12); border-color: rgba(100, 210, 255, 0.4); color: #6ed4ff; }
 .insight-date {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.4);
@@ -607,8 +609,8 @@ body.has-insights #graph-container::after {
     </div>
   `;
 
-  function getInsightItems()  { return items.filter(i => i.type !== 'funding'); }
-  function getDynamicItems()  { return items.filter(i => i.type === 'funding'); }
+  function getInsightItems()  { return items.filter(i => ['non-consensus','relationship','resume'].includes(i.type)); }
+  function getDynamicItems()  { return items.filter(i => ['funding','trend'].includes(i.type)); }
 
   function renderTabs() {
     const ic = getInsightItems().length;
@@ -634,11 +636,12 @@ body.has-insights #graph-container::after {
 
   function renderFilters() {
     const row = document.getElementById('insights-filter-row');
-    if (activeTab === 'dynamic') { row.innerHTML = ''; return; }
-    const insightItems = getInsightItems();
-    const types = ['all', 'non-consensus', 'relationship', 'resume'];
+    const tabItems = activeTab === 'insight' ? getInsightItems() : getDynamicItems();
+    const types = activeTab === 'insight'
+      ? ['all', 'non-consensus', 'relationship', 'resume']
+      : ['all', 'funding', 'trend'];
     row.innerHTML = types.map(t => {
-      const count = t === 'all' ? insightItems.length : insightItems.filter(i => i.type === t).length;
+      const count = t === 'all' ? tabItems.length : tabItems.filter(i => i.type === t).length;
       if (t !== 'all' && count === 0) return '';
       const label = t === 'all' ? '全部' : TYPE_LABELS[t];
       return `<button class="insights-chip ${activeFilter === t ? 'active' : ''}" data-filter="${t}">${label} <span style="opacity:.5">${count}</span></button>`;
@@ -654,7 +657,7 @@ body.has-insights #graph-container::after {
 
   function renderCards() {
     let list = activeTab === 'insight' ? getInsightItems() : getDynamicItems();
-    if (activeTab === 'insight' && activeFilter !== 'all') {
+    if (activeFilter !== 'all') {
       list = list.filter(i => i.type === activeFilter);
     }
     list = list.slice().sort((a, b) => {
