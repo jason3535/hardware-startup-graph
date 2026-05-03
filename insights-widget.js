@@ -521,7 +521,7 @@ body.has-insights #graph-container::after {
     <div class="insights-inner">
       <div class="insights-eyebrow">INSIGHTS</div>
       <h2 class="insights-title">最新洞察</h2>
-      <p class="insights-subtitle">非共识洞察 + 人物关系 + 投资动态。每月由 AING硬迹 routine 自动补充。</p>
+      <p class="insights-subtitle">非共识洞察 + 人物关系 + 投资动态。</p>
       <div class="insights-tabs" id="insights-tabs"></div>
       <div class="insights-filter-row" id="insights-filter-row"></div>
       <div class="insights-cards" id="insights-cards-container"></div>
