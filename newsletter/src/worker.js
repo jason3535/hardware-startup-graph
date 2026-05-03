@@ -5,7 +5,19 @@
 
 const NEWSLETTER_NAME = "Jason's Hardware Notes";
 const FROM_EMAIL = "Jason <hello@insights.jasonlin.tech>"; // verified domain in Resend
-const SITE_URL = "https://insights.jasonlin.tech";
+
+// Site URL — auto-derived from current request, override with env.SITE_URL once on custom domain
+const FALLBACK_SITE_URL = "https://jasons-hardware-notes.992978142.workers.dev";
+function getSiteUrl(request, env) {
+  try {
+    if (env && env.SITE_URL) return env.SITE_URL;
+    if (request && request.url) {
+      const u = new URL(request.url);
+      if (u.origin && u.origin !== 'null' && u.origin !== 'undefined') return u.origin;
+    }
+  } catch (e) { console.error('getSiteUrl error:', e.message); }
+  return FALLBACK_SITE_URL;
+}
 
 // ============================================================
 // Router
@@ -22,8 +34,8 @@ export default {
 
       // === API ===
       if (pathname === '/api/subscribe' && method === 'POST') return cors(await handleSubscribe(request, env));
-      if (pathname === '/api/confirm' && method === 'GET') return await handleConfirm(url, env);
-      if (pathname === '/unsubscribe' && method === 'GET') return await handleUnsubscribe(url, env);
+      if (pathname === '/api/confirm' && method === 'GET') return await handleConfirm(url, env, request);
+      if (pathname === '/unsubscribe' && method === 'GET') return await handleUnsubscribe(url, env, request);
       if (pathname === '/api/send' && method === 'POST') return await handleSend(request, env);
 
       // === Pages ===
@@ -74,12 +86,12 @@ async function handleSubscribe(request, env) {
   await env.SUBSCRIBERS.put(`sub:${email}`, JSON.stringify(data));
   await env.SUBSCRIBERS.put(`token:${token}`, email); // reverse index for confirm/unsubscribe
 
-  await sendConfirmEmail(email, token, env);
+  await sendConfirmEmail(email, token, env, getSiteUrl(request, env));
   return jsonResp({ ok: true, status: 'pending_confirmation' });
 }
 
-async function sendConfirmEmail(email, token, env) {
-  const link = `${SITE_URL}/api/confirm?token=${token}`;
+async function sendConfirmEmail(email, token, env, siteUrl) {
+  const link = `${siteUrl}/api/confirm?token=${token}`;
   const html = confirmEmailHtml(link);
   const text = `点击链接确认订阅 Jason's Hardware Notes:\n\n${link}\n\n如果不是你订阅的,忽略即可。`;
   await sendViaResend({
@@ -91,7 +103,7 @@ async function sendConfirmEmail(email, token, env) {
   }, env);
 }
 
-async function handleConfirm(url, env) {
+async function handleConfirm(url, env, request) {
   const token = url.searchParams.get('token');
   if (!token) return new Response('Missing token', { status: 400 });
 
@@ -106,19 +118,20 @@ async function handleConfirm(url, env) {
   data.confirmedAt = new Date().toISOString();
   await env.SUBSCRIBERS.put(`sub:${email}`, JSON.stringify(data));
 
-  return Response.redirect(`${SITE_URL}/confirmed`, 302);
+  return Response.redirect(`${getSiteUrl(request, env)}/confirmed`, 302);
 }
 
-async function handleUnsubscribe(url, env) {
+async function handleUnsubscribe(url, env, request) {
   const token = url.searchParams.get('token');
+  const siteUrl = getSiteUrl(request, env);
   if (!token) return new Response('Missing token', { status: 400 });
 
   const email = await env.SUBSCRIBERS.get(`token:${token}`);
-  if (!email) return Response.redirect(`${SITE_URL}/unsubscribed`, 302);
+  if (!email) return Response.redirect(`${siteUrl}/unsubscribed`, 302);
 
   await env.SUBSCRIBERS.delete(`sub:${email}`);
   await env.SUBSCRIBERS.delete(`token:${token}`);
-  return Response.redirect(`${SITE_URL}/unsubscribed`, 302);
+  return Response.redirect(`${siteUrl}/unsubscribed`, 302);
 }
 
 // ============================================================
@@ -133,16 +146,27 @@ async function handleSend(request, env) {
   // Validate minimum shape
   if (!issue.id || !issue.date || !issue.subject) return jsonResp({ error: 'Missing id/date/subject' }, 400);
 
-  // Persist issue (so it appears in archive + /issue/{id} URL)
+  // Dedup: if this issue id was already broadcast, do nothing (idempotent for re-runs of the workflow)
+  const existingRaw = await env.SUBSCRIBERS.get(`issue:${issue.id}`);
+  if (existingRaw) {
+    const existing = JSON.parse(existingRaw);
+    if (existing.sentAt) {
+      return jsonResp({ ok: true, status: 'already_sent', sentAt: existing.sentAt, issueId: issue.id });
+    }
+  }
+
+  // Mark sentAt before sending (locks against concurrent triggers)
+  issue.sentAt = new Date().toISOString();
   await env.SUBSCRIBERS.put(`issue:${issue.id}`, JSON.stringify(issue));
 
   // List confirmed subscribers
   const list = await listSubscribers(env, 'confirmed');
 
+  const siteUrl = getSiteUrl(request, env);
   let sent = 0, failed = 0;
   for (const sub of list) {
-    const html = renderIssueHtml(issue, sub.token);
-    const text = renderIssueText(issue, sub.token);
+    const html = renderIssueHtml(issue, sub.token, siteUrl);
+    const text = renderIssueText(issue, sub.token, siteUrl);
     try {
       await sendViaResend({ from: FROM_EMAIL, to: sub.email, subject: issue.subject, html, text }, env);
       sent++;
@@ -367,15 +391,15 @@ function renderItemHtml(item, sectionNum, idx, total) {
   return `${subnum}${subtitle}${body}${judgment}${sourceLine}`;
 }
 
-function renderIssueHtml(issue, unsubscribeToken) {
+function renderIssueHtml(issue, unsubscribeToken, siteUrl) {
   // Email-safe table-based version (same content, more compatible markup)
   // For MVP we use the page version — most modern clients render fine
   const inner = renderIssueBodyHtml(issue);
-  const footer = `<div class="footer"><a href="${SITE_URL}/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}">退订</a> &middot; <a href="${SITE_URL}/archive">归档</a></div>`;
+  const footer = `<div class="footer"><a href="${siteUrl}/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}">退订</a> &middot; <a href="${siteUrl}/archive">归档</a></div>`;
   return pageShell(issue.subject || issue.title || NEWSLETTER_NAME, inner + footer);
 }
 
-function renderIssueText(issue, unsubscribeToken) {
+function renderIssueText(issue, unsubscribeToken, siteUrl) {
   const lines = [issue.title || NEWSLETTER_NAME, issue.date, ''];
   if (issue.tldr) {
     lines.push('这一周');
@@ -395,7 +419,7 @@ function renderIssueText(issue, unsubscribeToken) {
       lines.push('');
     });
   });
-  lines.push('', '---', '退订: ' + SITE_URL + '/unsubscribe?token=' + unsubscribeToken);
+  lines.push('', '---', '退订: ' + siteUrl + '/unsubscribe?token=' + unsubscribeToken);
   return lines.join('\n');
 }
 

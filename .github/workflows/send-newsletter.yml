@@ -1,0 +1,70 @@
+name: Send Newsletter on merge
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'digest/**.json'
+  workflow_dispatch:
+    inputs:
+      digest_file:
+        description: '指定要发送的 digest 文件路径(留空则取最新)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 需要 2 个 commit 比对最新改动文件
+
+      - name: Find digest file to send
+        id: find
+        run: |
+          set -euo pipefail
+          if [ -n "${{ github.event.inputs.digest_file || '' }}" ]; then
+            target="${{ github.event.inputs.digest_file }}"
+          else
+            # 取本次 push 改动的 digest/*.json 中最新的(按文件名 lex 排序)
+            files=$(git diff --name-only HEAD~1 HEAD | grep -E '^digest/.*\.json$' || true)
+            if [ -z "$files" ]; then
+              echo "本次 push 没有改动 digest/*.json,跳过"
+              echo "skip=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            target=$(echo "$files" | sort -r | head -1)
+          fi
+          if [ ! -f "$target" ]; then
+            echo "❌ 文件不存在: $target"
+            exit 1
+          fi
+          echo "file=$target" >> $GITHUB_OUTPUT
+          echo "✓ 将发送: $target"
+
+      - name: POST to /api/send
+        if: steps.find.outputs.skip != 'true'
+        env:
+          WORKER_URL: ${{ vars.WORKER_URL || 'https://jasons-hardware-notes.992978142.workers.dev' }}
+          SEND_SECRET: ${{ secrets.SEND_SECRET }}
+        run: |
+          set -euo pipefail
+          file="${{ steps.find.outputs.file }}"
+          echo "POST $WORKER_URL/api/send"
+          response=$(curl -sS -X POST "$WORKER_URL/api/send" \
+            -H "Authorization: Bearer $SEND_SECRET" \
+            -H "Content-Type: application/json" \
+            --data-binary "@$file" \
+            --fail-with-body \
+            -w "\nHTTP_STATUS:%{http_code}")
+          echo "$response"
+          status=$(echo "$response" | grep -oE 'HTTP_STATUS:[0-9]+' | cut -d: -f2)
+          if [ "$status" != "200" ]; then
+            echo "❌ 发送失败,HTTP $status"
+            exit 1
+          fi
+          echo "✓ 发送成功"
