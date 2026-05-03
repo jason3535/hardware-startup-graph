@@ -236,10 +236,10 @@ const INSIGHTS_DATA = [
 // ============================================================
 
 const FOOTER_LINKS = [
-  { id: "investor",  label: "投资人图谱",   url: "https://jason3535.github.io/investor-graph/" },
-  { id: "ai-scholar", label: "AI 图谱",       url: "https://jason3535.github.io/ai-scholar-graph/" },
   { id: "hardware",  label: "智能硬件图谱", url: "https://jason3535.github.io/hardware-startup-graph/" },
-  { id: "personal",  label: "我的官网",     url: "https://jasonlin.tech" }
+  { id: "investor",  label: "投资人图谱",   url: "https://jason3535.github.io/investor-graph/" },
+  { id: "ai-scholar", label: "AI 牛人图谱",   url: "https://jason3535.github.io/ai-scholar-graph/" },
+  { id: "personal",  label: "个人网页",     url: "https://jasonlin.tech" }
 ];
 
 const TYPE_LABELS = {
