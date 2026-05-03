@@ -572,6 +572,13 @@ body.has-insights #graph-container::after {
   if (!root) return;
   const graphId = root.dataset.graph || 'hardware';
 
+  // ============== Umami custom event tracking ==============
+  function trackEvent(name, data) {
+    if (typeof window.umami !== 'undefined' && typeof window.umami.track === 'function') {
+      try { window.umami.track(name, Object.assign({ graph: graphId }, data || {})); } catch (e) {}
+    }
+  }
+
   // Inject CSS once
   if (!document.getElementById('insights-widget-styles')) {
     const styleEl = document.createElement('style');
@@ -627,6 +634,7 @@ body.has-insights #graph-container::after {
       btn.addEventListener('click', () => {
         activeTab = btn.dataset.tab;
         activeFilter = 'all';
+        trackEvent('tab_switched', { to: activeTab });
         renderTabs();
         renderFilters();
         renderCards();
@@ -649,6 +657,7 @@ body.has-insights #graph-container::after {
     document.querySelectorAll('.insights-chip').forEach(btn => {
       btn.addEventListener('click', () => {
         activeFilter = btn.dataset.filter;
+        trackEvent('filter_changed', { tab: activeTab, filter: activeFilter });
         renderFilters();
         renderCards();
       });
@@ -680,11 +689,11 @@ body.has-insights #graph-container::after {
       `<span class="insight-person-chip">${escapeHtml(p.name)}</span>`
     ).join('');
     const sourceChips = (item.sources || []).map(s =>
-      `<a class="insight-source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${escapeHtml(s.label)} ↗</a>`
+      `<a class="insight-source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener" data-source-label="${escapeAttr(s.label)}">${escapeHtml(s.label)} ↗</a>`
     ).join('');
 
     return `
-      <article class="insight-card">
+      <article class="insight-card" data-insight-id="${escapeAttr(item.id)}" data-insight-type="${escapeAttr(item.type)}">
         <div class="insight-card-head">
           <h3 class="insight-card-title">${escapeHtml(item.title)}</h3>
           <div class="insight-card-meta">
@@ -707,8 +716,13 @@ body.has-insights #graph-container::after {
       const sep = i > 0 ? '<span class="quick-link-sep">·</span>' : '';
       const active = link.id === activeGraph ? ' active' : '';
       const target = link.id === 'personal' ? ' target="_blank" rel="noopener"' : '';
-      return `${sep}<a class="quick-link${active}" href="${link.url}"${target}>${link.label}</a>`;
+      return `${sep}<a class="quick-link${active}" href="${link.url}"${target} data-link-id="${link.id}">${link.label}</a>`;
     }).join('');
+    // delegated click tracking on footer links
+    ql.addEventListener('click', (e) => {
+      const a = e.target.closest('a.quick-link');
+      if (a) trackEvent('quick_link_clicked', { to: a.dataset.linkId });
+    }, { once: false });
   }
 
   function formatRelativeDate(dateStr) {
@@ -733,6 +747,34 @@ body.has-insights #graph-container::after {
   renderTabs();
   renderFilters();
   renderCards();
+
+  // Delegated click tracking inside cards
+  root.addEventListener('click', (e) => {
+    const card = e.target.closest('.insight-card');
+    if (!card) return;
+    const insightId = card.dataset.insightId;
+    const insightType = card.dataset.insightType;
+    const sourceLink = e.target.closest('.insight-source-link');
+    if (sourceLink) {
+      trackEvent('insight_source_clicked', { insight: insightId, source: sourceLink.dataset.sourceLabel });
+    } else {
+      // any click inside the card (excluding source link) counts as engagement
+      trackEvent('insight_card_clicked', { insight: insightId, type: insightType });
+    }
+  });
+
+  // Track insights section becoming visible (impression)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          trackEvent('insights_viewed', {});
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(root);
+  }
 
   // Hide graph overlays (legend / keyboard hint / geo-map) when graph scrolled out of view
   let scrollTicking = false;
