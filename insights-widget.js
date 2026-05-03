@@ -839,7 +839,7 @@ body.has-insights #graph-container::after {
       status.className = 'insights-subscribe-status'; status.textContent = '';
       trackEvent('subscribe_clicked', { email_domain: email.split('@')[1] || '' });
       try {
-        const res = await fetch('https://insights.jasonlin.tech/api/subscribe', {
+        const res = await fetch('https://jasons-hardware-notes.992978142.workers.dev/api/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, source: graphId }),
