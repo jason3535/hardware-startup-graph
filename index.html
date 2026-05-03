@@ -53,8 +53,9 @@ body {
   background: var(--apple-black);
   color: var(--apple-white);
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
   width: 100vw;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -209,8 +210,10 @@ body {
 
 /* ===== Graph Canvas ===== */
 #graph-container {
-  position: fixed;
-  top: 48px; left: 0; right: 0; bottom: 0;
+  position: relative;
+  margin-top: 48px;
+  height: calc(100vh - 48px);
+  width: 100%;
 }
 #graph-container svg {
   width: 100%;
@@ -920,24 +923,17 @@ body {
   </div>
 </div>
 
-<!-- Quick Links -->
-<div id="quick-links">
-  <a class="quick-link" href="https://jason3535.github.io/ai-scholar-graph/">AI Scholar Graph</a>
-  <span class="quick-link-sep">&middot;</span>
-  <a class="quick-link active" href="https://jason3535.github.io/hardware-startup-graph/">Hardware Startup Graph</a>
-  <span class="quick-link-sep">&middot;</span>
-  <a class="quick-link" href="https://jason3535.github.io/investor-graph/">Investor Graph</a>
-  <span class="quick-link-sep">&middot;</span>
-  <span class="quick-link-sep">&middot;</span>
-  <a class="quick-link" href="https://jason3535.github.io/investor-insights/">Insights</a>
-  <span class="quick-link-sep">&middot;</span>
-  <a class="quick-link" href="https://jasonlin.tech">jasonlin.tech</a>
-</div>
+<!-- Quick Links (footer rendered by insights-widget.js) -->
+<div id="quick-links"></div>
 
 <!-- Graph -->
 <div id="graph-container">
   <svg id="main-svg"></svg>
 </div>
+
+<!-- Insights Section (rendered by insights-widget.js) -->
+<section id="insights-section" data-graph="hardware"></section>
+<script src="insights-widget.js?v=1" defer></script>
 
 <script>
 // ===================================================================
