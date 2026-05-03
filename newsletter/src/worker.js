@@ -216,7 +216,7 @@ const SHARED_CSS = `
   .issue-list li { padding:14px 0; border-bottom:1px solid #f0f0f0; }
   .issue-list a { color:#000; text-decoration:none; font-size:15px; }
   .issue-list .date { font-size:12px; color:#999; margin-right:12px; font-variant-numeric:tabular-nums; }
-  .num { font-size:13px; color:#999; letter-spacing:1px; }
+  .num-major { font-size:56px; color:#d8d8d8; font-weight:300; line-height:1; letter-spacing:-1.5px; font-variant-numeric:tabular-nums; }
   .quote { border-left:2px solid #d8d8d8; padding-left:16px; margin:18px 0; color:#555; font-size:14px; line-height:1.7; }
   .quote .label { font-size:11px; letter-spacing:0.6px; color:#999; text-transform:uppercase; margin-bottom:4px; }
   .footer { margin-top:96px; padding-top:24px; border-top:1px solid #eee; font-size:12px; color:#999; text-align:center; line-height:1.7; }
@@ -353,11 +353,12 @@ function renderIssueBodyHtml(issue) {
 function renderSectionHtml(section, idx) {
   const num = String(idx).padStart(2, '0');
   const items = (section.items || []).map((item, j) => renderItemHtml(item, num, j + 1, section.items.length)).join('');
-  return `<div style="margin-top:48px;"><div class="num">${num}</div><div style="font-size:18px;font-weight:600;margin-top:4px;">${esc(section.title)}</div>${items}</div>`;
+  return `<div style="margin-top:64px;"><div class="num-major">${num}</div><div style="font-size:24px;font-weight:600;color:#111;margin-top:10px;letter-spacing:-0.4px;">${esc(section.title)}</div>${items}</div>`;
 }
 
 function renderItemHtml(item, sectionNum, idx, total) {
-  const subnum = total > 1 ? `<div class="num" style="margin-top:32px;">${sectionNum}.${idx}</div><div style="font-size:16px;font-weight:600;margin-top:4px;">${esc(item.title || '')}</div>` : (item.title ? `<div style="font-size:17px;font-weight:600;margin-top:24px;">${esc(item.title)}</div>` : '');
+  const topGap = idx === 1 ? 24 : 48;
+  const subnum = item.title ? `<div style="margin-top:${topGap}px;font-size:20px;font-weight:600;color:#111;letter-spacing:-0.3px;line-height:1.4;">${esc(item.title)}</div>` : '';
   const subtitle = item.subtitle ? `<div class="meta">${esc(item.subtitle)}</div>` : '';
   const body = item.body ? `<p style="margin-top:14px;">${escMultiline(item.body)}</p>` : '';
   const judgment = item.judgment ? `<div class="quote"><div class="label">我的判断</div>${escMultiline(item.judgment)}</div>` : '';
