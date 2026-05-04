@@ -65,7 +65,7 @@ body {
 /* ===== Navigation — Apple Glass ===== */
 #nav-bar {
   position: fixed;
-  top: 28px; left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   height: 48px;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
@@ -212,14 +212,14 @@ body {
 /* ===== Graph Canvas ===== */
 #graph-container {
   position: relative;
-  margin-top: 76px;
-  height: calc(100vh - 196px);
+  margin-top: 48px;
+  height: calc(100vh - 168px);
   min-height: 480px;
   width: 100%;
 }
 /* When no insights for current graph, expand graph to fill below nav */
 body.no-insights #graph-container {
-  height: calc(100vh - 76px);
+  height: calc(100vh - 48px);
   min-height: unset;
 }
 #graph-container svg {
@@ -628,50 +628,130 @@ body.no-insights #graph-container {
   margin-top: 2px;
 }
 
-/* ===== Keyboard hint ===== */
-/* ===== Bottom Quick Links ===== */
-#quick-links {
-  position: fixed;
-  top: 0;
+/* ===== Graph switcher dropdown (replaces top quick-links bar) ===== */
+.graph-switcher { position: relative; display: flex; align-items: center; }
+.graph-switcher-trigger {
+  display: flex; align-items: center; gap: 6px;
+  background: transparent; border: none; cursor: pointer;
+  padding: 6px 10px; margin: 0 -4px; border-radius: 8px;
+  font-family: inherit; color: inherit;
+  transition: background 0.15s;
+}
+.graph-switcher-trigger:hover { background: rgba(255, 255, 255, 0.06); }
+.graph-switcher-trigger .nav-title { margin: 0; }
+.graph-chevron {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: transform 0.2s;
+  line-height: 1;
+}
+.graph-switcher.open .graph-chevron { transform: rotate(180deg); }
+.graph-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
   left: 0;
-  right: 0;
-  height: 28px;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+  min-width: 180px;
+  background: rgba(28, 28, 30, 0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 6px;
   display: flex;
+  flex-direction: column;
+  gap: 1px;
+  z-index: 1100;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  animation: graph-dropdown-fade 0.15s ease;
+}
+@keyframes graph-dropdown-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.graph-dropdown[hidden] { display: none; }
+.graph-dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.graph-dropdown-item:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+.graph-dropdown-item.active {
+  color: var(--apple-link-blue-dark);
+  background: rgba(41, 151, 255, 0.1);
+}
+.graph-dropdown-sep {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 6px;
+}
+
+/* Subscribe button in nav-bar */
+.nav-subscribe-btn {
+  padding: 6px 16px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 980px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.12px;
+  white-space: nowrap;
+  margin-right: 8px;
+  transition: background 0.2s;
+}
+.nav-subscribe-btn:hover { background: rgba(255, 255, 255, 0.85); }
+
+/* Hamburger (mobile only) */
+.nav-hamburger {
+  display: none;
+  width: 32px; height: 32px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-right: 6px;
+  font-family: inherit;
+  padding: 0;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  z-index: 1000;
-  padding: 0 16px;
 }
-.quick-link {
-  font-family: 'SF Pro Text', -apple-system, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: -0.12px;
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: none;
-  padding: 2px 10px;
-  border-radius: 980px;
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-.quick-link:hover {
-  color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.06);
-}
-.quick-link.active {
-  color: var(--apple-link-blue-dark);
-  border-color: rgba(41, 151, 255, 0.3);
-}
-.quick-link-sep {
-  color: rgba(255, 255, 255, 0.12);
-  font-size: 11px;
+.nav-hamburger:hover { background: rgba(255, 255, 255, 0.06); }
+
+/* Mobile responsive: collapse extras into hamburger drawer */
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-separator, .nav-stats { display: none; }
+  .nav-search-wrapper, .filter-group, .lang-toggle { display: none; }
+  .nav-subscribe-btn { padding: 5px 12px; font-size: 11px; margin-right: 4px; }
+
+  body.mobile-menu-open #nav-bar {
+    height: auto !important;
+    padding: 8px 12px 14px !important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  body.mobile-menu-open .nav-search-wrapper,
+  body.mobile-menu-open .filter-group,
+  body.mobile-menu-open .lang-toggle {
+    display: flex;
+    width: 100%;
+    margin: 8px 0 0;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  body.mobile-menu-open .nav-search-wrapper { order: 10; }
+  body.mobile-menu-open .filter-group { order: 11; }
+  body.mobile-menu-open .lang-toggle { order: 12; justify-content: flex-end; }
 }
 
 #keyboard-hint {
@@ -820,9 +900,7 @@ body.no-insights #graph-container {
     font-size: 20px;
   }
   #keyboard-hint { display: none; }
-  #quick-links { height: 26px; gap: 4px; }
-  .quick-link { font-size: 10px; padding: 2px 8px; }
-  .quick-link-sep { font-size: 9px; }
+  /* Mobile-specific tweaks for nav handled in 768px breakpoint above */
   .node-label { font-size: 9px !important; }
 }
 
@@ -846,7 +924,16 @@ body.no-insights #graph-container {
 
 <!-- Navigation Bar — Apple Glass -->
 <nav id="nav-bar">
-  <span class="nav-title">Hardware Startup Graph</span>
+  <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="菜单">≡</button>
+
+  <div class="graph-switcher">
+    <button class="graph-switcher-trigger" id="graph-switcher-trigger" type="button">
+      <span class="nav-title">Hardware Startup Graph</span>
+      <span class="graph-chevron">▾</span>
+    </button>
+    <div class="graph-dropdown" id="graph-dropdown" hidden></div>
+  </div>
+
   <span class="nav-separator"></span>
   <span class="nav-stats" id="nav-stats"></span>
 
@@ -865,6 +952,8 @@ body.no-insights #graph-container {
   </div>
 
   <div class="nav-spacer"></div>
+
+  <button class="nav-subscribe-btn" id="nav-subscribe-btn" type="button">订阅</button>
 
   <div class="lang-toggle">
     <button class="lang-btn" data-lang="en">EN</button>
@@ -930,9 +1019,6 @@ body.no-insights #graph-container {
   </div>
 </div>
 
-<!-- Quick Links (footer rendered by insights-widget.js) -->
-<div id="quick-links"></div>
-
 <!-- Graph -->
 <div id="graph-container">
   <svg id="main-svg"></svg>
@@ -940,7 +1026,7 @@ body.no-insights #graph-container {
 
 <!-- Insights Section (rendered by insights-widget.js) -->
 <section id="insights-section" data-graph="hardware"></section>
-<script src="insights-widget.js?v=15" defer></script>
+<script src="insights-widget.js?v=16" defer></script>
 
 <script>
 // ===================================================================

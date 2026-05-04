@@ -575,23 +575,6 @@ body.has-insights #graph-container::after {
   border: 0.5px dashed rgba(255, 255, 255, 0.12);
   border-radius: 18px;
 }
-/* Subscribe button in top quick-links */
-.quick-link-subscribe {
-  padding: 3px 12px;
-  background: #fff;
-  color: #000;
-  border: none;
-  border-radius: 980px;
-  font-family: 'SF Pro Text', -apple-system, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  cursor: pointer;
-  letter-spacing: -0.12px;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.quick-link-subscribe:hover { background: rgba(255, 255, 255, 0.85); }
-
 /* Subscribe modal */
 .subscribe-modal-overlay {
   display: none;
@@ -723,8 +706,9 @@ body.has-insights #graph-container::after {
     document.head.appendChild(styleEl);
   }
 
-  // Render unified footer (replace #quick-links contents)
-  renderFooter(graphId);
+  // Render graph switcher dropdown + wire up nav buttons
+  renderGraphDropdown(graphId);
+  wireNavExtras();
 
   // Filter to this graph's insights
   const items = INSIGHTS_DATA.filter(i => i.graphs.includes(graphId));
@@ -895,26 +879,66 @@ body.has-insights #graph-container::after {
     });
   }
 
-  function renderFooter(activeGraph) {
-    const ql = document.getElementById('quick-links');
-    if (!ql) return;
-    const linksHtml = FOOTER_LINKS.map((link, i) => {
-      const sep = i > 0 ? '<span class="quick-link-sep">·</span>' : '';
+  function renderGraphDropdown(activeGraph) {
+    const dropdown = document.getElementById('graph-dropdown');
+    if (!dropdown) return;
+    const graphs = FOOTER_LINKS.filter(l => l.id !== 'personal');
+    const personal = FOOTER_LINKS.find(l => l.id === 'personal');
+    const itemsHtml = graphs.map(link => {
       const active = link.id === activeGraph ? ' active' : '';
-      const target = link.id === 'personal' ? ' target="_blank" rel="noopener"' : '';
-      return `${sep}<a class="quick-link${active}" href="${link.url}"${target} data-link-id="${link.id}">${link.label}</a>`;
+      return `<a class="graph-dropdown-item${active}" href="${link.url}" data-link-id="${link.id}">${link.label}</a>`;
     }).join('');
-    const subscribeBtn = `<span class="quick-link-sep">·</span><button class="quick-link-subscribe" id="quick-subscribe-btn" type="button">订阅</button>`;
-    ql.innerHTML = linksHtml + subscribeBtn;
-    // delegated click tracking on footer links
-    ql.addEventListener('click', (e) => {
-      const a = e.target.closest('a.quick-link');
+    const personalHtml = personal
+      ? `<div class="graph-dropdown-sep"></div><a class="graph-dropdown-item" href="${personal.url}" target="_blank" rel="noopener" data-link-id="personal">${personal.label} ↗</a>`
+      : '';
+    dropdown.innerHTML = itemsHtml + personalHtml;
+    dropdown.addEventListener('click', (e) => {
+      const a = e.target.closest('a.graph-dropdown-item');
       if (a) trackEvent('quick_link_clicked', { to: a.dataset.linkId });
     });
-    document.getElementById('quick-subscribe-btn')?.addEventListener('click', () => {
+  }
+
+  function wireNavExtras() {
+    // Graph switcher dropdown toggle
+    const trigger = document.getElementById('graph-switcher-trigger');
+    const dropdown = document.getElementById('graph-dropdown');
+    if (trigger && dropdown) {
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = !dropdown.hasAttribute('hidden');
+        if (isOpen) {
+          dropdown.setAttribute('hidden', '');
+          trigger.parentElement.classList.remove('open');
+        } else {
+          dropdown.removeAttribute('hidden');
+          trigger.parentElement.classList.add('open');
+          trackEvent('graph_switcher_opened', {});
+        }
+      });
+      // close when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!trigger.parentElement.contains(e.target)) {
+          dropdown.setAttribute('hidden', '');
+          trigger.parentElement.classList.remove('open');
+        }
+      });
+    }
+
+    // Subscribe button in nav-bar
+    document.getElementById('nav-subscribe-btn')?.addEventListener('click', () => {
       trackEvent('subscribe_clicked', { source: 'top_nav' });
       openSubscribeModal();
     });
+
+    // Hamburger toggle (mobile)
+    const hamburger = document.getElementById('nav-hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        const open = document.body.classList.toggle('mobile-menu-open');
+        hamburger.textContent = open ? '×' : '≡';
+        trackEvent('mobile_menu_toggled', { open });
+      });
+    }
   }
 
   function formatRelativeDate(dateStr) {
