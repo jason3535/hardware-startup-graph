@@ -41,7 +41,7 @@ wrangler login   # 浏览器授权
 
 ### 4. 创建 KV namespace
 ```bash
-wrangler kv:namespace create SUBSCRIBERS
+wrangler kv namespace create SUBSCRIBERS
 ```
 会输出类似:
 ```
@@ -98,9 +98,9 @@ wrangler deploy
 
 ## 日常维护
 
-- 看订阅人数:`wrangler kv:key list --binding=SUBSCRIBERS --prefix=sub:`
-- 看某条订阅:`wrangler kv:key get --binding=SUBSCRIBERS "sub:user@example.com"`
-- 删除某订阅:`wrangler kv:key delete --binding=SUBSCRIBERS "sub:user@example.com"`
+- 看订阅人数:`wrangler kv key list --binding=SUBSCRIBERS --prefix=sub:`
+- 看某条订阅:`wrangler kv key get --binding=SUBSCRIBERS "sub:user@example.com"`
+- 删除某订阅:`wrangler kv key delete --binding=SUBSCRIBERS "sub:user@example.com"`
 - 看 Worker 日志:`wrangler tail`
 - 重新部署:`wrangler deploy`
 

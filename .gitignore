@@ -1,2 +1,6 @@
 .DS_Store
 generate.py
+
+# Cloudflare Workers local cache
+newsletter/.wrangler/
+newsletter/node_modules/

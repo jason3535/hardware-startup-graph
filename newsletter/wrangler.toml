@@ -6,7 +6,7 @@ compatibility_date = "2025-01-01"
 #   wrangler kv:namespace create SUBSCRIBERS
 [[kv_namespaces]]
 binding = "SUBSCRIBERS"
-id = "REPLACE_WITH_KV_ID_AFTER_CREATE"
+id = "e60193f8da49415d8d892710b27770f5"
 
 # Custom domain — uncomment after DNS is set up
 # routes = [
