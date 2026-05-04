@@ -606,43 +606,104 @@ body.has-insights #graph-container::after {
   border: 0.5px dashed rgba(255, 255, 255, 0.12);
   border-radius: 18px;
 }
-/* Subscribe form */
-.insights-subscribe {
-  margin: 24px 0 36px;
-  padding: 20px 24px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
+/* Subscribe button in top quick-links */
+.quick-link-subscribe {
+  padding: 4px 14px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 980px;
+  font-family: 'SF Pro Text', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.12px;
+  white-space: nowrap;
+  transition: background 0.2s;
 }
-.insights-subscribe-pitch {
+.quick-link-subscribe:hover { background: rgba(255, 255, 255, 0.85); }
+
+/* Subscribe modal */
+.subscribe-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: subscribe-modal-fade 0.2s ease;
+}
+.subscribe-modal-overlay.open { display: flex; }
+@keyframes subscribe-modal-fade { from { opacity: 0; } to { opacity: 1; } }
+.subscribe-modal-card {
+  background: #1a1a1a;
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 36px 32px 28px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  font-family: 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  color: #fff;
+}
+.subscribe-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  font-family: inherit;
+}
+.subscribe-modal-close:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+.subscribe-modal-eyebrow {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 6px;
+}
+.subscribe-modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  letter-spacing: -0.3px;
+  color: #fff;
+}
+.subscribe-modal-pitch {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.72);
-  margin: 0 0 12px;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 22px;
+  line-height: 1.6;
 }
-.insights-subscribe-pitch strong { color: #fff; font-weight: 600; }
-.insights-subscribe-form {
+.subscribe-modal-form {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
-.insights-subscribe-form input[type="email"] {
-  flex: 1 1 220px;
-  min-width: 0;
+.subscribe-modal-form input[type="email"] {
+  flex: 1;
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: 14px;
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
   border: 0.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   font-family: inherit;
+  min-width: 0;
 }
-.insights-subscribe-form input[type="email"]:focus {
-  outline: none;
-  border-color: rgba(41, 151, 255, 0.6);
-}
-.insights-subscribe-form input[type="email"]::placeholder { color: rgba(255, 255, 255, 0.35); }
-.insights-subscribe-form button {
+.subscribe-modal-form input[type="email"]:focus { outline: none; border-color: rgba(41, 151, 255, 0.6); }
+.subscribe-modal-form input[type="email"]::placeholder { color: rgba(255, 255, 255, 0.35); }
+.subscribe-modal-form button {
   padding: 10px 22px;
   font-size: 13px;
   background: #fff;
@@ -652,19 +713,18 @@ body.has-insights #graph-container::after {
   cursor: pointer;
   font-family: inherit;
   font-weight: 500;
-  transition: background 0.2s;
+  white-space: nowrap;
 }
-.insights-subscribe-form button:hover { background: rgba(255, 255, 255, 0.85); }
-.insights-subscribe-form button:disabled { background: rgba(255, 255, 255, 0.35); cursor: not-allowed; }
-.insights-subscribe-status {
+.subscribe-modal-form button:hover { background: rgba(255, 255, 255, 0.85); }
+.subscribe-modal-form button:disabled { background: rgba(255, 255, 255, 0.35); cursor: not-allowed; }
+.subscribe-modal-status {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.45);
-  margin-top: 10px;
   min-height: 14px;
   letter-spacing: 0.2px;
 }
-.insights-subscribe-status.ok { color: #7be592; }
-.insights-subscribe-status.err { color: #ff8b6b; }
+.subscribe-modal-status.ok { color: #7be592; }
+.subscribe-modal-status.err { color: #ff8b6b; }
 @media (max-width: 600px) {
   #insights-section { padding: 56px 16px 100px; }
   .insights-title { font-size: 24px; }
@@ -716,23 +776,15 @@ body.has-insights #graph-container::after {
     <div class="insights-inner">
       <div class="insights-eyebrow">INSIGHTS</div>
       <h2 class="insights-title">最新洞察</h2>
-      <p class="insights-subtitle">非共识洞察 + 人物关系 + 投资动态。</p>
-      <div class="insights-subscribe">
-        <p class="insights-subscribe-pitch">每周一收到 <strong>Jason's Hardware Notes</strong>。中国 AI 硬件创业的人物 / 融资 / 非共识洞察。免费,一键退订。</p>
-        <form class="insights-subscribe-form" id="insights-subscribe-form">
-          <input type="email" name="email" required placeholder="your@email.com" autocomplete="email" spellcheck="false">
-          <button type="submit">订阅</button>
-        </form>
-        <div class="insights-subscribe-status" id="insights-subscribe-status">不发送任何垃圾。</div>
-      </div>
+      <p class="insights-subtitle">人物 · 关系 · 投资动态 · 非共识</p>
       <div class="insights-tabs" id="insights-tabs"></div>
       <div class="insights-filter-row" id="insights-filter-row"></div>
       <div class="insights-cards" id="insights-cards-container"></div>
     </div>
   `;
 
-  // Wire subscribe form
-  bindSubscribeForm();
+  // Mount subscribe modal once
+  ensureSubscribeModal();
 
   function getInsightItems()  { return items.filter(i => ['non-consensus','relationship','resume'].includes(i.type)); }
   function getDynamicItems()  { return items.filter(i => ['funding','trend'].includes(i.type)); }
@@ -796,7 +848,7 @@ body.has-insights #graph-container::after {
     });
     const container = document.getElementById('insights-cards-container');
     if (list.length === 0) {
-      container.innerHTML = `<div class="insights-empty">本图谱暂无 ${activeTab === 'insight' ? '洞察' : '动态'}，持续更新中…</div>`;
+      container.innerHTML = `<div class="insights-empty">暂无${activeTab === 'insight' ? '洞察' : '动态'} · 持续更新中</div>`;
       return;
     }
     container.innerHTML = list.map(renderCard).join('');
@@ -827,17 +879,56 @@ body.has-insights #graph-container::after {
     `;
   }
 
-  function bindSubscribeForm() {
-    const form = document.getElementById('insights-subscribe-form');
-    const status = document.getElementById('insights-subscribe-status');
+  function ensureSubscribeModal() {
+    if (document.getElementById('subscribe-modal')) return;
+    const modal = document.createElement('div');
+    modal.id = 'subscribe-modal';
+    modal.className = 'subscribe-modal-overlay';
+    modal.innerHTML = `
+      <div class="subscribe-modal-card" role="dialog" aria-modal="true">
+        <button class="subscribe-modal-close" id="subscribe-modal-close" aria-label="关闭">×</button>
+        <div class="subscribe-modal-eyebrow">NEWSLETTER</div>
+        <div class="subscribe-modal-title">Jason's Hardware Notes</div>
+        <p class="subscribe-modal-pitch">每周一一份 · 中国 AI 硬件创业的人物 / 融资 / 非共识洞察 · 免费 · 一键退订</p>
+        <form class="subscribe-modal-form" id="subscribe-modal-form">
+          <input type="email" name="email" required placeholder="your@email.com" autocomplete="email" spellcheck="false">
+          <button type="submit">订阅</button>
+        </form>
+        <div class="subscribe-modal-status" id="subscribe-modal-status"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById('subscribe-modal-close').addEventListener('click', closeSubscribeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeSubscribeModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeSubscribeModal();
+    });
+    bindSubscribeModalForm();
+  }
+
+  function openSubscribeModal() {
+    ensureSubscribeModal();
+    const modal = document.getElementById('subscribe-modal');
+    modal.classList.add('open');
+    setTimeout(() => modal.querySelector('input[type=email]')?.focus(), 80);
+  }
+
+  function closeSubscribeModal() {
+    const modal = document.getElementById('subscribe-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  function bindSubscribeModalForm() {
+    const form = document.getElementById('subscribe-modal-form');
+    const status = document.getElementById('subscribe-modal-status');
     if (!form || !status) return;
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button');
       const email = form.email.value.trim();
-      btn.disabled = true; btn.textContent = '提交中...';
-      status.className = 'insights-subscribe-status'; status.textContent = '';
-      trackEvent('subscribe_clicked', { email_domain: email.split('@')[1] || '' });
+      btn.disabled = true; btn.textContent = '...';
+      status.className = 'subscribe-modal-status'; status.textContent = '';
+      trackEvent('subscribe_submitted', { email_domain: email.split('@')[1] || '' });
       try {
         const res = await fetch('https://jasons-hardware-notes.992978142.workers.dev/api/subscribe', {
           method: 'POST',
@@ -846,26 +937,22 @@ body.has-insights #graph-container::after {
         });
         const data = await res.json().catch(() => ({}));
         if (res.ok && data.ok) {
-          if (data.status === 'already_subscribed') {
-            status.className = 'insights-subscribe-status ok';
-            status.textContent = '你已经订阅过了 ✓';
-          } else if (data.status === 'confirmation_resent') {
-            status.className = 'insights-subscribe-status ok';
-            status.textContent = '确认邮件已重发,请查收 ✓';
-          } else {
-            status.className = 'insights-subscribe-status ok';
-            status.textContent = '已发送确认邮件到你邮箱,点确认链接完成订阅 ✓';
-          }
+          let msg = '确认邮件已发送 · 请查收 ✓';
+          if (data.status === 'already_subscribed') msg = '已订阅 ✓';
+          else if (data.status === 'confirmation_resent') msg = '确认邮件已重发 ✓';
+          status.className = 'subscribe-modal-status ok';
+          status.textContent = msg;
           btn.textContent = '已发送';
           trackEvent('subscribe_completed', { status: data.status });
+          setTimeout(closeSubscribeModal, 2400);
         } else {
-          status.className = 'insights-subscribe-status err';
-          status.textContent = data.error || '提交失败,请重试';
+          status.className = 'subscribe-modal-status err';
+          status.textContent = data.error || '提交失败';
           btn.disabled = false; btn.textContent = '订阅';
         }
       } catch (err) {
-        status.className = 'insights-subscribe-status err';
-        status.textContent = '网络错误,请重试';
+        status.className = 'subscribe-modal-status err';
+        status.textContent = '网络异常';
         btn.disabled = false; btn.textContent = '订阅';
       }
     });
@@ -874,17 +961,23 @@ body.has-insights #graph-container::after {
   function renderFooter(activeGraph) {
     const ql = document.getElementById('quick-links');
     if (!ql) return;
-    ql.innerHTML = FOOTER_LINKS.map((link, i) => {
+    const linksHtml = FOOTER_LINKS.map((link, i) => {
       const sep = i > 0 ? '<span class="quick-link-sep">·</span>' : '';
       const active = link.id === activeGraph ? ' active' : '';
       const target = link.id === 'personal' ? ' target="_blank" rel="noopener"' : '';
       return `${sep}<a class="quick-link${active}" href="${link.url}"${target} data-link-id="${link.id}">${link.label}</a>`;
     }).join('');
+    const subscribeBtn = `<span class="quick-link-sep">·</span><button class="quick-link-subscribe" id="quick-subscribe-btn" type="button">订阅</button>`;
+    ql.innerHTML = linksHtml + subscribeBtn;
     // delegated click tracking on footer links
     ql.addEventListener('click', (e) => {
       const a = e.target.closest('a.quick-link');
       if (a) trackEvent('quick_link_clicked', { to: a.dataset.linkId });
-    }, { once: false });
+    });
+    document.getElementById('quick-subscribe-btn')?.addEventListener('click', () => {
+      trackEvent('subscribe_clicked', { source: 'top_nav' });
+      openSubscribeModal();
+    });
   }
 
   function formatRelativeDate(dateStr) {
