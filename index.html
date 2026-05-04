@@ -650,11 +650,12 @@ body.no-insights #graph-container {
 }
 .graph-switcher-trigger .nav-title { margin: 0; }
 .graph-chevron {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.7);
+  width: 11px;
+  height: 7px;
+  color: rgba(255, 255, 255, 0.9);
   transition: transform 0.2s;
-  line-height: 1;
   margin-left: 2px;
+  flex-shrink: 0;
 }
 .graph-switcher.open .graph-chevron { transform: rotate(180deg); }
 .graph-dropdown {
@@ -940,7 +941,7 @@ body.no-insights #graph-container {
   <div class="graph-switcher">
     <button class="graph-switcher-trigger" id="graph-switcher-trigger" type="button">
       <span class="nav-title">Hardware Startup Graph</span>
-      <span class="graph-chevron">▾</span>
+      <svg class="graph-chevron" width="11" height="7" viewBox="0 0 11 7" fill="none" aria-hidden="true"><path d="M1 1.2L5.5 5.6L10 1.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <div class="graph-dropdown" id="graph-dropdown" hidden></div>
   </div>
