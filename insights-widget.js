@@ -991,15 +991,14 @@ body.has-insights #graph-container::after {
     io.observe(root);
   }
 
-  // Hide graph overlays (legend / keyboard hint / geo-map) when graph scrolled out of view
+  // Hide graph overlays (legend / keyboard hint / geo-map) once user starts scrolling toward insights
   let scrollTicking = false;
   window.addEventListener('scroll', () => {
     if (scrollTicking) return;
     scrollTicking = true;
     requestAnimationFrame(() => {
-      const gc = document.getElementById('graph-container');
-      const visible = gc ? gc.getBoundingClientRect().bottom > 100 : true;
-      document.body.classList.toggle('graph-out-of-view', !visible);
+      const scrolled = window.scrollY > 30;
+      document.body.classList.toggle('graph-out-of-view', scrolled);
       scrollTicking = false;
     });
   }, { passive: true });
