@@ -1,0 +1,26 @@
+{
+  "id": "test-2026-05-04",
+  "date": "2026-05-04",
+  "issueNumber": "test",
+  "title": "Pipeline 测试 · 2026-05-04",
+  "subject": "[测试] Pipeline 验证 — Jason's Hardware Notes",
+  "tldr": [
+    "这封邮件是 Jason 自己发的端到端测试",
+    "如果你收到了,说明 routine → GitHub Action → Worker → Resend 链路全通",
+    "正式周报下周一(2026-05-11)开始"
+  ],
+  "sections": [
+    {
+      "title": "测试结果",
+      "items": [
+        {
+          "title": "Pipeline 测试",
+          "subtitle": "数据流: GitHub Action → Cloudflare Worker → Resend → 你",
+          "body": "这是 Jason's Hardware Notes 的基础设施验证邮件。如果你能正常打开看到这条内容,说明:\n1. GitHub Action 在 push 触发后正确执行\n2. Worker /api/send 端点接收 JSON 并返回 200\n3. Worker 用 SEND_SECRET 鉴权通过\n4. Resend 从 hello@insights.jasonlin.tech 发出邮件\n5. 收件方能正常打开",
+          "judgment": "下周一开始正式周报,这封不计入正式 issue 编号",
+          "sources": []
+        }
+      ]
+    }
+  ]
+}
