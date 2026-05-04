@@ -246,8 +246,42 @@ const SHARED_CSS = `
   .footer { margin-top:96px; padding-top:24px; border-top:1px solid #eee; font-size:12px; color:#999; text-align:center; line-height:1.7; }
 `;
 
-function pageShell(title, bodyHtml) {
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><title>${esc(title)}</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>${SHARED_CSS}</style></head><body><div class="wrap">${bodyHtml}</div></body></html>`;
+function pageShell(title, bodyHtml, meta) {
+  meta = meta || {};
+  const desc = meta.description || "Jason's Hardware Notes — 每周更新中国 AI 硬件创业的人物、融资、非共识洞察。免费,可一键退订。";
+  const url = meta.url || "https://insights.jasonlin.tech/";
+  const ogTitle = meta.ogTitle || title;
+  return `<!doctype html><html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>${esc(title)}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="${esc(desc)}">
+<meta name="author" content="Jason Lin">
+<link rel="canonical" href="${esc(url)}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${esc(url)}">
+<meta property="og:title" content="${esc(ogTitle)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:site_name" content="Jason's Hardware Notes">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(ogTitle)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<script type="application/ld+json">${JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Jason's Hardware Notes",
+  "url":"https://insights.jasonlin.tech/",
+  "description":desc,
+  "inLanguage":"zh-CN",
+  "author":{"@type":"Person","name":"Jason Lin","url":"https://jasonlin.tech"}
+})}</script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="d325eb73-0d8f-4529-aa76-f32ebfd92226"></script>
+<style>${SHARED_CSS}</style>
+</head>
+<body><div class="wrap">${bodyHtml}</div></body>
+</html>`;
 }
 
 function htmlPage(title, body) {

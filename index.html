@@ -3,7 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hardware Startup Graph</title>
+<title>智能硬件创业图谱 · Hardware Startup Graph</title>
+<meta name="description" content="中国 AI 硬件创业的 115+ 创始人 / 公司图谱 — 大疆系、华为天才少年、清华具身、AR 眼镜四小龙、AIOS 等关系网络。每周更新最新人物、融资、非共识洞察。">
+<meta name="author" content="Jason Lin">
+<meta name="keywords" content="AI硬件, 硬件创业, 具身智能, 机器人创业, 大疆系, 华为天才少年, 智能硬件图谱, Hardware Startup">
+<link rel="canonical" href="https://hardware.jasonlin.tech/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hardware.jasonlin.tech/">
+<meta property="og:title" content="智能硬件创业图谱 · Hardware Startup Graph">
+<meta property="og:description" content="中国 AI 硬件创业的 115+ 创始人 / 公司图谱。每周更新人物、融资、非共识洞察。">
+<meta property="og:site_name" content="Jason's Graphs">
+<meta property="og:locale" content="zh_CN">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://hardware.jasonlin.tech/">
+<meta name="twitter:title" content="智能硬件创业图谱">
+<meta name="twitter:description" content="中国 AI 硬件创业的 115+ 创始人 / 公司图谱。每周更新人物、融资、非共识洞察。">
+<meta name="twitter:creator" content="@jasonlin">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "智能硬件创业图谱",
+  "alternateName": "Hardware Startup Graph",
+  "url": "https://hardware.jasonlin.tech/",
+  "description": "中国 AI 硬件创业的 115+ 创始人 / 公司图谱。每周更新人物、融资、非共识洞察。",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Person",
+    "name": "Jason Lin",
+    "url": "https://jasonlin.tech",
+    "sameAs": ["https://jasonlin.tech"]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://hardware.jasonlin.tech/?node={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 <script defer src="https://cloud.umami.is/script.js" data-website-id="d325eb73-0d8f-4529-aa76-f32ebfd92226"></script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="d325eb73-0d8f-4529-aa76-f32ebfd92226"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -1555,13 +1602,24 @@ nodeGroups.on("mouseenter",(event,d)=>{
 // Click → Detail Panel (openDetail defined later in i18n section)
 nodeGroups.on("click",(event,d)=>{
   event.stopPropagation();
+  history.replaceState(null,'',`?node=${encodeURIComponent(d.id)}`);
   openDetail(d);
 });
 svg.on("click",()=>closeDetail());
 
 function closeDetail(){
   document.getElementById("detail-panel").classList.remove("open");
+  if(location.search) history.replaceState(null,'',location.pathname);
 }
+
+// Deep link: focus node from ?node=X URL param on load
+(function(){
+  const id=new URLSearchParams(location.search).get('node');
+  if(!id) return;
+  const target=scholars.find(s=>s.id===id);
+  if(!target) return;
+  setTimeout(()=>openDetail(target),700);
+})();
 document.getElementById("detail-close").addEventListener("click",e=>{e.stopPropagation();closeDetail();});
 
 // ===================================================================
