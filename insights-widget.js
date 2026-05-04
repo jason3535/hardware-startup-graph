@@ -431,37 +431,6 @@ body.has-insights #graph-container::after {
   margin: 0 0 36px;
   line-height: 1.5;
 }
-.insights-tabs {
-  display: inline-flex;
-  gap: 4px;
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-.insights-tab {
-  padding: 8px 18px;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-.insights-tab:hover { color: rgba(255, 255, 255, 0.85); }
-.insights-tab.active {
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
-}
-.insights-tab .insights-tab-count {
-  margin-left: 6px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
-}
-.insights-tab.active .insights-tab-count { color: rgba(255, 255, 255, 0.6); }
 .insights-filter-row {
   display: flex;
   gap: 6px;
@@ -768,16 +737,14 @@ body.has-insights #graph-container::after {
   }
   document.body.classList.add('has-insights');
 
-  let activeTab = 'insight';      // 'insight' | 'dynamic'
-  let activeFilter = 'all';       // 'all' | 'non-consensus' | 'relationship' | 'resume'
+  let activeFilter = 'all';  // 'all' | 'non-consensus' | 'relationship' | 'resume' | 'funding' | 'trend'
 
-  // Build initial DOM
+  // Build initial DOM (no top-level tabs — flat filter chip row)
   root.innerHTML = `
     <div class="insights-inner">
       <div class="insights-eyebrow">INSIGHTS</div>
       <h2 class="insights-title">最新洞察</h2>
       <p class="insights-subtitle">人物 · 关系 · 投资动态 · 非共识</p>
-      <div class="insights-tabs" id="insights-tabs"></div>
       <div class="insights-filter-row" id="insights-filter-row"></div>
       <div class="insights-cards" id="insights-cards-container"></div>
     </div>
@@ -786,48 +753,19 @@ body.has-insights #graph-container::after {
   // Mount subscribe modal once
   ensureSubscribeModal();
 
-  function getInsightItems()  { return items.filter(i => ['non-consensus','relationship','resume'].includes(i.type)); }
-  function getDynamicItems()  { return items.filter(i => ['funding','trend'].includes(i.type)); }
-
-  function renderTabs() {
-    const ic = getInsightItems().length;
-    const dc = getDynamicItems().length;
-    document.getElementById('insights-tabs').innerHTML = `
-      <button class="insights-tab ${activeTab === 'insight' ? 'active' : ''}" data-tab="insight">
-        洞察<span class="insights-tab-count">${ic}</span>
-      </button>
-      <button class="insights-tab ${activeTab === 'dynamic' ? 'active' : ''}" data-tab="dynamic">
-        动态<span class="insights-tab-count">${dc}</span>
-      </button>
-    `;
-    document.querySelectorAll('.insights-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeTab = btn.dataset.tab;
-        activeFilter = 'all';
-        trackEvent('tab_switched', { to: activeTab });
-        renderTabs();
-        renderFilters();
-        renderCards();
-      });
-    });
-  }
-
   function renderFilters() {
     const row = document.getElementById('insights-filter-row');
-    const tabItems = activeTab === 'insight' ? getInsightItems() : getDynamicItems();
-    const types = activeTab === 'insight'
-      ? ['all', 'non-consensus', 'relationship', 'resume']
-      : ['all', 'funding', 'trend'];
-    row.innerHTML = types.map(t => {
-      const count = t === 'all' ? tabItems.length : tabItems.filter(i => i.type === t).length;
-      if (t !== 'all' && count === 0) return '';
+    const order = ['all', 'non-consensus', 'relationship', 'resume', 'funding', 'trend'];
+    row.innerHTML = order.map(t => {
+      const count = t === 'all' ? items.length : items.filter(i => i.type === t).length;
+      if (t !== 'all' && count === 0) return '';  // hide empty types
       const label = t === 'all' ? '全部' : TYPE_LABELS[t];
       return `<button class="insights-chip ${activeFilter === t ? 'active' : ''}" data-filter="${t}">${label} <span style="opacity:.5">${count}</span></button>`;
     }).join('');
     document.querySelectorAll('.insights-chip').forEach(btn => {
       btn.addEventListener('click', () => {
         activeFilter = btn.dataset.filter;
-        trackEvent('filter_changed', { tab: activeTab, filter: activeFilter });
+        trackEvent('filter_changed', { filter: activeFilter });
         renderFilters();
         renderCards();
       });
@@ -835,20 +773,19 @@ body.has-insights #graph-container::after {
   }
 
   function renderCards() {
-    let list = activeTab === 'insight' ? getInsightItems() : getDynamicItems();
+    let list = items.slice();
     if (activeFilter !== 'all') {
       list = list.filter(i => i.type === activeFilter);
     }
-    list = list.slice().sort((a, b) => {
-      if (activeTab === 'insight') {
-        if (a.pinned && !b.pinned) return -1;
-        if (!a.pinned && b.pinned) return 1;
-      }
+    list = list.sort((a, b) => {
+      if (a.pinned && !b.pinned) return -1;
+      if (!a.pinned && b.pinned) return 1;
       return new Date(b.date) - new Date(a.date);
     });
     const container = document.getElementById('insights-cards-container');
     if (list.length === 0) {
-      container.innerHTML = `<div class="insights-empty">暂无${activeTab === 'insight' ? '洞察' : '动态'} · 持续更新中</div>`;
+      const labelMap = { all: '内容', 'non-consensus': '非共识', 'relationship': '关系', 'resume': '履历', 'funding': '融资', 'trend': '最新情况' };
+      container.innerHTML = `<div class="insights-empty">暂无${labelMap[activeFilter] || '内容'} · 持续更新中</div>`;
       return;
     }
     container.innerHTML = list.map(renderCard).join('');
@@ -999,7 +936,6 @@ body.has-insights #graph-container::after {
   function escapeAttr(s) { return escapeHtml(s); }
 
   // Initial mount
-  renderTabs();
   renderFilters();
   renderCards();
 
