@@ -631,19 +631,30 @@ body.no-insights #graph-container {
 /* ===== Graph switcher dropdown (replaces top quick-links bar) ===== */
 .graph-switcher { position: relative; display: flex; align-items: center; }
 .graph-switcher-trigger {
-  display: flex; align-items: center; gap: 6px;
-  background: transparent; border: none; cursor: pointer;
-  padding: 6px 10px; margin: 0 -4px; border-radius: 8px;
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
   font-family: inherit; color: inherit;
-  transition: background 0.15s;
+  transition: all 0.15s;
 }
-.graph-switcher-trigger:hover { background: rgba(255, 255, 255, 0.06); }
+.graph-switcher-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.graph-switcher.open .graph-switcher-trigger {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
 .graph-switcher-trigger .nav-title { margin: 0; }
 .graph-chevron {
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
   transition: transform 0.2s;
   line-height: 1;
+  margin-left: 2px;
 }
 .graph-switcher.open .graph-chevron { transform: rotate(180deg); }
 .graph-dropdown {
