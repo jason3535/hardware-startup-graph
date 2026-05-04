@@ -169,6 +169,59 @@ const INSIGHTS_DATA = [
     ]
   },
 
+  // ===== WEEKLY TRENDS 2026-05-04 =====
+  {
+    id: "trend-2026-05-04-china-embodied-overseas",
+    date: "2026-05-04",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "中国具身AI首个亿级海外订单：无界动力 5 亿元落地",
+    body: "4 月 27 日，无界动力（张玉峰，前地平线副总裁）宣布天使++轮融资，天使轮累计超 2 亿美元，同步与远景科技集团签署超 5 亿元全球市场订单——欧洲+亚洲风光储+AIDC 场景，被多家媒体确认为「中国具身智能迄今最大单笔海外合同」。这不同于此前的「出口本体硬件」模式，而是「操作大脑软件+系统集成+长期服务」的组合，意味着中国具身AI从产品出海升级为解决方案出海。非共识点：远景是全球最大风电运营商之一，其选择具身操作机器人用于 AIDC 冷却/风机巡检等场景，是工业具身 AI 从制造厂扩散到能源基础设施的第一个重量级信号。",
+    persons: [
+      { id: "wujiedongli", name: "张玉峰（无界动力）" }
+    ],
+    sources: [
+      { label: "新浪财经 4月27日", url: "https://finance.sina.com.cn/tech/roll/2026-04-27/doc-inhvxatn9282033.shtml" },
+      { label: "第一财经", url: "https://www.yicai.com/brief/103154141.html" }
+    ]
+  },
+  {
+    id: "trend-2026-05-04-sereact-eu-vla",
+    date: "2026-05-04",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "Sereact 1.1 亿美元：欧洲机器人软件层正在赶上",
+    body: "4 月 27 日，德国斯图加特 Sereact 完成 1.1 亿美元 B 轮（Headline 领投），总融资超 1.4 亿美元。Sereact 的差异化在 Cortex 2.0 的「结果预测」架构——机器人在执行前在内部世界模型里跑多条候选轨迹，按稳定性/风险/效率打分。比主流 VLA 方案真实硬件上领先 20-35 个百分点，欧洲已部署 200+ 套、完成 10 亿+ 真实分拣。Sereact 代表欧洲「轻资产软件层」路线：不造本体，只卖大脑，接入第三方硬件。这条路在 PI（物理智能 11 亿美元）之后是第二家获大额融资的纯软件层具身公司，但 PI 在 SF、Sereact 在欧洲——地理覆盖格局让两者构成互补而非直接竞争。对中国具身赛道的启示：「轻资产机器人大脑」可能是本体之外的第二个超级赛道。",
+    persons: [
+      { id: "sereact", name: "Ralf Gulde（Sereact）" },
+      { id: "karolhausman", name: "Karol Hausman（PI）" }
+    ],
+    sources: [
+      { label: "Bloomberg 4月27日", url: "https://www.bloomberg.com/news/articles/2026-04-27/ai-startup-sereact-raises-110-million-for-robots-that-predict-consequences" },
+      { label: "EU-Startups", url: "https://www.eu-startups.com/2026/04/bmw-and-pepsico-robotics-partner-sereact-raises-e93-million-series-b-to-scale-across-the-us/" }
+    ]
+  },
+  {
+    id: "trend-2026-05-04-embodied-revenue-shift",
+    date: "2026-05-04",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "本周具身信号：赛道核心指标正式从「融资额」切换为「合同额」",
+    body: "本周关键信号不是融资数字，而是两条「商业验证」线索同时出现：1）无界动力 5 亿元海外合同（能源场景具身 AI 出海首单）；2）星动纪元已于 Q2 开启千台级交付，与顺丰/中国邮政 10+ 物流中心签约，并声称「行业首个具身 AI PMF」。加之上周 Galbot S1 在宁德时代零遥操稳定运行，三家公司的「收入故事」已超越「融资故事」成为赛道主叙事。与此对照，2026 年已发生 191 起融资事件/525 亿融资，但有实际订单的公司可能不超过 20 家。非共识判断：未来 6 个月，没有 2 亿元以上可核实合同的具身公司将面临 down round 或关闭——「融资加速+订单空洞」是最危险的组合。",
+    persons: [
+      { id: "chenjianyu", name: "陈建宇（星动纪元）" },
+      { id: "wanghe", name: "王鹤（银河通用）" },
+      { id: "wujiedongli", name: "张玉峰（无界动力）" }
+    ],
+    sources: [
+      { label: "人民网 4月29日", url: "http://finance.people.com.cn/n1/2026/0429/c1004-40711056.html" },
+      { label: "IT之家 星动纪元", url: "https://www.ithome.com/0/943/781.htm" }
+    ]
+  },
+
   // ===== AI SCHOLAR =====
   {
     id: "transformer-8-startups",

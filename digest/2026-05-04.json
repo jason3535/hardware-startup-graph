@@ -1,0 +1,69 @@
+{
+  "id": "weekly-2026-05-04",
+  "date": "2026-05-04",
+  "issueNumber": "002",
+  "title": "Jason's Hardware Notes — Issue #002",
+  "subject": "[周报] 2026-05-04 新增 2 人 / 更新 0 轮 / 3 条趋势",
+  "tldr": [
+    "无界动力（前地平线副总裁张玉峰）天使轮累计超 2 亿美元，同步签下中国具身 AI 史上最大单笔海外合同 5 亿元",
+    "Sereact 完成 1.1 亿美元 B 轮，德国「机器人大脑」公司进军美国，欧洲具身 AI 软件层加速",
+    "本周核心转折：具身赛道叙事主轴从「融资额」切换为「合同额 + 千台交付」"
+  ],
+  "sections": [
+    {
+      "title": "本周新人物",
+      "items": [
+        {
+          "title": "张玉峰 / Zhang Yufeng — 无界动力",
+          "subtitle": "前地平线机器人副总裁，押注双臂轮式机器人出海",
+          "body": "张玉峰早年历经索尼与 ARM，2017 年加入地平线机器人，历任副总裁和智能汽车事业部总裁，带领超千人团队做到国产品牌 ADAS 市占第一，合作方包括比亚迪、长安、大众、大陆集团。2025 年离职北京创办无界动力（Boundless Dynamics），押注「通用操作大脑」+双臂轮式机器人，主打 B 端制造/能源/数据中心场景。CTO 许闻达为 CMU 机器人博士，曾在美国联创自驾公司 Ottomatika，后担任卡驹科技 VP。\n\n2026 年 4 月 27 日宣布天使++轮融资，天使轮累计超 2 亿美元，本轮由远景科技集团+北京人工智能产业投资基金领投，红杉/线性/高瓴/百度跟投；同步与远景签署 5 亿元全球市场订单，部署欧洲+亚洲风光储+AIDC 场景——被多家媒体确认为中国具身 AI 迄今最大单笔海外合同。",
+          "judgment": "远景是全球最大独立风电运营商之一。它选具身 AI 用于能源场景，是制造厂之外的第一个重量级「基础设施场景」信号——如果这条路走通，能源/电力/数据中心将是比汽车工厂更大的具身 AI 部署市场。",
+          "sources": [
+            {"label": "新浪财经 4月27日", "url": "https://finance.sina.com.cn/tech/roll/2026-04-27/doc-inhvxatn9282033.shtml"},
+            {"label": "第一财经", "url": "https://www.yicai.com/brief/103154141.html"}
+          ]
+        },
+        {
+          "title": "Ralf Gulde — Sereact",
+          "subtitle": "斯图加特大学博士，造「机器人大脑」的欧洲人",
+          "body": "Ralf Gulde 与 CTO Marc Tuscher 均来自斯图加特大学 AI 实验室，2021 年在斯图加特创办 Sereact。核心产品 Cortex 是一套 VLA + 世界模型的组合：机器人在执行前，内部世界模型快速模拟多条候选轨迹，按稳定性/风险/效率打分后选优——称为「后果预测（Consequence Prediction）」。不造本体，只卖大脑，接入第三方机器人硬件。\n\n已在欧洲部署 200+ 套系统，完成 10 亿+ 真实产线分拣，宝马/百事可乐/奔驰为核心客户。2026 年 4 月 27 日完成 1.1 亿美元 B 轮（Headline 领投，Bullhound/Daphni/Felix 跟投），总融资超 1.4 亿美元，Cortex 2.0 比主流 VLA 方案在真实硬件上领先 20-35 个百分点。2026 年夏季在波士顿开设美国首个办公室。",
+          "judgment": "Sereact 是继 Physical Intelligence（11 亿美元）之后第二家获大额融资的纯「轻资产软件层」具身公司，但地理上互补（PI 在旧金山，Sereact 在欧洲）。「机器人大脑」的独立软件层赛道正在成型，对中国来说这是一个尚未有头部玩家的赛道。",
+          "sources": [
+            {"label": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-04-27/ai-startup-sereact-raises-110-million-for-robots-that-predict-consequences"},
+            {"label": "EU-Startups", "url": "https://www.eu-startups.com/2026/04/bmw-and-pepsico-robotics-partner-sereact-raises-e93-million-series-b-to-scale-across-the-us/"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "本周 3 条趋势",
+      "items": [
+        {
+          "title": "中国具身 AI 首个亿级海外订单落地",
+          "body": "无界动力与远景科技签署 5 亿元全球市场订单（欧洲+亚洲风光储+AIDC 数据中心），被确认为中国具身 AI 史上最大单笔海外合同。这不是「出口本体硬件」，而是「操作大脑+系统集成+长期服务」的解决方案模式，意味着中国具身 AI 从产品出海升级为方案出海。",
+          "judgment": "远景是全球最大独立风电运营商，其押注具身 AI 用于基础设施场景，是制造厂扩散到能源/电力行业的第一个重量级验证。如果这条路走通，能源场景的市场规模可能远超汽车工厂。",
+          "sources": [
+            {"label": "新浪财经", "url": "https://finance.sina.com.cn/tech/roll/2026-04-27/doc-inhvxatn9282033.shtml"}
+          ]
+        },
+        {
+          "title": "Sereact 1.1 亿美元：欧洲机器人软件层正在赶上",
+          "body": "德国 Sereact 完成 1.1 亿美元 B 轮，Cortex 2.0 世界模型在真实硬件上领先主流 VLA 20-35 个百分点，欧洲已部署 200+ 套（BMW/PepsiCo/Mercedes）。Headline 领投表明欧洲 VC 开始押具身 AI 软件层，与美国 PI（Bezos+Alphabet 共 11 亿）形成东西两岸格局。",
+          "judgment": "「轻资产机器人大脑」可能是本体之外的第二个超级赛道。Sereact 和 PI 两家纯软件层公司合计已融资超 12 亿美元，但中国市场目前尚无旗鼓相当的纯软件层具身头部公司。",
+          "sources": [
+            {"label": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-04-27/ai-startup-sereact-raises-110-million-for-robots-that-predict-consequences"}
+          ]
+        },
+        {
+          "title": "赛道核心叙事切换：「融资额」→「合同额+千台交付」",
+          "body": "本周三个同步信号：无界动力 5 亿海外合同、星动纪元 Q2 千台级交付+物流中心效率超人类 85%、银河通用 Galbot S1 宁德时代零遥操稳定运行。2026 年已发生 191 起融资/525 亿元，但有可核实合同的公司可能不超 20 家。",
+          "judgment": "未来 6 个月，没有 2 亿元以上可核实合同的具身公司将面临 down round 或关闭。「融资加速+订单空洞」是 2026 年最危险的公司画像——这个筛子比 LLM 清场更残酷，因为机器人还有硬件成本和产线爬坡这两道额外门槛。",
+          "sources": [
+            {"label": "人民网 4月29日", "url": "http://finance.people.com.cn/n1/2026/0429/c1004-40711056.html"},
+            {"label": "IT之家 星动纪元", "url": "https://www.ithome.com/0/943/781.htm"}
+          ]
+        }
+      ]
+    }
+  ]
+}
