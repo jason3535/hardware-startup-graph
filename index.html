@@ -65,7 +65,7 @@ body {
 /* ===== Navigation — Apple Glass ===== */
 #nav-bar {
   position: fixed;
-  top: 36px; left: 0; right: 0;
+  top: 28px; left: 0; right: 0;
   height: 48px;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: saturate(180%) blur(20px);
@@ -212,14 +212,14 @@ body {
 /* ===== Graph Canvas ===== */
 #graph-container {
   position: relative;
-  margin-top: 84px;
-  height: calc(100vh - 204px);
+  margin-top: 76px;
+  height: calc(100vh - 196px);
   min-height: 480px;
   width: 100%;
 }
-/* When no insights for current graph (e.g. AI scholar pre-content), expand graph to fill below nav */
+/* When no insights for current graph, expand graph to fill below nav */
 body.no-insights #graph-container {
-  height: calc(100vh - 84px);
+  height: calc(100vh - 76px);
   min-height: unset;
 }
 #graph-container svg {
@@ -635,29 +635,29 @@ body.no-insights #graph-container {
   top: 0;
   left: 0;
   right: 0;
-  height: 36px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  height: 28px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   z-index: 1000;
   padding: 0 16px;
 }
 .quick-link {
   font-family: 'SF Pro Text', -apple-system, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: -0.12px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
-  padding: 4px 12px;
+  padding: 2px 10px;
   border-radius: 980px;
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 .quick-link:hover {
@@ -820,8 +820,8 @@ body.no-insights #graph-container {
     font-size: 20px;
   }
   #keyboard-hint { display: none; }
-  #quick-links { height: 32px; gap: 4px; }
-  .quick-link { font-size: 10px; padding: 3px 8px; }
+  #quick-links { height: 26px; gap: 4px; }
+  .quick-link { font-size: 10px; padding: 2px 8px; }
   .quick-link-sep { font-size: 9px; }
   .node-label { font-size: 9px !important; }
 }
@@ -940,7 +940,7 @@ body.no-insights #graph-container {
 
 <!-- Insights Section (rendered by insights-widget.js) -->
 <section id="insights-section" data-graph="hardware"></section>
-<script src="insights-widget.js?v=14" defer></script>
+<script src="insights-widget.js?v=15" defer></script>
 
 <script>
 // ===================================================================

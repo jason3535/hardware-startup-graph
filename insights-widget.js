@@ -577,13 +577,13 @@ body.has-insights #graph-container::after {
 }
 /* Subscribe button in top quick-links */
 .quick-link-subscribe {
-  padding: 4px 14px;
+  padding: 3px 12px;
   background: #fff;
   color: #000;
   border: none;
   border-radius: 980px;
   font-family: 'SF Pro Text', -apple-system, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   cursor: pointer;
   letter-spacing: -0.12px;
