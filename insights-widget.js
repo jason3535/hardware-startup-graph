@@ -889,7 +889,7 @@ body.has-insights #graph-container::after {
         <button class="subscribe-modal-close" id="subscribe-modal-close" aria-label="关闭">×</button>
         <div class="subscribe-modal-eyebrow">NEWSLETTER</div>
         <div class="subscribe-modal-title">Jason's Hardware Notes</div>
-        <p class="subscribe-modal-pitch">每周更新，中国 AI 硬件创业的人物 / 融资 / 非共识洞察</p>
+        <p class="subscribe-modal-pitch">每周更新，中国 AI 硬件创业的人物 / 融资 / 非共识洞察，可一键退订</p>
         <form class="subscribe-modal-form" id="subscribe-modal-form">
           <input type="email" name="email" required placeholder="your@email.com" autocomplete="email" spellcheck="false">
           <button type="submit">订阅</button>

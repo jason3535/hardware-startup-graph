@@ -255,23 +255,15 @@ function htmlPage(title, body) {
 }
 
 async function renderLanding(env) {
-  const issues = await listIssues(env, 3);
-  const issueListHtml = issues.length
-    ? `<ul class="issue-list">${issues.map(i => `<li><a href="/issue/${esc(i.id)}"><span class="date">${esc(i.date)}</span>${esc(i.subject || i.title || i.id)}</a></li>`).join('')}</ul>`
-    : `<p style="color:#888;font-size:14px;">第一期下周一上线。</p>`;
-
   const body = `
     <h1>${NEWSLETTER_NAME}</h1>
-    <p class="meta">每周一一份。中国 AI 硬件创业的人物 / 融资 / 非共识洞察。免费。</p>
+    <p class="meta">每周更新，中国 AI 硬件创业的人物 / 融资 / 非共识洞察</p>
 
     <form class="form" id="subscribe-form" action="/api/subscribe" method="post">
       <input type="email" name="email" required placeholder="your@email.com">
       <button type="submit" id="subscribe-btn">订阅</button>
     </form>
-    <div class="hint" id="subscribe-hint">不发送任何垃圾。一键退订。</div>
-
-    <h2>最近几期</h2>
-    ${issueListHtml}
+    <div class="hint" id="subscribe-hint">免费，可一键退订</div>
 
     <h2>关于</h2>
     <p>这是 <a href="https://jasonlin.tech">Jason</a> 写的中国 AI 硬件创业周报。每周一汇总人物变动、融资动态、3 条非共识趋势。基于 <a href="https://hardware.jasonlin.tech">硬件创业图谱</a> 持续追踪 100+ 创始人 / 公司。</p>
