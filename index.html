@@ -941,19 +941,26 @@ body.no-insights #graph-container {
   }
   .nav-title { font-size: 15px; }
   .nav-separator { display: none; }
-  .nav-stats { font-size: 11px; order: 5; width: 100%; }
+  .nav-stats { display: none; }
   .nav-search-wrapper { margin-left: 0; flex: 1; min-width: 0; order: 3; }
   #search-input { width: 100%; font-size: 13px; }
   #search-input:focus { width: 100%; }
+  /* Row 2: filter pills (横向滚动) + lang-toggle 同行 */
   .filter-group {
-    order: 6;
-    width: 100%;
-    flex-wrap: wrap;
+    order: 5;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     gap: 4px;
     margin-left: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+  .filter-group::-webkit-scrollbar { display: none; }
   .filter-pill { font-size: 11px; padding: 4px 10px; flex-shrink: 0; }
-  .lang-toggle { order: 4; margin-left: auto; }
+  .lang-toggle { order: 6; margin-left: 0; flex-shrink: 0; }
   .nav-spacer { display: none; }
   #graph-container { top: 90px; }
   #legend { display: none; }
