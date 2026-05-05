@@ -1682,6 +1682,35 @@ document.getElementById("detail-close").addEventListener("click",e=>{e.stopPropa
 // ===================================================================
 // SEARCH
 // ===================================================================
+// 公司中英文别名:搜「大疆」也能找到 DJI 创始人(汪滔的 zh.title 里只写了 DJI)
+const orgAlias = {
+  "DJI":"大疆","Unitree":"宇树","Anker":"安克","Dreame":"追觅",
+  "Roborock":"石头科技 石头","Narwal":"云鲸","Insta360":"影石",
+  "Bambu Lab":"拓竹","EcoFlow":"正浩","XAG":"极飞","Aqara":"绿米",
+  "Laifen":"徕芬","UGREEN":"绿联","Pop Mart":"泡泡玛特",
+  "RayNeo":"雷鸟","Sharge":"闪极","AgileX Robotics":"松灵",
+  "Zhipai":"智能派","Agibot":"智元","Galbot":"银河通用",
+  "Qianxun Intelligence":"千寻智能 千寻","Pudu":"普渡","UBTECH":"优必选",
+  "Hai Robotics":"海柔","Geek+":"极智嘉","XGIMI":"极米","Ecovacs":"科沃斯",
+  "Dangbei":"当贝","Baseus":"倍思","Autel Robotics":"道通",
+  "Ninebot-Segway":"九号 Segway","Fourier Intelligence":"傅利叶",
+  "Haivivi":"跃然创新","INMO":"影目","Kepler Robotics":"开普勒",
+  "Robotera":"星动纪元","TaShi ZhiHang":"它石智航","Timekettle":"时空壶",
+  "XingHaiTu":"星海图","Xuanji Power":"璇玑动力","Zepp Health":"华米 Amazfit",
+  "Coros":"高驰","Suunto":"颂拓","Langzhao Intelligence":"浪爪",
+  "LimX Dynamics":"逐际","Xingji Guangnian":"星纪魅族","ePropulsion":"逸动",
+  "Ludens AI":"Ludens","UNICUS":"UNICUS 积木大模型","Wujie Ark":"无界方舟",
+  "Booster Robotics":"加速进化","Skydio":"Skydio","Figure AI":"Figure",
+  "Apptronik":"Apptronik","1X Technologies":"1X","The Bot Company":"Bot Company",
+  "Physical Intelligence":"Physical Intelligence pi","Humane (→HP)":"Humane HP",
+  "Even Realities":"Even Realities","Framework Computer":"Framework",
+  "Teenage Engineering":"Teenage Engineering","Anduril Industries":"Anduril",
+  "Snapmaker":"Snapmaker","xTool / Makeblock":"xTool 创乐博 Makeblock",
+  "Eight Sleep":"Eight Sleep 八小时","Withings":"Withings","Garmin":"Garmin 佳明",
+  "WHOOP":"WHOOP","Oura":"Oura","RingConn":"RingConn","Apollo Neuro":"Apollo Neuro",
+  "Levels Health":"Levels","Polar":"Polar","Ultrahuman":"Ultrahuman",
+  "Luffu (ex-Fitbit)":"Luffu Fitbit","iHealth Labs":"iHealth","Shokz":"Shokz 韶音"
+};
 document.getElementById("search-input").addEventListener("input",e=>{
   const q=e.target.value.toLowerCase().trim();
   if(!q){
@@ -1693,6 +1722,7 @@ document.getElementById("search-input").addEventListener("input",e=>{
     const haystack = [
       s.name, s.org, s.title, s.bio, s.id,
       zh.zhName, zh.title, zh.bio,
+      orgAlias[s.org] || '',
       ...((s.papers||[]).map(p => p.t || ''))
     ].filter(Boolean).join(' \n ').toLowerCase();
     if(haystack.includes(q)) match.add(s.id);
