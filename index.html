@@ -949,8 +949,7 @@ body.no-insights #graph-container {
   .lang-toggle { order: 6; margin-left: 0; flex-shrink: 0; height: 28px; box-sizing: border-box; align-items: center; }
   .lang-btn { padding: 3px 8px; font-size: 11px; }
   .nav-spacer { display: none; }
-  /* nav 单行后高度 48px,把图表容器顶部从 90px 收到 48px */
-  #graph-container { top: 48px; }
+  /* nav 单行 48px,graph-container 默认已有 margin-top:48px 紧贴 nav 下方,无需额外 top 偏移 */
   #legend { display: none; }
   #geo-map { display: none; }
   #detail-panel {
