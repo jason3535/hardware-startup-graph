@@ -1680,7 +1680,13 @@ document.getElementById("search-input").addEventListener("input",e=>{
   }
   const match=new Set();
   scholars.forEach(s=>{
-    if(s.name.toLowerCase().includes(q)||s.org.toLowerCase().includes(q)||s.title.toLowerCase().includes(q))match.add(s.id);
+    const zh = (typeof scholarZh !== 'undefined' && scholarZh[s.id]) || {};
+    const haystack = [
+      s.name, s.org, s.title, s.bio, s.id,
+      zh.zhName, zh.title, zh.bio,
+      ...((s.papers||[]).map(p => p.t || ''))
+    ].filter(Boolean).join(' \n ').toLowerCase();
+    if(haystack.includes(q)) match.add(s.id);
   });
   const expanded=new Set(match);
   connections.forEach(c=>{
