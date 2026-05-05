@@ -1537,13 +1537,12 @@ const zoomBehavior = d3.zoom().scaleExtent([0.15, 5])
   .on("zoom", ({transform}) => g.attr("transform", transform));
 svg.call(zoomBehavior);
 
-// Glow filter
+// 节点光晕:用径向渐变代替 feGaussianBlur(125 个节点 × Gaussian blur 在 zoom 时会爆 GPU)
 const defs = svg.append("defs");
-const glowFilter = defs.append("filter").attr("id","glow").attr("x","-50%").attr("y","-50%").attr("width","200%").attr("height","200%");
-glowFilter.append("feGaussianBlur").attr("stdDeviation","5").attr("result","blur");
-const glowMerge = glowFilter.append("feMerge");
-glowMerge.append("feMergeNode").attr("in","blur");
-glowMerge.append("feMergeNode").attr("in","SourceGraphic");
+const glowGrad = defs.append("radialGradient").attr("id","glow-grad").attr("cx","50%").attr("cy","50%").attr("r","50%");
+glowGrad.append("stop").attr("offset","0%").attr("stop-color","white").attr("stop-opacity",0.55);
+glowGrad.append("stop").attr("offset","60%").attr("stop-color","white").attr("stop-opacity",0.18);
+glowGrad.append("stop").attr("offset","100%").attr("stop-color","white").attr("stop-opacity",0);
 
 // Force simulation
 const simulation = d3.forceSimulation(scholars)
@@ -1587,12 +1586,11 @@ function nodeSize(d){
   return Math.min(Math.max(c*1.3+4,5),16);
 }
 
-// Glow
+// Glow — 用 mask 形式的 radial-gradient,GPU 友好
 nodeGroups.append("circle").attr("class","node-glow")
-  .attr("r",d=>nodeSize(d)+8)
+  .attr("r",d=>nodeSize(d)+6)
   .attr("fill",d=>getColor(d.org))
-  .attr("opacity",0.15)
-  .attr("filter","url(#glow)");
+  .attr("opacity",0.22);
 
 // Circle
 nodeGroups.append("circle").attr("class","node-circle")
