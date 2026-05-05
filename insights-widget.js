@@ -5,6 +5,99 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== HARDWARE — 2026-05-05 新增 =====
+  {
+    id: "state-grid-68b-procurement",
+    date: "2026-05-05",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: true,
+    title: "国网 68 亿采购 8500 台机器人 — 第一张「国家级订单」结构曝光",
+    body: "国家电网 4 月 22 日内部下发《2026 年具身智能发展规划》，年内采购约 8500 台具身设备总投资 68 亿元，结构是：四足巡检 5000 台 / 15 亿，人形带电作业 500 台 / 25 亿（单价 500 万），双臂巡检 3000 台 / 18 亿，剩余 10 亿做研发与人才。中标供应商：云深处、宇树、智元、UBTech、傅利叶。算上南方电网与地方能源跟单，2026 年电力行业可能成为具身智能第一个百亿级垂直市场。这意味着接下来 12 个月赛道核心指标已切换：不是融资额，而是中标资质 + 量产交付。还在 Demo 阶段的公司压力会陡增。",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" },
+      { id: "pengzhihui", name: "彭志辉（智元）" }
+    ],
+    sources: [
+      { label: "界面新闻 国网采购详情", url: "https://m.jiemian.com/article/14311565.html" },
+      { label: "智东西 68 亿史上最大采购", url: "https://zhidx.com/p/552717.html" }
+    ]
+  },
+  {
+    id: "galbot-lda-anti-bc",
+    date: "2026-05-04",
+    type: "non-consensus",
+    graphs: ["hardware"],
+    pinned: true,
+    title: "银河通用 LDA-1B：第一篇反「行为克隆」的中国具身论文",
+    body: "银河通用最新论文《LDA-1B: Scaling Latent Dynamics Action Model via Universal Embodied Data Ingestion》挑战当前主流路线。核心论点：行为克隆（让机器人模仿人类示教）有结构性缺陷——协变量偏移导致每个微小执行误差会滚雪球，且智能上限被人力示教成本封死，永远撑不起「走进千家万户」的故事。LDA 走世界模型路线 + 通用数据摄取（吃野生短视频等无标注数据），把数据成本曲线从「线性 × 任务数」变成「亚线性」。这是中国具身赛道第一篇正面拒绝主流的「技术不同意见书」，值得跟踪 12 个月看数据效率上是否真能跑通——若跑通，行为克隆派的估值会被重估。",
+    persons: [{ id: "wanghe", name: "王鹤（银河通用）" }],
+    sources: [
+      { label: "钛媒体 LDA 拆穿人形最大谎言", url: "https://www.tmtpost.com/7973821.html" }
+    ]
+  },
+  {
+    id: "qianxun-30days-30b",
+    date: "2026-04-08",
+    type: "funding",
+    graphs: ["hardware", "investor"],
+    pinned: false,
+    title: "千寻智能 30 天融 30 亿：马云 + 雷军同时押注一家具身",
+    body: "韩峰涛 2024 年 1 月创立千寻智能，到 2026 年 4 月仅 26 个月估值破百亿。融资节奏：2 月 24 日两轮共 20 亿（云锋 + 红杉中国领投）+ 4 月 7 日 10 亿（顺为 + 云锋联合领投）。马云的云锋 + 雷军的顺为同时下注同一家具身公司，是中国硬科技融资史上未见的密度。但这种速度本质上是两位巨头「为对冲做的双押」——双方都不能错过具身赛道，所以选了同一头部下注。对其他创业者而言：跟韩峰涛抢钱抢人都已无意义，但有可能押他没覆盖的细分场景（家用 / 户外 / 教育）。",
+    persons: [
+      { id: "hanfengtao", name: "韩峰涛（千寻）" },
+      { id: "leijun", name: "雷军（顺为）" }
+    ],
+    sources: [
+      { label: "量子位 千寻 20 亿融资", url: "https://www.qbitai.com/2026/02/381766.html" },
+      { label: "澎湃 30 天 30 亿马雷联手", url: "https://m.thepaper.cn/newsDetail_forward_32915524" }
+    ]
+  },
+  {
+    id: "skild-ai-14b-vs-china",
+    date: "2026-01-14",
+    type: "funding",
+    graphs: ["investor", "hardware"],
+    pinned: false,
+    title: "Skild AI $14B 估值 vs 国内具身：中美 GP 结构已分流",
+    body: "1 月 14 日 Skild AI 完成 14 亿美金 C 轮，估值 140 亿美金（≈1000 亿人民币），SoftBank 领投，跟投方包括 Nvidia/NVentures、Bezos Expeditions、Macquarie、红杉。同期国内最高估值具身公司银河通用约 25 亿人民币单轮、估值 ~250 亿——是 Skild 的 1/4。但更值得注意的是 GP 名单结构：Skild 是经典「美元基金 + 战略科技投资人」组合（孙正义 + 黄仁勋 + 贝佐斯），国内则是「国家大基金 + 央企产业资本」（中石化 / 中信 / 上汽 / 中芯聚源）。底层资金性质不同 → 创始人退出预期不同 → 出海路径不同。一家创始人能拿哪种钱，基本预示了未来 5 年的玩法。",
+    persons: [
+      { id: "masason", name: "Masayoshi Son（SoftBank）" },
+      { id: "jensenhuang", name: "Jensen Huang（NVIDIA）" },
+      { id: "jeffbezos", name: "Jeff Bezos（Bezos Expeditions）" }
+    ],
+    sources: [
+      { label: "TechCrunch Skild AI $14B", url: "https://techcrunch.com/2026/01/14/robotic-software-maker-skild-ai-hits-14b-valuation/" },
+      { label: "Skild AI Series C 公告", url: "https://www.skild.ai/blogs/series-c" }
+    ]
+  },
+  {
+    id: "unitree-4290-cambrian",
+    date: "2026-04-28",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "宇树 $4290 双臂人形 = 具身软件 Cambrian 期开关",
+    body: "宇树最新双臂人形机器人入门价 $4,290（约 3.1 万人民币），首次把「可编程 + 双臂操纵」硬件拉到高校实验室、中小开发者团队也买得起的价位。类比：2008 年 Arduino $30 释放了硬件 maker 一代，2014 年树莓派 $35 释放了边缘计算开发者一代。$4,290 这个价位在具身赛道意味着「算法/数据/应用层创业者」会在未来 12 个月暴增——他们不必自己造硬件，可以把宇树本体当成 commodity 平台。这对自己造本体的创业者是坏消息（毛利会被压缩到 PC 行业水平），对软件 + 数据派则是历史窗口。Jason 注：可以重点观察「不做本体只做大脑/手势识别/家居场景」这一波新创业者。",
+    persons: [{ id: "wangxingxing", name: "王兴兴（宇树）" }],
+    sources: [
+      { label: "Startup Fortune Unitree $4290", url: "https://startupfortune.com/unitree-just-priced-a-dual-arm-humanoid-robot-at-4290-and-the-embodied-ai-experimentation-race-is-about-to-get-crowded/" }
+    ]
+  },
+  {
+    id: "anthropic-overtakes-openai-arr",
+    date: "2026-04-07",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "Anthropic ARR 300 亿美金反超 OpenAI 250 亿——非共识翻盘",
+    body: "Anthropic 4 月 7 日内部数据：ARR 达 300 亿美元，较 2025 年底 90 亿暴涨 233%；同期 OpenAI 披露 ARR 250 亿。截至 4 月，超 1000 家企业客户每年向 Anthropic 付超过 100 万美元。两年前业内共识是「OpenAI 永远领先一代」，但 Claude 4.X 系列在企业代码生成（Cursor / Replit / Anthropic API 直接接入）和 Constitutional AI 路线上的累积优势开始变现。对中国 AI 学者轴的含义：Dario/Daniela Amodei 这条 OpenAI 出走线，从被视作「保守派」到现在变成「商业反超派」，会引发新一轮中国研究员对「安全 + 商业兼得」路径的重新认真考虑。Schmidhuber 派 / RLHF 派 / Constitutional AI 派的话语权正在重新洗牌。",
+    persons: [],
+    sources: [
+      { label: "新浪财经 Anthropic 反超 OpenAI", url: "https://finance.sina.com.cn/stock/t/2026-04-29/doc-inhwcvfa8021583.shtml" }
+    ]
+  },
+
   // ===== HARDWARE =====
   {
     id: "plaud-no-vc",
