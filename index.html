@@ -910,27 +910,26 @@ body.no-insights #graph-container {
 }
 
 @media (max-width: 768px) {
+  /* 单行布局:switcher + search + pills(横滑) + lang,订阅按钮隐藏 */
   #nav-bar {
-    height: auto;
-    flex-wrap: wrap;
-    padding: 8px 12px;
+    height: 48px;
+    flex-wrap: nowrap;
+    padding: 8px 10px;
     gap: 6px;
     align-items: center;
+    overflow: hidden;
   }
-  .nav-title { font-size: 15px; }
+  .nav-title { font-size: 14px; max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .nav-separator { display: none; }
   .nav-stats { display: none; }
-  /* 移动端 Row 1 元素高度对齐 32px */
-  .graph-switcher-trigger { height: 32px; padding: 0 12px; box-sizing: border-box; }
-  .nav-subscribe-btn { height: 32px; padding: 0 14px; box-sizing: border-box; font-size: 12px; line-height: 32px; }
-  .nav-search-wrapper { margin-left: 0; flex: 1; min-width: 0; order: 3; }
+  .nav-subscribe-btn { display: none; }
+  .graph-switcher-trigger { height: 32px; padding: 0 10px; box-sizing: border-box; flex-shrink: 0; order: 1; }
+  .nav-search-wrapper { margin-left: 0; flex: 0 1 auto; min-width: 80px; max-width: 160px; order: 3; }
   #search-input { width: 100%; height: 32px; font-size: 13px; box-sizing: border-box; }
   #search-input:focus { width: 100%; }
-  .lang-toggle { height: 32px; box-sizing: border-box; align-items: center; }
-  /* Row 2: filter pills (横向滚动) + lang-toggle 同行 */
   .filter-group {
-    order: 5;
-    flex: 1;
+    order: 4;
+    flex: 1 1 0;
     min-width: 0;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -941,10 +940,11 @@ body.no-insights #graph-container {
     scrollbar-width: none;
   }
   .filter-group::-webkit-scrollbar { display: none; }
-  .filter-pill { font-size: 11px; padding: 4px 10px; flex-shrink: 0; }
-  .lang-toggle { order: 6; margin-left: 0; flex-shrink: 0; }
+  .filter-pill { font-size: 11px; padding: 4px 10px; flex-shrink: 0; height: 24px; line-height: 16px; }
+  .lang-toggle { order: 5; margin-left: 0; flex-shrink: 0; height: 32px; box-sizing: border-box; align-items: center; }
   .nav-spacer { display: none; }
-  #graph-container { top: 90px; }
+  /* nav 单行后高度 48px,把图表容器顶部从 90px 收到 48px */
+  #graph-container { top: 48px; }
   #legend { display: none; }
   #geo-map { display: none; }
   #detail-panel {
