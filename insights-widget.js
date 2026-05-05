@@ -5,6 +5,61 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-05 大模型节点更新 =====
+  {
+    id: "deepseek-v4-huawei-decouple",
+    date: "2026-05-05",
+    type: "non-consensus",
+    graphs: ["ai-scholar", "hardware"],
+    pinned: true,
+    title: "DeepSeek V4 双重信号:性能赶超闭源 + 华为昇腾绑定",
+    body: "4.24 DeepSeek-V4 预览版正式开源。两个版本:V4-Pro(1.6T 参数 MoE,激活 49B)+ V4-Flash(2840 亿参数 MoE,激活 13B),原生支持 100 万 token 上下文。性能层面:Pro 在数学/STEM/竞赛代码超所有已公开开源模型,世界知识仅次 Gemini 3.1 Pro;agentic coding 体验超 Sonnet 4.5,接近 Opus 4.6 不思考模式——已成 DeepSeek 内部员工日常 coding 工具。价格层面:Pro 输入 12 元/百万 token,据传是 GPT-5.4 的 1/20。但真正颠覆性的是算力维度:V4 是全球首个原生跑在华为昇腾 950PR 上的万亿参数大模型(单卡 FP4 算力 1.56P,2.87 倍 H20),DeepSeek 首次把华为昇腾和 Nvidia 列入同一硬件验证清单,从 CUDA 生态明确切向 CANN 生态。8 家国产芯片厂(华为/百度/阿里/海光等)火速适配。对中国 AI 创业的含义:第一次有「性能够用 + 算力可获取 + 价格能承担」的三位一体国产开源底座,这是行业拐点级别的事件。",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋(DeepSeek)" },
+      { id: "dayaguo", name: "Daya Guo(DeepSeek-R1 一作)" }
+    ],
+    sources: [
+      { label: "DeepSeek 官方 V4 公告", url: "https://api-docs.deepseek.com/news/news260424" },
+      { label: "智东西 8 大国产芯片火速适配", url: "https://zhidx.com/p/552782.html" },
+      { label: "钛媒体 黄仁勋的担忧成真", url: "https://www.tmtpost.com/7966555.html" }
+    ]
+  },
+  {
+    id: "gpt-5-5-reclaims-coding-throne",
+    date: "2026-05-05",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: true,
+    title: "GPT-5.5 把 agentic coding 王座从 Claude 手里夺回",
+    body: "OpenAI 4.23 发布 GPT-5.5,基准测试碾压 Anthropic 同期旗舰 Claude Opus 4.7。Terminal-Bench 2.0:82.7% vs 69.4%,13+ 分差距。Expert-SWE 73.1%,OSWorld-Verified 78.7%,FrontierMath 1-3 拿到 51.7%。更要命的是 token 效率:GPT-5.5 完成相同任务用的输出 token 比 Opus 4.7 少 72%,长上下文 retrieval 在 8-needle 512K-1M 区间 74% vs 32.2%——直接两倍多差距。一个月前 Anthropic ARR 刚反超 OpenAI(\$30B vs \$25B)的叙事,被技术指标狠狠反扑。值得关注的是 Anthropic 内部对 Claude Code 的押注路径:Cursor 已切回 GPT-5.5 作为默认模型,Claude Code 团队(Boris Cherny + Cat Wu)未来 12 个月最大挑战不是产品打磨,而是 Sonnet 5/Opus 5 必须在 agentic 任务硬指标追回这 13 分差。Anthropic 此前 ARR 反超的故事如果模型不跟上,会被 reverse 一遍。",
+    persons: [
+      { id: "altman", name: "Sam Altman" },
+      { id: "pachocki", name: "Jakub Pachocki" },
+      { id: "damodei", name: "Dario Amodei" },
+      { id: "bcherny", name: "Boris Cherny(Claude Code)" }
+    ],
+    sources: [
+      { label: "OpenAI Introducing GPT-5.5", url: "https://openai.com/index/introducing-gpt-5-5/" },
+      { label: "DigitalApplied GPT-5.5 vs Claude Opus 4.7 对比", url: "https://www.digitalapplied.com/blog/gpt-5-5-vs-claude-opus-4-7-frontier-comparison" }
+    ]
+  },
+  {
+    id: "unitree-ipo-2025-financials",
+    date: "2026-05-05",
+    type: "funding",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "宇树 IPO 实锤:2025 营收 17 亿(+335%),扣非净利 6 亿(+674%)",
+    body: "2026.3.20 上交所正式受理宇树科技科创板 IPO 申请,拟募资 42.02 亿元,「人形机器人第一股」即将诞生。招股书数据揭穿了具身赛道的「估值高、不赚钱」叙事:2025 全年营收 17.08 亿,同比 +335%;扣非净利润超 6 亿,同比 +674%——这两个数字在中国硬件 IPO 史上都是头部水平。结构性变化更值得注意:2025 年 1-9 月,人形机器人收入占比首次达到 51.53%,**超过原本的现金牛四足机器人**;人形出货量 5500+ 台。集邦预估 2026 年宇树+智元两家将合计占国产人形机器人 80% 出货量。对其他还在融资轮次跑的具身公司,这意味着 IPO 窗口期的关键 KPI 已被宇树定锚——18 个月内做到「营收破 10 亿 + 净利转正 + 人形产品收入占比超 50%」,否则估值很难支撑。",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴(宇树)" }
+    ],
+    sources: [
+      { label: "上交所 宇树招股书披露", url: "https://static.sse.com.cn/stock/disclosure/announcement/c/202603/002178_20260320_BLK4.pdf" },
+      { label: "OFweek 具身智能 IPO 潮起", url: "https://robot.ofweek.com/2026-04/ART-898890-8420-30684330.html" }
+    ]
+  },
+
   // ===== HARDWARE — 2026-05-05 新增 =====
   {
     id: "state-grid-68b-procurement",
