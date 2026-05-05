@@ -795,34 +795,11 @@ body.no-insights #graph-container {
 }
 .nav-hamburger:hover { background: rgba(255, 255, 255, 0.06); }
 
-/* Mobile responsive: collapse extras into hamburger drawer */
+/* Mobile: 已废弃 hamburger drawer,改为永远显示的 2 行布局(见下方 @media 768px 块) */
 @media (max-width: 768px) {
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: none; }
   .nav-separator, .nav-stats { display: none; }
-  .nav-search-wrapper, .filter-group, .lang-toggle { display: none; }
-  .nav-subscribe-btn { padding: 5px 12px; font-size: 11px; margin-right: 4px; }
-
-  body.mobile-menu-open #nav-bar {
-    height: auto !important;
-    padding: 8px 12px 14px !important;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  body.mobile-menu-open .nav-search-wrapper,
-  body.mobile-menu-open .filter-group {
-    display: flex;
-    width: 100%;
-    margin: 8px 0 0;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  body.mobile-menu-open .nav-search-wrapper { order: 10; }
-  body.mobile-menu-open .filter-group { order: 11; }
-  body.mobile-menu-open .lang-toggle {
-    display: flex;
-    order: 12;
-    margin: 8px 0 0 auto;
-  }
+  .nav-subscribe-btn { padding: 0 14px; font-size: 12px; margin-right: 4px; }
 }
 
 #keyboard-hint {
