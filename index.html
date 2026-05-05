@@ -917,7 +917,8 @@ body.no-insights #graph-container {
     padding: 8px 10px;
     gap: 6px;
     align-items: center;
-    overflow: hidden;
+    overflow-x: clip;          /* 水平防溢出 */
+    overflow-y: visible;       /* 垂直允许图谱切换下拉显示 */
   }
   .nav-title { font-size: 14px; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .nav-separator { display: none; }
