@@ -617,8 +617,13 @@ body.no-insights #graph-container {
 .link-line.type-industry-peer {
   stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 0.8;
-  stroke-opacity: 0.15;
+  stroke-opacity: 0;        /* 默认隐藏:行业同行连线视觉太密 */
   stroke-dasharray: 2 6;
+  pointer-events: none;
+}
+.link-line.type-industry-peer.highlighted {
+  stroke-opacity: 0.55 !important;
+  pointer-events: auto;
 }
 
 .node-group {
