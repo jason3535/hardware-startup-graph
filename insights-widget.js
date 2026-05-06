@@ -5,6 +5,24 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-06 每日扫描 =====
+  {
+    id: "openai-hardware-spinoff-dropped-2026-05-06",
+    date: "2026-05-06",
+    type: "non-consensus",
+    graphs: ["ai-scholar", "hardware"],
+    pinned: false,
+    title: "OpenAI 放弃硬件拆分，CFO 力主 IPO 推迟至 2027",
+    body: "5 月 5 日 WSJ 独家：Sam Altman 在 2025 年底研究将 OpenAI 机器人部门与消费硬件部门（2025 年以 65 亿美元收购 Jony Ive 的 io Products 后形成）分拆独立融资，方案最终搁置——原因是拆出的实体在会计准则下仍需并表，财务上反而更复杂。同日多方证实，CFO Sarah Friar 内部已公开示警：OpenAI 错过 ChatGPT 周活跃用户 10 亿目标、多个月度营收 target 未达成（Claude Code 在开发者侧抢走可观份额），她力主将 IPO 推迟至 2027 年；Altman 仍坚持 2026 年上市，CEO 与 CFO 意见相左。背景数字：OpenAI 已累计融资逾 1220 亿美元，当前估值目标约 1 万亿美元。行业含义：物理 AI（硬件+机器人）无法干净地从大模型主体剥离，意味着大模型公司的竞争形态将是「全栈整合」——不会孵化出独立硬件子公司，而是以 1 万亿美元量级的算力和品牌分发能力直接推出产品线。对创业者的实操含义：Jony Ive 主导的首款设备预计 2027 年初才到消费者手中，OpenAI 自研硬件至少还有 18 个月市场真空期，但当竞争真正到来时，对手将是全球最强 AI 背书的全栈公司，而非另一家硬件创业团队",
+    persons: [
+      { id: "altman", name: "Sam Altman" }
+    ],
+    sources: [
+      { label: "WSJ via Investing.com 2026-05-05", url: "https://www.investing.com/news/stock-market-news/openai-explored-robotics-and-hardware-spinoff-in-race-to-ipo-wsj-93CH-4657765" },
+      { label: "CNBC OpenAI 营收未达标 2026-04-28", url: "https://www.cnbc.com/2026/04/28/openais-revenue-growth-estimates-fall-short-report.html" }
+    ]
+  },
+
   // ===== 2026-05-05 大模型节点更新 =====
   {
     id: "deepseek-v4-huawei-decouple",
