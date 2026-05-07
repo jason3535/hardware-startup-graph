@@ -7,6 +7,23 @@
 const INSIGHTS_DATA = [
   // ===== HARDWARE =====
   {
+    id: "meta-ari-android-of-robots-2026-05-07",
+    date: "2026-05-07",
+    type: "non-consensus",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "Meta 收购 ARI:大厂争抢具身「基础模型层」",
+    body: "5月1日 Meta 完成对 Assured Robot Intelligence（ARI）全资收购，约 20 人研究团队并入 Meta 超级智能实验室。ARI 联创 Xiaolong Wang（前英伟达研究员、加州大学圣地亚哥分校副教授）和 Lerrel Pinto 专注通用人形机器人基础模型。Pinto 此前联创的 Fauna Robotics 已于 3月24日被亚马逊收购（50 名员工，$50K 机器人 Sprout）。Meta 官方目标是复制 Android + 高通对手机行业的作用——做行业基础平台，不做整机。6 周内两大科技巨头 acqui-hire 具身 AI 基础模型团队，金额均未披露，但模式已清晰：大厂进场不是投钱，而是直接把人才技术带回内部。对创业者的实操含义：做整机 + 闭环数据飞轮（宇树、智元路线）比做纯基础模型更安全；纯基础模型公司的出路是被并购或在大厂平台化前锁住规模数据",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" },
+      { id: "pengzhihui", name: "彭志辉（智元）" }
+    ],
+    sources: [
+      { label: "TechCrunch 2026-05-01", url: "https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/" },
+      { label: "CNBC 2026-03-24", url: "https://www.cnbc.com/2026/03/24/amazon-humanoid-maker-fauna-robotics-sprout.html" }
+    ]
+  },
+  {
     id: "plaud-no-vc",
     date: "2026-05-02",
     type: "non-consensus",
