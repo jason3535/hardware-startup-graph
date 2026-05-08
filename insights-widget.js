@@ -5,6 +5,25 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-08 每日扫描 =====
+  {
+    id: "deepseek-first-funding-2026-05-08",
+    date: "2026-05-08",
+    type: "funding",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "DeepSeek 启动首轮融资：大基金拟领投，估值约 450 亿美元",
+    body: "5 月 6-7 日，新浪财经、IT之家、21经济网等多家权威媒体确认：DeepSeek 正式启动成立以来首次外部融资。国家集成电路产业投资基金（国家大基金）正主导磋商，腾讯等科技巨头参与洽谈；知情人士称估值约 450 亿美元（约 3250 亿人民币），但尚未最终锁定。梁文锋已于 4 月 27 日提前通过增资将直接持股从 1% 提至 34%，合计控制约 84.29%，股权架构调整明显为本轮做铺垫。DeepSeek 自 2023 年成立至今从未接受外部资本，「开源 + 工程师文化 + 不依赖资本」是其最核心的叙事。首轮融资意味着两件事同时成立：其一，万亿参数模型的推理算力成本已超出量化基金单一主体的承受上限；其二，国家大基金入局预示国家主权算力战略从芯片层延伸到模型层。对中国 AI 创业者的实操含义：DeepSeek 获国家队资本背书后，基于其开源底座的产品在政府采购场景的「政治可靠性」将显著提升，围绕 DeepSeek 生态创业的窗口正在变窄但含金量更高",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋（DeepSeek）" }
+    ],
+    sources: [
+      { label: "新浪财经 DeepSeek首轮融资消息人士确认在谈 2026-05-07", url: "https://finance.sina.com.cn/tech/2026-05-07/doc-inhwzmmr2916639.shtml" },
+      { label: "IT之家 大基金领投磋商估值近450亿美元 2026-05-06", url: "https://www.ithome.com/0/946/841.htm" },
+      { label: "21经济网 大基金或主导DeepSeek首轮 2026-05-07", url: "https://www.21jingji.com/article/20260507/herald/be3cf711cdfe8b63a1bdf39c21879cc6.html" }
+    ]
+  },
+
   // ===== 2026-05-05 大模型节点更新 =====
   {
     id: "deepseek-v4-huawei-decouple",
