@@ -5,6 +5,24 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-09 每日洞察 =====
+  {
+    id: "deepseek-first-funding-2026-05-09",
+    date: "2026-05-09",
+    type: "funding",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "DeepSeek 启动首轮融资：国家大基金领投，估值三周从 $10B 到 $45B",
+    body: "DeepSeek 5 月初确认启动创立以来首轮外部融资，国家大基金（国家集成电路产业投资基金）洽谈领投，当前谈判估值约 $45 亿美元——4 月中旬阿里、腾讯接触时仅 $10 亿美元，3 周内涨 4.5 倍。消息由 FT 率先报道，Bloomberg 确认。两层结构意义：第一，这是国家大基金首次投资国内 LLM 公司，将顶尖大模型正式列入「战略基础设施」，与芯片制造并列——此前大基金章程只覆盖半导体。第二，梁文锋靠幻方量化现金流维持「不接受外部投资、不开发布会」的工程师反叙事，是 DeepSeek 品牌差异化的核心。接受国家队领投后，DeepSeek 从「民间极致派」转向「国家战略资产」，出海路径与用户信任将随之重估。对创业者的实操含义：梁文锋尚且无法在 2026 年维持纯民间立场，AI 赛道「独立自筹」的窗口正在关闭——不向国家资本开放的公司，拿政府订单和过数据安全审查的成本将成倍上升",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋（DeepSeek）" }
+    ],
+    sources: [
+      { label: "Bloomberg 2026-05-06", url: "https://www.bloomberg.com/news/articles/2026-05-06/china-chip-fund-in-talks-to-lead-mega-deepseek-funding-ft-says" },
+      { label: "TechCrunch 2026-05-06", url: "https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/" }
+    ]
+  },
+
   // ===== 2026-05-05 大模型节点更新 =====
   {
     id: "deepseek-v4-huawei-decouple",
