@@ -5,92 +5,96 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
-  // ===== 2026-05-09 设计师图谱专属洞察 =====
+  // ===== 设计师图谱 · 非共识洞察 =====
   {
-    id: "alan-dye-leaves-apple-for-meta",
-    date: "2025-12-03",
-    type: "non-consensus",
-    graphs: ["designer"],
-    pinned: true,
-    title: "Alan Dye 离开苹果加入 Meta — Liquid Glass 设计灵魂被挖角",
-    body: "2025 年 12 月 3 日,Alan Dye(苹果 HI 副总裁,Liquid Glass 设计语言主导者)宣布离职加入 Meta Reality Labs 任 Chief Design Officer——负责 Meta 全部硬件 + AI 产品设计。Dye 是 2015 年 Jony Ive 离开苹果后接任 UI 设计大权的人,主导了 Apple Watch UI、iPhone X、Vision Pro UI,以及 2025 年 6 月发布的 **iOS 26 Liquid Glass**(从 visionOS 演化而来的材质化半透明界面语言)。这是 Ive 之后苹果第二次顶级设计人才被外部 acqui-hire——上次 Ive 是创业出走(LoveFrom),这次 Dye 是被 Meta 直接挖。对设计行业的含义:第一,Meta 在硬件 + AI 产品上正在认真投入,不是 Apple Vision Pro 一家独大。第二,苹果设计部「人才虹吸力」开始反向流失。第三,Liquid Glass 这套设计语言会被 Dye 带到 Meta(虽然他个人否认),Meta 智能眼镜与 AI 产品 UI 在 2026-2027 年会有明显风格变化。",
-    persons: [
-      { id: "alandye", name: "Alan Dye" },
-      { id: "jonyive", name: "Jony Ive" }
-    ],
-    sources: [
-      { label: "AppleInsider Alan Dye 跳 Meta", url: "https://appleinsider.com/articles/25/12/03/apples-human-interface-design-chief-alan-dye-poached-by-meta" },
-      { label: "CNBC 2025-12-03", url: "https://www.cnbc.com/2025/12/03/liquid-glass-alan-dye-leaving-apple.html" }
-    ]
-  },
-  {
-    id: "liu-jiakun-pritzker-2025",
-    date: "2025-03-04",
-    type: "trend",
-    graphs: ["designer"],
-    pinned: true,
-    title: "刘家琨获 2025 Pritzker — 中国第二位获奖建筑师 · 西村大院",
-    body: "2025 年 3 月 4 日,普利兹克建筑奖宣布刘家琨为本届得主,中国第二位获奖建筑师(13 年前是王澍 2012)。刘 1956 生于成都,1999 创办家琨建筑事务所。代表作:**西村大院**(成都 2015,五层楼覆盖整个街区,与周围中高层建筑形成强烈对比的「共生新方式」)、鹿野苑石刻艺术博物馆(2002)、Novartis 上海办公园区。最具影响力的是「**再生砖**」项目——2008 汶川地震后,他把废墟材料加工成强度更高的砖,用于震区重建。Pritzker 评委主席评价:「刘家琨开创了一种新的共生方式,密度不再与开放性对立。他的设计拥抱并强化了使用者带入的生活方式,创造了通过公共性而活起来的建筑」。这一选择延续了 Pritzker 偏爱「边缘建筑师」(非明星派、扎根本地)的趋势——王澍 2012 + 刘家琨 2025 都是这个判断。对中国当代建筑师的含义:**国际舞台开始系统性认可中国非主流派**(不是马岩松式的明星造型派,而是地方材料 + 社区共生派)。",
-    persons: [
-      { id: "liujiakun", name: "刘家琨" },
-      { id: "wangshu", name: "王澍" }
-    ],
-    sources: [
-      { label: "ArchDaily Liu Jiakun Pritzker 2025", url: "https://www.archdaily.com/1027571/chinese-architect-liu-jiakun-receives-the-2025-pritzker-architecture-prize" },
-      { label: "普利兹克奖官方资料 中文版", url: "https://www.pritzkerprize.com/sites/default/files/2025-03/2025%20Pritzker%20Prize%20Media%20Kit%20CN.pdf" }
-    ]
-  },
-  {
-    id: "designer-founder-era-rising",
+    id: "apple-design-golden-age-ended",
     date: "2026-05-09",
     type: "non-consensus",
     graphs: ["designer"],
-    pinned: false,
-    title: "「设计师创业者」时代上位 — Notion / Linear / Airbnb 三角同源",
-    body: "过去 18 个月最有信号的设计行业现象是「**designer-founder**」(设计师-创业者)集体上位:Ivan Zhao(Notion CEO,UBC 认知科学 + 中国传统水墨)估值过 1000 亿美金;Karri Saarinen(Linear CEO,前 Airbnb Principal Designer + 芬兰人)估值 12.5 亿美金;Brian Chesky(Airbnb CEO,RISD 工业设计)运营公司方式仍以设计驱动文化为核心,2024 与 Jony Ive 的 LoveFrom 启动多年期合作。这三位有共同特征:**第一,他们不是普通 CEO 雇了好设计师,而是设计师本身坐在 CEO 位置上**。第二,他们的产品被设计师圈视为「craft 标杆」(Linear 在 OpenAI / Vercel / Ramp 内部推行,Notion 是设计师工具首选)。第三,他们彼此惺惺相惜——Karri 在 Airbnb 时期就受 Brian 影响,Brian 后来通过 Ive 进一步深化设计驱动。对中国 designer-founder 的含义:这条路在硅谷已被验证,但在中国除了 Notion 模仿者(飞书 / FlowUs)外少有人走通——主要瓶颈不是产品,而是「设计师当 CEO」的文化普及度。",
+    pinned: true,
+    title: "苹果设计黄金时代已经闭环 — Liquid Glass 是终章不是新章",
+    body: "Alan Dye 2025.12 跳 Meta,被普遍解读为「Meta 挖人 + 苹果失血」的人才战。但更深一层的非共识判断是:**苹果设计部 40 年黄金时代已经在 Liquid Glass 这一刻闭环了**。这条血脉是 Bill Atkinson + Susan Kare(1984)→ Imran Chaudhri + Bas Ording(2007 iPhone)→ Jony Ive + Bart Andre(2010s 黄金期)→ Alan Dye(2025 Liquid Glass)。Liquid Glass 表面是 iOS 26 视觉重构,本质是 Ive 美学(玻璃材质 + 极简 + 自然光)在没有 Ive 的情况下被 Dye 用 visionOS 经验重新拼一次——这是「致敬之作」而非「下一时代」。Dye 跳 Meta 不是单纯人才流失,是「苹果设计部第二代」选择把这套语言带到下一个平台(智能眼镜 + AI 产品)。对设计行业的真正含义:**未来 5-10 年最具影响力的硬件设计语言不会再来自苹果**——会来自苹果出走者(Ive 在 LoveFrom、Dye 在 Meta、Chaudhri 在 Humane 失败后的余波)。苹果还会出好产品,但「定义时代美学」的角色已经换人。",
+    persons: [
+      { id: "alandye", name: "Alan Dye" },
+      { id: "jonyive", name: "Jony Ive" },
+      { id: "billatkinson", name: "Bill Atkinson" },
+      { id: "imranchaudhri", name: "Imran Chaudhri" }
+    ],
+    sources: [
+      { label: "AppleInsider Alan Dye 跳 Meta", url: "https://appleinsider.com/articles/25/12/03/apples-human-interface-design-chief-alan-dye-poached-by-meta" }
+    ]
+  },
+  {
+    id: "pritzker-edge-architects",
+    date: "2026-05-09",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: true,
+    title: "Pritzker 不是「最伟大建筑师奖」,是「边缘建筑师奖」",
+    body: "刘家琨 2025 获奖被国内媒体描述为「中国又一位被国际认可的建筑师」。但更准确的判断是:**Pritzker 自 2010s 起已经从「明星建筑师奖」转向了「边缘建筑师奖」**——奖给那些**主动拒绝市场逻辑、拒绝大体量项目、扎根本地材料**的建筑师。看获奖名单:Peter Zumthor(2009,瑞士山区只做 30 个项目)、王澍(2012,业余建筑工作室,只做小尺度)、坂茂(2014,纸建筑用于灾区)、刘家琨(2025,再生砖 + 西村大院)。**真正的明星派**(扎哈、Calatrava、Bjarke Ingels)反而**从未获奖或获奖很晚**(扎哈 2004 算早,但她去世 8 年都没新明星派得奖)。Pritzker 委员会(由 Yung Ho Chang 等长期评委组成)系统性偏好「反主流」选择。对中国建筑师的实操含义:**追求 Pritzker 不该模仿马岩松式的造型派,而应学王澍/刘家琨的「向地方、向材料、向社区」路径**。同时也意味着:中国大量做大体量地标的明星建筑师即使商业成功,在 Pritzker 体系里永远是「不被看见」的。",
+    persons: [
+      { id: "liujiakun", name: "刘家琨" },
+      { id: "wangshu", name: "王澍" },
+      { id: "peterzumthor", name: "Peter Zumthor" },
+      { id: "shigeruban", name: "坂茂" },
+      { id: "yunghochang", name: "张永和(Pritzker 评委)" }
+    ],
+    sources: [
+      { label: "ArchDaily Liu Jiakun Pritzker 2025", url: "https://www.archdaily.com/1027571/chinese-architect-liu-jiakun-receives-the-2025-pritzker-architecture-prize" }
+    ]
+  },
+  {
+    id: "designer-ceo-vs-design-led",
+    date: "2026-05-09",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: true,
+    title: "「设计师 CEO」≠「设计驱动公司」 — 90% 的「design-led」都是叙事",
+    body: "硅谷过去 5 年到处自称「design-led company」,但能持续做出真正设计驱动产品的公司不超过 10 家。原因不是这些公司没好设计师,而是**设计驱动 ≠ 雇了 VP of Design**。真正的判断标准是:**设计师本人是否坐在 CEO/founder 位置上**。验证名单很短:Brian Chesky(Airbnb CEO,RISD 工业设计)、Ivan Zhao(Notion CEO,UBC 认知科学+艺术)、Karri Saarinen(Linear CEO,芬兰前 Airbnb Principal)、Joe Gebbia(Airbnb co-founder,RISD)。这四人有共同的「**设计师权力结构**」:不需要向产品 VP 解释为什么细节重要,因为他们就是产品 VP 的老板。反例:Spotify、Uber、Slack 都自称 design-led,但当设计与增长冲突时永远增长赢——因为设计师不在最终决策权链路上。对中国 designer-founder 的非共识判断:**这条路在中国走不通,不是因为中国没好设计师,而是中国甲方/资本逻辑要求 CEO 必须先是「资源整合者」(融资+政商关系+招商)而不是「品味守护者」**。除非把公司放在海外(像 Ivan Zhao Notion),否则中国设计师当 CEO 的天花板在 100 人以下。",
     persons: [
       { id: "ivanzhao", name: "Ivan Zhao(Notion)" },
       { id: "karrisaarinen", name: "Karri Saarinen(Linear)" },
-      { id: "brianchesky", name: "Brian Chesky(Airbnb)" }
+      { id: "brianchesky", name: "Brian Chesky(Airbnb)" },
+      { id: "joegebbia", name: "Joe Gebbia(Airbnb)" }
     ],
     sources: [
-      { label: "Lenny's Newsletter Karri Saarinen", url: "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste" },
-      { label: "Sequoia Notion Ivan Zhao spotlight", url: "https://sequoiacap.com/article/notion-spotlight/" }
+      { label: "Lenny's Newsletter Karri Saarinen", url: "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste" }
     ]
   },
   {
-    id: "design-engineering-rise",
+    id: "design-engineer-is-atkinson-redux",
     date: "2026-05-09",
-    type: "trend",
+    type: "non-consensus",
     graphs: ["designer"],
     pinned: false,
-    title: "「Design Engineer」成为设计圈年度新职业 — Vercel / Cursor 双驱动",
-    body: "2025-2026 年设计圈最显眼的职业角色变化是「**Design Engineer**」(设计-工程师二合一)崛起。代表人物:Rauno Freiberg(Vercel Senior Design Engineer,X 上 100K+ 关注的微交互/动效大神,Vercel 官网那些丝滑动效大多出自他手)、Ryo Lu(2025.1 从 Notion 跳到 Cursor 任 Head of Design,自己用 Cursor 写出 ryOS 个人作品)。背后是 Cursor / Vercel v0 / Lovable 等 AI 工具把「设计 → 代码」的门槛大幅降低,设计师不再需要找前端工程师配合,可以自己交付可运行原型。Linear 的 Karri Saarinen + 早期 Bret Victor「Inventing on Principle」哲学,都直接喂养这条职业链路。对国内设计师的实操含义:**未来 12-24 个月「会用 Cursor 的设计师」会比「只会用 Figma 的设计师」薪资差距拉到 30-50%**——这不是预测,是 Vercel / Linear 已经在执行的招聘策略。",
+    title: "Design Engineer 不是新职业,是 1984 年 Bill Atkinson 模式被 AI 工具复活",
+    body: "2025-2026 设计圈在炒「Design Engineer」(Vercel 的 Rauno Freiberg、Cursor 的 Ryo Lu)是新一代职业。但回看历史:**1984 年原版 Macintosh 团队的 Bill Atkinson 就是 design engineer——MacPaint 是他自己写的、QuickDraw 图形系统是他自己写的、HyperCard 也是他**。当时苹果整个团队约 20 人,人人都是设计师 + 工程师。1990s-2010s 产业膨胀过程把这个角色拆成了「UI 设计师 → 前端工程师 → 后端工程师」三段式分工。Cursor / v0 / Lovable 这一波 AI 工具的真正历史意义是**把分工拆掉的成本降到接近零**,所以 Atkinson 模式重新可能。对中国设计师的实操判断:**这不是「学 AI 工具」的问题,是「重新成为全栈型设计师」的范式回归**。在国内行业语境里,这意味着 UED 部门会被重新整合到工程团队,纯 UI 设计师角色会消失,设计师必须能交付可运行原型。这条路 5-10 年内会走完,跑不动的设计师会出局。Bill Atkinson 在 2025 去世,这一年 Cursor 火起来,某种意义上是设计史的一次完整循环。",
     persons: [
-      { id: "raunofreiberg", name: "Rauno Freiberg(Vercel)" },
-      { id: "ryolu", name: "Ryo Lu(Cursor)" },
+      { id: "billatkinson", name: "Bill Atkinson" },
+      { id: "raunofreiberg", name: "Rauno Freiberg" },
+      { id: "ryolu", name: "Ryo Lu" },
       { id: "bretvictor", name: "Bret Victor" }
     ],
     sources: [
-      { label: "Cursor Head of Design Ryo Lu YC talk", url: "https://www.ycombinator.com/library/N8-cursor-head-of-design-reviews-startup-websites" },
-      { label: "Lenny Designer who cloned himself with Cursor", url: "https://www.uxtools.co/episodes/the-designer-who-cloned-himself-with-cursor" }
+      { label: "Cursor Head of Design Ryo Lu YC talk", url: "https://www.ycombinator.com/library/N8-cursor-head-of-design-reviews-startup-websites" }
     ]
   },
   {
-    id: "lovefrom-airbnb-collaboration",
-    date: "2024-05-08",
-    type: "relationship",
+    id: "muji-advisory-board-japan-only",
+    date: "2026-05-09",
+    type: "non-consensus",
     graphs: ["designer"],
     pinned: false,
-    title: "LoveFrom × Airbnb 多年期合作 — 设计驱动 CEO + 设计大师",
-    body: "2024 年 5 月,Airbnb 宣布与 Jony Ive 的 LoveFrom 启动多年期合作,共同重新设计 Airbnb 产品 — 包括 App、品牌、主机社区体验。2024 年夏季交付的 Airbnb 大改版(新的 App 视觉系统、Icons 重画、品牌 Bélo 基础上简化)就是首批成果。这是 Ive 离开苹果后第二次大型外部合作(第一次是 Ferrari 概念车),也是 LoveFrom 商业模式开始清晰的信号——不再是 small craft studio,而是与设计驱动 CEO 长期绑定的咨询合作。Brian Chesky 公开承认是他主动找的 Ive,认为 Airbnb 「设计驱动到一定阶段需要 Ive 那种近乎宗教的对细节的追求」。对设计行业含义:Ive 验证了「Apple 设计灵魂离开苹果后能有商业价值」的命题——只要找到匹配频率的 CEO 客户。Apple 之外有一个由 Ive 哲学渗透的「LoveFrom 系」正在形成。",
+    title: "MUJI 顾问董事会是日本独有的设计治理创新 — Apple/Braun 都做不到",
+    body: "MUJI 自 2002 年起的「Advisory Board」结构(深泽直人 + 原研哉 + Sam Hecht + Jasper Morrison 4 位顶级设计师持续 20+ 年作为外部顾问董事)是被严重低估的设计组织创新。常见解读把 MUJI 等同于「极简风格」,但真正的非共识在治理结构:**Rams 时代的 Braun 是「内部设计部」(Rams 是员工)、Apple 是「核心团队封闭」(Ive 不接外部顾问)、Pentagram 是「合伙人共治」(只对自己事务所负责)。只有日本这种 4 位独立设计师作为品牌长期智囊董事的模式,从来没在西方品牌复制成功**。原因:第一,西方公司的 board 文化要求决策权清晰,不允许 4 个外部设计师对产品有持续影响力。第二,设计师彼此竞争(尤其在西方),很难维持 20 年合作。第三,日本「**社外取缔役**」(独立董事)文化天然支持这种结构。对国内品牌的实操判断:**网易严选/小米生态/无印良品中国这些 MUJI 模仿者只学了表面的极简,没学到 Advisory Board 这层治理**——而后者才是 MUJI 美学保持 20 年一致性的真正原因。",
     persons: [
-      { id: "jonyive", name: "Jony Ive" },
-      { id: "brianchesky", name: "Brian Chesky" },
-      { id: "marcnewson", name: "Marc Newson" }
+      { id: "naotofukasawa", name: "深泽直人" },
+      { id: "kenyahara", name: "原研哉" },
+      { id: "samhecht", name: "Sam Hecht" },
+      { id: "jaspermorrison", name: "Jasper Morrison" }
     ],
     sources: [
-      { label: "Airbnb 2024 改版 LoveFrom 合作", url: "https://news.airbnb.com/our-work-with-jony-ive/" }
+      { label: "Naoto Fukasawa MUJI Advisory Board", url: "https://www.muji.com/jp/advisory-board/" }
     ]
   },
 
