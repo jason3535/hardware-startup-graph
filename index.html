@@ -2184,15 +2184,22 @@ const baikeTitles = {
   carlpei:"Carl_Pei",brettadcock:"Brett_Adcock",
 };
 
-// Twitter handles 兜底(硬件创业人物在 X 上较少,主要是出海创始人 + 公司官方账号)
+// Twitter handles 兜底(硬件创业人物 — 出海创始人 + 公司官号 + 部分国内活跃)
 const twitterHandles = {
   carlpei: "getpeid",
-  wangxingxing: "UnitreeRobotics",   // 公司官号
-  liujingkang: "Insta360",            // 公司官号
-  pengbin: "XAG_official",            // 公司官号
+  wangxingxing: "UnitreeRobotics",
+  liujingkang: "Insta360",
+  pengbin: "XAG_official",
   brettadcock: "adcock_brett",
   palmerluckey: "PalmerLuckey",
-  xugao: "PlaudAI",                   // 公司官号
+  xugao: "PlaudAI",
+  jesselyu: "jesselyu", jeffcardenas: "jeff_cardenas", adambry: "adambry",
+  kylevogt: "kvogt", willahmed: "willahmed", imranchaudhri: "imranchaudhri",
+  petteri: "petterilahtela", niravpatel: "nrp",
+  matteofranceschetti: "m_franceschetti", ericcarreel: "ecarreel",
+  berntbornich: "bernt_bornich", jesperkouthoofd: "teenageeng",
+  davidrabin: "drdavidrabin", samcorcos: "samcorcos", karolhausman: "hausman_k",
+  mohitkumar: "mohitkumar01", chenghao: "BoosterRobotics",
 };
 
 // Photo cache
@@ -2240,6 +2247,16 @@ async function fetchPhoto(scholarId) {
     if (ok) { photoCache[scholarId] = url; return url; }
   }
 
+  // 4. 终极兜底:ui-avatars 生成彩色 monogram
+  const scholar = scholars.find(s => s.id === scholarId);
+  if (scholar) {
+    const colors = ['0a84ff','30d158','ff375f','ff9f0a','5e5ce6','bf5af2','64d2ff','ffd60a','ff9500','32d74b'];
+    const hash = scholarId.split('').reduce((a,c)=>a+c.charCodeAt(0),0);
+    const bg = colors[hash % colors.length];
+    const url = `https://ui-avatars.com/api/?name=${encodeURIComponent(scholar.name)}&background=${bg}&color=fff&size=200&bold=true&font-size=0.4`;
+    photoCache[scholarId] = url;
+    return url;
+  }
   return null;
 }
 
