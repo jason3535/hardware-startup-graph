@@ -5,6 +5,55 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-09 节点更新 =====
+  {
+    id: "deepseek-first-vc-45b-state-fund",
+    date: "2026-05-09",
+    type: "funding",
+    graphs: ["ai-scholar", "investor"],
+    pinned: true,
+    title: "DeepSeek 首次接受 VC,估值从 \$20B 飙至 \$45B,国家大基金领投",
+    body: "梁文锋此前一直坚持「不接受外部融资」,2025 年公司还以纯自有资金运行。但 V4 + 华为昇腾绑定后,DeepSeek 5 月初首次松口接受外部 VC,估值在数周内从 \$200 亿翻到 \$450 亿——领投方不是经典美元 VC 或国内一线美元基金,而是**国家集成电路产业投资基金**(俗称「大基金」)。这层信号比估值翻倍更重要:第一,国家大基金原本聚焦半导体制造与设计公司,直接 anchor 投一家 LLM 公司是历史首次,意味着 DeepSeek 在政策视角已被划为「国家算力战略组成部分」而非「应用层 AI 公司」。第二,梁文锋此前拒绝美元资本是为了保留团队对路线和定价的完全控制,现在选择国家队而非美元 VC,是对「科研驱动 + 开源 + 定价对标公益」叙事的延续——国家队通常不要求快速退出。第三,与之前的国家大基金三期入场具身智能(银河通用 25 亿)形成呼应,中国 AI 资本结构正在系统性「国家化」。对纯美元 VC 主导的中国 AI 创业者(如 Moonshot/MiniMax),这是结构性挤压信号。",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋(DeepSeek)" }
+    ],
+    sources: [
+      { label: "MEXC News DeepSeek $45B valuation", url: "https://www.mexc.com/news/1074839" }
+    ]
+  },
+  {
+    id: "embodied-supply-chain-shift",
+    date: "2026-05-09",
+    type: "trend",
+    graphs: ["hardware", "investor"],
+    pinned: false,
+    title: "具身产业链「整机 → 零部件」融资迁移,300 亿涌入上游",
+    body: "2026 年迄今具身智能领域累计融资已超 345 亿元,但本周新数据显示一个结构性转变:**钱开始从整机公司流向上游零部件**。关节模组:泉智博 4 月数亿元 A++,小象电动 4 月超亿元 Pre-A。传感器:开普勒机器人 4 月亿元级 A++,蓝点触控 4 月超亿元 C+。灵巧手:灵心巧手 2 月 15 亿 B 轮后 4 月底闪电 B+。整机赛道融资仍火爆(千寻 30 亿/它石智航 4.55 亿美金/银河通用 25 亿),但上游零部件融资速度首次超过整机。背后逻辑:整机公司已开始上市/流血竞争,VC 看到「卖铲子比卖人更稳」——零部件 25-40% 毛利,B 端订单可见度高,被宇树/智元这种龙头绑定就有现金流。对硬件创业者的实操含义:如果你不打算做整机,2026 上半年是切入「关节模组/触觉传感器/末端执行器/电源管理」的最佳窗口——估值未透支,头部客户已被国网 68 亿订单倒逼必须采购。",
+    persons: [],
+    sources: [
+      { label: "新浪财经 300 多亿资本涌入具身全产业链", url: "https://finance.sina.com.cn/jjxw/2026-05-05/doc-inhwwezc3952105.shtml" }
+    ]
+  },
+  {
+    id: "ai-six-tigers-end-of-era",
+    date: "2026-05-09",
+    type: "non-consensus",
+    graphs: ["ai-scholar", "investor"],
+    pinned: false,
+    title: "「AI 六小虎」叙事告一段落:智谱+MiniMax 港股 IPO,月之暗面/阶跃融资落定",
+    body: "2024-2025 年中国 AI 圈最强的概念股是「六小虎」——智谱、MiniMax、月之暗面、百川、零一万物、阶跃星辰六家被视为对标 OpenAI 的中国一线 LLM 创业。本周资本市场动作让这个叙事进入终章:**智谱 + MiniMax 港股 IPO 已落定**(港交所申报),月之暗面/阶跃星辰各自完成新一轮融资,百川转向医疗 AI 路线(王小川宣布 2027 IPO),零一万物从模型转向应用。「六小虎」作为同质化竞争的故事彻底结束。下一阶段每家走自己的路:智谱押 toB Agent + 政企,MiniMax 押 C 端语音/视频(海螺),Moonshot(月之暗面)押长上下文+多模态,百川押医疗,01.AI 押应用,阶跃押多模态生成。但更深层的事:「AI 六小虎」叙事支撑的中国版「OpenAI 平替」幻觉破灭——DeepSeek 用一年半证明开源也能打,Anthropic ARR 反超 OpenAI,Mira Murati Thinking Machines 估值 \$50B,中国 LLM 赛道格局已被 DeepSeek + 大厂(字节/阿里/腾讯)+ 创业公司三层重新切分,「六小虎」更多是一个时代的注脚而非未来。",
+    persons: [
+      { id: "yangzhilin", name: "杨植麟(月之暗面)" },
+      { id: "yanjunjie", name: "Yan Junjie(MiniMax)" },
+      { id: "jietang", name: "唐杰(智谱)" },
+      { id: "wangxiaochuan", name: "王小川(百川)" },
+      { id: "kaifulee", name: "李开复(01.AI)" }
+    ],
+    sources: [
+      { label: "财富中文 中国 AI 最新动态", url: "https://www.fortunechina.com/shangye/c/2026-04/19/content_473422.htm" }
+    ]
+  },
+
   // ===== 2026-05-05 大模型节点更新 =====
   {
     id: "deepseek-v4-huawei-decouple",
