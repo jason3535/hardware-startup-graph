@@ -563,6 +563,7 @@ const FOOTER_LINKS = [
   { id: "hardware",  label: "智能硬件图谱", url: "https://hardware.jasonlin.tech/" },
   { id: "investor",  label: "投资人图谱",   url: "https://investor.jasonlin.tech/" },
   { id: "ai-scholar", label: "AI 牛人图谱",   url: "https://ai.jasonlin.tech/" },
+  { id: "designer",  label: "设计师图谱",   url: "https://design.jasonlin.tech/" },
   { id: "personal",  label: "个人网页",     url: "https://jasonlin.tech" }
 ];
 
