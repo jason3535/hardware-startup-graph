@@ -2184,6 +2184,17 @@ const baikeTitles = {
   carlpei:"Carl_Pei",brettadcock:"Brett_Adcock",
 };
 
+// Twitter handles 兜底(硬件创业人物在 X 上较少,主要是出海创始人 + 公司官方账号)
+const twitterHandles = {
+  carlpei: "getpeid",
+  wangxingxing: "UnitreeRobotics",   // 公司官号
+  liujingkang: "Insta360",            // 公司官号
+  pengbin: "XAG_official",            // 公司官号
+  brettadcock: "adcock_brett",
+  palmerluckey: "PalmerLuckey",
+  xugao: "PlaudAI",                   // 公司官号
+};
+
 // Photo cache
 const photoCache = {};
 
@@ -2214,6 +2225,19 @@ async function fetchPhoto(scholarId) {
         if (url) { photoCache[scholarId] = url; return url; }
       }
     } catch(e) {}
+  }
+
+  // 3. Try Twitter avatar via unavatar.io
+  const tw = twitterHandles[scholarId];
+  if (tw) {
+    const url = `https://unavatar.io/twitter/${tw}?fallback=false`;
+    const ok = await new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = url;
+    });
+    if (ok) { photoCache[scholarId] = url; return url; }
   }
 
   return null;
