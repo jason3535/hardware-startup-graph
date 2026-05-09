@@ -1,10 +1,99 @@
 // ============================================================
-// Insights Widget — shared component for 3 graph pages
+// Insights Widget — shared component for 4 graph pages
 // Hosted at: https://jason3535.github.io/hardware-startup-graph/insights-widget.js
-// Loaded by: hardware-startup-graph, investor-graph, ai-scholar-graph
+// Loaded by: hardware-startup-graph, investor-graph, ai-scholar-graph, designer-graph
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-09 设计师图谱专属洞察 =====
+  {
+    id: "alan-dye-leaves-apple-for-meta",
+    date: "2025-12-03",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: true,
+    title: "Alan Dye 离开苹果加入 Meta — Liquid Glass 设计灵魂被挖角",
+    body: "2025 年 12 月 3 日,Alan Dye(苹果 HI 副总裁,Liquid Glass 设计语言主导者)宣布离职加入 Meta Reality Labs 任 Chief Design Officer——负责 Meta 全部硬件 + AI 产品设计。Dye 是 2015 年 Jony Ive 离开苹果后接任 UI 设计大权的人,主导了 Apple Watch UI、iPhone X、Vision Pro UI,以及 2025 年 6 月发布的 **iOS 26 Liquid Glass**(从 visionOS 演化而来的材质化半透明界面语言)。这是 Ive 之后苹果第二次顶级设计人才被外部 acqui-hire——上次 Ive 是创业出走(LoveFrom),这次 Dye 是被 Meta 直接挖。对设计行业的含义:第一,Meta 在硬件 + AI 产品上正在认真投入,不是 Apple Vision Pro 一家独大。第二,苹果设计部「人才虹吸力」开始反向流失。第三,Liquid Glass 这套设计语言会被 Dye 带到 Meta(虽然他个人否认),Meta 智能眼镜与 AI 产品 UI 在 2026-2027 年会有明显风格变化。",
+    persons: [
+      { id: "alandye", name: "Alan Dye" },
+      { id: "jonyive", name: "Jony Ive" }
+    ],
+    sources: [
+      { label: "AppleInsider Alan Dye 跳 Meta", url: "https://appleinsider.com/articles/25/12/03/apples-human-interface-design-chief-alan-dye-poached-by-meta" },
+      { label: "CNBC 2025-12-03", url: "https://www.cnbc.com/2025/12/03/liquid-glass-alan-dye-leaving-apple.html" }
+    ]
+  },
+  {
+    id: "liu-jiakun-pritzker-2025",
+    date: "2025-03-04",
+    type: "trend",
+    graphs: ["designer"],
+    pinned: true,
+    title: "刘家琨获 2025 Pritzker — 中国第二位获奖建筑师 · 西村大院",
+    body: "2025 年 3 月 4 日,普利兹克建筑奖宣布刘家琨为本届得主,中国第二位获奖建筑师(13 年前是王澍 2012)。刘 1956 生于成都,1999 创办家琨建筑事务所。代表作:**西村大院**(成都 2015,五层楼覆盖整个街区,与周围中高层建筑形成强烈对比的「共生新方式」)、鹿野苑石刻艺术博物馆(2002)、Novartis 上海办公园区。最具影响力的是「**再生砖**」项目——2008 汶川地震后,他把废墟材料加工成强度更高的砖,用于震区重建。Pritzker 评委主席评价:「刘家琨开创了一种新的共生方式,密度不再与开放性对立。他的设计拥抱并强化了使用者带入的生活方式,创造了通过公共性而活起来的建筑」。这一选择延续了 Pritzker 偏爱「边缘建筑师」(非明星派、扎根本地)的趋势——王澍 2012 + 刘家琨 2025 都是这个判断。对中国当代建筑师的含义:**国际舞台开始系统性认可中国非主流派**(不是马岩松式的明星造型派,而是地方材料 + 社区共生派)。",
+    persons: [
+      { id: "liujiakun", name: "刘家琨" },
+      { id: "wangshu", name: "王澍" }
+    ],
+    sources: [
+      { label: "ArchDaily Liu Jiakun Pritzker 2025", url: "https://www.archdaily.com/1027571/chinese-architect-liu-jiakun-receives-the-2025-pritzker-architecture-prize" },
+      { label: "普利兹克奖官方资料 中文版", url: "https://www.pritzkerprize.com/sites/default/files/2025-03/2025%20Pritzker%20Prize%20Media%20Kit%20CN.pdf" }
+    ]
+  },
+  {
+    id: "designer-founder-era-rising",
+    date: "2026-05-09",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "「设计师创业者」时代上位 — Notion / Linear / Airbnb 三角同源",
+    body: "过去 18 个月最有信号的设计行业现象是「**designer-founder**」(设计师-创业者)集体上位:Ivan Zhao(Notion CEO,UBC 认知科学 + 中国传统水墨)估值过 1000 亿美金;Karri Saarinen(Linear CEO,前 Airbnb Principal Designer + 芬兰人)估值 12.5 亿美金;Brian Chesky(Airbnb CEO,RISD 工业设计)运营公司方式仍以设计驱动文化为核心,2024 与 Jony Ive 的 LoveFrom 启动多年期合作。这三位有共同特征:**第一,他们不是普通 CEO 雇了好设计师,而是设计师本身坐在 CEO 位置上**。第二,他们的产品被设计师圈视为「craft 标杆」(Linear 在 OpenAI / Vercel / Ramp 内部推行,Notion 是设计师工具首选)。第三,他们彼此惺惺相惜——Karri 在 Airbnb 时期就受 Brian 影响,Brian 后来通过 Ive 进一步深化设计驱动。对中国 designer-founder 的含义:这条路在硅谷已被验证,但在中国除了 Notion 模仿者(飞书 / FlowUs)外少有人走通——主要瓶颈不是产品,而是「设计师当 CEO」的文化普及度。",
+    persons: [
+      { id: "ivanzhao", name: "Ivan Zhao(Notion)" },
+      { id: "karrisaarinen", name: "Karri Saarinen(Linear)" },
+      { id: "brianchesky", name: "Brian Chesky(Airbnb)" }
+    ],
+    sources: [
+      { label: "Lenny's Newsletter Karri Saarinen", url: "https://www.lennysnewsletter.com/p/inside-linear-building-with-taste" },
+      { label: "Sequoia Notion Ivan Zhao spotlight", url: "https://sequoiacap.com/article/notion-spotlight/" }
+    ]
+  },
+  {
+    id: "design-engineering-rise",
+    date: "2026-05-09",
+    type: "trend",
+    graphs: ["designer"],
+    pinned: false,
+    title: "「Design Engineer」成为设计圈年度新职业 — Vercel / Cursor 双驱动",
+    body: "2025-2026 年设计圈最显眼的职业角色变化是「**Design Engineer**」(设计-工程师二合一)崛起。代表人物:Rauno Freiberg(Vercel Senior Design Engineer,X 上 100K+ 关注的微交互/动效大神,Vercel 官网那些丝滑动效大多出自他手)、Ryo Lu(2025.1 从 Notion 跳到 Cursor 任 Head of Design,自己用 Cursor 写出 ryOS 个人作品)。背后是 Cursor / Vercel v0 / Lovable 等 AI 工具把「设计 → 代码」的门槛大幅降低,设计师不再需要找前端工程师配合,可以自己交付可运行原型。Linear 的 Karri Saarinen + 早期 Bret Victor「Inventing on Principle」哲学,都直接喂养这条职业链路。对国内设计师的实操含义:**未来 12-24 个月「会用 Cursor 的设计师」会比「只会用 Figma 的设计师」薪资差距拉到 30-50%**——这不是预测,是 Vercel / Linear 已经在执行的招聘策略。",
+    persons: [
+      { id: "raunofreiberg", name: "Rauno Freiberg(Vercel)" },
+      { id: "ryolu", name: "Ryo Lu(Cursor)" },
+      { id: "bretvictor", name: "Bret Victor" }
+    ],
+    sources: [
+      { label: "Cursor Head of Design Ryo Lu YC talk", url: "https://www.ycombinator.com/library/N8-cursor-head-of-design-reviews-startup-websites" },
+      { label: "Lenny Designer who cloned himself with Cursor", url: "https://www.uxtools.co/episodes/the-designer-who-cloned-himself-with-cursor" }
+    ]
+  },
+  {
+    id: "lovefrom-airbnb-collaboration",
+    date: "2024-05-08",
+    type: "relationship",
+    graphs: ["designer"],
+    pinned: false,
+    title: "LoveFrom × Airbnb 多年期合作 — 设计驱动 CEO + 设计大师",
+    body: "2024 年 5 月,Airbnb 宣布与 Jony Ive 的 LoveFrom 启动多年期合作,共同重新设计 Airbnb 产品 — 包括 App、品牌、主机社区体验。2024 年夏季交付的 Airbnb 大改版(新的 App 视觉系统、Icons 重画、品牌 Bélo 基础上简化)就是首批成果。这是 Ive 离开苹果后第二次大型外部合作(第一次是 Ferrari 概念车),也是 LoveFrom 商业模式开始清晰的信号——不再是 small craft studio,而是与设计驱动 CEO 长期绑定的咨询合作。Brian Chesky 公开承认是他主动找的 Ive,认为 Airbnb 「设计驱动到一定阶段需要 Ive 那种近乎宗教的对细节的追求」。对设计行业含义:Ive 验证了「Apple 设计灵魂离开苹果后能有商业价值」的命题——只要找到匹配频率的 CEO 客户。Apple 之外有一个由 Ive 哲学渗透的「LoveFrom 系」正在形成。",
+    persons: [
+      { id: "jonyive", name: "Jony Ive" },
+      { id: "brianchesky", name: "Brian Chesky" },
+      { id: "marcnewson", name: "Marc Newson" }
+    ],
+    sources: [
+      { label: "Airbnb 2024 改版 LoveFrom 合作", url: "https://news.airbnb.com/our-work-with-jony-ive/" }
+    ]
+  },
+
   // ===== 2026-05-09 节点更新 =====
   {
     id: "deepseek-first-vc-45b-state-fund",
