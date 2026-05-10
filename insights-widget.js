@@ -5,6 +5,26 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-10 日常扫描 =====
+  {
+    id: "xai-dissolves-colossus-to-anthropic-2026-05-07",
+    date: "2026-05-07",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "xAI 解散并入 SpaceX,Colossus 超算整租给 Anthropic",
+    body: "2026年5月7日，马斯克宣布 xAI 作为独立实体解散并入 SpaceX，成立新部门「SpaceXAI」。同步宣布：Colossus 1 超算（孟菲斯，22万张 Nvidia GPU，H100/H200/GB200，300MW）整体租给 Anthropic，交易估值约 $40 亿。时间线极度压缩：xAI 的11位联创在3月28日前全部离职，最后一位 Ross Nordeen 离职后直接加入 Anthropic，成为这次算力交割的亲历者。马斯克承认 xAI「第一次没建对」，「正在从头重建」。三个月前他公开称 Anthropic「邪恶」，现在成了它的算力房东。三层含义：①个人主导制 AI 公司粘不住联创——11位全部出走是极罕见的机构失稳信号；②算力进入商品化阶段，连全球最大超算持有者也靠出租优化 GPU 利用率；③百亿租金让「邪恶敌人」立场瞬间翻转，商业逻辑压倒政治叙事。对 AI 创业者的含义：联创稳定来自股权对齐与技术共识，而非个人光环；优先设计「算力获取策略」而非追求「算力所有权」",
+    persons: [
+      { id: "musk", name: "Elon Musk(xAI → SpaceXAI)" },
+      { id: "damodei", name: "Dario Amodei(Anthropic)" }
+    ],
+    sources: [
+      { label: "新华社 Xinhua 2026-05-07", url: "https://english.news.cn/northamerica/20260507/6826a736d21e41a3aea9d2e36c96b6f0/c.html" },
+      { label: "TechCrunch Is xAI a neocloud now 2026-05-06", url: "https://techcrunch.com/2026/05/06/is-xai-a-neocloud-now/" },
+      { label: "Tom's Hardware Colossus Anthropic lease 2026-05-07", url: "https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers" }
+    ]
+  },
+
   // ===== 设计师图谱 · 非共识洞察 =====
   {
     id: "apple-design-golden-age-ended",
