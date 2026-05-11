@@ -603,6 +603,53 @@ const INSIGHTS_DATA = [
     sources: []
   },
 
+  // ===== WEEKLY TRENDS 2026-05-11 =====
+  {
+    id: "trend-2026-05-11-industrial-capital-dual-role",
+    date: "2026-05-11",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "产业资本「股东+客户」双重身份：具身智能商业化的新变量",
+    body: "5月9日新浪财经报道：目前一级市场估值超百亿的具身智能企业已达18家，背后产业资本普遍兼具「股东+客户」双重身份。宁德时代既投银河通用 Galbot，又把 Galbot S1 部署进宁德产线；顺丰集团既投星动纪元，又在10+物流中心批量导入L7人形。这一结构的战略意义在于：它把「融资—落地—数据迭代—产品优化」四个环节压缩成一个闭环，让机器人公司同时解决「谁给钱」和「谁是第一客户」两个最难的冷启动问题。副作用是：产业股东倾向于把机器人锁定在自己的场景，中性第三方评估会变难，跨产业的通用化路线可能被推迟。",
+    persons: [
+      { id: "chenjianyu", name: "陈建宇（星动纪元）" },
+      { id: "wanghe", name: "王鹤（银河通用）" }
+    ],
+    sources: [
+      { label: "新浪财经 具身智能百亿俱乐部 2026-05-09", url: "https://finance.sina.com.cn/jjxw/2026-05-09/doc-inhxfnzx3936480.shtml" }
+    ]
+  },
+  {
+    id: "trend-2026-05-11-supply-chain-funding-surge",
+    date: "2026-05-11",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "300亿资本蔓延产业链：关节/灵巧手/传感器成具身智能新主战场",
+    body: "5月5日新浪财经报道：2026年以来具身智能融资已超345亿元，资本正从整机向上游零部件渗透。泉智博关节模组A++轮（数亿元，年出货10万台）、灵心巧手B轮（近15亿元，单月出货4000+台，占全球高自由度灵巧手80%+市场份额）是两个典型样本。中游「具身大脑」赛道三个月融资超104亿元。这一结构变化意味着具身赛道从「谁做整机」转向「谁控制核心零部件」的新竞争格局——与5年前EV赛道的演化路径高度相似：特斯拉做整机，CATL/比亚迪控制电池，进而反过来影响整机定价权。具身赛道的「CATL」还没跑出来，这是当前最大的投资机会。",
+    persons: [],
+    sources: [
+      { label: "新浪财经 300亿涌入具身智能产业链 2026-05-05", url: "https://finance.sina.com.cn/jjxw/2026-05-05/doc-inhwwezc3952105.shtml" }
+    ]
+  },
+  {
+    id: "trend-2026-05-11-ai-agent-hardware-species",
+    date: "2026-05-11",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "AI Agent硬件新物种：从「录音笔」到「全流程执行代理」",
+    body: "5月8日，AI会议耳机公司未来智能完成亿元级A+轮融资，传音战略参投，双方合作研发面向全球新兴市场的「下一代AI Agent硬件」。创始人马啸（前科大讯飞智能耳机业务总经理）将这次战略转折定义为：AI不再只是「回答问题」，而是「感知—决策—执行全流程任务」的代理入口。这个判断指向一条被低估的路径：相比每天融资5亿的具身/人形赛道，办公/会议/个人助理场景的AI Agent硬件同样在重构，但估值预期更理性、商业化节奏更快（未来智能已有150万+全球用户，多次连续10x增长）。传音的战略价值尤其值得关注：传音在非洲/东南亚/南亚拥有4.5亿+手机用户，这是中国AI硬件公司进入全球新兴市场最被低估的渠道。",
+    persons: [
+      { id: "maxiao", name: "马啸（未来智能）" }
+    ],
+    sources: [
+      { label: "新浪财经 未来智能A+轮融资 2026-05-09", url: "https://finance.sina.com.cn/jjxw/2026-05-09/doc-inhxhzaz1351651.shtml" },
+      { label: "钛媒体 未来智能传音合作 2026-05-08", url: "https://www.tmtpost.com/7980779.html" }
+    ]
+  },
+
   // ===== INVESTOR =====
   {
     id: "zhuxiaohu-ai-application-bet",
