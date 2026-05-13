@@ -5,6 +5,25 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-13 每日扫描 =====
+  {
+    id: "xai-dissolves-spacex-anthropic-colossus-2026-05-13",
+    date: "2026-05-13",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "xAI 三年实验终结,Musk 变 Anthropic 算力房东",
+    body: "5月6日，Musk 宣布 xAI 解散并入 SpaceX，更名「SpaceXAI」，同步把 Colossus 1 超算中心的全部算力租给 Anthropic：22 万张 Nvidia GPU（H100/H200/GB200）、300MW 算力容量，年租金约 50 亿美元，SpaceX 年净利约 25-40 亿美元——时机紧贴 SpaceX 计划 2026 年 6 月 IPO、目标估值 1.75 万亿美元。这是 xAI 三年叙事的完全反转：2023 年 Musk 从 DeepMind/OpenAI 召集 12 位顶尖研究员，目标是打造「Musk 操控的 AGI 公司」对抗 OpenAI；三个月前他还公开称 Anthropic「邪恶」，如今成了后者的算力房东。行业含义：Grok 系列从未实质撼动 GPT/Claude 市场地位，Colossus 出租却稳进 $50 亿/年——算力垄断比模型竞争更可持续。Anthropic 拿到 22 万张 GPU，Claude 新一代训练规模将跃升，Claude vs GPT 格局进一步向 Anthropic 倾斜。对中国 AI 创业者的实操含义：独立研究型 AI 公司没有算力母舰兜底很难走完全程，连 Musk 量级的资本也选择了变现算力资产而非继续烧模型——没有大厂算力伞的创业团队，应提前锁定算力合作方而非独自豪赌",
+    persons: [
+      { id: "musk", name: "Elon Musk (xAI→SpaceXAI)" },
+      { id: "damodei", name: "Dario Amodei (Anthropic)" }
+    ],
+    sources: [
+      { label: "xAI 官方公告 2026-05-06", url: "https://x.ai/news/anthropic-compute-partnership" },
+      { label: "Axios Anthropic-SpaceX compute deal 2026-05-06", url: "https://www.axios.com/2026/05/06/anthropic-spacex-elon-musk-compute" }
+    ]
+  },
+
   // ===== 设计师图谱 · 非共识洞察 =====
   {
     id: "apple-design-golden-age-ended",
