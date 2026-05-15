@@ -5,6 +5,22 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-15 每日扫描 =====
+  {
+    id: "ineffable-intelligence-david-silver-2026-05-15",
+    date: "2026-05-15",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "AlphaGo 之父离 DeepMind 创业，$11 亿种子轮，Nvidia 工程绑定，纯 RL 向 RLHF 开战",
+    body: "David Silver 是 DeepMind 强化学习团队掌门，主导了 AlphaGo（2016 年击败李世石）和 AlphaZero（从零自学棋类游戏，不依赖人类棋谱）。2025 年底离开 DeepMind 创立 Ineffable Intelligence，2026 年 4 月 27 日完成 11 亿美元种子轮——欧洲史上最大种子融资，估值 51 亿美元，Sequoia + Lightspeed 领投，Nvidia、Google、DST Global 跟投。5 月 13 日 Nvidia 宣布与 Ineffable 展开「工程级合作」，共同构建 superlearner 系统。核心技术非共识：当前主流（GPT、Claude 系列）依赖海量人类数据预训练 + RLHF 微调；Ineffable 的 superlearner 完全摒弃人类示教数据，agent 只通过自身在环境中试错累积经验——即 AlphaZero 路线在通用智能上的延伸，Silver 称目标是「达尔文量级的科学突破」。对具身智能创业者的实操含义：中国具身赛道正以人工示教数据 + 行为克隆为核心筑壁垒，若 Ineffable 在 18-24 个月内拿出可验证的 superlearner 原型，现有依赖数据飞轮的估值逻辑将面临重估——这是比竞争对手融资额更值得盯紧的技术风险",
+    persons: [],
+    sources: [
+      { label: "CNBC Nvidia-Ineffable 工程合作 2026-05-13", url: "https://www.cnbc.com/2026/05/13/google-deepmind-alumni-startup-partners-nvidia-superintelligence.html" },
+      { label: "TechCrunch Ineffable $1.1B 种子轮 2026-04-27", url: "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" }
+    ]
+  },
+
   // ===== 设计师图谱 · 非共识洞察 =====
   {
     id: "apple-design-golden-age-ended",
