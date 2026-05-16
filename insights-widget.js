@@ -5,6 +5,24 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-16 每日扫描 =====
+  {
+    id: "kiloflow-ai-infra-ipo-2026-05-16",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["hardware", "investor"],
+    pinned: false,
+    title: "基流科技递表港股 — 中国 AI 时代的「CATL 位置」露面",
+    body: "基流科技(KiloFlow)2026.4 递表港交所,冲「AI infrastructure 第一股」。创始人胡效赫(清华自动化博士后)2023.2 与谢文奇联创,核心是自研 RoCE 网络 + GPU 集群调度——首家完成 1500 公里跨地域异构组网、首家独立量产 25.6T 高吞吐交换机。3 年 11 轮融资 22 亿元,D 轮估值 91.6 亿,**给智谱 AI 交付首个 2000 卡集群**,服务超 9 万张 GPU 卡。非共识判断:中国 AI 创业过去三年(2023-2026)的所有焦点都在大模型(DeepSeek/六小虎)和具身(王鹤/陈建宇等),但**真正的「CATL 位置」从来不是 EV 整车,而是电池组件**——大模型行业的对应物就是算力集群与网络调度。基流科技这次 IPO 是这个位置第一次浮出水面。对硬件创业者的实操含义:如果你的产品需要大规模 AI 训练或推理(具身大脑/AI Agent 硬件/边缘 AI),基流这类「卖铲子」公司比模型公司更值得绑定——他们有产能,有定价权,有跨地域调度,不会和你竞争终端市场",
+    persons: [
+      { id: "huxiaohe", name: "胡效赫(基流科技)" },
+      { id: "liangwenfeng", name: "梁文锋(DeepSeek)" }
+    ],
+    sources: [
+      { label: "虎嗅 基流科技冲击 IPO 2026-04", url: "https://www.huxiu.com/article/4858164.html" },
+      { label: "36氪 中国最大 AI 包工头要上市 2026-04", url: "https://36kr.com/p/3801739376844801" }
+    ]
+  },
   // ===== 2026-05-15 每日扫描 =====
   {
     id: "ineffable-intelligence-david-silver-2026-05-15",
