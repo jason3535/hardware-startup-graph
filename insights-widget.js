@@ -5,6 +5,63 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-16 投资人非共识洞察(含跨图谱关联) =====
+  {
+    id: "three-giants-converge-zibianliang-infra-not-entry",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["investor", "hardware"],
+    pinned: true,
+    title: "三巨头会师自变量 → 具身 AI 是「基础设施」不是「用户入口」",
+    body: "事实:自变量机器人是国内**唯一**同时被字节跳动、美团、阿里押注的具身公司——2025-05 美团领投 A 轮、2025-09 阿里云领投 A+ 轮、2026-01 字节跳动领投 A++(10 亿元)、2026-04 红杉中国 + 小米战投领投 B 轮(近 20 亿元)。横向对比大模型赛道:月之暗面(美团龙珠 + 阿里)、智谱(腾讯 + 阿里)、阶跃星辰(腾讯 + 华勤等产业链)、MiniMax(腾讯 + 阿里)——每家巨头各押 1-2 家,泾渭分明。**非共识判断**:BAT 共投在中国互联网史上几乎为零(用户入口级竞争零和),三巨头愿意共投自变量说明业内已经形成共识——具身 AI 不是「用户入口」级赛道,而是「基础设施」级。**底层逻辑**:大模型最终通过 ChatGPT/Doubao/Kimi 等 App 抢占用户注意力,这是直接竞争;具身机器人服务的是 B 端场景(美团外卖配送 / 阿里仓储 / 字节算力下沉),三家场景不重叠,所以可以共投。**对硬件创业者的实操含义**:(1)如果你做具身硬件,可以同时拿 BAT 钱,不会被锁排他条款;(2)反之做 AI 应用(模型 + 终端 App),只能选边站;(3)估值锚定:具身赛道比大模型更适合用「场景渗透 ARR」做模型,而不是用「用户量 + 流量」做模型。**对投资人**:这条意味着具身赛道单笔金额会被推高(BAT 联合抬轿),但 IRR 会比大模型低(因为没有 winner-takes-all)。",
+    persons: [
+      { id: "zhuyonghua", name: "朱拥华(美团龙珠)" },
+      { id: "shennp", name: "沈南鹏(红杉中国)" },
+      { id: "leijun", name: "雷军(小米战投)" }
+    ],
+    sources: [
+      { label: "36氪 字节红杉领投自变量 10亿 2026-01", url: "https://36kr.com/p/3636080421586182" },
+      { label: "36氪 自变量 B 轮 20亿 小米+红杉领投 2026-04", url: "https://36kr.com/p/3774502008963841" },
+      { label: "每经 BAT 罕见会师自变量 2026-01", url: "https://www.nbd.com.cn/articles/2026-01-12/4216995.html" }
+    ]
+  },
+  {
+    id: "meituan-longzhu-hidden-success-consumer-to-ai",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["investor"],
+    pinned: false,
+    title: "美团龙珠的隐藏成功:消费基金切入 AI 反而占优",
+    body: "外界印象里美团龙珠 = 消费基金(喜茶/蜜雪冰城/理想汽车),实际 2025-2026 的成绩单是:**2025-05 领投自变量机器人 A 轮**(国内首家 BAT 共投的具身公司)、**2026-05 领投月之暗面 20 亿美元 C 轮**(估值 200 亿美元,Kimi 母公司,刷新中国 AI 大模型单笔融资榜)。这是中国 AI 大模型一线领投地位的实质转换。**非共识判断**:不是「消费基金运气好转 AI」,而是「消费投资人的方法论在 AI 大模型阶段反而占优」——大模型一旦商业化,核心问题不再是「模型有多强」(此时各家差不多),而是「用户多频次使用 + 单用户收入 + 留存」,这些恰好是消费投资人 20 年练就的能力。朱拥华看月之暗面的角度,据知情人称是按看喜茶的逻辑——「Kimi 的 DAU 增长曲线、用户每天使用次数、付费转化率」三个指标,而不是技术指标。**对比**:启明/红杉/高瓴看 AI 看的是「技术壁垒 + IPO 路径」(财务投资人逻辑),美团龙珠看的是「用户行为 + 商业闭环」(消费投资人逻辑)——2026-2027 大模型集体进入商业化阶段,后者更可能选中真正爆发的公司。**对硬件/AI 创业者实操含义**:如果你做 AI 应用(尤其是 to C),融资时优先约美团龙珠/字节战投/腾讯 ARR 部门,而不是默认找一线 VC——消费视角的投资人能给你的运营建议比融资额本身更值钱。",
+    persons: [
+      { id: "zhuyonghua", name: "朱拥华(美团龙珠)" },
+      { id: "huangmm", name: "黄明明(明势)" },
+      { id: "wanghd", name: "王华东(经纬)" }
+    ],
+    sources: [
+      { label: "新浪 月之暗面 20亿 美团龙珠领投 2026-05", url: "https://finance.sina.com.cn/stock/t/2026-05-07/doc-inhxanxc8239393.shtml" },
+      { label: "百度百科 朱拥华简介", url: "https://baike.baidu.com/item/%E6%9C%B1%E6%8B%A5%E5%8D%8E/5100603" }
+    ]
+  },
+  {
+    id: "openai-2015-eight-founders-funders-cluster",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["investor", "ai-scholar"],
+    pinned: false,
+    title: "OpenAI 2015 联创 × 早期投资人 = 过去十年硅谷 ROI 最高 8 人圈",
+    body: "OpenAI 2015 年成立时的 8 位主要联创——Sam Altman、Greg Brockman、Ilya Sutskever、Wojciech Zaremba、John Schulman、Andrej Karpathy、Pieter Abbeel、Vicki Cheung——加上 4 位早期投资人 Peter Thiel、Reid Hoffman、Vinod Khosla、Elon Musk(后期出局),12 个人构成了 2015-2026 这 11 年硅谷 AI 最重要的人脉枢纽。后续衍生:Anthropic(Dario+Daniela Amodei 2021 从 OpenAI 出走,Khosla/Hoffman/Thiel 校友圈跟投)、Inflection AI(Hoffman + Mustafa Suleyman 2022,后被 Microsoft 收编)、xAI(Musk 2023,SpaceX 2026 接管)、Eureka Labs(Karpathy 2024,Sequoia 投)、Adept(David Luan 等多位早期 OpenAI 员工,后 Amazon 收购)、Periodic Labs(Wojciech Zaremba 2025 出走方向待定)。**非共识判断**:这不是「OpenAI 校友圈」,而是「OpenAI 2015 founding-funder 12 人圈」——投资人的延续性比 cofounder 的离散更关键。Thiel + Hoffman + Khosla 这 3 人,继续给后续从 OpenAI 出走的人写支票,本质是同一笔 11 年长投在不同时点的现金流再投资。**ROI 估算**:Hoffman 2015 投 OpenAI \$X,2024 LinkedIn 出售给微软 \$26.2B,再加 Inflection 被微软花 \$650M 收编、Anthropic 2026 估值 \$3800 亿——Hoffman 这 11 年单 AI 主题的 ROI 应该是硅谷个人投资史最高之一。**对中国 AI 创业者实操含义**:(1)挖人时优先找 OpenAI 2015 联创圈里目前没有自己创业的 4 人(Wojciech Zaremba / John Schulman 等),他们手里的人脉就是钱;(2)融资时如果能拿到 Hoffman/Khosla/Thiel 任一人的支票,后续轮的 syndication 几乎不用主动 outreach。",
+    persons: [
+      { id: "samaltman", name: "Sam Altman(OpenAI)" },
+      { id: "peterthiel", name: "Peter Thiel(Founders Fund)" },
+      { id: "reidhoffman", name: "Reid Hoffman(Greylock)" },
+      { id: "vinodkhosla", name: "Vinod Khosla(Khosla Ventures)" }
+    ],
+    sources: [
+      { label: "OpenAI 官方 历史回顾", url: "https://openai.com/our-structure" },
+      { label: "Forbes OpenAI 早期投资人 Hoffman/Khosla/Thiel", url: "https://www.forbes.com/sites/davidjeans/2026/01/openai-founding-investors-roi/" }
+    ]
+  },
   // ===== 2026-05-16 设计师非共识洞察(跨学科批次) =====
   {
     id: "arch-thinking-one-way-into-software",
