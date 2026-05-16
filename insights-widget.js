@@ -2345,12 +2345,15 @@ body.has-insights #graph-container::after {
   }
 
   function formatRelativeDate(dateStr) {
-    const d = new Date(dateStr);
+    // 用本地时区构造 Date(避免 "2026-05-17" 被当 UTC 解析后在北京时间凌晨算成负天数)
+    const d = new Date(dateStr + 'T00:00:00');
     const now = new Date();
-    const days = Math.floor((now - d) / 86400000);
+    const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const days = Math.round((todayMidnight - d) / 86400000);
     if (days < 0) return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
     if (days === 0) return '今天';
     if (days === 1) return '昨天';
+    if (days === 2) return '前天';
     if (days < 7) return `${days} 天前`;
     if (days < 30) return `${Math.floor(days / 7)} 周前`;
     if (days < 365) return `${Math.floor(days / 30)} 个月前`;
