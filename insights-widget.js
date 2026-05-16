@@ -5,6 +5,23 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-16 每日扫描 =====
+  {
+    id: "xai-merges-spacex-anthropic-1t-2026-05-16",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["ai-scholar", "investor"],
+    pinned: false,
+    title: "Anthropic 万亿估值封神，xAI 短命为对手供算力",
+    body: "5 月 6 日马斯克将 xAI 并入 SpaceX，同日把 Colossus 1（22 万张 Nvidia GPU、300 兆瓦算力）出租给 Anthropic，Claude Code 速率上限当周翻倍。同期，Anthropic 宣布以约 9000 亿美元估值融资 300 亿美元，ARR 从 2025 年底 90 亿升至 440 亿美元（5 个月 5 倍），Forge Global 隐含估值超越 OpenAI（~1 万亿 vs 8520 亿美元）。xAI 不足三年并入 SpaceX，核心信号是：AI 实验室的护城河不是算力，是「数据飞轮 + 企业信任」——Anthropic 超 1000 家年付超百万美元大客户，是 ARR 爆增的底盘，也是 Musk 在 SpaceX 框架下无法快速复制的。Musk 在 3 月公开称 Anthropic 为「最虚伪的公司」，5 月即把全部算力租给对方——戏剧性反转本身就说明 Anthropic 的谈判筹码已强于一切意识形态分歧。对 AI 硬件创业者的实操含义：Anthropic 已演变为「自有超大算力 + 高黏性企业客户」的平台层，依赖 Claude API 的硬件产品须在架构阶段评估供给锁定风险",
+    persons: [],
+    sources: [
+      { label: "Tom's Hardware SpaceX Colossus 租给 Anthropic 2026-05-07", url: "https://www.tomshardware.com/tech-industry/artificial-intelligence/musks-spacex-has-rented-out-access-to-its-supercomputers-220-000-nvidia-gpus-and-300-megawatts-of-ai-compute-power-to-rival-anthropic-musk-says-no-one-set-off-my-evil-detector-antrhropic-also-interested-in-orbital-data-centers" },
+      { label: "Sherwood News Anthropic $950B 估值融资 2026-05-08", url: "https://sherwood.news/tech/anthropic-in-talks-for-funding-at-a-valuation-as-high-as-950-billion-which-would-make-it-bigger-than-openai/" },
+      { label: "36kr Anthropic 9000 亿美元估值 2026-05-16", url: "https://36kr.com/p/3807071321267970" }
+    ]
+  },
+
   // ===== 2026-05-12 每日扫描 =====
   {
     id: "vbot-consumer-robot-pre-a-2026-05-12",
