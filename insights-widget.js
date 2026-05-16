@@ -2168,11 +2168,7 @@ body.has-insights #graph-container::after {
     if (activeFilter !== 'all') {
       list = list.filter(i => i.type === activeFilter);
     }
-    list = list.sort((a, b) => {
-      if (a.pinned && !b.pinned) return -1;
-      if (!a.pinned && b.pinned) return 1;
-      return new Date(b.date) - new Date(a.date);
-    });
+    list = list.sort((a, b) => new Date(b.date) - new Date(a.date));
     const container = document.getElementById('insights-cards-container');
     if (list.length === 0) {
       const labelMap = { all: '内容', 'non-consensus': '非共识', 'relationship': '关系', 'resume': '履历', 'funding': '融资', 'trend': '最新情况' };
