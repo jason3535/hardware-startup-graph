@@ -1876,40 +1876,29 @@ body.has-insights #graph-container::after {
   border-radius: 18px;
   padding: 24px 28px;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  position: relative;
 }
 .insight-share-btn {
-  position: absolute;
-  top: 18px;
-  right: 18px;
   background: rgba(255, 255, 255, 0.04);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  padding: 5px 11px;
-  font-size: 12px;
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.55);
+  border-radius: 980px;
+  padding: 3px 11px;
+  font-size: 11px;
   font-family: inherit;
   cursor: pointer;
   transition: all 0.2s;
-  z-index: 2;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 .insight-share-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 .insight-share-btn:disabled {
   opacity: 0.5;
   cursor: wait;
-}
-@media (max-width: 640px) {
-  .insight-share-btn {
-    top: 14px;
-    right: 14px;
-    padding: 4px 9px;
-    font-size: 11px;
-  }
 }
 
 /* Share-image canvas (hidden, used for html2canvas render) */
@@ -2031,12 +2020,6 @@ body.has-insights #graph-container::after {
   gap: 16px;
   margin-bottom: 12px;
   flex-wrap: wrap;
-  padding-right: 78px;
-}
-@media (max-width: 640px) {
-  .insight-card-head {
-    padding-right: 70px;
-  }
 }
 .insight-card-title {
   font-size: 20px;
@@ -2336,13 +2319,13 @@ body.has-insights #graph-container::after {
 
     return `
       <article class="insight-card" data-insight-id="${escapeAttr(item.id)}" data-insight-type="${escapeAttr(item.type)}">
-        <button class="insight-share-btn" type="button" data-share-id="${escapeAttr(item.id)}" title="分享为图片">↗ 分享</button>
         <div class="insight-card-head">
           <h3 class="insight-card-title">${escapeHtml(item.title)}</h3>
           <div class="insight-card-meta">
             <span class="insight-type-badge insight-type-${item.type}">${TYPE_LABELS[item.type] || item.type}</span>
             <span class="insight-date">${formatRelativeDate(item.date)}</span>
             ${item.pinned ? '<span class="insight-pinned">置顶</span>' : ''}
+            <button class="insight-share-btn" type="button" data-share-id="${escapeAttr(item.id)}" title="分享为图片">↗ 分享</button>
           </div>
         </div>
         <p class="insight-card-body">${escapeHtml(item.body)}</p>
@@ -2565,6 +2548,17 @@ body.has-insights #graph-container::after {
         'funding': '融资动态',
         'trend': '最新趋势'
       };
+      // Footer 信息根据当前所在图谱动态生成
+      const GRAPH_TAGLINES = {
+        'hardware':  '中国 AI 硬件创业者地图 · 127 位创始人',
+        'investor':  '中国 AI 投资人地图 · 71 位 GP/合伙人',
+        'ai-scholar': '全球 AI 研究人地图 · 89 位学者/工程师',
+        'designer':  '全球设计师地图 · 139 位主理人'
+      };
+      const graphMeta = FOOTER_LINKS.find(l => l.id === graphId) || FOOTER_LINKS[0];
+      const footerLabel = graphMeta.label || '智能硬件图谱';
+      const footerTagline = GRAPH_TAGLINES[graphId] || '中国科技人物图谱';
+      const footerUrl = (graphMeta.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
       // Render-time bold parsing: **xxx** → <strong>xxx</strong>
       const bodyHtml = escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>');
       const personChips = (item.persons || []).map(p =>
@@ -2575,7 +2569,7 @@ body.has-insights #graph-container::after {
       host.innerHTML = `
         <div class="share-card">
           <div class="share-card-header">
-            <div class="share-card-brand">JASON · 中国科技人物图谱</div>
+            <div class="share-card-brand">${escapeHtml(footerLabel)}</div>
             <div class="share-card-type share-card-type-${item.type}">${TYPE_LABELS_FULL[item.type] || item.type}</div>
           </div>
           <h1 class="share-card-title">${escapeHtml(item.title)}</h1>
@@ -2584,10 +2578,10 @@ body.has-insights #graph-container::after {
           ${personChips ? `<div class="share-card-persons">${personChips}</div>` : ''}
           <div class="share-card-footer">
             <div>
-              <div class="share-card-footer-brand">硬件 · 投资人 · AI · 设计</div>
-              <div class="share-card-footer-tagline">4 张图谱 · 每日洞察 · 周报订阅</div>
+              <div class="share-card-footer-brand">${escapeHtml(footerLabel)}</div>
+              <div class="share-card-footer-tagline">${escapeHtml(footerTagline)}</div>
             </div>
-            <div class="share-card-footer-url">jasonlin.tech</div>
+            <div class="share-card-footer-url">${escapeHtml(footerUrl)}</div>
           </div>
         </div>
       `;
