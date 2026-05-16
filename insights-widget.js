@@ -2484,20 +2484,25 @@ body.has-insights #graph-container::after {
     }
   }
 
+  // 卡片用:近期显示相对,7 天外显示具体日期(M月D日 / 跨年带年份)
   function formatRelativeDate(dateStr) {
-    // 用本地时区构造 Date(避免 "2026-05-17" 被当 UTC 解析后在北京时间凌晨算成负天数)
     const d = new Date(dateStr + 'T00:00:00');
     const now = new Date();
     const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const days = Math.round((todayMidnight - d) / 86400000);
-    if (days < 0) return d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short', day: 'numeric' });
+    if (days < 0) return formatAbsoluteDate(dateStr);
     if (days === 0) return '今天';
     if (days === 1) return '昨天';
     if (days === 2) return '前天';
     if (days < 7) return `${days} 天前`;
-    if (days < 30) return `${Math.floor(days / 7)} 周前`;
-    if (days < 365) return `${Math.floor(days / 30)} 个月前`;
-    return `${Math.floor(days / 365)} 年前`;
+    // 7 天以上显示具体日期,同年省略年份
+    if (d.getFullYear() === now.getFullYear()) return `${d.getMonth() + 1}月${d.getDate()}日`;
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  }
+  // 分享图用:始终绝对中文长格式(分享出去后过几个月再看也准确)
+  function formatAbsoluteDate(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
   }
 
   function escapeHtml(s) {
@@ -2582,7 +2587,7 @@ body.has-insights #graph-container::after {
             <div class="share-card-type share-card-type-${item.type}">${TYPE_LABELS_FULL[item.type] || item.type}</div>
           </div>
           <h1 class="share-card-title">${escapeHtml(item.title)}</h1>
-          <div class="share-card-date">${formatRelativeDate(item.date)} · ${item.date}</div>
+          <div class="share-card-date">${formatAbsoluteDate(item.date)}</div>
           <div class="share-card-body">${bodyHtml}</div>
           ${personChips ? `<div class="share-card-persons">${personChips}</div>` : ''}
           <div class="share-card-footer">
