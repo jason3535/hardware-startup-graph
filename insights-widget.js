@@ -5,6 +5,104 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-16 设计师非共识洞察(跨学科批次) =====
+  {
+    id: "arch-thinking-one-way-into-software",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: true,
+    title: "建筑思维 → 软件 UI 是单向流动,反向几乎不存在",
+    body: "证据链非常清晰:Evan Sharp 把建筑学的「空间组织」带进 Pinterest grid,Google Material Design 借「纸张层叠 + 光影深度」隐喻,Apple Liquid Glass 借 visionOS 空间深度,Bret Victor 主张「软件应像建筑模型可触摸」——建筑学概念持续向软件 UI 注入。反向呢?软件发明的「快速迭代/A/B 测试/敏捷开发/MVP/灰度发布」这套工作方式,建筑界一个都没引入。原因是物质化成本不对称:软件改一行代码 0 成本,建筑改一面墙百万级。非共识判断:这意味着对中国设计师的职业路径,从建筑/工业入软件比反向有杠杆——你的「空间思维」「材料思维」「比例感」在软件公司是稀缺资本,反过来软件设计师转建筑几乎不可能。LoveFrom、TE、Apple 的招人逻辑都印证这点",
+    persons: [
+      { id: "evansharp", name: "Evan Sharp(Pinterest)" },
+      { id: "matiasduarte", name: "Matias Duarte(Material Design)" }
+    ],
+    sources: [
+      { label: "Material Design 原理(纸张隐喻)", url: "https://m3.material.io/foundations" },
+      { label: "Bret Victor — Magic Ink", url: "http://worrydream.com/MagicInk/" }
+    ]
+  },
+  {
+    id: "apple-park-id-invading-architecture",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "Apple Park 是「工业设计师入侵建筑现场」的一次性事件,不是范式",
+    body: "Foster + Ive 在 Apple Park 项目上的合作里,建筑师让步给工业设计师:Foster 原本提分散园区方案(建筑学正常逻辑——分摊采光、动线、紧急疏散),Ive 坚持单一圆环全玻璃。商业上是建筑学失败(空间利用率低、维护成本年 1500w 美元、玻璃眩光导致员工撞墙),但视觉品牌上是工业设计的胜利——跟 Cybertruck 一样,「商业不优但设计影响力巨大」。Foster 此后所有项目又回到传统建筑学逻辑(Battersea/Bloomberg HQ),说明这是一次性合作不是范式。非共识判断:不要把 Apple Park 当作「跨学科融合」的成功案例,它是「资本极大 + 客户审美极强」催生的偶发产物,普通项目复刻不了——真正的跨学科合作需要的是双方对等让步,而不是一方话语权碾压",
+    persons: [
+      { id: "ive", name: "Jony Ive(LoveFrom)" }
+    ],
+    sources: [
+      { label: "Wired Apple Park 内部报道", url: "https://www.wired.com/story/apple-park-new-silicon-valley-campus/" }
+    ]
+  },
+  {
+    id: "bauhaus-trinity-comeback",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "Bauhaus 三合一传统在 2020s 回归,AI 让跨学科成本接近零",
+    body: "Gropius 1919 创立 Bauhaus 时本来就是「建筑 + 工艺 + 工业 + 视觉传达」一体,Mies/Breuer/Albers 一个人同时做家具、字体、建筑、平面。1960-2010s 这 50 年专业完全分离,设计学院按学科切分,设计公司按职能切分。但 LoveFrom(Ive + Newson + Chesky)/ Teenage Engineering(产品 + 软件 + 包装 + 视觉)/ Notion 设计团队 / Apple Park 的实践已经让多学科在小团队内部重新融合。底层动因:AI 工具让跨学科的「上手成本」从 5 年压到 5 周——一个工业设计师用 Figma + Cursor 可以做软件原型,一个建筑师用 Rhino + Grasshopper 已经在做产品。非共识判断:未来 5-10 年最稀缺的不是某个领域的专精大师,而是 generalist——能在建筑/工业/软件/视觉之间自由跨越的人,而过去 50 年中国设计教育的分科体系正好培养不出这种人",
+    persons: [
+      { id: "ive", name: "Jony Ive" },
+      { id: "marcnewson", name: "Marc Newson" }
+    ],
+    sources: [
+      { label: "Bauhaus 100 周年回顾", url: "https://www.bauhaus100.com/" }
+    ]
+  },
+  {
+    id: "lovefrom-cross-disciplinary-asylum",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "LoveFrom 不是设计公司,是「跨界设计师收容所」",
+    body: "LoveFrom 招人的共同点不是「设计水平最高」,而是「在自己领域到顶后跨界」:Marc Newson(工业 → 珠宝)、Evan Sharp(建筑 → Pinterest → 重回物质设计)、Brian Chesky 作为客户(RISD 工业设计 → hospitality 服务设计)。Jony Ive 自己也是工业设计 → 软件(iOS 7) → 服务/品牌策略。非共识判断:这意味着 LoveFrom 的真实价值不是设计输出能力,而是「为已经触顶的顶级设计师提供二次发挥的容器」——一种设计师版的「PE 老兵俱乐部」。对中国设计师的实操含义:你的职业天花板到了之后(比如做完几个爆款),与其在原领域死磕,跨界比深耕有杠杆;而且最好找一个跨界生态聚集地(LoveFrom 类的容器),而不是孤军奋战",
+    persons: [
+      { id: "ive", name: "Jony Ive(LoveFrom)" },
+      { id: "marcnewson", name: "Marc Newson" },
+      { id: "evansharp", name: "Evan Sharp" }
+    ],
+    sources: [
+      { label: "FT LoveFrom 团队组建报道", url: "https://www.ft.com/content/jony-ive-lovefrom" }
+    ]
+  },
+  {
+    id: "vi-middle-layer-collapse",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "VI 行业 K 字形分化:大师身价反涨,中端工作室 24 个月内塌缩 50%",
+    body: "现状数据:Sagmeister/Pentagram/Chermayeff & Geismar & Haviv 这种大师级的 VI 项目报价从 50w 美元涨到 80w 美元(2023-2026 涨幅 30-50%),而中端 logo 设计工作室(报价 5-50w 元)的订单量在过去 18 个月断崖式下跌——Midjourney/Ideogram 让客户的「凑合 logo」需求基本被替代。预测:中端 VI 工作室在未来 24 个月内会塌缩 50%,行业进入 K 字形分化。非共识判断:对中国设计师的实操含义,只剩两条路——往上做「品牌叙事 + 文化资本」(靳埭强/何见平/Sagmeister 路径,核心壁垒是文化沉淀和讲故事的能力,AI 短期无法替代),或者往下接 AI 工具产能层(用 Midjourney + Figma 做批量产能,以速度和单价取胜)。中间层的「正常 VI 工作室」是被绞杀的对象,这是过去 30 年没有出现过的市场结构",
+    persons: [
+      { id: "sagmeister", name: "Stefan Sagmeister" },
+      { id: "jinraitang", name: "靳埭强" }
+    ],
+    sources: [
+      { label: "AIGA Design Census 2025", url: "https://designcensus.org/" }
+    ]
+  },
+  {
+    id: "cybertruck-commercial-fail-design-win",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["designer"],
+    pinned: false,
+    title: "Cybertruck 商业失败,但已成汽车设计教学 reference",
+    body: "数据对照:Cybertruck 2024 年全年销量约 12 万辆,而 Musk 2019 年发布时预测年销 25 万-50 万辆,2023 年再上修到 100 万辆——商业上是大幅低于预期。但同时:Franz von Holzhausen 设计的 Cybertruck 已被 Art Center College of Design / RCA / 同济大学车辆工程学院列为「2020s 标志性汽车设计案例」,是研究生必修教学 reference;Lexus/Hyundai/比亚迪 2025-2026 多款概念车明显借鉴其折面语言。非共识判断:这挑战了汽车工业里「成功设计 = 成功产品」的隐含等式——Cybertruck 是设计意志可以独立于商业成败的最强证据。对工业设计师的实操含义:不要把销量当作设计影响力的唯一标准,有些设计的价值是在 10-20 年时间维度上被同行采纳和教学化,而不是即时的市场反馈;设计史里 Memphis Group/Bauhaus 当年商业都不成功,但塑造了一代审美",
+    persons: [
+      { id: "franzvonholzhausen", name: "Franz von Holzhausen(Tesla)" }
+    ],
+    sources: [
+      { label: "Tesla Cybertruck 2024 销量数据", url: "https://www.tesla.com/cybertruck" },
+      { label: "Art Center 工业设计课程 reference", url: "https://www.artcenter.edu/academics/undergraduate-degrees/transportation-design/" }
+    ]
+  },
   // ===== 2026-05-16 每日扫描 =====
   {
     id: "kiloflow-ai-infra-ipo-2026-05-16",
