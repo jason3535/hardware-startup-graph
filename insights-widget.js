@@ -5,6 +5,59 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+  // ===== 2026-05-15 每日扫描 =====
+  {
+    id: "ineffable-intelligence-david-silver-2026-05-15",
+    date: "2026-05-15",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "AlphaGo 之父离 DeepMind 创业,\$11 亿种子轮,Nvidia 工程绑定,纯 RL 向 RLHF 开战",
+    body: "David Silver 是 DeepMind 强化学习团队掌门,主导了 AlphaGo(2016 击败李世石)和 AlphaZero(从零自学棋类游戏,不依赖人类棋谱)。2025 年底离开 DeepMind 创立 Ineffable Intelligence,2026.4.27 完成 11 亿美元种子轮——欧洲史上最大种子融资,估值 51 亿美元,Sequoia + Lightspeed 领投,Nvidia、Google、DST Global 跟投。5.13 Nvidia 宣布与 Ineffable 展开「工程级合作」共同构建 superlearner 系统。核心技术非共识:当前主流(GPT/Claude)依赖海量人类数据预训练 + RLHF 微调;Ineffable 完全摒弃人类示教数据,agent 通过自身环境中试错累积经验——即 AlphaZero 路线在通用智能上的延伸,Silver 称目标是「达尔文量级的科学突破」。对中国具身创业者的实操含义:中国具身赛道正以人工示教数据 + 行为克隆为核心筑壁垒,若 Ineffable 在 18-24 个月内拿出可验证的 superlearner 原型,现有依赖数据飞轮的估值逻辑将面临重估——这是比竞争对手融资额更值得盯紧的技术风险",
+    persons: [
+      { id: "silver", name: "David Silver" },
+      { id: "hassabis", name: "Demis Hassabis(DeepMind)" }
+    ],
+    sources: [
+      { label: "CNBC Nvidia × Ineffable 2026-05-13", url: "https://www.cnbc.com/2026/05/13/google-deepmind-alumni-startup-partners-nvidia-superintelligence.html" },
+      { label: "TechCrunch Ineffable \$1.1B 种子 2026-04-27", url: "https://techcrunch.com/2026/04/27/deepminds-david-silver-just-raised-1-1b-to-build-an-ai-that-learns-without-human-data/" }
+    ]
+  },
+  // ===== 2026-05-14 每日扫描 =====
+  {
+    id: "stepai-supply-chain-llm-2026-05-14",
+    date: "2026-05-14",
+    type: "funding",
+    graphs: ["ai-scholar", "investor"],
+    pinned: false,
+    title: "阶跃星辰 25 亿美元:手机代工厂押注大模型的新信号",
+    body: "阶跃星辰确认完成约 25 亿美元新一轮融资,腾讯老股东跟投,公司已拆除红筹架构加速赴港 IPO,计划 6.30 前交表,预期基础估值约 100 亿美元。本轮新进投资方里最值得关注的不是腾讯,而是华勤技术(手机 ODM 巨头)、龙旗科技、豪威集团(CMOS 传感器)、中兴通讯——四家均为智能手机产业链核心玩家。供应链大厂以股权形式押注大模型,不是为了财务回报,而是在赌一个位置:当 AI 大模型在 3 年内进入 AI 手机、AI 眼镜、边缘设备,谁是优先硬件制造合作伙伴? 这条逻辑和高通投资 ARM 的底层算盘一致——锁定下一代软硬件接口。负面数据同时需要记录:阶跃 5 个月烧掉约 171 亿元,腾讯云战略合作是当前最重要的变现抓手,IPO 冲刺背后商业化压力极大。对硬件创业者的实操含义:如果你的产品需要嵌入大模型能力(AI 眼镜、消费机器人、智能家居中控),ODM/传感器厂是被低估的战略股东候选——他们不只带资金,还带制造产能与渠道关系",
+    persons: [
+      { id: "jiangdaxin", name: "姜大昕(阶跃星辰)" }
+    ],
+    sources: [
+      { label: "财新 阶跃星辰融资 25 亿 2026-05-08", url: "https://m.caixin.com/m/2026-05-08/102442074.html" },
+      { label: "新浪财经 产业链巨头站队 2026-05-13", url: "https://finance.sina.com.cn/stock/aigcy/2026-05-13/doc-inhxteiv4708927.shtml" }
+    ]
+  },
+  // ===== 2026-05-13 每日扫描 =====
+  {
+    id: "xai-dissolves-spacex-anthropic-colossus-2026-05-13",
+    date: "2026-05-13",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "xAI 三年实验终结,Musk 变 Anthropic 算力房东",
+    body: "5.6 Musk 宣布 xAI 解散并入 SpaceX,更名「SpaceXAI」,同步把 Colossus 1 超算中心的全部算力租给 Anthropic:22 万张 Nvidia GPU(H100/H200/GB200)、300MW 算力容量,年租金约 50 亿美元,SpaceX 年净利约 25-40 亿美元——时机紧贴 SpaceX 计划 2026.6 IPO、目标估值 1.75 万亿美元。这是 xAI 三年叙事的完全反转:2023 年 Musk 从 DeepMind/OpenAI 召集 12 位顶尖研究员,目标是打造「Musk 操控的 AGI」对抗 OpenAI;三个月前他还公开称 Anthropic「邪恶」,如今成了后者的算力房东。行业含义:Grok 系列从未实质撼动 GPT/Claude 市场地位,Colossus 出租却稳进 \$50 亿/年——算力垄断比模型竞争更可持续。Anthropic 拿到 22 万张 GPU,Claude 新一代训练规模将跃升,Claude vs GPT 格局进一步向 Anthropic 倾斜。对中国 AI 创业者的实操含义:独立研究型 AI 公司没有算力母舰兜底很难走完全程,连 Musk 量级的资本也选择了变现算力资产而非继续烧模型——没有大厂算力伞的创业团队应提前锁定算力合作方,而非独自豪赌",
+    persons: [
+      { id: "musk", name: "Elon Musk(xAI→SpaceXAI)" },
+      { id: "damodei", name: "Dario Amodei(Anthropic)" }
+    ],
+    sources: [
+      { label: "xAI 官方公告 2026-05-06", url: "https://x.ai/news/anthropic-compute-partnership" },
+      { label: "Axios Anthropic-SpaceX 算力交易 2026-05-06", url: "https://www.axios.com/2026/05/06/anthropic-spacex-elon-musk-compute" }
+    ]
+  },
   // ===== 2026-05-12 每日扫描 =====
   {
     id: "vbot-consumer-robot-pre-a-2026-05-12",
