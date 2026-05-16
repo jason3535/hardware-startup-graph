@@ -2563,9 +2563,12 @@ body.has-insights #graph-container::after {
         'ai-scholar': '全球 AI 研究人地图 · 89 位学者/工程师',
         'designer':  '全球设计师地图 · 139 位主理人'
       };
-      const graphMeta = FOOTER_LINKS.find(l => l.id === graphId) || FOOTER_LINKS[0];
+      // 用洞察自身归属的「主图谱」决定 footer,而不是当前所在页面;
+      // 跨图谱洞察用 graphs[0](添加时按相关性顺序排列)
+      const insightGraphId = (item.graphs && item.graphs[0]) || graphId;
+      const graphMeta = FOOTER_LINKS.find(l => l.id === insightGraphId) || FOOTER_LINKS[0];
       const footerLabel = graphMeta.label || '智能硬件图谱';
-      const footerTagline = GRAPH_TAGLINES[graphId] || '中国科技人物图谱';
+      const footerTagline = GRAPH_TAGLINES[insightGraphId] || '中国科技人物图谱';
       const footerUrl = (graphMeta.url || '').replace(/^https?:\/\//, '').replace(/\/$/, '');
       // Render-time bold parsing: **xxx** → <strong>xxx</strong>
       const bodyHtml = escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>');
