@@ -1985,28 +1985,36 @@ body.has-insights #graph-container::after {
 }
 .share-card-footer {
   border-top: 0.5px solid rgba(255, 255, 255, 0.1);
-  padding-top: 22px;
+  padding-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 .share-card-footer-brand {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #fff;
   letter-spacing: -0.2px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 .share-card-footer-tagline {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.3px;
 }
 .share-card-footer-url {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffb443;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  padding: 8px 16px;
+  background: rgba(255, 159, 10, 0.08);
+  border: 0.5px solid rgba(255, 159, 10, 0.3);
+  border-radius: 980px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .insight-card:hover {
   background: rgba(255, 255, 255, 0.05);
