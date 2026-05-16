@@ -1876,6 +1876,148 @@ body.has-insights #graph-container::after {
   border-radius: 18px;
   padding: 24px 28px;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  position: relative;
+}
+.insight-share-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2;
+  letter-spacing: 0.2px;
+}
+.insight-share-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.insight-share-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+@media (max-width: 640px) {
+  .insight-share-btn {
+    top: 14px;
+    right: 14px;
+    padding: 4px 9px;
+    font-size: 11px;
+  }
+}
+
+/* Share-image canvas (hidden, used for html2canvas render) */
+.share-canvas-host {
+  position: fixed;
+  top: -20000px;
+  left: -20000px;
+  width: 720px;
+  z-index: -1;
+  pointer-events: none;
+}
+.share-card {
+  width: 720px;
+  box-sizing: border-box;
+  background: linear-gradient(160deg, #0a0a0a 0%, #181818 100%);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  padding: 56px 56px 36px;
+  line-height: 1.5;
+}
+.share-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.share-card-brand {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.share-card-type {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 980px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+.share-card-type-non-consensus { background: rgba(255, 159, 10, 0.16); color: #ffb443; }
+.share-card-type-relationship  { background: rgba(94, 158, 255, 0.16); color: #8fb6ff; }
+.share-card-type-resume        { background: rgba(191, 90, 242, 0.16); color: #d09fff; }
+.share-card-type-funding       { background: rgba(48, 209, 88, 0.16); color: #7be592; }
+.share-card-type-trend         { background: rgba(100, 210, 255, 0.16); color: #6ed4ff; }
+.share-card-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: -0.5px;
+  margin: 0 0 26px;
+  color: #fff;
+}
+.share-card-date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 24px;
+  letter-spacing: 0.5px;
+}
+.share-card-body {
+  font-size: 16px;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.share-card-body strong {
+  color: #ffb443;
+  font-weight: 600;
+}
+.share-card-persons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+.share-card-person-chip {
+  font-size: 13px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 980px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.share-card-footer {
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.share-card-footer-brand {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+.share-card-footer-tagline {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+}
+.share-card-footer-url {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  letter-spacing: 0.3px;
 }
 .insight-card:hover {
   background: rgba(255, 255, 255, 0.05);
@@ -1889,15 +2031,21 @@ body.has-insights #graph-container::after {
   gap: 16px;
   margin-bottom: 12px;
   flex-wrap: wrap;
+  padding-right: 78px;
+}
+@media (max-width: 640px) {
+  .insight-card-head {
+    padding-right: 70px;
+  }
 }
 .insight-card-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.2px;
   margin: 0;
   flex: 1 1 auto;
   min-width: 0;
-  line-height: 1.35;
+  line-height: 1.4;
   color: rgba(255, 255, 255, 0.96);
 }
 .insight-card-meta {
@@ -1908,12 +2056,12 @@ body.has-insights #graph-container::after {
   flex-shrink: 0;
 }
 .insight-type-badge {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.3px;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 980px;
   border: 0.5px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   white-space: nowrap;
 }
 .insight-type-badge.insight-type-non-consensus { background: rgba(255, 159, 10, 0.12); border-color: rgba(255, 159, 10, 0.4); color: #ffb443; }
@@ -1922,8 +2070,8 @@ body.has-insights #graph-container::after {
 .insight-type-badge.insight-type-funding       { background: rgba(48, 209, 88, 0.12); border-color: rgba(48, 209, 88, 0.4); color: #7be592; }
 .insight-type-badge.insight-type-trend         { background: rgba(100, 210, 255, 0.12); border-color: rgba(100, 210, 255, 0.4); color: #6ed4ff; }
 .insight-date {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
   white-space: nowrap;
 }
 .insight-pinned {
@@ -1935,9 +2083,9 @@ body.has-insights #graph-container::after {
   color: rgba(255, 255, 255, 0.6);
 }
 .insight-card-body {
-  font-size: 14px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
   margin: 0 0 14px;
 }
 .insight-card-row {
@@ -1948,22 +2096,22 @@ body.has-insights #graph-container::after {
   margin-top: 10px;
 }
 .insight-card-label {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
   margin-right: 4px;
   letter-spacing: 0.2px;
 }
 .insight-person-chip {
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 12px;
+  padding: 4px 11px;
   background: rgba(255, 255, 255, 0.05);
   border: 0.5px solid rgba(255, 255, 255, 0.1);
   border-radius: 980px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 .insight-source-link {
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 12px;
+  padding: 4px 11px;
   border-radius: 980px;
   border: 0.5px solid rgba(41, 151, 255, 0.3);
   color: #6db9ff;
@@ -2088,8 +2236,8 @@ body.has-insights #graph-container::after {
   #insights-section { padding: 56px 16px 100px; }
   .insights-title { font-size: 24px; }
   .insight-card { padding: 18px 20px; }
-  .insight-card-title { font-size: 15px; }
-  .insight-card-body { font-size: 13px; }
+  .insight-card-title { font-size: 17px; }
+  .insight-card-body { font-size: 15px; }
 }
 `;
 
@@ -2188,6 +2336,7 @@ body.has-insights #graph-container::after {
 
     return `
       <article class="insight-card" data-insight-id="${escapeAttr(item.id)}" data-insight-type="${escapeAttr(item.type)}">
+        <button class="insight-share-btn" type="button" data-share-id="${escapeAttr(item.id)}" title="分享为图片">↗ 分享</button>
         <div class="insight-card-head">
           <h3 class="insight-card-title">${escapeHtml(item.title)}</h3>
           <div class="insight-card-meta">
@@ -2371,6 +2520,15 @@ body.has-insights #graph-container::after {
 
   // Delegated click tracking inside cards
   root.addEventListener('click', (e) => {
+    const shareBtn = e.target.closest('.insight-share-btn');
+    if (shareBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = shareBtn.dataset.shareId;
+      const item = INSIGHTS_DATA.find(x => x.id === id);
+      if (item) shareInsightAsImage(item, shareBtn);
+      return;
+    }
     const card = e.target.closest('.insight-card');
     if (!card) return;
     const insightId = card.dataset.insightId;
@@ -2383,6 +2541,94 @@ body.has-insights #graph-container::after {
       trackEvent('insight_card_clicked', { insight: insightId, type: insightType });
     }
   });
+
+  // ===== Share insight as image =====
+  async function shareInsightAsImage(item, btn) {
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = '生成中…';
+    try {
+      // lazy-load html2canvas-pro (handles modern CSS like oklch, better CJK font support)
+      if (!window.html2canvas) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/html2canvas-pro@1.5.8/dist/html2canvas-pro.min.js';
+          s.onload = resolve;
+          s.onerror = () => reject(new Error('Failed to load html2canvas'));
+          document.head.appendChild(s);
+        });
+      }
+      const TYPE_LABELS_FULL = {
+        'non-consensus': '非共识洞察',
+        'relationship': '人物关系',
+        'resume': '人物履历',
+        'funding': '融资动态',
+        'trend': '最新趋势'
+      };
+      // Render-time bold parsing: **xxx** → <strong>xxx</strong>
+      const bodyHtml = escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>');
+      const personChips = (item.persons || []).map(p =>
+        `<span class="share-card-person-chip">${escapeHtml(p.name)}</span>`
+      ).join('');
+      const host = document.createElement('div');
+      host.className = 'share-canvas-host';
+      host.innerHTML = `
+        <div class="share-card">
+          <div class="share-card-header">
+            <div class="share-card-brand">JASON · 中国科技人物图谱</div>
+            <div class="share-card-type share-card-type-${item.type}">${TYPE_LABELS_FULL[item.type] || item.type}</div>
+          </div>
+          <h1 class="share-card-title">${escapeHtml(item.title)}</h1>
+          <div class="share-card-date">${formatRelativeDate(item.date)} · ${item.date}</div>
+          <div class="share-card-body">${bodyHtml}</div>
+          ${personChips ? `<div class="share-card-persons">${personChips}</div>` : ''}
+          <div class="share-card-footer">
+            <div>
+              <div class="share-card-footer-brand">硬件 · 投资人 · AI · 设计</div>
+              <div class="share-card-footer-tagline">4 张图谱 · 每日洞察 · 周报订阅</div>
+            </div>
+            <div class="share-card-footer-url">jasonlin.tech</div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(host);
+      // let DOM settle so fonts render
+      await new Promise(r => setTimeout(r, 80));
+      const target = host.querySelector('.share-card');
+      const canvas = await window.html2canvas(target, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null,
+        logging: false,
+        width: 720,
+        height: target.offsetHeight,
+        windowWidth: 720
+      });
+      document.body.removeChild(host);
+      const sanitizedId = item.id.replace(/[^a-z0-9-]/gi, '').slice(0, 60);
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          alert('图片生成失败');
+          return;
+        }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${sanitizedId || 'insight'}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+      }, 'image/png', 0.95);
+      trackEvent('insight_shared', { insight: item.id, type: item.type });
+    } catch (err) {
+      console.error('Share failed:', err);
+      alert('图片生成失败,请重试');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  }
 
   // Track insights section becoming visible (impression)
   if ('IntersectionObserver' in window) {
