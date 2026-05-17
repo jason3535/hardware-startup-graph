@@ -6,6 +6,28 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "anthropic-900b-valuation-ipo-horizon-2026-05-17",
+    "date": "2026-05-17",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Anthropic 投前估值 9000 亿美元超 OpenAI,最早 10 月 IPO",
+    "body": "5月15日,Anthropic 据报已敲定 Dragoneer/Greenoaks/红杉/Altimeter 领投的新一轮融资条款:融资 300 亿美元,投前估值 9000 亿美元,超越 OpenAI 最新估值 8520 亿美元——继年化收入反超后,在资本市场估值上也完成超越,成为全球估值最高私人科技公司。标志性数字:Claude Code 单品年化收入已达 25 亿美元,是最大单一变现引擎。此轮后 IPO 最早或在 2026 年 10 月开启,将成为第一家上市的主要 AI 实验室;但投行内部估算上市估值约 4000-5000 亿美元,与私募估值之间存在 40-55% 折价。对学者/创业者的实操含义:Anthropic 三年从「OpenAI 安全出走派」到全球估值最高私人 AI 公司,核心路径是工具链先行——Claude Code/API 先锁定企业和开发者客户,而非先融资建基础模型;中国 AI 学者若要走同类路线,优先把「给工程师用的工具」做到千万用户规模,再讲基础模型故事",
+    "persons": [],
+    "sources": [
+      {
+        "label": "Bloomberg Anthropic $30B at $900B 2026-05-12",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-12/anthropic-in-talks-to-raise-30-billion-at-900-billion-valuation"
+      },
+      {
+        "label": "新浪科技 Anthropic 敲定融资条款 2026-05-15",
+        "url": "https://finance.sina.com.cn/tech/roll/2026-05-15/doc-inhxyimq3306790.shtml"
+      }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
