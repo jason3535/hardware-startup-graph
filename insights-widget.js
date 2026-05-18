@@ -6,6 +6,21 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "figure-ai-autonomy-theater-2026-05-16",
+    date: "2026-05-16",
+    type: "non-consensus",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "Figure AI 仓库直播翻车:「全自主」神话遭遥控质疑",
+    body: "5月15日,Figure AI在YouTube开启33小时不间断直播,三台Figure 03机器人在真实仓库「全自主」分拣包裹,官宣零人类介入、使用自研Helix 02系统。全网观看超200万人次,累计分拣逾4万件。然而进入第二天,观众截图质疑:机器人抓取动作约0.5秒固定延迟、无故「摸头」、卡壳后精准复位、时段间流畅度差异符合人类疲劳规律——所有特征指向操作员实时遥控。Figure AI坚决否认,但拒绝公开操作日志并关闭部分评论区,质疑持续升级。行业含义大于公司本身:Figure AI估值390亿美元,核心叙事是「自主度可替代人力」;自主度可信度动摇,机构估值模型与客户续签同步承压——且这种压力正向整个人形机器人赛道蔓延。对创业者的实操含义:「自主度」叙事需要配套可被第三方审计的量化指标——操作员介入率、人均监控台数、关键环节自主决策胜率——否则任何发布演示都面临同样的公信力危机",
+    persons: [
+      { id: "brettadcock", name: "Brett Adcock(Figure AI)" }
+    ],
+    sources: [
+      { label: "新浪财经 2026-05-16", url: "https://finance.sina.com.cn/stock/t/2026-05-16/doc-inhyahap2772042.shtml" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
