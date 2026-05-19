@@ -6,6 +6,37 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "unitree-gd01-mecha-ipo-narrative-2026-05-19",
+    "date": "2026-05-19",
+    "type": "non-consensus",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "宇树 GD01 机甲 390 万定价:科创板检查期间的估值叙事",
+    "body": "5 月 12 日,王兴兴亲自爬进 GD01 载人变形机甲驾驶舱,一拳砸穿砖墙,马斯克 X 评论「cool」。GD01 定价 390 万元起,重约 500 千克,支持双足/四足形态切换,AI 姿态控制延迟 ≤10ms。宇树同期推进科创板 IPO(募资 42 亿元、发行市值预计 420 亿元),并自 4 月 1 日被随机抽中现场检查(通常耗时 1-2 个月)。宇树 2025 年营收 17 亿元(同比+335%),毛利率 60%,G1 出货超 5500 台,G1 零售约 1.6 万元——GD01 是 G1 定价的 240 倍。在监管现场检查进行中高调发布超高端产品并制造全球舆论热点,是非常规 IPO 策略。行业含义:宇树的叙事逻辑是用一款极端产品将自己从「低价出货量第一」升格为「平台级科技公司」,把估值参照系从工业设备 PE 倍数升格为科技平台 PS 倍数——IPO 审核方和 A 股投资人看的是同一个信号。对硬件创业者的实操含义:融资或 IPO 前推出超高定价旗舰可以重置估值锚点,但必须有真实底层技术支撑——宇树 GD01 的说服力来自 G1 已在 5500 台上验证的运动控制技术,机甲只是把已有能力封装进了更贵的外壳",
+    "persons": [
+      {
+        "id": "wangxingxing",
+        "name": "王兴兴(宇树科技)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "IT之家 宇树GD01载人机甲390万起 2026-05-12",
+        "url": "https://www.ithome.com/0/949/213.htm"
+      },
+      {
+        "label": "21经济网 宇树科创板被抽中现场检查 2026-04-02",
+        "url": "https://www.21jingji.com/article/20260402/herald/b54e7671094e69f02c5cf1dda3b33b97.html"
+      },
+      {
+        "label": "证券时报 宇树IPO受理420亿估值 2026-03-22",
+        "url": "https://www.stcn.com/article/detail/3735182.html"
+      }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
