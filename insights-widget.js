@@ -6,6 +6,25 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "karpathy-anthropic-pretraining-2026-05-20",
+    "date": "2026-05-20",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Karpathy 加入 Anthropic 预训练:「用 Claude 训练 Claude」赌注正式落地",
+    "body": "5.19 Karpathy 宣布加入 Anthropic，在 Nick Joseph 预训练团队下组建「用 Claude 辅助预训练实验」新团队，Eureka Labs 教育创业同步暂停。Karpathy 是 OpenAI 2015 联创之一，历经 Tesla FSD 视觉团队与 YouTube 千万量级 LLM 课程，是业内极少数同时具备 LLM 理论理解与大规模训练工程经验的研究员。加入职能的非共识：不是常规研究员角色，而是让 Claude 辅助设计自身下一代预训练流程——数据筛选、实验调度、checkpoint 评估全链 AI 驱动。行业含义：两周前 GPT-5.5 在 Terminal-Bench 2.0 以 82.7% vs 69.4% 大幅领先 Claude Opus 4.7；Anthropic 没有选择「堆算力追赶」，而是押注「研究效率」——用成熟 Claude 缩短预训练实验周期，以效率替代算力堆料。若 18-24 个月内验证，将挑战「大算力预算必然赢」的行业共识，并改写顶尖研究员与算力的配置逻辑。对使用 Claude API 的 AI 硬件创业团队实操含义：Karpathy 此刻的工作直接决定 2027-2028 年 Claude 能力上限，这是比当前 benchmark 差距更值得长线盯紧的供应商信号",
+    "persons": [
+      { "id": "karpathy", "name": "Andrej Karpathy(OpenAI→Tesla→Eureka Labs→Anthropic)" },
+      { "id": "damodei", "name": "Dario Amodei(Anthropic)" }
+    ],
+    "sources": [
+      { "label": "TechCrunch Karpathy joins Anthropic 2026-05-19", "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" },
+      { "label": "CNBC Anthropic hires Karpathy 2026-05-19", "url": "https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
