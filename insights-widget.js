@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "karpathy-joins-anthropic-pretraining-2026-05-21",
+    "date": "2026-05-21",
+    "type": "non-consensus",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Karpathy 主动选 Anthropic,押宝「用 Claude 训练 Claude」实验",
+    "body": "5月19日，Karpathy 宣布全职加入 Anthropic 预训练团队，汇报对象为 Nick Joseph（预训练负责人），任务是创立一支新团队——专门用 Claude 本身来加速预训练研究。他在此之前已明确谢绝重返 OpenAI，主动选择 Anthropic。职业路径：OpenAI 联创（2015-2017）→ Tesla AI 总监（2017-2022）→ 短暂重返 OpenAI → 创办 Eureka Labs（2024）→ 全职加入 Anthropic（2026.5.19）。行业含义：Karpathy 是 OpenAI 2015 原班联创中影响力最大的研究者之一，他的选择历来具有指向性。「用 Claude 加速 Claude 预训练」不是隐喻——这是工业规模首次明确尝试 AI 自我迭代训练：若方法论跑通，Anthropic 的训练效率优势将指数级放大。他本人说「未来几年是 LLM 前沿最关键时期」，但选了 Anthropic 而不是资源更雄厚的 OpenAI，说明在研究者视角里 Anthropic 的技术路线已经更有吸引力。对中国 AI 创业者的实操含义：Claude 基础能力在 12-18 个月内大概率出现非线性跃升，现在布局 Claude API 底层产品的窗口期比预期要短",
+    "persons": [
+      { "id": "karpathy", "name": "Andrej Karpathy" },
+      { "id": "damodei", "name": "Dario Amodei(Anthropic)" }
+    ],
+    "sources": [
+      { "label": "TechCrunch Karpathy joins Anthropic 2026-05-19", "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" },
+      { "label": "CNBC Anthropic hires Karpathy 2026-05-19", "url": "https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html" },
+      { "label": "Axios Karpathy picks Anthropic over OpenAI 2026-05-19", "url": "https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
