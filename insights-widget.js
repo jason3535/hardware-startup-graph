@@ -6,6 +6,23 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "hark-series-a-chip-quartet-2026-05-21",
+    "date": "2026-05-21",
+    "type": "funding",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "Hark $7亿A轮:Nvidia/AMD/Intel/Qualcomm四大芯片巨头同押一家未发布初创",
+    "body": "Brett Adcock(Figure AI 创始人)于 5 月 21 日宣布 Hark 完成 Series A 融资 7 亿美元,投后估值 60 亿美元,由 Parkway Venture Capital 领投,参投方包括 Nvidia、AMD Ventures、Intel Capital、Qualcomm Ventures、Salesforce Ventures、ARK Invest 等。Hark 于 2025 年底以 Adcock 自有资金 1 亿美元创立,目标是打造「通用 AI 界面」——先推 AI 模型,再推专属 AI 原生硬件设备。公司至今几乎不公开任何技术细节,尚无可演示产品。\n\nNvidia、AMD、Intel、Qualcomm 四家芯片厂商同时出现在同一个 A 轮名单里,这在半导体行业 20 年来极为罕见——它们平时是直接竞争对手,过去只有在一个新硬件类别被集体判断为「将驱动全行业芯片需求」时才会共同押注同一家公司。这意味着芯片生态认为「AI 原生界面硬件」将成为一个与智能手机平级的新消耗场景,无论谁最终赢得终端用户,四家都会拿到芯片订单。这是 Hark 没有产品、没有公开技术路线,却能在 A 轮拿到 60 亿美元估值的底层逻辑。\n\n对硬件创业者实操含义:做「AI 原生界面硬件」方向的中国团队需要注意,Hark 拿到四大芯片厂商的早期战略关系后,竞争者获取差异化芯片资源的空间将收窄——这是芯片供应链上的隐性进入壁垒,而不只是资本壁垒。在 Hark 产品正式发布(预计 2026 年夏)之前,是建立直接芯片合作关系的最后窗口期",
+    "persons": [
+      { "id": "brettadcock", "name": "Brett Adcock(Hark · ex-Figure AI)" },
+      { "id": "jensenhuang", "name": "Jensen Huang(Nvidia 战投)" }
+    ],
+    "sources": [
+      { "label": "TechCrunch 2026-05-21", "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/" },
+      { "label": "Bloomberg 2026-05-21", "url": "https://www.bloomberg.com/news/articles/2026-05-21/ai-hardware-startup-hark-valued-at-6-billion-in-new-funding-round" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
