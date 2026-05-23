@@ -6,6 +6,33 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "hark-chip-giants-series-a-2026-05-23",
+    "date": "2026-05-23",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "Hark A 轮 60 亿美元:英伟达/AMD/英特尔/高通罕见同场押注",
+    "body": "2026年5月21日，Brett Adcock 创立的个人AI公司 Hark 完成7亿美元A轮融资，投后估值60亿美元。本轮最特殊之处是投资人名单：英伟达、AMD、英特尔、高通四大芯片巨头同时押注，在近年行业史上极为罕见——这四家彼此竞争、各有独立战投逻辑，很少同时押注同一早期标的。唯一合理解释：谁都输不起「下一个计算平台」的早期入场券。Hark 成立不足6个月、团队仅70人、尚无量产产品，60亿美元估值是纯粹的「占位溢价」，买的是「个人AI硬件成为下一个iPhone级平台时不被边缘化」的权利。Brett Adcock 同时担任人形机器人公司 Figure AI 的 CEO，还自掏1亿美元创立 Hark，他的实际判断是：具身机器人与个人AI终端是本十年两条并行的硬件主赛道，互不替代。芯片巨头联合战投意味着 Hark 硬件架构大概率将获得下一代芯片的定向优化支持（就像当年移动处理器为 iOS 专项优化），这是比分析师报告更有说服力的赛道认证信号。对硬件创业者的实操含义：芯片行业「站队」之后下一步是供应链定向绑定，中国团队想布局个人AI终端，与英伟达/高通早期建立供应链关系的窗口期比你以为的短",
+    "persons": [
+      {
+        "id": "brettadcock",
+        "name": "Brett Adcock(Figure/Hark)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Bloomberg 2026-05-21",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-21/ai-hardware-startup-hark-valued-at-6-billion-in-new-funding-round"
+      },
+      {
+        "label": "BusinessWire 官方新闻稿 2026-05-21",
+        "url": "https://www.businesswire.com/news/home/20260521171628/en/Hark-Raises-$700M-Series-A-at-a-$6B-Valuation"
+      }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
