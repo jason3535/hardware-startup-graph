@@ -6,6 +6,23 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "karpathy-joins-anthropic-pretraining-2026-05-24",
+    "date": "2026-05-24",
+    "type": "non-consensus",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Karpathy 暂停 Eureka Labs 加入 Anthropic 预训练 — 顶级研究者逆流的历史先例",
+    "body": "5 月 19 日,Andrej Karpathy 宣布加入 Anthropic 预训练团队,在 Nick Joseph 带领下用 Claude 加速预训练研究,同时明确「暂停」其 2024 年创立、Sequoia 支持的 AI 教育公司 Eureka Labs。这是 AI 顶级研究者「从 founder 返回研究岗」的极罕见逆流:过去 10 年人才流动几乎单向——从实验室出走创业,而非反向。Karpathy 是 OpenAI 2015 年 8 位联创之一、前 Tesla AI 总监,其时机选择本身就是一个信号:GPT-5.5 上月在 agentic coding 基准以 82.7% vs 69.4% 超越 Claude Opus 4.7,Karpathy 判断「未来几年前沿 LLM 的窗口格外紧迫」——这解释了他为何放弃 CEO 位置:预训练竞争窗口比教育创业机会更紧迫。Anthropic 的策略是「用 Claude 加速自身预训练研究」而非单纯砸算力追赶 GPT 系列——这与算力军备竞赛逻辑不同,是人才密度 + 研究飞轮的打法。对中国 AI 创业者的实操含义:Claude 在未来 12-18 个月是预训练迭代最快的模型平台,现在布局 Claude API / Claude Code 生态的团队将比等到模型成熟后再切入早 6 个月以上的生态适应期",
+    "persons": [
+      { "id": "karpathy", "name": "Andrej Karpathy(Anthropic)" },
+      { "id": "damodei", "name": "Dario Amodei(Anthropic)" }
+    ],
+    "sources": [
+      { "label": "Axios Karpathy 加入 Anthropic 预训练团队 2026-05-19", "url": "https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude" },
+      { "label": "CNBC Anthropic hires OpenAI cofounder Karpathy 2026-05-19", "url": "https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-karpathy-former-tesla-ai-lead.html" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
