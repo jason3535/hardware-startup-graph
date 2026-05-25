@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "hark-chip-giants-personal-ai-platform-2026-05-25",
+    "date": "2026-05-25",
+    "type": "non-consensus",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "芯片四巨头史上首次共投 Hark — AI 个人设备平台战开打",
+    "body": "5 月 21 日，Brett Adcock(Figure.AI 创始人)的个人 AI 新创 Hark 完成 7 亿美元 A 轮，估值 60 亿美元，领投 Parkway VC，跟投名单史无前例：Nvidia、AMD Ventures、Intel Capital、Qualcomm Ventures——全球半导体前四大玩家首次共同押注同一家创业公司。芯片公司通常是激烈竞争对手，这次共投打的不是财务回报，而是「设计进入权」(design-in)：Hark 若成为下一代个人 AI 设备的参考平台，谁是原生芯片供应商就等于提前拿到下一轮消费端算力的平台门票——与 Qualcomm 当年在 Android 草创期的卡位逻辑完全一致。Brett Adcock 本人从 Figure.AI 人形机器人转向个人 AI 终端，是本轮最值得解读的创始人信号：他押注 AI 规模化路径在「随身设备」而非「工厂人形」。同赛道三方竞争格局：OpenAI 已以约 65 亿美元收购 Jony Ive 的 io 公司，目标 2026 年 H2 量产；Meta AI 眼镜持续放量。对中国 AI 硬件创业者的实操含义：华为海思、地平线、寒武纪等芯片厂是被严重低估的「战略投资人+供货保障」组合——2026 年端侧 AI 芯片仍紧俏，若你的产品有潜力成为某颗芯片的最大单品出货通道，芯片公司会用股权换供货优先权，这是多数中国硬件团队尚未主动打开的融资与供应链捷径",
+    "persons": [
+      { "id": "brettadcock", "name": "Brett Adcock(Hark · Figure.AI)" }
+    ],
+    "sources": [
+      { "label": "Bloomberg Hark $6B valuation 2026-05-21", "url": "https://www.bloomberg.com/news/articles/2026-05-21/ai-hardware-startup-hark-valued-at-6-billion-in-new-funding-round" },
+      { "label": "TechCrunch Hark $700M Series A 2026-05-21", "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
