@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "anthropic-900b-ipo-gap-2026-05-26",
+    date: "2026-05-26",
+    type: "funding",
+    graphs: ["ai-scholar", "investor"],
+    pinned: false,
+    title: "Anthropic 冲击 9000 亿美元估值,银行家私下预期 IPO 对折",
+    body: "本周 Anthropic 完成逾 300 亿美元新一轮融资,Sequoia/Dragoneer/Altimeter/Greenoaks 各约 20 亿美元共同领投,Founders Fund/General Catalyst 跟投,投后估值超 9000 亿美元,超越 OpenAI(852 亿美元)成史上最高估值私有 AI 公司。Q2 季度收入接近 109 亿美元(折年约 440 亿),ARR 从 2024.12 的 10 亿增至 2026.3 的 300 亿,15 个月 30 倍增速软件史无前例。IPO 最早 2026.10,高盛/摩根大通/摩根士丹利正在接洽。**核心非共识**:中文媒体标题是「全球最高估值 AI 公司」,但西方银行家私下预计 IPO 公开市场估值在 4000-5000 亿美元——较本轮私募折价 50%。底层原因:9000 亿是「战略竞价+算力绑定」溢价而非纯财务定价——Amazon 绑定 AWS、Sequoia 需要 AI 旗舰标的,按 10 倍 ARR 定价 = 4400 亿,按 20 倍 = 8800 亿,只有极端倍数才能撑住 9000 亿;以最后一轮私募价入股者 IPO 当天账面即可能亏损 30-50%。**对 AI/硬件创业者的实操含义**:不要用 Anthropic 私募估值给自己的项目锚定参照系——私募的「战略溢价」不会在公开市场重现;真正可比的参照是 ARR 倍数(10-20 倍),Anthropic 本轮 Q2 单季度收入 109 亿美元才是中国 AI 团队值得追赶的商业化基准",
+    persons: [
+      { id: "damodei", name: "Dario Amodei(Anthropic)" },
+      { id: "daniela", name: "Daniela Amodei(Anthropic)" }
+    ],
+    sources: [
+      { label: "CNBC Anthropic Q2 revenue $10.9B 2026-05-20", url: "https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html" },
+      { label: "TechCrunch Anthropic $900B valuation round 2026-04-30", url: "https://techcrunch.com/2026/04/30/anthropic-potential-900b-valuation-round-could-happen-within-two-weeks/" },
+      { label: "每经网 Anthropic 估值 9000 亿美元 2026-05-24", url: "https://www.nbd.com.cn/articles/2026-05-24/4406471.html" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
