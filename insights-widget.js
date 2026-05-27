@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "hark-brett-adcock-ai-hardware-2026-05-27",
+    date: "2026-05-27",
+    type: "funding",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "Figure AI 创始人 7 亿美元押注「AI 原生个人设备」,四大芯片商联投",
+    body: "5月21日,Figure AI 创始人 Brett Adcock 旗下 Hark 完成 7 亿美元 A 轮融资,投后估值 60 亿美元。本轮 Nvidia、AMD Ventures、Intel Capital、Qualcomm Ventures 四大半导体巨头同台跟投——四家在芯片架构上互为竞争对手,联合押注同一初创在此之前几乎没有先例。Hark 的方向是「个人 AI 平台」:自研多模态模型(语音/文字/视觉/情境记忆)+ 定制硬件终端,目标是「始终在线」的个人 AI 替代手机 App 层,AI 模型 2026 夏先行,硬件设备随后;团队引入前 Apple 工业设计师 Abidur Chowdhury 主导产品形态。更值得关注的信号:Brett Adcock 是 Figure AI(估值 390 亿美元)的创始人,对人形机器人技术现状了解无人能及——他的资本选择是「到你口袋的设备」而非「走进你家的机器人」,是一个内部人对两条路线到达时序的隐性判断。对创业者的实操含义:四大芯片商联投意味着「AI 原生终端」赛道的定制芯片成本将在 18-24 个月内加速下降,现在布局 AI 穿戴/AI 个人设备有时间窗口,但竞争门槛将随成本下降被快速拉高",
+    persons: [
+      { id: "brettadcock", name: "Brett Adcock(Figure AI / Hark)" }
+    ],
+    sources: [
+      { label: "Bloomberg Hark $6B valuation 2026-05-21", url: "https://www.bloomberg.com/news/articles/2026-05-21/ai-hardware-startup-hark-valued-at-6-billion-in-new-funding-round" },
+      { label: "TechCrunch Hark $700M Series A 2026-05-21", url: "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
