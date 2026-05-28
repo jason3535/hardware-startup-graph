@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "karpathy-joins-anthropic-pretraining-2026-05-28",
+    "date": "2026-05-28",
+    "type": "non-consensus",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Karpathy 放弃创业加盟 Anthropic,押注「元研究飞轮」",
+    "body": "5月19日，Andrej Karpathy（OpenAI 联创、前特斯拉 AI 总监）加入 Anthropic 预训练团队，在 Nick Joseph 下组建「用 Claude 自身加速 Claude 预训练研究」的新团队，Eureka Labs 同步暂停，称「日后重启」。背景：一个月前 GPT-5.5 以 Terminal-Bench 82.7% vs 69.4%、token 效率优 72% 大幅压制 Claude Opus 4.7，行业普遍认定 Anthropic 商业领先（ARR ≈ $30B）但技术承压。非共识判断：Karpathy 被委以「元研究飞轮」核心任务——让 Claude 提出实验设计、写训练代码、分析 ablation，把研究周期从数周压到数天。这条路线若跑通，下一代 Claude 的代际迭代周期将从 12-18 个月压至 6-9 个月，代表 Anthropic 押注「用智能追赶」而非「用算力追赶」的差异化路径——前者边际成本更低，后者需要 Colossus 规模算力。Karpathy 为此暂停自己的创业公司，是当前最有说服力的技术路线背书。对 AI 创业者的实操含义：底层模型选型不止看当前 benchmark，更应评估「哪家实验室迭代飞轮最快」——这决定了 6-12 个月后团队的技术债务归属",
+    "persons": [
+      { "id": "karpathy", "name": "Andrej Karpathy(Anthropic)" },
+      { "id": "damodei", "name": "Dario Amodei(Anthropic)" }
+    ],
+    "sources": [
+      { "label": "TechCrunch Karpathy joins Anthropic 2026-05-19", "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" },
+      { "label": "CNBC Anthropic hires Karpathy 2026-05-19", "url": "https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html" },
+      { "label": "Axios Karpathy-Anthropic 2026-05-19", "url": "https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
