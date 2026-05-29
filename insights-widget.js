@@ -6,6 +6,26 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "anthropic-series-h-965b-2026-05-28",
+    "date": "2026-05-28",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Anthropic Series H 融 650 亿:估值近万亿超越 OpenAI",
+    "body": "5月28日,Anthropic正式关闭Series H融资,募集650亿美元(含亚马逊等超算方战略投入150亿),投后估值965亿美元——创AI史上最大私募融资纪录,首次超越OpenAI($852亿)成全球最高估值私营AI公司。ARR从一年前约40亿美元涨至470亿美元(约12倍增长),核心驱动是企业编程工具(Claude Code + API)而非消费App。Dario Amodei 2021年携7人从OpenAI出走,长期被视为「保守安全派」;5年后以近万亿估值完成了估值意义上的反超。本轮LP结构变化值得关注:Altimeter/Dragoneer/Coatue等tech growth基金大举进场,资本已按成熟科技公司(而非研究Lab)逻辑定价——这是IPO前的最后私募。融资额从消息泄露时的「300亿」最终翻至650亿,说明超额认购显著。对中国AI创业者的实操含义:企业编程工具是当前AI最高ARR密度赛道;$965亿估值锚定意味着做代码AI或AI工具集成的团队,在未来融资谈判中将面对一个被永久性抬高的估值基准",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei(Anthropic)" },
+      { "id": "daniela", "name": "Daniela Amodei(Anthropic)" }
+    ],
+    "sources": [
+      { "label": "TechCrunch Anthropic Series H 2026-05-28", "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" },
+      { "label": "Anthropic 官方公告 Series H", "url": "https://www.anthropic.com/news/series-h" },
+      { "label": "Fortune Anthropic $965B 2026-05-28", "url": "https://fortune.com/2026/05/28/anthropic-series-h-valuation-ipo-unicorn/" }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
