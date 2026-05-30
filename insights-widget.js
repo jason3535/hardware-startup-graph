@@ -6,6 +6,326 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "unitree-ipo-embodied-mass-production-2026",
+    "date": "2026-05-29",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "宇树 66 天冲上会、420 亿估值 — 人形机器人的「IPO 元年」其实是一场出货量证伪赛",
+    "body": "上交所 5 月 25 日晚公告:上市审核委员会定于 **6 月 1 日**审议宇树科技科创板首发,从 3 月 20 日受理到上会仅 **66 天**,保荐中信证券,拟募资 **42.02 亿元**,初始发行市值约 **420 亿元**,冲刺 A 股「人形机器人第一股」。基本面已被招股材料坐实:营收从 2023 年 1.59 亿、2024 年 3.92 亿,跃升至 2025 年 **16.99 亿**(同比 +330%),归母净利 2025 年约 **2.78 亿**,2025 年人形机器人出货 **5500+ 台、全球占比约 32.4%**,王兴兴合计控制 **68.78%** 表决权。同期智元披露 2025 年出货 **5100+ 台**、销售额破 10 亿,亦在年内排队上市名单。**非共识判断**:外界把 2026 读成「人形机器人量产元年」,但 IPO 真正考的不是『能不能量产』,而是『卖出去的是谁在买、买去干嘛』——宇树的人形出货里,科研院校/展演/本体开发者占了大头,**真正进厂干活、按节拍计件的闭环订单极少**。当一个赛道靠『卖给同行做开发平台』撑出 17 亿营收,这是供给侧繁荣,不是需求侧验证。**实操含义**:(1)创业者别再挤『做更便宜的本体』——本体价格战在宇树上市后会加速,毛利 60% 是上市前的窗口期数字,不可持续;真正稀缺的是『单一场景跑通付费闭环』的 know-how;(2)投资人看具身项目,把『出货量』指标拆成『B 端付费复购 vs 科研/开发者一次性采购』两栏,后者占比高的估值要打折;(3)读者评估这波 IPO,盯 6 月 1 日上会问询函里关于『客户集中度』和『终端落地场景』的追问,那才是监管替市场做的尽调。",
+    "persons": [
+      {
+        "id": "wangxingxing",
+        "name": "王兴兴(宇树)"
+      },
+      {
+        "id": "pengzhihui",
+        "name": "彭志辉(智元)"
+      },
+      {
+        "id": "laijie",
+        "name": "来杰(星尘智能)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "新浪财经:宇树科技科创板 IPO 将于 6 月 1 日上会，计划募资 42 亿元(2026-05-26)",
+        "url": "https://finance.sina.com.cn/tech/roll/2026-05-26/doc-inhzequy1609664.shtml"
+      },
+      {
+        "label": "证券时报:净利 3 亿估值 420 亿，宇树冲刺 IPO(2026)",
+        "url": "https://www.stcn.com/article/detail/3735182.html"
+      },
+      {
+        "label": "新浪科技:智元机器人 2025 年出货量超 5100 台(2026-01-05)",
+        "url": "https://finance.sina.com.cn/tech/digi/2026-01-05/doc-inhfhavr6558529.shtml"
+      }
+    ]
+  },
+  {
+    "id": "ai-glasses-platform-war-google-fall-2026",
+    "date": "2026-05-29",
+    "type": "trend",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "谷歌把 AI 眼镜拆成「音频先发、显示后置」— 这给中国 31 款混战定了节奏",
+    "body": "5 月 19 日 Google I/O 2026,谷歌与三星联合首秀 Android XR 智能眼镜,联名 **Gentle Monster 与 Warby Parker** 两个眼镜品牌,Gemini 驱动实时翻译/导航/通知摘要,**同时兼容 Android 与 iOS**;关键在于产品被明确切成两档:**先上市的是『音频眼镜』(今秋发售)**,带显示的『display glasses』仍在研发、留待后续。几乎同窗口,中国侧密集开火:华为(自研芯片+小艺)、雷鸟 5 月 27 日 GT 系列(1899 元起)、科大讯飞 5 月 28 日发布支持 122 种语言翻译的 AI 眼镜、XREAL 轻量款,行业统计 **2026 年已亮相 31 款**,国内 Q1 消费级 AI/AR 设备销量 **20.2 万台、同比 +108%**。**非共识判断**:谷歌『音频先、显示后』不是技术妥协,而是给整个品类定了一条隐性分界线——**真正能放量的是『没有显示、靠语音+拍摄的轻量眼镜』,而堆光波导显示的 AR 眼镜会卡在重量、价格、续航三角里继续做极客玩具**。国内大量产品集中赌显示,方向恰好踩反了今秋的出货主力。**实操含义**:(1)硬件创业者做 AI 眼镜,先问『砍掉显示能不能成立』——若产品价值 80% 来自语音助手+第一视角拍摄,就别背光波导的 BOM 和重量;(2)差异化别再卷硬件参数,卷『场景闭环』(烹饪/骑行/视障/翻译)和与手机 OS 的 Agent 打通,谷歌兼容 iOS 这一步已把『生态绑定』护城河填平;(3)读者判断一家 AI 眼镜公司能否活过 2027:看它有没有自有大模型/Agent 入口,纯做 ODM 硬件的会被巨头『眼镜即 Gemini 终端』的定位碾平利润。",
+    "persons": [
+      {
+        "id": "carlpei",
+        "name": "Carl Pei(Nothing)"
+      },
+      {
+        "id": "jesselyu",
+        "name": "Jesse Lyu(Rabbit)"
+      },
+      {
+        "id": "xuchi",
+        "name": "徐驰(XREAL)"
+      },
+      {
+        "id": "wangxiaoyi",
+        "name": "王晓宇(Even Realities)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Google Blog:Intelligent eyewear with Gemini is coming this fall(2026-05-19)",
+        "url": "https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/"
+      },
+      {
+        "label": "证券时报:两月内，全球巨头密集发布 AI 眼镜(2026-05)",
+        "url": "https://www.stcn.com/article/detail/3931875.html"
+      },
+      {
+        "label": "VR 陀螺:2026 年 AI 眼镜盘点——31 款已亮相(2026)",
+        "url": "https://www.vrtuoluo.cn/545152.html"
+      }
+    ]
+  },
+  {
+    "id": "thinking-machines-interaction-models-full-duplex",
+    "date": "2026-05-29",
+    "type": "trend",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Thinking Machines 用「交互模型」绕开 GPT-Realtime — Murati 选了一条不和 OpenAI 正面打的路",
+    "body": "2026 年 5 月 13 日,Mira Murati 的 Thinking Machines Lab 放出研究预览版「交互模型(interaction models)」,核心论点是:**当前所有对话 AI 的「轮次制(turn-based)」是底层瓶颈**——模型必须等用户说完一整句、靠外挂 VAD 切分语音边界,再拼接多个组件输出。TML 的做法是把输入和输出都当成连续流,**以 200 毫秒为一个 micro-turn 块边处理边生成**,音频/视频/文本原生多模态,不再有「轮次边界」。数据:首字延迟 **0.40 秒**,对比 Gemini 0.57 秒、GPT-realtime-2.0 高达 1.18 秒;交互质量基准拿 **77.8 分**,碾压 GPT-realtime-2.0 的 47.8。**非共识判断**:Murati 离开 OpenAI 后第一个公开的技术方向,刻意没去卷「更大更聪明的推理模型」(那是 Pachocki/Brown/Sutskever 的主场),而是攻「人机交互的物理层」——这是一个被所有前沿实验室当作工程细节、却没人当作独立研究范式的缝隙。**全双工、边听边说**这件事,OpenAI 把它当 Realtime API 的一个产品功能,TML 把它当成一个新模型类别从架构层重做。这是典型的「换战场而非换打法」:不在 OpenAI 最强的维度上对耗。**实操含义**:(1)对做语音/陪伴/具身交互的硬件团队,延迟从 1.18 秒降到 0.40 秒是体验质变的门槛——0.4 秒接近人类对话的自然停顿,这会直接重写「AI 玩具/耳机/桌面伴侣」的产品可行性边界;(2)交互模型若跑通,会和世界模型(World Labs)、具身(Abbeel/Levine)形成「感知-交互-行动」的三段拼图,值得提前布点谁在补中间这一段。",
+    "persons": [
+      {
+        "id": "miramurati",
+        "name": "Mira Murati(Thinking Machines)"
+      },
+      {
+        "id": "barretzoph",
+        "name": "Barret Zoph(TML 联创)"
+      },
+      {
+        "id": "schulman",
+        "name": "John Schulman(TML 联创)"
+      },
+      {
+        "id": "justinjohnson",
+        "name": "Justin Johnson(World Labs)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "MarkTechPost — Thinking Machines Lab 推出交互模型(2026-05-13)",
+        "url": "https://www.marktechpost.com/2026/05/13/mira-muratis-thinking-machines-lab-introduces-interaction-models-a-native-multimodal-architecture-for-real-time-human-ai-collaboration/"
+      },
+      {
+        "label": "Semafor — Thinking Machines previews interaction models(2026-05-13)",
+        "url": "https://www.semafor.com/article/05/13/2026/mira-muratis-thinking-machines-previews-interaction-models"
+      }
+    ]
+  },
+  {
+    "id": "deepseek-v4-pro-permanent-price-cut-commoditization",
+    "date": "2026-05-29",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "DeepSeek 把 75% 降价变永久 — 梁文锋在给「前沿模型」这个商品定死价格",
+    "body": "2026 年 5 月 22 日,DeepSeek 宣布 V4-Pro 原定 5 月 31 日到期的 75% 限时降价**不再回滚,直接变成永久标价**——输出从每百万 token 3.48 美元砍到 **0.87 美元**,缓存命中价低到 0.003625 美元,官方口径是「把效率收益直接让给用户」。背景:V4-Pro 是 1.6T 参数 / 49B 激活的 MoE、百万 token 上下文,在 SWE-bench 等 agentic 基准上已贴着 GPT-5.5 和 Claude Opus 4.7。InfoWorld 援引分析师 Neil Shah:**「Anthropic 和 OpenAI 那种高毛利、高消耗的 token 定价,正变得越来越难自圆其说。」****非共识判断**:市场把这读成「又一次价格战」,但更准确的判断是——**梁文锋在做的不是降价促销,而是给「前沿能力」这个商品锚定一个全球公开的天花板价**。一旦一个开放权重、能力贴近 Opus 的模型把输出价格压到 0.87 美元并承诺永久,闭源厂商就失去了「按消耗量收高价」的叙事合法性,被迫转向「按结果/按价值」收费。这呼应了本图谱此前的判断:**DeepSeek 全本土团队证伪了「必须有 Google 基因才能做一线 AI」**,而这次它进一步证伪「前沿模型必须高毛利」。真正被重新定价的不是 token,是**整个闭源前沿实验室的商业模式假设**。**实操含义**:(1)对中国 AI 应用/硬件创业者,推理成本结构性下台阶——过去因 token 成本不成立的「常驻 Agent / 长上下文陪伴」类产品,毛利模型需要重算;(2)对投资人,闭源前沿实验室的估值锚正在从「模型领先溢价」转向「分发渠道 + 企业信任 + 数据主权」——但反过来,**用境外中国托管 API 的数据主权、IP 泄露、合规风险是真实且未被定价的**,做 To B 落地时这是必须先列清的边界,不能只看单价。",
+    "persons": [
+      {
+        "id": "liangwenfeng",
+        "name": "梁文锋(DeepSeek)"
+      },
+      {
+        "id": "damodei",
+        "name": "Dario Amodei(Anthropic)"
+      },
+      {
+        "id": "dayaguo",
+        "name": "Daya Guo(DeepSeek)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "InfoWorld — DeepSeek V4-Pro 价格战升级(2026-05)",
+        "url": "https://www.infoworld.com/article/4176709/deepseeks-steep-v4-pro-price-cut-escalates-ai-pricing-war.html"
+      },
+      {
+        "label": "apidog — DeepSeek V4-Pro 75% 降价转永久(2026-05)",
+        "url": "https://apidog.com/blog/deepseek-v4-pro-permanent-price-cut/"
+      }
+    ]
+  },
+  {
+    "id": "founders-fund-growth-iv-megafund-concentration-2026",
+    "date": "2026-05-29",
+    "type": "funding",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "Founders Fund 6 个月烧光 46 亿美元、再募 60 亿 — VC 进入「巨型基金 + 7 张支票」时代",
+    "body": "Founders Fund 于 **2026 年 5 月完成 60 亿美元 Growth IV 基金**(约 15 亿来自合伙人自有资金)。真正的信号不是募资额,而是上一只基金的消耗速度:**46 亿美元 Growth III 原计划 2-3 年投完,结果不到 12 个月就烧光**——只投了约 7 家公司,**平均每张支票约 6 亿美元**,主要流向 Anthropic(12.5 亿,$350B 估值)、Anduril(10 亿)、OpenAI、Stripe、Ramp。同期 Anthropic 在 2 月 Series G 募 300 亿、估值冲到 $380B,Founders Fund 是 co-lead 之一;到 **5 月 29 日 Bloomberg 报道其联合创始人身价已各达 80 亿美元**。Accel 也在 4 月募了 50 亿 AI 基金。**非共识判断**:VC 正在从「分散下注 + 等复利」彻底转向「巨型基金 + 极度集中」。当 AI/国防头部公司的入场价以「十亿美元」计价,行业被一句话点破:**开支票的基金规模必须以几百亿美元计,否则只能抢残羹**。这不是周期性繁荣,而是资产类别的结构性分叉——一边是几家 megafund 争夺一只手数得过来的 AI+国防公司,另一边是所有中小基金在完全不同的市场里玩。**实操含义**:(1)对硬件/AI 创业者:头部公司之外,晚期成长轮的『定价权』已被 5-6 家巨型基金垄断,募晚期钱要么进入这个名单的视野,要么彻底换打法走战略投资/产业资本;(2)对中国 GP:这种『单 deal 6 亿美元』的弹药密度国内几乎无人能对标,中国晚期 AI 资产的定价权正系统性外流给美元 megafund;(3)国防科技(Anduril/Trae Stephens 路线)已和 AI 并列成为 megafund 唯二的集中赛道。",
+    "persons": [
+      {
+        "id": "peterthiel",
+        "name": "Peter Thiel(Founders Fund)"
+      },
+      {
+        "id": "traestephens",
+        "name": "Trae Stephens(Founders Fund / Anduril)"
+      },
+      {
+        "id": "joshkushner",
+        "name": "Josh Kushner(Thrive)"
+      },
+      {
+        "id": "samaltman",
+        "name": "Sam Altman(OpenAI)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch — Founders Fund nears $6B close for latest growth fund(2026-03-09)",
+        "url": "https://techcrunch.com/2026/03/09/founders-fund-nears-6-billion-close-for-latest-growth-fund-sources-say/"
+      },
+      {
+        "label": "Anthropic — raises $30 billion Series G at $380B post-money(2026-02-12)",
+        "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation"
+      },
+      {
+        "label": "Bloomberg — Anthropic Co-Founders Worth $8 Billion Each(2026-05-29)",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-29/anthropic-co-founders-worth-8-billion-each-after-funding-round"
+      }
+    ]
+  },
+  {
+    "id": "china-embodied-robotics-cvc-deployment-capital-2026",
+    "date": "2026-05-29",
+    "type": "non-consensus",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "中国具身机器人融资结构变了:领投人正在从 VC 换成「会下单的产业资本」",
+    "body": "2026 年 5 月,中国人形机器人 Robotera(星动纪元)宣布完成**超 2 亿美元新一轮融资,由顺丰集团(SF Group)领投**,红杉中国、IDG、高瓴、CICC 等跟投——这距其 3 月 1.43 亿美元战略融资仅两个月,且『认购需求超过原定目标』。关键不在金额,而在**领投人身份**:顺丰既是领投股东,**又是 Robotera 的部署客户**——后者已在中国邮政、顺丰超过 10 个物流中心运行人形机器人,Q2 千台级交付、增长超 300%、核心零部件 95% 自研。同期 Vbot 完成 7300 万美元 Pre-A(东方富海/华泰紫金领投,上汽尚颀跟投)。Crunchbase 数据:**中国已占全球机器人风险投资的 43% 以上**。**非共识判断**:中国具身赛道的资本结构正在和美国 AI 大模型相反方向演化——美国是『纯财务 megafund 集中下注几家公司』,中国是『产业资本/CVC(顺丰、上汽、小米、字节)既出钱又给订单又给场景』。**真正定价这些公司的不再是 VC,而是它们的下游买家**。这背后是中国机器人赛道已越过『讲故事融早期』阶段,跳到『拼量产+真实交付』阶段——能给出物流/汽车/电子真实订单的产业方,拿到了比纯 VC 更便宜的份额和更深的护城河。**实操含义**:(1)中国具身创业者融资时,一个会下单的战略股东(物流/车企/3C)价值远高于同等金额的财务 VC——它同时解决了资金、场景验证和量产订单三件事;(2)对纯财务 VC:在中国具身赛道,不绑定产业方就只能做『跟投』,领投权和定价权已被 CVC 拿走;(3)对投资人:筛选标的的核心指标从『技术 demo』转向『真实交付量 + 产业方订单』,没有下游 CVC 背书的早期具身项目,后续轮次估值会被系统性压制。",
+    "persons": [
+      {
+        "id": "shennp",
+        "name": "沈南鹏(红杉中国)"
+      },
+      {
+        "id": "zhanglei",
+        "name": "张磊(高瓴)"
+      },
+      {
+        "id": "leijun",
+        "name": "雷军(小米/顺为)"
+      },
+      {
+        "id": "zhuxiaohu",
+        "name": "朱啸虎(GSR)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "The AI Insider — China's Robotera Raises Over $200M(2026-05-08)",
+        "url": "https://theaiinsider.tech/2026/05/08/chinas-humanoid-robot-maker-robotera-raises-over-usd-200m-in-new-funding-round/"
+      },
+      {
+        "label": "The AI Insider — Chinese Humanoid Robot Startup Vbot Raises $73M Pre-A(2026-05-11)",
+        "url": "https://theaiinsider.tech/2026/05/11/report-chinese-humanoid-robot-startup-vbot-raises-usd-73m-in-pre-a-funding/"
+      },
+      {
+        "label": "Crunchbase News — Embodied AI Fuels Record Robotics Funding In China",
+        "url": "https://news.crunchbase.com/robotics/embodied-ai-fuels-record-funding-china-ipo-momentum-builds/"
+      }
+    ]
+  },
+  {
+    "id": "figma-design-agent-canvas-collapses-tool-stack-2026",
+    "date": "2026-05-29",
+    "type": "trend",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "Figma 把 Agent 塞进画布:5 月这两个版本,正在抹掉「设计师→工程」那道墙",
+    "body": "2026 年 5 月 Figma 连发两枚关键版本:**5 月 20 日上线原生 Design Agent**——直接在画布里用自然语言生成/改稿、批量编辑、且『开箱即遵守设计系统』;**5 月 28 日 Figma Make 接上本地代码库**——可在具体元素上做上下文 prompt,AI coding agent 直接改对应代码、自动 commit 并开 PR,**全程不碰终端**。这两步合起来,把过去『设计稿 → 标注 → 工程实现』三段流水线压成一段。**非共识判断**:多数人把这读成『Figma 又加了点 AI 功能』,真正的变化是**画布本身从『交付物』变成了『可执行的源代码』**——设计师产出的不再是给别人翻译的图,而是直接生效的系统。这恰好印证了 Cursor 把设计师(Ryo Lu)拉进去做编辑器审美、以及 Jordan Singer 一类『会写 prompt 的设计师』早就在做的事:工具不再分『设计工具』和『开发工具』,只分『能直接改产品』和『不能』。**实操含义**:(1)纯做高保真静态稿、靠『还原度』吃饭的中段设计师,价值会被这条流水线直接吃掉——画布即代码后,『画得像』不再稀缺;(2)真正涨价的是两端能力——上游的**系统判断力**(定义组件/约束/设计系统,Agent 才有『开箱即遵守』的对象)和下游的**代码素养**(能 review AI 开的 PR);(3)团队配置上,『设计 + 前端』两个工位正在合并成一个『产品工程师』工位,设计 leader 应提前按这个新工位重排招聘与晋升标准,而不是继续按交付像素招人。",
+    "persons": [
+      {
+        "id": "ryolu",
+        "name": "Ryo Lu(Cursor 设计)"
+      },
+      {
+        "id": "jordansinger",
+        "name": "Jordan Singer"
+      },
+      {
+        "id": "karrisaarinen",
+        "name": "Karri Saarinen(Linear)"
+      },
+      {
+        "id": "scottbelsky",
+        "name": "Scott Belsky"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Figma Newsroom — Design agent / Figma Make on local code(2026-05)",
+        "url": "https://www.figma.com/newsroom/"
+      },
+      {
+        "label": "Figma — Release notes roundup: May 2026",
+        "url": "https://help.figma.com/hc/en-us/articles/40219873508247-Release-notes-roundup-May-2026"
+      }
+    ]
+  },
+  {
+    "id": "reddot-2026-team-of-year-vs-typeface-anniversary-2026",
+    "date": "2026-05-29",
+    "type": "non-consensus",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "5 月设计圈两个奖项信号:工业设计奖给「团队」,字体行业奖给「时间」",
+    "body": "2026 年 5 月,设计两个子领域几乎同时发出耐人寻味的信号。工业设计端:**5 月 19 日,爱普生(Epson)拿下 Red Dot『Design Team of the Year 2026』**——这是该荣誉自 2000 年设立以来,**仅有的第二家日本公司**(第一家是 Sony)。字体端:**5 月,Gotham 满 25 岁**,Monotype 以 Sara Soskolne 操刀的 **Gotham Variable** 纪念——把原本庞大的家族合并成单文件可变架构、新增 54 个中间字重并扩展越南语/西里尔字符。**非共识判断**:把这两端放一起看,会发现设计行业的『价值计价单位』彻底分叉——**工业设计奖的是『团队的系统能力』(一家公司常年稳定输出),字体行业奖的是『单个作品穿越时间的复利』(一套 2000 年的字,25 年后还在被重做、还在被全世界用)**。前者是组织资本,后者是作品资本,两者都不是『天才单点爆发』。这与 AI/硬件赛道『年轻团队单点突破』的叙事正相反。**实操含义**:(1)想进工业设计的人,别追『个人爆款』,要进一个有 20 年设计语言沉淀的组织系统(爱普生、Sony 这类体系),个人成长曲线挂靠在组织复利上;(2)做字体/视觉系统的人,真正的资产是『能被持续重制的底层结构』——Gotham 的可变化改造证明,**一套好的字形骨架 25 年后仍在产生现金流**,这是设计圈少有的、不被 AI 生成稀释的长尾资产;(3)对想做设计工具/AI 的人:Red Dot 仍把最高荣誉给『人组成的团队』而非『最优产出』,说明审美判断的可信度依旧绑定在长期一致的人身上,这正是 AI 设计工具最难替代的护城河。",
+    "persons": [
+      {
+        "id": "tobiasfrerejones",
+        "name": "Tobias Frere-Jones(Gotham 原作者)"
+      },
+      {
+        "id": "jonathanhoefler",
+        "name": "Jonathan Hoefler"
+      },
+      {
+        "id": "naotofukasawa",
+        "name": "Naoto Fukasawa"
+      },
+      {
+        "id": "kenyahara",
+        "name": "Kenya Hara"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Epson — Wins Red Dot: Design Team of the Year 2026(2026-05-19)",
+        "url": "https://corporate.epson/en/news/2026/260519.html"
+      },
+      {
+        "label": "Creative Boom — The best new typefaces for May 2026(Gotham 25th)",
+        "url": "https://www.creativeboom.com/resources/the-best-new-typefaces-for-may-2026/"
+      }
+    ]
+  },
+  {
     "id": "hardware-founders-narrow-4-conditions",
     "date": "2026-05-17",
     "type": "non-consensus",
@@ -2336,7 +2656,7 @@ body.has-insights #graph-container::after {
             <button class="insight-share-btn" type="button" data-share-id="${escapeAttr(item.id)}" title="分享为图片">↗ 分享</button>
           </div>
         </div>
-        <p class="insight-card-body">${escapeHtml(item.body)}</p>
+        <p class="insight-card-body">${escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')}</p>
         ${personChips ? `<div class="insight-card-row"><span class="insight-card-label">相关</span>${personChips}</div>` : ''}
         ${sourceChips ? `<div class="insight-card-row"><span class="insight-card-label">来源</span>${sourceChips}</div>` : ''}
       </article>
