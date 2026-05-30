@@ -54,8 +54,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "智能硬件创业图谱",
+  "alternateName": "Hardware Startup Graph",
+  "description": "中国 AI 硬件创业的 135 位创始人 / 公司关系图谱,含 245 条关系(大疆系、华为天才少年、具身智能、AR 眼镜、消费硬件等),双语(中/英)简介、融资历程与人脉网络。",
+  "url": "https://hardware.jasonlin.tech/",
+  "creator": {
+    "@type": "Person",
+    "name": "Jason Lin",
+    "url": "https://jasonlin.tech"
+  },
+  "inLanguage": [
+    "zh-CN",
+    "en"
+  ],
+  "keywords": [
+    "AI硬件",
+    "硬件创业",
+    "具身智能",
+    "机器人创业",
+    "大疆系",
+    "华为天才少年",
+    "AR眼镜",
+    "智能硬件图谱",
+    "Hardware Startup"
+  ],
+  "isAccessibleForFree": true,
+  "creativeWorkStatus": "Published",
+  "variableMeasured": [
+    "person",
+    "organization",
+    "relationship",
+    "milestone"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://graph-mcp.992978142.workers.dev/mcp",
+      "description": "Read-only MCP (Model Context Protocol) endpoint — query every person, bilingual bio and relationship from any AI client."
+    }
+  ]
+}
+</script>
 
-<script defer src="https://cloud.umami.is/script.js" data-website-id="d325eb73-0d8f-4529-aa76-f32ebfd92226"></script>
+
 <script defer src="https://cloud.umami.is/script.js" data-website-id="d325eb73-0d8f-4529-aa76-f32ebfd92226"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
@@ -2803,5 +2849,64 @@ applyLanguage = function(lang) {
 </script>
 <!-- ===== /MCP Connect Badge ===== -->
 
+<!-- ===== Share Person (deep-link) ===== -->
+<style>
+#share-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(12px);z-index:3000;display:flex;align-items:center;gap:7px;padding:10px 16px;border-radius:12px;background:rgba(28,28,30,0.94);border:0.5px solid rgba(255,255,255,0.14);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);box-shadow:0 8px 30px rgba(0,0,0,0.4);color:#fff;font-family:'SF Pro Text',-apple-system,system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:-0.1px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;}
+#share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+#share-toast svg{flex-shrink:0;}
+.detail-share-btn{position:absolute;top:16px;right:52px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:rgba(255,255,255,0.56);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;padding:0;z-index:2;}
+.detail-share-btn:hover{background:rgba(255,255,255,0.18);color:#fff;}
+@media (max-width:768px){.detail-share-btn{top:12px;right:56px;width:36px;height:36px;}}
+</style>
+<script>
+(function(){
+  function detectLang(){
+    var a=document.querySelector('.lang-btn.active');
+    if(a&&a.dataset&&a.dataset.lang)return a.dataset.lang;
+    try{return currentLang;}catch(e){return 'zh';}
+  }
+  var T={zh:{copied:'链接已复制'},en:{copied:'Link copied'}};
+  var toast=document.createElement('div');
+  toast.id='share-toast';
+  document.body.appendChild(toast);
+  var toastTimer=null;
+  function showToast(msg){
+    toast.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12.5L10 17.5L19 7" stroke="#30d158" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span>';
+    toast.querySelector('span').textContent=msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.classList.remove('show');},2000);
+  }
+  var panel=document.getElementById('detail-panel');
+  var closeBtn=document.getElementById('detail-close');
+  if(!panel||!closeBtn)return;
+  var btn=document.createElement('button');
+  btn.className='detail-share-btn';
+  btn.type='button';
+  btn.setAttribute('aria-label','Share');
+  btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 15.5V3.5M12 3.5L8 7.5M12 3.5L16 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11H5.5A1.5 1.5 0 0 0 4 12.5V19A1.5 1.5 0 0 0 5.5 20.5H18.5A1.5 1.5 0 0 0 20 19V12.5A1.5 1.5 0 0 0 18.5 11H18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  closeBtn.parentNode.insertBefore(btn,closeBtn);
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var d=window._currentDetailScholar;
+    if(!d)return;
+    var lang=detectLang();
+    var url=location.origin+location.pathname+'?node='+encodeURIComponent(d.id);
+    var name=d.name||'';
+    var shareTitle=name?(name+' · '+document.title):document.title;
+    if(navigator.share){
+      navigator.share({title:shareTitle,url:url}).catch(function(){});
+    }else if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){showToast((T[lang]||T.zh).copied);}).catch(function(){});
+    }else{
+      var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');showToast((T[lang]||T.zh).copied);}catch(_){}
+      document.body.removeChild(ta);
+    }
+    if(typeof umami!=='undefined'){try{umami.track('share_person',{id:d.id});}catch(_){}}
+  });
+})();
+</script>
+<!-- ===== /Share Person ===== -->
 </body>
 </html>
