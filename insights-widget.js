@@ -2393,12 +2393,38 @@ body.has-insights #graph-container::after {
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.6);
 }
+.insight-card-bodywrap {
+  margin: 0 0 14px;
+}
 .insight-card-body {
   font-size: 16px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.82);
-  margin: 0 0 14px;
+  margin: 0;
 }
+.insight-card-body.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+}
+.insight-expand-btn {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.insight-expand-btn:hover { color: rgba(255, 255, 255, 0.9); }
+.insight-expand-btn::after { content: " ▾"; font-size: 10px; }
+.insight-expand-btn[aria-expanded="true"]::after { content: " ▴"; font-size: 10px; }
 .insight-card-row {
   display: flex;
   gap: 8px;
@@ -2635,6 +2661,22 @@ body.has-insights #graph-container::after {
       return;
     }
     container.innerHTML = list.map(renderCard).join('');
+    applyClamp(container);
+  }
+
+  // After render, hide the 展开 button on cards whose body doesn't actually overflow
+  // the clamped height (short insights need no toggle).
+  function applyClamp(container) {
+    container.querySelectorAll('.insight-card-bodywrap').forEach(wrap => {
+      const body = wrap.querySelector('.insight-card-body');
+      const btn = wrap.querySelector('.insight-expand-btn');
+      if (!body || !btn) return;
+      // body is clamped here; if full content fits, drop the clamp + button
+      if (body.scrollHeight <= body.clientHeight + 4) {
+        body.classList.remove('is-clamped');
+        btn.style.display = 'none';
+      }
+    });
   }
 
   function renderCard(item) {
@@ -2656,7 +2698,10 @@ body.has-insights #graph-container::after {
             <button class="insight-share-btn" type="button" data-share-id="${escapeAttr(item.id)}" title="分享为图片">↗ 分享</button>
           </div>
         </div>
-        <p class="insight-card-body">${escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')}</p>
+        <div class="insight-card-bodywrap">
+          <p class="insight-card-body is-clamped">${escapeHtml(item.body).replace(/\*\*([^*]+?)\*\*/g, '<strong>$1</strong>')}</p>
+          <button class="insight-expand-btn" type="button" aria-expanded="false">展开全文</button>
+        </div>
         ${personChips ? `<div class="insight-card-row"><span class="insight-card-label">相关</span>${personChips}</div>` : ''}
         ${sourceChips ? `<div class="insight-card-row"><span class="insight-card-label">来源</span>${sourceChips}</div>` : ''}
       </article>
@@ -2843,6 +2888,18 @@ body.has-insights #graph-container::after {
       const id = shareBtn.dataset.shareId;
       const item = INSIGHTS_DATA.find(x => x.id === id);
       if (item) shareInsightAsImage(item, shareBtn);
+      return;
+    }
+    const expandBtn = e.target.closest('.insight-expand-btn');
+    if (expandBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const body = expandBtn.parentElement.querySelector('.insight-card-body');
+      const clamped = body.classList.toggle('is-clamped');
+      expandBtn.setAttribute('aria-expanded', clamped ? 'false' : 'true');
+      expandBtn.firstChild ? (expandBtn.childNodes[0].nodeValue = clamped ? '展开全文' : '收起') : (expandBtn.textContent = clamped ? '展开全文' : '收起');
+      const card = expandBtn.closest('.insight-card');
+      if (card) trackEvent('insight_expand_toggled', { insight: card.dataset.insightId, expanded: !clamped });
       return;
     }
     const card = e.target.closest('.insight-card');
