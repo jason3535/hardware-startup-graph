@@ -2744,5 +2744,64 @@ applyLanguage = function(lang) {
   renderGeoMap();
 };
 </script>
+<!-- ===== MCP Connect Badge (injected) ===== -->
+<style>
+#mcp-badge{position:fixed;right:24px;bottom:24px;z-index:450;font-family:-apple-system,"SF Pro Text","PingFang SC",Helvetica,Arial,sans-serif;}
+#mcp-badge-toggle{display:flex;align-items:center;gap:7px;height:36px;padding:0 14px 0 12px;border:0.5px solid rgba(255,255,255,0.14);border-radius:999px;background:rgba(28,28,30,0.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);color:rgba(255,255,255,0.92);font-size:12.5px;font-weight:560;letter-spacing:0.2px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;box-shadow:0 4px 20px rgba(0,0,0,0.28);}
+#mcp-badge-toggle:hover{background:rgba(44,44,46,0.92);border-color:rgba(255,255,255,0.24);transform:translateY(-1px);}
+#mcp-badge-toggle svg{flex-shrink:0;opacity:0.95;}
+#mcp-badge-toggle .mcp-live{width:6px;height:6px;border-radius:50%;background:#30d158;box-shadow:0 0 0 0 rgba(48,209,88,0.6);animation:mcpPulse 2.4s infinite;}
+@keyframes mcpPulse{0%{box-shadow:0 0 0 0 rgba(48,209,88,0.5)}70%{box-shadow:0 0 0 6px rgba(48,209,88,0)}100%{box-shadow:0 0 0 0 rgba(48,209,88,0)}}
+#mcp-badge-card{position:absolute;right:0;bottom:48px;width:312px;max-width:calc(100vw - 48px);padding:18px;border:0.5px solid rgba(255,255,255,0.12);border-radius:16px;background:rgba(28,28,30,0.92);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);box-shadow:0 12px 40px rgba(0,0,0,0.45);opacity:0;transform:translateY(8px) scale(0.98);transform-origin:bottom right;pointer-events:none;transition:opacity .22s cubic-bezier(.25,.1,.25,1),transform .22s cubic-bezier(.25,.1,.25,1);}
+#mcp-badge[data-open="true"] #mcp-badge-card{opacity:1;transform:translateY(0) scale(1);pointer-events:all;}
+.mcp-card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mcp-card-head .mcp-tag{font-size:10px;font-weight:600;letter-spacing:0.7px;text-transform:uppercase;color:#30d158;}
+.mcp-card-head .mcp-tag-sub{font-size:10px;letter-spacing:0.5px;color:rgba(255,255,255,0.4);}
+.mcp-card-title{font-size:15px;font-weight:600;letter-spacing:-0.2px;color:#fff;margin:0 0 6px;}
+.mcp-card-desc{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,0.62);margin:0 0 14px;}
+.mcp-url-row{display:flex;align-items:stretch;gap:6px;margin-bottom:12px;}
+.mcp-url-row code{flex:1;min-width:0;display:flex;align-items:center;padding:0 10px;height:32px;border-radius:8px;background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.08);font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;color:rgba(255,255,255,0.85);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#mcp-copy{flex-shrink:0;height:32px;padding:0 12px;border:0;border-radius:8px;background:#0a84ff;color:#fff;font-size:12px;font-weight:560;cursor:pointer;transition:background .15s;}
+#mcp-copy:hover{background:#0974e0;}
+#mcp-copy.copied{background:#30d158;}
+.mcp-card-foot{display:flex;align-items:center;justify-content:space-between;}
+.mcp-clients{font-size:11px;color:rgba(255,255,255,0.4);}
+.mcp-card-link{font-size:12px;font-weight:540;color:#2997ff;text-decoration:none;}
+.mcp-card-link:hover{text-decoration:underline;}
+@media (max-width:600px){#mcp-badge{right:14px;bottom:14px;}#mcp-badge-toggle span.mcp-label{display:none;}#mcp-badge-toggle{padding:0 10px;}}
+</style>
+<div id="mcp-badge" data-open="false">
+  <button id="mcp-badge-toggle" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Connect via MCP">
+    <span class="mcp-live" aria-hidden="true"></span>
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2.4" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="2.4" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="6" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M7.7 7.7L16.3 16.3M8.4 6H15.6M18 8.4v7.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <span class="mcp-label">MCP</span>
+  </button>
+  <div id="mcp-badge-card" role="dialog" aria-label="Model Context Protocol connection">
+    <div class="mcp-card-head"><span class="mcp-tag">● Live</span><span class="mcp-tag-sub">MODEL CONTEXT PROTOCOL</span></div>
+    <h3 class="mcp-card-title">Open this graph in any AI</h3>
+    <p class="mcp-card-desc">A read-only MCP server exposes every person, bilingual bio and relationship in this graph. Connect it in Claude, Cursor or any MCP client and ask questions directly.</p>
+    <div class="mcp-url-row">
+      <code id="mcp-url">https://graph-mcp.992978142.workers.dev/mcp</code>
+      <button id="mcp-copy" type="button">Copy</button>
+    </div>
+    <div class="mcp-card-foot">
+      <span class="mcp-clients">Claude · Cursor · MCP clients</span>
+      <a class="mcp-card-link" href="https://graph-mcp.992978142.workers.dev/" target="_blank" rel="noopener">How to connect →</a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var badge=document.getElementById('mcp-badge'),toggle=document.getElementById('mcp-badge-toggle'),copy=document.getElementById('mcp-copy'),url='https://graph-mcp.992978142.workers.dev/mcp';
+  if(!badge||!toggle)return;
+  function setOpen(o){badge.setAttribute('data-open',o);toggle.setAttribute('aria-expanded',o);}
+  toggle.addEventListener('click',function(e){e.stopPropagation();setOpen(badge.getAttribute('data-open')!=='true');});
+  document.addEventListener('click',function(e){if(!badge.contains(e.target))setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  copy.addEventListener('click',function(e){e.stopPropagation();(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(function(){copy.textContent='Copied';copy.classList.add('copied');setTimeout(function(){copy.textContent='Copy';copy.classList.remove('copied');},1600);}).catch(function(){var r=document.createRange();r.selectNode(document.getElementById('mcp-url'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);});});
+})();
+</script>
+<!-- ===== /MCP Connect Badge ===== -->
+
 </body>
 </html>
