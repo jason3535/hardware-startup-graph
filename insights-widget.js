@@ -6,6 +6,37 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "karpathy-anthropic-pretraining-self-loop-2026-05-31",
+    "date": "2026-05-31",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Karpathy 放弃教育创业投奔 Anthropic — 他的任务是让 Claude 训练下一代 Claude",
+    "body": "2026年5月19日，OpenAI 联创 Andrej Karpathy 加入 Anthropic 预训练团队（汇报 Nick Joseph），任务是组建「用 Claude 加速自身预训练」的新团队——让当前代模型帮助迭代下一代，即「预训练自举」路径。他的 AI 教育公司 Eureka Labs 暂停运营，本人说：「AI 前沿未来几年格外关键，我想回到真正的 R&D」。同日 xAI 联创 Ross Nordeen 也入职 Anthropic；Anthropic 当前估值 $380B，Amodei 兄妹身价各约 $80 亿。**非共识判断**：外界读成「创业失败回大厂」——真实信号是 **Karpathy 在 OpenAI 和 Anthropic 之间选了后者**，说明前沿研究者正在用职业选择投票：Anthropic 的研究密度优于 OpenAI 的商业化节奏。「让模型训练自身」是比架构创新更隐蔽、壁垒更深的能力护城河——谁先跑通这条路，能力天花板差距就会拉开。加上 xAI、Google、微软系的陆续加盟，Anthropic 正在成为「严肃研究者」的单一聚集地。**对创业者的实操含义**：(1)单押 OpenAI API 的团队需预留 Claude 在 12-18 个月内能力反超的切换准备；(2)做具身/边缘侧 AI 硬件，人才集中在闭源大厂反而强化了开源基座（DeepSeek/LLaMA）的选用理由——这是不依赖这张人才网络的替代路线；(3)Eureka Labs 暂停说明：AI+垂直赛道的独立小团队，在头部实验室的资源鸿沟面前，靠单点产品创新很难同时维持前沿研究能力与商业可行性",
+    "persons": [
+      {
+        "id": "karpathy",
+        "name": "Andrej Karpathy"
+      },
+      {
+        "id": "damodei",
+        "name": "Dario Amodei(Anthropic)"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch — Karpathy joins Anthropic's pretraining team(2026-05-19)",
+        "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/"
+      },
+      {
+        "label": "CNBC — Anthropic hires OpenAI co-founder Karpathy(2026-05-19)",
+        "url": "https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html"
+      }
+    ]
+  },
+  {
     "id": "insta360-ipo-rd-arms-race-2026",
     "date": "2026-05-13",
     "type": "funding",
