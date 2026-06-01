@@ -6,6 +6,25 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "anthropic-series-h-karpathy-power-shift-2026-06-01",
+    date: "2026-06-01",
+    type: "non-consensus",
+    graphs: ["ai-scholar"],
+    pinned: false,
+    title: "Anthropic $65B 融资超越 OpenAI — Karpathy 加入坐实前沿 AI 权力迁移",
+    body: "2026 年 5 月 28 日，Anthropic 完成 Series H 融资 **650 亿美元**，估值 **$9650 亿**（约 7 万亿人民币），由 Altimeter / Dragoneer / Greenoaks / 红杉美国联合领投，**首次超越 OpenAI（上轮估值 $8520 亿）**，成为全球最高估值 AI 公司；年化营收跑率 **470 亿美元**，并同步预告旗舰新模型「Mythos」即将发布。九天前，**5 月 19 日 Karpathy 宣布暂停 Eureka Labs，加入 Anthropic 预训练团队**，将主导「用 Claude 自身加速预训练研究」这一新方向。3 个月内 Anthropic 估值从 $3800 亿乘至 $9650 亿（×2.5 倍）。**非共识判断**：外界把这读成「Anthropic 终于追上了 OpenAI」，但更准确的判断是——**两家差距已从技术层面迁移到「谁先锁定企业长约 + 谁先上市定价权」的商业竞争层面**。$470B 年化营收以 API + Claude for Work 企业版为主，毛利结构比 OpenAI 消费者混合产品线更干净，机构投资人给出了更高倍数。Karpathy 的意义不只是一次人才流动——**他主动选择 Anthropic、时间点恰在 $965B 融资窗口开启之前，相当于向全球 AI 开发者社区发出「Anthropic 技术路线更具可持续性」的公开信号**。「用 AI 本身加速预训练」这件事，OpenAI 未把它当成独立研究范式，Anthropic 把它当成 2026 年最核心的赌注。**实操含义**：(1) 评估前沿 AI 公司估值，Anthropic $965B 对应 $470B 年化营收约 2 倍 PS，这是当前合理的倍数锚，国内月之暗面 $200B 估值对照此基准尚在合理区间；(2) 对使用 Claude API 的工具 / 硬件团队，Anthropic 已进入大企业合同锁定期，此时谈 3-5 年框架协议的议价筹码远高于一年后；(3) Karpathy 的核心任务是「用 AI 本身加速预训练」——若跑通，训练效率曲线将再次拐头，具身 / 推理硬件侧对算力密度的长期假设需要同步重估",
+    persons: [
+      { id: "karpathy", name: "Andrej Karpathy(Anthropic)" },
+      { id: "damodei", name: "Dario Amodei(Anthropic)" },
+      { id: "samaltman", name: "Sam Altman(OpenAI)" }
+    ],
+    sources: [
+      { label: "Bloomberg:Anthropic Raises at $965 Billion Valuation, Eclipsing OpenAI(2026-05-28)", url: "https://www.bloomberg.com/news/articles/2026-05-28/anthropic-raises-at-965-billion-valuation-eclipsing-openai" },
+      { label: "TechCrunch:Andrej Karpathy joins Anthropic's pre-training team(2026-05-19)", url: "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" },
+      { label: "Fortune:Anthropic leapfrogs OpenAI, Mythos model coming soon(2026-05-29)", url: "https://fortune.com/2026/05/29/anthropic-raises-65-billion-at-record-965-billion-valuation-promises-mythos-ai-model-in-wide-release-in-coming-weeks-releases-claude-opus-4-8/" }
+    ]
+  },
+  {
     "id": "insta360-ipo-rd-arms-race-2026",
     "date": "2026-05-13",
     "type": "funding",
