@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "nvidia-unitree-h2plus-isaac-gr00t-2026-06-02",
+    date: "2026-06-02",
+    type: "non-consensus",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "英伟达不选 Figure 选宇树 — Isaac GR00T 是机器人界的 CUDA 布局",
+    body: "6月1日，宇树科技科创板 IPO 过会（受理到过会仅73天，拟募资42.02亿），同日英伟达在 Computex 发布首款 Isaac GR00T 参考人形机器人「H2 Plus」：基于宇树 H2 本体（高1.8m、重68kg、75总自由度），搭载 Jetson Thor（2070 FP4 TFLOPS），2026年底发售，首批买家为 Stanford、ETH Zurich 等研究机构。英伟达没选 Figure AI（美国）、Agility（亚马逊系）或 Apptronik，而是中国宇树。**非共识判断**：Isaac GR00T 不是机器人产品，是 Nvidia 对人形机器人复制 CUDA 战略的第一步——让全球学术界先跑 Jetson Thor + Isaac GR00T 软件栈做研究，三年后产业界工程师因为熟悉这套生态，量产机器人自然落在 Nvidia 硬件上。CUDA 当年就是靠学术界打入产业链的。Nvidia 选宇树的逻辑纯属工程：Isaac GR00T 参考设计要批量进全球学术机构，必须买得起、量产成熟——宇树5500台出货 + 中国供应链成本使其无可替代，Figure 的价格体系根本不适合学术批量采购。**实操含义**：(1)做机器人本体的团队，宇树成为「Nvidia 认证标准」后，其他本体进入 Isaac GR00T 生态需额外证明兼容性——这是从竞争演化为标准的壁垒；(2)做具身软件/大脑的团队，Isaac GR00T 正在控制标准软件栈，不与之兼容的机器人 OS 需要提前想清楚护城河；(3)对投资人，宇树上市后估值锚发生了结构性变化——它不只是「中国人形出货第一」，更是「Nvidia 全球机器人平台的指定硬件合作方」，二级市场会对这个身份独立定价",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" },
+      { id: "jensenhuang", name: "Jensen Huang（Nvidia）" }
+    ],
+    sources: [
+      { label: "NVIDIA Newsroom: Isaac GR00T Reference Humanoid Robot（2026-06-01）", url: "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design" },
+      { label: "PR Newswire: Unitree H2 Plus NVIDIA Isaac GR00T Reference Robot（2026-06-01）", url: "https://www.prnewswire.com/news-releases/unitree-announces-h2-plus-an-nvidia-isaac-gr00t-reference-humanoid-robot-for-academic-research-302786748.html" },
+      { label: "新浪财经：宇树科技科创板 IPO 过会，黄仁勋官宣合作（2026-06-01）", url: "https://finance.sina.com.cn/wm/2026-06-01/doc-inhzxmek3797906.shtml" }
+    ]
+  },
+  {
     "id": "insta360-ipo-rd-arms-race-2026",
     "date": "2026-05-13",
     "type": "funding",
