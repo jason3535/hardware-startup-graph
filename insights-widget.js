@@ -6,6 +6,76 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "bigtech-ai-hardware-mobilization-2026",
+    "date": "2026-06-03",
+    "type": "trend",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "大厂集体下场 AI 硬件 — 2026 是巨头从『软件智能』走向『随身设备』的总动员年",
+    "body": "2026 年六家科技巨头几乎同时把战线推到随身硬件：**OpenAI** 以约 **64 亿美元**收购 Jony Ive 的 io，做一款无屏、语音优先的 AI 陪伴设备（富士康量产 4000-5000 万台，首发已推迟至不早于 2027）；**Google**（Rick Osterloh）在 I/O 2026 发布 Android XR + Gemini 智能眼镜，**10 月 14 日开售**（基础款 $799、无屏音频款 $299）；**Meta**（Boz）在 Reality Labs 累计亏损约 **700 亿美元**后裁员转向 AI 眼镜，Ray-Ban Meta 已售 **200 万+**；**Apple**（Mike Rockwell，Vision Pro 之父）接管 Siri、用 LLM 重写，智能家居中枢卡在这版 Siri 上；**微软**（Suleyman）发 MAI 七模型并预告『办公徽章/桌面伴侣』；**亚马逊**（Panos Panay）重构 Alexa+、传出代号 Transformer 的 AI 手机。**非共识判断**：表面是『百镜大战、百花齐放』，真相是**路线在收敛**——除 OpenAI 赌无屏专用设备的激进路线外，Google/Meta/三星/亚马逊高度一致地押『AI 眼镜 + 云端大模型』，把手机降级为算力中转；胜负手不在硬件形态，而在**谁的端侧助理能默认常驻、抢到用户的注意力入口**。**实操含义**：(1) 独立 AI 硬件创业者别和大厂拼形态，要拼大厂做不了的垂直场景与数据闭环（医疗、陪伴、专业工具）；(2) 看这条赛道盯三件事——分发（默认入口）、续航（全天候）、隐私（本地化），谁先同时跨过谁赢；(3) 读者判断一款 AI 设备能否活下来，问它『取代手机的哪个具体动作』，泛泛的『AI 助手』几乎必死，Humane AI Pin 已是前车之鉴。",
+    "persons": [
+      { "id": "jonyive", "name": "Jony Ive（OpenAI/io）" },
+      { "id": "osterloh", "name": "Rick Osterloh（Google）" },
+      { "id": "bosworth", "name": "Andrew Bosworth（Meta）" },
+      { "id": "rockwell", "name": "Mike Rockwell（Apple）" },
+      { "id": "suleyman", "name": "Mustafa Suleyman（微软）" },
+      { "id": "panospanay", "name": "Panos Panay（亚马逊）" }
+    ],
+    "sources": [
+      { "label": "Axios：OpenAI aims to debut first device in 2026（2026-01-19）", "url": "https://www.axios.com/2026/01/19/openai-device-2026-lehane-jony-ive" },
+      { "label": "Google Blog：Intelligent eyewear with Gemini is coming this fall（2026）", "url": "https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/" },
+      { "label": "Glass Almanac：Meta reveals prototype AR glasses with AI display（2026）", "url": "https://glassalmanac.com/meta-reveals-prototype-ar-glasses-with-ai-display-in-2026-why-it-matters-now/" },
+      { "label": "AppleInsider：New Siri chief is replacing existing teams with Vision Pro staffers", "url": "https://appleinsider.com/articles/25/04/22/new-siri-chief-is-replacing-existing-teams-with-vision-pro-staffers" }
+    ]
+  },
+  {
+    "id": "embodied-ai-valuation-vs-zhuxiaohu-2026",
+    "date": "2026-06-03",
+    "type": "non-consensus",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "顶级基金把人形机器人估值半年翻倍，朱啸虎却在『成批退出』— 具身智能的共识与裂缝",
+    "body": "2026 年具身智能出现罕见的多空对峙。一边是海外大钱疯狂加注：**Physical Intelligence** 洽谈约 **10 亿美元**新轮、估值冲 **110 亿+**（四个月内从 56 亿翻倍），Founders Fund、Lux、贝索斯、NVIDIA（NVentures）同台；**Figure** C 轮投后 **390 亿**；**宇树**科创板 IPO 目标估值约 **62 亿美元**、人形出货全球第一。另一边，**朱啸虎**（金沙江）公开称正『**成批退出**人形机器人公司』，认为其商业模式与客户都还停留在想象，转而押注 AI 陪伴硬件。**非共识判断**：这不是简单的看多看空，而是**『基础模型层 vs 整机本体层』的估值错位**——海外大钱押的是 PI 这种『机器人大脑（基础模型）』、赌赢家通吃；朱啸虎看空的是『整机本体』缺乏清晰付费场景。两边其实都对，只是押在产业链的不同环节。**实操含义**：(1) 投具身智能先分清标的是『模型层』还是『本体层』，前者可容忍高估值（赢家通吃），后者必须看真实订单与单台毛利；(2) 读者看『量产』新闻别被话术带节奏，盯『谁在付费、单台毛利、复购』三个硬指标；(3) 已盈利的本体厂（宇树：出货全球第一、净利翻倍）与纯故事估值公司要区别对待，别用一个估值框架套全行业。",
+    "persons": [
+      { "id": "joshwolfe", "name": "Josh Wolfe（Lux）" },
+      { "id": "jeffbezos", "name": "Jeff Bezos" },
+      { "id": "jensenhuang", "name": "黄仁勋（NVIDIA）" },
+      { "id": "zhuxiaohu", "name": "朱啸虎（金沙江）" }
+    ],
+    "sources": [
+      { "label": "Bloomberg：Ex-DeepMind staffers' robotics startup in talks for $11B valuation（2026-03-27）", "url": "https://www.bloomberg.com/news/articles/2026-03-27/ex-deepmind-staffers-robotics-startup-in-talks-for-11-billion-valuation" },
+      { "label": "Caixin Global：Unitree fast-tracks Shanghai IPO at $6.2B（2026-05-26）", "url": "https://www.caixinglobal.com/2026-05-26/unitree-fast-tracks-shanghai-ipo-with-target-valuation-of-62-billion-102447449.html" },
+      { "label": "36氪：朱啸虎谈成批退出人形机器人、押注 AI 情绪价值硬件", "url": "https://eu.36kr.com/en/p/3366874398869250" }
+    ]
+  },
+  {
+    "id": "world-models-vs-llm-route-split-2026",
+    "date": "2026-06-03",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "图灵巨头集体『叛逃』LLM — LeCun、李飞飞押注世界模型，与 DeepSeek/Kimi 的 LLM 狂奔正面分叉",
+    "body": "2026 年 AI 学界出现明显的路线分叉。**Yann LeCun** 离开 Meta、创办 **AMI Labs**（种子轮 **10.3 亿美元**、估值 35 亿），公开判定纯自回归 LLM『将无法解决许多关键问题』，押注能理解物理、维持记忆、会规划的『**世界模型**』；**李飞飞** 的 World Labs 推出 **Marble**（首个商用 3D 世界模型）并融资 **10 亿美元**，主张『**空间智能**是语言之外的下一前沿』。另一边，LLM 主干仍在狂奔：**DeepSeek V4**（1.6 万亿参数）、**Kimi K2.5**、Mira Murati 的 Thinking Machines 计划 2026 发自研模型。**非共识判断**：市场倾向把『世界模型』读成 LLM 的竞品或证伪，但更可能是**互补的两层**——LLM 解决『语言/知识』，世界模型解决『感知/行动』，而具身智能（如 Physical Intelligence 的 π0）正是两者的缝合处。真正的风险不在谁对谁错，而在**世界模型尚无产品验证就已被给到 35-50 亿美元估值**。**实操含义**：(1) 读者别把『LeCun 看空 LLM』简单读成『LLM 要完』——他看空的是『纯自回归通向 AGI』，不是 LLM 没用；(2) 关注世界模型要盯『有没有真实下游（机器人/3D/仿真）买单』，Marble 先商业化再讲故事的路子走对了；(3) 押注 AI 人才与公司，先分清他在『语言层』还是『世界层』，两层的评估范式与退出路径完全不同。",
+    "persons": [
+      { "id": "lecun", "name": "Yann LeCun（AMI Labs）" },
+      { "id": "feifei", "name": "李飞飞（World Labs）" },
+      { "id": "liangwenfeng", "name": "梁文锋（DeepSeek）" },
+      { "id": "yangzhilin", "name": "杨植麟（Kimi）" },
+      { "id": "miramurati", "name": "Mira Murati（TML）" }
+    ],
+    "sources": [
+      { "label": "MIT Technology Review：Yann LeCun's new venture is a contrarian bet against LLMs（2026-01-22）", "url": "https://www.technologyreview.com/2026/01/22/1131661/yann-lecuns-new-venture-ami-labs/" },
+      { "label": "TechCrunch：Fei-Fei Li's World Labs speeds up the world model race with Marble（2025-11-12）", "url": "https://techcrunch.com/2025/11/12/fei-fei-lis-world-labs-speeds-up-the-world-model-race-with-marble-its-first-commercial-product/" },
+      { "label": "华尔街见闻：Kimi 账上百亿现金、K2.5 与港股 IPO 筹备", "url": "https://wallstreetcn.com/articles/3762395" }
+    ]
+  },
+  {
     "id": "insta360-ipo-rd-arms-race-2026",
     "date": "2026-05-13",
     "type": "funding",
