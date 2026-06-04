@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "nvidia-unitree-h2plus-isaac-groot-2026-06-01",
+    "date": "2026-06-01",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "英伟达押宇树做人形参考平台 — H2+ 是一场生态卡位不是一次合作",
+    "body": "6 月 1 日，宇树科技科创板 IPO 过会当天，英伟达 CEO 黄仁勋同步官宣合作推出 **H2 Plus**，首款基于 Isaac GR00T 平台的开放人形参考设计：机体 **31 自由度** + Sharpa 五指灵巧手合计 **75 自由度**，机载算力为 **Jetson Thor**，软件栈全部开源；斯坦福机器人中心、ETH 苏黎世、Ai2、UCSD 机器人实验室是首批使用机构，2026 年下半年发售。**行业含义**：NVIDIA 在复刻智能手机时代的「Android 开放参考设计」策略——把 Jetson Thor 绑定为人形机器人的默认算力脑，先让学术圈形成依赖，商业化路径大概率沿用同一套推理基础设施；宇树被选为参考本体，是 NVIDIA 在把它推向「全球学术机器人的参考实现」位置，这份生态背书的战略价值远超 42 亿元的 IPO 募资本身。**实操含义**：其他人形厂商（智元、Figure、Agility）现在必须做一道选择题——接入 Isaac GR00T 生态（低摩擦但失去差异化），还是自建推理栈（高摩擦但有护城河）；判断这套参考设计能否成为行业标准，盯 2027 年 ICRA/CoRL 论文中以 H2 Plus 为实验平台的比例——论文覆盖率是学术生态占有率最真实的代理变量",
+    "persons": [
+      { "id": "wangxingxing", "name": "王兴兴（宇树）" },
+      { "id": "jensenhuang", "name": "黄仁勋（NVIDIA）" }
+    ],
+    "sources": [
+      { "label": "NVIDIA Newsroom：Isaac GR00T Reference Humanoid Robot（2026-06-01）", "url": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design" },
+      { "label": "PR Newswire：Unitree H2 Plus NVIDIA Isaac GR00T Reference Humanoid（2026-06-01）", "url": "https://www.prnewswire.com/news-releases/unitree-announces-h2-plus-an-nvidia-isaac-gr00t-reference-humanoid-robot-for-academic-research-302786748.html" },
+      { "label": "新浪财经：宇树科技 IPO 过会！黄仁勋宣布合作推出新一代人形机器人（2026-06-01）", "url": "https://finance.sina.com.cn/wm/2026-06-01/doc-inhzxmek3797906.shtml" }
+    ]
+  },
+  {
     "id": "bigtech-ai-hardware-mobilization-2026",
     "date": "2026-06-03",
     "type": "trend",
