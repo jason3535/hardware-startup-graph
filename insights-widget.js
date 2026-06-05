@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "nvidia-unitree-isaac-groot-reference-platform-2026-06-05",
+    date: "2026-06-05",
+    type: "non-consensus",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "NVIDIA 在 ICRA 钦点宇树为参考平台 — 这不是投资，是定架构",
+    body: "2026年6月1日，黄仁勋在 ICRA 2026（维也纳）发布 Isaac GR00T 参考人形机器人系统：宇树 H2 Plus 本体（31自由度、约1.8米、68公斤）+ Sharpa Wave 五指灵巧手（22自由度含触觉感知）+ Jetson AGX Thor T5000（Blackwell 架构、2070T FP4、128GB）组成全栈参考平台；Ai2、ETH Zurich、Stanford Robotics Center、UC San Diego 首批采购用于前沿研究，2026年末向宇树平台开放发售。宣布时间刻意选在宇树科创板 IPO 过会当日（73天极速审核，6月3日已提交注册），双重信号叠加。行业含义：英特尔当年推 PC 参考架构，令整机厂商 BOM 选择空间收敛到 x86 生态——NVIDIA 正在对人形机器人做同一件事：把宇树 H2+ 立为 Isaac GR00T 的官方硬件接口，全球研究机构的机器人软硬件栈将向这套组合标准化。宇树的护城河从「最便宜的本体」升级为「NVIDIA 生态的参考硬件」，这是单纯出货量排名给不了的位置。非共识判断：发布定语是「学术研究平台」而非「工业量产」，初始买家是大学实验室——这既是迄今最大背书，也揭示关键时间差：420亿 IPO 估值对应工业落地叙事，NVIDIA 参考平台对应研究生态叙事，两者仍有 2-3 年产业化代差，不能合并定价。对创业者的实操含义：做具身感知/灵巧手/末端执行器的硬件团队，应优先适配 H2+/Isaac GR00T 接口进入全球研究采购链；Isaac GR00T 钦定 Sharpa 五指触觉手为参考规格，纯夹爪路线的初创在学术标准层面将承压；看宇树 IPO 定价须把「NVIDIA 研究平台背书」与「真实工厂付费订单」分两栏核算，前者是品牌价值，后者才是 DCF 分母",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" },
+      { id: "jensenhuang", name: "黄仁勋（NVIDIA）" }
+    ],
+    sources: [
+      { label: "NVIDIA Newsroom：NVIDIA Isaac GR00T Reference Humanoid Robot for Academic Research（2026-06-01）", url: "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design" },
+      { label: "澎湃新闻：宇树科技科创板IPO过会，从受理到上会仅73天（2026-06-01）", url: "https://m.thepaper.cn/newsDetail_forward_33280884" },
+      { label: "BGR：Nvidia Partnered With A Chinese Company To Build A Physical AI Humanoid Robot（2026-06-01）", url: "https://www.bgr.com/2186586/nvidia-unitree-partnership-isaac-groot-humanoid-robot-ai/" }
+    ]
+  },
+  {
     "id": "bigtech-ai-hardware-mobilization-2026",
     "date": "2026-06-03",
     "type": "trend",
