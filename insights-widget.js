@@ -6,6 +6,23 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "deepseek-catl-power-infrastructure-2026-06-06",
+    date: "2026-06-06",
+    type: "funding",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "宁德时代战投 DeepSeek，是「算力供电」新基建的卡位战",
+    body: "6 月 3 日，DeepSeek 首轮外部融资接近落定：总规模约 **500 亿元（约 74 亿美元）**，梁文锋本人出资 **200 亿**（占比约 40%），**腾讯拟投 100 亿、宁德时代拟投 50 亿**，另有国家 AI 产业投资基金、网易、京东等参与，融资后估值约 **4000 亿元（约 590 亿美元）**，为中国 AI 史上规模最大的单轮外部融资。**非共识判断**：宁德时代入局的逻辑不是「财务配置 AI 赛道」，而是以「算力供电方」身份卡位——宁德时代已在向数据中心销售大型储能系统与备用电源，DeepSeek 推动国内推理算力需求爆发，正是其最需要的电力大客户类型。这是中国第一次出现「储能工业巨头以战略逻辑入股前沿 AI 实验室」的组合：AI 产业自给链从模型层延伸到了供电层，腾讯代表分发入口、宁德时代代表能源基础设施，这个投资人结构本身就是一张路线图。**实操含义**：(1) 用 DeepSeek 做边缘推理的硬件创业者，宁德时代背书后工业落地阻力降低，数据主权比境外 API 路径更清晰；(2) AI 算力的「电力/制冷/储能侧」是被低估的硬科技窗口，宁德时代押注等于公开给这条赛道盖章，关注国内数据中心的 UPS/液冷/储能系统机会；(3) DeepSeek 保持开源不被单一平台绑定的概率上升，对依赖其模型的硬件产品而言，API 供给稳定性比依赖 OpenAI 或 Anthropic 更可预期",
+    persons: [
+      { id: "liangwenfeng", name: "梁文锋（DeepSeek）" }
+    ],
+    sources: [
+      { label: "36氪：曝 DeepSeek 融资即将完成：梁文锋200亿，腾讯100亿，宁德时代50亿（2026-06-03）", url: "https://www.36kr.com/p/3837092707693698" },
+      { label: "CNBC：DeepSeek slated to draw $7 billion in maiden fundraising（2026-06-03）", url: "https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html" },
+      { label: "The Information：Chinese EV Battery Giant CATL Plans to Invest in DeepSeek（2026-05-22）", url: "https://www.theinformation.com/articles/chinese-ev-battery-giant-catl-plans-invest-deepseek" }
+    ]
+  },
+  {
     "id": "bigtech-ai-hardware-mobilization-2026",
     "date": "2026-06-03",
     "type": "trend",
