@@ -6,6 +6,220 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "innoangel-rmb-early-fund-revival-2026",
+    "date": "2026-06-05",
+    "type": "funding",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "人民币早期科技基金回暖 — 英诺科创三期 6 月 5 日首关 15 亿，国家引导基金首批签约",
+    "body": "6 月 5 日，**英诺基金**（创始合伙人 **李竹**）宣布科创三期基金首轮关账 **15 亿元**，聚焦前沿科技与 AI 的早期投资，是**国家创投引导基金首批签约基金**之一；同日东风牵头的「军山产业投资基金」在武汉经开区落地、规模 10 亿元。**信号**：在募资寒冬背景下，**国资引导 + 产业资本（CVC）**正成为人民币早期基金重新启动的双引擎——早期硬科技的钱并未消失，而是换了出资人结构。",
+    "persons": [
+      { "id": "lizhu", "name": "李竹（英诺基金）" }
+    ],
+    "sources": [
+      { "label": "投资界：融资 24h（2026-06-05）", "url": "https://news.pedaily.cn/202606/564676.shtml" }
+    ]
+  },
+  {
+    "id": "a16z-neuberger-geopolitics-2026",
+    "date": "2026-06-04",
+    "type": "non-consensus",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "a16z 把美国前副国安顾问收入合伙人席 — 风投从「投公司」公开走向「投地缘」",
+    "body": "6 月 4 日，**a16z** 宣布聘前白宫副国家安全顾问 **Anne Neuberger** 为 General Partner 兼全球事务负责人，主导与盟国在 **AI、机器人、国防、网络安全**的技术合作，同时披露已开设东京办公室、完成 100+ 国际投资。**非共识**：这是头部美元基金把**地缘政治议程显性写进合伙人结构**的标志性一步——风投不再声称中立，而是公开服务「America and her allies」，与其 American Dynamism（基金从 2023 年 6 亿美元扩到 2026 年约 11.8 亿美元）一脉相承。「**政府高官→顶级 VC 合伙人**」的旋转门，正在成为前沿科技投资的新常态。",
+    "persons": [
+      { "id": "neuberger", "name": "Anne Neuberger（a16z）" },
+      { "id": "marca16z", "name": "Marc Andreessen（a16z）" }
+    ],
+    "sources": [
+      { "label": "a16z：A New Chapter in a16z's Global Mission", "url": "https://a16z.com/a16zs-global-mission/" },
+      { "label": "Crunchbase：a16z American Dynamism / new funds", "url": "https://news.crunchbase.com/venture/a16z-15b-new-funds-american-dynamism-ben-horowitz/" }
+    ]
+  },
+  {
+    "id": "defense-tech-exit-phase-2026",
+    "date": "2026-06-04",
+    "type": "trend",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "国防科技 5 个月吸金 146 亿美元超去年全年 — 两年「只进不出」的热钱进入兑现期",
+    "body": "据 Crunchbase，2026 年前五个月国防 / 国安赛道已吸金 **146 亿美元、107 轮**，超过 2025 全年 96 亿的历史纪录；**Anduril** 上月 50 亿美元 H 轮、估值 305 亿，成为全球最值钱的风投支持国防公司。真正的拐点是**资金端转向退出**：AI 无人机公司 Swarmer 上市首日暴涨 500%+，近 **50 家**国防公司被列为「大概率 IPO 候选」（Anduril、Shield AI、True Anomaly、Sierra Space）。**含义**：持续两年的国防热钱正从「下注」切换到「**收割**」，下一阶段比拼的是谁能真正走通二级市场。",
+    "persons": [
+      { "id": "katherineboyle", "name": "Katherine Boyle（a16z American Dynamism）" },
+      { "id": "joshwolfe", "name": "Josh Wolfe（Lux Capital）" }
+    ],
+    "sources": [
+      { "label": "Crunchbase：Defense-tech venture funding all-time record", "url": "https://news.crunchbase.com/defense-tech/startup-venture-funding-all-time-record-ai-anduril/" }
+    ]
+  },
+  {
+    "id": "meta-tulloch-talent-war-murati-2026",
+    "date": "2026-06-04",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "史上最贵个人挖角的余波 — Meta 用 15 亿美元抽走 Tulloch，Murati 18 个月后首度回应",
+    "body": "6 月 4 日，**Mira Murati** 在沉默 18 个月后接受彭博专访。面对 Meta 此前以**六年约 15 亿美元**天价挖走联合创始人 **Andrew Tulloch**（现于 Meta 超级智能实验室向 Alexandr Wang 汇报）、并持续招揽 Thinking Machines 多名研究员，她淡化处理，称前沿实验室从零搭建本就动荡、「**薪酬重要但不是全部**」。**非共识**：在 2025-26 的 AI 人才军备竞赛里，最贵的不是算力而是**少数能从零训练前沿模型的人**；而 Murati 押注的差异化方向是**交互模型（interaction models）**，刻意不与 OpenAI / Google 的实时语音正面相撞。",
+    "persons": [
+      { "id": "miramurati", "name": "Mira Murati（Thinking Machines）" },
+      { "id": "tulloch", "name": "Andrew Tulloch（Meta）" }
+    ],
+    "sources": [
+      { "label": "TechCrunch：Mira Murati steps back into the spotlight, carefully", "url": "https://techcrunch.com/2026/06/04/mira-murati-steps-back-into-the-spotlight-carefully/" },
+      { "label": "Calcalist：The $1.5 billion engineer", "url": "https://www.calcalistech.com/ctechnews/article/skr56vtpgl" }
+    ]
+  },
+  {
+    "id": "deepseek-first-external-funding-2026",
+    "date": "2026-06-03",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "DeepSeek 首次对外融资约 74 亿美元 — 梁文锋自掏 200 亿元死守控制权",
+    "body": "据路透 / 彭博 6 月 3 日报道，**DeepSeek** 启动**史上第一次外部融资**，规模约 **500 亿元人民币（~74 亿美元）**，投后估值 **520 亿–590 亿美元**。结构上最反常的是：创始人 **梁文锋个人认购 200 亿元**，腾讯拟投约 100 亿、宁德时代约 50 亿，确保其继续以**异常独立**的方式掌控公司，并坚持**开源 + AGI** 路线。在国产「六小龙」纷纷抢港股 / A 股 IPO 之际，DeepSeek 反其道靠一级市场和**创始人重仓**维持自治——这是对「AI 公司必须开放股权换增长」的非共识下注。（注：数字为消息人士引述，尚未官宣。）",
+    "persons": [
+      { "id": "liangwenfeng", "name": "梁文锋（DeepSeek）" }
+    ],
+    "sources": [
+      { "label": "CNBC：DeepSeek slated to draw $7B in maiden fundraising", "url": "https://www.cnbc.com/2026/06/03/deepseek-slated-to-draw-7-billion-in-maiden-fundraising-sources-say.html" },
+      { "label": "TechStartups：DeepSeek to raise $7.4B in first funding round", "url": "https://techstartups.com/2026/06/03/deepseek-set-to-raise-7-4-billion-in-first-funding-round-targeting-valuation-as-high-as-59-billion/" }
+    ]
+  },
+  {
+    "id": "astribot-tencent-roboticsx-bround-2026",
+    "date": "2026-06-03",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "腾讯 Robotics X「一号员工」星尘智能 3 个月连融 3 轮破百亿 — 绳驱本体逆主流押注",
+    "body": "6 月 3 日，**星尘智能（Astribot）**官宣 B 轮**超 10 亿元**融资，**3 个月内连融 3 轮**、投后估值**突破百亿元**。其非共识在技术路线：当行业普遍用刚性关节 / 谐波减速器时，星尘坚持 **绳驱（rope-driven）本体**，并自称**全球首个量产绳驱 AI 机器人公司**，2025 年底已启动**千台级交付**。团队属于**腾讯 Robotics X 实验室外溢系族**——创始人 **来杰**是该实验室一号员工、主导过轮腿机器人 Ollie，创始核心 6 人均出自此。**含义**：人形赛道在「关节流派」之外，正跑出一条以**柔顺操作**为卖点的差异化分支。",
+    "persons": [
+      { "id": "laijie", "name": "来杰（星尘智能）" }
+    ],
+    "sources": [
+      { "label": "证券时报：星尘智能完成超 10 亿元 B 轮融资", "url": "https://www.stcn.com/article/detail/3941094.html" },
+      { "label": "深圳新闻网：星尘智能估值破百亿", "url": "https://www.sznews.com/news/content/2026-06/05/content_32078868.htm" }
+    ]
+  },
+  {
+    "id": "figma-state-designer-claude-2026",
+    "date": "2026-06-03",
+    "type": "trend",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "「会写代码的设计师」从边缘变成中位数 — Figma 年报：Claude 使用率飙至 78%、半数已把 AI 代码推上生产",
+    "body": "Figma《State of the Designer 2026》披露，设计师平均工具栈一年内从 3 个膨胀到 **7 个**，**Claude** 使用率从 52% 飙到 **78%**，成为设计师最常用的 AI 工具。更反共识的是：**约一半受访者已把 AI 生成的代码推到生产环境**，而其中**只有约 20% 自称是 design engineer**——绝大多数是「直到最近还从没碰过代码库」的传统设计师。**含义**：「设计 / 工程边界消融」不再是预言，而是已发生的**中位数现实**；像 **Jordan Singer** 这类「设计 + AI 工具」路径，正从个案变成行业默认技能栈。",
+    "persons": [
+      { "id": "jordansinger", "name": "Jordan Singer（Figma）" }
+    ],
+    "sources": [
+      { "label": "Figma Blog：State of the Designer 2026", "url": "https://www.figma.com/blog/state-of-the-designer-2026/" }
+    ]
+  },
+  {
+    "id": "microsoft-mai-thinking-decouple-2026",
+    "date": "2026-06-02",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "微软被「放生」六个月后亮剑 — Suleyman 用零蒸馏的 MAI-Thinking-1 与 OpenAI 划清界限",
+    "body": "6 月 2 日 Build 2026，微软 AI 一口气发布七个自研 MAI 模型，旗舰是首个推理模型 **MAI-Thinking-1**（约 1 万亿总参 / 350 亿激活，256K 上下文），关键卖点是**从零训练、零蒸馏第三方模型**——即不依赖 OpenAI 的输出。**Mustafa Suleyman** 罕见挑明：微软「**大约六个月前才被合同放生**」去正式追求超级智能，并称针对特定企业场景调优后**成本效率比 GPT-5.5 好约 10 倍**。这是双方关系从「**房客**」转向「**自建栈**」的最清晰信号——微软不弃 OpenAI，但开始平行造一套能完全独立的能力。",
+    "persons": [
+      { "id": "suleyman", "name": "Mustafa Suleyman（Microsoft AI）" }
+    ],
+    "sources": [
+      { "label": "CNBC：Microsoft unveils new AI models to lessen reliance on OpenAI", "url": "https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html" },
+      { "label": "VentureBeat：Microsoft AI chief says company was set free from OpenAI", "url": "https://venturebeat.com/technology/microsoft-ai-chief-says-company-was-set-free-from-openai-to-pursue-superintelligence" }
+    ]
+  },
+  {
+    "id": "apple-post-ive-molly-anderson-2026",
+    "date": "2026-06-02",
+    "type": "relationship",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "后 Jony Ive 时代的 Apple 设计话事人是 Molly Anderson — 叙事从「天才总监」转向「平台扶持新生代」",
+    "body": "Apple 在 Design Miami.Paris 重启并扩展「**Designers of Tomorrow**」计划，评委名单暴露了其当前设计权力结构：工业设计负责人 **Molly Anderson** 与 Faye Toogood、Samuel Ross 等同台。**非共识点**：**Jony Ive** 已彻底转向 OpenAI，Apple 的对外设计叙事**从「天才总监」转向「平台 + 工具赋能新生代」**，并把 iPad Pro / Apple Pencil 当作招募与品牌渗透的入口。图谱里多数人仍停留在「Ive = Apple 设计」，而真正的权力已交接——Anderson 是补上「**后 Ive 时代 Apple**」这条关系链的关键节点。",
+    "persons": [
+      { "id": "mollyanderson", "name": "Molly Anderson（Apple）" },
+      { "id": "jonyive", "name": "Jony Ive（LoveFrom / 前 Apple）" }
+    ],
+    "sources": [
+      { "label": "Dezeen：Apple Designers of Tomorrow emerging designers", "url": "https://www.dezeen.com/2026/06/02/apple-designers-tomorrow-emerging-designers/" }
+    ]
+  },
+  {
+    "id": "nvidia-cosmos3-world-model-2026",
+    "date": "2026-06-01",
+    "type": "trend",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "「世界模型」从论文走进货架 — 英伟达 Cosmos 3 抢在 LeCun、李飞飞之前把「物理大脑」开源商品化",
+    "body": "6 月 1 日 GTC Taipei，英伟达发布 **Cosmos 3**，称其为业界**首个全开源、全模态**的物理 AI 基础模型，原生统一文本 / 图像 / 视频 / 环境声 / 动作五种模态，采用**双塔 mixture-of-transformers**（先推理后生成）架构，训练吃下约 **20 万亿 token**。**非共识点**在于：当 **Yann LeCun**（JEPA / 世界模型）与 **李飞飞**（空间智能 World Labs）还在为各自约 10 亿美元的初创做**路线之争**时，英伟达用「**开放权重 + 卖铲子**」的姿态直接把世界模型商品化，把学术分歧变成了生态卡位。黄仁勋称其为机器人开发的「**代际跃迁**」。**含义**：世界模型的竞争正从「谁的理论对」转向「谁的底座被更多机器人公司默认调用」。",
+    "persons": [
+      { "id": "lecun", "name": "Yann LeCun（AMI Labs）" },
+      { "id": "feifei", "name": "李飞飞（World Labs）" }
+    ],
+    "sources": [
+      { "label": "NVIDIA：Launches Cosmos 3, open frontier model for Physical AI", "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI/default.aspx" },
+      { "label": "Axios：NVIDIA AI push with Cosmos 3 world model", "url": "https://www.axios.com/2026/06/01/nvidia-ai-push-cosmos-3-world-model" }
+    ]
+  },
+  {
+    "id": "anthropic-confidential-s1-2026",
+    "date": "2026-06-01",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Anthropic 抢在 OpenAI 前递交保密 IPO — 估值 9650 亿美元的「AI 第一股」要来了",
+    "body": "6 月 1 日 **Anthropic** 向 SEC **保密递交 S-1 草案**，距其完成 **650 亿美元 H 轮、估值冲到 9650 亿美元**仅几天。这是首家在私募估值榜上**超越 OpenAI** 的公司，且明确**抢跑** OpenAI 的上市进程；其年化收入跑率据报已越过 **470 亿美元**，主要由 Claude 在编码与 agentic 工作流的企业采用驱动。**信号**：AI 实验室从「永远私募融资」转向公开市场的拐点正在出现——**Dario Amodei** 选择用 PBC（公益公司）结构带头叩开二级市场的门。",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "Anthropic：Confidential draft S-1 to the SEC", "url": "https://www.anthropic.com/news/confidential-draft-s1-sec" },
+      { "label": "TechCrunch：Anthropic files to go public", "url": "https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/" }
+    ]
+  },
+  {
+    "id": "ai-washing-layoffs-2026",
+    "date": "2026-05-31",
+    "type": "non-consensus",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "「AI 抢了设计岗」可能是个被滥用的封面故事 — MIT 学者：AI 是裁员的「完美借口」",
+    "body": "当设计圈普遍焦虑「AI 取代设计师」时，MIT Sloan 荣休教授 **Paul Osterman** 给出反共识判断：AI 往往是裁员的「**完美借口**」——「它让裁员看起来不是我们的决定、不是我们的错，而是技术的错」。Fortune 点名 Wix（裁约 1000 人 / 20%）、Block、Snap、Atlassian 等，指出「**用 AI 洗白裁员**」其实延续了 20 年的精简化老剧本，只是换了技术外衣。**含义**：把设计岗位流失全归因于 AI，可能误读了行业真实的结构性变化——成本周期与组织选择，往往比模型能力更能解释这一轮收缩。",
+    "persons": [],
+    "sources": [
+      { "label": "Fortune：Tech companies AI-washing layoffs", "url": "https://fortune.com/2026/05/31/tech-companies-ai-washing-layoffs-wix-block-snap-atlassian-disposable-workers/" }
+    ]
+  },
+  {
     "id": "bigtech-ai-hardware-mobilization-2026",
     "date": "2026-06-03",
     "type": "trend",
