@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "nvidia-groot-unitree-reference-2026-06-01",
+    date: "2026-06-01",
+    type: "trend",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "英伟达钦定宇树为人形机器人全球参考平台 — 生态「安卓时刻」",
+    body: "6 月 1 日 GTC Taipei，英伟达发布 **Isaac GR00T 参考人形机器人**，硬件本体唯一选定宇树 **H2 Plus**：全身 **75 自由度**（本体 31 + Sharpa Wave 灵巧手 44），搭载 Jetson Thor Blackwell GPU（**2,070 FP4 TOPS / 128GB 内存**），Stanford Robotics Center、ETH Zurich、Ai2、UCSD 四所顶尖机构首批采用，**G1 同时纳入**软件栈支持，H2 Plus 计划 **2026 年 10 月发货**；两天后宇树 IPO 过会并提交注册。英伟达在复刻「Android 策略」——不造本体，以 **GR00T 软件栈 + 参考硬件** 锁定研究院入口；一旦研究员默认用 GR00T 跑实验，就默认采购宇树的机器。在地缘政治压力下选中国公司做全球学术参考平台，是一个反共识信号：**硬件的质价比比地缘风险更能影响平台决策**。对创业者的实操含义：进不了 GR00T 参考名单的人形公司，会被生态而非技术淘汰——**打通 NVIDIA 软件栈、拿到学术机构背书，比堆硬件规格参数划算**",
+    persons: [
+      { id: "wangxingxing", name: "王兴兴（宇树）" }
+    ],
+    sources: [
+      { label: "NVIDIA Newsroom: Isaac GR00T Reference Humanoid Robot (2026-06-01)", url: "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design" },
+      { label: "CNBC: Nvidia picks Unitree for humanoid robot platform (2026-06-01)", url: "https://www.cnbc.com/2026/06/01/nvidia-unitree-humanoid-robotics-system-researchers.html" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
