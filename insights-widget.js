@@ -2538,6 +2538,54 @@ const INSIGHTS_DATA = [
     ]
   },
   {
+    "id": "unitree-ipo-nvidia-week-2026-06",
+    "date": "2026-06-01",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "73 天过会 + 英伟达背书：宇树双线加速，标志具身赛道进入「兑现期」",
+    "body": "6 月 1 日是宇树**双喜临门**日：上午，上交所正式公告宇树科技 IPO 通过审核，从受理到过会仅 **73 天**，创 STAR 市场近年最快记录之一；同日，英伟达在 GTC 台北宣布 **Isaac GR00T 参考人形机器人**，以**宇树 H2 Plus** 为官方硬件底盘（搭配 Sharpa 五指灵巧手 + Jetson Thor 计算平台），面向全球高校科研机构，年底开始交货。**信号**：一家中国机器人公司同日收到 A 股审核委的融资背书和英伟达的技术选型——这两张「主流认可」牌同时落地，对还在争估值的具身赛道是显著的定价锚点：不是所有人形机器人公司都能同时赢得政策市场和技术生态。",
+    "persons": [
+      {"id": "wangxingxing", "name": "王兴兴（宇树科技）"}
+    ],
+    "sources": [
+      {"label": "新浪财经：宇树科技 IPO 过会（2026-06-01）", "url": "https://finance.sina.com.cn/wm/2026-06-01/doc-inhzwyqr2412070.shtml"},
+      {"label": "CNBC: Nvidia picks Unitree for humanoid platform", "url": "https://www.cnbc.com/2026/06/01/nvidia-unitree-humanoid-robotics-system-researchers.html"},
+      {"label": "NVIDIA Newsroom: Isaac GR00T Reference Humanoid Robot", "url": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design"}
+    ]
+  },
+  {
+    "id": "byd-humanoid-entry-2026-06",
+    "date": "2026-06-04",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "BYD 官宣人形机器人：20,000 台工厂自用 + 50,000 台/年产能，产能战提速",
+    "body": "6 月 3–4 日，比亚迪执行副总裁**李柯**确认公司已在研发人形机器人：工厂内部 **150 台**原型机正在测试，2026 年计划向自有工厂部署 **2 万台**，西安新产业园规划年产能 **5 万台**，并将通过经销商网络向消费者销售，同时发布开放机器人平台兼容合作伙伴机型。**比亚迪的技术底牌**：全球最大电池制造商 + 成熟传感器供应链 + EV 智能驾驶软件。「汽车软件移植到机器人很容易」——李柯原话。**非共识**：继小鹏 IRON 之后，BYD 入场把人形机器人产能竞争的主力军从科技初创公司扩展到整车制造商——后者的真正优势不是软件，而是**供应链谈判力、工厂自消化能力和经销商网络**，这三样是具身智能独角兽短期内都复制不了的。",
+    "persons": [],
+    "sources": [
+      {"label": "CnEVPost: BYD enters humanoid robot market", "url": "https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/"},
+      {"label": "CarNewsChina: BYD confirms humanoid robot development", "url": "https://carnewschina.com/2026/06/04/byd-confirms-humanoid-robot-development-says-future-sales-could-use-dealer-network/"}
+    ]
+  },
+  {
+    "id": "world-model-vast-robot-infra-2026-06",
+    "date": "2026-06-01",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "VAST 近 2 亿美元独角兽 + 全球机器人融资 $230 亿 — 物理 AI 基础设施崛起",
+    "body": "6 月 1 日，3D 大模型公司 **VAST**（创始人宋亚宸，95 后游戏玩家）完成近 **2 亿美元** A+/A++ 轮（渶策/国寿长三角领投，春华/Genesis Capital 跟投），估值突破 **10 亿美元**成为独角兽。同步发布 **Project Eden**：首个原生解耦世界状态与视觉渲染的世界模型，支持持久化、多人并发的 AI Agent 交互环境。与此同时，全球机器人融资 2026 年已累计达 **$230 亿**（接近 2025 全年 $260 亿）。资本正在从整机向三类物理 AI 基础设施渗透：① **3D 世界模型**（VAST Project Eden）；② **机器人大脑芯片**（维泛智能，北大类脑 BiGPU 架构，5 月获数亿元种子轮）；③ **技能数据平台**（Mech-Mind、Genesis AI GENE-26.5）。这与 2021 年 EV 时代算力/BMS/传感器分别起量的节奏高度相似——整机公司的护城河最终不在整机本身，而在谁先锁住基础设施的话语权。",
+    "persons": [
+      {"id": "vast", "name": "宋亚宸（VAST）"}
+    ],
+    "sources": [
+      {"label": "新浪科技：VAST 近 2 亿美元 A 轮系列融资（2026-06-01）", "url": "https://finance.sina.com.cn/tech/roll/2026-06-01/doc-inhzwyqq3950485.shtml"},
+      {"label": "Bloomberg: Gen-Z gamer's 3D startup becomes China's AI unicorn", "url": "https://www.bloomberg.com/news/articles/2026-06-01/gen-z-gamer-s-3d-model-startup-becomes-china-s-latest-ai-unicorn"},
+      {"label": "Briefs.co: Robotics startups raised $23B in 2026", "url": "https://www.briefs.co/news/robotics-startups-raised-23-billion-in-2026-closing-in-on-all-of-2025/"}
+    ]
+  },
+  {
     "id": "dreame-jiamei-shell",
     "date": "2025-12-15",
     "type": "non-consensus",
