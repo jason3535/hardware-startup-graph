@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "byd-humanoid-robot-open-platform-2026-06-04",
+    "date": "2026-06-04",
+    "type": "non-consensus",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "比亚迪正式确认自研人形机器人 — 全球第一车企的开放平台押注",
+    "body": "比亚迪执行副总裁李柯 6 月 3 日公开确认：比亚迪已自研人形机器人，原型迭代 **6 代**、约 **150 台**在汽车工厂执行搬运/贴标/检测，效率已达人工的约 **80%**。与外界想象不同，其策略不以「卖机器人」为目标，而是押注**开放平台 + 经销商网络**——既自产本体，也接受合作方机型，通过现有 **4S 经销商渠道**向企业与消费者分发。**非共识点**：多数具身创业者的护城河是模型或融资，比亚迪的护城河是 **80 万工厂工人**作为免费、即时的迭代测试场——原型出错，同楼工程师当天可修复；第 1 代到第 6 代的迭代速度直接来自这个「零距离反馈环」，是任何 VC 资金换不来的。比亚迪意图把自己做成「机器人领域的 Android + 经销商网络」，是当前竞争格局里唯一具备此分发路径的玩家。**实操含义**：具身创业者若与比亚迪竞争「通用搬运/检测本体」，开放平台出现后利润空间会被系统性压平；真正的机会在比亚迪流水线覆盖不到的精细垂直场景（手术室、家庭服务、特种仓储操作）",
+    "persons": [],
+    "sources": [
+      { "label": "新浪财经：比亚迪，入局人形机器人（2026-06-03）", "url": "https://finance.sina.com.cn/wm/2026-06-03/doc-iniacxkk4036270.shtml" },
+      { "label": "CnEVPost：BYD enters humanoid robot market, may sell through dealer network（2026-06-03）", "url": "https://cnevpost.com/2026/06/03/byd-enters-humanoid-robot-market/" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
