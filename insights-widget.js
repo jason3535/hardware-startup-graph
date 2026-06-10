@@ -6,6 +6,23 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "openai-confidential-s1-ipo-2026-06-10",
+    "date": "2026-06-10",
+    "type": "funding",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "OpenAI 递交保密 S-1 — 万亿估值叩门二级市场，内部预测 2026 亏损 140 亿美元",
+    "body": "6 月 8 日，OpenAI 向 SEC 保密递交 S-1 草案，距 Anthropic 递表仅 8 天。关键数字：2025 全年 ARR 逾 200 亿美元，ChatGPT 每周活跃用户 9 亿，私募估值 8520 亿美元；Goldman Sachs / Morgan Stanley 联合保荐，市场预期最快 9 月上市、估值冲击 1 万亿美元。但内部文件同步披露：2026 年预测亏损 140 亿美元，最早 2029 年方能盈利——年入 200 亿美元旁坐着 140 亿亏损，揭示了前沿大模型训练的真实成本结构。行业含义：两大顶级 AI 实验室相隔 8 天同步奔向二级市场，AI「永远私募」的格局宣告终结；两份 S-1 将强制把模型收入质量、算力依赖度暴露在公开市场审视下，定价逻辑从 VC 信仰切换到 EV/ARR 倍数。实操含义：DeepSeek、Kimi 等中国 AI 公司的港股 IPO，将以这两份 S-1 的 EV/ARR 为直接锚点——当 OpenAI 都要到 2029 年才盈利，「能比 OpenAI 更快实现盈利」将成为中国 AI 公司上市时唯一有效的差异化叙事",
+    "persons": [
+      { "id": "altman", "name": "Sam Altman（OpenAI）" },
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "Fortune：OpenAI files confidential S-1（2026-06-09）", "url": "https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/" },
+      { "label": "OpenAI：Confidential draft S-1 to the SEC", "url": "https://openai.com/index/openai-submits-confidential-s-1/" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
