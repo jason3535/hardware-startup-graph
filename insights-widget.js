@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "openai-s1-anthropic-revenue-reversal-2026-06-11",
+    "date": "2026-06-11",
+    "type": "funding",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "OpenAI 追随 Anthropic 递表 S-1 — 并列递表揭开 Claude 营收已近两倍于 ChatGPT",
+    "body": "6 月 8-9 日，**OpenAI** 向 SEC 保密递交 S-1，距 **Anthropic**（6 月 1 日首发）仅 8 天——两家顶级实验室在同一周宣布上市意向，「AI 实验室永远私募」的融资范式宣告终结。但顺序背后藏着更大的颠覆：OpenAI 估值 **$852B**、月营收 $2B（年化约 **$24B**），且每赚 $1 亏损 **$1.22**；Anthropic 估值 **$965B**（5 月 28 日已首次超越 OpenAI），年化营收约 **$45B**，接近 OpenAI 的两倍，且持续盈利改善。ChatGPT 仍是全球最知名的 AI 产品，Claude 却正在成为更高效的商业引擎——驱动力是企业端 agentic 工作流与编程场景的强势渗透，而非消费者心智。Sam Altman 事后的发言「我们预计这会被泄露，所以我们直接宣布」，折射出 OpenAI 已不再是行业叙事的唯一制定者。**实操含义**：「消费者最知名」≠「企业最赚钱」的分叉已经发生——AI 创业者选模型或合作方时，OpenAI 的品牌曝光不等于企业采购意愿，agentic 场景下 Claude 的 API 易用性与合规友好度正在形成真实的 B 端付费粘性，这是当前选型的关键变量",
+    "persons": [
+      { "id": "samaltman", "name": "Sam Altman（OpenAI）" },
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "Fortune：OpenAI files confidential S-1（2026-06-09）", "url": "https://fortune.com/2026/06/09/openai-files-confidential-s-1-sec-ipo/" },
+      { "label": "CNBC：OpenAI confidentially files for IPO（2026-06-08）", "url": "https://www.cnbc.com/2026/06/08/openai-confidentially-files-for-ipo-prepping-wall-street-for-ai-debut.html" },
+      { "label": "CNBC：Anthropic tops OpenAI as most valuable AI startup（2026-05-28）", "url": "https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
