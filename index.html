@@ -2934,7 +2934,7 @@ applyLanguage = function(lang) {
     var d=window._currentDetailScholar;
     if(!d)return;
     var lang=detectLang();
-    var url=location.origin+location.pathname+'?node='+encodeURIComponent(d.id);
+    var url=location.origin+'/p/'+encodeURIComponent(d.id)+'.html';
     var name=d.name||'';
     var shareTitle=name?(name+' · '+document.title):document.title;
     if(navigator.share){
