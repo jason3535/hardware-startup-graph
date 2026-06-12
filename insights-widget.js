@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "neura-robotics-series-c-tether-2026-06-12",
+    "date": "2026-06-12",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "德国 Neura C 轮 14 亿：Tether 领投、Amazon NVIDIA 战投，具身「四圈联投」首次成立",
+    "body": "6 月 10 日，德国 **NEURA Robotics** 宣布完成 **Series C，上限 14 亿美元**（绑定里程碑分批释放，非一次性到账），**估值 70 亿美元**，称欧洲机器人单轮最大融资。领投方为稳定币巨头 **Tether**，战投包括 **Amazon、NVIDIA、Qualcomm**，工业零部件巨头 **Bosch、Schaeffler** 及欧洲投资银行，现有订单管道超 **10 亿美元**，目标 2030 年量产百万台并全球铺设「NEURA Gyms」——为认知机器人搭建现实训练基础设施。**行业含义**：这是具身赛道迄今最罕见的「四圈联投」结构——加密资本（Tether）、云平台（Amazon）、算力芯片（NVIDIA）、工业零部件（Bosch/Schaeffler）各押不同价值锚点：数据资产主权、部署渠道、算力供给、工业落地。这预示具身融资核心竞争力已从「谁的大脑最强」转向「谁先同时锁住算力/云/工业三个卡位」，单靠模型叙事拿到的估值会被有战略背书的公司系统性超越。**实操含义**：中国具身创业者融资时，工业零部件/汽车供应商是被低估的战略股东候选——他们同时带来场景订单和零部件优先级，与顺丰领投 Robotera 的底层逻辑完全相同",
+    "persons": [],
+    "sources": [
+      { "label": "CNBC：Humanoid robotics company backed by Amazon, Nvidia（2026-06-10）", "url": "https://www.cnbc.com/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html" },
+      { "label": "Bloomberg：Tether Backs German Robotics Startup Neura in $1.4B Round（2026-06-10）", "url": "https://www.bloomberg.com/news/articles/2026-06-10/tether-backs-german-robotics-startup-neura-in-1-4-billion-round" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
