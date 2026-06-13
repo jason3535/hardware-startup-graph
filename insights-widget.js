@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    id: "engineai-luxshare-hk-ipo-2026-06-13",
+    date: "2026-06-13",
+    type: "funding",
+    graphs: ["hardware"],
+    pinned: false,
+    title: "立讯精密联投 EngineAI 2 亿美元 B 轮 — 「果链」代工体系首次押注人形量产路线",
+    body: "6 月 12 日彭博报道，深圳人形机器人公司 **EngineAI（引擎 AI）**已向港交所**保密递表**（承销商中金、中信证券），是近期中国人形赛道第三家筹备港股 IPO 的公司。前置融资：**B 轮 2 亿美元**（2026 年 4 月），由**立讯精密**（苹果最大代工商之一）与河南国投旗下基金联合领投，投后估值超 **100 亿元人民币**；配套工厂 6 月 1 日在深圳开幕，T800 节拍达**每 15 分钟一台**、年产能目标万台。**非共识点**：立讯精密不只是「财务投资人」——它同期已披露 2025 年自有人形出货目标 **3000 台**，在郑州、安徽布局年产万台基地；「造 iPhone 的供应链」用资本 + 产能两手同时押注人形量产，是 Foxconn 布局 EV 之后中国电子制造体系对机器人赛道最公开的系统性卡位。**实操含义**：人形机器人最难凭融资单独解决的，是「实验室良品率→量产良品率」的 know-how；找立讯这类 Tier-1 代工方做战略股东，等于同时拿到资金、供应链验证与产能通道，价值远超同等金额的纯财务 VC",
+    persons: [],
+    sources: [
+      { label: "Bloomberg：EngineAI Files for HK IPO（2026-06-12）", url: "https://www.bloomberg.com/news/articles/2026-06-12/humanoid-robot-manufacturer-engineai-is-said-to-file-for-hong-kong-ipo" },
+      { label: "Humanoids Daily：EngineAI $200M Series B, Luxshare Joins Cap Table", url: "https://www.humanoidsdaily.com/news/engineai-secures-200-million-series-b-as-manufacturing-giant-luxshare-joins-the-cap-table" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
