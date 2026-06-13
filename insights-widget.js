@@ -6,6 +6,130 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "engineai-hkipo-factory-2026",
+    "date": "2026-06-12",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "EngineAI 6 月 1 日开厂「15 分钟一台」、12 日递表港股 — 赵同阳用「工厂叙事」抢人形 IPO 第二张门票",
+    "body": "继宇树之后，**众擎机器人（EngineAI）**于 **6 月 12 日**向港交所**秘密递表**（中金、中信建投保荐）。其打法是**先量产、再上市**：6 月 1 日在深圳启用 **1.2 万平方米工厂**，首批 T800 人形下线，**每 15 分钟一台、规划年产 1 万台**；4 月 B 轮 **2 亿美元**（河南中金汇融、**立讯精密**领投）把估值推过 **100 亿元（15 亿美元）**。**非共识**：当多数人形公司还在比拼 demo 与参数，赵同阳（曾与小鹏合创鹏行智能）押的是**制造产能**——在这条赛道，「能不能造出来、造多便宜」正取代「能不能动」成为新的分水岭。",
+    "persons": [
+      { "id": "zhaotongyang", "name": "赵同阳（EngineAI / 众擎）" }
+    ],
+    "sources": [
+      { "label": "Bloomberg：EngineAI said to file for Hong Kong IPO（2026-06-12）", "url": "https://www.bloomberg.com/news/articles/2026-06-12/humanoid-robot-manufacturer-engineai-is-said-to-file-for-hong-kong-ipo" },
+      { "label": "eWeek：EngineAI opens factory, one humanoid every 15 minutes", "url": "https://www.eweek.com/news/engineai-humanoid-robot-factory-apac/" }
+    ]
+  },
+  {
+    "id": "china-humanoid-national-deployment-2026",
+    "date": "2026-06-10",
+    "type": "non-consensus",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "中国给人形机器人下了「军令状」— 6 月底交方案、年底 1 万台「进工位」",
+    "body": "中国启动**全国性专项**，要求地方政府与国企在**不到半年内**证明人形机器人的真实可用性：实施方案 **6 月底**前上报、进展 **11 月底**前复盘，目标年底关键产品进入**「工作模式」**，北京一地就要落地 **100+ 高价值场景**、推动 **1 万台**部署。资本同步井喷——**Q1 2026 行业融资 681 亿元、已超 2025 全年**，23 家公司进入「百亿俱乐部」。**非共识**：这是一次**自上而下的「demo 转真活」forcing function**，把行业从「发布会竞赛」逼向「交付与复购」；真正的考题不是出货量，而是**机器人能否在真实工位上稳定干满一个班**。",
+    "persons": [],
+    "sources": [
+      { "label": "SCMP：China fast-tracks humanoid robots into industry", "url": "https://www.scmp.com/economy/china-economy/article/3356629/china-fast-tracks-humanoid-robots-and-embodied-ai-industry-under-nationwide-programme" },
+      { "label": "Global Times：China's humanoid robot industry accelerates commercialization", "url": "https://www.globaltimes.cn/page/202606/1362565.shtml" }
+    ]
+  },
+  {
+    "id": "apple-ios27-extensions-ai-marketplace-2026",
+    "date": "2026-06-08",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "苹果把 Siri 变成「AI 商店」— iOS 27 Extensions 让 Claude/Gemini/ChatGPT/Grok 同台，Anthropic 首次拿到 10 亿 iPhone 入口",
+    "body": "**6 月 8 日 WWDC**，苹果用 **iOS 27 Extensions** 把 Siri、写作工具、Image Playground 向**第三方 AI 开放**：用户可在设置里把 **Claude、Gemini、ChatGPT、Grok** 设为默认 AI，苹果结束「只接 ChatGPT」的独家模式。**非共识**：这等于苹果亲手把通往 **10 亿+设备**的分发渠道，开放给 **Anthropic / OpenAI / Google** 三家对手同台竞价——**Dario Amodei** 的 Claude 第一次成为 iPhone 系统级选项。对模型厂商，这是继 API 之后**最大的一次「默认入口」红利**；对苹果，则是承认**在 AI 时代，平台中立比自研垄断更划算**。",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic / Claude）" },
+      { "id": "altman", "name": "Sam Altman（OpenAI / ChatGPT）" }
+    ],
+    "sources": [
+      { "label": "AI Weekly：iOS 27 Extensions opens third-party AI marketplace", "url": "https://aiweekly.co/node/2611" },
+      { "label": "MLQ：Apple rebuilds Siri on Google Gemini and Nvidia Blackwell", "url": "https://mlq.ai/news/apple-rebuilds-siri-on-google-gemini-models-and-nvidia-blackwell-gpus-in-landmark-wwdc-partnership/" }
+    ]
+  },
+  {
+    "id": "pentagon-drops-claude-too-safe-2026",
+    "date": "2026-06-08",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Claude「太安全」被请出五角大楼机密系统 — Anthropic 拒绝放开大规模监控/自主武器，OpenAI/Google/xAI 接盘",
+    "body": "到 **2026 年 6 月**，美国国防部已就**机密系统**与 **OpenAI、Google、微软**敲定多供应商合同，启动替换原本主力的 **Anthropic Claude**。导火索是 Anthropic **拒绝为大规模监控与自主武器松绑护栏**，国防部长 Hegseth 干脆把其产品列为**「供应链风险」**。**非共识**：在商业市场，**安全对齐**是 Anthropic 的卖点；但在军方，它成了**被替换的理由**。Anthropic 已起诉挑战该认定——这场官司把「**AI 安全到底是护城河还是枷锁**」摆上了台面。",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" },
+      { "id": "altman", "name": "Sam Altman（OpenAI）" }
+    ],
+    "sources": [
+      { "label": "TechTimes：Pentagon racing to replace Anthropic's Claude", "url": "https://www.techtimes.com/articles/317998/20260608/pentagon-racing-replace-anthropics-claude-because-it-was-too-safe-war.htm" },
+      { "label": "CryptoBriefing：Pentagon tests rival AI models to replace Claude", "url": "https://cryptobriefing.com/pentagon-tests-ai-models-replace-anthropic-claude-2/" }
+    ]
+  },
+  {
+    "id": "apple-siri-rents-gemini-nvidia-2026",
+    "date": "2026-06-08",
+    "type": "trend",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "苹果在 WWDC 承认前沿模型造不出来 — Siri 改租 Google Gemini、跑在 Nvidia Blackwell，年付约 10 亿美元",
+    "body": "**6 月 8 日 WWDC**，苹果把重写后的 Siri 建在**谷歌 Gemini** 之上，旗舰 **AFM Cloud Pro** 跑在 **Google Cloud 的 Nvidia Blackwell B200** 上，据彭博这笔合作**年付约 10 亿美元**。**非共识**：那个以「全栈自研」立身的苹果，在 AI 上选择了**租而不造**——把最关键的智能层外包给最大的竞争对手之一。对硬件行业的信号很硬核：**即便手握 10 亿台设备与顶级芯片，也未必追得上前沿模型**；终端巨头的护城河正从「自研一切」转向「**谁的入口默认在用户手边**」。",
+    "persons": [],
+    "sources": [
+      { "label": "MLQ：Apple rebuilds Siri on Gemini + Nvidia Blackwell（$1B/yr）", "url": "https://mlq.ai/news/apple-rebuilds-siri-on-google-gemini-models-and-nvidia-blackwell-gpus-in-landmark-wwdc-partnership/" },
+      { "label": "CNBC：Apple WWDC 2026 Siri AI reveal", "url": "https://www.cnbc.com/2026/06/08/apple-wwdc-2026-live-updates.html" }
+    ]
+  },
+  {
+    "id": "liquid-glass-refined-figma-native-2026",
+    "date": "2026-06-08",
+    "type": "trend",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "Liquid Glass 从争议走向标配 — 苹果 WWDC 给它加「可调节」开关，Figma 同步原生支持",
+    "body": "**6 月 8 日 WWDC**，苹果没有抛弃去年争议缠身的 **Liquid Glass**，而是给它做了**可调迭代**：用户能**调强或调弱**其玻璃质感，并采用更**分层**的处理；同期 **Figma** 原生支持 Liquid Glass 效果，把这套玻璃拟物从「苹果系统特效」变成**设计师手里的通用组件**。**含义**：一年前被批「华而不实」的设计语言，正沿着**「先争议、再可调、后工具化」**的路径沉淀为行业默认——glassmorphism 这次大概率不是昙花一现，而是进入了工具链。",
+    "persons": [
+      { "id": "mollyanderson", "name": "Molly Anderson（Apple 工业/界面设计）" }
+    ],
+    "sources": [
+      { "label": "Web Designer News：New Apple Design — Liquid Glass, Figma integration（WWDC 2026）", "url": "https://webdesignernews.com/new-apple-design-is-here-black-glass-figma-integration-liquid-icons-more-wwdc-2026/" },
+      { "label": "Figma Community：Liquid Glass Elements", "url": "https://www.figma.com/community/file/1563175178507607936/liquid-glass-elements" }
+    ]
+  },
+  {
+    "id": "cognition-1b-26b-devin-2026",
+    "date": "2026-05-27",
+    "type": "funding",
+    "graphs": [
+      "investor"
+    ],
+    "pinned": false,
+    "title": "Cognition $1B、估值 8 个月翻 2.5 倍到 260 亿 — 写自己 89% 代码的 Devin 让「替代工程师」成最贵叙事",
+    "body": "AI 编码公司 **Cognition**（Devin 母公司，创始人 **Scott Wu**）完成 **10 亿美元** D 轮、估值 **260 亿美元**，较 8 个月前的 102 亿**翻 2.5 倍**；**Lux Capital、General Catalyst、8VC** 联合领投，Founders Fund（Thiel）跟投。**非共识**：与 Copilot / Cursor「**辅助**人写代码」不同，Devin 主打**自主接管并执行任务**，企业用量 2026 年涨 **10 倍以上**、ARR 达 **4.92 亿美元**，且 Cognition **自身 89% 的代码已由 AI 写**。这把「**AI 替代工程师**」从口号变成可计价的叙事——也是这一轮估值最贵的赌注之一。",
+    "persons": [
+      { "id": "joshwolfe", "name": "Josh Wolfe（Lux Capital，领投）" }
+    ],
+    "sources": [
+      { "label": "Bloomberg：Cognition raises $1B at $26B value", "url": "https://www.bloomberg.com/news/articles/2026-05-27/ai-coding-startup-cognition-raises-1-billion-at-26-billion-value" },
+      { "label": "TechCrunch：Cognition raises $1B at $25B pre-money", "url": "https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/" }
+    ]
+  },
+  {
     "id": "innoangel-rmb-early-fund-revival-2026",
     "date": "2026-06-05",
     "type": "funding",
