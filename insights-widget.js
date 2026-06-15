@@ -6,6 +6,25 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "anthropic-fable5-export-ban-2026-06-14",
+    "date": "2026-06-14",
+    "type": "non-consensus",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Anthropic 被迫全球下线 Fable 5 — 特朗普出口管制首次落地顶级商用 AI API",
+    "body": "6 月 12 日，Axios 独家：特朗普政府商务部长 Howard Lutnick 向 Dario Amodei 发函，要求对 **Fable 5** 和 **Mythos 5** 实施出口管制、仅向美国用户开放——理由是「中国关联组织疑似访问并可能破解 Mythos 5」；白宫给出 **90 分钟**截止期限。Anthropic 的应对出乎意料：拒绝「仅限美国人」模式，转而对**全球所有用户一并下线**两款模型，声明称这是「确保合规的唯一方案」，并公开反驳政府：所谓破解只是「一个狭义、非普遍性漏洞的口头证据」，不足以召回已覆盖数亿用户的商业模型。**非共识判断**：这是 AI 出口管制首次实质性落地到**顶级商用 API 层**——不再只是芯片，而是模型本身。反直觉之处：就在 11 天前，Anthropic 刚以「最安全前沿 AI」叙事向 SEC 秘密递表冲刺 IPO；而此次强制下架，恰恰是它「拒绝悄悄打补丁、宁愿全面下线」的安全文化使然——与两周前被五角大楼以「太安全、拒绝放开武器护栏」踢出，构成荒诞的政策镜像。**对创业者实操含义**：在美国以外运营、依赖 Claude 顶级 API 的硬件及 AI 团队，现在必须把「美国 AI 出口管制风险」纳入技术选型矩阵——不是小概率事件，而是已落地的先例",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "Axios：Trump admin blocks foreign access to Anthropic's most powerful AI（2026-06-12）", "url": "https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security" },
+      { "label": "Fortune：Anthropic disables Fable and Mythos after US export controls（2026-06-13）", "url": "https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" },
+      { "label": "Semafor：White House move linked to concerns about Chinese access to Mythos（2026-06-13）", "url": "https://www.semafor.com/article/06/13/2026/white-house-move-to-limit-anthropic-linked-to-concerns-about-chinese-access-to-mythos" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
