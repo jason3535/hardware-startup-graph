@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "neura-robotics-series-c-2026-06-10",
+    "date": "2026-06-10",
+    "type": "funding",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "亚马逊博世入股 Neura — 14 亿美元标志工业客户开始锁定人形供应商",
+    "body": "6 月 10 日，德国人形机器人公司 **Neura Robotics** 宣布完成 **C 轮最高 14 亿美元**融资，投后估值约 **70 亿美元**，创欧洲人形机器人单轮纪录。投资方阵容突破以往：**亚马逊**、**英伟达**、**博世**、**舍弗勒**、**欧洲投资银行**、**Tether** 同场入局；其中博世（汽车零部件）、舍弗勒（精密传动）、亚马逊（仓储物流）均是未来的潜在最终客户。旗舰机型 4NE-1 由保时捷工作室设计外观，为首款量产就绪型认知人形。这轮融资的真正信号在结构，而非金额：博世、舍弗勒和亚马逊不是财务 VC，而是以股权提前绑定供货关系的买方——这与 2015–16 年车企入股宁德时代时的逻辑如出一辙。人形机器人正从「叙事驱动的 VC 赛道」转向「工业供应链锁定战」，欧洲率先走出这一步。对创业者的实操含义：「**股东名册里有没有终端工业客户**」正成为人形赛道变现确定性的最硬信号——入股即意味着采购意向绑定，比口头 MOU 更具约束力",
+    "persons": [],
+    "sources": [
+      { "label": "CNBC：Humanoid robotics company Neura Robotics backed by Amazon, Nvidia（2026-06-10）", "url": "https://www.cnbc.com/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html" },
+      { "label": "TechTimes：Neura Robotics raises $1.4B, Europe's humanoid bet draws Nvidia, Amazon, Tether（2026-06-11）", "url": "https://www.techtimes.com/articles/318206/20260611/neura-robotics-raises-14-billion-europes-humanoid-bet-draws-nvidia-amazon-tether.htm" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
