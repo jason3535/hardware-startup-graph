@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "neura-series-c-amazon-investor-2026-06-10",
+    "date": "2026-06-10",
+    "type": "funding",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "Neura C 轮 14 亿 — 亚马逊仓储需求变成股东身份",
+    "body": "6 月 10 日，德国人形机器人公司 **Neura Robotics** 完成 **C 轮最高 14 亿美元**融资，估值 **70 亿美元**，自称「全栈机器人公司史上最大单轮」。投资人名单覆盖完整价值链：稳定币巨头 **Tether** 领投，**英伟达**（算力 + Isaac 机器人平台）、**高通**（端侧推理）、**博世**（传感器）、**舍弗勒**（精密轴承）、**欧洲投资银行**同台——**亚马逊**以全球最大仓储物流运营商身份入股，首次以「最终部署方」而非「采购客户」出现在人形机器人融资桌上。公司当前订单积压超 **10 亿欧元**，目标 2030 年量产规模达数百万台。**非共识**：此前涌入具身赛道的大量资金是「供给侧押注」（谁造得出来），亚马逊入股则是第一次出现「需求侧锁定」信号——全球最大仓库主用股权宣告「我打算用这批机器人」，而非仅仅观望。叠加从芯片（英伟达 + 高通）到机械供应链（博世 + 舍弗勒）的全栈背书，Neura 此轮是供给与需求同时入局的罕见范本。**对创业者的实操含义**：亚马逊从买家升格为股东，意味着其内部已形成明确的部署时间线；中国人形公司若想进入亚马逊物流生态，今后面对的不只是技术评估，还有「亚马逊优先扶持被投方」的关系壁垒",
+    "persons": [],
+    "sources": [
+      { "label": "CNBC：Humanoid robotics company Neura Robotics backed by Amazon, Nvidia（2026-06-10）", "url": "https://www.cnbc.com/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html" },
+      { "label": "Neura Robotics：Record Series C of up to $1.4B（官方公告）", "url": "https://neura-robotics.com/record-series-c/" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
