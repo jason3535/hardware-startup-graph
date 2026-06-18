@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "prometheus-bezos-agi-engineer-2026-06-11",
+    "date": "2026-06-11",
+    "type": "non-consensus",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "贝索斯 120 亿美元亲创 Prometheus — 押「人工通用工程师」而非机器人",
+    "body": "2026 年 6 月 11 日，**Jeff Bezos** 与 Vik Bajaj（斯坦福医学院教授、前 Verily 联合创始人）公开 **Prometheus** 的 **120 亿美元**融资、投后估值 **410 亿美元**；领投方是**摩根大通、贝莱德、高盛**，DST Global 与 Arch Venture Partners 跟投——清一色机构资本，没有典型 VC。公司 2025 年 11 月成立，约 150 人，旧金山/伦敦/苏黎世三地办公。核心方向：构建「**人工通用工程师（Artificial General Engineer）**」，以 AI 加速物理产品从设计到制造的全链条，覆盖芯片、桥梁到所有工程场景。贝索斯明确说：「**与机器人无关**」。**非共识**：整个行业都在争造「能干活的机器人本体」，贝索斯押的是另一层——**用 AI 让工程师更快地把物理产品造出来**，逻辑类似 EDA（Cadence/Synopsys）之于芯片设计：使能者比执行者先赚钱，且护城河更深。摩根大通/贝莱德的出现是结构性信号：「物理世界 AI 工具」这一赛道已跨越风险资本，进入机构级资产配置——这种迁移历史上只发生在「不再是风险、而是基础设施」的行业。**对创业者的实操含义**：硬件 R&D 周期将被设计侧 AI 工具大幅压缩，未来「从原型到产品」的速度比 BOM 价格更能决定胜负；同时「卖铲子」的工具层估值（410 亿美元）已与整机独角兽持平，这个方向长期被硬件创业者低估",
+    "persons": [],
+    "sources": [
+      { "label": "TechCrunch：Jeff Bezos's Prometheus raises $12B for an 'artificial general engineer'（2026-06-11）", "url": "https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/" },
+      { "label": "Axios：Prometheus raises $12B at $41B valuation（2026-06-11）", "url": "https://www.axios.com/2026/06/11/prometheus-bezos-industrial-ai" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
