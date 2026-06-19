@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "shazeer-openai-transformer-2026-06-19",
+    "date": "2026-06-19",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "谷歌花 27 亿买回 Transformer 之父，不到两年被 OpenAI 挖走",
+    "body": "**Noam Shazeer**（「Attention Is All You Need」2017 共同作者、Transformer 架构奠基人）6 月 17 日宣布离开 Google 加入 OpenAI，担任 **AI 架构研究主管**。2024 年 Google 以 **27 亿美元**买回他主导 Gemini 预训练；他个人套现约 **8 亿美元**，却不到两年出走——此番 **Sam Altman 在与马斯克 xAI 的直接竞价中胜出**。**非共识**：$2.7B 的人才保留失效，说明架构层研究者在意的是「下一个范式在哪里」而非存量现金；Shazeer 在 OpenAI IPO 前加入、主攻架构研究，是 OpenAI 正在布局下一代模型范式的最早信号。**实操含义**：把顶级架构层人才流向当 AI 能力格局的最早期雷达，这比融资规模与论文数量更能预判赛道走向",
+    "persons": [],
+    "sources": [
+      { "label": "Axios：Top AI researcher leaves Google for OpenAI（2026-06-18）", "url": "https://www.axios.com/2026/06/18/noam-shazeer-google-openai-characterai" },
+      { "label": "TechTimes：Transformer Architect Behind Gemini Jumps to OpenAI（2026-06-18）", "url": "https://www.techtimes.com/articles/318613/20260618/transformer-architect-behind-gemini-jumps-openai-after-google-spent-27b.htm" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
