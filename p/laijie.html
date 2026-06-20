@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>来杰 Lai Jie · Stardust Intelligence (Astribot) | 智能硬件创业图谱</title>
 <meta name="description" content="毕业于西安电子科技大学，五邑大学智能系统硕士。约16年机器人研发经验。曾在香港理工大学任助理研究员，后在百度负责小度机器人项目。2018年成为腾讯Robotics X首位员工，主导Ollie轮腿机器人研发。2022年离开腾讯，在深圳联合创办星尘智能（Astribot）。绳驱双臂机器人S1于2024…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/laijie.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>来杰 Lai Jie</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">LJ</div>
+<h1><span class="i18n-zh">来杰 Lai Jie</span><span class="i18n-en">Lai Jie</span></h1>
 <p class="org">Stardust Intelligence (Astribot)</p>
-<p class="role">星尘智能创始人兼CEO · 腾讯Robotics X首位员工</p>
+<p class="role"><span class="i18n-zh">星尘智能创始人兼CEO · 腾讯Robotics X首位员工</span><span class="i18n-en">Founder &amp; CEO of Astribot · Ex-Tencent Robotics X First Employee</span></p>
 <div class="fields"><span class="tag">robotics</span></div>
-<div class="bio">毕业于西安电子科技大学，五邑大学智能系统硕士。约16年机器人研发经验。曾在香港理工大学任助理研究员，后在百度负责小度机器人项目。2018年成为腾讯Robotics X首位员工，主导Ollie轮腿机器人研发。2022年离开腾讯，在深圳联合创办星尘智能（Astribot）。绳驱双臂机器人S1于2024年4月走红，T系列于2026年5月发布、起售价8.99万元。2025年完成A/A+/A++数亿元融资（蚂蚁集团、锦秋基金及国科系资本参投）；2026年6月披露B轮融资超10亿元——3个月内连融3轮——投后估值突破百亿元，自称全球首个量产绳驱AI机器人公司（2025年底启动千台级交付）。创始核心团队6人均出自腾讯Robotics X。</div>
-<div class="bio en">Studied at Xidian University,master's in intelligent systems at Wuyi University. ~16 years in robotics. Assistant researcher at HK PolyU,then led Baidu's Xiaodu robot project. Became the first employee of Tencent Robotics X in 2018,leading the Ollie wheeled-legged robot. Left in 2022 to co-found Stardust Intelligence (Astribot) in Shenzhen. The cable-driven Astribot S1 dual-arm robot went viral April 2024; the T-series launched May 2026 from RMB 89,900. In June 2026 Astribot disclosed a Series B of over RMB 1 billion — its third round in three months — pushing post-money valuation past RMB 10 billion, and claims to be the world's first to mass-produce cable-driven AI robots (1,000-unit-scale delivery began end-2025). Its six-person founding core all came out of Tencent Robotics X.</div>
-<a class="cta" href="/?node=laijie">在关系图谱中查看 来杰 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2024</span> Astribot S1 cable-driven dual-arm robot</li><li><span class="y">2025</span> A/A+/A++ rounds (Ant Group / CAS Investment)</li><li><span class="y">2026</span> Series B &gt;¥1B, valuation &gt;¥10B (3 rounds in 3 months)</li></ul>
-<h2>关系网络 / Connections</h2><a class="nbr" href="/p/wanghe.html"><b>王鹤 Wang He</b><span>Embodied-AI robot unicorn rivals</span></a><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Chinese embodied/humanoid robotics peers</span></a>
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<div class="bio i18n-zh">毕业于西安电子科技大学，五邑大学智能系统硕士。约16年机器人研发经验。曾在香港理工大学任助理研究员，后在百度负责小度机器人项目。2018年成为腾讯Robotics X首位员工，主导Ollie轮腿机器人研发。2022年离开腾讯，在深圳联合创办星尘智能（Astribot）。绳驱双臂机器人S1于2024年4月走红，T系列于2026年5月发布、起售价8.99万元。2025年完成A/A+/A++数亿元融资（蚂蚁集团、锦秋基金及国科系资本参投）；2026年6月披露B轮融资超10亿元——3个月内连融3轮——投后估值突破百亿元，自称全球首个量产绳驱AI机器人公司（2025年底启动千台级交付）。创始核心团队6人均出自腾讯Robotics X。</div><div class="bio i18n-en">Studied at Xidian University,master's in intelligent systems at Wuyi University. ~16 years in robotics. Assistant researcher at HK PolyU,then led Baidu's Xiaodu robot project. Became the first employee of Tencent Robotics X in 2018,leading the Ollie wheeled-legged robot. Left in 2022 to co-found Stardust Intelligence (Astribot) in Shenzhen. The cable-driven Astribot S1 dual-arm robot went viral April 2024; the T-series launched May 2026 from RMB 89,900. In June 2026 Astribot disclosed a Series B of over RMB 1 billion — its third round in three months — pushing post-money valuation past RMB 10 billion, and claims to be the world's first to mass-produce cable-driven AI robots (1,000-unit-scale delivery began end-2025). Its six-person founding core all came out of Tencent Robotics X.</div>
+<a class="cta" href="/?node=laijie"><span class="i18n-zh">在关系图谱中查看 来杰 →</span><span class="i18n-en">View Lai Jie in the graph →</span></a>
+
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> Astribot S1 cable-driven dual-arm robot</li><li><span class="y">2025</span> A/A+/A++ rounds (Ant Group / CAS Investment)</li><li><span class="y">2026</span> Series B &gt;¥1B, valuation &gt;¥10B (3 rounds in 3 months)</li></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wanghe.html"><b>王鹤 Wang He</b><span>Embodied-AI robot unicorn rivals</span></a><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Chinese embodied/humanoid robotics peers</span></a>
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

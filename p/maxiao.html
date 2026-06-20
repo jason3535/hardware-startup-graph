@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>马啸 Ma Xiao · Viaim (Future Intelligence) | 智能硬件创业图谱</title>
 <meta name="description" content="80后创始人，语音识别与AI交互领域深耕17年以上。曾在科大讯飞主导早期语音智能助理业务，任智能耳机业务总经理。2021年从讯飞孵化独立，创办未来智能（安徽讯飞未来智能科技），发明「AI会议耳机」新品类（viaim品牌）。AI驱动录音转写/多语同传/智能摘要/问答，全球150万+注册用户覆盖200…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/maxiao.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>马啸 Ma Xiao</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">MX</div>
+<h1><span class="i18n-zh">马啸 Ma Xiao</span><span class="i18n-en">Ma Xiao</span></h1>
 <p class="org">Viaim (Future Intelligence)</p>
-<p class="role">未来智能创始人兼CEO · 前科大讯飞智能耳机业务总经理</p>
+<p class="role"><span class="i18n-zh">未来智能创始人兼CEO · 前科大讯飞智能耳机业务总经理</span><span class="i18n-en">Founder &amp; CEO of Viaim · Ex-iFlytek Smart Earphone GM</span></p>
 <div class="fields"><span class="tag">consumer</span></div>
-<div class="bio">80后创始人，语音识别与AI交互领域深耕17年以上。曾在科大讯飞主导早期语音智能助理业务，任智能耳机业务总经理。2021年从讯飞孵化独立，创办未来智能（安徽讯飞未来智能科技），发明「AI会议耳机」新品类（viaim品牌）。AI驱动录音转写/多语同传/智能摘要/问答，全球150万+注册用户覆盖200+个国家。融资：Pre-A（万物创投，2025.1）→A轮（1亿元，蚂蚁集团领投，2025.10）→A+轮（亿元级，传音战略参投，2026.5.8）。与传音合作，共同研发下一代面向全球新兴市场的AI Agent硬件（AI听+AI看专用模组）。</div>
-<div class="bio en">80后 founder. 17+ years in voice recognition and AI interaction. Joined iFlytek (科大讯飞) early on, led the company's voice assistant business and later served as GM of its AI earphone division. Founded Future Intelligence (未来智能, Anhui iFlytek Future Intelligence Tech) in 2021 as a spin-out from iFlytek's AI earphone incubation. Invented the 'AI meeting earphone' category with the viaim brand — AI-powered transcription, summarization, multi-language interpretation, and Q&amp;A for office meetings. 1.5M+ global registered users across 200+ countries. Multiple rounds: Pre-A (Wanwu Capital, Jan 2025) → A (100M yuan, Ant Group lead, Oct 2025) → A+ (100M+ yuan, Transsion strategic, May 8 2026). Partnership with Transsion (传音) to co-develop next-gen AI Agent hardware targeting 'AI 听 + AI 看' sensor modules for global emerging markets.</div>
-<a class="cta" href="/?node=maxiao">在关系图谱中查看 马啸 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2021</span> Viaim AI meeting earphone brand (spin-out from iFlytek)</li><li><span class="y">2025</span> 100M yuan A round · Ant Group lead · viaim Agent pivot</li><li><span class="y">2026</span> 100M+ yuan A+ round · Transsion partnership · AI Agent hardware</li></ul>
+<div class="bio i18n-zh">80后创始人，语音识别与AI交互领域深耕17年以上。曾在科大讯飞主导早期语音智能助理业务，任智能耳机业务总经理。2021年从讯飞孵化独立，创办未来智能（安徽讯飞未来智能科技），发明「AI会议耳机」新品类（viaim品牌）。AI驱动录音转写/多语同传/智能摘要/问答，全球150万+注册用户覆盖200+个国家。融资：Pre-A（万物创投，2025.1）→A轮（1亿元，蚂蚁集团领投，2025.10）→A+轮（亿元级，传音战略参投，2026.5.8）。与传音合作，共同研发下一代面向全球新兴市场的AI Agent硬件（AI听+AI看专用模组）。</div><div class="bio i18n-en">80后 founder. 17+ years in voice recognition and AI interaction. Joined iFlytek (科大讯飞) early on, led the company's voice assistant business and later served as GM of its AI earphone division. Founded Future Intelligence (未来智能, Anhui iFlytek Future Intelligence Tech) in 2021 as a spin-out from iFlytek's AI earphone incubation. Invented the 'AI meeting earphone' category with the viaim brand — AI-powered transcription, summarization, multi-language interpretation, and Q&amp;A for office meetings. 1.5M+ global registered users across 200+ countries. Multiple rounds: Pre-A (Wanwu Capital, Jan 2025) → A (100M yuan, Ant Group lead, Oct 2025) → A+ (100M+ yuan, Transsion strategic, May 8 2026). Partnership with Transsion (传音) to co-develop next-gen AI Agent hardware targeting 'AI 听 + AI 看' sensor modules for global emerging markets.</div>
+<a class="cta" href="/?node=maxiao"><span class="i18n-zh">在关系图谱中查看 马啸 →</span><span class="i18n-en">View Ma Xiao in the graph →</span></a>
 
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2021</span> Viaim AI meeting earphone brand (spin-out from iFlytek)</li><li><span class="y">2025</span> 100M yuan A round · Ant Group lead · viaim Agent pivot</li><li><span class="y">2026</span> 100M+ yuan A+ round · Transsion partnership · AI Agent hardware</li></ul>
+
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>迈克·罗克韦尔 Mike Rockwell · Apple | 智能硬件创业图谱</title>
 <meta name="description" content="打造 Apple Vision Pro 头显的苹果高管。2025 年 4 月，在苹果「更个性化 Siri」跳票成为公开尴尬后，苹果让罗克韦尔接管 Siri（从 John Giannandrea 手中），他用 Vision Pro 团队重组了 Siri 团队。正以 LLM 架构重写 Siri，预计随…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/rockwell.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>迈克·罗克韦尔 Mike Rockwell</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(94,158,255,.92),rgba(94,158,255,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(94,158,255,.14)">MR</div>
+<h1><span class="i18n-zh">迈克·罗克韦尔 Mike Rockwell</span><span class="i18n-en">Mike Rockwell</span></h1>
 <p class="org">Apple</p>
-<p class="role">苹果 · Vision Pro 之父 → Siri 负责人</p>
+<p class="role"><span class="i18n-zh">苹果 · Vision Pro 之父 → Siri 负责人</span><span class="i18n-en">Apple · Vision Pro Creator → Siri Lead</span></p>
 <div class="fields"><span class="tag">ar-vr</span><span class="tag">consumer</span></div>
-<div class="bio">打造 Apple Vision Pro 头显的苹果高管。2025 年 4 月，在苹果「更个性化 Siri」跳票成为公开尴尬后，苹果让罗克韦尔接管 Siri（从 John Giannandrea 手中），他用 Vision Pro 团队重组了 Siri 团队。正以 LLM 架构重写 Siri，预计随 iOS 27 推出；苹果一再推迟的智能家居中枢据报道也卡在这版个性化 Siri 上。罗克韦尔仍负责 visionOS，并据报道考虑在 Siri 改造完成后退居顾问角色。</div>
-<div class="bio en">The Apple executive who created the Vision Pro headset. In April 2025, after Apple's delayed 'more personal Siri' became a public embarrassment, Apple put Rockwell in charge of Siri (taking it from John Giannandrea) and he restructured the team with his Vision Pro engineers. He is re-architecting Siri around an LLM-based system, now expected to ship with iOS 27; Apple's long-delayed smart-home hub is reportedly gated on that personalized Siri being ready. Rockwell still leads visionOS, and has reportedly weighed stepping back to an advisory role once the Siri overhaul lands.</div>
-<a class="cta" href="/?node=rockwell">在关系图谱中查看 迈克·罗克韦尔 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2024</span> Apple Vision Pro ships</li><li><span class="y">2026</span> Leads LLM-based Siri overhaul (iOS 27); smart-home hub gated on it</li></ul>
+<div class="bio i18n-zh">打造 Apple Vision Pro 头显的苹果高管。2025 年 4 月，在苹果「更个性化 Siri」跳票成为公开尴尬后，苹果让罗克韦尔接管 Siri（从 John Giannandrea 手中），他用 Vision Pro 团队重组了 Siri 团队。正以 LLM 架构重写 Siri，预计随 iOS 27 推出；苹果一再推迟的智能家居中枢据报道也卡在这版个性化 Siri 上。罗克韦尔仍负责 visionOS，并据报道考虑在 Siri 改造完成后退居顾问角色。</div><div class="bio i18n-en">The Apple executive who created the Vision Pro headset. In April 2025, after Apple's delayed 'more personal Siri' became a public embarrassment, Apple put Rockwell in charge of Siri (taking it from John Giannandrea) and he restructured the team with his Vision Pro engineers. He is re-architecting Siri around an LLM-based system, now expected to ship with iOS 27; Apple's long-delayed smart-home hub is reportedly gated on that personalized Siri being ready. Rockwell still leads visionOS, and has reportedly weighed stepping back to an advisory role once the Siri overhaul lands.</div>
+<a class="cta" href="/?node=rockwell"><span class="i18n-zh">在关系图谱中查看 迈克·罗克韦尔 →</span><span class="i18n-en">View Mike Rockwell in the graph →</span></a>
 
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> Apple Vision Pro ships</li><li><span class="y">2026</span> Leads LLM-based Siri overhaul (iOS 27); smart-home hub gated on it</li></ul>
+
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

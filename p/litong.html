@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>李通 Li Tong · Keenon Robotics | 智能硬件创业图谱</title>
 <meta name="description" content="2010年与三位朋友以20万元在上海创办擎朗智能。2016年推出DINERBOT T1，号称全球首款自主配送机器人。据IDC，2024年擎朗在全球配送及餐饮机器人市场排名第一，占全球出货量22.7%，累计售出超10万台商用机器人，覆盖配送、清洁、迎宾等场景。2024年推出首款双臂具身服务机器人，后…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/litong.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>李通 Li Tong</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">LT</div>
+<h1><span class="i18n-zh">李通 Li Tong</span><span class="i18n-en">Li Tong</span></h1>
 <p class="org">Keenon Robotics</p>
-<p class="role">擎朗智能创始人兼CEO · 全球配送机器人第一</p>
+<p class="role"><span class="i18n-zh">擎朗智能创始人兼CEO · 全球配送机器人第一</span><span class="i18n-en">Founder &amp; CEO of Keenon · Global Delivery Robot #1</span></p>
 <div class="fields"><span class="tag">robotics</span></div>
-<div class="bio">2010年与三位朋友以20万元在上海创办擎朗智能。2016年推出DINERBOT T1，号称全球首款自主配送机器人。据IDC，2024年擎朗在全球配送及餐饮机器人市场排名第一，占全球出货量22.7%，累计售出超10万台商用机器人，覆盖配送、清洁、迎宾等场景。2024年推出首款双臂具身服务机器人，后发布面向酒旅的XMAN-F1人形机器人。</div>
-<div class="bio en">Founded Keenon Robotics in Shanghai in 2010 with three friends and 200,000 yuan. Launched the DINERBOT T1 in 2016,billed as the world's first autonomous delivery robot. Keenon topped IDC's 2024 global rankings for delivery and food-service robots with 22.7% of worldwide shipments,having sold 100,000+ commercial robots across delivery,cleaning and reception. In 2024 it launched its first dual-arm embodied service robot and later the XMAN-F1 humanoid for hospitality.</div>
-<a class="cta" href="/?node=litong">在关系图谱中查看 李通 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2016</span> DINERBOT T1 delivery robot</li><li><span class="y">2024</span> IDC global #1 delivery + food-service robots</li></ul>
-<h2>关系网络 / Connections</h2><a class="nbr" href="/p/pudu.html"><b>普渡机器人 创始人 Pudu Founder</b><span>Keenon vs Pudu service-robot rivals</span></a><a class="nbr" href="/p/zhoujianping.html"><b>周剑 Zhou Jianping</b><span>Service/humanoid robotics peers (UBTECH)</span></a><a class="nbr" href="/p/fusheng.html"><b>傅盛 Fu Sheng</b><span>OrionStar vs Keenon service robots</span></a>
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<div class="bio i18n-zh">2010年与三位朋友以20万元在上海创办擎朗智能。2016年推出DINERBOT T1，号称全球首款自主配送机器人。据IDC，2024年擎朗在全球配送及餐饮机器人市场排名第一，占全球出货量22.7%，累计售出超10万台商用机器人，覆盖配送、清洁、迎宾等场景。2024年推出首款双臂具身服务机器人，后发布面向酒旅的XMAN-F1人形机器人。</div><div class="bio i18n-en">Founded Keenon Robotics in Shanghai in 2010 with three friends and 200,000 yuan. Launched the DINERBOT T1 in 2016,billed as the world's first autonomous delivery robot. Keenon topped IDC's 2024 global rankings for delivery and food-service robots with 22.7% of worldwide shipments,having sold 100,000+ commercial robots across delivery,cleaning and reception. In 2024 it launched its first dual-arm embodied service robot and later the XMAN-F1 humanoid for hospitality.</div>
+<a class="cta" href="/?node=litong"><span class="i18n-zh">在关系图谱中查看 李通 →</span><span class="i18n-en">View Li Tong in the graph →</span></a>
+
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2016</span> DINERBOT T1 delivery robot</li><li><span class="y">2024</span> IDC global #1 delivery + food-service robots</li></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/pudu.html"><b>普渡机器人 创始人 Pudu Founder</b><span>Keenon vs Pudu service-robot rivals</span></a><a class="nbr" href="/p/zhoujianping.html"><b>周剑 Zhou Jianping</b><span>Service/humanoid robotics peers (UBTECH)</span></a><a class="nbr" href="/p/fusheng.html"><b>傅盛 Fu Sheng</b><span>OrionStar vs Keenon service robots</span></a>
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

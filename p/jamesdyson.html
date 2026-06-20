@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>詹姆斯·戴森 James Dyson · Dyson | 智能硬件创业图谱</title>
 <meta name="description" content="1947年生于英国诺福克。工业设计师，用无袋气旋技术革新了吸尘器——历经5,127个原型。将戴森打造成全球硬件帝国：吸尘器、空气净化器、吹风机（Supersonic/Airwrap）。2024年售出2000万+产品。2007年获封爵士。戴森奖支持年轻硬件工程师超20年。净资产130-260亿美元。">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/jamesdyson.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>詹姆斯·戴森 James Dyson</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">JD</div>
+<h1><span class="i18n-zh">詹姆斯·戴森 James Dyson</span><span class="i18n-en">James Dyson</span></h1>
 <p class="org">Dyson</p>
-<p class="role">戴森创始人兼首席工程师 · 无袋吸尘器先驱</p>
+<p class="role"><span class="i18n-zh">戴森创始人兼首席工程师 · 无袋吸尘器先驱</span><span class="i18n-en">Founder &amp; Chief Engineer · Bagless Vacuum Pioneer</span></p>
 <div class="fields"><span class="tag">consumer</span></div>
-<div class="bio">1947年生于英国诺福克。工业设计师，用无袋气旋技术革新了吸尘器——历经5,127个原型。将戴森打造成全球硬件帝国：吸尘器、空气净化器、吹风机（Supersonic/Airwrap）。2024年售出2000万+产品。2007年获封爵士。戴森奖支持年轻硬件工程师超20年。净资产130-260亿美元。</div>
-<div class="bio en">Sir James Dyson, born 1947 in Norfolk, UK. Industrial designer who revolutionized vacuum cleaners with bagless cyclone technology — took 5,127 prototypes to get it right. Built Dyson into a global hardware empire: vacuums, air purifiers, hair care (Supersonic, Airwrap), fans, and lighting. Record 20M+ products sold in 2024. Investing heavily in robotics and AI-driven cleaning tech. Knighted 2007. James Dyson Award has supported young hardware engineers for 20+ years. Net worth estimated $13-26B.</div>
-<a class="cta" href="/?node=jamesdyson">在关系图谱中查看 詹姆斯·戴森 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">1993</span> Launched DC01 — first bagless cyclone vacuum</li><li><span class="y">2016</span> Supersonic hair dryer, disrupted beauty hardware</li><li><span class="y">2024</span> 20M+ products sold, record year</li></ul>
-<h2>关系网络 / Connections</h2><a class="nbr" href="/p/yehongxin.html"><b>叶洪新 Ye Hongxin</b><span>吹风机品类——戴森 vs 徕芬颠覆</span></a><a class="nbr" href="/p/changjing.html"><b>昌敬 Chang Jing</b><span>扫地机器人——戴森 vs 石头全球竞争</span></a><a class="nbr" href="/p/yuhao.html"><b>俞浩 Yu Hao</b><span>地面清洁——戴森 vs 追觅全球竞争</span></a>
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<div class="bio i18n-zh">1947年生于英国诺福克。工业设计师，用无袋气旋技术革新了吸尘器——历经5,127个原型。将戴森打造成全球硬件帝国：吸尘器、空气净化器、吹风机（Supersonic/Airwrap）。2024年售出2000万+产品。2007年获封爵士。戴森奖支持年轻硬件工程师超20年。净资产130-260亿美元。</div><div class="bio i18n-en">Sir James Dyson, born 1947 in Norfolk, UK. Industrial designer who revolutionized vacuum cleaners with bagless cyclone technology — took 5,127 prototypes to get it right. Built Dyson into a global hardware empire: vacuums, air purifiers, hair care (Supersonic, Airwrap), fans, and lighting. Record 20M+ products sold in 2024. Investing heavily in robotics and AI-driven cleaning tech. Knighted 2007. James Dyson Award has supported young hardware engineers for 20+ years. Net worth estimated $13-26B.</div>
+<a class="cta" href="/?node=jamesdyson"><span class="i18n-zh">在关系图谱中查看 詹姆斯·戴森 →</span><span class="i18n-en">View James Dyson in the graph →</span></a>
+
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">1993</span> Launched DC01 — first bagless cyclone vacuum</li><li><span class="y">2016</span> Supersonic hair dryer, disrupted beauty hardware</li><li><span class="y">2024</span> 20M+ products sold, record year</li></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/yehongxin.html"><b>叶洪新 Ye Hongxin</b><span>吹风机品类——戴森 vs 徕芬颠覆</span></a><a class="nbr" href="/p/changjing.html"><b>昌敬 Chang Jing</b><span>扫地机器人——戴森 vs 石头全球竞争</span></a><a class="nbr" href="/p/yuhao.html"><b>俞浩 Yu Hao</b><span>地面清洁——戴森 vs 追觅全球竞争</span></a>
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

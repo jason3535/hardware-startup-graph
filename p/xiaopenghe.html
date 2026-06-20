@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>何小鹏 He Xiaopeng · XPeng Robotics | 智能硬件创业图谱</title>
 <meta name="description" content="小鹏汽车创始人 CEO。2024 发布 IRON 人形机器人，2026.3 发布全球首个量产级 VLA 物理世界大模型。新一代 IRON 计划 2026 年底量产（月产能目标超千台），具备仿人脊椎、仿生肌肉、全包覆柔性皮肤、22 自由度灵巧手与全固态电池；同步推进模块化「陆地航母」飞行汽车 202…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/xiaopenghe.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>何小鹏 He Xiaopeng</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">HX</div>
+<h1><span class="i18n-zh">何小鹏 He Xiaopeng</span><span class="i18n-en">He Xiaopeng</span></h1>
 <p class="org">XPeng Robotics</p>
-<p class="role">小鹏汽车CEO · IRON人形机器人</p>
+<p class="role"><span class="i18n-zh">小鹏汽车CEO · IRON人形机器人</span><span class="i18n-en">XPeng CEO · Iron Humanoid</span></p>
 <div class="fields"><span class="tag">robotics</span><span class="tag">consumer</span></div>
-<div class="bio">小鹏汽车创始人 CEO。2024 发布 IRON 人形机器人，2026.3 发布全球首个量产级 VLA 物理世界大模型。新一代 IRON 计划 2026 年底量产（月产能目标超千台），具备仿人脊椎、仿生肌肉、全包覆柔性皮肤、22 自由度灵巧手与全固态电池；同步推进模块化「陆地航母」飞行汽车 2026 量产（全球订单 7000+）与基于自研图灵芯片（3000 TOPS）的 Robotaxi 试运营，目标成为全球首家同时量产人形机器人、飞行汽车与 Robotaxi 的车企。</div>
-<div class="bio en">XPeng Motors CEO. Unveiled the IRON humanoid in 2024 and a production-grade VLA physical-world model (Mar 2026). Targeting end-2026 mass production of the next-gen IRON (1,000+ units/month) — featuring a human-like spine, bionic muscles, full flexible skin, 22-DOF dexterous hands and solid-state batteries. Also pushing its modular 'Land Carrier' flying car to mass production in 2026 (7,000+ orders) and a Robotaxi pilot on self-developed Turing chips (3000 TOPS), aiming to be the first automaker to mass-produce humanoids, flying cars and robotaxis simultaneously.</div>
-<a class="cta" href="/?node=xiaopenghe">在关系图谱中查看 何小鹏 →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2024</span> XPeng Iron humanoid</li><li><span class="y">2026</span> VLA model; IRON mass-production push (1,000+/mo) + Land Carrier</li></ul>
-<h2>关系网络 / Connections</h2><a class="nbr" href="/p/pengzhihui.html"><b>彭志辉（稚晖君） Peng Zhihui</b><span>车企→人形（小鹏vs智元）</span></a><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>车企进军人形机器人</span></a><a class="nbr" href="/p/brettadcock.html"><b>Brett Adcock</b><span>全球人形机器人竞赛</span></a><a class="nbr" href="/p/sunzhaozhi.html"><b>孙兆治 Sun Zhaozhi</b><span>孙兆治曾任小鹏机器人产品负责人</span></a>
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<div class="bio i18n-zh">小鹏汽车创始人 CEO。2024 发布 IRON 人形机器人，2026.3 发布全球首个量产级 VLA 物理世界大模型。新一代 IRON 计划 2026 年底量产（月产能目标超千台），具备仿人脊椎、仿生肌肉、全包覆柔性皮肤、22 自由度灵巧手与全固态电池；同步推进模块化「陆地航母」飞行汽车 2026 量产（全球订单 7000+）与基于自研图灵芯片（3000 TOPS）的 Robotaxi 试运营，目标成为全球首家同时量产人形机器人、飞行汽车与 Robotaxi 的车企。</div><div class="bio i18n-en">XPeng Motors CEO. Unveiled the IRON humanoid in 2024 and a production-grade VLA physical-world model (Mar 2026). Targeting end-2026 mass production of the next-gen IRON (1,000+ units/month) — featuring a human-like spine, bionic muscles, full flexible skin, 22-DOF dexterous hands and solid-state batteries. Also pushing its modular 'Land Carrier' flying car to mass production in 2026 (7,000+ orders) and a Robotaxi pilot on self-developed Turing chips (3000 TOPS), aiming to be the first automaker to mass-produce humanoids, flying cars and robotaxis simultaneously.</div>
+<a class="cta" href="/?node=xiaopenghe"><span class="i18n-zh">在关系图谱中查看 何小鹏 →</span><span class="i18n-en">View He Xiaopeng in the graph →</span></a>
+
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> XPeng Iron humanoid</li><li><span class="y">2026</span> VLA model; IRON mass-production push (1,000+/mo) + Land Carrier</li></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/zhaotongyang.html"><b>赵同阳 Zhao Tongyang</b><span>联合创办鹏行智能（小鹏机器人）</span></a><a class="nbr" href="/p/pengzhihui.html"><b>彭志辉（稚晖君） Peng Zhihui</b><span>车企→人形（小鹏vs智元）</span></a><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>车企进军人形机器人</span></a><a class="nbr" href="/p/brettadcock.html"><b>Brett Adcock</b><span>全球人形机器人竞赛</span></a><a class="nbr" href="/p/sunzhaozhi.html"><b>孙兆治 Sun Zhaozhi</b><span>孙兆治曾任小鹏机器人产品负责人</span></a>
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

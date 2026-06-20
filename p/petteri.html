@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>Petteri Lahtela · Oura | 智能硬件创业图谱</title>
 <meta name="description" content="芬兰企业家。30岁前拿下CS学士+计算机工程硕士+eMBA。电信行业14年后转向健康。2013年在芬兰奥卢��合创办Oura。开创了智能戒指品类。E轮$9亿（2025.10）。估值~$110亿。2026预期$15-20亿营收。售出250万+枚。专利诉讼成功禁售Ultrahuman和RingConn…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/petteri.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>Petteri Lahtela</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">PL</div>
+<h1><span class="i18n-zh">Petteri Lahtela</span><span class="i18n-en">Petteri Lahtela</span></h1>
 <p class="org">Oura</p>
-<p class="role">Oura联合创始人 · 智能戒指开创者</p>
+<p class="role"><span class="i18n-zh">Oura联合创始人 · 智能戒指开创者</span><span class="i18n-en">Co-founder of Oura · Smart Ring Pioneer</span></p>
 <div class="fields"><span class="tag">consumer</span><span class="tag">health</span></div>
-<div class="bio">芬兰企业家。30岁前拿下CS学士+计算机工程硕士+eMBA。电信行业14年后转向健康。2013年在芬兰奥卢��合创办Oura。开创了智能戒指品类。E轮$9亿（2025.10）。估值~$110亿。2026预期$15-20亿营收。售出250万+枚。专利诉讼成功禁售Ultrahuman和RingConn��苹果家居硬件VP跳槽来Oura（2026.3）。</div>
-<div class="bio en">Finnish entrepreneur. BS Computer Science, MS Computer Engineering &amp; Telecom, eMBA International Business — all before 30. Spent 14 years in mobile/telecom before pivoting to health. Co-founded Oura 2013 in Oulu, Finland with Kari Kivela and Markku Koskela. CEO 2014-2018. Oura Ring pioneered the smart ring category. Current CEO Tom Hale. Series E: $900M (Oct 2025, Fidelity). Valuation: ~$11B. Expected $1.5-2B revenue 2026. 2.5M+ rings sold. Successfully sued Ultrahuman and RingConn for patent infringement (US import ban). Apple home hardware VP Brian Lynch left for Oura (Mar 2026).</div>
-<a class="cta" href="/?node=petteri">在关系图谱中查看 Petteri Lahtela →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2015</span> Oura Ring Gen 1</li><li><span class="y">2021</span> Oura Ring Gen 3</li><li><span class="y">2025</span> $900M Series E, $11B valuation</li></ul>
-<h2>关系网络 / Connections</h2><a class="nbr" href="/p/ringconn.html"><b>RingConn创始人 RingConn Founders</b><span>智能戒指竞争（Oura vs RingConn，专利诉讼）</span></a><a class="nbr" href="/p/mohitkumar.html"><b>Mohit Kumar</b><span>智能戒指竞争（Oura vs Ultrahuman，专利诉讼）</span></a><a class="nbr" href="/p/willahmed.html"><b>Will Ahmed</b><span>健康可穿戴领头羊（WHOOP vs Oura）</span></a><a class="nbr" href="/p/huangwang.html"><b>黄汪 Huang Wang</b><span>健康穿戴——Zepp/Amazfit vs Oura 全球竞争</span></a><a class="nbr" href="/p/jamespark.html"><b>朴贞赫 James Park</b><span>健康穿戴——Fitbit vs Oura 定义市场</span></a><a class="nbr" href="/p/matteofranceschetti.html"><b>Matteo Franceschetti</b><span>Sleep optimization rivals</span></a><a class="nbr" href="/p/ericcarreel.html"><b>Eric Carreel</b><span>Smart wearable health platforms</span></a><a class="nbr" href="/p/davidyang.html"><b>David Yang</b><span>Endurance + recovery overlap</span></a><a class="nbr" href="/p/davidrabin.html"><b>David Rabin</b><span>Wellness wearable rivals</span></a><a class="nbr" href="/p/samcorcos.html"><b>Sam Corcos</b><span>Health metrics platforms</span></a>
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<div class="bio i18n-zh">芬兰企业家。30岁前拿下CS学士+计算机工程硕士+eMBA。电信行业14年后转向健康。2013年在芬兰奥卢��合创办Oura。开创了智能戒指品类。E轮$9亿（2025.10）。估值~$110亿。2026预期$15-20亿营收。售出250万+枚。专利诉讼成功禁售Ultrahuman和RingConn��苹果家居硬件VP跳槽来Oura（2026.3）。</div><div class="bio i18n-en">Finnish entrepreneur. BS Computer Science, MS Computer Engineering &amp; Telecom, eMBA International Business — all before 30. Spent 14 years in mobile/telecom before pivoting to health. Co-founded Oura 2013 in Oulu, Finland with Kari Kivela and Markku Koskela. CEO 2014-2018. Oura Ring pioneered the smart ring category. Current CEO Tom Hale. Series E: $900M (Oct 2025, Fidelity). Valuation: ~$11B. Expected $1.5-2B revenue 2026. 2.5M+ rings sold. Successfully sued Ultrahuman and RingConn for patent infringement (US import ban). Apple home hardware VP Brian Lynch left for Oura (Mar 2026).</div>
+<a class="cta" href="/?node=petteri"><span class="i18n-zh">在关系图谱中查看 Petteri Lahtela →</span><span class="i18n-en">View Petteri Lahtela in the graph →</span></a>
+
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2015</span> Oura Ring Gen 1</li><li><span class="y">2021</span> Oura Ring Gen 3</li><li><span class="y">2025</span> $900M Series E, $11B valuation</li></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/ringconn.html"><b>RingConn创始人 RingConn Founders</b><span>智能戒指竞争（Oura vs RingConn，专利诉讼）</span></a><a class="nbr" href="/p/mohitkumar.html"><b>Mohit Kumar</b><span>智能戒指竞争（Oura vs Ultrahuman，专利诉讼）</span></a><a class="nbr" href="/p/willahmed.html"><b>Will Ahmed</b><span>健康可穿戴领头羊（WHOOP vs Oura）</span></a><a class="nbr" href="/p/huangwang.html"><b>黄汪 Huang Wang</b><span>健康穿戴——Zepp/Amazfit vs Oura 全球竞争</span></a><a class="nbr" href="/p/jamespark.html"><b>朴贞赫 James Park</b><span>健康穿戴——Fitbit vs Oura 定义市场</span></a><a class="nbr" href="/p/matteofranceschetti.html"><b>Matteo Franceschetti</b><span>Sleep optimization rivals</span></a><a class="nbr" href="/p/ericcarreel.html"><b>Eric Carreel</b><span>Smart wearable health platforms</span></a><a class="nbr" href="/p/davidyang.html"><b>David Yang</b><span>Endurance + recovery overlap</span></a><a class="nbr" href="/p/davidrabin.html"><b>David Rabin</b><span>Wellness wearable rivals</span></a><a class="nbr" href="/p/samcorcos.html"><b>Sam Corcos</b><span>Health metrics platforms</span></a>
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>

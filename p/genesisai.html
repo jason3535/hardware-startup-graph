@@ -1,5 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>Zhou Xian · Genesis AI | 智能硬件创业图谱</title>
 <meta name="description" content="前 CMU 研究者，联合创办 Genesis AI，构建通用机器人基础模型与面向通用物理 AI 的横向平台。2025 年 7 月带 1.05 亿美元种子轮走出隐身（Eclipse 与 Khosla 领投，Eric Schmidt、Xavier Niel 及 AI 先驱 Daniela Rus、Vl…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/genesisai.html">
@@ -23,26 +24,37 @@ h1{font-size:40px;margin:22px 0 6px;letter-spacing:-.01em}
 .role{font-size:18px;color:var(--blue);margin:10px 0 0;font-weight:600}
 .fields{margin:18px 0 0}.tag{display:inline-block;font-size:13px;color:var(--mut);border:1px solid #333;border-radius:999px;padding:3px 12px;margin:0 8px 8px 0}
 .bio{font-size:18px;color:#d2d2d7;margin:28px 0;white-space:pre-wrap}
-.bio.en{color:var(--mut);font-size:16px}
+.avatar{width:108px;height:108px;border-radius:50%;object-fit:cover;display:block;margin:8px 0 4px;background:#1c1c1e;box-shadow:0 0 0 1px rgba(255,255,255,.1)}
+.avatar.mono{display:flex;align-items:center;justify-content:center;font:700 42px/1 'SF Pro Display',-apple-system,sans-serif;color:#fff;letter-spacing:.01em}
+.langtoggle{position:fixed;top:18px;right:20px;z-index:50;min-width:46px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--fg);border:1px solid rgba(255,255,255,.16);font:600 14px/1 'PingFang SC','SF Pro Text',-apple-system,system-ui,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px)}
+.langtoggle:hover{background:rgba(255,255,255,.16)}
+html.lang-zh .i18n-en{display:none}html.lang-en .i18n-zh{display:none}
+@media(max-width:520px){.langtoggle{top:12px;right:12px}}
 h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin:40px 0 14px}
 ul{list-style:none;padding:0;margin:0}li{padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:16px;color:#d2d2d7}
 .y{display:inline-block;min-width:52px;color:#6e6e73;font-variant-numeric:tabular-nums}
 li a,.bio a{color:var(--blue);text-decoration:none}
 .nbr{display:flex;flex-direction:column;padding:12px 14px;background:var(--card);border-radius:12px;margin:0 0 10px;text-decoration:none;color:var(--fg)}
 .nbr b{font-size:16px}.nbr span{font-size:13px;color:var(--mut);margin-top:2px}
-.cta{display:inline-block;margin:30px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta{display:inline-block;margin:30px 12px 0 0;padding:14px 26px;background:var(--blue);color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
+.cta2{display:inline-block;margin:30px 0 0;padding:14px 26px;background:rgba(124,92,255,.16);color:#cbb9ff;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px}
 .back{display:inline-block;margin-top:36px;color:var(--mut);text-decoration:none;font-size:15px}
 @media(max-width:520px){h1{font-size:32px}.wrap{padding:36px 18px 72px}}
-</style></head><body><div class="wrap">
-<a class="eyebrow" href="/">智能硬件创业图谱 · Hardware Startup Graph ↗</a>
-<h1>Zhou Xian</h1>
+</style></head><body>
+<button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
+<div class="wrap">
+<a class="eyebrow" href="/"><span class="i18n-zh">智能硬件创业图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
+<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">ZX</div>
+<h1><span class="i18n-zh">Zhou Xian</span><span class="i18n-en">Zhou Xian</span></h1>
 <p class="org">Genesis AI</p>
-<p class="role">Genesis AI 联合创始人兼 CEO · 机器人基础模型</p>
+<p class="role"><span class="i18n-zh">Genesis AI 联合创始人兼 CEO · 机器人基础模型</span><span class="i18n-en">Co-founder &amp; CEO of Genesis AI · Robotics Foundation Model</span></p>
 <div class="fields"><span class="tag">robotics</span><span class="tag">overseas</span></div>
-<div class="bio">前 CMU 研究者，联合创办 Genesis AI，构建通用机器人基础模型与面向通用物理 AI 的横向平台。2025 年 7 月带 1.05 亿美元种子轮走出隐身（Eclipse 与 Khosla 领投，Eric Schmidt、Xavier Niel 及 AI 先驱 Daniela Rus、Vladlen Koltun 参投）。2026 年 5 月发布 GENE-26.5，一个全栈『AI 大脑』，在与无极科技合作自研的机器手上演示人类级灵巧操作。</div>
-<div class="bio en">Ex-CMU researcher who co-founded Genesis AI to build a universal robotics foundation model and a horizontal platform for general-purpose physical AI. Emerged from stealth (Jul 2025) with a $105M seed led by Eclipse and Khosla Ventures, with Eric Schmidt, Xavier Niel and AI pioneers Daniela Rus and Vladlen Koltun. In May 2026 it unveiled GENE-26.5, a full-stack 'AI brain' demoing human-level dexterous manipulation on in-house robot hands built with Wuji Tech.</div>
-<a class="cta" href="/?node=genesisai">在关系图谱中查看 Zhou Xian →</a>
-<h2>时间线 / Timeline</h2><ul><li><span class="y">2025</span> Emerges from stealth, $105M seed (Eclipse/Khosla)</li><li><span class="y">2026</span> GENE-26.5 full-stack manipulation model</li></ul>
+<div class="bio i18n-zh">前 CMU 研究者，联合创办 Genesis AI，构建通用机器人基础模型与面向通用物理 AI 的横向平台。2025 年 7 月带 1.05 亿美元种子轮走出隐身（Eclipse 与 Khosla 领投，Eric Schmidt、Xavier Niel 及 AI 先驱 Daniela Rus、Vladlen Koltun 参投）。2026 年 5 月发布 GENE-26.5，一个全栈『AI 大脑』，在与无极科技合作自研的机器手上演示人类级灵巧操作。</div><div class="bio i18n-en">Ex-CMU researcher who co-founded Genesis AI to build a universal robotics foundation model and a horizontal platform for general-purpose physical AI. Emerged from stealth (Jul 2025) with a $105M seed led by Eclipse and Khosla Ventures, with Eric Schmidt, Xavier Niel and AI pioneers Daniela Rus and Vladlen Koltun. In May 2026 it unveiled GENE-26.5, a full-stack 'AI brain' demoing human-level dexterous manipulation on in-house robot hands built with Wuji Tech.</div>
+<a class="cta" href="/?node=genesisai"><span class="i18n-zh">在关系图谱中查看 Zhou Xian →</span><span class="i18n-en">View Zhou Xian in the graph →</span></a>
 
-<a class="back" href="/">← 返回完整图谱 智能硬件创业图谱</a>
-</div></body></html>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2025</span> Emerges from stealth, $105M seed (Eclipse/Khosla)</li><li><span class="y">2026</span> GENE-26.5 full-stack manipulation model</li></ul>
+
+<a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
+</div>
+<script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+</body></html>
