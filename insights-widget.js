@@ -6,6 +6,401 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "jumper-anthropic-2026",
+    "date": "2026-06-19",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "诺奖得主、AlphaFold 之父 John Jumper 离开 DeepMind 加入 Anthropic",
+    "body": "**6 月 19 日**，凭 **AlphaFold** 共享 2024 年诺贝尔化学奖的 **John Jumper**，在 DeepMind 工作近九年后宣布离职加入 **Anthropic**——距 Shazeer 出走谷歌仅一天。**非共识**：当 AI 人才战聚焦于「谁能造更强的聊天模型」，把一位**用 AI 改写了结构生物学**的诺奖科学家招入麾下，是 Anthropic 在押注「AI 做科学」这条更长的曲线。",
+    "persons": [
+      {
+        "id": "jumper",
+        "name": "John Jumper"
+      },
+      {
+        "id": "hassabis",
+        "name": "Demis Hassabis"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Bloomberg：Nobel winner John Jumper to leave Google DeepMind for Anthropic（2026-06-19）",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-19/nobel-winner-john-jumper-to-leave-google-deepmind-for-anthropic"
+      },
+      {
+        "label": "CNBC：John Jumper to leave Google DeepMind for Anthropic",
+        "url": "https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html"
+      }
+    ]
+  },
+  {
+    "id": "shazeer-openai-2026",
+    "date": "2026-06-18",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Transformer 之父 Noam Shazeer 离开谷歌投奔 OpenAI",
+    "body": "**6 月 18 日**，谷歌 Gemini 联合负责人、Transformer 共同发明人 **Noam Shazeer** 宣布离开谷歌加入 **OpenAI**，出任**架构研究负责人**，探索下一代模型架构。两年前谷歌以约 **27 亿美元**收购其 Character.AI、把他请回 DeepMind，如今他再度出走。**非共识**：顶尖架构人才的流向，比任何榜单都更能说明各家「下一代架构」押注的重心正从谷歌转向 OpenAI。",
+    "persons": [
+      {
+        "id": "shazeer",
+        "name": "Noam Shazeer"
+      }
+    ],
+    "sources": [
+      {
+        "label": "CNBC：Google Gemini co-lead Noam Shazeer leaves for OpenAI（2026-06-18）",
+        "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html"
+      }
+    ]
+  },
+  {
+    "id": "spacex-cursor-60b-2026",
+    "date": "2026-06-16",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "SpaceX 以 600 亿美元全股票收购 Cursor — IPO 几天后被马斯克买走",
+    "body": "**6 月 16 日**，SpaceX 宣布以 **600 亿美元全股票**收购 **Cursor** 母公司 Anysphere——就在 Cursor 完成 IPO 几天之后。此前 4 月 SpaceX 已锁定选择权（约 100 亿美元合作，或年底 600 亿收购）。Cursor 年化收入从 2025 年初约 1 亿美元飙至 2026 年 6 月**逾 40 亿美元**。**非共识**：一家火箭公司买下一个代码编辑器，标志 AI 编程已从工具升级为巨头的战略资产。",
+    "persons": [
+      {
+        "id": "truell",
+        "name": "Michael Truell"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch：SpaceX to acquire Cursor for $60B in stock（2026-06-16）",
+        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
+      },
+      {
+        "label": "CNBC：SpaceX to acquire AI coding startup Cursor for $60 billion",
+        "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html"
+      }
+    ]
+  },
+  {
+    "id": "unitree-star-ipo-2026",
+    "date": "2026-06-01",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "宇树过会科创板 — 首个「具身智能」A 股，目标估值约 62 亿美元",
+    "body": "**6 月 1 日**，**宇树科技（王兴兴）**科创板上市过会，成为**首个获批 A 股的「具身智能」公司**，目标估值约 **62 亿美元**、募资约 42 亿元，73 天快速过会。同期发布 **R1 人形（¥39,900）** 与 GD01 载人机甲，计划 2026 年出货 2 万台人形。**非共识**：当海外比拼融资额，中国人形的分水岭是**资本市场出口**——宇树、智元（万台下线 + 港股）正把「能上市」做成新的护城河。",
+    "persons": [
+      {
+        "id": "wangxingxing",
+        "name": "王兴兴（宇树）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "CGTN：Unitree gets STAR Market green light（2026-06-01）",
+        "url": "https://news.cgtn.com/news/2026-06-01/Unitree-gets-STAR-Market-green-light-1NCT9TksSVq/share_amp.html"
+      },
+      {
+        "label": "Caixin：Unitree fast-tracks Shanghai IPO at $6.2B target",
+        "url": "https://www.caixinglobal.com/2026-05-26/unitree-fast-tracks-shanghai-ipo-with-target-valuation-of-62-billion-102447449.html"
+      }
+    ]
+  },
+  {
+    "id": "neura-humanoid-megaround-2026",
+    "date": "2026-06-10",
+    "type": "funding",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "NEURA 拿下 14 亿美元欧洲最大机器人轮 — 人形融资进入「十亿美元」时代",
+    "body": "**6 月**，德国 **NEURA Robotics（David Reger）**完成最高 **14 亿美元 C 轮**（Tether、高通、英伟达、博世等），估值约 70 亿美元——**欧洲机器人史上最大单轮**。同期 **Figure（$39B）**、**Apptronik（$5.3B）**、**Skild（$14B）**、**1X NEO 家用人形 $20k 预售**接连刷新。**非共识**：人形单轮中位数已达约 1.1 亿美元，资本不再赌「能不能动」，而是赌**谁能先规模化量产**。",
+    "persons": [
+      {
+        "id": "reger",
+        "name": "David Reger（NEURA）"
+      },
+      {
+        "id": "brettadcock",
+        "name": "Brett Adcock（Figure）"
+      },
+      {
+        "id": "jeffcardenas",
+        "name": "Jeff Cardenas（Apptronik）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "CNBC：NEURA Robotics funding for AI humanoid robots（2026-06-10）",
+        "url": "https://www.cnbc.com/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html"
+      },
+      {
+        "label": "The Robot Report：NEURA raises up to $1.4B Series C",
+        "url": "https://www.therobotreport.com/neura-robotics-raise-up-1-4b-in-series-c-funding-physical-ai/"
+      }
+    ]
+  },
+  {
+    "id": "anthropic-65b-series-h-2026",
+    "date": "2026-05-28",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar",
+      "investor"
+    ],
+    "pinned": false,
+    "title": "Anthropic 完成 650 亿美元 H 轮、估值近 1 万亿，逼近 IPO",
+    "body": "**5 月**，Anthropic 完成 **650 亿美元 H 轮**（迄今最大 AI 股权融资），投后估值约 **9650 亿美元**，由 **Altimeter（Brad Gerstner）/ Dragoneer（Marc Stad）/ Greenoaks（Neil Mehta）/ 红杉** 共同领投；2 月刚完成 300 亿美元 G 轮（$380B）。公司已秘密递交 IPO 文件。**非共识**：红杉同时押注 OpenAI 与 Anthropic，打破「不投直接竞品」的旧规矩——在这轮 AI，错过比押错更可怕。",
+    "persons": [
+      {
+        "id": "damodei",
+        "name": "Dario Amodei"
+      },
+      {
+        "id": "daniela",
+        "name": "Daniela Amodei"
+      },
+      {
+        "id": "bradgerstner",
+        "name": "Brad Gerstner（Altimeter）"
+      },
+      {
+        "id": "marcstad",
+        "name": "Marc Stad（Dragoneer）"
+      },
+      {
+        "id": "neilmehta",
+        "name": "Neil Mehta（Greenoaks）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch：Anthropic raises $65 billion, nears $1T（2026-05-28）",
+        "url": "https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/"
+      },
+      {
+        "label": "Anthropic：Series H",
+        "url": "https://www.anthropic.com/news/series-h"
+      }
+    ]
+  },
+  {
+    "id": "karpathy-anthropic-2026",
+    "date": "2026-05-19",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Karpathy 暂停 Eureka Labs 加入 Anthropic 预训练团队",
+    "body": "**5 月 19 日**，OpenAI 联合创始人、前特斯拉 AI 负责人 **Andrej Karpathy** 暂停其 AI 教育公司 Eureka Labs，加入 **Anthropic** 预训练团队（向 Nick Joseph 汇报），用 **Claude 加速预训练研究**。**非共识**：Anthropic 把他放在「用 AI 做 AI 研究」的位置，传递的信号是——保持前沿竞争力靠的是**AI 辅助研究**，而非单纯堆算力。",
+    "persons": [
+      {
+        "id": "karpathy",
+        "name": "Andrej Karpathy"
+      },
+      {
+        "id": "damodei",
+        "name": "Dario Amodei"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch：Andrej Karpathy joins Anthropic's pre-training team（2026-05-19）",
+        "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/"
+      }
+    ]
+  },
+  {
+    "id": "ferrari-luce-ive-openai-2026",
+    "date": "2026-05-25",
+    "type": "trend",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "Jony Ive 设计法拉利首款纯电 Luce；OpenAI/io 设备跳票到 2027",
+    "body": "**5 月 25 日**，**Jony Ive** 与 Marc Newson 通过 LoveFrom 设计的**法拉利 Luce**（法拉利首款纯电、首款五座，约 64 万美元）在罗马揭幕。另一边，io + OpenAI 的首款设备被确认为**带摄像头的无屏智能音箱（$200–300）**，并从 2026 **跳票至 2027 年初**。**非共识**：当所有人盯着「Ive 的 AI 设备」，他交出的第一件标志性作品却是一辆**车**——硬件设计的下一个战场未必在口袋里。",
+    "persons": [
+      {
+        "id": "jonyive",
+        "name": "Jony Ive"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dezeen：Electric Ferrari Luce by Jony Ive & Marc Newson（2026-05-25）",
+        "url": "https://www.dezeen.com/2026/05/25/electric-ferrari-luce-jony-ive-marc-newson-lovefrom/"
+      },
+      {
+        "label": "MacRumors：Everything we know about OpenAI's device",
+        "url": "https://www.macrumors.com/2026/05/29/everything-we-know-about-openai-iphone-rival/"
+      }
+    ]
+  },
+  {
+    "id": "deepseek-v4-china-llm-ipo-2026",
+    "date": "2026-04-24",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar",
+      "investor"
+    ],
+    "pinned": false,
+    "title": "DeepSeek-V4 开源 + 首次外部融资约 74 亿美元；中国大模型集体冲刺 IPO",
+    "body": "**4 月 24 日**，**DeepSeek（梁文锋）**开源 **V4 预览版**（V4-Pro 1.6 万亿参数、V4-Flash 2840 亿，均 100 万 token 上下文），并据报完成**首次外部融资约 74 亿美元、估值 500 亿美元+**（腾讯、宁德时代）。同期 **Zhipu/Z.ai（唐杰）与 MiniMax（闫俊杰）港股上市**、**Moonshot（杨植麟）20 亿美元 @ 200 亿**。**非共识**：一向不融资的 DeepSeek 也开闸，说明开源大模型的竞争已从「比聪明」转向**比资本与算力的持久战**。",
+    "persons": [
+      {
+        "id": "liangwenfeng",
+        "name": "梁文锋（DeepSeek）"
+      },
+      {
+        "id": "jietang",
+        "name": "唐杰（Zhipu）"
+      },
+      {
+        "id": "yanjunjie",
+        "name": "闫俊杰（MiniMax）"
+      },
+      {
+        "id": "yangzhilin",
+        "name": "杨植麟（Moonshot）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Silicon Republic：DeepSeek raises $7.4bn at $50bn+ valuation",
+        "url": "https://www.siliconrepublic.com/business/the-information-deepseek-raises-7-4bn-at-50bn-plus-valuation"
+      },
+      {
+        "label": "CNBC：MiniMax Hong Kong IPO; AI tigers Zhipu（2026-01-09）",
+        "url": "https://www.cnbc.com/2026/01/09/minimax-hong-kong-ipo-ai-tigers-zhipu.html"
+      }
+    ]
+  },
+  {
+    "id": "pritzker-2026-radic",
+    "date": "2026-03-12",
+    "type": "trend",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "2026 普利兹克奖授予智利建筑师 Smiljan Radić",
+    "body": "**3 月 12 日**，**Smiljan Radić** 获 2026 年**普利兹克奖**，成为第二位获此荣誉的智利建筑师，以诗意、实验性与材料驱动的作品著称（2014 年伦敦蛇形画廊展亭、比奥比奥地区剧院）。同年 **Níall McLaughlin** 获 RIBA 皇家金奖、**Frida Escobedo** 成为大都会博物馆 154 年来首位设计独立展翼的女性。**非共识**：在 AI 席卷设计话语的一年，建筑界把最高荣誉给了**最「慢」、最重手工与场所**的一脉。",
+    "persons": [
+      {
+        "id": "radic",
+        "name": "Smiljan Radić"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Dezeen：Smiljan Radić wins Pritzker 2026（2026-03-12）",
+        "url": "https://www.dezeen.com/2026/03/12/smiljan-radic-wins-pritzker-architecture-prize-2026/"
+      },
+      {
+        "label": "The Pritzker Architecture Prize",
+        "url": "https://www.pritzkerprize.com/laureates/smiljan-radic-clarke"
+      }
+    ]
+  },
+  {
+    "id": "openai-122b-vc-records-2026",
+    "date": "2026-03-31",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar",
+      "investor"
+    ],
+    "pinned": false,
+    "title": "OpenAI 完成 1220 亿美元融资、估值 8520 亿；VC 创纪录募资为 AI 加注",
+    "body": "**3 月 31 日**，**OpenAI（Sam Altman）**完成约 **1220 亿美元**融资、估值 **8520 亿美元**（亚马逊 $50B、英伟达 + 软银各 $30B），IPO 预期 2026。背后是 VC 史上最大军备竞赛：**a16z ~$15B+、Thrive $10B、红杉 $7B、Founders Fund $6B、Lightspeed $9B+、Lux $1.5B**。**非共识**：当单家实验室一轮融资抵得上一支顶级基金的全部弹药，**「资本规模」本身正成为前沿门槛**。",
+    "persons": [
+      {
+        "id": "altman",
+        "name": "Sam Altman"
+      },
+      {
+        "id": "joshkushner",
+        "name": "Josh Kushner（Thrive）"
+      },
+      {
+        "id": "marca16z",
+        "name": "Marc Andreessen（a16z）"
+      },
+      {
+        "id": "masason",
+        "name": "孙正义（SoftBank）"
+      },
+      {
+        "id": "roelofbotha",
+        "name": "Roelof Botha（Sequoia）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "CNBC：OpenAI funding round, IPO（2026-03-31）",
+        "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html"
+      },
+      {
+        "label": "TechCrunch：Sequoia raises $7B to expand AI bets",
+        "url": "https://techcrunch.com/2026/04/16/new-leaders-new-fund-sequoia-has-raised-7b-to-expand-its-ai-bets/"
+      }
+    ]
+  },
+  {
+    "id": "apple-to-ai-design-exodus-2026",
+    "date": "2026-06-03",
+    "type": "relationship",
+    "graphs": [
+      "designer"
+    ],
+    "pinned": false,
+    "title": "苹果设计人才大迁徙：Alan Dye 去 Meta，iPhone 设计师转投 AI 硬件",
+    "body": "**2025 末至 2026**，苹果设计核心持续外流：领导人机界面十年的 **Alan Dye** 加入 **Meta Reality Labs**（主攻智能眼镜）；**iPhone Air** 设计师 **Abidur Chowdhury** 出任 Brett Adcock 的 AI 硬件公司 **Hark** 设计总监；前苹果工业设计 VP **Evans Hankey** 与 iPhone 设计师 **Tang Tan** 在 **io/OpenAI** 打造 AI 设备。**非共识**：AI 硬件的真正稀缺资源不是模型，而是**会做实体产品的顶级设计师**——这场争夺才刚开始。",
+    "persons": [
+      {
+        "id": "alandye",
+        "name": "Alan Dye"
+      },
+      {
+        "id": "abidurchowdhury",
+        "name": "Abidur Chowdhury"
+      },
+      {
+        "id": "evanshankey",
+        "name": "Evans Hankey"
+      },
+      {
+        "id": "tangtan",
+        "name": "Tang Tan"
+      },
+      {
+        "id": "jonyive",
+        "name": "Jony Ive"
+      }
+    ],
+    "sources": [
+      {
+        "label": "TechCrunch：Meta poaches Apple design exec Alan Dye（2025-12-03）",
+        "url": "https://techcrunch.com/2025/12/03/meta-poaches-apple-design-exec-alan-dye/"
+      },
+      {
+        "label": "TechCrunch：Former Apple designer building AI interface at Hark",
+        "url": "https://techcrunch.com/2026/03/24/meet-the-former-apple-designer-building-a-new-ai-interface-at-hark/"
+      }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
