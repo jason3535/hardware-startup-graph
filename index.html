@@ -2254,6 +2254,7 @@ const connLabelZh = {
 
 function applyLanguage(lang) {
   currentLang = lang;
+  try { localStorage.setItem('graphLang', lang); } catch (e) {}
   const t = i18n[lang];
 
   // Nav
@@ -2536,6 +2537,8 @@ function openDetail(d) {
 document.querySelectorAll(".lang-btn").forEach(btn => {
   btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
 });
+// Restore language from shared store (kept in sync with the per-person full pages)
+try { const _saved = localStorage.getItem('graphLang'); if (_saved === 'en' || _saved === 'zh') applyLanguage(_saved); } catch (e) {}
 
 // ===================================================================
 // STATS
