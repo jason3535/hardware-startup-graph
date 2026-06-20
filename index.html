@@ -3004,8 +3004,10 @@ applyLanguage = function(lang) {
     function set(){var d=window._currentDetailScholar;if(!d||!d.id)return;a.href='/p/'+encodeURIComponent(d.id)+'.html';var s=a.querySelector('span');if(s)s.textContent=(L[detectLang()]||L.zh);}
     new MutationObserver(set).observe(nameEl,{childList:true,characterData:true,subtree:true});
     a.addEventListener('mousedown',set);
+    a.addEventListener('pointerdown',set);
+    a.addEventListener('touchstart',set,{passive:true});
     set();
-    a.addEventListener('click',function(){if(typeof umami!=='undefined'){try{umami.track('open_fullpage',{id:(window._currentDetailScholar||{}).id});}catch(_){}}});
+    a.addEventListener('click',function(ev){var d=window._currentDetailScholar;if(typeof umami!=='undefined'){try{umami.track('open_fullpage',{id:(d||{}).id});}catch(_){}}if(d&&d.id&&!ev.metaKey&&!ev.ctrlKey&&!ev.shiftKey&&ev.button!==1){ev.preventDefault();location.href='/p/'+encodeURIComponent(d.id)+'.html';}});
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
