@@ -6,6 +6,20 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "google-deepmind-talent-exodus-2026-06-20",
+    "date": "2026-06-20",
+    "type": "relationship",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Transformer 发明者 Shazeer 去 OpenAI、诺奖 Jumper 去 Anthropic — Google 24 小时内失去两位 AI 奠基人",
+    "body": "6 月 18-19 日，Google 在 24 小时内失去两位现代 AI 体系的实际奠基人。**Noam Shazeer**（2017 年 Transformer 论文「Attention Is All You Need」八位作者之一、Gemini 联合负责人）宣布加入 **OpenAI** 担任架构研究负责人；Google 为从 Character.AI 买回他花了约 **27 亿美元**，不到两年即再度流失。一天之后，**John Jumper**（AlphaFold 主创、**2024 年诺贝尔化学奖**得主，在 DeepMind 工作近 9 年）宣布加入 **Anthropic**，理由明确：「如何建造既足够强大、又真正可信赖的系统，Anthropic 比任何人都更有能力回答」。加上 1 月离开的 **David Silver**（AlphaGo/AlphaZero 主创，已创办 Ineffable Intelligence 并融资约 10 亿美元），**2026 年 DeepMind 已流失 3 位象征性研究领袖**。行业含义：Transformer 架构本是 Google 内部研究成果，如今其设计者带着架构直觉转身去帮 OpenAI 优化——这不是普通人才竞争，是「技术主权流失」。实操含义：Jumper 选择 Anthropic 的公开理由（科学能力 + 可信赖性）预示 Anthropic 下一阶段会向医疗/材料/蛋白质设计等科学应用延伸，做 Claude API 集成的硬件与 AI 应用团队值得提前布局这些垂直场景",
+    "persons": [],
+    "sources": [
+      { "label": "CNBC：Google Gemini co-lead Noam Shazeer leaves for OpenAI（2026-06-18）", "url": "https://www.cnbc.com/2026/06/18/google-gemini-co-lead-noam-shazeer-leaves-for-openai.html" },
+      { "label": "Bloomberg：Nobel Winner John Jumper to Leave Google DeepMind for Anthropic（2026-06-19）", "url": "https://www.bloomberg.com/news/articles/2026-06-19/nobel-winner-john-jumper-to-leave-google-deepmind-for-anthropic" }
+    ]
+  },
+  {
     "id": "engineai-hkipo-factory-2026",
     "date": "2026-06-12",
     "type": "funding",
