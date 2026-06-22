@@ -6,6 +6,22 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "fable5-export-control-2026-06-12",
+    "date": "2026-06-12",
+    "type": "non-consensus",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "美国出口管制叫停 Fable 5 — AI 前沿模型进入武器管控逻辑",
+    "body": "**6月9日**，Anthropic 发布迄今最强公开模型 **Fable 5**（Mythos 级），三天后美国商务部长 **Howard Lutnick** 依出口管制权限下令全面暂停——禁止任何外国籍人士（含 Anthropic 自身非美国员工）访问 Fable 5 和 Mythos 5；**6月12日17:21 ET** 起全球停服，**截至6月22日已满10天**，Anthropic 高管赴华盛顿面谈，预测市场押注7月前复开概率约57%。**最反直觉的背景**：就在一周前，五角大楼以「Claude 太保守、拒绝松开武器护栏」把 Anthropic 踢出军用系统；现在商务部又以「Fable 5 太强大、存在被境外利用风险」叫停全球访问——**同一个政府、同一家公司，两个方向相反的国家安全逻辑同时生效**。这是美国首次对 AI 基础模型动用出口管制工具，正式把前沿大模型与芯片、精密设备并列纳入「两用技术」管控体系。**创业者实操含义**：单点依赖闭源前沿 API 的产品，「政府令下即停服」已是真实风险；多供应商 + 开源权重并行，从「技术多样化」升格为**商业连续性必选项**",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "TechCrunch：Anthropic's safety warnings may have just backfired（2026-06-12）", "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/" },
+      { "label": "Al Jazeera：US orders Anthropic to disable AI models for all foreign nationals（2026-06-13）", "url": "https://www.aljazeera.com/news/2026/6/13/us-orders-anthropic-to-disable-ai-models-for-all-foreign-nationals" }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
