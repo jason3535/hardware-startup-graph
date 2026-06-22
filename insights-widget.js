@@ -3057,6 +3057,57 @@ const INSIGHTS_DATA = [
     ]
   },
   {
+    "id": "generalist-ai-400m-vla-2026",
+    "date": "2026-06-04",
+    "type": "funding",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "Generalist AI 4 亿美元 B 轮：「机器人大脑」成独立赛道",
+    "body": "**6 月 4 日**，前 DeepMind RT-2 主要作者 **Pete Florence** 创办的 **Generalist AI** 完成 **4 亿美元 B 轮**（估值 20 亿美元），Radical Ventures 领投，英伟达创投、贝佐斯、Fei-Fei Li、林斌跟投，总融资超 5 亿。核心产品 GEN-1（2026.4）在灵巧操作任务上准确率从 64% → **99%**，比此前最优提升 3 倍。**非共识**：资本正在把「机器人大脑」和「机器人身体」拆开定价——Generalist AI 做通用 VLA 层、Physical Intelligence 做策略层、Lyte 做感知层，这批「picks-and-shovels」公司的估值逻辑类似早期云计算基础设施：不管哪家人形本体赢，它们都能吃到训练数据与推理的流水。",
+    "persons": [{"id": "peteflorence", "name": "Pete Florence"}],
+    "sources": [
+      {"label": "SiliconAngle：Generalist AI raises $400M at $2B（2026-06-04）", "url": "https://siliconangle.com/2026/06/04/generalist-ai-raises-400m-2b-valuation-build-general-intelligence-real-world/"},
+      {"label": "Bloomberg：Nvidia-backed Generalist AI valued at $2 billion", "url": "https://www.bloomberg.com/news/articles/2026-06-04/nvidia-backed-robotics-startup-generalist-ai-valued-at-2-billion"}
+    ]
+  },
+  {
+    "id": "china-humanoid-ipo-wave-2026",
+    "date": "2026-06-15",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "中国人形机器人 IPO 三连发：宇树过会、众擎递表、智元筹港",
+    "body": "**6 月前两周**，中国具身智能 IPO 浪潮进入加速期。**宇树科技**（王兴兴）73 天极速过会科创板（6.1，募资约 42 亿元，目标估值约 420 亿）；**众擎机器人**（赵同阳）6 月 12 日向港交所秘密递表（中金、中信保荐，B 轮后估值逾 100 亿元）；**智元机器人**（彭志辉）锁定中金、中信、摩根士丹利三大行，目标 Q3 港交所上市（目标估值 400-500 亿港元，约 51-64 亿美元）。三家均来自 2022-2023 年成立，从 0 到上市不超过 4 年。**非共识**：国内资本市场出口不是「锦上添花」而是护城河本身——上市公司身份让这些机器人公司能持续用股权换大客户、换供应链优先权，而这正是美国同行 Figure / Apptronik 用十亿美元融资也难复制的东西。",
+    "persons": [
+      {"id": "wangxingxing", "name": "王兴兴（宇树）"},
+      {"id": "zhaotongyang", "name": "赵同阳（众擎）"},
+      {"id": "pengzhihui", "name": "彭志辉（智元）"}
+    ],
+    "sources": [
+      {"label": "CGTN：Unitree gets STAR Market green light（2026-06-01）", "url": "https://news.cgtn.com/news/2026-06-01/Unitree-gets-STAR-Market-green-light-1NCT9TksSVq/share_amp.html"},
+      {"label": "Reuters：AgiBot plans Hong Kong IPO with CICC/CITIC/Morgan Stanley", "url": "https://finance.yahoo.com/news/exclusive-chinese-robot-maker-agibot-092020928.html"},
+      {"label": "新浪财经：众擎机器人秘密递表港交所（2026-06-12）", "url": "https://k.sina.com.cn/article_7857201856_1d45362c001906kemo.html"}
+    ]
+  },
+  {
+    "id": "humanoid-production-velocity-2026",
+    "date": "2026-06-15",
+    "type": "trend",
+    "graphs": ["hardware"],
+    "pinned": false,
+    "title": "产能速率取代融资额成人形机器人新护城河",
+    "body": "2026 年上半年，人形赛道的核心问题从「你能做到吗」变成「你每小时能出几台」。**Figure AI**（Brett Adcock）4 月 29 日宣布 BotQ 工厂从每天 1 台提速到每小时 1 台，120 天实现 24 倍提升；**众擎机器人**（赵同阳）深圳新厂每 15 分钟下线一台 T800；**智元机器人**（彭志辉）3 个月内完成第 1 万台远征 A3 下线。三家给出的数字——每小时、每 15 分钟、每季度万台——标志着人形机器人已从「能演示」进入「能规模交付」阶段。**非共识**：资本市场正在从「估值/融资轮次」转向「单位产能资本密度」作为核心指标。拥有自建工厂 + 垂直整合供应链的公司将逐渐取代纯融资驱动的研究型公司，成为赛道真正的赢家。",
+    "persons": [
+      {"id": "brettadcock", "name": "Brett Adcock（Figure）"},
+      {"id": "zhaotongyang", "name": "赵同阳（众擎）"},
+      {"id": "pengzhihui", "name": "彭志辉（智元）"}
+    ],
+    "sources": [
+      {"label": "The AI Insider：Figure AI ramps to one humanoid per hour（2026-04-29）", "url": "https://theaiinsider.tech/2026/05/01/figure-ai-ramps-up-production-to-one-humanoid-robot-per-hour/"},
+      {"label": "TechTimes：Unitree IPO Cleared, AGIBOT Hits 10,000 Units（2026-06-02）", "url": "https://www.techtimes.com/articles/317632/20260602/unitree-ipo-cleared-agibot-hits-10000-units-china-humanoid-robot-duopoly-takes-shape.htm"}
+    ]
+  },
+  {
     "id": "dreame-jiamei-shell",
     "date": "2025-12-15",
     "type": "non-consensus",

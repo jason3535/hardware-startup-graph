@@ -1,0 +1,79 @@
+{
+  "id": "weekly-2026-06-22",
+  "date": "2026-06-22",
+  "issueNumber": "003",
+  "title": "Jason's Hardware Notes — Issue #003",
+  "subject": "[周报] 2026-06-22 新增 1 人 / 更新 1 轮 / 3 条趋势",
+  "tldr": [
+    "Generalist AI: 前 DeepMind RT-2 主要作者 Pete Florence 完成 4 亿美元 B 轮（6 月 4 日），物理 AI「大脑层」成独立赛道",
+    "智元机器人 HKEX IPO: 中金、中信、摩根士丹利联席保荐，目标估值 400-500 亿港元，Q3 上市",
+    "中国人形三连 IPO: 宇树过会科创板 + 众擎秘密递表港交所 + 智元筹备港股，新护城河是「资本出口」"
+  ],
+  "sections": [
+    {
+      "title": "本周新人物",
+      "items": [
+        {
+          "title": "Pete Florence / Generalist AI",
+          "subtitle": "前 DeepMind RT-2 作者，4 亿美元打造「机器人通用大脑」",
+          "body": "Pete Florence 在 MIT Russ Tedrake 实验室完成博士，随后加入 Google DeepMind，主导 RT-2 和 PaLM-E 的研发——RT-2 是首个让机器人直接从互联网知识中学习物理动作的视觉-语言-行动模型，2022 年发布时被视为机器人领域的 GPT 时刻。\n\n2025 年初离开 DeepMind，与 Andy Zeng（前 Google Brain，哥伦比亚大学机器人博士）和 Andrew Barry（前 Boston Dynamics）联合创办 Generalist AI，专注打造「通用机器人大脑」——即一套能让任意机器人本体完成复杂操作任务的 VLA 基础模型层。2026 年 4 月发布 GEN-1 模型，在灵巧操作任务上实现 99% 平均成功率，是此前最优结果（64%）的 1.5 倍以上。\n\n6 月 4 日，公司完成 4 亿美元 B 轮融资，估值 20 亿美元。Radical Ventures 领投，英伟达创投、贝佐斯探险、Fei-Fei Li、小米联合创始人林斌等参投，累计融资超 5 亿美元。",
+          "judgment": "机器人赛道正在出现「大脑-身体」分层定价。Generalist AI 押注的是：不管哪家人形本体赢，通用 VLA 层都是必经之路——这个逻辑和 AWS 之于互联网公司高度相似。真正的问题是这层能否建立数据飞轮护城河，还是会被每家机器人公司自建替代。",
+          "sources": [
+            {"label": "SiliconAngle：Generalist AI raises $400M at $2B（2026-06-04）", "url": "https://siliconangle.com/2026/06/04/generalist-ai-raises-400m-2b-valuation-build-general-intelligence-real-world/"},
+            {"label": "Bloomberg：Nvidia-backed Generalist AI valued at $2 billion", "url": "https://www.bloomberg.com/news/articles/2026-06-04/nvidia-backed-robotics-startup-generalist-ai-valued-at-2-billion"},
+            {"label": "TechFundingNews：The DeepMind and Boston Dynamics team building the brain for every robot raises $400M", "url": "https://techfundingnews.com/the-deepmind-and-boston-dynamics-team-building-the-brain-for-every-robot-raises-400m/"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "现有节点新动态",
+      "items": [
+        {
+          "title": "智元机器人（彭志辉）— HKEX IPO 三大行入场",
+          "subtitle": "中金 + 中信 + 摩根士丹利，目标 Q3 2026 港交所上市，估值 400-500 亿港元",
+          "body": "智元机器人（Agibot）已锁定中金公司、中信证券、摩根士丹利作为港交所 IPO 联席保荐人，拟发行 15-25% 股份，目标筹资超 10 亿美元，目标估值 400-500 亿港元（约合 51-64 亿美元）。按计划，最早将于 2026 年 Q3 完成上市。\n\n此前，智元已以约 2.9 亿美元价格收购了 A 股上纬新材 63.62% 的控股权，由联合创始人担任董事长——这一布局被业界解读为资本运作的「双轨策略」：直接 IPO 之外，通过 A 股壳公司保留另一条 A 股通道。\n\n智元当前估值约 150 亿元人民币，是国内具身赛道估值最高的未上市公司，并计划年底完成 C 轮（成立三年第 12 轮融资）。",
+          "sources": [
+            {"label": "Reuters：Exclusive — Chinese robot maker AgiBot plans Hong Kong IPO", "url": "https://finance.yahoo.com/news/exclusive-chinese-robot-maker-agibot-092020928.html"},
+            {"label": "Capital.com：Agibot IPO — everything you need to know", "url": "https://capital.com/en-int/learn/ipo/agibot-ipo"},
+            {"label": "Latest Tech News Hub：Chinese Robot Maker AgiBot Plans $6B Hong Kong IPO in 2026", "url": "https://latesttechnewshub.com/chinese-robot-maker-agibot-eyes-6-billion-hong-kong-ipo-in-2026/"}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "本周 3 条趋势",
+      "items": [
+        {
+          "title": "「机器人大脑层」正成为独立投资赛道",
+          "body": "Generalist AI（$400M）、Physical Intelligence（$2.4B ARR 路径，中国对标千寻智能 / 宇树 OS 层）等公司的崛起，标志资本开始把「让机器人更聪明的软件基础设施」从「机器人本体」中独立出来定价。这类公司不造机器人，而是造让所有机器人都能用的大脑 API——就像 OpenAI 之于应用层，Generalist AI 之于物理世界。",
+          "judgment": "如果 VLA 模型层真能标准化，机器人本体将快速硬件化、商品化，竞争将集中在谁有最多高质量操作数据。目前这场战争中，中国有优势：中国工厂密度意味着数据收集成本低 10 倍以上。",
+          "sources": [
+            {"label": "SiliconAngle：Generalist AI raises $400M at $2B（2026-06-04）", "url": "https://siliconangle.com/2026/06/04/generalist-ai-raises-400m-2b-valuation-build-general-intelligence-real-world/"},
+            {"label": "Humanoids Daily：Physical AI Arms Race Accelerates", "url": "https://www.humanoidsdaily.com/news/physical-ai-arms-race-accelerates-generalist-ai-secures-400m-to-scale-robot-learning"}
+          ]
+        },
+        {
+          "title": "中国人形机器人 IPO 三连：2026 上半年的真正分水岭",
+          "body": "宇树科技 6 月 1 日科创板过会（73 天极速，募资 42 亿元，目标估值 420 亿），众擎机器人 6 月 12 日秘密向港交所递表（$200M B 轮后估值逾 100 亿元），智元机器人锁定三大行目标 Q3 上市（目标估值 400-500 亿港元）。三家均 2022-2023 年成立，从创立到启动 IPO 不超过 4 年。",
+          "judgment": "上市资格不只是融资工具——它是中国市场获取大客户、换供应链优先权的信用背书。在中国，「上市机器人公司」和「未上市机器人公司」面对的是两个完全不同的市场。美国同行用十亿美元融资也很难复制这条护城河。",
+          "sources": [
+            {"label": "CGTN：Unitree gets STAR Market green light（2026-06-01）", "url": "https://news.cgtn.com/news/2026-06-01/Unitree-gets-STAR-Market-green-light-1NCT9TksSVq/share_amp.html"},
+            {"label": "Reuters：AgiBot plans Hong Kong IPO with CICC/CITIC/Morgan Stanley", "url": "https://finance.yahoo.com/news/exclusive-chinese-robot-maker-agibot-092020928.html"},
+            {"label": "新浪财经：炸裂！智元机器人正式冲击港股", "url": "https://finance.sina.com.cn/stock/marketresearch/2025-10-10/doc-inftmhci1286738.shtml"}
+          ]
+        },
+        {
+          "title": "产能速率取代融资额，成人形机器人新核心指标",
+          "body": "2026 年上半年，赛道的比拼维度发生结构性变化：Figure AI BotQ 工厂 4 月 29 日宣布每小时产出 1 台 Figure 03（120 天实现 24 倍提升）；众擎深圳工厂每 15 分钟下线一台 T800；智元 3 个月内完成第 1 万台远征 A3 交付。融资额曾是衡量公司实力的代理指标，如今被「单位时间产出量」和「真实交付台数」所取代。",
+          "judgment": "历史上每个硬件品类（从智能手机到 EV 到无人机）都经历过「资本密集期→量产竞争期→成本竞争期」的转变。人形机器人现在刚进入第二阶段的起点。拥有自建工厂 + 垂直供应链的公司——而非纯研究型公司——将在下一轮淘汰赛中胜出。",
+          "sources": [
+            {"label": "The AI Insider：Figure AI ramps to one humanoid per hour（2026-04-29）", "url": "https://theaiinsider.tech/2026/05/01/figure-ai-ramps-up-production-to-one-humanoid-robot-per-hour/"},
+            {"label": "TechTimes：Unitree IPO Cleared, AGIBOT Hits 10,000 Units（2026-06-02）", "url": "https://www.techtimes.com/articles/317632/20260602/unitree-ipo-cleared-agibot-hits-10000-units-china-humanoid-robot-duopoly-takes-shape.htm"},
+            {"label": "Interesting Engineering：Figure claims BotQ can make one humanoid per hour", "url": "https://interestingengineering.com/ai-robotics/figure-humanoid-robot-production-scale-up"}
+          ]
+        }
+      ]
+    }
+  ]
+}
