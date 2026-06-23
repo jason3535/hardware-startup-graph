@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "genesis-ai-eno-wheels-bet-2026-06-23",
+    "date": "2026-06-23",
+    "type": "non-consensus",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "Genesis AI 1.05 亿美元赌「双足非必需」— 轮式 Eno 向人形赛道叫板",
+    "body": "**6 月 16 日**，Genesis AI 宣布完成 **1.05 亿美元种子轮**（Eclipse Ventures、Khosla Ventures 联合领投，**Eric Schmidt** 参投），并同步推出首款机器人 **Eno**——刻意放弃两足步行底盘，改用**轮式底座 + 可实时调节高度的面板 + 仿人灵巧手**；其 CEO 将此定位为业界的「opposite bet（反向下注）」。Eno 运行 Genesis AI 自研的 **GENE 基础模型**（可理解上下文、保留记忆、执行多步骤任务），首家企业客户 **LG CNS**（LG 集团数字化业务子公司）已签约，计划 **2026 年底**量产交付制造与物流客户。**非共识点**：当 2026 年所有融资叙事都在比拼「双足越来越稳」，Genesis AI 的核心论点是——**人手有价值，人脚没有**；轮式底盘可靠性更高、BOM 更低、量产更快，可调高度 + 灵巧手可覆盖 90% 的制造/物流场景。$105M 种子轮背后是 Eric Schmidt 与 Khosla，是继 Figure、NEURA 之后，头部基金首次用种子规模押注对「双足必要性」提出质疑的公司。**实操含义**：评估机器人方案前先问「这个场景为什么需要腿而不是轮子」——若答案不充分，轮式路径的商业化速度可能比双足快 2 年",
+    "persons": [
+      { "id": "genesisai", "name": "Genesis AI（Eno）" }
+    ],
+    "sources": [
+      { "label": "PRNewswire：Introducing Eno — Genesis AI's First General-Purpose Robot（2026-06-16）", "url": "https://www.prnewswire.com/news-releases/introducing-eno-genesis-ais-first-general-purpose-robot-is-challenging-traditional-humanoid-design-302801103.html" },
+      { "label": "Tech Funding News：Genesis AI emerges from stealth with $105M seed funding（2026-06-16）", "url": "https://techfundingnews.com/genesis-ai-105m-seed-funding/" }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
