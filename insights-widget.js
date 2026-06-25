@@ -6,6 +6,23 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "google-gemini-exodus-anthropic-ipo-2026-06-25",
+    "date": "2026-06-25",
+    "type": "relationship",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Anthropic 临 IPO 6 天挖走谷歌 4 位 Gemini 核心研究员",
+    "body": "**6 月 18–24 日**，谷歌 **6 天内流失 4 位 Gemini 关键研究员**：Shazeer（架构→OpenAI）、Jumper（诺奖→Anthropic）、**Adler（AI 编程负责人→Anthropic）**、**Pritzel（预训练负责人→Anthropic）**，三人集中流向 Anthropic，当周谷歌股价跌约 **6%、市值蒸发逾 2450 亿美元**。**行业含义**：Adler 和 Pritzel 是「造 Gemini」而非「展示 Gemini」的人——编程与预训练核心同步空心化，比明星科学家出走更难弥补，且这是 AI 战争以来规模最大的单周集中流失。**Jason 视角**：Anthropic 于 **6 月 1 日递表 S-1**，给每位候选人打开了清晰的 pre-IPO 财富窗口——比任何底薪 offer 都更有说服力。对创业者的实操含义：融资节奏和 IPO 可见性现在是直接招募武器，能让人看到变现曲线的公司，正在从大厂系统性截流顶级人才",
+    "persons": [
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" },
+      { "id": "hassabis", "name": "Demis Hassabis（DeepMind）" }
+    ],
+    "sources": [
+      { "label": "Bloomberg：Google Poised to Lose Two More High-Profile AI Staffers to Anthropic（2026-06-24）", "url": "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic" },
+      { "label": "TechCrunch：AI researchers continue to leave Google for its rivals（2026-06-24）", "url": "https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
