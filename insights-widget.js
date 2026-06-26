@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "google-tpu-gemini-exodus-2026-06-26",
+    "date": "2026-06-24",
+    "type": "non-consensus",
+    "graphs": ["ai-scholar"],
+    "pinned": false,
+    "title": "Google 把算力卖给了挖走自己研究员的人 — 6 天 4 人出走 Gemini",
+    "body": "**6 月 18–24 日**，Google Gemini 团队 **6 天失血 4 人**：Noam Shazeer → OpenAI；John Jumper / **Jonas Adler**（AlphaFold 3 作者、Gemini AI 编码负责人）/ **Alexander Pritzel**（Gemini 预训练工程师）→ Anthropic。幕后有一条完整的飞轮：Google 与 Anthropic 签下 **400 亿美元** TPU 大单（**100 万张** TPUv7 Ironwood），把大规模算力外卖给竞争对手，导致 Google 内部研究员**需要排队等自家芯片**，部分模型实验被迫缩减；Anthropic 用买来的算力训出更强模型 → 估值冲高 → S-1 已递交 → **IPO 前未兑现股权**成为最锐利的招募武器 → Gemini 核心团队出走。Adler 打通「科学 AI + 编码」，Pritzel 主导预训练，两者都直接影响下一代 Gemini 的能力边界；Gemini 3.5 Pro 因此推迟至 7 月发布。**非共识**：这不是「明星流失」的线性叙事，而是 **Google 把铲子卖给了淘金者**——算力商业化的季报收益，换来的是同一块算力不再守住顶尖人才的结构性代价。**实操含义**：「算力零排队 + 可信 IPO 路径」是目前 AI 人才市场最有效的组合拳，现金薪资排在其后——Anthropic 今年用这套公式验证了四次",
+    "persons": [
+      { "id": "hassabis", "name": "Demis Hassabis（Google DeepMind）" },
+      { "id": "damodei", "name": "Dario Amodei（Anthropic）" }
+    ],
+    "sources": [
+      { "label": "Bloomberg：Google Poised to Lose Two More High-Profile AI Staffers to Anthropic（2026-06-24）", "url": "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic" },
+      { "label": "The Next Web：Google has sold so much TPU capacity that its own researchers are queueing（2026-06-24）", "url": "https://thenextweb.com/news/google-tpu-compute-internal-researchers-anthropic" },
+      { "label": "TechCrunch：AI researchers continue to leave Google for its rivals（2026-06-24）", "url": "https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/" }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
