@@ -6,6 +6,100 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "prometheus-bezos-2026",
+    "date": "2026-06-11",
+    "type": "funding",
+    "graphs": [
+      "ai-scholar",
+      "investor"
+    ],
+    "pinned": false,
+    "title": "贝索斯亲任 CEO，Prometheus 融 120 亿美元造「人工通用工程师」",
+    "body": "**6 月 11 日**，贝索斯的新公司 **Prometheus** 完成 **120 亿美元**融资、估值 **410 亿美元**（JPMorgan、BlackRock、Goldman、DST、Arch 等参投），这是他**离开亚马逊后首次亲自出任 CEO**（与科学家 Vik Bajaj 共任）。目标是「**人工通用工程师**」——用 AI 把从设计到制造实体产品（桥梁、芯片）的流程大幅加速，约 150 人，SF/伦敦/苏黎世。**非共识**：当前沿资本扎堆「聊天/通用智能」，贝索斯押的是**物理世界的工程自动化**——AI 的下一块大蛋糕可能不在对话框里，而在制造业",
+    "persons": [],
+    "sources": [
+      {
+        "label": "TechCrunch：Bezos's Prometheus raises $12B（2026-06-11）",
+        "url": "https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/"
+      },
+      {
+        "label": "GeekWire：Prometheus raises $12B at $41B valuation",
+        "url": "https://www.geekwire.com/2026/bezos-ai-startup-prometheus-raises-12b-at-41b-valuation-and-the-ceos-explain-what-theyre-doing/"
+      }
+    ]
+  },
+  {
+    "id": "lightwheel-shovel-2026",
+    "date": "2026-06-24",
+    "type": "non-consensus",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "光轮智能：具身智能的「卖铲人」，年内融超 10 亿、营收破亿",
+    "body": "具身智能合成数据公司 **光轮智能（LightWheel AI）**今年完成总额**超 10 亿元** A++/A+++ 轮（**蚂蚁集团领投**），年营收已破亿。它做的是 **Physical AI 仿真与合成数据平台**——为机器人/自动驾驶生成大规模训练数据、解决「数据荒」，客户覆盖**英伟达、谷歌、Figure、1X、字节、智元、丰田、博世、比亚迪**。**非共识**：当所有人盯着人形机器人本体，最先跑出稳定营收的可能是**给所有人供数据的基础设施层**——具身时代的「卖铲子」生意，往往比挖矿的先赚钱",
+    "persons": [],
+    "sources": [
+      {
+        "label": "智源社区：营收破亿，光轮智能完成数亿元 A 及 A+ 轮",
+        "url": "https://hub.baai.ac.cn/view/50686"
+      },
+      {
+        "label": "NVIDIA 技术博客：光轮智能 × GR00T N1 落地汽车工厂",
+        "url": "https://developer.nvidia.cn/blog/lightwheel-nvidia-gr00t-n1/"
+      }
+    ]
+  },
+  {
+    "id": "nvidia-unitree-groot-2026",
+    "date": "2026-06-01",
+    "type": "trend",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "英伟达选宇树做人形「参考平台」，Isaac GR00T 是机器人界的 CUDA",
+    "body": "**6 月 1 日**，英伟达发布 **Isaac GR00T 开放人形机器人参考平台**——本体选用**宇树 H2 Plus**（1.82 米 / 75 自由度，含 Sharpa 灵巧手）+ Jetson Thor 算力 + GR00T 模型，年底由宇树推出，Ai2、ETH、斯坦福、UCSD 等已采用。**非共识**：英伟达不自己造机器人，而是钦定宇树本体做「标准参考机」——复刻 CUDA 打法：**不做硬件，做所有人都得用的底座**。被选中的宇树拿到生态入场券，没被选的（如 Figure）则被挡在标准之外",
+    "persons": [
+      {
+        "id": "wangxingxing",
+        "name": "王兴兴（宇树）"
+      }
+    ],
+    "sources": [
+      {
+        "label": "NVIDIA 博客：Isaac GR00T 人形机器人参考平台（2026-06-01）",
+        "url": "https://blogs.nvidia.cn/blog/nvidia-open-humanoid-robot-reference-design/"
+      },
+      {
+        "label": "新浪科技：基于宇树 H2 打造，年底推出",
+        "url": "https://finance.sina.com.cn/tech/digi/2026-06-01/doc-inhzwpyu4085485.shtml"
+      }
+    ]
+  },
+  {
+    "id": "carmaker-humanoid-2026",
+    "date": "2026-06-06",
+    "type": "trend",
+    "graphs": [
+      "hardware"
+    ],
+    "pinned": false,
+    "title": "车企下场造人形：比亚迪确认入局，但否认「年内 2 万台」传闻",
+    "body": "**6 月初**，比亚迪执行副总裁李柯证实公司正研发人形机器人，设想未来通过**全球经销商网络**销售、走**开放平台**路线；但比亚迪**明确辟谣**了「代号尧舜禹、年内自用 2 万台、第七代原型」等具体传闻。叠加小鹏、特斯拉已在做，**车企正从机器人的「买方」变「造方」**。**非共识**：车企的供应链、量产与渠道正是机器人创业公司最缺的——但「确认在做」与「辟谣具体数字」之间的落差提醒，**车企人形目前更多是战略卡位，离真量产仍有距离**",
+    "persons": [],
+    "sources": [
+      {
+        "label": "IT之家：比亚迪辟谣「尧舜禹」及 2 万台传闻（2026-06-06）",
+        "url": "https://www.ithome.com/0/960/816.htm"
+      },
+      {
+        "label": "OFweek：比亚迪下场造人形机器人",
+        "url": "https://www.ofweek.com/im/2026-06/ART-201920-8460-30689481.html"
+      }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
