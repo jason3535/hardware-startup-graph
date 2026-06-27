@@ -1322,7 +1322,8 @@ const scholars = [
   {"id":"tonyzhao","name":"Tony Zhao","org":"Sunday Robotics","title":"Co-founder of Sunday Robotics · Home robot Memo","field":["robotics","overseas"],"bio":"Stanford roboticist known for low-cost imitation-learning systems (ALOHA), who co-founded Sunday Robotics with Cheng Chi to build the household robot 'Memo.' In 2026 the company reached a $1.15B valuation on a $165M Series B led by Coatue, with a consumer beta targeted for the year.","papers":[{"y":"2023","t":"ALOHA / low-cost imitation learning"},{"y":"2026","t":"Sunday Robotics — $1.15B valuation (Series B)"}]},
   {"id":"alexzhou","name":"Alex Zhou","org":"Linkerbot (Lingxin Qiaoshou)","title":"Founder of Linkerbot · Dexterous robotic hands","field":["robotics"],"bio":"Founder of Beijing-based Linkerbot, a maker of high-degree-of-freedom dexterous robotic hands for humanoids and manipulation. In 2026 the company closed a Series B+ at a ~$3B valuation (backers including Ant Group and HongShan), claiming a majority share of the global high-DoF hand market and scaling toward 10,000 units a month.","papers":[{"y":"2026","t":"Series B+ at ~$3B; scaling dexterous-hand production"}]},
   {"id":"ragavender","name":"Ritesh Ragavender","org":"Reflex Robotics","title":"Co-founder & CEO of Reflex Robotics","field":["robotics","overseas"],"bio":"MIT-founded Reflex Robotics builds low-cost wheeled humanoid manipulators now in pilots with logistics firms such as GXO. In 2026 the company moved to open its first humanoid manufacturing plant in Latin America, betting on affordable, commercially deployable robots over full bipedal autonomy.","papers":[{"y":"2026","t":"Reflex humanoid pilots (GXO); first LATAM plant"}]},
-  {"id":"shpunt","name":"Alexander Shpunt","org":"Lyte","title":"Co-founder of Lyte · ex-Apple Face ID","field":["robotics","ai-infra","overseas"],"bio":"Former Apple and PrimeSense engineer behind Face ID's structured-light depth sensing, who co-founded Lyte with two ex-Apple colleagues to build a robot 'visual brain' — the LyteVision 4D sensor. The startup emerged from stealth in 2026 with $107M and won a CES 2026 Best of Innovation award in robotics.","papers":[{"y":"2026","t":"Lyte out of stealth ($107M); LyteVision 4D sensor"}]}
+  {"id":"shpunt","name":"Alexander Shpunt","org":"Lyte","title":"Co-founder of Lyte · ex-Apple Face ID","field":["robotics","ai-infra","overseas"],"bio":"Former Apple and PrimeSense engineer behind Face ID's structured-light depth sensing, who co-founded Lyte with two ex-Apple colleagues to build a robot 'visual brain' — the LyteVision 4D sensor. The startup emerged from stealth in 2026 with $107M and won a CES 2026 Best of Innovation award in robotics.","papers":[{"y":"2026","t":"Lyte out of stealth ($107M); LyteVision 4D sensor"}]},
+  {"id":"xiechen","name":"Xie Chen","org":"LightWheel AI","title":"Founder & CEO of LightWheel AI · Embodied data infrastructure","field":["ai-infra","robotics"],"bio":"Founder and CEO of LightWheel AI (光轮智能, founded 2023), an embodied-AI synthetic-data company. A Peking University physics graduate with a quant-finance PhD from Columbia, he previously led autonomous-driving simulation at NVIDIA, Cruise and NIO. LightWheel builds a Physical AI simulation and synthetic-data platform that generates large-scale training data for robots and self-driving, addressing the industry's data shortage. It became China's first embodied-data unicorn, with revenue past 100M yuan and customers including NVIDIA, Google, Figure AI, 1X and BYD; in 2026 it raised over 1B yuan (A++/A+++, led by Ant Group).","papers":[{"y":"2023","t":"Founded LightWheel AI (embodied synthetic data)"},{"y":"2026","t":">CN¥1B raised; first embodied-data unicorn, revenue >¥100M"}]}
 ];
 
 const connections = [
@@ -1595,7 +1596,10 @@ const connections = [
   {source:"ragavender",target:"jeffcardenas",type:"industry-peer",label:"人形机器人创业"},
   {source:"ragavender",target:"brettadcock",type:"industry-peer",label:"人形机器人"},
   {source:"shpunt",target:"karolhausman",type:"industry-peer",label:"机器人感知"},
-  {source:"shpunt",target:"reger",type:"industry-peer",label:"机器人 AI 硬件"}
+  {source:"shpunt",target:"reger",type:"industry-peer",label:"机器人 AI 硬件"},
+  {source:"xiechen",target:"wangxingxing",type:"industry-peer",label:"具身数据/本体生态"},
+  {source:"xiechen",target:"brettadcock",type:"industry-peer",label:"为 Figure 等供合成数据"},
+  {source:"xiechen",target:"reger",type:"industry-peer",label:"具身 AI 基础设施"}
 ];
 
 // ===================================================================
@@ -1919,6 +1923,7 @@ const i18n = {
 
 // Chinese scholar data
 const scholarZh = {
+  "xiechen":{"zhName":"谢晨","title":"光轮智能创始人兼 CEO · 具身数据基础设施","bio":"光轮智能（2023 年创办）创始人兼 CEO，具身智能合成数据公司。北京大学物理学院学士、哥伦比亚大学数量金融博士，曾任英伟达、Cruise、蔚来的自动驾驶仿真负责人。光轮做 Physical AI 仿真与合成数据平台，为机器人/自动驾驶生成大规模训练数据、解决「数据荒」。成为中国首个具身数据独角兽，年营收破亿，客户含英伟达、谷歌、Figure、1X、比亚迪；2026 年完成总额超 10 亿元 A++/A+++ 轮（蚂蚁集团领投）。"},
   "reger":{"zhName":"大卫·雷格","title":"NEURA Robotics 创始人兼 CEO · 认知机器人","bio":"德国创业者，2019 年创办 NEURA Robotics（梅青根），构建「认知型」人形与服务机器人（4NE-1、MiPA）。2026 年 6 月以约 70 亿美元估值完成最高 14 亿美元 C 轮（Tether、高通、英伟达、博世、欧洲投资银行等参投）——欧洲机器人史上最大单轮。"},
   "tonyzhao":{"zhName":"赵同阳 Tony Zhao","title":"Sunday Robotics 联合创始人 · 家用机器人 Memo","bio":"斯坦福机器人学者，以低成本模仿学习系统 ALOHA 著称，与 Cheng Chi 联合创办 Sunday Robotics，打造家用机器人「Memo」。2026 年由 Coatue 领投 1.65 亿美元 B 轮，估值达 11.5 亿美元，计划当年推出消费者测试版。"},
   "alexzhou":{"zhName":"周斌 Alex Zhou","title":"灵心巧手（Linkerbot）创始人 · 灵巧手","bio":"北京灵心巧手创始人，主攻面向人形与操作的高自由度灵巧机器手。2026 年以约 30 亿美元估值完成 B+ 轮（蚂蚁集团、红杉等参投），自称在全球高自由度灵巧手市场占据多数份额，产能向每月 1 万只扩张。"},
