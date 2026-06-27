@@ -6,6 +6,41 @@
 
 const INSIGHTS_DATA = [
   {
+    "id": "alphafold-team-anthropic-exodus-2026-06-24",
+    "date": "2026-06-24",
+    "type": "relationship",
+    "graphs": [
+      "ai-scholar"
+    ],
+    "pinned": false,
+    "title": "Anthropic 一周集齐三位 AlphaFold 核心成员，Alphabet 单日蒸发 2250 亿美元",
+    "body": "**6月18至24日**，Google 六天内连失四位顶级 AI 研究员：**Jonas Adler**（AI 编程，AlphaFold 核心贡献者）与 **Alexander Pritzel**（预训练，AlphaFold 核心贡献者）宣布加入 **Anthropic**；此前离去的诺奖得主 John Jumper（AlphaFold 主创，入职 Anthropic）与 Transformer 共同作者 Noam Shazeer（入职 OpenAI）已先行——Alphabet 股价 6 月 22 日单日蒸发逾 **2250 亿美元**（约 1.6 万亿元）。关键模式：三位加入 Anthropic 的研究员（Jumper、Adler、Pritzel）均是 **AlphaFold** 核心成员，加上 5 月入职的 Karpathy，Anthropic 正在系统性构建「用 AI 做科学」的顶级研究梯队。**非共识**：Anthropic 争的不只是「下一代模型架构」，而是「下一个诺贝尔奖」。对创业者的实操含义：以 AI 切入药物、材料、气候赛道的门槛，正在以惊人速度被这支团队抬高",
+    "persons": [
+      {
+        "id": "jumper",
+        "name": "John Jumper"
+      },
+      {
+        "id": "shazeer",
+        "name": "Noam Shazeer"
+      },
+      {
+        "id": "hassabis",
+        "name": "Demis Hassabis"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Bloomberg：Google Poised to Lose Two More High-Profile AI Staffers to Anthropic（2026-06-24）",
+        "url": "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic"
+      },
+      {
+        "label": "TechCrunch：AI researchers continue to leave Google for its rivals（2026-06-24）",
+        "url": "https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/"
+      }
+    ]
+  },
+  {
     "id": "jumper-anthropic-2026",
     "date": "2026-06-19",
     "type": "relationship",
