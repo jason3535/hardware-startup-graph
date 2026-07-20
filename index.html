@@ -1653,7 +1653,7 @@ const svg = d3.select("#main-svg");
 const g = svg.append("g");
 
 // Zoom
-const zoomBehavior = d3.zoom().scaleExtent([0.15, 5])
+const zoomBehavior = d3.zoom().clickDistance(8).scaleExtent([0.15, 5])
   .on("zoom", ({transform}) => g.attr("transform", transform));
 svg.call(zoomBehavior);
 
@@ -1693,7 +1693,7 @@ const linkLines = linkG.selectAll("path").data(connections).join("path")
 const nodeG = g.append("g");
 const nodeGroups = nodeG.selectAll("g").data(scholars).join("g")
   .attr("class","node-group")
-  .call(d3.drag().on("start",(e,d)=>{if(!e.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
+  .call(d3.drag().clickDistance(8).on("start",(e,d)=>{if(!e.active)simulation.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y;})
     .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y;})
     .on("end",(e,d)=>{if(!e.active)simulation.alphaTarget(0);d.fx=null;d.fy=null;}));
 
