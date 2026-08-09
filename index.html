@@ -1155,6 +1155,8 @@ body.no-insights #graph-container {
 // DATA
 // ===================================================================
 const scholars = [
+{id:"fadell",name:"Tony Fadell",org:"Build Collective / Future Shape",title:"Father of the iPod · Founder of Nest",field:["consumer","smart-home"],bio:"Engineer-designer-investor known as the 'father of the iPod' and co-creator of the iPhone at Apple, where he ran the iPod division as SVP. A General Magic alumnus, he founded Nest Labs in 2010 and sold it to Google for $3.2B in 2014. Now invests in deep tech through his firm (Future Shape, operating as Build Collective) and wrote the bestselling builder's manual 'Build' (2022).",papers:[{y:"2001",t:"iPod"},{y:"2007",t:"iPhone (hardware co-creator)"},{y:"2010",t:"Founded Nest"},{y:"2014",t:"Nest → Google ($3.2B)"},{y:"2022",t:"《Build》出版"}]},
+{id:"feldman",name:"Andrew Feldman",org:"Cerebras",title:"Co-founder & CEO of Cerebras Systems",field:["ai-infra"],bio:"Serial chip entrepreneur. Co-founded SeaMicro (low-power microservers), acquired by AMD in 2012, then co-founded Cerebras Systems in 2016 to build wafer-scale AI processors — a single chip the size of a dinner plate. Took Cerebras public on Nasdaq (CBRS) in May 2026 in the year's largest US tech IPO.",papers:[{y:"2007",t:"SeaMicro"},{y:"2012",t:"SeaMicro → AMD"},{y:"2016",t:"Co-founded Cerebras"},{y:"2019",t:"WSE 晶圆级芯片"},{y:"2026",t:"Cerebras 纳斯达克 IPO"}]},
   {"id": "laijie","name": "Lai Jie","org": "Stardust Intelligence (Astribot)","title": "Founder & CEO of Astribot · Ex-Tencent Robotics X First Employee","field": ["robotics"],"bio": "Studied at Xidian University,master's in intelligent systems at Wuyi University. ~16 years in robotics. Assistant researcher at HK PolyU,then led Baidu's Xiaodu robot project. Became the first employee of Tencent Robotics X in 2018,leading the Ollie wheeled-legged robot. Left in 2022 to co-found Stardust Intelligence (Astribot) in Shenzhen. The cable-driven Astribot S1 dual-arm robot went viral April 2024; the T-series launched May 2026 from RMB 89,900. In June 2026 Astribot disclosed a Series B of over RMB 1 billion — its third round in three months — pushing post-money valuation past RMB 10 billion, and claims to be the world's first to mass-produce cable-driven AI robots (1,000-unit-scale delivery began end-2025). Its six-person founding core all came out of Tencent Robotics X.","papers": [{"y": "2024","t": "Astribot S1 cable-driven dual-arm robot"},{"y": "2025","t": "A/A+/A++ rounds (Ant Group / CAS Investment)"},{"y": "2026","t": "Series B >¥1B, valuation >¥10B (3 rounds in 3 months)"}]},
   {"id": "litong","name": "Li Tong","org": "Keenon Robotics","title": "Founder & CEO of Keenon · Global Delivery Robot #1","field": ["robotics"],"bio": "Founded Keenon Robotics in Shanghai in 2010 with three friends and 200,000 yuan. Launched the DINERBOT T1 in 2016,billed as the world's first autonomous delivery robot. Keenon topped IDC's 2024 global rankings for delivery and food-service robots with 22.7% of worldwide shipments,having sold 100,000+ commercial robots across delivery,cleaning and reception. In 2024 it launched its first dual-arm embodied service robot and later the XMAN-F1 humanoid for hospitality.","papers": [{"y": "2016","t": "DINERBOT T1 delivery robot"},{"y": "2024","t": "IDC global #1 delivery + food-service robots"}]},
   {"id": "fusheng","name": "Fu Sheng","org": "OrionStar","title": "Chairman of OrionStar · Cheetah Mobile CEO","field": ["robotics","consumer"],"bio": "Chairman and CEO of Cheetah Mobile,Fu Sheng founded OrionStar (Beijing) in 2016 to build AI service robots and a voice-interaction OS. OrionStar's robots are marketed in 60+ countries; in Q1 2024 its overseas robot sales surpassed domestic. In 2024 its large-model algorithm passed Chinese regulatory filing,and in February 2025 OrionStar integrated DeepSeek to upgrade voice interaction. Fu has publicly argued the robot industry will see steady,gradual acceleration rather than near-term explosive growth.","papers": [{"y": "2016","t": "Founded OrionStar AI robots"},{"y": "2025","t": "OrionStar integrates DeepSeek"}]},
@@ -1327,6 +1329,7 @@ const scholars = [
 ];
 
 const connections = [
+{source:"fadell",target:"jonyive",type:"former-colleague",label:"Apple iPod/iPhone era — engineering × design"},
   {"source": "zhaotongyang","target": "xiaopenghe","type": "former-colleague","label": "Co-founded Pengxing (XPeng Robotics)"},
   {"source": "zhaotongyang","target": "wangxingxing","type": "industry-peer","label": "Humanoid robot rivals (EngineAI vs Unitree)"},
   {source:"jonyive",target:"imranchaudhri",type:"mentor",label:"Apple design leadership; now rival AI hardware (OpenAI io vs Humane)"},
@@ -1923,6 +1926,8 @@ const i18n = {
 
 // Chinese scholar data
 const scholarZh = {
+fadell:{zhName:"托尼·法德尔",title:"iPod 之父 · Nest 创始人",bio:"工程师、设计师、投资人,被称为「iPod 之父」,iPhone 硬件共同缔造者,曾任苹果 iPod 事业部高级副总裁。General Magic 出身;2010 年创办 Nest,2014 年以 32 亿美元卖给 Google。现通过 Future Shape(现名 Build Collective)投资硬科技,著有畅销书《Build》(2022)。"},
+feldman:{zhName:"安德鲁·费尔德曼",title:"Cerebras 联合创始人兼 CEO",bio:"连续芯片创业者。联合创办低功耗微服务器公司 SeaMicro(2012 年被 AMD 收购),2016 年联合创办 Cerebras,打造餐盘大小的晶圆级 AI 处理器。2026 年 5 月带领 Cerebras 在纳斯达克上市(CBRS),为当年美国最大科技 IPO。"},
   "xiechen":{"zhName":"谢晨","title":"光轮智能创始人兼 CEO · 具身数据基础设施","bio":"光轮智能（2023 年创办）创始人兼 CEO，具身智能合成数据公司。北京大学物理学院学士、哥伦比亚大学数量金融博士，曾任英伟达、Cruise、蔚来的自动驾驶仿真负责人。光轮做 Physical AI 仿真与合成数据平台，为机器人/自动驾驶生成大规模训练数据、解决「数据荒」。成为中国首个具身数据独角兽，年营收破亿，客户含英伟达、谷歌、Figure、1X、比亚迪；2026 年完成总额超 10 亿元 A++/A+++ 轮（蚂蚁集团领投）。"},
   "reger":{"zhName":"大卫·雷格","title":"NEURA Robotics 创始人兼 CEO · 认知机器人","bio":"德国创业者，2019 年创办 NEURA Robotics（梅青根），构建「认知型」人形与服务机器人（4NE-1、MiPA）。2026 年 6 月以约 70 亿美元估值完成最高 14 亿美元 C 轮（Tether、高通、英伟达、博世、欧洲投资银行等参投）——欧洲机器人史上最大单轮。"},
   "tonyzhao":{"zhName":"赵同阳 Tony Zhao","title":"Sunday Robotics 联合创始人 · 家用机器人 Memo","bio":"斯坦福机器人学者，以低成本模仿学习系统 ALOHA 著称，与 Cheng Chi 联合创办 Sunday Robotics，打造家用机器人「Memo」。2026 年由 Coatue 领投 1.65 亿美元 B 轮，估值达 11.5 亿美元，计划当年推出消费者测试版。"},
@@ -2319,6 +2324,7 @@ function applyLanguage(lang) {
 
 // Wikipedia article title mapping for avatar fetching
 const wikiTitles = {
+  fadell: "Tony Fadell",
   wangtao:"Frank_Wang",lizexiang:"Li_Zexiang",carlpei:"Carl_Pei",
   yangmeng:"Steven_Yang_(entrepreneur)",wangxingxing:"Wang_Xingxing",
   brettadcock:"Brett_Adcock",pengzhihui:"Peng_Zhihui",wangning:"Wang_Ning_(businessman)",
