@@ -2458,8 +2458,9 @@ function openDetail(d) {
   } else {
     fetchPhoto(d.id).then(url => {
       // Only update if panel still shows same person
-      const nameEl = document.getElementById("detail-name");
-      if (!nameEl || nameEl.textContent !== d.name) return;
+      // 不能拿 detail-name 文本比对 d.name:中文模式标题是「中文名  English Name」,
+      // 恒不相等 → 所有有中文名的人物头像被静默拦掉(ai 图谱 2026-08-02 同 bug 已修,此处同步)
+      if (!window._currentDetailScholar || window._currentDetailScholar.id !== currentId) return;
       const el = document.getElementById("detail-avatar");
       if (el && url) {
         const img = document.createElement("img");
