@@ -2323,6 +2323,7 @@ function applyLanguage(lang) {
 }
 
 // Wikipedia article title mapping for avatar fetching
+const LOCAL_PHOTOS = new Set(["fadell", "feldman"]);
 const wikiTitles = {
   fadell: "Tony Fadell",
   wangtao:"Frank_Wang",lizexiang:"Li_Zexiang",carlpei:"Carl_Pei",
@@ -2372,6 +2373,11 @@ const photoCache = {};
 
 async function fetchPhoto(scholarId) {
   if (photoCache[scholarId]) return photoCache[scholarId];
+  // 0) 本地头像优先(照片来自 aipodcast 已人工核验的同一批,与 ai 图谱同机制)——
+  //    运行时拉 Wikipedia 在国内网络不可达,此前这两个图谱的头像对国内访客全部为空。
+  if (typeof LOCAL_PHOTOS !== 'undefined' && LOCAL_PHOTOS.has(scholarId)) {
+    const url = `assets/people/${scholarId}.jpg`; photoCache[scholarId] = url; return url;
+  }
 
   // 1. Try Wikipedia first
   const wiki = wikiTitles[scholarId];
