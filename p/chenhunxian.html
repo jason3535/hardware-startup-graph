@@ -57,4 +57,14 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<script>
+(function(){try{
+var a='';try{a=localStorage.aid||'';if(!a){a=[].map.call(crypto.getRandomValues(new Uint8Array(10)),function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.aid=a;}}catch(e){}
+var dev=/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)?'mobile':'desktop';
+var ref='';try{ref=document.referrer?new URL(document.referrer).host:'';}catch(e){}
+var body=JSON.stringify({type:'view',path:'graph-hw:'+location.pathname+location.search,ua:dev,ref:ref,sid:'',aid:a});
+if(navigator.sendBeacon)navigator.sendBeacon('https://stats.jasonlin.tech',new Blob([body],{type:'text/plain'}));
+else fetch('https://stats.jasonlin.tech',{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true});
+}catch(e){}})();
+</script>
 </body></html>

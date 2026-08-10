@@ -3084,5 +3084,17 @@ applyLanguage = function(lang) {
   <a href="https://investor.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">投资图谱</a> ·
   <a href="https://design.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">设计图谱</a>
 </div>
+<script>
+/* 匿名访问统计:与 aipodcast/aipaper 共用 stats.jasonlin.tech(D1)。无 Cookie/不存 IP;
+   本站 path 带 graph-hw: 前缀区分。aid=localStorage 随机匿名 ID(与个人信息无关),用于跨天 UV 去重。 */
+(function(){try{
+var a='';try{a=localStorage.aid||'';if(!a){a=[].map.call(crypto.getRandomValues(new Uint8Array(10)),function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.aid=a;}}catch(e){}
+var dev=/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)?'mobile':'desktop';
+var ref='';try{ref=document.referrer?new URL(document.referrer).host:'';}catch(e){}
+var body=JSON.stringify({type:'view',path:'graph-hw:'+location.pathname+location.search,ua:dev,ref:ref,sid:'',aid:a});
+if(navigator.sendBeacon)navigator.sendBeacon('https://stats.jasonlin.tech',new Blob([body],{type:'text/plain'}));
+else fetch('https://stats.jasonlin.tech',{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true});
+}catch(e){}})();
+</script>
 </body>
 </html>
