@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>智能硬件创业图谱 · Hardware Startup Graph</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%23ff9f0a'/%3E%3C/svg%3E">
+
 <meta name="description" content="中国与全球 AI 硬件创业的 150+ 创始人 / 公司图谱 — 大疆系、华为天才少年、清华具身、AR 眼镜四小龙，以及 OpenAI/微软/Google/Meta/Apple/亚马逊等海外大厂的 AI 硬件布局。持续更新最新人物、融资、非共识洞察。">
 <meta name="author" content="Jason Lin">
 <meta name="keywords" content="AI硬件, 硬件创业, 具身智能, 机器人创业, 大疆系, 华为天才少年, 智能硬件图谱, Hardware Startup">
@@ -3031,5 +3033,56 @@ applyLanguage = function(lang) {
 })();
 </script>
 <!-- ===== /Open Full Profile Page ===== -->
+
+<style>
+.detail-podcast-btn{display:none;align-items:center;justify-content:center;gap:7px;margin:8px 20px 0;padding:11px 16px;border-radius:12px;background:rgba(124,92,255,0.14);color:#cbb9ff;text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.01em;transition:background .2s,transform .08s;-webkit-tap-highlight-color:transparent;}
+.detail-podcast-btn:hover{background:rgba(124,92,255,0.24);}
+.detail-podcast-btn:active{transform:scale(0.985);}
+.detail-podcast-btn svg{opacity:.85;flex:0 0 auto;}
+@media (max-width:768px){.detail-podcast-btn{margin:8px 16px 0;}}
+    var pod=panel.querySelector('.detail-podcast-btn');
+</style>
+<script>
+(function(){
+  // graph scholar id -> AI Podcast person id (aipodcast.jasonlin.tech/#/person/<id>)
+  var PODCAST={fadell:'fadell',feldman:'feldman',karolhausman:'hausman',skildai:'pathak',suleyman:'suleyman'};
+  function detectLang(){var a=document.querySelector('.lang-btn.active');if(a&&a.dataset&&a.dataset.lang)return a.dataset.lang;try{return currentLang;}catch(e){return 'zh';}}
+  var L={zh:'听他的 AI 播客',en:'Listen on AI Podcast'};
+  function init(){
+    var panel=document.getElementById('detail-panel');
+    var header=panel?panel.querySelector('.detail-header'):null;
+    var nameEl=document.getElementById('detail-name');
+    if(!panel||!header||!nameEl)return;
+    var a=document.createElement('a');
+    a.className='detail-podcast-btn';
+    a.target='_blank';a.rel='noopener';
+    a.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>'+L.zh+'</span>';
+    header.insertAdjacentElement('afterend',a);
+    function set(){
+      var d=window._currentDetailScholar;
+      var pid=d&&d.id?PODCAST[d.id]:null;
+      if(!pid){a.style.display='none';return;}
+      a.href='https://aipodcast.jasonlin.tech/#/person/'+encodeURIComponent(pid);
+      a.style.display='flex';
+      var s=a.querySelector('span');if(s)s.textContent=(L[detectLang()]||L.zh);
+    }
+    new MutationObserver(set).observe(nameEl,{childList:true,characterData:true,subtree:true});
+    a.addEventListener('mousedown',set);
+    set();
+    a.addEventListener('click',function(){if(typeof umami!=='undefined'){try{umami.track('open_podcast',{id:(window._currentDetailScholar||{}).id});}catch(_){}}});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<div id="site-family" style="padding:26px 24px 34px;background:#000;border-top:.5px solid rgba(255,255,255,.08);text-align:center;font-size:13px;color:rgba(255,255,255,.45);font-family:-apple-system,system-ui,sans-serif">
+  同一批人 · 六种看法 —
+  <a href="https://aipodcast.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">播客</a> ·
+  <a href="https://aipaper.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">论文</a> ·
+  <a href="https://ai.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">AI 图谱</a> ·
+  <a href="https://hardware.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">硬件图谱</a> ·
+  <a href="https://investor.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">投资图谱</a> ·
+  <a href="https://design.jasonlin.tech" style="color:rgba(255,255,255,.75);text-decoration:none">设计图谱</a>
+</div>
 </body>
 </html>
