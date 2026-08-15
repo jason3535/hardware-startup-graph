@@ -6,6 +6,41 @@
 
 const INSIGHTS_DATA = [
   {
+    id: 'anthropic-deepmind-exodus-2026-08',
+    date: '2026-08-12',
+    type: 'relationship',
+    graphs: ['ai-scholar'],
+    pinned: false,
+    title: 'Anthropic 一周内挖走 DeepMind 三名核心研究员，谷歌人才流失加速',
+    body: '继诺奖得主、AlphaFold 负责人 **John Jumper** 转投 Anthropic 后，Gemini 的两位关键贡献者 **Jonas Adler**（AI 编程方向）与 **Alexander Pritzel**（预训练方向）也确认离职加入同一家公司——Anthropic 在**一周内连挖三名 DeepMind 资深研究员**。同期 Transformer 作者 Noam Shazeer 转投 OpenAI，Google Brain 推理团队创始人 Denny Zhou 已在 Meta。自今年 2 月以来，DeepMind 已有至少**六名具名研究员**流向 Meta、OpenAI 与 Anthropic，外界开始质疑该实验室能否维持前沿地位。值得注意的是，出走者集中在**预训练与推理**这两个决定模型上限的环节，而非应用层。',
+    persons: [
+      { id: 'jumper', name: 'John Jumper' },
+      { id: 'shazeer', name: 'Noam Shazeer' }
+    ],
+    sources: [
+      { label: 'Bloomberg', url: 'https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic' },
+      { label: 'Fortune', url: 'https://fortune.com/2026/06/23/google-deepmind-ai-researcher-departures-raise-doubts-about-ability-to-win-the-ai-race-shazeer-jumper-eye-on-ai/' },
+      { label: 'AIwire 综述', url: 'https://www.hpcwire.com/aiwire/2026/08/12/what-google-deepminds-departures-say-about-the-ai-talent-war/' }
+    ]
+  },
+  {
+    id: 'limx-preipo-2026-07',
+    date: '2026-07-14',
+    type: 'funding',
+    graphs: ['hardware'],
+    pinned: false,
+    title: '逐际动力 Pre-IPO 融近 2 亿美元，估值 150 亿，海外资金占比超七成',
+    body: '**张巍**创办的逐际动力（LimX Dynamics）完成近 **2 亿美元** Pre-IPO 轮，投后估值 **150 亿元人民币**，半年累计融资 **4 亿美元**。投资方含 IDG 资本、蓝思科技、泛欧 GGG Group、阿联酋磊石资本（连续多轮追加），老股东绿洲、基石、蔚来资本等超额加注。两个信号值得注意：一是**海外资金占比超过 70%**，在中国机器人创业公司里罕见；二是资金明确投向**「大小脑融合」**而非单点硬件，指向数千台全自主人形的规模化部署。公司已于 3 月完成股改，港股是更可能的上市地。同月国内具身赛道共 34 家企业融资、披露总额约 120 亿元，**天使轮动辄数亿**已成常态。',
+    persons: [
+      { id: 'zhangwei', name: 'Zhang Wei' }
+    ],
+    sources: [
+      { label: '财新', url: 'https://companies.caixin.com/2026-07-14/102464082.html' },
+      { label: '21 世纪经济报道', url: 'https://m.21jingji.com/article/20260714/herald/974184d3d9a451792be15d216a92d048.html' },
+      { label: '证券时报', url: 'https://www.stcn.com/article/detail/4016275.html' }
+    ]
+  },
+  {
     "id": "prometheus-bezos-2026",
     "date": "2026-06-11",
     "type": "funding",
