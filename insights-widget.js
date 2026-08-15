@@ -6,6 +6,56 @@
 
 const INSIGHTS_DATA = [
   {
+    id: 'anthropic-ipo-2tn-2026-08',
+    date: '2026-08-13',
+    type: 'funding',
+    graphs: ['investor', 'ai-scholar'],
+    pinned: false,
+    title: 'Anthropic 拟 10 月上市，投资人预期估值 2 万亿美元——史上最大 IPO',
+    body: 'Anthropic 正推进最早 **10 月**的公开上市，多位投资人向 FT 表示预期估值 **2 万亿美元或更高**，将超越 SpaceX 成为史上规模最大的 IPO。参照系：该公司 5 月新一轮融资后估值 **9,650 亿美元**，年化营收在 5 月底突破 **470 亿美元**，投资人预期到年底达到 **1,000–1,200 亿美元**。2026 年内，风投、主权基金与机构投资者向其注入近 **1,000 亿美元**。一个容易被忽略的结构性事实：**英伟达同时是 Anthropic 的投资人**，芯片供应商与模型公司的估值因此互相绑定——这让这次 IPO 不只是单家公司的定价，而是整个 AI 资本循环的一次压力测试。',
+    persons: [
+      { id: 'hemanttaneja', name: 'Hemant Taneja' },
+      { id: 'ericschmidt', name: 'Eric Schmidt' }
+    ],
+    sources: [
+      { label: 'Financial Times / Qz', url: 'https://qz.com/anthropic-ipo-2-trillion-valuation-october-081326' },
+      { label: 'Forbes', url: 'https://www.forbes.com/sites/jimosman/2026/08/14/anthropic-ipo-will-put-the-ai-boom-to-its-biggest-test-yet/' },
+      { label: 'TechSpot', url: 'https://www.techspot.com/news/113485-anthropic-heading-toward-largest-ipo-ever-possible-2.html' }
+    ]
+  },
+  {
+    id: 'figma-config-code-layers-2026',
+    date: '2026-08-05',
+    type: 'trend',
+    graphs: ['designer'],
+    pinned: false,
+    title: 'Figma Config 2026：设计与代码合进同一块画布，赌注是「设计师不该交接」',
+    body: 'Config 2026 上 Figma 推出 **Code Layers**（7 月开放申请）、**Figma Motion** 与 AI 生成着色器效果，其 AI agent 可以从自然语言里沉淀出可复用的 **skills**，并直接连接 Notion、GitHub、Excel 等外部服务。方向很明确：**把设计稿与可运行代码放进同一块画布**，消灭设计到工程之间的交接环节。对面是估值 600 亿美元的 Cursor——但两者的用户其实不同，Cursor 的受众长在工程师一侧。真正的问题不是谁吃掉谁，而是**「设计的产物到底该是图，还是可运行的东西」**，这一轮两边都在用产品给出各自的答案。',
+    persons: [
+      { id: 'jennywen', name: 'Jenny Wen' },
+      { id: 'jordansinger', name: 'Jordan Singer' },
+      { id: 'ryolu', name: 'Ryo Lu' }
+    ],
+    sources: [
+      { label: 'Martin Cid Magazine', url: 'https://www.martincid.com/technology-sv/figma-config-2026-code-design-merge-2/' },
+      { label: 'Figma 官方', url: 'https://www.figma.com/' }
+    ]
+  },
+  {
+    id: 'ai-chip-startups-2026-08',
+    date: '2026-08-04',
+    type: 'trend',
+    graphs: ['hardware', 'investor'],
+    pinned: false,
+    title: '专用芯片开始收预付款：Etched 融 8 亿，昆仑芯赴港，Anthropic 自研',
+    body: 'AI 芯片正从「讲架构故事」转入「拿订单交货」。Transformer 专用芯片公司 **Etched** 累计融资 **8 亿美元**、投后估值约 50 亿，并披露已签署**超 10 亿美元预售合同**——预售额高于累计融资额，是这个赛道少见的信号。百度旗下 **昆仑芯**筹备港股上市，目标估值约 **500 亿美元**。同时 **Anthropic 官宣组建内部芯片团队**为 Claude 自研定制芯片。三件事指向同一个判断：**模型公司不再愿意把推理成本的定价权完全交给通用 GPU**，而资本开始为「确定性的交付」而非「通用性」付溢价。',
+    persons: [],
+    sources: [
+      { label: '国际电子商情', url: 'https://www.esmchina.com/news/14318.html' },
+      { label: 'AI 新闻日报 2026-08-04', url: 'https://mrfig.org/4684' }
+    ]
+  },
+  {
     id: 'anthropic-deepmind-exodus-2026-08',
     date: '2026-08-12',
     type: 'relationship',
