@@ -6,6 +6,59 @@
 
 const INSIGHTS_DATA = [
   {
+    id: 'unitree-ipo-day-one-2026-08',
+    date: '2026-08-20',
+    type: 'funding',
+    graphs: ['hardware', 'investor'],
+    pinned: false,
+    title: '宇树上市首日收涨 460%：3418 亿市值给了人形机器人一个真实价格标签',
+    body: '**8 月 19 日，宇树科技登陆科创板，成为「人形机器人第一股」**。发行价 150.8 元，开盘 1100 元（+629%），收盘 845 元（**+460%**），总市值 **3,418 亿元（约 660 亿美元）**——盘中一度突破 4,400 亿。这个数字的参照系：超过百度、京东，是美国最贵机器人公司 Figure（**390 亿美元**，2025 年 9 月）的 **1.7 倍**。几个容易被涨幅掩盖的事实：2025 年营收 17 亿元中人形机器人（8.68 亿）首次超过四足狗成为第一大业务；**DeepSeek 是 IPO 战略投资者**——大模型公司开始直接持股本体公司；但 2026 Q1 扣非利润同比**下滑 52.6%**，研发与营销开支大增。首日 219 倍市盈率买的不是当期利润，是「具身智能 iPhone 时刻」的期权。对图谱里这批 2026 年密集融资的人形创始人（众擎、自变量、灵初、维他动力），二级市场刚刚给出了最强的退出定价锚。',
+    persons: [
+      { id: 'wangxingxing', name: 'Wang Xingxing' },
+      { id: 'brettadcock', name: 'Brett Adcock' },
+      { id: 'zhaotongyang', name: 'Zhao Tongyang' }
+    ],
+    sources: [
+      { label: '首日行情(新浪财经)', url: 'https://finance.sina.com.cn/jjxw/2026-08-19/doc-ininvwqs2575263.shtml' },
+      { label: 'Fortune(对比 Figure)', url: 'https://fortune.com/2026/08/19/unitree-china-dancing-robots-ipo-trading-surge-valuation/' }
+    ]
+  },
+  {
+    id: 'openai-astra-math-proofs-2026-08',
+    date: '2026-08-20',
+    type: 'research',
+    graphs: ['ai-scholar'],
+    pinned: false,
+    title: 'OpenAI Astra 解开 10 个悬置十年以上的数学难题，并附上机器可验证的 Lean 证明',
+    body: 'OpenAI 披露内部模型 **Astra** 对 10 个悬置十年以上的数学与理论计算机科学开放问题给出了新结果，包括**首个非 sofic 群的显式构造**（Gromov 1999 年提出的问题）、对 Connes 刚性猜想的反证、高维球堆积密度新界，以及 Erdős 问题集里的若干条。与以往「AI 声称解题」的关键不同是**证明形态**：Astra 产出核心思路 → 人类数学家写成手稿 → 模型翻译为 Lean 形式语言 → **Lean 内核机器检验，GitHub 仓库 sorry 数为零**（Apache 2.0 公开）。这把争论从「答案对不对」压缩到「形式化命题是否忠实于原问题」——后者仍需数学家逐条确认，也尚未同行评审。但方法论信号很清晰：**推理模型 + 形式化验证器的组合，正在把数学研究从「可信的人」转向「可验证的证明对象」**。',
+    persons: [
+      { id: 'markchen', name: 'Mark Chen' },
+      { id: 'noambrown', name: 'Noam Brown' }
+    ],
+    sources: [
+      { label: 'SiliconANGLE', url: 'https://siliconangle.com/2026/08/02/openais-astra-solves-10-long-open-math-problems-publishes-proofs/' },
+      { label: 'Quartz(Lean 证明细节)', url: 'https://qz.com/openai-astra-model-math-problems-lean-proofs-080326' }
+    ]
+  },
+  {
+    id: 'ai-in-design-inflection-2026-08',
+    date: '2026-08-20',
+    type: 'trend',
+    graphs: ['designer'],
+    pinned: false,
+    title: '设计师的 AI 周使用率一年内从 54% 跳到 91%：工具栖息地正在换代',
+    body: 'Designer Fund 的《AI in Design 2026》年度报告给出一组陡峭的数字：设计师**每周使用 AI 的比例从 54% 升到 91%，75% 每天都在用**——AI 已经嵌入研究综合、UI 文案、原型、前端微调、无障碍审查、动效到生产代码的每个环节；设计师在用的现成工具数量比 2025 年**翻了一倍**，同时越来越多人用 AI **给自己造趁手的定制工具**。这对图谱里的工具制造者（Figma 的 Dylan Field、Notion 的 Ryo Lu、Linear 的 Karri Saarinen）是同一道考题的两面：当「能执行完整 brief 的 agent」成为默认预期，设计工具的护城河从画布功能转向**工作流的编排权**；而对个体设计师，报告里最值得记住的不是采用率，是角色边界——设计师正在「做更多、拥有更多、发布更多」，产品设计与工程的分工线再次向设计侧移动。',
+    persons: [
+      { id: 'dylanfield', name: 'Dylan Field' },
+      { id: 'ryolu', name: 'Ryo Lu' },
+      { id: 'karrisaarinen', name: 'Karri Saarinen' }
+    ],
+    sources: [
+      { label: 'Designer Fund 报告', url: 'https://designerfund.com/blog/ai-in-design-2026' },
+      { label: 'AI in Design Report 2026', url: 'https://stateofaidesign.com/' }
+    ]
+  },
+  {
     id: 'public-to-private-migration-2026-08',
     date: '2026-08-20',
     type: 'trend',
