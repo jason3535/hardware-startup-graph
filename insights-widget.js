@@ -6,6 +6,24 @@
 
 const INSIGHTS_DATA = [
   {
+    id: 'public-to-private-migration-2026-08',
+    date: '2026-08-20',
+    type: 'trend',
+    graphs: ['investor'],
+    pinned: false,
+    title: '二级的钱在搬家：股票基金批量进入一级 AI 轮，因为最陡的收益段在 IPO 之前',
+    body: '一个越来越明显的资金流向：**做二级的机构在批量进入一级**。Altimeter 的 **Brad Gerstner** 是样本——公开市场的头号英伟达多头，私下联合领投了 Anthropic **650 亿美元 H 轮**（迄今最大 AI 股权融资）；Coatue、Tiger Global 这些 crossover 基金在 2022 回撤后借 AI 超级周期重返大额私募轮。动机不复杂：当 Anthropic 以近万亿估值酝酿 IPO、宇树上市首日对应 **219 倍市盈率**时，**价值曲线最陡的一段发生在上市之前**——等到二级市场再买，吃到的是残段。对一级基金这是拥挤与估值抬升；对二级选股者这是一个残酷结论：不去私募市场，就错过定价权。',
+    persons: [
+      { id: 'bradgerstner', name: 'Brad Gerstner' },
+      { id: 'philippelaffont', name: 'Philippe Laffont' },
+      { id: 'chasecoleman', name: 'Chase Coleman' }
+    ],
+    sources: [
+      { label: '宇树上市(财新)', url: 'https://companies.caixin.com/m/2026-08-07/102472117.html' },
+      { label: 'Anthropic IPO 预期(FT/Qz)', url: 'https://qz.com/anthropic-ipo-2-trillion-valuation-october-081326' }
+    ]
+  },
+  {
     id: 'anthropic-ipo-2tn-2026-08',
     date: '2026-08-13',
     type: 'funding',
