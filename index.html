@@ -1903,6 +1903,12 @@ document.querySelectorAll(".filter-pill").forEach(btn=>{
     });
   });
 });
+// 深链支持：?filter=robotics 等，打开页面即选中对应标签
+const urlFilter=new URLSearchParams(location.search).get('filter');
+if(urlFilter&&/^[a-z-]+$/.test(urlFilter)){
+  const fb=document.querySelector('.filter-pill[data-filter="'+urlFilter+'"]');
+  if(fb)fb.click();
+}
 
 // ===================================================================
 // KEYBOARD
