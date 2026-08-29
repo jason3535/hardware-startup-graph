@@ -35,14 +35,39 @@
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
-<script>
-(function(){try{
-var a='';try{a=localStorage.aid||'';if(!a){a=[].map.call(crypto.getRandomValues(new Uint8Array(10)),function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.aid=a;}}catch(e){}
-var dev=/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)?'mobile':'desktop';
-var ref='';try{ref=document.referrer?new URL(document.referrer).host:'';}catch(e){}
-var body=JSON.stringify({type:'view',path:'graph-hw:'+location.pathname+location.search,ua:dev,ref:ref,sid:'',aid:a});
-if(navigator.sendBeacon)navigator.sendBeacon('https://stats.jasonlin.tech',new Blob([body],{type:'text/plain'}));
-else fetch('https://stats.jasonlin.tech',{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true});
-}catch(e){}})();
-</script>
+<script>(function(){try{
+var UA=navigator.userAgent||'';
+if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;
+var U='https://stats.jasonlin.tech',DWELL=4000;
+var LS=null;try{LS=window.localStorage}catch(_){}
+var aid='';
+try{
+  aid=(LS&&LS.aid)||'';
+  if(!aid){var i,n;
+    try{var u=new Uint8Array(10);crypto.getRandomValues(u);
+        for(i=0;i<10;i++){n=u[i].toString(16);aid+=n.length<2?'0'+n:n;}}
+    catch(_){for(i=0;i<20;i++)aid+=Math.floor(Math.random()*16).toString(16);}
+    if(LS)LS.aid=aid;}   /* 与 SPA 共用同一个 aid:先落静态页再点进互动版的人算 1 个 UV */
+}catch(_){aid='';}
+var sid='';try{if(LS&&LS.syncSidFor&&LS.syncSidFor===LS.syncCode)sid=LS.syncSid||'';}catch(_){}
+var ref='';try{ref=(document.referrer||'').replace(/^[a-z]+:\/\//i,'').split('/')[0];}catch(_){}
+var dev=/Mobi|Android|iPhone|iPad|iPod/i.test(UA)?'mobile':'desktop';
+function post(type){
+  try{
+    var body=JSON.stringify({type:type,path:'graph-hw:'+location.pathname+location.search,ua:dev,ref:ref,sid:sid,aid:aid});
+    if(navigator.sendBeacon&&typeof Blob!=='undefined')navigator.sendBeacon(U,new Blob([body],{type:'text/plain'}));
+    else{var x=new XMLHttpRequest();x.open('POST',U,true);x.setRequestHeader('Content-Type','text/plain');x.send(body);}
+  }catch(_){}
+}
+post('view');                                  /* 打开即发,口径不变 */
+var sent=false,acc=0,since=null,timer=null;    /* 以下是 read:攒够可见时长或等到一次交互 */
+function read(){if(sent)return;sent=true;if(timer){clearTimeout(timer);timer=null;}post('read');}
+function pause(){if(since!==null){acc+=Date.now()-since;since=null;}if(timer){clearTimeout(timer);timer=null;}}
+function resume(){if(sent||since!==null)return;since=Date.now();timer=setTimeout(read,Math.max(0,DWELL-acc));}
+function vis(){if(document.visibilityState==='visible')resume();else pause();}
+try{document.addEventListener('visibilitychange',vis);}catch(_){}
+var evs=['scroll','pointerdown','mousedown','keydown','touchstart'];
+for(var k=0;k<evs.length;k++){try{window.addEventListener(evs[k],read,true);}catch(_){}}
+vis();
+}catch(_){}})()</script>
 </body></html>
