@@ -535,6 +535,11 @@ body.no-insights #graph-container {
   line-height: 1.43;
   color: var(--apple-text-secondary);
 }
+.funding-status { padding: 2px 0 4px; }
+.funding-status-badge { display:inline-block; font-size:11px; letter-spacing:.04em; padding:4px 9px; border-radius:3px;
+  background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.72); border:1px solid rgba(255,255,255,0.12); }
+.funding-status-bootstrapped .funding-status-badge { background:rgba(255,159,10,0.13); color:#ffb84d; border-color:rgba(255,159,10,0.3); }
+.funding-status-note { margin:8px 0 0; font-size:11.5px; line-height:1.62; color:rgba(255,255,255,0.42); }
 .detail-org-badge {
   display: inline-block;
   margin-top: 12px;
@@ -2468,7 +2473,7 @@ const scholars = [
  },
  {
   "id": "inmoceo",
-  "name": "INMO Founder",
+  "name": "Lyu Yifei",
   "org": "INMO",
   "title": "Founder of INMO · AR Glasses IDC #1",
   "field": [
@@ -3935,7 +3940,7 @@ const scholars = [
  },
  {
   "id": "xuanji",
-  "name": "Xuanji Power Founder",
+  "name": "Ou Di",
   "org": "Xuanji Power",
   "title": "Founder · DJI Alumni · Full-stack Components",
   "field": [
@@ -3968,7 +3973,7 @@ const scholars = [
  },
  {
   "id": "unicus",
-  "name": "UNICUS Founder",
+  "name": "Xu Hao",
   "org": "UNICUS",
   "title": "Founder · CUHK Graphics PhD · Ex-DJI Smart Manufacturing",
   "field": [
@@ -4019,7 +4024,7 @@ const scholars = [
  },
  {
   "id": "xieyue",
-  "name": "Xieyue Founder",
+  "name": "Chen Wei",
   "org": "Xieyue Intelligence",
   "title": "Founder · Ex-Li Auto AI Chief Scientist · Ex-Li Auto Product Lead",
   "field": [
@@ -4036,7 +4041,7 @@ const scholars = [
  },
  {
   "id": "ruoban",
-  "name": "Ruoban Founder",
+  "name": "Cui Baoqiu",
   "org": "Ruoban Intelligence",
   "title": "Founder · Ex-Xiaomi Tech Godfather · Lei Jun's Bunkmate",
   "field": [
@@ -4053,7 +4058,7 @@ const scholars = [
  },
  {
   "id": "poke",
-  "name": "Poke Robot Founder",
+  "name": "Xu Huazhe",
   "org": "Poke Robot",
   "title": "Founder · Ex-XingHaiTu Co-founder · Tsinghua IIIS Adjunct Prof",
   "field": [
@@ -4086,7 +4091,7 @@ const scholars = [
  },
  {
   "id": "zerith",
-  "name": "Zerith Founder",
+  "name": "Min Yuheng",
   "org": "Zerith",
   "title": "Founder · Tsinghua Post-2000s · ZERITH-V2 Brain-like Architecture",
   "field": [
@@ -4119,7 +4124,7 @@ const scholars = [
  },
  {
   "id": "xingjiguangnian",
-  "name": "Xingji Guangnian Founder",
+  "name": "Wei Dehao",
   "org": "Xingji Guangnian",
   "title": "Founder · Post-95s Tsinghua + HKU + HIT · Dexterous Hand",
   "field": [
@@ -4136,7 +4141,7 @@ const scholars = [
  },
  {
   "id": "pudu",
-  "name": "Pudu Founder",
+  "name": "Zhang Tao",
   "org": "Pudu",
   "title": "Founder · Commercial Service Robot Leader · 10B Valuation",
   "field": [
@@ -4152,7 +4157,7 @@ const scholars = [
  },
  {
   "id": "xiangke",
-  "name": "Xiangke Founder",
+  "name": "Chen Zhen",
   "org": "Xiangke Intelligence",
   "title": "Founder · 90s Serial Entrepreneur · Restaurant + Hotel",
   "field": [
@@ -4169,7 +4174,7 @@ const scholars = [
  },
  {
   "id": "xianglu",
-  "name": "Xianglu Founder",
+  "name": "Guo Qing",
   "org": "Xianglu Robotics",
   "title": "Founder · Ex-Meituan S-team + Qunar + Shangri-La CTO",
   "field": [
@@ -4204,7 +4209,7 @@ const scholars = [
  },
  {
   "id": "kepler",
-  "name": "Kepler Founder",
+  "name": "Yang Hua",
   "org": "Kepler Robotics",
   "title": "Founder · VTLA Force-Tactile Native Data",
   "field": [
@@ -4272,7 +4277,7 @@ const scholars = [
  },
  {
   "id": "yuexingtong",
-  "name": "Yuexingtong Founder",
+  "name": "Hu Yufei",
   "org": "Yuexingtong",
   "title": "Founder · Serial Entrepreneur · AI E-paper Sub-screen",
   "field": [
@@ -4288,7 +4293,7 @@ const scholars = [
  },
  {
   "id": "lingjitc",
-  "name": "Lingji Tianci Founder",
+  "name": "Yang Bing",
   "org": "Lingji Tianci",
   "title": "Founder · Ex-Kaishu Storytelling COO · Split-form AI Toy",
   "field": [
@@ -5660,7 +5665,8 @@ nodeGroups.append("text").attr("class","node-label node-org-label")
   .attr("font-size","8px")
   .attr("letter-spacing","-0.06px")
   .attr("fill","rgba(255,255,255,0.35)")
-  .text(d=>d.org);
+  .text(d=>d.org);   // 初次渲染保持原名:orgZh/currentLang 声明在本行之后,提前引用会撞 TDZ 白屏。
+                     // 中文名由末尾的 applyLanguage() 统一刷(与人名 node-name-label 同一套路)。
 
 // Tick — straight lines
 simulation.on("tick",()=>{
@@ -5694,7 +5700,7 @@ nodeGroups.on("mouseenter",(event,d)=>{
   // Tooltip
   const zhTip = scholarZh[d.id];
   document.getElementById("tooltip-name").textContent = (currentLang === "zh" && zhTip && zhTip.zhName) ? zhTip.zhName + "  " + d.name : d.name;
-  document.getElementById("tooltip-org").textContent=d.org;
+  document.getElementById("tooltip-org").textContent=orgLabel(d.org);
   tooltip.classList.add("visible");
 }).on("mousemove",(event)=>{
   tooltip.style.left=(event.clientX+14)+"px";
@@ -5760,6 +5766,173 @@ const orgAlias = {
   "Levels Health":"Levels","Polar":"Polar","Ultrahuman":"Ultrahuman",
   "Luffu (ex-Fitbit)":"Luffu Fitbit","iHealth Labs":"iHealth","Shokz":"Shokz 韶音"
 };
+
+/* 融资状态。2026-08-29 加 —— 在此之前 fundingData 只给融过的公司建条目,
+   「没有条目」同时表示「没融过」和「还没查」,两者在数据上无法区分:
+   一次抽查里 49 家「零融资信号」的公司,绝大多数其实只是没录入(梅卡曼德、强脑、
+   Framework、松灵都融过多轮却一个字都没写),而唯一确定自筹的戴森反倒因为 bio 里
+   一句 "Investing heavily in robotics" 被文本筛选误判成「融过」。
+   所以状态必须是个显式的值:
+     vc-backed   已确认有股权融资(轮次见 fundingData)
+     bootstrapped 已确认没有外部股权融资
+     unknown     **查过**但没有公开信息(n 里写查了什么、还差什么)—— 与「没条目=还没查」不同
+   没有条目 = 还没查过。*/
+const fundingStatus = {
+  "heshiyou":{s:"vc-backed",n:""},
+  "wangyang":{s:"vc-backed",n:""},
+  "tianli":{s:"vc-backed",n:""},
+  "chenxuedong":{s:"vc-backed",n:""},
+  "hongxiaoping":{s:"vc-backed",n:""},
+  "xieyue":{s:"vc-backed",n:""},
+  "poke":{s:"vc-backed",n:""},
+  "ruoban":{s:"vc-backed",n:""},
+  "xiangke":{s:"vc-backed",n:""},
+  "xianglu":{s:"vc-backed",n:""},
+  "chenhunxian":{s:"vc-backed",n:""},
+  "wujie":{s:"vc-backed",n:""},
+  "xuanji":{s:"vc-backed",n:""},
+  "lingjitc":{s:"vc-backed",n:""},
+  "yuexingtong":{s:"vc-backed",n:""},
+  "linyuan":{s:"vc-backed",n:""},
+  "yuanqian":{s:"vc-backed",n:""},
+  "xingjiguangnian":{s:"vc-backed",n:""},
+  "zerith":{s:"vc-backed",n:""},
+  "unicus":{s:"vc-backed",n:""},
+  "davidyang":{s:"unknown",n:"高驰运动科技(深圳/广东),2014 年成立(原名深圳市远峰运动科技),注册资本 550 万元。两次检索均无融资轮次或投资方。待查工商股东穿透。"},
+  "zhongzhifeng":{s:"unknown",n:"趣动未来(深圳)科技,钟质峰与龙春泠 2022 年共同创立。只查到 Kickstarter 众筹(2024-12 起 40 天筹超 1000 万元)—— 众筹是预售不是股权融资。待查是否有天使/A 轮。"},
+  "shijun":{s:"unknown",n:"喆越科技,石峻(大疆 6 号员工)eVTOL 项目。多次检索无任何公开融资或公司信息,可能极早期或名称有出入。"},
+  "sunxuefeng":{s:"unknown",n:"小水智能,孙雪峰,AI 儿童手表。查到产品与展会信息,无融资披露。"},
+  "xlean":{s:"unknown",n:"未检索到有效信息。"},
+};
+
+
+/* 公司中文名。2026-08-29 加 —— 此前公司名在中文模式下不切换:人物名是双语的
+   (zhName + name),但节点标签/悬浮卡/详情面板三处的 org 全部写死英文,而默认语言就是中文,
+   于是中文读者看到的是「王兴兴 / Unitree」「邵天兰 / Mech-Mind」这种半吊子。
+   中文名其实一直存在,只是散在三个地方:orgAlias(只接了搜索)、org 字段的括号里、
+   以及 scholarZh[].title 的开头(「元鼎智能/Aiper创始人 · …」)。这里统一成一个字段。
+   注:Linkerbot 的括号里原本放的是拼音 "Lingxin Qiaoshou" 而非中文「灵心巧手」。
+   没有条目 = 该公司本身就是英文品牌(Apple / Figure AI / Oura …),按原名显示。 */
+const orgZh = {
+  "AEKE":"趣动未来",
+  "UNICUS":"千帜",
+  "Zerith":"零次方机器人",
+  "AI² Robotics":"智平方",
+  "Agibot":"智元",
+  "Agile Robots":"思灵机器人",
+  "AgileX Robotics":"松灵",
+  "Aiper":"元鼎智能",
+  "Anker":"安克",
+  "Apeman":"猿人科技",
+  "Aqara":"绿米",
+  "Autel Robotics":"道通",
+  "Bambu Lab":"拓竹",
+  "Baseus":"倍思",
+  "Beatbot":"星迈创新",
+  "Booster Robotics":"加速进化",
+  "Boston Dynamics":"波士顿动力",
+  "BrainCo (强脑科技)":"强脑科技",
+  "Chenhunxian":"晨昏线",
+  "Coros":"高驰",
+  "D-Robotics":"地瓜机器人",
+  "DJI":"大疆",
+  "Dangbei":"当贝",
+  "DeepRobotics (云深处)":"云深处",
+  "Dreame":"追觅",
+  "Dyson":"戴森",
+  "EcoFlow":"正浩",
+  "Ecovacs":"科沃斯",
+  "EngineAI":"众擎机器人",
+  "Flexiv":"非夕科技",
+  "Fourier Intelligence":"傅利叶",
+  "Galbot":"银河通用",
+  "Geek+":"极智嘉",
+  "Hai Robotics":"海柔",
+  "Haivivi":"跃然创新",
+  "INMO":"影目",
+  "Insta360":"影石",
+  "Jijiashijie":"极佳视界",
+  "KEYi Tech":"可以科技",
+  "Keenon Robotics":"擎朗智能",
+  "Kepler Robotics":"开普勒",
+  "KiloFlow":"基流科技",
+  "Laifen":"徕芬",
+  "Laimu Tech":"来牟科技",
+  "Langzhao Intelligence":"浪爪",
+  "Leju Robotics":"乐聚机器人",
+  "Lexiang / Yuandian":"乐享科技",
+  "LightWheel AI":"光轮智能",
+  "Lightsail Tech":"光帆科技",
+  "LimX Dynamics":"逐际",
+  "Lingji Tianci":"灵机天赐",
+  "Linkerbot (Lingxin Qiaoshou)":"灵心巧手",
+  "Linkhou Robotics (灵猴机器人)":"灵猴机器人",
+  "MagicLab (魔法原子)":"魔法原子",
+  "Mech-Mind":"梅卡曼德",
+  "Moqi Intelligent (墨奇智能)":"墨奇智能",
+  "Narwal":"云鲸",
+  "Ninebot-Segway":"九号",
+  "Octopus Power":"章鱼动力",
+  "OneRobotics":"卧安机器人",
+  "OrionStar":"猎户星空",
+  "Oula Wanxiang":"欧拉万象",
+  "Photon Leap":"光子跃迁",
+  "Poke Robot":"破壳",
+  "Pop Mart":"泡泡玛特",
+  "PsiBot (灵初智能)":"灵初智能",
+  "Pudu":"普渡",
+  "QKM Technology":"李群自动化",
+  "Qianxun Intelligence":"千寻智能",
+  "RayNeo":"雷鸟",
+  "Robopoet":"珞博智能",
+  "Roborock":"石头科技",
+  "Robotera":"星动纪元",
+  "Rokid":"若琪",
+  "Ropet":"萌友",
+  "Ruoban Intelligence":"若伴智能",
+  "Ruochuang Tech":"若创科技",
+  "Sharge":"闪极",
+  "Shokz":"韶音",
+  "Snapmaker":"快造",
+  "Songyan (Noetix)":"松延动力",
+  "Species Origin":"物种起源",
+  "Stardust Intelligence (Astribot)":"星尘智能",
+  "Suunto":"颂拓",
+  "TARS (它石智航)":"它石智航",
+  "Timekettle":"时空壶",
+  "UBTECH":"优必选",
+  "UGREEN":"绿联",
+  "Unitree":"宇树",
+  "Viaim (Future Intelligence)":"未来智能",
+  "Vita Dynamics (维他动力)":"维他动力",
+  "Weilan (AlphaDog)":"蔚蓝科技",
+  "Wujie Ark":"无界方舟",
+  "X Square Robot":"自变量机器人",
+  "X Square Robot (自变量)":"自变量",
+  "XAG":"极飞",
+  "XGIMI":"极米",
+  "XPeng Robotics":"小鹏汽车",
+  "Xiangke Intelligence":"享刻",
+  "Xianglu Robotics":"橡鹿",
+  "Xiaoshui Smart":"小水智能",
+  "Xieyue Intelligence":"斜跃智能",
+  "XingHaiTu":"星海图",
+  "Xingji Guangnian":"星际光年",
+  "Xuanji Power":"璇玑动力",
+  "YouLu Robot":"有鹿机器人",
+  "Yuexingtong":"阅星曈",
+  "Zepp Health":"华米",
+  "Zheyue Tech":"折跃科技",
+  "Zhipai":"智能派",
+  "ePropulsion":"逸动",
+  "xTool / Makeblock":"童心制物",
+};
+/* 显示用:中文模式下优先中文名,没有就回落原名。
+   只在 applyLanguage / 悬浮卡 / 详情面板里调用 —— 都发生在 orgZh 与 currentLang 声明之后。
+   ⚠️ 别在 5658 行那段节点初始渲染里调它:那里 orgZh(const)和 currentLang(let)都还在
+   暂时性死区,一调就是整张图白屏(2026-08-29 实测踩过)。 */
+function orgLabel(org){ return (currentLang === "zh" && orgZh[org]) ? orgZh[org] : org; }
+
 document.getElementById("search-input").addEventListener("input",e=>{
   const q=e.target.value.toLowerCase().trim();
   if(!q){
@@ -5901,7 +6074,7 @@ feldman:{zhName:"安德鲁·费尔德曼",title:"Cerebras 联合创始人兼 CEO
   xuchi:{zhName:"徐驰",title:"XREAL创始人 · 港交所 IPO 2026 · 谷歌战投",bio:"UIUC校友。Magic Leap经验。XREAL消费级AR眼镜。2026.1 完成约1亿美元最新融资，估值破10亿美元独角兽。与谷歌联合开发旗舰 Project Aura，并据称将于2026年完成战略投资以完善 Android XR 生态。2026.4.1 递表港交所，中金+花旗联保。2022-2025连续四年全球AR销量第一，2025年市占24.8%。"},
   zhushanming:{zhName:"祝铭明",title:"Rokid创始人 · 前阿里iDST",bio:"M哥。前阿里iDST。Rokid AR眼镜（Max/AR Studio）。多轮融资，阿里支持。"},
   lihongwei:{zhName:"李宏伟",title:"雷鸟创新创始人 · AR眼镜中国第一",bio:"北大计算机硕士/北航BBA。思科→爱奇艺智能电视高级总监。雷鸟/TCL 2018。雷鸟创新2021。X2 MicroLED 2023。2026.1 完成超10亿融资，中国移动链长基金+中信金石（茅台金石）领投，中国联通联创基金跟投——国内运营商首次战略投资智能眼镜赛道。雷鸟X3 Pro Project eSIM 于 CES 2026 亮相（双目全彩MicroLED+eSIM+4G）。2025Q3 全球AR出货市占24%，连续两季度全球第一。预言2027 AR iPhone时刻。"},
-  inmoceo:{zhName:"影目创始人",title:"影目科技创始人 · AR四小龙 · 估值20亿",bio:"2020创办影目。一年三轮（2025.7-8 B2/B3 + 2026.1.15 C1）累计近5亿元；C1 由成都科创投+南山战新投+普丰资本投资，估值20亿元。AR四小龙。INMO AIR3 全球首款量产1080P一体式AI+AR眼镜，京东首发即售罄；INMO GO3 上市3天订单破2万。CES 2026 双奖。2026年销量目标30万级。"},
+  inmoceo:{zhName:"吕一飞",title:"影目科技创始人 · AR四小龙 · 估值20亿",bio:"2020创办影目。一年三轮（2025.7-8 B2/B3 + 2026.1.15 C1）累计近5亿元；C1 由成都科创投+南山战新投+普丰资本投资，估值20亿元。AR四小龙。INMO AIR3 全球首款量产1080P一体式AI+AR眼镜，京东首发即售罄；INMO GO3 上市3天订单破2万。CES 2026 双奖。2026年销量目标30万级。"},
   zhangbo:{zhName:"张波",title:"闪极科技创始人 · AI眼镜价格屠夫",bio:"2020深圳创办闪极。团队来自手机厂和无人机公司（含大疆系）。充电宝爱马仕1299元。2024充电2亿60%海外。CES 2025 AI眼镜未上台就售罄999元击穿底线。2025.12近亿A+轮。计划年出货10万+AI眼镜。"},
   wangxingxing:{zhName:"王兴兴",title:"宇树科技创始人 · 四足机器人全球第一 · 科创板 IPO 已受理",bio:"1990生于宁波。中学造涡喷发动机。浙江理工机电。上海大学硕士做四足2013。大疆2个月辞职2016。杭州50平办公室起步。全球四足70%。G1人形9.9万2024。2025.6 最后一轮私募估值127亿（腾讯/阿里/蚂蚁/吉利/中移和创等）。2026.3 科创板 IPO 申报、拟发≥4045万股募资约42亿，目标估值约420亿（62亿美元），6月1日上会冲击 A 股人形机器人第一股（业内估其合理市值超千亿）。营收 2023→2025 从1.59亿增至17亿（CAGR 226%），人形机器人成核心支柱——出货5500+台居全球第一、贡献8.68亿（占51.8%）。2026 Q1 营收4.23亿（+68%）。2026.6 英伟达选定宇树为人形机器人研究平台。王兴兴掌控约三分之一股权。"},
   brettadcock:{title:"Figure AI创始人 · 390亿美元估值",bio:"佛罗里达，UIUC。Vettery→Archer Aviation→Figure AI 2022。Figure 01/02/03。2025.9 完成超10亿美元 C 轮、投后估值390亿（Parkway 领投，Brookfield/英伟达/Intel Capital/高通创投等跟投）。随后终止与 OpenAI 的合作，称已实现自研突破「Figure 的 AI 模型完全自研」。其人形机器人在宝马工厂累计运行1250+小时、搬运9万+零件、覆盖3万辆车。微软/英伟达/贝索斯为投资人。还创办Hark。"},
@@ -5986,33 +6159,33 @@ feldman:{zhName:"安德鲁·费尔德曼",title:"Cerebras 联合创始人兼 CEO
   berntbornich:{title:"1X Technologies创始人兼CEO · OpenAI支持的人形机器人",bio:"挪威机器人学家。2014年在挪威莫斯创办1X Technologies（原Halodi Robotics）。NEO家用机器人（身高约168cm、仅30kg，主打比大型对手更安全）开放预售：2万美元 Early Access（200美元定金、2026优先交付）或 499美元/月订阅。2026 年先在美国交付、2027 起拓展其他市场；首发能力含开门、取物、关灯，随软件更新升级。OpenAI 为战略投资人。双总部：帕洛阿尔托+挪威莫斯，加州 Hayward 制造。"},
   niravpatel:{title:"Framework Computer创始人兼CEO · 模块化笔记本先驱",bio:"卡内基梅隆大学ECE。苹果软件工程师（2009-2012）。Oculus VR创始硬件负责人（2012-2019），与Palmer Luckey共事。2020年创办Framework Computer——模块化可维修笔记本，对抗电子垃圾。办公室在旧金山和台北。引领「维修权」硬件运动。"},
   jamespark:{zhName:"朴贞赫",title:"Fitbit联合创始人 · 穿戴先驱",bio:"韩裔美国企业家。2007年与Eric Friedman联合创办Fitbit，开创消费级健身穿戴。2015年IPO。2021年$21亿出售给Google。2024.1离开Google。2026.2推出Luffu——AI驱动的家庭健康和照护平台。Fitbit定义了穿戴品类，小米/华米后以低价主导。"},
-  xuanji:{zhName:"璇玑动力 创始人",title:"璇玑动力创始人 · 大疆系 · 全栈自研核心零部件",bio:"大疆系背景。智能机器人本体平台，核心零部件全栈自研，布局 C 端。2026 年 4 月完成 Pre-A 数亿元融资。"},
+  xuanji:{zhName:"欧迪",title:"璇玑动力创始人 · 大疆系 · 全栈自研核心零部件",bio:"大疆系背景。智能机器人本体平台，核心零部件全栈自研，布局 C 端。2026 年 4 月完成 Pre-A 数亿元融资。"},
   langzhao:{zhName:"浪爪智能 创始人",title:"浪爪智能创始人 · 大疆背景核心团队 · 米哈游投资",bio:"大疆背景核心团队。桌面级智能纺织工厂，女性 DIY 设备。2026 年 4 月米哈游参与新一轮投资。"},
-  unicus:{zhName:"千帜（UNICUS）创始人",title:"UNICUS 创始人 · 港中大图形学博士 · 前大疆智能制造负责人",bio:"香港中文大学计算机图形学博士，前大疆智能制造负责人。AI 时代的个性化乐高，积木大模型 LEGO Maker。2026 年 4 月完成数百万美金新一轮融资。"},
+  unicus:{zhName:"徐豪",title:"UNICUS 创始人 · 港中大图形学博士 · 前大疆智能制造负责人",bio:"香港中文大学计算机图形学博士，前大疆智能制造负责人。AI 时代的个性化乐高，积木大模型 LEGO Maker。2026 年 4 月完成数百万美金新一轮融资。"},
   olwx:{zhName:"欧拉万象 创始人",title:"欧拉万象创始人 · 华为机器人天才少年 · 主导华为云 cloudRobo",bio:"华为机器人天才少年、华为具身智能 1 号员工，主导华为云具身平台 cloudRobo。家庭具身机器人。2026 年 4 月完成数千万种子轮融资。"},
   chenhunxian:{zhName:"晨昏线 创始人",title:"晨昏线创始人 · 华为盘古班底 · GCWM1",bio:"华为盘古大模型背景核心班底。具身智能大脑，目标因果世界模型 GCWM1。2026 年 4 月一个月内完成两轮累计近亿元融资。"},
-  xieyue:{zhName:"斜跃智能 创始人",title:"斜跃智能创始人 · 前理想 AI 首席科学家 · 前理想第二产品线负责人",bio:"前理想汽车 AI 首席科学家/基座模型负责人 + 前理想汽车第二产品线负责人。消费具身机器人。2026 年 4 月完成首轮融资。"},
-  ruoban:{zhName:"若伴智能 创始人",title:"若伴智能创始人 · 前小米技术教父 · 雷军上下铺",bio:"前小米技术教父，雷军大学上下铺同学。家庭具身机器人。2026 年 4 月完成天使轮融资。"},
-  poke:{zhName:"破壳机器人 创始人",title:"破壳创始人 · 前星海图联创/首席科学家 · 清华叉院助理教授",bio:"前星海图（高继扬）联合创始人、首席科学家，清华叉院助理教授。做帮家里主动干活的机器人。2026 年 4 月完成数千万美金天使轮。"},
+  xieyue:{zhName:"陈伟",title:"斜跃智能创始人 · 前理想 AI 首席科学家 · 前理想第二产品线负责人",bio:"前理想汽车 AI 首席科学家/基座模型负责人 + 前理想汽车第二产品线负责人。消费具身机器人。2026 年 4 月完成首轮融资。"},
+  ruoban:{zhName:"崔宝秋",title:"若伴智能创始人 · 前小米技术教父 · 雷军上下铺",bio:"前小米技术教父，雷军大学上下铺同学。家庭具身机器人。2026 年 4 月完成天使轮融资。"},
+  poke:{zhName:"许华哲",title:"破壳创始人 · 前星海图联创/首席科学家 · 清华叉院助理教授",bio:"前星海图（高继扬）联合创始人、首席科学家，清华叉院助理教授。做帮家里主动干活的机器人。2026 年 4 月完成数千万美金天使轮。"},
   jijiashijie:{zhName:"极佳视界 创始人",title:"极佳视界创始人 · 90 后清华博士 · 估值破百亿",bio:"90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。"},
-  zerith:{zhName:"零次方 创始人",title:"零次方 Zerith 创始人 · 清华 00 后团队",bio:"清华 00 后团队。通用人形机器人 + 轮臂人形机器人。具身操作基础模型 ZERITH-V0、类脑双流异步执行架构 ZERITH-V2。2026 年 4 月完成最新一轮超亿元融资。"},
+  zerith:{zhName:"闵宇恒",title:"零次方 Zerith 创始人 · 清华 00 后团队",bio:"清华 00 后团队。通用人形机器人 + 轮臂人形机器人。具身操作基础模型 ZERITH-V0、类脑双流异步执行架构 ZERITH-V2。2026 年 4 月完成最新一轮超亿元融资。"},
   octopus:{zhName:"章鱼动力 创始人",title:"章鱼动力创始人 · 前地平线 6 号创始员工",bio:"前地平线 6 号创始员工。物理 AGI 方向，Synth 深思架构。2026 年 4 月获得新一轮战略投资。"},
-  xingjiguangnian:{zhName:"星际光年 创始人",title:"星际光年创始人 · 95 后清华+港大+哈工大 · 灵巧手",bio:"95 后清华+港大+哈工大团队。灵巧手方向，绳驱+直驱双路线。2026 年 4 月 3 个月内累计完成亿元级融资。"},
+  xingjiguangnian:{zhName:"位德浩",title:"星际光年创始人 · 95 后清华+港大+哈工大 · 灵巧手",bio:"95 后清华+港大+哈工大团队。灵巧手方向，绳驱+直驱双路线。2026 年 4 月 3 个月内累计完成亿元级融资。"},
   wuchangzheng:{zhName:"吴长征",title:"魔法原子创始总裁 · 小米铁蛋原班人马",bio:"原小米 CyberDog(铁蛋)团队负责人。2024 年 1 月出任追觅孵化的魔法原子创始总裁,2025 年交付数百台人形机器人,并斥资约 1 亿元让机器人登上央视春晚。2026 年 1 月卸任总经理、3 月离职启动个人创业。"},
 lizhenyu:{zhName:"李震宇",title:"它石智航董事长 · 原百度智能驾驶事业群总裁",bio:"2026 年 4 月带领它石智航完成 4.55 亿美元 Pre-A 轮(高瓴创投与红杉中国联合领投),创下中国具身智能单轮融资纪录。与 CEO 陈亦伦(原华为自动驾驶 CTO)搭档,押注自动驾驶方法论可迁移到通用机器人。"},
 chenyuanpei:{zhName:"陈源培",title:"灵初智能联合创始人 · 00 后斯坦福访问学者",bio:"与王启斌、柴晓杰共同创办灵初智能,是中国具身智能领域最年轻的创始人之一。2026 年 3 月前累计完成天使轮与 Pre-A 轮共 20 亿元(蓝驰创投、智元机器人为种子投资方),7 月估值破 10 亿美元。主张竞争焦点在数据而非硬件,致力于定义具身智能的 Human Data 标准。"},
 donghao:{zhName:"董浩",title:"灵猴机器人董事长 · 半年五轮融资",bio:"苏州灵猴机器人董事长兼总经理,做运动控制核心部件与机器人子系统。上海交大 EMBA,2013-2023 年任博众精工副总裁。2026 年半年内连融五轮,C 轮超亿元由晨道资本领投,蔚来资本、宁德时代等参投,受益于人形机器人量产带来的零部件供给紧张。"},
 zhaotongyang:{zhName:"赵同阳",title:"众擎(EngineAI)创始人 · 估值破百亿 · 通用人形",bio:"通用人形机器人。2026 年 4 月完成总额 2 亿美元 B 轮融资，估值突破百亿元人民币。"},
-  pudu:{zhName:"普渡机器人 创始人",title:"普渡创始人 · 商用服务机器人龙头 · 估值破百亿",bio:"商用服务机器人龙头，估值破百亿。2026 年 4 月完成近 10 亿元新一轮融资。"},
-  xiangke:{zhName:"享刻智能 创始人",title:"享刻创始人 · 90 后连续创业者 · 餐饮+酒店",bio:"90 后连续创业者。餐饮+酒店全场景具身机器人，从厨房服务机器人切入。2026 年 4 月完成 1.5 亿元 A 轮融资。"},
-  xianglu:{zhName:"橡鹿机器人 创始人",title:"橡鹿创始人 · 前美团 S-team 高管团队",bio:"前美团最高决策层 S-team 高管 + 去哪儿产品总监 + 香格里拉 CTO 组成团队。智能炒菜机器人。2026 年 4 月完成 3 亿元融资。"},
+  pudu:{zhName:"张涛",title:"普渡创始人 · 商用服务机器人龙头 · 估值破百亿",bio:"商用服务机器人龙头，估值破百亿。2026 年 4 月完成近 10 亿元新一轮融资。"},
+  xiangke:{zhName:"陈震",title:"享刻创始人 · 90 后连续创业者 · 餐饮+酒店",bio:"90 后连续创业者。餐饮+酒店全场景具身机器人，从厨房服务机器人切入。2026 年 4 月完成 1.5 亿元 A 轮融资。"},
+  xianglu:{zhName:"郭庆",title:"橡鹿创始人 · 前美团 S-team 高管团队",bio:"前美团最高决策层 S-team 高管 + 去哪儿产品总监 + 香格里拉 CTO 组成团队。智能炒菜机器人。2026 年 4 月完成 3 亿元融资。"},
   xlean:{zhName:"颗粒进化（xLean）创始人",title:"xLean 创始人 · 00 后 · 自主+手持双形态",bio:"00 后创始人。家庭清洁机器人，自主清洁与手持双形态。2026 年 4 月完成数千万美元 A 轮融资。"},
-  kepler:{zhName:"开普勒机器人 创始人",title:"开普勒创始人 · VTLA 力触觉数采",bio:"国内首个原生适配 VTLA 全感知模型的力触觉全栈数采。具身智能大脑与力触觉数据采集。2026 年 4 月完成亿元级融资。"},
+  kepler:{zhName:"杨华",title:"开普勒创始人 · VTLA 力触觉数采",bio:"国内首个原生适配 VTLA 全感知模型的力触觉全栈数采。具身智能大脑与力触觉数据采集。2026 年 4 月完成亿元级融资。"},
   roboparty:{zhName:"萝博派对 创始人",title:"RoboParty 创始人 · 04 年创业者 · 全栈开源双足",bio:"04 年创业者。全栈开源双足人形机器人。2026 年 4 月完成 2000 万美金天使轮。"},
   wujie:{zhName:"无界方舟 创始人",title:"无界方舟创始人 · MIT TR35 博士 · EVA OS",bio:"MIT TR35 博士。硬件 AIOS 方向，EVA OS 与原生 AIOS 智能硬件 EVA PI。2026 年 4 月连续完成数亿融资。"},
   inair:{zhName:"INAIR 创始人",title:"INAIR 多屏未来创始人 · 空间计算 · INAIR OS",bio:"空间计算产品线，INAIR OS 空间操作系统 + INAIR AI Agent。2026 年 4 月完成千万美元 A+ 轮融资。"},
-  yuexingtong:{zhName:"阅星瞳 创始人",title:"阅星瞳创始人 · 连续创业者 · AI 手机电子纸副屏",bio:"连续创业者。AI 手机电子纸副屏，个性化信息展示+主动获取。月销量增长 10 倍，海外销量首月破万。2026 年 4 月累计完成超亿元融资。"},
-  lingjitc:{zhName:"灵机天赐 创始人",title:"灵机天赐创始人 · 原凯叔讲故事 COO · 分体式 AI",bio:"原凯叔讲故事 COO。儿童智能体硬件，首创分体式 AI 交互硬件，家庭共乐场景。一年完成两轮数千万元融资（2026 年 4 月最新 Pre-A）。"},
+  yuexingtong:{zhName:"胡宇沸",title:"阅星曈创始人 · 连续创业者 · AI 手机电子纸副屏",bio:"连续创业者。AI 手机电子纸副屏，个性化信息展示+主动获取。月销量增长 10 倍，海外销量首月破万。2026 年 4 月累计完成超亿元融资。"},
+  lingjitc:{zhName:"杨冰",title:"灵机天赐创始人 · 原凯叔讲故事 COO · 分体式 AI",bio:"原凯叔讲故事 COO。儿童智能体硬件，首创分体式 AI 交互硬件，家庭共乐场景。一年完成两轮数千万元融资（2026 年 4 月最新 Pre-A）。"},
   chenghao:{zhName:"程昊",title:"加速进化创始人兼CEO · 清华机器人实验室",bio:"清华大学本硕。团队核心来自清华机器人控制实验室及火神机器人项目，集体具备 20 年+ 人形机器人积累。2023 年 6 月北京创办加速进化科技（Booster Robotics）。理念：为开发者造的机器人，而非展示用机器人。Booster T1：面向全球高校/科研机构的平价全尺寸双足人形。Booster K1：紧凑型室内人形。2026 年 4 月全球累计发货超 700 台，行业出货量前列。2026 年 4 月完成近 10 亿元融资，北京高精尖产业基金 + 京国盛基金 + 华控基金领投，联想之星 / 深创投 / IDG / 源码 / 英诺 / 北京市人工智能产业投资基金等跟投。"},
   matteofranceschetti:{zhName:"Matteo Franceschetti",title:"Eight Sleep 联合创始人/CEO · 智能床垫",bio:"意大利前职业网球选手转创业者。2014 年纽约联合创办 Eight Sleep，合伙人 Alexandra Zatarain。Pod 4 Ultra：AI 驱动床垫罩，主动加热/制冷 + 睡眠分阶段追踪。2022 年 9 月 C 轮 8600 万美元，估值 5 亿+。客户传闻包括科技创始人和职业运动员。"},
   ericcarreel:{zhName:"Eric Carreel",title:"Withings 联合创始人 · 法国智能健康先驱",bio:"法国连续创业者（此前创办 Inventel）。2008 年与 Cédric Hutchings 联合创办 Withings — 全球第一台 WiFi 联网智能体重秤。后扩展到血压计、智能手表、睡眠垫。2016 年以约 1.92 亿美元卖给 Nokia，2018 年带原团队回购。ScanWatch（2020）是 FDA 认证的 ECG + SpO2 混合模拟手表。现扩展到慢病管理 + ScanWatch Nova / BeamO 多传感器。"},
@@ -6248,6 +6421,8 @@ function applyLanguage(lang) {
     if (lang === "zh" && zhData && zhData.zhName) return zhData.zhName;
     return d.name;
   });
+  // 公司标签同理 —— 漏了这一句的话,切语言时人名变了公司名不变,更难看
+  nodeGroups.selectAll(".node-org-label").text(d => orgLabel(d.org));
 
   // If detail panel is open, refresh it
   if (document.getElementById("detail-panel").classList.contains("open") && window._currentDetailScholar) {
@@ -6425,7 +6600,7 @@ function openDetail(d) {
 
   const orgEl = document.getElementById("detail-org");
   const c = getColor(d.org);
-  orgEl.textContent = d.org;
+  orgEl.textContent = orgLabel(d.org);
   orgEl.style.background = c + "18";
   orgEl.style.color = c;
   orgEl.style.border = `0.5px solid ${c}32`;
@@ -6520,145 +6695,72 @@ window.addEventListener("resize",()=>{
 // FUNDING DATA
 // ===================================================================
 const fundingData = {
-  wangtao: [
-    {round:"Pre-IPO",amount:"$1.5B",date:"2018",investors:["Sequoia China","Hillhouse Capital","IDG Capital"]},
-  ],
-  taoye: [
-    {round:"Series C",amount:"Undisclosed",date:"2024",investors:["IDG Capital","Shunwei Capital"]},
-    {round:"Strategic",amount:"Undisclosed",date:"2025",investors:["DJI","Tencent"]},
-  ],
-  wanglei: [
-    {round:"Series B",amount:"$100M",date:"2021",investors:["Sequoia China","China Intl Capital"]},
-    {round:"Pre-IPO",amount:"Undisclosed",date:"2025",investors:["Planning US IPO $300M+"]},
-  ],
-  pengbin: [
-    {round:"Series C++",amount:"Undisclosed",date:"2023",investors:["SoftBank Vision Fund","Hillhouse"]},
-  ],
-  yuhao: [
-    {round:"Series C",amount:"3.6B yuan",date:"2021",investors:["IDG Capital","Xiaomi/Shunwei","Tiger Global"]},
-  ],
-  changjing: [
-    {round:"IPO",amount:"STAR Board",date:"2020.2",investors:["Xiaomi/Shunwei (early)","Sequoia China"]},
-  ],
-  zhangjunbin: [
-    {round:"Series E",amount:"10B+ valuation",date:"2021",investors:["Li Zexiang/Qingshuiwan","Tencent","ByteDance"]},
-    {round:"Latest",amount:"$100M",date:"2025",investors:["Global expansion round"]},
-  ],
-  pengzhihui: [
-    {round:"Series A+",amount:"Undisclosed",date:"2024",investors:["BYD","SAIC Motor","Northern Light VC"]},
-  ],
-  carlpei: [
-    {round:"Series C",amount:"$96M",date:"2024",investors:["GV (Google)","EQT Ventures"]},
-  ],
-  liujingkang: [
-    {round:"Angel",amount:"$1M",date:"2014",investors:["IDG Capital"]},
-    {round:"IPO",amount:"1.94B yuan",date:"2025.6",investors:["STAR Board IPO +285%"]},
-  ],
-  yangmeng: [
-    {round:"IPO",amount:"Shenzhen SE",date:"2020",investors:["Google Founder's Award alumni"]},
-  ],
-  wangxingxing: [
-    {round:"Series C+",amount:"700M yuan total",date:"2025",investors:["Shunwei Capital","SIG","Miracle Plus"]},
-  ],
-  brettadcock: [
-    {round:"Series B",amount:"$675M",date:"2024",investors:["Jeff Bezos","Microsoft","OpenAI","NVIDIA"]},
-  ],
-  chenjianyu: [
-    {round:"Series A+B",amount:"1B yuan",date:"2025-2026",investors:["Tsinghua equity","Geely","BAIC"]},
-  ],
-  wanghe: [
-    {round:"Cumulative",amount:"2.4B+ yuan",date:"2025",investors:["Qiming VC","Source Code","Sequoia China"]},
-  ],
-  zhangwei: [
-    {round:"Series A",amount:"500M yuan",date:"2025",investors:["Alibaba","NIO Capital","Lenovo","JD.com"]},
-  ],
-  gaojiyuang: [
-    {round:"Series B",amount:"1B yuan",date:"2026.2",investors:["Hillhouse","GL Ventures","Starmap investors"]},
-  ],
-  chenyilun: [
-    {round:"Angel",amount:"$122M",date:"2025.3",investors:["BlueRun Ventures","Qiming VC","Lenovo Capital","Hillhouse"]},
-  ],
-  hanfengtao: [
-    {round:"Pre-A",amount:"2B yuan",date:"2026.2",investors:["Undisclosed, 10B+ valuation"]},
-  ],
-  sunzhaozhi: [
-    {round:"Angel",amount:"Tens of M",date:"2025.6",investors:["Shanghai Film Group","GSR Ventures"]},
-    {round:"Angel+",amount:"Tens of M",date:"2025.9",investors:["Sequoia China"]},
-  ],
-  hejiabin: [
-    {round:"A1",amount:"Undisclosed",date:"2025",investors:["Beijing AI Industry Fund"]},
-  ],
-  yangjianbo: [
-    {round:"5 rounds",amount:"Undisclosed",date:"2014-2025",investors:["Xiaomi","Shunwei","BlueRun","Source Code"]},
-  ],
-  ringconn: [
-    {round:"Angel+",amount:"Tens of M",date:"2024",investors:["Gao Bingqiang/Brizan","Li Zexiang/Qingshuiwan","Gan Jie"]},
-  ],
-  lizhichen: [
-    {round:"C",amount:"60M yuan",date:"2025.5",investors:["Brizan Ventures V (Gao Bingqiang)"]},
-    {round:"IPO",amount:"HK$1.64B",date:"2025.12",investors:["HKEX IPO, HK$16.4B market cap"]},
-  ],
-  chenyuqi: [
-    {round:"Series D+",amount:"$2B+ valuation",date:"2022",investors:["XbotPark seed","Source Code","Matrix Partners"]},
-  ],
-  shijinbo: [
-    {round:"Strategic",amount:">20B valuation",date:"2022",investors:["Strategic investors"]},
-  ],
-  guorenjie: [
-    {round:"Angel",amount:"~2B yuan",date:"2024.12",investors:["IDG Capital","Jingwei Ventures","ZhenFund"]},
-  ],
-  lihongwei: [
-    {round:"B++",amount:"10B+ total",date:"2026",investors:["China Mobile","Kweichow Moutai"]},
-  ],
-  zhangbo: [
-    {round:"A+",amount:"~100M yuan",date:"2025.12",investors:["Undisclosed"]},
-  ],
-  xugao: [
-    {round:"Series A",amount:"Undisclosed",date:"2024",investors:["Carbide Ventures (Japan)"]},
-  ],
-  liyong: [
-    {round:"Series A",amount:"200M yuan",date:"2024.8",investors:["CICC Capital","Sequoia China"]},
-    {round:"Follow-on",amount:"200M yuan",date:"2025.8",investors:["Sequoia China doubled down"]},
-  ],
-  wangning: [
-    {round:"IPO",amount:"HKEX",date:"2020.12",investors:["HKEX IPO +100%, peak 300B HKD"]},
-  ],
-  qiandongqi: [
-    {round:"IPO",amount:"Shanghai SE",date:"2018",investors:["China robot vacuum first IPO"]},
-  ],
-  gaolufeng: [
-    {round:"IPO",amount:"STAR Board",date:"2020",investors:["Xiaomi/Shunwei ecosystem"]},
-  ],
-  zhangqingsen: [
-    {round:"IPO",amount:"ChiNext",date:"2024.7",investors:["Hillhouse (pre-IPO), +114% day 1"]},
-  ],
-  tangwenxuan: [
-    {round:"Series A",amount:"Undisclosed",date:"2019",investors:["Li Zexiang/Songshan Lake Institute"]},
-  ],
-  taoshizheng: [
-    {round:"Series D+",amount:"Undisclosed",date:"2024",investors:["Li Zexiang ecosystem"]},
-  ],
-  wangjianjun: [
-    {round:"Series B",amount:"Undisclosed",date:"2018",investors:["Shunwei","Hillhouse (Makeblock era, 2.5B valuation)"]},
-  ],
-  jeffcardenas: [
-    {round:"Series A",amount:"~$520M",date:"2025",investors:["$5.5B valuation"]},
-  ],
-  karolhausman: [
-    {round:"Seed",amount:"$70M",date:"2024.3",investors:["Thrive Capital"]},
-    {round:"Series A",amount:"$400M",date:"2024.11",investors:["Jeff Bezos (led)","Thrive"]},
-    {round:"Series B",amount:"$600M",date:"2025.11",investors:["Alphabet CapitalG, $5.6B valuation"]},
-  ],
-  kylevogt: [
-    {round:"Seed",amount:"$150M",date:"2024.5",investors:["Spark Capital","Nat Friedman"]},
-    {round:"Round 2",amount:"$150M",date:"2025.3",investors:["$2B valuation"]},
-  ],
-  petteri: [
-    {round:"Series E",amount:"$900M",date:"2025.10",investors:["Fidelity, $11B valuation"]},
-  ],
-  willahmed: [
-    {round:"Series F",amount:"$900M+",date:"2025",investors:["$10.1B valuation"]},
-  ],
+  "wangtao":[{"round": "Pre-IPO", "amount": "$1.5B", "date": "2018", "investors": ["Sequoia China", "Hillhouse Capital", "IDG Capital"]}],
+  "taoye":[{"round": "Series C", "amount": "Undisclosed", "date": "2024", "investors": ["IDG Capital", "Shunwei Capital"]}, {"round": "Strategic", "amount": "Undisclosed", "date": "2025", "investors": ["DJI", "Tencent"]}],
+  "wanglei":[{"round": "Series B", "amount": "$100M", "date": "2021", "investors": ["Sequoia China", "China Intl Capital"]}, {"round": "Pre-IPO", "amount": "Undisclosed", "date": "2025", "investors": ["Planning US IPO $300M+"]}],
+  "pengbin":[{"round": "Series C++", "amount": "Undisclosed", "date": "2023", "investors": ["SoftBank Vision Fund", "Hillhouse"]}],
+  "yuhao":[{"round": "Series C", "amount": "3.6B yuan", "date": "2021", "investors": ["IDG Capital", "Xiaomi/Shunwei", "Tiger Global"]}],
+  "changjing":[{"round": "IPO", "amount": "STAR Board", "date": "2020.2", "investors": ["Xiaomi/Shunwei (early)", "Sequoia China"]}],
+  "zhangjunbin":[{"round": "Series E", "amount": "10B+ valuation", "date": "2021", "investors": ["Li Zexiang/Qingshuiwan", "Tencent", "ByteDance"]}, {"round": "Latest", "amount": "$100M", "date": "2025", "investors": ["Global expansion round"]}],
+  "pengzhihui":[{"round": "Series A+", "amount": "Undisclosed", "date": "2024", "investors": ["BYD", "SAIC Motor", "Northern Light VC"]}],
+  "carlpei":[{"round": "Series C", "amount": "$96M", "date": "2024", "investors": ["GV (Google)", "EQT Ventures"]}],
+  "liujingkang":[{"round": "Angel", "amount": "$1M", "date": "2014", "investors": ["IDG Capital"]}, {"round": "IPO", "amount": "1.94B yuan", "date": "2025.6", "investors": ["STAR Board IPO +285%"]}],
+  "yangmeng":[{"round": "IPO", "amount": "Shenzhen SE", "date": "2020", "investors": ["Google Founder's Award alumni"]}],
+  "wangxingxing":[{"round": "Series C+", "amount": "700M yuan total", "date": "2025", "investors": ["Shunwei Capital", "SIG", "Miracle Plus"]}],
+  "brettadcock":[{"round": "Series B", "amount": "$675M", "date": "2024", "investors": ["Jeff Bezos", "Microsoft", "OpenAI", "NVIDIA"]}],
+  "chenjianyu":[{"round": "Series A+B", "amount": "1B yuan", "date": "2025-2026", "investors": ["Tsinghua equity", "Geely", "BAIC"]}],
+  "wanghe":[{"round": "Cumulative", "amount": "2.4B+ yuan", "date": "2025", "investors": ["Qiming VC", "Source Code", "Sequoia China"]}],
+  "zhangwei":[{"round": "Series A", "amount": "500M yuan", "date": "2025", "investors": ["Alibaba", "NIO Capital", "Lenovo", "JD.com"]}],
+  "gaojiyuang":[{"round": "Series B", "amount": "1B yuan", "date": "2026.2", "investors": ["Hillhouse", "GL Ventures", "Starmap investors"]}],
+  "chenyilun":[{"round": "Angel", "amount": "$122M", "date": "2025.3", "investors": ["BlueRun Ventures", "Qiming VC", "Lenovo Capital", "Hillhouse"]}],
+  "hanfengtao":[{"round": "Pre-A", "amount": "2B yuan", "date": "2026.2", "investors": ["Undisclosed, 10B+ valuation"]}],
+  "sunzhaozhi":[{"round": "Angel", "amount": "Tens of M", "date": "2025.6", "investors": ["Shanghai Film Group", "GSR Ventures"]}, {"round": "Angel+", "amount": "Tens of M", "date": "2025.9", "investors": ["Sequoia China"]}],
+  "hejiabin":[{"round": "A1", "amount": "Undisclosed", "date": "2025", "investors": ["Beijing AI Industry Fund"]}],
+  "yangjianbo":[{"round": "5 rounds", "amount": "Undisclosed", "date": "2014-2025", "investors": ["Xiaomi", "Shunwei", "BlueRun", "Source Code"]}],
+  "ringconn":[{"round": "Angel+", "amount": "Tens of M", "date": "2024", "investors": ["Gao Bingqiang/Brizan", "Li Zexiang/Qingshuiwan", "Gan Jie"]}],
+  "lizhichen":[{"round": "C", "amount": "60M yuan", "date": "2025.5", "investors": ["Brizan Ventures V (Gao Bingqiang)"]}, {"round": "IPO", "amount": "HK$1.64B", "date": "2025.12", "investors": ["HKEX IPO, HK$16.4B market cap"]}],
+  "chenyuqi":[{"round": "Series D+", "amount": "$2B+ valuation", "date": "2022", "investors": ["XbotPark seed", "Source Code", "Matrix Partners"]}],
+  "shijinbo":[{"round": "Strategic", "amount": ">20B valuation", "date": "2022", "investors": ["Strategic investors"]}],
+  "guorenjie":[{"round": "Angel", "amount": "~2B yuan", "date": "2024.12", "investors": ["IDG Capital", "Jingwei Ventures", "ZhenFund"]}],
+  "lihongwei":[{"round": "B++", "amount": "10B+ total", "date": "2026", "investors": ["China Mobile", "Kweichow Moutai"]}],
+  "zhangbo":[{"round": "A+", "amount": "~100M yuan", "date": "2025.12", "investors": ["Undisclosed"]}],
+  "xugao":[{"round": "Series A", "amount": "Undisclosed", "date": "2024", "investors": ["Carbide Ventures (Japan)"]}],
+  "liyong":[{"round": "Series A", "amount": "200M yuan", "date": "2024.8", "investors": ["CICC Capital", "Sequoia China"]}, {"round": "Follow-on", "amount": "200M yuan", "date": "2025.8", "investors": ["Sequoia China doubled down"]}],
+  "wangning":[{"round": "IPO", "amount": "HKEX", "date": "2020.12", "investors": ["HKEX IPO +100%, peak 300B HKD"]}],
+  "qiandongqi":[{"round": "IPO", "amount": "Shanghai SE", "date": "2018", "investors": ["China robot vacuum first IPO"]}],
+  "gaolufeng":[{"round": "IPO", "amount": "STAR Board", "date": "2020", "investors": ["Xiaomi/Shunwei ecosystem"]}],
+  "zhangqingsen":[{"round": "IPO", "amount": "ChiNext", "date": "2024.7", "investors": ["Hillhouse (pre-IPO), +114% day 1"]}],
+  "tangwenxuan":[{"round": "Series A", "amount": "Undisclosed", "date": "2019", "investors": ["Li Zexiang/Songshan Lake Institute"]}],
+  "taoshizheng":[{"round": "Series D+", "amount": "Undisclosed", "date": "2024", "investors": ["Li Zexiang ecosystem"]}],
+  "wangjianjun":[{"round": "Series B", "amount": "Undisclosed", "date": "2018", "investors": ["Shunwei", "Hillhouse (Makeblock era, 2.5B valuation)"]}],
+  "jeffcardenas":[{"round": "Series A", "amount": "~$520M", "date": "2025", "investors": ["$5.5B valuation"]}],
+  "karolhausman":[{"round": "Seed", "amount": "$70M", "date": "2024.3", "investors": ["Thrive Capital"]}, {"round": "Series A", "amount": "$400M", "date": "2024.11", "investors": ["Jeff Bezos (led)", "Thrive"]}, {"round": "Series B", "amount": "$600M", "date": "2025.11", "investors": ["Alphabet CapitalG, $5.6B valuation"]}],
+  "kylevogt":[{"round": "Seed", "amount": "$150M", "date": "2024.5", "investors": ["Spark Capital", "Nat Friedman"]}, {"round": "Round 2", "amount": "$150M", "date": "2025.3", "investors": ["$2B valuation"]}],
+  "petteri":[{"round": "Series E", "amount": "$900M", "date": "2025.10", "investors": ["Fidelity, $11B valuation"]}],
+  "willahmed":[{"round": "Series F", "amount": "$900M+", "date": "2025", "investors": ["$10.1B valuation"]}],
+  "heshiyou":[{"round": "A", "amount": "数亿元", "date": "2023-04", "investors": ["深创投", "中投证券资本", "越秀产业基金", "高榕资本"]}, {"round": "A+", "amount": "未披露", "date": "2023-12", "investors": ["深创投", "建发新兴投资", "高榕资本", "越秀产业基金"]}],
+  "wangyang":[{"round": "A", "amount": "超 1500 万美元", "date": "2022", "investors": ["XVC", "欣旺达"]}, {"round": "B / B+", "amount": "超 6000 万美元", "date": "2024-07", "investors": ["招银国际", "复星锐正", "蜂巧资本", "XVC"]}, {"round": "战略(约 27% 股权)", "amount": "未披露", "date": "2025-04", "investors": ["Fluidra"]}],
+  "tianli":[{"round": "Pre-A", "amount": "千万级", "date": "2019-08", "investors": ["华睿信创投", "今玺资本"]}, {"round": "A", "amount": "数千万元", "date": "2021-12", "investors": ["东方富海 · 国家中小企业发展基金"]}],
+  "chenxuedong":[{"round": "A", "amount": "数千万元", "date": "2021-02", "investors": ["经纬中国", "同创伟业"]}, {"round": "B", "amount": "数亿元", "date": "2025-12", "investors": ["高瓴创投", "美团", "顺为资本", "美团龙珠", "南山战新投", "同创伟业", "东证资本"]}, {"round": "C+", "amount": "未披露", "date": "2025-12", "investors": ["南山战新投", "同创伟业", "顺为资本"]}],
+  "hongxiaoping":[{"round": "种子", "amount": "未披露", "date": "2024-07", "investors": ["硅谷 VC(美元)"]}, {"round": "Pre-A(Strutt)", "amount": "累计数千万美元", "date": "2025-11", "investors": ["Matter Venture Partners", "Vertex Ventures"]}],
+  "xieyue":[{"round": "首轮", "amount": "未披露", "date": "2026-04", "investors": ["元璟资本", "理想汽车"]}],
+  "poke":[{"round": "种子", "amount": "未披露", "date": "2026-03", "investors": ["星海图"]}, {"round": "天使", "amount": "数千万美元", "date": "2026-04", "investors": ["云启资本", "顺为资本", "弘晖基金", "小米战投", "星海图", "BV 百度风投", "英诺天使", "水木清华校友种子基金", "东方嘉富"]}, {"round": "Pre-A", "amount": "亿美元级", "date": "2026-08", "investors": []}],
+  "ruoban":[{"round": "friends&family + 种子", "amount": "未披露", "date": "", "investors": ["英诺天使", "创新工场", "启赋资本", "顺为资本", "联想创投"]}],
+  "xiangke":[{"round": "A", "amount": "1.5 亿元", "date": "2026-04", "investors": ["九号公司(战略领投)", "长沙东方私募基金", "江苏国晟资本"]}],
+  "xianglu":[{"round": "Pre-A", "amount": "数亿元", "date": "2022-04", "investors": ["腾讯", "IDG", "源码资本"]}, {"round": "战略追投", "amount": "2 亿元", "date": "2024-07", "investors": ["京东集团"]}, {"round": "新一轮", "amount": "3 亿元", "date": "2026-04", "investors": ["亦庄国投产业升级基金", "琥珀", "九安", "海棠"]}],
+  "chenhunxian":[{"round": "天使(月内两轮)", "amount": "累计近亿元", "date": "2026-04", "investors": []}],
+  "wujie":[{"round": "Pre-A ×2", "amount": "数亿元(一年内 4 轮累计数亿)", "date": "2026-04", "investors": ["韶音 Shokz", "国瑞源基金", "恒松资本", "上海天使会"]}],
+  "xuanji":[{"round": "天使", "amount": "近亿元", "date": "2025-12", "investors": ["御海资本", "兰璞创投", "步长家办"]}, {"round": "新一轮", "amount": "数亿元(超募)", "date": "2026-04", "investors": ["上汽创投"]}],
+  "lingjitc":[{"round": "天使等两轮", "amount": "累计数千万元", "date": "2025—2026", "investors": ["德联资本", "小恐龙基金", "瑞晟基金"]}],
+  "yuexingtong":[{"round": "天使→A 共五轮", "amount": "累计超亿元", "date": "2026-04", "investors": ["博裕创投", "清流资本", "希扬资本", "小红书", "经纬创投", "顺为资本"]}],
+  "linyuan":[{"round": "天使", "amount": "数百万元", "date": "2018-05", "investors": ["个人投资者(基金 LP)"]}],
+  "yuanqian":[{"round": "天使", "amount": "亿元级", "date": "2025", "investors": ["追创创投"]}],
+  "xingjiguangnian":[{"round": "种子", "amount": "千万级", "date": "2024", "investors": ["峰瑞资本"]}, {"round": "Pre-A", "amount": "累计过亿(18 个月 5 轮)", "date": "2026-04", "investors": ["顺义科创", "微星宁元", "云时资本"]}],
+  "zerith":[{"round": "新一轮", "amount": "超亿元", "date": "2026-04", "investors": ["润泽集团", "宁波东力", "杰理天使", "平湖泽鑫"]}],
+  "unicus":[{"round": "新一轮", "amount": "数百万美元", "date": "2026", "investors": []}],
+  "pudu":[{"round": "B", "amount": "过亿元", "date": "2020-07", "investors": ["美团(独家)"]}, {"round": "C", "amount": "5 亿元", "date": "2022", "investors": ["腾讯", "红杉中国", "美团"]}, {"round": "C4", "amount": "未披露", "date": "2023", "investors": []}],
+  "kepler":[{"round": "A++", "amount": "亿元级", "date": "2026-04", "investors": ["赛富投资基金", "诺力智能装备", "深圳民爆光电"]}, {"round": "控股收购", "amount": "3 亿元收购 41.57%", "date": "2026-05", "investors": ["杭州科瑞电气(A 股)"]}],
+  "inmoceo":[{"round": "天使", "amount": "未披露", "date": "2021-02", "investors": ["宜来资本", "三七互娱"]}, {"round": "Pre-A", "amount": "数千万元", "date": "", "investors": ["经纬创投", "九合创投", "君盛资本"]}, {"round": "A", "amount": "近千万美元", "date": "", "investors": ["挚文集团(独家)"]}, {"round": "B", "amount": "近亿元", "date": "", "investors": ["四川发展弘芯基金", "成华科创投", "江西中寰投资"]}, {"round": "C1", "amount": "未披露", "date": "", "investors": ["成都科创投", "南山战新投", "普丰资本"]}]
 };
 
 const INVESTOR_GRAPH_URL = "https://jason3535.github.io/investor-graph/";
@@ -6693,7 +6795,21 @@ function renderFunding(d) {
   if (titleEl) titleEl.textContent = currentLang === "zh" ? "融资历程" : "Funding History";
 
   if (!rounds || rounds.length === 0) {
-    section.style.display = "none";
+    /* 没有轮次时,原来是直接把整块藏掉 —— 于是「没融过」「查过没公开信息」「还没查」
+       三种情况在界面上长得一模一样。有 fundingStatus 就把它说出来。 */
+    const st = fundingStatus[d.id];
+    if (!st) { section.style.display = "none"; return; }
+    section.style.display = "block";
+    const zh = currentLang === "zh";
+    const LABEL = {
+      "bootstrapped": zh ? "未接受外部股权投资(自筹)" : "Bootstrapped — no outside equity",
+      "unknown":      zh ? "已核查,暂无公开融资信息"   : "Checked — no public funding info",
+      "vc-backed":    zh ? "有股权融资,轮次待补"       : "Equity-funded — rounds not yet recorded"
+    };
+    el.innerHTML = '<div class="funding-status funding-status-' + st.s + '">'
+      + '<span class="funding-status-badge">' + (LABEL[st.s] || st.s) + '</span>'
+      + (st.n ? '<p class="funding-status-note">' + st.n + '</p>' : '')
+      + '</div>';
     return;
   }
   section.style.display = "block";
@@ -7039,6 +7155,6 @@ else fetch('https://stats.jasonlin.tech',{method:'POST',headers:{'Content-Type':
 .site-index[open] summary::before{content:'− '}
 .site-index nav{margin:10px 0 0;line-height:2.1}
 .site-index a{color:#a1a1a6;text-decoration:underline;text-underline-offset:2px}
-.site-index a:hover{color:#2997ff}</style><details class="site-index"><summary>站点地图 · Sitemap（161 人）</summary><nav><a href="/p/adambry.html">Adam Bry</a> · <a href="/p/alexzhou.html">Alex Zhou</a> · <a href="/p/shpunt.html">Alexander Shpunt</a> · <a href="/p/avischiffmann.html">Avi Schiffmann</a> · <a href="/p/berntbornich.html">Bernt Børnich</a> · <a href="/p/bobaktavangar.html">Bobak Tavangar</a> · <a href="/p/brettadcock.html">Brett Adcock</a> · <a href="/p/dansiroker.html">Dan Siroker</a> · <a href="/p/davidrabin.html">David Rabin</a> · <a href="/p/reger.html">David Reger</a> · <a href="/p/davidyang.html">David Yang</a> · <a href="/p/skildai.html">Deepak Pathak</a> · <a href="/p/ericcarreel.html">Eric Carreel</a> · <a href="/p/fusheng.html">Fu Sheng</a> · <a href="/p/inair.html">INAIR 创始人</a> · <a href="/p/imranchaudhri.html">Imran Chaudhri</a> · <a href="/p/jeffcardenas.html">Jeff Cardenas</a> · <a href="/p/jesperkouthoofd.html">Jesper Kouthoofd</a> · <a href="/p/karolhausman.html">Karol Hausman</a> · <a href="/p/kylevogt.html">Kyle Vogt</a> · <a href="/p/laijie.html">Lai Jie</a> · <a href="/p/lengxiaokun.html">Leng Xiaokun</a> · <a href="/p/litong.html">Li Tong</a> · <a href="/p/liuweichao.html">Liu Weichao</a> · <a href="/p/matteofranceschetti.html">Matteo Franceschetti</a> · <a href="/p/mohitkumar.html">Mohit Kumar</a> · <a href="/p/niravpatel.html">Nirav Patel</a> · <a href="/p/agility.html">Peggy Johnson</a> · <a href="/p/petteri.html">Petteri Lahtela</a> · <a href="/p/ringconn.html">RingConn创始人</a> · <a href="/p/ragavender.html">Ritesh Ragavender</a> · <a href="/p/bostondynamics.html">Robert Playter</a> · <a href="/p/samcorcos.html">Sam Corcos</a> · <a href="/p/seppos.html">Seppo Säynäjäkangas</a> · <a href="/p/tonyzhao.html">Tony Zhao</a> · <a href="/p/tuomasvohlonen.html">Tuomas Vohlonen</a> · <a href="/p/willahmed.html">Will Ahmed</a> · <a href="/p/xiechen.html">Xie Chen</a> · <a href="/p/zhaotongyang.html">Zhao Tongyang</a> · <a href="/p/genesisai.html">Zhou Xian</a> · <a href="/p/jonyive.html">乔尼·艾维</a> · <a href="/p/xiangke.html">享刻智能 创始人</a> · <a href="/p/heshiyou.html">何世友</a> · <a href="/p/hejiabin.html">何嘉斌</a> · <a href="/p/xiaopenghe.html">何小鹏</a> · <a href="/p/yuhao.html">俞浩</a> · <a href="/p/liujingkang.html">刘靖康</a> · <a href="/p/unicus.html">千帜（UNICUS）创始人</a> · <a href="/p/yehongxin.html">叶洪新</a> · <a href="/p/jesselyu.html">吕骋</a> · <a href="/p/zhoujianping.html">周剑</a> · <a href="/p/tangwenxuan.html">唐文轩</a> · <a href="/p/songyan.html">姜哲源</a> · <a href="/p/sunzhaozhi.html">孙兆治</a> · <a href="/p/sunyang.html">孙洋</a> · <a href="/p/sunxuefeng.html">孙雪峰</a> · <a href="/p/bosworth.html">安德鲁·博斯沃思（Boz）</a> · <a href="/p/feldman.html">安德鲁·费尔德曼</a> · <a href="/p/palmerluckey.html">帕尔默·拉奇</a> · <a href="/p/panospanay.html">帕诺斯·帕奈</a> · <a href="/p/kepler.html">开普勒机器人 创始人</a> · <a href="/p/zhangjunbin.html">张峻彬</a> · <a href="/p/zhangwei.html">张巍</a> · <a href="/p/zhangbo.html">张波</a> · <a href="/p/zhangtao.html">张涛</a> · <a href="/p/zhangqingsen.html">张清森</a> · <a href="/p/bryanzhang.html">张迪</a> · <a href="/p/pengzhihui.html">彭志辉（稚晖君）</a> · <a href="/p/pengbin.html">彭斌</a> · <a href="/p/inmoceo.html">影目创始人</a> · <a href="/p/xuchi.html">徐驰</a> · <a href="/p/fadell.html">托尼·法德尔</a> · <a href="/p/xieyue.html">斜跃智能 创始人</a> · <a href="/p/wujie.html">无界方舟 创始人</a> · <a href="/p/changjing.html">昌敬</a> · <a href="/p/xingjiguangnian.html">星际光年 创始人</a> · <a href="/p/chenhunxian.html">晨昏线 创始人</a> · <a href="/p/pudu.html">普渡机器人 创始人</a> · <a href="/p/jamespark.html">朴贞赫</a> · <a href="/p/liyong.html">李勇</a> · <a href="/p/lihongwei.html">李宏伟</a> · <a href="/p/lizhichen.html">李志晨</a> · <a href="/p/lizexiang.html">李泽湘</a> · <a href="/p/lihongjing.html">李红京</a> · <a href="/p/yangjianbo.html">杨健勃</a> · <a href="/p/jijiashijie.html">极佳视界 创始人</a> · <a href="/p/linyuan.html">林源</a> · <a href="/p/liangxiaoling.html">梁霄凌</a> · <a href="/p/xianglu.html">橡鹿机器人 创始人</a> · <a href="/p/olwx.html">欧拉万象 创始人</a> · <a href="/p/wangyang.html">汪洋</a> · <a href="/p/wangtao.html">汪滔</a> · <a href="/p/wangtaom.html">汪韬</a> · <a href="/p/hongxiaoping.html">洪小平</a> · <a href="/p/langzhao.html">浪爪智能 创始人</a> · <a href="/p/youyanji.html">游延筠</a> · <a href="/p/lingjitc.html">灵机天赐 创始人</a> · <a href="/p/flexiv.html">王世全</a> · <a href="/p/drobotics.html">王丛</a> · <a href="/p/wangxingxing.html">王兴兴</a> · <a href="/p/wangning.html">王宁</a> · <a href="/p/wangjianjun.html">王建军</a> · <a href="/p/xsquare.html">王潜</a> · <a href="/p/wangshengle.html">王生乐</a> · <a href="/p/wanglei.html">王雷</a> · <a href="/p/wangxiaoyi.html">王骁逸</a> · <a href="/p/wanghe.html">王鹤</a> · <a href="/p/xuanji.html">璇玑动力 创始人</a> · <a href="/p/ganjie.html">甘洁</a> · <a href="/p/tianli.html">田力</a> · <a href="/p/shijun.html">石峻</a> · <a href="/p/shijinbo.html">石金博</a> · <a href="/p/poke.html">破壳机器人 创始人</a> · <a href="/p/zhushanming.html">祝铭明</a> · <a href="/p/chenghao.html">程昊</a> · <a href="/p/suleyman.html">穆斯塔法·苏莱曼</a> · <a href="/p/octopus.html">章鱼动力 创始人</a> · <a href="/p/luoyuanjue.html">罗元觉</a> · <a href="/p/huxiaohe.html">胡效赫</a> · <a href="/p/ruoban.html">若伴智能 创始人</a> · <a href="/p/roboparty.html">萝博派对 创始人</a> · <a href="/p/donghongguang.html">董红光</a> · <a href="/p/xuelijun.html">薛立君</a> · <a href="/p/yuanqian.html">袁谦</a> · <a href="/p/carlpei.html">裴宇</a> · <a href="/p/jamesdyson.html">詹姆斯·戴森</a> · <a href="/p/xugao.html">许高 Nathan</a> · <a href="/p/rockwell.html">迈克·罗克韦尔</a> · <a href="/p/mechmind.html">邵天兰</a> · <a href="/p/zhengyong.html">郑勇</a> · <a href="/p/guorenjie.html">郭人杰</a> · <a href="/p/ai2robotics.html">郭彦东</a> · <a href="/p/osterloh.html">里克·奥斯特洛</a> · <a href="/p/jinlinglin.html">金凌琳</a> · <a href="/p/zhongbo.html">钟波</a> · <a href="/p/zhongzhifeng.html">钟质峰</a> · <a href="/p/qiandongqi.html">钱东奇</a> · <a href="/p/yuexingtong.html">阅星瞳 创始人</a> · <a href="/p/yangmeng.html">阳萌</a> · <a href="/p/chenyilun.html">陈亦伦</a> · <a href="/p/chenjunbo.html">陈俊波</a> · <a href="/p/agilerobots.html">陈兆芃</a> · <a href="/p/chenxuedong.html">陈学栋</a> · <a href="/p/chenyuqi.html">陈宇奇</a> · <a href="/p/chenjianyu.html">陈建宇</a> · <a href="/p/zhipai.html">陈逸奇</a> · <a href="/p/taoye.html">陶冶</a> · <a href="/p/taoshizheng.html">陶师正</a> · <a href="/p/zerith.html">零次方 创始人</a> · <a href="/p/hanfengtao.html">韩峰涛</a> · <a href="/p/gujie.html">顾捷</a> · <a href="/p/xlean.html">颗粒进化（xLean）创始人</a> · <a href="/p/maxiao.html">马啸</a> · <a href="/p/gaowangshu.html">高望书</a> · <a href="/p/minkao.html">高民环</a> · <a href="/p/gaolufeng.html">高禄峰</a> · <a href="/p/gaobingqiang.html">高秉强</a> · <a href="/p/gaojiyuang.html">高继扬</a> · <a href="/p/weijidong.html">魏基栋</a> · <a href="/p/huangwang.html">黄汪</a></nav></details><!--SITE_INDEX_END-->
+.site-index a:hover{color:#2997ff}</style><details class="site-index"><summary>站点地图 · Sitemap（161 人）</summary><nav><a href="/p/adambry.html">Adam Bry</a> · <a href="/p/alexzhou.html">Alex Zhou</a> · <a href="/p/shpunt.html">Alexander Shpunt</a> · <a href="/p/avischiffmann.html">Avi Schiffmann</a> · <a href="/p/berntbornich.html">Bernt Børnich</a> · <a href="/p/bobaktavangar.html">Bobak Tavangar</a> · <a href="/p/brettadcock.html">Brett Adcock</a> · <a href="/p/dansiroker.html">Dan Siroker</a> · <a href="/p/davidrabin.html">David Rabin</a> · <a href="/p/reger.html">David Reger</a> · <a href="/p/davidyang.html">David Yang</a> · <a href="/p/skildai.html">Deepak Pathak</a> · <a href="/p/ericcarreel.html">Eric Carreel</a> · <a href="/p/fusheng.html">Fu Sheng</a> · <a href="/p/inair.html">INAIR 创始人</a> · <a href="/p/imranchaudhri.html">Imran Chaudhri</a> · <a href="/p/jeffcardenas.html">Jeff Cardenas</a> · <a href="/p/jesperkouthoofd.html">Jesper Kouthoofd</a> · <a href="/p/karolhausman.html">Karol Hausman</a> · <a href="/p/kylevogt.html">Kyle Vogt</a> · <a href="/p/laijie.html">Lai Jie</a> · <a href="/p/lengxiaokun.html">Leng Xiaokun</a> · <a href="/p/litong.html">Li Tong</a> · <a href="/p/liuweichao.html">Liu Weichao</a> · <a href="/p/matteofranceschetti.html">Matteo Franceschetti</a> · <a href="/p/mohitkumar.html">Mohit Kumar</a> · <a href="/p/niravpatel.html">Nirav Patel</a> · <a href="/p/agility.html">Peggy Johnson</a> · <a href="/p/petteri.html">Petteri Lahtela</a> · <a href="/p/ringconn.html">RingConn创始人</a> · <a href="/p/ragavender.html">Ritesh Ragavender</a> · <a href="/p/bostondynamics.html">Robert Playter</a> · <a href="/p/samcorcos.html">Sam Corcos</a> · <a href="/p/seppos.html">Seppo Säynäjäkangas</a> · <a href="/p/tonyzhao.html">Tony Zhao</a> · <a href="/p/tuomasvohlonen.html">Tuomas Vohlonen</a> · <a href="/p/willahmed.html">Will Ahmed</a> · <a href="/p/xiechen.html">Xie Chen</a> · <a href="/p/zhaotongyang.html">Zhao Tongyang</a> · <a href="/p/genesisai.html">Zhou Xian</a> · <a href="/p/jonyive.html">乔尼·艾维</a> · <a href="/p/xiangke.html">享刻智能 创始人</a> · <a href="/p/heshiyou.html">何世友</a> · <a href="/p/hejiabin.html">何嘉斌</a> · <a href="/p/xiaopenghe.html">何小鹏</a> · <a href="/p/yuhao.html">俞浩</a> · <a href="/p/liujingkang.html">刘靖康</a> · <a href="/p/unicus.html">千帜（UNICUS）创始人</a> · <a href="/p/yehongxin.html">叶洪新</a> · <a href="/p/jesselyu.html">吕骋</a> · <a href="/p/zhoujianping.html">周剑</a> · <a href="/p/tangwenxuan.html">唐文轩</a> · <a href="/p/songyan.html">姜哲源</a> · <a href="/p/sunzhaozhi.html">孙兆治</a> · <a href="/p/sunyang.html">孙洋</a> · <a href="/p/sunxuefeng.html">孙雪峰</a> · <a href="/p/bosworth.html">安德鲁·博斯沃思（Boz）</a> · <a href="/p/feldman.html">安德鲁·费尔德曼</a> · <a href="/p/palmerluckey.html">帕尔默·拉奇</a> · <a href="/p/panospanay.html">帕诺斯·帕奈</a> · <a href="/p/kepler.html">开普勒机器人 创始人</a> · <a href="/p/zhangjunbin.html">张峻彬</a> · <a href="/p/zhangwei.html">张巍</a> · <a href="/p/zhangbo.html">张波</a> · <a href="/p/zhangtao.html">张涛</a> · <a href="/p/zhangqingsen.html">张清森</a> · <a href="/p/bryanzhang.html">张迪</a> · <a href="/p/pengzhihui.html">彭志辉（稚晖君）</a> · <a href="/p/pengbin.html">彭斌</a> · <a href="/p/inmoceo.html">影目创始人</a> · <a href="/p/xuchi.html">徐驰</a> · <a href="/p/fadell.html">托尼·法德尔</a> · <a href="/p/xieyue.html">斜跃智能 创始人</a> · <a href="/p/wujie.html">无界方舟 创始人</a> · <a href="/p/changjing.html">昌敬</a> · <a href="/p/xingjiguangnian.html">星际光年 创始人</a> · <a href="/p/chenhunxian.html">晨昏线 创始人</a> · <a href="/p/pudu.html">普渡机器人 创始人</a> · <a href="/p/jamespark.html">朴贞赫</a> · <a href="/p/liyong.html">李勇</a> · <a href="/p/lihongwei.html">李宏伟</a> · <a href="/p/lizhichen.html">李志晨</a> · <a href="/p/lizexiang.html">李泽湘</a> · <a href="/p/lihongjing.html">李红京</a> · <a href="/p/yangjianbo.html">杨健勃</a> · <a href="/p/jijiashijie.html">极佳视界 创始人</a> · <a href="/p/linyuan.html">林源</a> · <a href="/p/liangxiaoling.html">梁霄凌</a> · <a href="/p/xianglu.html">橡鹿机器人 创始人</a> · <a href="/p/olwx.html">欧拉万象 创始人</a> · <a href="/p/wangyang.html">汪洋</a> · <a href="/p/wangtao.html">汪滔</a> · <a href="/p/wangtaom.html">汪韬</a> · <a href="/p/hongxiaoping.html">洪小平</a> · <a href="/p/langzhao.html">浪爪智能 创始人</a> · <a href="/p/youyanji.html">游延筠</a> · <a href="/p/lingjitc.html">灵机天赐 创始人</a> · <a href="/p/flexiv.html">王世全</a> · <a href="/p/drobotics.html">王丛</a> · <a href="/p/wangxingxing.html">王兴兴</a> · <a href="/p/wangning.html">王宁</a> · <a href="/p/wangjianjun.html">王建军</a> · <a href="/p/xsquare.html">王潜</a> · <a href="/p/wangshengle.html">王生乐</a> · <a href="/p/wanglei.html">王雷</a> · <a href="/p/wangxiaoyi.html">王骁逸</a> · <a href="/p/wanghe.html">王鹤</a> · <a href="/p/xuanji.html">璇玑动力 创始人</a> · <a href="/p/ganjie.html">甘洁</a> · <a href="/p/tianli.html">田力</a> · <a href="/p/shijun.html">石峻</a> · <a href="/p/shijinbo.html">石金博</a> · <a href="/p/poke.html">破壳机器人 创始人</a> · <a href="/p/zhushanming.html">祝铭明</a> · <a href="/p/chenghao.html">程昊</a> · <a href="/p/suleyman.html">穆斯塔法·苏莱曼</a> · <a href="/p/octopus.html">章鱼动力 创始人</a> · <a href="/p/luoyuanjue.html">罗元觉</a> · <a href="/p/huxiaohe.html">胡效赫</a> · <a href="/p/ruoban.html">若伴智能 创始人</a> · <a href="/p/roboparty.html">萝博派对 创始人</a> · <a href="/p/donghongguang.html">董红光</a> · <a href="/p/xuelijun.html">薛立君</a> · <a href="/p/yuanqian.html">袁谦</a> · <a href="/p/carlpei.html">裴宇</a> · <a href="/p/jamesdyson.html">詹姆斯·戴森</a> · <a href="/p/xugao.html">许高 Nathan</a> · <a href="/p/rockwell.html">迈克·罗克韦尔</a> · <a href="/p/mechmind.html">邵天兰</a> · <a href="/p/zhengyong.html">郑勇</a> · <a href="/p/guorenjie.html">郭人杰</a> · <a href="/p/ai2robotics.html">郭彦东</a> · <a href="/p/osterloh.html">里克·奥斯特洛</a> · <a href="/p/jinlinglin.html">金凌琳</a> · <a href="/p/zhongbo.html">钟波</a> · <a href="/p/zhongzhifeng.html">钟质峰</a> · <a href="/p/qiandongqi.html">钱东奇</a> · <a href="/p/yuexingtong.html">阅星曈 创始人</a> · <a href="/p/yangmeng.html">阳萌</a> · <a href="/p/chenyilun.html">陈亦伦</a> · <a href="/p/chenjunbo.html">陈俊波</a> · <a href="/p/agilerobots.html">陈兆芃</a> · <a href="/p/chenxuedong.html">陈学栋</a> · <a href="/p/chenyuqi.html">陈宇奇</a> · <a href="/p/chenjianyu.html">陈建宇</a> · <a href="/p/zhipai.html">陈逸奇</a> · <a href="/p/taoye.html">陶冶</a> · <a href="/p/taoshizheng.html">陶师正</a> · <a href="/p/zerith.html">零次方 创始人</a> · <a href="/p/hanfengtao.html">韩峰涛</a> · <a href="/p/gujie.html">顾捷</a> · <a href="/p/xlean.html">颗粒进化（xLean）创始人</a> · <a href="/p/maxiao.html">马啸</a> · <a href="/p/gaowangshu.html">高望书</a> · <a href="/p/minkao.html">高民环</a> · <a href="/p/gaolufeng.html">高禄峰</a> · <a href="/p/gaobingqiang.html">高秉强</a> · <a href="/p/gaojiyuang.html">高继扬</a> · <a href="/p/weijidong.html">魏基栋</a> · <a href="/p/huangwang.html">黄汪</a></nav></details><!--SITE_INDEX_END-->
 </body>
 </html>

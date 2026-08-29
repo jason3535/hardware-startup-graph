@@ -1,0 +1,1242 @@
+{
+ "_说明": "硬件创业图谱「有没有拿过 VC」待核清单。prior/confidence 是 Claude 的先验判断,不是已核实事实;核实后把 status 改成 bootstrapped/vc-backed/corp 并补 rounds。",
+ "_生成": "2026-08-29",
+ "_口径": "从 172 个组织里筛出「图谱中零融资信号」的 49 家,外加被文本误伤的 Dyson",
+ "companies": [
+  {
+   "org": "Dyson",
+   "category": "startup",
+   "prior": "likely-bootstrapped",
+   "confidence": "high",
+   "why": "James Dyson 家族 ~100% 持有，从未接受外部股权投资 —— 全表最确定的一个。⚠️ 它曾被文本筛选误伤：bio 里一句 'Investing heavily in robotics' 命中了 invest,差点从名单里消失，是发现这套筛法不可靠的关键案例",
+   "verify": "核实家族持股比例即可，结论基本不会变",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "jamesdyson",
+     "name": "James Dyson",
+     "zh": "",
+     "title": "Founder & Chief Engineer · Bagless Vacuum Pioneer"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "1993 Launched DC01 — first bagless cyclone vacuum",
+    "2016 Supersonic hair dryer, disrupted beauty hardware",
+    "2024 20M+ products sold, record year"
+   ]
+  },
+  {
+   "org": "Polar",
+   "category": "startup",
+   "prior": "likely-bootstrapped",
+   "confidence": "medium",
+   "why": "Säynäjäkangas 家族持有的芬兰公司(1977)，长期未上市未融资",
+   "verify": "查是否仍为家族全资",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "seppos",
+     "name": "Seppo Säynäjäkangas",
+     "zh": "",
+     "title": "Founder of Polar Electro · Heart Rate Monitor Pioneer"
+    }
+   ],
+   "field": [
+    "consumer",
+    "health",
+    "wearable"
+   ],
+   "milestones": [
+    "1977 Wireless HR monitor invented",
+    "1982 Polar Sport Tester PE2000 (consumer)",
+    "2024 Polar Vantage V3"
+   ]
+  },
+  {
+   "org": "Teenage Engineering",
+   "category": "startup",
+   "prior": "likely-bootstrapped",
+   "confidence": "medium",
+   "why": "瑞典独立公司，2005 年由 4 人创办，未见任何 VC 轮次；与 Nothing 是合作/创意关系，不是被投",
+   "verify": "查瑞典公司登记(Bolagsverket)的股东结构",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "jesperkouthoofd",
+     "name": "Jesper Kouthoofd",
+     "zh": "",
+     "title": "Founder & CEO · Nothing Creative Lead"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2011 OP-1 synthesizer — design icon",
+    "2021 Named Nothing Creative Lead, defined product language",
+    "2023 Designed Rabbit R1 hardware"
+   ]
+  },
+  {
+   "org": "AEKE",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "智能家庭健身，规模小",
+   "verify": "查是否有天使/A 轮",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "zhongzhifeng",
+     "name": "Zhong Zhifeng",
+     "zh": "",
+     "title": "Co-founder of AEKE · Smart Home Gym"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2024 AEKE K1 — $1.4M Kickstarter",
+    "2026 AEKE Smart Home Gym launch"
+   ]
+  },
+  {
+   "org": "Aiper",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "泳池机器人，出海品牌，现金流型",
+   "verify": "★优先：查是否有融资",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "wangyang",
+     "name": "Wang Yang",
+     "zh": "",
+     "title": "Founder & CEO of Aiper · Pool Robot Global #1 Online"
+    }
+   ],
+   "field": [
+    "robotics",
+    "smart-home"
+   ],
+   "milestones": [
+    "2019 Aiper wireless pool robots launched",
+    "2025 ~1B yuan round with Fluidra, global #1 online"
+   ]
+  },
+  {
+   "org": "Baseus",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "倍思，深圳消费电子，跨境电商起家、现金流好 —— 这类最有可能是自有资金滚出来的，但也可能后期引入过战投",
+   "verify": "★优先：查工商股东穿透 + 是否有战投",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "heshiyou",
+     "name": "He Shiyou",
+     "zh": "",
+     "title": "Founder of Baseus"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2018 Baseus GaN #1",
+    "2025 Baseus vs Anker"
+   ]
+  },
+  {
+   "org": "Chenhunxian",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "chenhunxian",
+     "name": "Chenhunxian Founder",
+     "zh": "",
+     "title": "Founder · Huawei Pangu Core Team"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 GCWM1 world model"
+   ]
+  },
+  {
+   "org": "Coros",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "高驰，运动手表，东莞",
+   "verify": "★优先：查早期是否融过",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "davidyang",
+     "name": "David Yang",
+     "zh": "",
+     "title": "Founder of Coros · Garmin Challenger from China"
+    }
+   ],
+   "field": [
+    "consumer",
+    "health"
+   ],
+   "milestones": [
+    "2014 Coros founded",
+    "2021 VERTIX 2 (60-day battery)",
+    "2024 PACE 3 budget endurance watch",
+    "2025 发布 PACE 4:32 克超轻 AMOLED 跑表,249 美元,登多家外媒年度最佳预算跑表榜"
+   ]
+  },
+  {
+   "org": "Lingji Tianci",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "lingjitc",
+     "name": "Lingji Tianci Founder",
+     "zh": "",
+     "title": "Founder · Ex-Kaishu Storytelling COO · Split-form AI Toy"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2026 Split-form AI children's hardware"
+   ]
+  },
+  {
+   "org": "Photon Leap",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "yuanqian",
+     "name": "Yuan Qian",
+     "zh": "",
+     "title": "President of Photon Leap"
+    }
+   ],
+   "field": [
+    "consumer",
+    "drones"
+   ],
+   "milestones": [
+    "2025 Photon Leap AI camera"
+   ]
+  },
+  {
+   "org": "Poke Robot",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "poke",
+     "name": "Poke Robot Founder",
+     "zh": "",
+     "title": "Founder · Ex-XingHaiTu Co-founder · Tsinghua IIIS Adjunct Prof"
+    }
+   ],
+   "field": [
+    "robotics",
+    "smart-home"
+   ],
+   "milestones": [
+    "2026 Poke home robot angel"
+   ]
+  },
+  {
+   "org": "Ruoban Intelligence",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "ruoban",
+     "name": "Ruoban Founder",
+     "zh": "",
+     "title": "Founder · Ex-Xiaomi Tech Godfather · Lei Jun's Bunkmate"
+    }
+   ],
+   "field": [
+    "robotics",
+    "smart-home"
+   ],
+   "milestones": [
+    "2026 Ruoban home embodied robot"
+   ]
+  },
+  {
+   "org": "Ruochuang Tech",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "hongxiaoping",
+     "name": "Hong Xiaoping",
+     "zh": "",
+     "title": "Founder of Ruochuang · Ex-DJI LiDAR Chief"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2025 Ruochuang smart electric wheelchair"
+   ]
+  },
+  {
+   "org": "Snapmaker",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "Kickstarter 创下 3D 打印纪录起家 —— 众筹≠股权融资，这家是「靠预售现金流起步」的典型，但之后是否引入 VC 不清楚",
+   "verify": "★优先：查众筹之后有没有股权轮",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "chenxuedong",
+     "name": "Chen Xuedong",
+     "zh": "",
+     "title": "Founder of Snapmaker · Kickstarter 3D Print Record"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2017 Snapmaker 1st Kickstarter $2.27M",
+    "2025 U1 Kickstarter $20.6M global record, B round Hillhouse+Meituan"
+   ]
+  },
+  {
+   "org": "Species Origin",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "linyuan",
+     "name": "Lin Yuan",
+     "zh": "",
+     "title": "Founder of Species Origin · Ex-DJI Senior Engineer"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2024 Species Origin high-speed hair dryer"
+   ]
+  },
+  {
+   "org": "Timekettle",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "时空壶，翻译硬件，出海",
+   "verify": "★优先：查轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "tianli",
+     "name": "Tian Li",
+     "zh": "",
+     "title": "Founder of Timekettle · AI Translation Pioneer"
+    }
+   ],
+   "field": [
+    "consumer",
+    "wearable"
+   ],
+   "milestones": [
+    "2019 Timekettle WT2",
+    "2024 Timekettle W4 Pro",
+    "2025 Babel OS"
+   ]
+  },
+  {
+   "org": "UNICUS",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "unicus",
+     "name": "UNICUS Founder",
+     "zh": "",
+     "title": "Founder · CUHK Graphics PhD · Ex-DJI Smart Manufacturing"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2026 LEGO Maker brick model"
+   ]
+  },
+  {
+   "org": "Wujie Ark",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "wujie",
+     "name": "Wujie Ark Founder",
+     "zh": "",
+     "title": "Founder · MIT TR35 PhD · EVA OS"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 EVA OS + EVA PI"
+   ]
+  },
+  {
+   "org": "Xiangke Intelligence",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xiangke",
+     "name": "Xiangke Founder",
+     "zh": "",
+     "title": "Founder · 90s Serial Entrepreneur · Restaurant + Hotel"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Xiangke A round 150M"
+   ]
+  },
+  {
+   "org": "Xianglu Robotics",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xianglu",
+     "name": "Xianglu Founder",
+     "zh": "",
+     "title": "Founder · Ex-Meituan S-team + Qunar + Shangri-La CTO"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Xianglu smart cooking robot"
+   ]
+  },
+  {
+   "org": "Xiaoshui Smart",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "sunxuefeng",
+     "name": "Sun Xuefeng",
+     "zh": "",
+     "title": "Founder of Xiaoshui Smart · AI Children's Watch"
+    }
+   ],
+   "field": [
+    "consumer",
+    "wearable"
+   ],
+   "milestones": [
+    "2025 AI children's watch — 1M+ units/yr, DeepSeek integrated"
+   ]
+  },
+  {
+   "org": "Xieyue Intelligence",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xieyue",
+     "name": "Xieyue Founder",
+     "zh": "",
+     "title": "Founder · Ex-Li Auto AI Chief Scientist · Ex-Li Auto Product Lead"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Xieyue consumer embodied robot"
+   ]
+  },
+  {
+   "org": "Xingji Guangnian",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xingjiguangnian",
+     "name": "Xingji Guangnian Founder",
+     "zh": "",
+     "title": "Founder · Post-95s Tsinghua + HKU + HIT · Dexterous Hand"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Cable+direct dual-track dexterous hand"
+   ]
+  },
+  {
+   "org": "Xuanji Power",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xuanji",
+     "name": "Xuanji Power Founder",
+     "zh": "",
+     "title": "Founder · DJI Alumni · Full-stack Components"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Xuanji Pre-A hundreds of millions"
+   ]
+  },
+  {
+   "org": "Yuexingtong",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "yuexingtong",
+     "name": "Yuexingtong Founder",
+     "zh": "",
+     "title": "Founder · Serial Entrepreneur · AI E-paper Sub-screen"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2026 AI e-paper sub-screen for phones"
+   ]
+  },
+  {
+   "org": "Zerith",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "zerith",
+     "name": "Zerith Founder",
+     "zh": "",
+     "title": "Founder · Tsinghua Post-2000s · ZERITH-V2 Brain-like Architecture"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 ZERITH-V0 / V2"
+   ]
+  },
+  {
+   "org": "Zheyue Tech",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "shijun",
+     "name": "Shi Jun",
+     "zh": "",
+     "title": "Founder of Zheyue · DJI Employee #6 · eVTOL"
+    }
+   ],
+   "field": [
+    "drones"
+   ],
+   "milestones": [
+    "2024 Zheyue manned flying vehicle prototype"
+   ]
+  },
+  {
+   "org": "xLean",
+   "category": "startup",
+   "prior": "unknown",
+   "confidence": "low",
+   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
+   "verify": "查种子/天使轮 + 补创始人真名",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xlean",
+     "name": "xLean Founder",
+     "zh": "",
+     "title": "Founder · Post-2000s · Dual-form Cleaning Robot"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics",
+    "smart-home"
+   ],
+   "milestones": [
+    "2026 xLean dual-form cleaning robot"
+   ]
+  },
+  {
+   "org": "AgileX Robotics",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "松灵机器人，多轮融资",
+   "verify": "补轮次与投资方",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "weijidong",
+     "name": "Wei Jidong",
+     "zh": "",
+     "title": "Founder of AgileX · Ex-DJI"
+    }
+   ],
+   "field": [
+    "robotics"
+   ],
+   "milestones": [
+    "2019 AgileX SCOUT",
+    "2023 AgileX RANGER MINI"
+   ]
+  },
+  {
+   "org": "BrainCo (强脑科技)",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "多轮融资，独角兽",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "hanbicheng",
+     "name": "Han Bicheng",
+     "zh": "",
+     "title": "Founder & CEO of BrainCo"
+    }
+   ],
+   "field": [
+    "health",
+    "robotics",
+    "wearable"
+   ],
+   "milestones": [
+    "2015 哈佛创办 BrainCo",
+    "2019 智能仿生手发布",
+    "2023 仿生腿获 FDA 注册"
+   ]
+  },
+  {
+   "org": "Framework Computer",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "Series A + B 已公开",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "niravpatel",
+     "name": "Nirav Patel",
+     "zh": "",
+     "title": "Founder & CEO · Modular Laptop Pioneer"
+    }
+   ],
+   "field": [
+    "consumer",
+    "overseas"
+   ],
+   "milestones": [
+    "2012 Founding Head of Hardware, Oculus VR",
+    "2020 Founded Framework Computer",
+    "2025 Framework Desktop launched, multi-product line"
+   ]
+  },
+  {
+   "org": "Leju Robotics",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "乐聚机器人，多轮",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "lengxiaokun",
+     "name": "Leng Xiaokun",
+     "zh": "",
+     "title": "Founder & Chairman of Leju · KUAVO Humanoid"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2023 KUAVO (Kuafu) full-size humanoid",
+    "2025 100th full-size humanoid delivered"
+   ]
+  },
+  {
+   "org": "Mech-Mind",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "梅卡曼德，红杉/美团/IDG 等多轮",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "mechmind",
+     "name": "Shao Tianlan",
+     "zh": "",
+     "title": "Founder & CEO of Mech-Mind (梅卡曼德) · 3D Vision + Robot AI"
+    }
+   ],
+   "field": [
+    "robotics"
+   ],
+   "milestones": [
+    "2016 Founded Mech-Mind (3D vision + robot AI)",
+    "2026 17,000+ deployed; #1 share 5 years running"
+   ]
+  },
+  {
+   "org": "Ultrahuman",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "印度智能戒指，Series B",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "mohitkumar",
+     "name": "Mohit Kumar",
+     "zh": "",
+     "title": "Co-founder & CEO of Ultrahuman · India Smart Ring"
+    }
+   ],
+   "field": [
+    "consumer",
+    "wearable"
+   ],
+   "milestones": [
+    "2022 Ultrahuman Ring Air — no-subscription",
+    "2025 Ultrahuman Home + Blood Vision",
+    "2025 viO HealthTech acquisition"
+   ]
+  },
+  {
+   "org": "Dangbei",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "当贝，投影仪，有融资",
+   "verify": "查轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "jinlinglin",
+     "name": "Jin Linglin",
+     "zh": "",
+     "title": "Founder & CEO of Dangbei · China Projector #1 Brand"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2013 Founded Dangbei",
+    "2025 Laser projector 50%+ market share, 8 new products"
+   ]
+  },
+  {
+   "org": "Kepler Robotics",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "开普勒机器人，有融资",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "kepler",
+     "name": "Kepler Founder",
+     "zh": "",
+     "title": "Founder · VTLA Force-Tactile Native Data"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 VTLA-native force-tactile data"
+   ]
+  },
+  {
+   "org": "Laifen",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "徕芬，有过融资(具体轮次待查)",
+   "verify": "查轮次/投资方",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "yehongxin",
+     "name": "Ye Hongxin",
+     "zh": "",
+     "title": "Founder of Laifen · Dyson Challenger"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2021 Laifen LF03 hair dryer",
+    "2025 Laifen Swift 4 CES 2026",
+    "2025 Laifen 1st flagship Shenzhen"
+   ]
+  },
+  {
+   "org": "OrionStar",
+   "category": "corp",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "猎豹移动(NYSE:CMCM)孵化，另有外部融资",
+   "verify": "查猎豹持股比例 + 外部轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "fusheng",
+     "name": "Fu Sheng",
+     "zh": "",
+     "title": "Chairman of OrionStar · Cheetah Mobile CEO"
+    }
+   ],
+   "field": [
+    "consumer",
+    "robotics"
+   ],
+   "milestones": [
+    "2016 Founded OrionStar AI robots",
+    "2025 OrionStar integrates DeepSeek"
+   ]
+  },
+  {
+   "org": "Reflex Robotics",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "美国机器人早期公司，种子轮背景",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "ragavender",
+     "name": "Ritesh Ragavender",
+     "zh": "",
+     "title": "Co-founder & CEO of Reflex Robotics"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "overseas",
+    "robotics"
+   ],
+   "milestones": [
+    "2026 Reflex humanoid pilots (GXO); first LATAM plant"
+   ]
+  },
+  {
+   "org": "Songyan (Noetix)",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "松延动力，2025 年多轮",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "songyan",
+     "name": "Jiang Zheyuan",
+     "zh": "",
+     "title": "Founder of Songyan Power (松延动力) · Sub-$1.4K Humanoid"
+    }
+   ],
+   "field": [
+    "consumer",
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2025 Bumi (小布米) — sub-¥10K humanoid",
+    "2026 Targets 10,000+ units; consumer humanoid"
+   ]
+  },
+  {
+   "org": "Viaim (Future Intelligence)",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "未来智能，讯飞系背景",
+   "verify": "查轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "maxiao",
+     "name": "Ma Xiao",
+     "zh": "",
+     "title": "Founder & CEO of Viaim · Ex-iFlytek Smart Earphone GM"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2021 Viaim AI meeting earphone brand (spin-out from iFlytek)",
+    "2025 100M yuan A round · Ant Group lead · viaim Agent pivot",
+    "2026 100M+ yuan A+ round · Transsion partnership · AI Agent hardware"
+   ]
+  },
+  {
+   "org": "Weilan (AlphaDog)",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "蔚蓝科技，有融资",
+   "verify": "查轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "liuweichao",
+     "name": "Liu Weichao",
+     "zh": "",
+     "title": "Founder of Weilan · AlphaDog Quadruped Robot"
+    }
+   ],
+   "field": [
+    "consumer",
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2020 AlphaDog C/E series quadruped",
+    "2023 100M+ yuan A1 round"
+   ]
+  },
+  {
+   "org": "YouLu Robot",
+   "category": "startup",
+   "prior": "likely-vc",
+   "confidence": "medium",
+   "why": "有鹿机器人，有融资",
+   "verify": "查轮次",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "chenjunbo",
+     "name": "Chen Junbo",
+     "zh": "",
+     "title": "Ex-Alibaba DAMO Academy · Xiao Man Lu"
+    }
+   ],
+   "field": [
+    "robotics",
+    "smart-home"
+   ],
+   "milestones": [
+    "2024 YouLu outdoor cleaning robot"
+   ]
+  },
+  {
+   "org": "Amazon (Devices & Services)",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "大厂部门",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "panospanay",
+     "name": "Panos Panay",
+     "zh": "",
+     "title": "Head of Amazon Devices · Ex-Microsoft Surface Chief"
+    }
+   ],
+   "field": [
+    "consumer",
+    "smart-home",
+    "wearable"
+   ],
+   "milestones": [
+    "2023 Joins Amazon to lead Devices & Services",
+    "2026 Alexa+ devices; premium tier + 'Transformer' AI phone"
+   ]
+  },
+  {
+   "org": "Apple",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "大厂部门(Vision Pro→Siri)",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "rockwell",
+     "name": "Mike Rockwell",
+     "zh": "",
+     "title": "Apple · Vision Pro Creator → Siri Lead"
+    }
+   ],
+   "field": [
+    "ar-vr",
+    "consumer"
+   ],
+   "milestones": [
+    "2024 Apple Vision Pro ships",
+    "2026 Leads LLM-based Siri overhaul (iOS 27); smart-home hub gated on it"
+   ]
+  },
+  {
+   "org": "Boston Dynamics",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "现代汽车全资；历史上归 Google→SoftBank,始终是产业资本不是 VC",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "bostondynamics",
+     "name": "Robert Playter",
+     "zh": "",
+     "title": "CEO of Boston Dynamics · Electric Atlas"
+    }
+   ],
+   "field": [
+    "humanoid",
+    "overseas",
+    "robotics"
+   ],
+   "milestones": [
+    "2024 All-electric Atlas revealed",
+    "2026 Production Atlas ships to Hyundai & DeepMind"
+   ]
+  },
+  {
+   "org": "Microsoft AI",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "大厂部门",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "suleyman",
+     "name": "Mustafa Suleyman",
+     "zh": "",
+     "title": "CEO of Microsoft AI · Copilot & MAI Models"
+    }
+   ],
+   "field": [
+    "consumer"
+   ],
+   "milestones": [
+    "2024 Becomes CEO of Microsoft AI",
+    "2026 MAI model family + Copilot super app (Build 2026)"
+   ]
+  },
+  {
+   "org": "Spotify",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "上市公司(NYSE:SPOT)",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "gustav",
+     "name": "Gustav Söderström",
+     "zh": "",
+     "title": "Co-President & Chief Product/Technology Officer"
+    }
+   ],
+   "field": [
+    "ai-infra",
+    "consumer"
+   ],
+   "milestones": [
+    "2009 加入 Spotify 任 CPO",
+    "2015 Discover Weekly 发布",
+    "2022 出任联席总裁",
+    "2026 出任 Spotify 联席 CEO(与 Alex Norström);Daniel Ek 转任执行董事长"
+   ]
+  },
+  {
+   "org": "XPeng Robotics",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "high",
+   "why": "小鹏汽车(NYSE:XPEV)体内业务",
+   "verify": "",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "xiaopenghe",
+     "name": "He Xiaopeng",
+     "zh": "",
+     "title": "XPeng CEO · Iron Humanoid"
+    }
+   ],
+   "field": [
+    "consumer",
+    "humanoid",
+    "robotics"
+   ],
+   "milestones": [
+    "2024 XPeng Iron humanoid",
+    "2026 VLA model; IRON mass-production push (1,000+/mo) + Land Carrier"
+   ]
+  },
+  {
+   "org": "Suunto",
+   "category": "corp",
+   "prior": "n/a",
+   "confidence": "medium",
+   "why": "已被 Amer Sports 并购，现属安踏牵头财团；1936 年创立时的自筹状态早已不成立",
+   "verify": "确认当前控股结构",
+   "status": "unverified",
+   "people": [
+    {
+     "id": "tuomasvohlonen",
+     "name": "Tuomas Vohlonen",
+     "zh": "",
+     "title": "Founder of Suunto · Finnish Sports Watch (1936)"
+    }
+   ],
+   "field": [
+    "consumer",
+    "health"
+   ],
+   "milestones": [
+    "1936 Suunto founded",
+    "1965 First dive computer",
+    "2022 Acquired by Liesheng Group (China)"
+   ]
+  }
+ ]
+}
