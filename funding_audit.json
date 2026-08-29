@@ -84,10 +84,10 @@
    "org": "AEKE",
    "category": "startup",
    "prior": "unknown",
-   "confidence": "low",
-   "why": "智能家庭健身，规模小",
-   "verify": "查是否有天使/A 轮",
-   "status": "unverified",
+   "confidence": "high",
+   "why": "✅ 已核查,确实查不到公开融资信息。趣动未来(深圳)科技,钟质峰与龙春泠 2022 年共同创立。只查到 Kickstarter 众筹(2024-12 起 40 天筹超 1000 万元)—— 众筹是预售不是股权融资。待查是否有天使/A 轮。",
+   "verify": "工商股东穿透",
+   "status": "unknown",
    "people": [
     {
      "id": "zhongzhifeng",
@@ -102,16 +102,18 @@
    "milestones": [
     "2024 AEKE K1 — $1.4M Kickstarter",
     "2026 AEKE Smart Home Gym launch"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": []
   },
   {
    "org": "Aiper",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "泳池机器人，出海品牌，现金流型",
-   "verify": "★优先：查是否有融资",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:3 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "wangyang",
@@ -127,16 +129,47 @@
    "milestones": [
     "2019 Aiper wireless pool robots launched",
     "2025 ~1B yuan round with Fluidra, global #1 online"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "A",
+     "amount": "超 1500 万美元",
+     "date": "2022",
+     "investors": [
+      "XVC",
+      "欣旺达"
+     ]
+    },
+    {
+     "round": "B / B+",
+     "amount": "超 6000 万美元",
+     "date": "2024-07",
+     "investors": [
+      "招银国际",
+      "复星锐正",
+      "蜂巧资本",
+      "XVC"
+     ]
+    },
+    {
+     "round": "战略(约 27% 股权)",
+     "amount": "未披露",
+     "date": "2025-04",
+     "investors": [
+      "Fluidra"
+     ]
+    }
    ]
   },
   {
    "org": "Baseus",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "倍思，深圳消费电子，跨境电商起家、现金流好 —— 这类最有可能是自有资金滚出来的，但也可能后期引入过战投",
-   "verify": "★优先：查工商股东穿透 + 是否有战投",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:2 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "heshiyou",
@@ -151,16 +184,41 @@
    "milestones": [
     "2018 Baseus GaN #1",
     "2025 Baseus vs Anker"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "A",
+     "amount": "数亿元",
+     "date": "2023-04",
+     "investors": [
+      "深创投",
+      "中投证券资本",
+      "越秀产业基金",
+      "高榕资本"
+     ]
+    },
+    {
+     "round": "A+",
+     "amount": "未披露",
+     "date": "2023-12",
+     "investors": [
+      "深创投",
+      "建发新兴投资",
+      "高榕资本",
+      "越秀产业基金"
+     ]
+    }
    ]
   },
   {
    "org": "Chenhunxian",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "chenhunxian",
@@ -175,16 +233,25 @@
    ],
    "milestones": [
     "2026 GCWM1 world model"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使(月内两轮)",
+     "amount": "累计近亿元",
+     "date": "2026-04",
+     "investors": []
+    }
    ]
   },
   {
    "org": "Coros",
    "category": "startup",
    "prior": "unknown",
-   "confidence": "low",
-   "why": "高驰，运动手表，东莞",
-   "verify": "★优先：查早期是否融过",
-   "status": "unverified",
+   "confidence": "high",
+   "why": "✅ 已核查,确实查不到公开融资信息。高驰运动科技(深圳/广东),2014 年成立(原名深圳市远峰运动科技),注册资本 550 万元。两次检索均无融资轮次或投资方。待查工商股东穿透。",
+   "verify": "工商股东穿透",
+   "status": "unknown",
    "people": [
     {
      "id": "davidyang",
@@ -202,16 +269,18 @@
     "2021 VERTIX 2 (60-day battery)",
     "2024 PACE 3 budget endurance watch",
     "2025 发布 PACE 4:32 克超轻 AMOLED 跑表,249 美元,登多家外媒年度最佳预算跑表榜"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": []
   },
   {
    "org": "Lingji Tianci",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "lingjitc",
@@ -225,16 +294,30 @@
    ],
    "milestones": [
     "2026 Split-form AI children's hardware"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使等两轮",
+     "amount": "累计数千万元",
+     "date": "2025—2026",
+     "investors": [
+      "德联资本",
+      "小恐龙基金",
+      "瑞晟基金"
+     ]
+    }
+   ],
+   "founders_found": "杨冰"
   },
   {
    "org": "Photon Leap",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "yuanqian",
@@ -249,16 +332,28 @@
    ],
    "milestones": [
     "2025 Photon Leap AI camera"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使",
+     "amount": "亿元级",
+     "date": "2025",
+     "investors": [
+      "追创创投"
+     ]
+    }
+   ],
+   "founders_found": "袁谦(总裁)"
   },
   {
    "org": "Poke Robot",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:3 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "poke",
@@ -273,16 +368,50 @@
    ],
    "milestones": [
     "2026 Poke home robot angel"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "种子",
+     "amount": "未披露",
+     "date": "2026-03",
+     "investors": [
+      "星海图"
+     ]
+    },
+    {
+     "round": "天使",
+     "amount": "数千万美元",
+     "date": "2026-04",
+     "investors": [
+      "云启资本",
+      "顺为资本",
+      "弘晖基金",
+      "小米战投",
+      "星海图",
+      "BV 百度风投",
+      "英诺天使",
+      "水木清华校友种子基金",
+      "东方嘉富"
+     ]
+    },
+    {
+     "round": "Pre-A",
+     "amount": "亿美元级",
+     "date": "2026-08",
+     "investors": []
+    }
+   ],
+   "founders_found": "许华哲"
   },
   {
    "org": "Ruoban Intelligence",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "ruoban",
@@ -297,16 +426,32 @@
    ],
    "milestones": [
     "2026 Ruoban home embodied robot"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "friends&family + 种子",
+     "amount": "未披露",
+     "date": "",
+     "investors": [
+      "英诺天使",
+      "创新工场",
+      "启赋资本",
+      "顺为资本",
+      "联想创投"
+     ]
+    }
+   ],
+   "founders_found": "崔宝秋"
   },
   {
    "org": "Ruochuang Tech",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:2 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "hongxiaoping",
@@ -321,16 +466,36 @@
    ],
    "milestones": [
     "2025 Ruochuang smart electric wheelchair"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "种子",
+     "amount": "未披露",
+     "date": "2024-07",
+     "investors": [
+      "硅谷 VC(美元)"
+     ]
+    },
+    {
+     "round": "Pre-A(Strutt)",
+     "amount": "累计数千万美元",
+     "date": "2025-11",
+     "investors": [
+      "Matter Venture Partners",
+      "Vertex Ventures"
+     ]
+    }
    ]
   },
   {
    "org": "Snapmaker",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "Kickstarter 创下 3D 打印纪录起家 —— 众筹≠股权融资，这家是「靠预售现金流起步」的典型，但之后是否引入 VC 不清楚",
-   "verify": "★优先：查众筹之后有没有股权轮",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:3 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "chenxuedong",
@@ -345,16 +510,52 @@
    "milestones": [
     "2017 Snapmaker 1st Kickstarter $2.27M",
     "2025 U1 Kickstarter $20.6M global record, B round Hillhouse+Meituan"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "A",
+     "amount": "数千万元",
+     "date": "2021-02",
+     "investors": [
+      "经纬中国",
+      "同创伟业"
+     ]
+    },
+    {
+     "round": "B",
+     "amount": "数亿元",
+     "date": "2025-12",
+     "investors": [
+      "高瓴创投",
+      "美团",
+      "顺为资本",
+      "美团龙珠",
+      "南山战新投",
+      "同创伟业",
+      "东证资本"
+     ]
+    },
+    {
+     "round": "C+",
+     "amount": "未披露",
+     "date": "2025-12",
+     "investors": [
+      "南山战新投",
+      "同创伟业",
+      "顺为资本"
+     ]
+    }
    ]
   },
   {
    "org": "Species Origin",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "linyuan",
@@ -368,16 +569,27 @@
    ],
    "milestones": [
     "2024 Species Origin high-speed hair dryer"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使",
+     "amount": "数百万元",
+     "date": "2018-05",
+     "investors": [
+      "个人投资者(基金 LP)"
+     ]
+    }
    ]
   },
   {
    "org": "Timekettle",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "时空壶，翻译硬件，出海",
-   "verify": "★优先：查轮次",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:2 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "tianli",
@@ -394,16 +606,36 @@
     "2019 Timekettle WT2",
     "2024 Timekettle W4 Pro",
     "2025 Babel OS"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "Pre-A",
+     "amount": "千万级",
+     "date": "2019-08",
+     "investors": [
+      "华睿信创投",
+      "今玺资本"
+     ]
+    },
+    {
+     "round": "A",
+     "amount": "数千万元",
+     "date": "2021-12",
+     "investors": [
+      "东方富海 · 国家中小企业发展基金"
+     ]
+    }
    ]
   },
   {
    "org": "UNICUS",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "unicus",
@@ -417,16 +649,26 @@
    ],
    "milestones": [
     "2026 LEGO Maker brick model"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "新一轮",
+     "amount": "数百万美元",
+     "date": "2026",
+     "investors": []
+    }
+   ],
+   "founders_found": "徐豪 / 李承"
   },
   {
    "org": "Wujie Ark",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "wujie",
@@ -441,16 +683,30 @@
    ],
    "milestones": [
     "2026 EVA OS + EVA PI"
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "Pre-A ×2",
+     "amount": "数亿元(一年内 4 轮累计数亿)",
+     "date": "2026-04",
+     "investors": [
+      "韶音 Shokz",
+      "国瑞源基金",
+      "恒松资本",
+      "上海天使会"
+     ]
+    }
    ]
   },
   {
    "org": "Xiangke Intelligence",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "xiangke",
@@ -465,16 +721,30 @@
    ],
    "milestones": [
     "2026 Xiangke A round 150M"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "A",
+     "amount": "1.5 亿元",
+     "date": "2026-04",
+     "investors": [
+      "九号公司(战略领投)",
+      "长沙东方私募基金",
+      "江苏国晟资本"
+     ]
+    }
+   ],
+   "founders_found": "陈震"
   },
   {
    "org": "Xianglu Robotics",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:3 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "xianglu",
@@ -489,16 +759,49 @@
    ],
    "milestones": [
     "2026 Xianglu smart cooking robot"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "Pre-A",
+     "amount": "数亿元",
+     "date": "2022-04",
+     "investors": [
+      "腾讯",
+      "IDG",
+      "源码资本"
+     ]
+    },
+    {
+     "round": "战略追投",
+     "amount": "2 亿元",
+     "date": "2024-07",
+     "investors": [
+      "京东集团"
+     ]
+    },
+    {
+     "round": "新一轮",
+     "amount": "3 亿元",
+     "date": "2026-04",
+     "investors": [
+      "亦庄国投产业升级基金",
+      "琥珀",
+      "九安",
+      "海棠"
+     ]
+    }
+   ],
+   "founders_found": "郭庆 / 杨建成"
   },
   {
    "org": "Xiaoshui Smart",
    "category": "startup",
    "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "confidence": "high",
+   "why": "✅ 已核查,确实查不到公开融资信息。小水智能,孙雪峰,AI 儿童手表。查到产品与展会信息,无融资披露。",
+   "verify": "工商股东穿透",
+   "status": "unknown",
    "people": [
     {
      "id": "sunxuefeng",
@@ -513,16 +816,18 @@
    ],
    "milestones": [
     "2025 AI children's watch — 1M+ units/yr, DeepSeek integrated"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": []
   },
   {
    "org": "Xieyue Intelligence",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "xieyue",
@@ -537,16 +842,29 @@
    ],
    "milestones": [
     "2026 Xieyue consumer embodied robot"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "首轮",
+     "amount": "未披露",
+     "date": "2026-04",
+     "investors": [
+      "元璟资本",
+      "理想汽车"
+     ]
+    }
+   ],
+   "founders_found": "陈伟 / 张骁"
   },
   {
    "org": "Xingji Guangnian",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:2 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "xingjiguangnian",
@@ -561,16 +879,38 @@
    ],
    "milestones": [
     "2026 Cable+direct dual-track dexterous hand"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "种子",
+     "amount": "千万级",
+     "date": "2024",
+     "investors": [
+      "峰瑞资本"
+     ]
+    },
+    {
+     "round": "Pre-A",
+     "amount": "累计过亿(18 个月 5 轮)",
+     "date": "2026-04",
+     "investors": [
+      "顺义科创",
+      "微星宁元",
+      "云时资本"
+     ]
+    }
+   ],
+   "founders_found": "位德浩"
   },
   {
    "org": "Xuanji Power",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:2 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "xuanji",
@@ -585,16 +925,38 @@
    ],
    "milestones": [
     "2026 Xuanji Pre-A hundreds of millions"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使",
+     "amount": "近亿元",
+     "date": "2025-12",
+     "investors": [
+      "御海资本",
+      "兰璞创投",
+      "步长家办"
+     ]
+    },
+    {
+     "round": "新一轮",
+     "amount": "数亿元(超募)",
+     "date": "2026-04",
+     "investors": [
+      "上汽创投"
+     ]
+    }
+   ],
+   "founders_found": "欧迪"
   },
   {
    "org": "Yuexingtong",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "yuexingtong",
@@ -608,16 +970,33 @@
    ],
    "milestones": [
     "2026 AI e-paper sub-screen for phones"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "天使→A 共五轮",
+     "amount": "累计超亿元",
+     "date": "2026-04",
+     "investors": [
+      "博裕创投",
+      "清流资本",
+      "希扬资本",
+      "小红书",
+      "经纬创投",
+      "顺为资本"
+     ]
+    }
+   ],
+   "founders_found": "胡宇沸"
   },
   {
    "org": "Zerith",
    "category": "startup",
-   "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "prior": "likely-vc",
+   "confidence": "high",
+   "why": "✅ 已核实:1 轮股权融资。",
+   "verify": "",
+   "status": "vc-backed",
    "people": [
     {
      "id": "zerith",
@@ -632,16 +1011,31 @@
    ],
    "milestones": [
     "2026 ZERITH-V0 / V2"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": [
+    {
+     "round": "新一轮",
+     "amount": "超亿元",
+     "date": "2026-04",
+     "investors": [
+      "润泽集团",
+      "宁波东力",
+      "杰理天使",
+      "平湖泽鑫"
+     ]
+    }
+   ],
+   "founders_found": "闵宇恒 / 程一"
   },
   {
    "org": "Zheyue Tech",
    "category": "startup",
    "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "confidence": "high",
+   "why": "✅ 已核查,确实查不到公开融资信息。喆越科技,石峻(大疆 6 号员工)eVTOL 项目。多次检索无任何公开融资或公司信息,可能极早期或名称有出入。",
+   "verify": "工商股东穿透",
+   "status": "unknown",
    "people": [
     {
      "id": "shijun",
@@ -655,16 +1049,18 @@
    ],
    "milestones": [
     "2024 Zheyue manned flying vehicle prototype"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": []
   },
   {
    "org": "xLean",
    "category": "startup",
    "prior": "unknown",
-   "confidence": "low",
-   "why": "2024-2026 新公司，图谱资料薄(部分连创始人真名都缺)。中国具身赛道热钱多，先验偏向融过，但无据",
-   "verify": "查种子/天使轮 + 补创始人真名",
-   "status": "unverified",
+   "confidence": "high",
+   "why": "✅ 已核查,确实查不到公开融资信息。未检索到有效信息。",
+   "verify": "工商股东穿透",
+   "status": "unknown",
    "people": [
     {
      "id": "xlean",
@@ -680,7 +1076,9 @@
    ],
    "milestones": [
     "2026 xLean dual-form cleaning robot"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查",
+   "rounds": []
   },
   {
    "org": "AgileX Robotics",
@@ -862,10 +1260,10 @@
    "org": "Kepler Robotics",
    "category": "startup",
    "prior": "likely-vc",
-   "confidence": "medium",
-   "why": "开普勒机器人，有融资",
+   "confidence": "high",
+   "why": "✅ 已核实:杨华;2026-04 A++ 亿元级,2026-05 被 A 股杭州科瑞电气 3 亿控股 41.57%",
    "verify": "",
-   "status": "unverified",
+   "status": "vc-backed",
    "people": [
     {
      "id": "kepler",
@@ -880,7 +1278,8 @@
    ],
    "milestones": [
     "2026 VTLA-native force-tactile data"
-   ]
+   ],
+   "verified": "2026-08-29 联网核查"
   },
   {
    "org": "Laifen",
@@ -1238,5 +1637,6 @@
     "2022 Acquired by Liesheng Group (China)"
    ]
   }
- ]
+ ],
+ "_更新": "2026-08-29 联网核查一轮后"
 }
