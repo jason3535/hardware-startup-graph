@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>极佳视界 创始人 Jijiashijie Founder · Jijiashijie | 智能硬件图谱</title>
-<meta name="description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。">
+<title>Jijiashijie Founder · Jijiashijie | 智能硬件图谱</title>
+<meta name="description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/jijiashijie.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/jijiashijie.html">
-<meta property="og:title" content="极佳视界 创始人 Jijiashijie Founder · 极佳视界创始人 · 90 后清华博士 · 估值破百亿">
-<meta property="og:description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。">
+<meta property="og:title" content="Jijiashijie Founder · Founder · Post-90s Tsinghua PhD · World Model · 10B Valuatio">
+<meta property="og:description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/jijiashijie.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="极佳视界 创始人 Jijiashijie Founder"><meta name="twitter:description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。">
+<meta name="twitter:title" content="Jijiashijie Founder"><meta name="twitter:description" content="90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/jijiashijie.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"极佳视界 创始人 Jijiashijie Founder","alternateName":"Jijiashijie Founder","jobTitle":"极佳视界创始人 · 90 后清华博士 · 估值破百亿","worksFor":{"@type":"Organization","name":"Jijiashijie"},"description":"90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。","url":"https://hardware.jasonlin.tech/p/jijiashijie.html","image":"https://hardware.jasonlin.tech/og/jijiashijie.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Jijiashijie Founder", "alternateName": "极佳视界 创始人", "jobTitle": "Founder · Post-90s Tsinghua PhD · World Model · 10B Valuation", "worksFor": {"@type": "Organization", "name": "Jijiashijie"}, "description": "90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。", "url": "https://hardware.jasonlin.tech/p/jijiashijie.html", "image": "https://hardware.jasonlin.tech/og/jijiashijie.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">JF</div>
-<h1><span class="i18n-zh">极佳视界 创始人 Jijiashijie Founder</span><span class="i18n-en">Jijiashijie Founder</span></h1>
+<img class="avatar" src="/assets/people/jijiashijie.jpg" alt="Jijiashijie Founder" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">极佳视界 创始人</span><span class="i18n-en">Jijiashijie Founder</span></h1>
 <p class="org">Jijiashijie</p>
 <p class="role"><span class="i18n-zh">极佳视界创始人 · 90 后清华博士 · 估值破百亿</span><span class="i18n-en">Founder · Post-90s Tsinghua PhD · World Model · 10B Valuation</span></p>
 <div class="fields"><span class="tag">robotics</span></div>
 <div class="bio i18n-zh">90 后清华博士。世界模型方向，GigaWorld 系列世界模型 + GigaBrain 系列 VLA 模型。2026 年 4 月完成近 15 亿元 B1 轮融资，估值突破百亿元人民币。</div><div class="bio i18n-en">Post-90s Tsinghua PhD. World model. GigaWorld series world models + GigaBrain series VLA models. B1 round of nearly 1.5B yuan, Apr 2026. Valuation breaks 10B yuan.</div>
-<a class="cta" href="/?node=jijiashijie"><span class="i18n-zh">在关系图谱中查看 极佳视界 创始人 →</span><span class="i18n-en">View Jijiashijie Founder in the graph →</span></a>
+<a class="cta" href="/?node=jijiashijie"><span class="i18n-zh">在关系图谱中查看 Jijiashijie Founder →</span><span class="i18n-en">View Jijiashijie Founder in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2026</span> GigaWorld + GigaBrain</li></ul>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
 <h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/chenjianyu.html"><b>陈建宇 Chen Jianyu</b><span>Tsinghua post-90s/00s embodied AI</span></a><a class="nbr" href="/p/wanghe.html"><b>王鹤 Wang He</b><span>World model + embodied AI peers</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>王丛 Wang Cong · D-Robotics | 智能硬件图谱</title>
-<meta name="description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。R…">
+<title>Wang Cong · D-Robotics | 智能硬件图谱</title>
+<meta name="description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RD…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/drobotics.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/drobotics.html">
-<meta property="og:title" content="王丛 Wang Cong · 地瓜机器人创始人兼 CEO · 机器人计算平台">
-<meta property="og:description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。R…">
+<meta property="og:title" content="Wang Cong · Founder &amp; CEO of D-Robotics (地瓜) · Robot Compute Platform">
+<meta property="og:description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RD…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/drobotics.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="王丛 Wang Cong"><meta name="twitter:description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。R…">
+<meta name="twitter:title" content="Wang Cong"><meta name="twitter:description" content="2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RD…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/drobotics.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"王丛 Wang Cong","alternateName":"Wang Cong","jobTitle":"地瓜机器人创始人兼 CEO · 机器人计算平台","worksFor":{"@type":"Organization","name":"D-Robotics"},"description":"2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。R…","url":"https://hardware.jasonlin.tech/p/drobotics.html","image":"https://hardware.jasonlin.tech/og/drobotics.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Wang Cong", "alternateName": "王丛", "jobTitle": "Founder & CEO of D-Robotics (地瓜) · Robot Compute Platform", "worksFor": {"@type": "Organization", "name": "D-Robotics"}, "description": "2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RD", "url": "https://hardware.jasonlin.tech/p/drobotics.html", "image": "https://hardware.jasonlin.tech/og/drobotics.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">WC</div>
-<h1><span class="i18n-zh">王丛 Wang Cong</span><span class="i18n-en">Wang Cong</span></h1>
+<img class="avatar" src="/assets/people/drobotics.jpg" alt="Wang Cong" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">王丛</span><span class="i18n-en">Wang Cong</span></h1>
 <p class="org">D-Robotics</p>
 <p class="role"><span class="i18n-zh">地瓜机器人创始人兼 CEO · 机器人计算平台</span><span class="i18n-en">Founder &amp; CEO of D-Robotics (地瓜) · Robot Compute Platform</span></p>
-<div class="fields"><span class="tag">robotics</span></div>
-<div class="bio i18n-zh">2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RDK（机器人开发套件）系列从 RDK X3/X5（10 TOPS）到 RDK S100（100 TOPS 单 SoC 算控一体），并计划 2026 年推出 500+ TOPS、承载端到端『AGI 型机器人』的高算力 SoC；核心 BPU 由地平线授权。已完成 A 轮 1 亿美元（2025.5）、B1 1.2 亿 + B2 1.5 亿美元（2026.3–4，滴滴、美团龙珠等参投），累计披露超 3.7 亿美元。</div><div class="bio i18n-en">Spun out of Horizon Robotics' robot division as an independent company in Jan 2024 (Shenzhen), D-Robotics is a 'picks-and-shovels' platform for embodied AI — a universal robot base spanning chips, algorithms, software and dev tools rather than building its own robot bodies. CEO Wang Cong (Beijing Univ of Technology CS, Wright State PhD; ex-Alibaba, co-founder of Memect) led Horizon's AIoT and robotics lines before the spin-off. Its RDK (Robot Developer Kit) line runs from RDK X3/X5 (10 TOPS) to the RDK S100 (100 TOPS, a single-SoC compute-and-control kit), with a 500+ TOPS SoC for end-to-end 'AGI robots' planned for 2026; the core BPU is licensed from Horizon. Raised a $100M Series A (May 2025), then B1 $120M + B2 $150M (Mar–Apr 2026, backers incl. Didi and Meituan's Longzhu), $370M+ disclosed to date.</div>
-<a class="cta" href="/?node=drobotics"><span class="i18n-zh">在关系图谱中查看 王丛 →</span><span class="i18n-en">View Wang Cong in the graph →</span></a>
+<div class="fields"><span class="tag">robotics</span><span class="tag">humanoid</span></div>
+<div class="bio i18n-zh">2024 年 1 月从地平线机器人事业部拆分独立（深圳南山），地瓜机器人定位具身智能的『卖水人』——做覆盖芯片+算法+软件+开发工具的机器人通用底座，而非自研本体。CEO 王丛（北京工业大学计算机本科、美国莱特州立大学博士；曾任职阿里、联创文因互联）拆分前在地平线负责 AIoT 与机器人事业部。RDK（机器人开发套件）系列从 RDK X3/X5（10 TOPS）到 RDK S100（100 TOPS 单 SoC 算控一体），并计划 2026 年推出 500+ TOPS、承载端到端『AGI 型机器人』的高算力 SoC；核心 BPU 由地平线授权。已完成 A 轮 1 亿美元（2025.5）、B1 1.2 亿 + B2 1.5 亿美元（2026.3–4，滴滴、美团龙珠等参投），累计披露超 3.7 亿美元。</div><div class="bio i18n-en">Spun out of Horizon Robotics&#x27; robot division as an independent company in Jan 2024 (Shenzhen), D-Robotics is a &#x27;picks-and-shovels&#x27; platform for embodied AI — a universal robot base spanning chips, algorithms, software and dev tools rather than building its own robot bodies. CEO Wang Cong (Beijing Univ of Technology CS, Wright State PhD; ex-Alibaba, co-founder of Memect) led Horizon&#x27;s AIoT and robotics lines before the spin-off. Its RDK (Robot Developer Kit) line runs from RDK X3/X5 (10 TOPS) to the RDK S100 (100 TOPS, a single-SoC compute-and-control kit), with a 500+ TOPS SoC for end-to-end &#x27;AGI robots&#x27; planned for 2026; the core BPU is licensed from Horizon. Raised a $100M Series A (May 2025), then B1 $120M + B2 $150M (Mar–Apr 2026, backers incl. Didi and Meituan&#x27;s Longzhu), $370M+ disclosed to date.</div>
+<a class="cta" href="/?node=drobotics"><span class="i18n-zh">在关系图谱中查看 Wang Cong →</span><span class="i18n-en">View Wang Cong in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> Spun out of Horizon as independent D-Robotics</li><li><span class="y">2026</span> RDK S100 (100 TOPS); $270M B round</li></ul>
-
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>何世友 He Shiyou · Baseus | 智能硬件图谱</title>
-<meta name="description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。">
+<title>He Shiyou · Baseus | 智能硬件图谱</title>
+<meta name="description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/heshiyou.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/heshiyou.html">
-<meta property="og:title" content="何世友 He Shiyou · 倍思创始人 · 安克最大对手">
-<meta property="og:description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。">
+<meta property="og:title" content="He Shiyou · Founder of Baseus">
+<meta property="og:description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/heshiyou.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="何世友 He Shiyou"><meta name="twitter:description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。">
+<meta name="twitter:title" content="He Shiyou"><meta name="twitter:description" content="广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/heshiyou.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"何世友 He Shiyou","alternateName":"He Shiyou","jobTitle":"倍思创始人 · 安克最大对手","worksFor":{"@type":"Organization","name":"Baseus"},"description":"广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。","url":"https://hardware.jasonlin.tech/p/heshiyou.html","image":"https://hardware.jasonlin.tech/og/heshiyou.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "He Shiyou", "alternateName": "何世友", "jobTitle": "Founder of Baseus", "worksFor": {"@type": "Organization", "name": "Baseus"}, "description": "广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。", "url": "https://hardware.jasonlin.tech/p/heshiyou.html", "image": "https://hardware.jasonlin.tech/og/heshiyou.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">HS</div>
-<h1><span class="i18n-zh">何世友 He Shiyou</span><span class="i18n-en">He Shiyou</span></h1>
+<img class="avatar" src="/assets/people/heshiyou.jpg" alt="He Shiyou" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">何世友</span><span class="i18n-en">He Shiyou</span></h1>
 <p class="org">Baseus</p>
 <p class="role"><span class="i18n-zh">倍思创始人 · 安克最大对手</span><span class="i18n-en">Founder of Baseus</span></p>
 <div class="fields"><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。</div><div class="bio i18n-en">Baseus 2011 Shenzhen. 90M+ units/yr. GaN charger global #1. 2100+ patents. Anker's #1 Chinese rival.</div>
-<a class="cta" href="/?node=heshiyou"><span class="i18n-zh">在关系图谱中查看 何世友 →</span><span class="i18n-en">View He Shiyou in the graph →</span></a>
+<div class="bio i18n-zh">广东海洋大学EE 2006。毕业即创业。2011深圳创办。出口十强，触达60亿+人。年出货9000万+。氮化镓快充全球第一。2100+专利。安克首要中国挑战者。</div><div class="bio i18n-en">Baseus 2011 Shenzhen. 90M+ units/yr. GaN charger global #1. 2100+ patents. Anker&#x27;s #1 Chinese rival.</div>
+<a class="cta" href="/?node=heshiyou"><span class="i18n-zh">在关系图谱中查看 He Shiyou →</span><span class="i18n-en">View He Shiyou in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2018</span> Baseus GaN #1</li><li><span class="y">2025</span> Baseus vs Anker</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/yangmeng.html"><b>阳萌 Yang Meng</b><span>倍思vs安克充电竞争</span></a><a class="nbr" href="/p/zhangqingsen.html"><b>张清森 Zhang Qingsen</b><span>倍思vs绿联竞品</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>充电/配件品牌</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/yangmeng.html"><b>阳萌 Yang Meng</b><span>Baseus vs Anker charging rivals</span></a><a class="nbr" href="/p/zhangqingsen.html"><b>张清森 Zhang Qingsen</b><span>Baseus vs UGREEN competitors</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>Charging/accessories brands</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

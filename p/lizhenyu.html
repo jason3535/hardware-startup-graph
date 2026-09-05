@@ -54,13 +54,17 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <p class="role"><span class="i18n-zh">它石智航董事长 · 原百度智能驾驶事业群总裁</span><span class="i18n-en">Chairman of TARS · Ex-Baidu IDG President</span></p>
 <div class="fields"><span class="tag">robotics</span><span class="tag">humanoid</span><span class="tag">ai-infra</span></div>
 <div class="bio i18n-zh">2026 年 4 月带领它石智航完成 4.55 亿美元 Pre-A 轮(高瓴创投与红杉中国联合领投),创下中国具身智能单轮融资纪录。与 CEO 陈亦伦(原华为自动驾驶 CTO)搭档,押注自动驾驶方法论可迁移到通用机器人。</div><div class="bio i18n-en">Chairman of TARS (它石智航), the embodied-AI company that raised a record $455M Pre-A in April 2026 co-led by Hillhouse and Sequoia China — the largest single round in Chinese embodied AI. Formerly president of Baidu&#x27;s Intelligent Driving Group, he pairs with CEO Chen Yilun (ex-Huawei autonomous-driving CTO) on a bet that the autonomous-driving playbook transfers to general-purpose robots.</div>
-<a class="cta" href="/?node=lizhenyu"><span class="i18n-zh">在关系图谱中查看 Li Zhenyu →</span><span class="i18n-en">View Li Zhenyu in the graph →</span></a>
+<a class="cta" href="/?node=lizhenyu"><span class="i18n-zh">在关系图谱中查看 Li Zhenyu →</span><span class="i18n-en">View Li Zhenyu in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
 <h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
 <h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/chenyilun.html"><b>陈亦伦 Chen Yilun</b><span>TARS chairman × CEO — Baidu IDG president meets Huawei AD CTO</span></a><a class="nbr" href="/p/gaojiyuang.html"><b>高继扬 Gao Jiyang</b><span>Autonomous-driving veterans turned embodied-AI founders</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

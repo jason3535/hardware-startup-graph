@@ -12,4 +12,4 @@ if(m&&!location.search.match(/retry/)){var t='/p/'+m[1].toLowerCase()+'.html';if
 a.b{display:inline-block;padding:11px 20px;border-radius:999px;background:#0a84ff;color:#fff;text-decoration:none;font-weight:600;margin-right:10px;margin-bottom:10px}a.s{color:#0a84ff;text-decoration:none}</style>
 </head><body><div class="c"><div class="k">Hardware Startup Graph · 404</div><h1>这个页面不存在</h1>
 <p>可能是人物 id 写错了，或这位人物已从图谱移除。人物分享页的地址形如 <code>/p/&lt;id&gt;.html</code>。</p>
-<a class="b" href="/">回到智能硬件图谱 →</a><a class="s" href="/#site-index">查看全部人物列表</a></div></body></html>
+<a class="b" id="nodeLink" href="/" hidden>在图谱里找这位人物 →</a><a class="b" href="/">回到智能硬件图谱 →</a><a class="s" href="/#site-index">查看全部人物列表</a></div><script>(function(){var m=location.pathname.match(/^\/p\/([^\/.]+)/i);var a=document.getElementById("nodeLink");if(m&&a){a.href="/?node="+m[1].toLowerCase();a.hidden=false;}})();</script></body></html>

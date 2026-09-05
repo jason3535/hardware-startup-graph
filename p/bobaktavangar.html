@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>博巴克·塔万加尔 Bobak Tavangar · Brilliant Labs | 智能硬件图谱</title>
-<meta name="description" content="前苹果与微软项目负责人，塔万加尔于2019年在香港联合创办Brilliant Labs，打造开放、AI优先的智能眼镜。2024年1月推出349美元的多模态AI眼镜Frame，配语音助手。2025年发布Halo，号称全球最薄AI眼镜，支持端侧AI处理、micro-OLED显示与骨传导音频，2026年…">
+<title>Bobak Tavangar · Brilliant Labs | 智能硬件图谱</title>
+<meta name="description" content="Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 …">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/bobaktavangar.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/bobaktavangar.html">
-<meta property="og:title" content="博巴克·塔万加尔 Bobak Tavangar · Brilliant Labs创始人兼CEO · 前苹果">
-<meta property="og:description" content="前苹果与微软项目负责人，塔万加尔于2019年在香港联合创办Brilliant Labs，打造开放、AI优先的智能眼镜。2024年1月推出349美元的多模态AI眼镜Frame，配语音助手。2025年发布Halo，号称全球最薄AI眼镜，支持端侧AI处理、micro-OLED显示与骨传导音频，2026年…">
+<meta property="og:title" content="Bobak Tavangar · Founder &amp; CEO of Brilliant Labs · Ex-Apple">
+<meta property="og:description" content="Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 …">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/bobaktavangar.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="博巴克·塔万加尔 Bobak Tavangar"><meta name="twitter:description" content="前苹果与微软项目负责人，塔万加尔于2019年在香港联合创办Brilliant Labs，打造开放、AI优先的智能眼镜。2024年1月推出349美元的多模态AI眼镜Frame，配语音助手。2025年发布Halo，号称全球最薄AI眼镜，支持端侧AI处理、micro-OLED显示与骨传导音频，2026年…">
+<meta name="twitter:title" content="Bobak Tavangar"><meta name="twitter:description" content="Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 …">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/bobaktavangar.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"博巴克·塔万加尔 Bobak Tavangar","alternateName":"Bobak Tavangar","jobTitle":"Brilliant Labs创始人兼CEO · 前苹果","worksFor":{"@type":"Organization","name":"Brilliant Labs"},"description":"前苹果与微软项目负责人，塔万加尔于2019年在香港联合创办Brilliant Labs，打造开放、AI优先的智能眼镜。2024年1月推出349美元的多模态AI眼镜Frame，配语音助手。2025年发布Halo，号称全球最薄AI眼镜，支持端侧AI处理、micro-OLED显示与骨传导音频，2026年…","url":"https://hardware.jasonlin.tech/p/bobaktavangar.html","image":"https://hardware.jasonlin.tech/og/bobaktavangar.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Bobak Tavangar", "alternateName": "Bobak Tavangar", "jobTitle": "Founder & CEO of Brilliant Labs · Ex-Apple", "worksFor": {"@type": "Organization", "name": "Brilliant Labs"}, "description": "Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 ", "url": "https://hardware.jasonlin.tech/p/bobaktavangar.html", "image": "https://hardware.jasonlin.tech/og/bobaktavangar.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(94,158,255,.92),rgba(94,158,255,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(94,158,255,.14)">BT</div>
-<h1><span class="i18n-zh">博巴克·塔万加尔 Bobak Tavangar</span><span class="i18n-en">Bobak Tavangar</span></h1>
+<img class="avatar" src="/assets/people/bobaktavangar.jpg" alt="Bobak Tavangar" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">Bobak Tavangar</span><span class="i18n-en">Bobak Tavangar</span></h1>
 <p class="org">Brilliant Labs</p>
-<p class="role"><span class="i18n-zh">Brilliant Labs创始人兼CEO · 前苹果</span><span class="i18n-en">Founder &amp; CEO of Brilliant Labs · Ex-Apple</span></p>
-<div class="fields"><span class="tag">ar-vr</span><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">前苹果与微软项目负责人，塔万加尔于2019年在香港联合创办Brilliant Labs，打造开放、AI优先的智能眼镜。2024年1月推出349美元的多模态AI眼镜Frame，配语音助手。2025年发布Halo，号称全球最薄AI眼镜，支持端侧AI处理、micro-OLED显示与骨传导音频，2026年一季度以349美元发货。Brilliant Labs已从Niantic的John Hanke、Oculus联合创始人Brendan Iribe等人处融资种子轮。</div><div class="bio i18n-en">Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 the company launched Frame,$349 multimodal AI glasses with a voice assistant. In 2025 it unveiled Halo,billed as the 'world's thinnest AI glasses' with on-device AI processing,micro-OLED display and bone-conduction audio,shipping Q1 2026 at $349. Brilliant Labs has raised seed funding from figures including Niantic's John Hanke and Oculus co-founder Brendan Iribe.</div>
-<a class="cta" href="/?node=bobaktavangar"><span class="i18n-zh">在关系图谱中查看 博巴克·塔万加尔 →</span><span class="i18n-en">View Bobak Tavangar in the graph →</span></a>
+<p class="role"><span class="i18n-zh">Founder &amp; CEO of Brilliant Labs · Ex-Apple</span><span class="i18n-en">Founder &amp; CEO of Brilliant Labs · Ex-Apple</span></p>
+<div class="fields"><span class="tag">ar-vr</span><span class="tag">consumer</span><span class="tag">wearable</span></div>
+<div class="bio i18n-zh">Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 the company launched Frame,$349 multimodal AI glasses with a voice assistant. In 2025 it unveiled Halo,billed as the &#x27;world&#x27;s thinnest AI glasses&#x27; with on-device AI processing,micro-OLED display and bone-conduction audio,shipping Q1 2026 at $349. Brilliant Labs has raised seed funding from figures including Niantic&#x27;s John Hanke and Oculus co-founder Brendan Iribe.</div><div class="bio i18n-en">Former Apple and Microsoft program lead,Tavangar co-founded Brilliant Labs in Hong Kong in 2019 to build open,AI-first smart glasses. In January 2024 the company launched Frame,$349 multimodal AI glasses with a voice assistant. In 2025 it unveiled Halo,billed as the &#x27;world&#x27;s thinnest AI glasses&#x27; with on-device AI processing,micro-OLED display and bone-conduction audio,shipping Q1 2026 at $349. Brilliant Labs has raised seed funding from figures including Niantic&#x27;s John Hanke and Oculus co-founder Brendan Iribe.</div>
+<a class="cta" href="/?node=bobaktavangar"><span class="i18n-zh">在关系图谱中查看 Bobak Tavangar →</span><span class="i18n-en">View Bobak Tavangar in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> Frame multimodal AI glasses ($349)</li><li><span class="y">2025</span> Halo 'world's thinnest AI glasses'</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/xuchi.html"><b>徐驰 Xu Chi</b><span>AI/AR glasses competitors (XREAL)</span></a><a class="nbr" href="/p/wangxiaoyi.html"><b>王骁逸 Wang Xiaoyi</b><span>Lightweight AI glasses rivals (Even Realities)</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

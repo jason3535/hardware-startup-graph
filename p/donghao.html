@@ -54,13 +54,17 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <p class="role"><span class="i18n-zh">灵猴机器人董事长 · 半年五轮融资</span><span class="i18n-en">Chairman of Linkhou · 5 Rounds in Half a Year</span></p>
 <div class="fields"><span class="tag">robotics</span></div>
 <div class="bio i18n-zh">苏州灵猴机器人董事长兼总经理,做运动控制核心部件与机器人子系统。上海交大 EMBA,2013-2023 年任博众精工副总裁。2026 年半年内连融五轮,C 轮超亿元由晨道资本领投,蔚来资本、宁德时代等参投,受益于人形机器人量产带来的零部件供给紧张。</div><div class="bio i18n-en">Chairman and GM of Suzhou-based Linkhou Robotics, a maker of motion-control components and robot subsystems. SJTU EMBA; VP of Bozhon Precision 2013-2023. Linkhou raised five rounds within six months of 2026 — Pre-B, B+, then a C round of over 100M yuan led by Chendao Capital — with NIO Capital and CATL among backers, riding the component-supply squeeze created by China&#x27;s humanoid boom.</div>
-<a class="cta" href="/?node=donghao"><span class="i18n-zh">在关系图谱中查看 Dong Hao →</span><span class="i18n-en">View Dong Hao in the graph →</span></a>
+<a class="cta" href="/?node=donghao"><span class="i18n-zh">在关系图谱中查看 Dong Hao →</span><span class="i18n-en">View Dong Hao in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
 <h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
 <h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Motion-control components for the humanoid boom</span></a><a class="nbr" href="/p/zhaotongyang.html"><b>赵同阳 Zhao Tongyang</b><span>Component supply squeeze from mass-production humanoids</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

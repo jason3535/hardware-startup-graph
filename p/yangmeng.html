@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>阳萌 Yang Meng · Anker | 智能硬件图谱</title>
-<meta name="description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。">
+<title>Yang Meng · Anker | 智能硬件图谱</title>
+<meta name="description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder&#x27;s Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/yangmeng.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/yangmeng.html">
-<meta property="og:title" content="阳萌 Yang Meng · 安克创新创始人">
-<meta property="og:description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。">
+<meta property="og:title" content="Yang Meng · Founder of Anker Innovations">
+<meta property="og:description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder&#x27;s Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/yangmeng.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="阳萌 Yang Meng"><meta name="twitter:description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。">
+<meta name="twitter:title" content="Yang Meng"><meta name="twitter:description" content="1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder&#x27;s Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/yangmeng.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"阳萌 Yang Meng","alternateName":"Yang Meng","jobTitle":"安克创新创始人","worksFor":{"@type":"Organization","name":"Anker"},"description":"1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。","url":"https://hardware.jasonlin.tech/p/yangmeng.html","image":"https://hardware.jasonlin.tech/og/yangmeng.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Yang Meng", "alternateName": "阳萌", "jobTitle": "Founder of Anker Innovations", "worksFor": {"@type": "Organization", "name": "Anker"}, "description": "1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。", "url": "https://hardware.jasonlin.tech/p/yangmeng.html", "image": "https://hardware.jasonlin.tech/og/yangmeng.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">YM</div>
-<h1><span class="i18n-zh">阳萌 Yang Meng</span><span class="i18n-en">Yang Meng</span></h1>
+<img class="avatar" src="/assets/people/yangmeng.jpg" alt="Yang Meng" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">阳萌</span><span class="i18n-en">Yang Meng</span></h1>
 <p class="org">Anker</p>
 <p class="role"><span class="i18n-zh">安克创新创始人</span><span class="i18n-en">Founder of Anker Innovations</span></p>
 <div class="fields"><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder's Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。</div><div class="bio i18n-en">Born 1982 Changsha. Peking Univ CS, UT Austin MS. Google senior engineer + Founder's Award. Resigned 2011. Anker brand California. Global #1 charging. Shenzhen IPO 2020. Expanded: Eufy, Soundcore, Nebula. 28.5B wealth 2026.</div>
-<a class="cta" href="/?node=yangmeng"><span class="i18n-zh">在关系图谱中查看 阳萌 →</span><span class="i18n-en">View Yang Meng in the graph →</span></a>
+<div class="bio i18n-zh">1982生于长沙。北大计算机。UT Austin硕士。Google高级工程师+Founder&#x27;s Award。2011辞职。安克品牌加州。全球第一充电品牌。2020深交所上市。扩展Eufy/Soundcore/Nebula。2026胡润285亿身家。</div><div class="bio i18n-en">Born 1982 Changsha. Peking Univ CS, UT Austin MS. Google senior engineer + Founder&#x27;s Award. Resigned 2011. Anker brand California. Global #1 charging. Shenzhen IPO 2020. Expanded: Eufy, Soundcore, Nebula. 28.5B wealth 2026.</div>
+<a class="cta" href="/?node=yangmeng"><span class="i18n-zh">在关系图谱中查看 Yang Meng →</span><span class="i18n-en">View Yang Meng in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2011</span> Anker portable chargers</li><li><span class="y">2018</span> Eufy RoboVac</li><li><span class="y">2020</span> Anker IPO</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/liujingkang.html"><b>刘靖康 Liu Jingkang</b><span>跨境硬件品牌</span></a><a class="nbr" href="/p/wanglei.html"><b>王雷 Wang Lei</b><span>跨境DTC硬件品牌</span></a><a class="nbr" href="/p/zhangqingsen.html"><b>张清森 Zhang Qingsen</b><span>安克vs绿联充电竞争</span></a><a class="nbr" href="/p/yehongxin.html"><b>叶洪新 Ye Hongxin</b><span>消费品牌颠覆</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>充电品牌，团队含大疆系</span></a><a class="nbr" href="/p/xugao.html"><b>许高 Nathan Xu Gao</b><span>全球DTC硬件品牌</span></a><a class="nbr" href="/p/tianli.html"><b>田力 Tian Li</b><span>深圳DTC硬件出海</span></a><a class="nbr" href="/p/luoyuanjue.html"><b>罗元觉 Luo Yuanjue</b><span>跨境独角兽（猿人 vs 安克）</span></a><a class="nbr" href="/p/liangxiaoling.html"><b>梁霄凌 Liang Xiaoling</b><span>跨境DTC出海欧洲</span></a><a class="nbr" href="/p/heshiyou.html"><b>何世友 He Shiyou</b><span>倍思vs安克充电竞争</span></a><a class="nbr" href="/p/wangjianjun.html"><b>王建军 Wang Jianjun</b><span>跨境硬件（xTool vs 安克）</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/liujingkang.html"><b>刘靖康 Liu Jingkang</b><span>Cross-border hardware brands</span></a><a class="nbr" href="/p/wanglei.html"><b>王雷 Wang Lei</b><span>Cross-border DTC hardware brands</span></a><a class="nbr" href="/p/zhangqingsen.html"><b>张清森 Zhang Qingsen</b><span>Anker vs UGREEN charging rivals</span></a><a class="nbr" href="/p/yehongxin.html"><b>叶洪新 Ye Hongxin</b><span>Consumer brand disruption</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>Charging brands, DJI alumni in team</span></a><a class="nbr" href="/p/xugao.html"><b>许高 Nathan Xu Gao</b><span>Global DTC hardware brands</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

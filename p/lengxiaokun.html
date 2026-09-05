@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>冷晓琨 Leng Xiaokun · Leju Robotics | 智能硬件图谱</title>
-<meta name="description" content="1992年生，13岁起接触机器人，就读于哈尔滨工业大学，曾获国内外人形机器人冠军。2016年带领哈工大团队创办乐聚（深圳）机器人，早期获松禾资本1000万元天使投资。2023年12月发布高动态全尺寸人形机器人KUAVO（夸父），超90%零部件国产化。截至2025年已交付第100台全尺寸人形机器人，…">
+<title>Leng Xiaokun · Leju Robotics | 智能硬件图谱</title>
+<meta name="description" content="Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In …">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/lengxiaokun.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/lengxiaokun.html">
-<meta property="og:title" content="冷晓琨 Leng Xiaokun · 乐聚机器人创始人兼董事长 · 夸父人形机器人">
-<meta property="og:description" content="1992年生，13岁起接触机器人，就读于哈尔滨工业大学，曾获国内外人形机器人冠军。2016年带领哈工大团队创办乐聚（深圳）机器人，早期获松禾资本1000万元天使投资。2023年12月发布高动态全尺寸人形机器人KUAVO（夸父），超90%零部件国产化。截至2025年已交付第100台全尺寸人形机器人，…">
+<meta property="og:title" content="Leng Xiaokun · Founder &amp; Chairman of Leju · KUAVO Humanoid">
+<meta property="og:description" content="Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In …">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/lengxiaokun.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="冷晓琨 Leng Xiaokun"><meta name="twitter:description" content="1992年生，13岁起接触机器人，就读于哈尔滨工业大学，曾获国内外人形机器人冠军。2016年带领哈工大团队创办乐聚（深圳）机器人，早期获松禾资本1000万元天使投资。2023年12月发布高动态全尺寸人形机器人KUAVO（夸父），超90%零部件国产化。截至2025年已交付第100台全尺寸人形机器人，…">
+<meta name="twitter:title" content="Leng Xiaokun"><meta name="twitter:description" content="Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In …">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/lengxiaokun.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"冷晓琨 Leng Xiaokun","alternateName":"Leng Xiaokun","jobTitle":"乐聚机器人创始人兼董事长 · 夸父人形机器人","worksFor":{"@type":"Organization","name":"Leju Robotics"},"description":"1992年生，13岁起接触机器人，就读于哈尔滨工业大学，曾获国内外人形机器人冠军。2016年带领哈工大团队创办乐聚（深圳）机器人，早期获松禾资本1000万元天使投资。2023年12月发布高动态全尺寸人形机器人KUAVO（夸父），超90%零部件国产化。截至2025年已交付第100台全尺寸人形机器人，…","url":"https://hardware.jasonlin.tech/p/lengxiaokun.html","image":"https://hardware.jasonlin.tech/og/lengxiaokun.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Leng Xiaokun", "alternateName": "Leng Xiaokun", "jobTitle": "Founder & Chairman of Leju · KUAVO Humanoid", "worksFor": {"@type": "Organization", "name": "Leju Robotics"}, "description": "Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In ", "url": "https://hardware.jasonlin.tech/p/lengxiaokun.html", "image": "https://hardware.jasonlin.tech/og/lengxiaokun.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">LX</div>
-<h1><span class="i18n-zh">冷晓琨 Leng Xiaokun</span><span class="i18n-en">Leng Xiaokun</span></h1>
+<img class="avatar" src="/assets/people/lengxiaokun.jpg" alt="Leng Xiaokun" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">Leng Xiaokun</span><span class="i18n-en">Leng Xiaokun</span></h1>
 <p class="org">Leju Robotics</p>
-<p class="role"><span class="i18n-zh">乐聚机器人创始人兼董事长 · 夸父人形机器人</span><span class="i18n-en">Founder &amp; Chairman of Leju · KUAVO Humanoid</span></p>
-<div class="fields"><span class="tag">robotics</span></div>
-<div class="bio i18n-zh">1992年生，13岁起接触机器人，就读于哈尔滨工业大学，曾获国内外人形机器人冠军。2016年带领哈工大团队创办乐聚（深圳）机器人，早期获松禾资本1000万元天使投资。2023年12月发布高动态全尺寸人形机器人KUAVO（夸父），超90%零部件国产化。截至2025年已交付第100台全尺寸人形机器人，并推动人形机器人开源生态。</div><div class="bio i18n-en">Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In 2016 he founded Leju (Shenzhen) Robotics,leading an HIT team,with an early 10M yuan angel round from Songhe Capital. In December 2023 the team unveiled the high-dynamic KUAVO (Kuafu) full-size humanoid; over 90% of its parts are domestically made. By 2025 Leju had delivered its 100th full-size humanoid and pushed an open-source humanoid ecosystem.</div>
-<a class="cta" href="/?node=lengxiaokun"><span class="i18n-zh">在关系图谱中查看 冷晓琨 →</span><span class="i18n-en">View Leng Xiaokun in the graph →</span></a>
+<p class="role"><span class="i18n-zh">Founder &amp; Chairman of Leju · KUAVO Humanoid</span><span class="i18n-en">Founder &amp; Chairman of Leju · KUAVO Humanoid</span></p>
+<div class="fields"><span class="tag">robotics</span><span class="tag">humanoid</span></div>
+<div class="bio i18n-zh">Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In 2016 he founded Leju (Shenzhen) Robotics,leading an HIT team,with an early 10M yuan angel round from Songhe Capital. In December 2023 the team unveiled the high-dynamic KUAVO (Kuafu) full-size humanoid; over 90% of its parts are domestically made. By 2025 Leju had delivered its 100th full-size humanoid and pushed an open-source humanoid ecosystem.</div><div class="bio i18n-en">Born 1992,Leng began robotics at 13 and studied at Harbin Institute of Technology,winning national and international humanoid-robot championships. In 2016 he founded Leju (Shenzhen) Robotics,leading an HIT team,with an early 10M yuan angel round from Songhe Capital. In December 2023 the team unveiled the high-dynamic KUAVO (Kuafu) full-size humanoid; over 90% of its parts are domestically made. By 2025 Leju had delivered its 100th full-size humanoid and pushed an open-source humanoid ecosystem.</div>
+<a class="cta" href="/?node=lengxiaokun"><span class="i18n-zh">在关系图谱中查看 Leng Xiaokun →</span><span class="i18n-en">View Leng Xiaokun in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2023</span> KUAVO (Kuafu) full-size humanoid</li><li><span class="y">2025</span> 100th full-size humanoid delivered</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Chinese humanoid robot rivals (Unitree)</span></a><a class="nbr" href="/p/pengzhihui.html"><b>彭志辉（稚晖君） Peng Zhihui</b><span>Humanoid robotics peers (Agibot)</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

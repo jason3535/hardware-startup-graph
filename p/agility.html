@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>Peggy Johnson · Agility Robotics | 智能硬件图谱</title>
-<meta name="description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行…">
+<meta name="description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/agility.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/agility.html">
-<meta property="og:title" content="Peggy Johnson · Agility Robotics CEO · Digit 人形机器人">
-<meta property="og:description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行…">
+<meta property="og:title" content="Peggy Johnson · CEO of Agility Robotics · Digit Humanoid">
+<meta property="og:description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/agility.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Peggy Johnson"><meta name="twitter:description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行…">
+<meta name="twitter:title" content="Peggy Johnson"><meta name="twitter:description" content="Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/agility.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Peggy Johnson","alternateName":"Peggy Johnson","jobTitle":"Agility Robotics CEO · Digit 人形机器人","worksFor":{"@type":"Organization","name":"Agility Robotics"},"description":"Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行…","url":"https://hardware.jasonlin.tech/p/agility.html","image":"https://hardware.jasonlin.tech/og/agility.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Peggy Johnson", "alternateName": "Peggy Johnson", "jobTitle": "CEO of Agility Robotics · Digit Humanoid", "worksFor": {"@type": "Organization", "name": "Agility Robotics"}, "description": "Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业", "url": "https://hardware.jasonlin.tech/p/agility.html", "image": "https://hardware.jasonlin.tech/og/agility.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">PJ</div>
+<img class="avatar" src="/assets/people/agility.jpg" alt="Peggy Johnson" width="108" height="108" loading="eager">
 <h1><span class="i18n-zh">Peggy Johnson</span><span class="i18n-en">Peggy Johnson</span></h1>
 <p class="org">Agility Robotics</p>
 <p class="role"><span class="i18n-zh">Agility Robotics CEO · Digit 人形机器人</span><span class="i18n-en">CEO of Agility Robotics · Digit Humanoid</span></p>
-<div class="fields"><span class="tag">robotics</span><span class="tag">overseas</span></div>
-<div class="bio i18n-zh">Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业首个多年期 RaaS 协议。Agility 累计融资 6.41 亿美元+（含 4 亿 C 轮）、估值约 20 亿美元，运营年产能 1 万台的 RoboFab 工厂，计划 2026 年底推出安全认证版 Digit、2027 年推出可举 50 磅的第五代。联合创始人为机器人学家 Jonathan Hurst。</div><div class="bio i18n-en">CEO of Agility Robotics (Albany, Oregon), maker of the bipedal warehouse humanoid Digit; previously CEO of Magic Leap and a 24-year Microsoft veteran (EVP of business development). Digit was the first humanoid deployed at a commercial customer (GXO, Jun 2024) and has moved 100,000+ totes; GXO signed an industry-first multi-year Robots-as-a-Service deal. Agility has raised $641M+ (incl. a $400M Series C) at ~$2B, runs the 'RoboFab' plant (10,000 units/yr capacity), and plans a safety-certified Digit by late 2026 and a 50-lb-lift Gen-5 for 2027. Co-founded by roboticist Jonathan Hurst.</div>
-<a class="cta" href="/?node=agility"><span class="i18n-zh">在关系图谱中查看 Peggy Johnson →</span><span class="i18n-en">View Peggy Johnson in the graph →</span></a>
+<div class="fields"><span class="tag">robotics</span><span class="tag">overseas</span><span class="tag">humanoid</span></div>
+<div class="bio i18n-zh">Agility Robotics（俄勒冈 Albany）CEO，旗下双足仓储人形机器人 Digit；此前任 Magic Leap CEO，更早在微软任职 24 年（业务拓展 EVP）。Digit 是首个在商业客户现场部署的人形机器人（GXO，2024.6），已搬运 10 万+ 料箱，GXO 签下行业首个多年期 RaaS 协议。Agility 累计融资 6.41 亿美元+（含 4 亿 C 轮）、估值约 20 亿美元，运营年产能 1 万台的 RoboFab 工厂，计划 2026 年底推出安全认证版 Digit、2027 年推出可举 50 磅的第五代。联合创始人为机器人学家 Jonathan Hurst。</div><div class="bio i18n-en">CEO of Agility Robotics (Albany, Oregon), maker of the bipedal warehouse humanoid Digit; previously CEO of Magic Leap and a 24-year Microsoft veteran (EVP of business development). Digit was the first humanoid deployed at a commercial customer (GXO, Jun 2024) and has moved 100,000+ totes; GXO signed an industry-first multi-year Robots-as-a-Service deal. Agility has raised $641M+ (incl. a $400M Series C) at ~$2B, runs the &#x27;RoboFab&#x27; plant (10,000 units/yr capacity), and plans a safety-certified Digit by late 2026 and a 50-lb-lift Gen-5 for 2027. Co-founded by roboticist Jonathan Hurst.</div>
+<a class="cta" href="/?node=agility"><span class="i18n-zh">在关系图谱中查看 Peggy Johnson →</span><span class="i18n-en">View Peggy Johnson in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> Digit first humanoid at a commercial site (GXO)</li><li><span class="y">2026</span> Safety-certified Digit; RoboFab scale-up</li></ul>
-
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

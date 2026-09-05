@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>陈兆芃 Chen Zhaopeng · Agile Robots | 智能硬件图谱</title>
-<meta name="description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富…">
+<title>Chen Zhaopeng · Agile Robots | 智能硬件图谱</title>
+<meta name="description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/agilerobots.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/agilerobots.html">
-<meta property="og:title" content="陈兆芃 Chen Zhaopeng · 思灵机器人联合创始人兼 CEO · 力控机器人">
-<meta property="og:description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富…">
+<meta property="og:title" content="Chen Zhaopeng · Co-founder &amp; CEO of Agile Robots (思灵) · Force-Control Robots">
+<meta property="og:description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/agilerobots.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="陈兆芃 Chen Zhaopeng"><meta name="twitter:description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富…">
+<meta name="twitter:title" content="Chen Zhaopeng"><meta name="twitter:description" content="德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/agilerobots.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"陈兆芃 Chen Zhaopeng","alternateName":"Chen Zhaopeng","jobTitle":"思灵机器人联合创始人兼 CEO · 力控机器人","worksFor":{"@type":"Organization","name":"Agile Robots"},"description":"德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富…","url":"https://hardware.jasonlin.tech/p/agilerobots.html","image":"https://hardware.jasonlin.tech/og/agilerobots.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Chen Zhaopeng", "alternateName": "陈兆芃", "jobTitle": "Co-founder & CEO of Agile Robots (思灵) · Force-Control Robots", "worksFor": {"@type": "Organization", "name": "Agile Robots"}, "description": "德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士", "url": "https://hardware.jasonlin.tech/p/agilerobots.html", "image": "https://hardware.jasonlin.tech/og/agilerobots.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">CZ</div>
-<h1><span class="i18n-zh">陈兆芃 Chen Zhaopeng</span><span class="i18n-en">Chen Zhaopeng</span></h1>
+<img class="avatar" src="/assets/people/agilerobots.jpg" alt="Chen Zhaopeng" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">陈兆芃</span><span class="i18n-en">Chen Zhaopeng</span></h1>
 <p class="org">Agile Robots</p>
 <p class="role"><span class="i18n-zh">思灵机器人联合创始人兼 CEO · 力控机器人</span><span class="i18n-en">Co-founder &amp; CEO of Agile Robots (思灵) · Force-Control Robots</span></p>
 <div class="fields"><span class="tag">robotics</span><span class="tag">overseas</span></div>
-<div class="bio i18n-zh">德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士康跟投）跻身估值超 10 亿美元的独角兽。</div><div class="bio i18n-en">PhD from the German Aerospace Center's robotics institute (DLR/RMC), birthplace of the LWR force-controlled arm. Co-founded Agile Robots (思灵机器人, est. 2018) with dual HQs in Munich and Beijing, bridging AI and the physical world through force-controlled, vision-guided robots. Reached unicorn status (&gt;$1B) with a $220M Series C led by SoftBank Vision Fund 2 (with Hillhouse, Sequoia China, Abu Dhabi's Chimera and Foxconn).</div>
-<a class="cta" href="/?node=agilerobots"><span class="i18n-zh">在关系图谱中查看 陈兆芃 →</span><span class="i18n-en">View Chen Zhaopeng in the graph →</span></a>
+<div class="bio i18n-zh">德国宇航中心机器人研究所（DLR/RMC，LWR 力控机械臂的发源地）博士。2018 年联合创办思灵机器人（Agile Robots），慕尼黑与北京双总部，用力控+视觉引导的机器人连接 AI 与物理世界。以 2.2 亿美元 C 轮（软银愿景基金二期领投，高瓴、红杉中国、阿布扎比 Chimera、富士康跟投）跻身估值超 10 亿美元的独角兽。</div><div class="bio i18n-en">PhD from the German Aerospace Center&#x27;s robotics institute (DLR/RMC), birthplace of the LWR force-controlled arm. Co-founded Agile Robots (思灵机器人, est. 2018) with dual HQs in Munich and Beijing, bridging AI and the physical world through force-controlled, vision-guided robots. Reached unicorn status (&gt;$1B) with a $220M Series C led by SoftBank Vision Fund 2 (with Hillhouse, Sequoia China, Abu Dhabi&#x27;s Chimera and Foxconn).</div>
+<a class="cta" href="/?node=agilerobots"><span class="i18n-zh">在关系图谱中查看 Chen Zhaopeng →</span><span class="i18n-en">View Chen Zhaopeng in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2018</span> Co-founded Agile Robots (Munich/Beijing)</li><li><span class="y">2021</span> $220M Series C; unicorn (SoftBank VF2)</li></ul>
-
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>安德鲁·博斯沃思（Boz） Andrew Bosworth · Meta (Reality Labs) | 智能硬件图谱</title>
-<meta name="description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇…">
+<title>Andrew Bosworth · Meta (Reality Labs) | 智能硬件图谱</title>
+<meta name="description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/bosworth.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/bosworth.html">
-<meta property="og:title" content="安德鲁·博斯沃思（Boz） Andrew Bosworth · Meta CTO · Reality Labs 与 AI 眼镜">
-<meta property="og:description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇…">
+<meta property="og:title" content="Andrew Bosworth · Meta CTO · Reality Labs &amp; AI Glasses">
+<meta property="og:description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/bosworth.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="安德鲁·博斯沃思（Boz） Andrew Bosworth"><meta name="twitter:description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇…">
+<meta name="twitter:title" content="Andrew Bosworth"><meta name="twitter:description" content="Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/bosworth.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"安德鲁·博斯沃思（Boz） Andrew Bosworth","alternateName":"Andrew Bosworth","jobTitle":"Meta CTO · Reality Labs 与 AI 眼镜","worksFor":{"@type":"Organization","name":"Meta (Reality Labs)"},"description":"Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇…","url":"https://hardware.jasonlin.tech/p/bosworth.html","image":"https://hardware.jasonlin.tech/og/bosworth.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Andrew Bosworth", "alternateName": "安德鲁·博斯沃思（Boz）", "jobTitle": "Meta CTO · Reality Labs & AI Glasses", "worksFor": {"@type": "Organization", "name": "Meta (Reality Labs)"}, "description": "Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙", "url": "https://hardware.jasonlin.tech/p/bosworth.html", "image": "https://hardware.jasonlin.tech/og/bosworth.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(94,158,255,.92),rgba(94,158,255,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(94,158,255,.14)">AB</div>
-<h1><span class="i18n-zh">安德鲁·博斯沃思（Boz） Andrew Bosworth</span><span class="i18n-en">Andrew Bosworth</span></h1>
+<img class="avatar" src="/assets/people/bosworth.jpg" alt="Andrew Bosworth" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">安德鲁·博斯沃思（Boz）</span><span class="i18n-en">Andrew Bosworth</span></h1>
 <p class="org">Meta (Reality Labs)</p>
 <p class="role"><span class="i18n-zh">Meta CTO · Reality Labs 与 AI 眼镜</span><span class="i18n-en">Meta CTO · Reality Labs &amp; AI Glasses</span></p>
-<div class="fields"><span class="tag">ar-vr</span><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙转向 AI 智能眼镜——其增长最快的赌注，Ray-Ban Meta 已售出 200 万+ 副，计划 2026 年底将眼镜产能翻倍。博斯沃思（Boz）于 2026.5.24 罕见地现场演示 AR 眼镜原型，并主张 AI 而非 VR 才是未来可穿戴的关键入口。</div><div class="bio i18n-en">Meta's CTO and head of Reality Labs, the division behind Quest headsets and Ray-Ban Meta glasses; an early Facebook engineer who built News Feed. In 2026, after Reality Labs accumulated ~$70B in cumulative losses, Meta cut ~1,500 staff there and shifted resources from the metaverse toward AI smart glasses — its fastest-growing bet, with 2M+ Ray-Ban Meta units sold and plans to double glasses production capacity by end-2026. Bosworth ('Boz') gave a rare live AR-glasses prototype demo (May 24 2026) and argues AI, not VR, will be the key interface for future wearables.</div>
-<a class="cta" href="/?node=bosworth"><span class="i18n-zh">在关系图谱中查看 安德鲁·博斯沃思（Boz） →</span><span class="i18n-en">View Andrew Bosworth in the graph →</span></a>
+<div class="fields"><span class="tag">ar-vr</span><span class="tag">consumer</span><span class="tag">wearable</span></div>
+<div class="bio i18n-zh">Meta 首席技术官、Reality Labs 负责人（Quest 头显与 Ray-Ban Meta 眼镜所在部门），Facebook 早期工程师、News Feed 缔造者。2026 年 Reality Labs 累计亏损约 700 亿美元后，Meta 在该部门裁员约 1500 人，把资源从元宇宙转向 AI 智能眼镜——其增长最快的赌注，Ray-Ban Meta 已售出 200 万+ 副，计划 2026 年底将眼镜产能翻倍。博斯沃思（Boz）于 2026.5.24 罕见地现场演示 AR 眼镜原型，并主张 AI 而非 VR 才是未来可穿戴的关键入口。</div><div class="bio i18n-en">Meta&#x27;s CTO and head of Reality Labs, the division behind Quest headsets and Ray-Ban Meta glasses; an early Facebook engineer who built News Feed. In 2026, after Reality Labs accumulated ~$70B in cumulative losses, Meta cut ~1,500 staff there and shifted resources from the metaverse toward AI smart glasses — its fastest-growing bet, with 2M+ Ray-Ban Meta units sold and plans to double glasses production capacity by end-2026. Bosworth (&#x27;Boz&#x27;) gave a rare live AR-glasses prototype demo (May 24 2026) and argues AI, not VR, will be the key interface for future wearables.</div>
+<a class="cta" href="/?node=bosworth"><span class="i18n-zh">在关系图谱中查看 Andrew Bosworth →</span><span class="i18n-en">View Andrew Bosworth in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2023</span> Ray-Ban Meta AI glasses</li><li><span class="y">2026</span> Reality Labs pivots to AI glasses; live AR prototype demo</li></ul>
-
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

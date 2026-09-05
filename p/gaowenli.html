@@ -54,13 +54,17 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <p class="role"><span class="i18n-zh">Founder of Moqi · iMile co-founder</span><span class="i18n-en">Founder of Moqi · iMile co-founder</span></p>
 <div class="fields"><span class="tag">robotics</span></div>
 <div class="bio i18n-zh">Co-founded cross-border logistics unicorn iMile before starting Moqi Intelligent in Aug 2025. Moqi raised a record 1B+ RMB angel series within a year — jointly backed by Alibaba and Tencent, a rare同台 — betting on embodied models plus logistics scenarios where the founder&#x27;s delivery-network background gives real deployment ground.</div><div class="bio i18n-en">Co-founded cross-border logistics unicorn iMile before starting Moqi Intelligent in Aug 2025. Moqi raised a record 1B+ RMB angel series within a year — jointly backed by Alibaba and Tencent, a rare同台 — betting on embodied models plus logistics scenarios where the founder&#x27;s delivery-network background gives real deployment ground.</div>
-<a class="cta" href="/?node=gaowenli"><span class="i18n-zh">在关系图谱中查看 Gao Wenli →</span><span class="i18n-en">View Gao Wenli in the graph →</span></a>
+<a class="cta" href="/?node=gaowenli"><span class="i18n-zh">在关系图谱中查看 Gao Wenli →</span><span class="i18n-en">View Gao Wenli in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
 <h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
 <h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

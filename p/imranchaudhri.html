@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
 <title>Imran Chaudhri · Humane (→HP) | 智能硬件图谱</title>
-<meta name="description" content="在苹果20+���，参与创造Mac/iPod/iPad/Apple Watch/iPhone UI。妻子Bethany Bongiorno领导iPad软件。2016离开苹果。2018联合创办Humane。融��$2.3亿（Altman/SoftBank/微���）。AI Pin 2023发布$69…">
+<meta name="description" content="Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Appl…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/imranchaudhri.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/imranchaudhri.html">
-<meta property="og:title" content="Imran Chaudhri · Humane联合创始人 · 苹果20���老兵">
-<meta property="og:description" content="在苹果20+���，参与创造Mac/iPod/iPad/Apple Watch/iPhone UI。妻子Bethany Bongiorno领导iPad软件。2016离开苹果。2018联合创办Humane。融��$2.3亿（Altman/SoftBank/微���）。AI Pin 2023发布$69…">
+<meta property="og:title" content="Imran Chaudhri · Co-founder of Humane AI Pin · 20yr Apple Veteran">
+<meta property="og:description" content="Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Appl…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/imranchaudhri.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Imran Chaudhri"><meta name="twitter:description" content="在苹果20+���，参与创造Mac/iPod/iPad/Apple Watch/iPhone UI。妻子Bethany Bongiorno领导iPad软件。2016离开苹果。2018联合创办Humane。融��$2.3亿（Altman/SoftBank/微���）。AI Pin 2023发布$69…">
+<meta name="twitter:title" content="Imran Chaudhri"><meta name="twitter:description" content="Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Appl…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/imranchaudhri.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Imran Chaudhri","alternateName":"Imran Chaudhri","jobTitle":"Humane联合创始人 · 苹果20���老兵","worksFor":{"@type":"Organization","name":"Humane (→HP)"},"description":"在苹果20+���，参与创造Mac/iPod/iPad/Apple Watch/iPhone UI。妻子Bethany Bongiorno领导iPad软件。2016离开苹果。2018联合创办Humane。融��$2.3亿（Altman/SoftBank/微���）。AI Pin 2023发布$69…","url":"https://hardware.jasonlin.tech/p/imranchaudhri.html","image":"https://hardware.jasonlin.tech/og/imranchaudhri.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Imran Chaudhri", "alternateName": "Imran Chaudhri", "jobTitle": "Co-founder of Humane AI Pin · 20yr Apple Veteran", "worksFor": {"@type": "Organization", "name": "Humane (→HP)"}, "description": "Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Appl", "url": "https://hardware.jasonlin.tech/p/imranchaudhri.html", "image": "https://hardware.jasonlin.tech/og/imranchaudhri.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(255,214,10,.92),rgba(255,214,10,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(255,214,10,.14)">IC</div>
+<img class="avatar" src="/assets/people/imranchaudhri.jpg" alt="Imran Chaudhri" width="108" height="108" loading="eager">
 <h1><span class="i18n-zh">Imran Chaudhri</span><span class="i18n-en">Imran Chaudhri</span></h1>
 <p class="org">Humane (→HP)</p>
-<p class="role"><span class="i18n-zh">Humane联合创始人 · 苹果20���老兵</span><span class="i18n-en">Co-founder of Humane AI Pin · 20yr Apple Veteran</span></p>
-<div class="fields"><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">在苹果20+���，参与创造Mac/iPod/iPad/Apple Watch/iPhone UI。妻子Bethany Bongiorno领导iPad软件。2016离开苹果。2018联合创办Humane。融��$2.3亿（Altman/SoftBank/微���）。AI Pin 2023发布$699���屏投影可穿戴。商业失败，2025.2停售。HP收购Humane，Chaudhri领导HP AI集成。代表AI硬件的希望与教训。</div><div class="bio i18n-en">Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Apple 2016. Co-founded Humane 2018 envisioning post-smartphone AI. Raised $230M (Altman, Benioff, SoftBank, Microsoft, LG). AI Pin launched Nov 2023 at $699 — a screenless projector wearable. Product struggled commercially. Stopped selling Feb 2025. HP acquired Humane, Chaudhri now leads HP AI integration. Represents both the promise and peril of AI hardware.</div>
-<a class="cta" href="/?node=imranchaudhri"><span class="i18n-zh">在关系图谱中查看 Imran Chaudhri →</span><span class="i18n-en">View Imran Chaudhri in the graph →</span></a>
+<p class="role"><span class="i18n-zh">Co-founder of Humane AI Pin · 20yr Apple Veteran</span><span class="i18n-en">Co-founder of Humane AI Pin · 20yr Apple Veteran</span></p>
+<div class="fields"><span class="tag">consumer</span><span class="tag">wearable</span></div>
+<div class="bio i18n-zh">Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Apple 2016. Co-founded Humane 2018 envisioning post-smartphone AI. Raised $230M (Altman, Benioff, SoftBank, Microsoft, LG). AI Pin launched Nov 2023 at $699 — a screenless projector wearable. Product struggled commercially. Stopped selling Feb 2025. HP acquired Humane, Chaudhri now leads HP AI integration. Represents both the promise and peril of AI hardware.</div><div class="bio i18n-en">Spent 20+ years at Apple, helped create Macintosh, iPod, iPad, Apple Watch, iPhone UI/UX. Wife Bethany Bongiorno led iPad software at Apple. Left Apple 2016. Co-founded Humane 2018 envisioning post-smartphone AI. Raised $230M (Altman, Benioff, SoftBank, Microsoft, LG). AI Pin launched Nov 2023 at $699 — a screenless projector wearable. Product struggled commercially. Stopped selling Feb 2025. HP acquired Humane, Chaudhri now leads HP AI integration. Represents both the promise and peril of AI hardware.</div>
+<a class="cta" href="/?node=imranchaudhri"><span class="i18n-zh">在关系图谱中查看 Imran Chaudhri →</span><span class="i18n-en">View Imran Chaudhri in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2023</span> Humane AI Pin — $699 screenless wearable</li><li><span class="y">2025</span> Humane acquired by HP</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/jonyive.html"><b>乔尼·艾维 Jony Ive</b><span>Apple design leadership; now rival AI hardware (OpenAI io vs Humane)</span></a><a class="nbr" href="/p/jesselyu.html"><b>吕骋 Jesse Lyu</b><span>AI硬件先驱（Humane vs Rabbit）</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>AI可穿戴（Humane vs 闪极眼镜）</span></a><a class="nbr" href="/p/palmerluckey.html"><b>帕尔默·拉奇 Palmer Luckey</b><span>大厂创始人转向新硬件品类</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/jonyive.html"><b>乔尼·艾维 Jony Ive</b><span>Apple design leadership; now rival AI hardware (OpenAI io vs Humane)</span></a><a class="nbr" href="/p/jesselyu.html"><b>吕骋 Jesse Lyu</b><span>AI hardware pioneers (Humane vs Rabbit)</span></a><a class="nbr" href="/p/zhangbo.html"><b>张波 Zhang Bo</b><span>AI wearable hardware (Humane vs SHARGE glasses)</span></a><a class="nbr" href="/p/palmerluckey.html"><b>帕尔默·拉奇 Palmer Luckey</b><span>Ex-big-tech founders pivoting to new hardware categories</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

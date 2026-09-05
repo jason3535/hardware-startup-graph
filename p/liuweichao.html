@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>刘维超 Liu Weichao · Weilan (AlphaDog) | 智能硬件图谱</title>
-<meta name="description" content="1985年生于南京，赴德国研究人工智能机器人，毕业于波恩大学，曾参与NimbRo Group与Computer Vision Group世界级科研项目。回到南京后于2019年创办蔚蓝智能科技，专注消费级四足机器人AlphaDog——首款面向家庭场景的四足个人机器人。2023年完成超亿元A1轮融资，…">
+<title>Liu Weichao · Weilan (AlphaDog) | 智能硬件图谱</title>
+<meta name="description" content="Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer V…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/liuweichao.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/liuweichao.html">
-<meta property="og:title" content="刘维超 Liu Weichao · 蔚蓝科技创始人 · 阿尔法机器狗">
-<meta property="og:description" content="1985年生于南京，赴德国研究人工智能机器人，毕业于波恩大学，曾参与NimbRo Group与Computer Vision Group世界级科研项目。回到南京后于2019年创办蔚蓝智能科技，专注消费级四足机器人AlphaDog——首款面向家庭场景的四足个人机器人。2023年完成超亿元A1轮融资，…">
+<meta property="og:title" content="Liu Weichao · Founder of Weilan · AlphaDog Quadruped Robot">
+<meta property="og:description" content="Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer V…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/liuweichao.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="刘维超 Liu Weichao"><meta name="twitter:description" content="1985年生于南京，赴德国研究人工智能机器人，毕业于波恩大学，曾参与NimbRo Group与Computer Vision Group世界级科研项目。回到南京后于2019年创办蔚蓝智能科技，专注消费级四足机器人AlphaDog——首款面向家庭场景的四足个人机器人。2023年完成超亿元A1轮融资，…">
+<meta name="twitter:title" content="Liu Weichao"><meta name="twitter:description" content="Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer V…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/liuweichao.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"刘维超 Liu Weichao","alternateName":"Liu Weichao","jobTitle":"蔚蓝科技创始人 · 阿尔法机器狗","worksFor":{"@type":"Organization","name":"Weilan (AlphaDog)"},"description":"1985年生于南京，赴德国研究人工智能机器人，毕业于波恩大学，曾参与NimbRo Group与Computer Vision Group世界级科研项目。回到南京后于2019年创办蔚蓝智能科技，专注消费级四足机器人AlphaDog——首款面向家庭场景的四足个人机器人。2023年完成超亿元A1轮融资，…","url":"https://hardware.jasonlin.tech/p/liuweichao.html","image":"https://hardware.jasonlin.tech/og/liuweichao.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Liu Weichao", "alternateName": "Liu Weichao", "jobTitle": "Founder of Weilan · AlphaDog Quadruped Robot", "worksFor": {"@type": "Organization", "name": "Weilan (AlphaDog)"}, "description": "Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer V", "url": "https://hardware.jasonlin.tech/p/liuweichao.html", "image": "https://hardware.jasonlin.tech/og/liuweichao.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">LW</div>
-<h1><span class="i18n-zh">刘维超 Liu Weichao</span><span class="i18n-en">Liu Weichao</span></h1>
+<img class="avatar" src="/assets/people/liuweichao.jpg" alt="Liu Weichao" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">Liu Weichao</span><span class="i18n-en">Liu Weichao</span></h1>
 <p class="org">Weilan (AlphaDog)</p>
-<p class="role"><span class="i18n-zh">蔚蓝科技创始人 · 阿尔法机器狗</span><span class="i18n-en">Founder of Weilan · AlphaDog Quadruped Robot</span></p>
-<div class="fields"><span class="tag">robotics</span><span class="tag">consumer</span></div>
-<div class="bio i18n-zh">1985年生于南京，赴德国研究人工智能机器人，毕业于波恩大学，曾参与NimbRo Group与Computer Vision Group世界级科研项目。回到南京后于2019年创办蔚蓝智能科技，专注消费级四足机器人AlphaDog——首款面向家庭场景的四足个人机器人。2023年完成超亿元A1轮融资，由国资市场化基金领投，立志打造苹果级四足机器人产品。</div><div class="bio i18n-en">Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer Vision research groups. He returned to Nanjing and founded Weilan Intelligent Technology in 2019,focused on consumer-oriented quadruped robots branded AlphaDog — the first quadruped personal robot aimed at home scenarios. In 2023 Weilan closed an A1 round exceeding 100M yuan led by a state-market fund,aiming to build 'Apple-grade' quadruped products.</div>
-<a class="cta" href="/?node=liuweichao"><span class="i18n-zh">在关系图谱中查看 刘维超 →</span><span class="i18n-en">View Liu Weichao in the graph →</span></a>
+<p class="role"><span class="i18n-zh">Founder of Weilan · AlphaDog Quadruped Robot</span><span class="i18n-en">Founder of Weilan · AlphaDog Quadruped Robot</span></p>
+<div class="fields"><span class="tag">robotics</span><span class="tag">consumer</span><span class="tag">humanoid</span></div>
+<div class="bio i18n-zh">Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer Vision research groups. He returned to Nanjing and founded Weilan Intelligent Technology in 2019,focused on consumer-oriented quadruped robots branded AlphaDog — the first quadruped personal robot aimed at home scenarios. In 2023 Weilan closed an A1 round exceeding 100M yuan led by a state-market fund,aiming to build &#x27;Apple-grade&#x27; quadruped products.</div><div class="bio i18n-en">Born 1985 in Nanjing,Liu studied AI robotics in Germany,graduating from the University of Bonn and participating in the renowned NimbRo and Computer Vision research groups. He returned to Nanjing and founded Weilan Intelligent Technology in 2019,focused on consumer-oriented quadruped robots branded AlphaDog — the first quadruped personal robot aimed at home scenarios. In 2023 Weilan closed an A1 round exceeding 100M yuan led by a state-market fund,aiming to build &#x27;Apple-grade&#x27; quadruped products.</div>
+<a class="cta" href="/?node=liuweichao"><span class="i18n-zh">在关系图谱中查看 Liu Weichao →</span><span class="i18n-en">View Liu Weichao in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2020</span> AlphaDog C/E series quadruped</li><li><span class="y">2023</span> 100M+ yuan A1 round</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Quadruped robot rivals (Unitree)</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

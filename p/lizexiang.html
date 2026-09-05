@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>李泽湘 Li Zexiang · HKUST / XbotPark | 智能硬件图谱</title>
-<meta name="description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。">
+<title>Li Zexiang · HKUST / XbotPark | 智能硬件图谱</title>
+<meta name="description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/lizexiang.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/lizexiang.html">
-<meta property="og:title" content="李泽湘 Li Zexiang · 深圳硬件创业教父 · 港科大教授">
-<meta property="og:description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。">
+<meta property="og:title" content="Li Zexiang · Father of Shenzhen Hardware Startups">
+<meta property="og:description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/lizexiang.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="李泽湘 Li Zexiang"><meta name="twitter:description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。">
+<meta name="twitter:title" content="Li Zexiang"><meta name="twitter:description" content="1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/lizexiang.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"李泽湘 Li Zexiang","alternateName":"Li Zexiang","jobTitle":"深圳硬件创业教父 · 港科大教授","worksFor":{"@type":"Organization","name":"HKUST / XbotPark"},"description":"1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。","url":"https://hardware.jasonlin.tech/p/lizexiang.html","image":"https://hardware.jasonlin.tech/og/lizexiang.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Li Zexiang", "alternateName": "李泽湘", "jobTitle": "Father of Shenzhen Hardware Startups", "worksFor": {"@type": "Organization", "name": "HKUST / XbotPark"}, "description": "1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。", "url": "https://hardware.jasonlin.tech/p/lizexiang.html", "image": "https://hardware.jasonlin.tech/og/lizexiang.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(10,132,255,.92),rgba(10,132,255,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(10,132,255,.14)">LZ</div>
-<h1><span class="i18n-zh">李泽湘 Li Zexiang</span><span class="i18n-en">Li Zexiang</span></h1>
+<img class="avatar" src="/assets/people/lizexiang.jpg" alt="Li Zexiang" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">李泽湘</span><span class="i18n-en">Li Zexiang</span></h1>
 <p class="org">HKUST / XbotPark</p>
 <p class="role"><span class="i18n-zh">深圳硬件创业教父 · 港科大教授</span><span class="i18n-en">Father of Shenzhen Hardware Startups</span></p>
 <div class="fields"><span class="tag">drones</span><span class="tag">robotics</span></div>
-<div class="bio i18n-zh">1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。</div><div class="bio i18n-en">Born 1961 Hunan. Central South Univ BS, UC Berkeley EECS PhD. HKUST professor, Frank Wang's thesis advisor. Created XbotPark (Songshan Lake Robot Base) incubating 60+ hardware startups including DJI, Narwal. The godfather of Shenzhen hardware entrepreneurship.</div>
-<a class="cta" href="/?node=lizexiang"><span class="i18n-zh">在关系图谱中查看 李泽湘 →</span><span class="i18n-en">View Li Zexiang in the graph →</span></a>
+<div class="bio i18n-zh">1961年生于湖南。中南大学学士，UC Berkeley 博士。港科大教授，汪滔导师。创办松山湖机器人基地 XbotPark，孵化 60+ 家硬件创业公司。</div><div class="bio i18n-en">Born 1961 Hunan. Central South Univ BS, UC Berkeley EECS PhD. HKUST professor, Frank Wang&#x27;s thesis advisor. Created XbotPark (Songshan Lake Robot Base) incubating 60+ hardware startups including DJI, Narwal. The godfather of Shenzhen hardware entrepreneurship.</div>
+<a class="cta" href="/?node=lizexiang"><span class="i18n-zh">在关系图谱中查看 Li Zexiang →</span><span class="i18n-en">View Li Zexiang in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangtao.html"><b>汪滔 Frank Wang</b><span>港科大导师，孵化大疆</span></a><a class="nbr" href="/p/zhangjunbin.html"><b>张峻彬 Zhang Junbin</b><span>松山湖孵化，天使投资</span></a><a class="nbr" href="/p/liujingkang.html"><b>刘靖康 Liu Jingkang</b><span>松山湖/深圳硬件生态</span></a><a class="nbr" href="/p/ringconn.html"><b>RingConn创始人 RingConn Founders</b><span>李泽湘清水湾基金投资</span></a><a class="nbr" href="/p/tangwenxuan.html"><b>唐文轩 Tang Wenxuan</b><span>李泽湘通过松山湖研究院A轮投资</span></a><a class="nbr" href="/p/taoshizheng.html"><b>陶师正 Tao Shizheng</b><span>在李泽湘实验室起步，松山湖创办</span></a><a class="nbr" href="/p/gaobingqiang.html"><b>高秉强 Gao Bingqiang</b><span>港科大教授三人组，XbotPark投资网络</span></a><a class="nbr" href="/p/ganjie.html"><b>甘洁 Gan Jie</b><span>联合创办XbotPark松山湖基地</span></a><a class="nbr" href="/p/chenyuqi.html"><b>陈宇奇 Chen Yuqi</b><span>XbotPark种子投资</span></a><a class="nbr" href="/p/shijinbo.html"><b>石金博 Shi Jinbo</b><span>博士导师，考察工厂后创业</span></a><a class="nbr" href="/p/lizhichen.html"><b>李志晨 Li Zhichen</b><span>XbotPark孵化</span></a><a class="nbr" href="/p/gaowangshu.html"><b>高望书 Gao Wangshu</b><span>XbotPark种子投资</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangtao.html"><b>汪滔 Frank Wang</b><span>HKUST thesis advisor, mentored DJI founding</span></a><a class="nbr" href="/p/zhangjunbin.html"><b>张峻彬 Zhang Junbin</b><span>XbotPark incubation, angel investor</span></a><a class="nbr" href="/p/liujingkang.html"><b>刘靖康 Liu Jingkang</b><span>XbotPark / Shenzhen hardware ecosystem</span></a><a class="nbr" href="/p/ringconn.html"><b>RingConn创始人 RingConn Founders</b><span>Li Zexiang Qingshuiwan Fund invested</span></a><a class="nbr" href="/p/tangwenxuan.html"><b>唐文轩 Tang Wenxuan</b><span>Li Zexiang A round via Songshan Lake</span></a><a class="nbr" href="/p/taoshizheng.html"><b>陶师正 Tao Shizheng</b><span>Founded in Li Zexiang lab, Songshan Lake</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;

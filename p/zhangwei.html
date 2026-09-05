@@ -1,20 +1,22 @@
 <!doctype html><html lang="zh-CN"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<style>:root{color-scheme:dark}html{background:#000}</style>
+<style>/* 纯深色页:钉死 dark 并把背景写在 html 上,否则 iOS Safari 状态栏区域按浅色画,
+   深色页面顶上留一条白边(2026-08-15 实测) */
+:root{color-scheme:dark}html{background:#000}</style>
 <script>try{document.documentElement.className=(localStorage.getItem('graphLang')==='en')?'lang-en':'lang-zh'}catch(e){document.documentElement.className='lang-zh'}</script>
-<title>张巍 Zhang Wei · LimX Dynamics | 智能硬件图谱</title>
-<meta name="description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。">
+<title>Zhang Wei · LimX Dynamics | 智能硬件图谱</title>
+<meta name="description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。…">
 <link rel="canonical" href="https://hardware.jasonlin.tech/p/zhangwei.html">
 <meta property="og:type" content="profile"><meta property="og:url" content="https://hardware.jasonlin.tech/p/zhangwei.html">
-<meta property="og:title" content="张巍 Zhang Wei · 逐际动力创始人 · 南科大教授">
-<meta property="og:description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。">
+<meta property="og:title" content="Zhang Wei · Founder of LimX · SUSTech Professor">
+<meta property="og:description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。…">
 <meta property="og:site_name" content="智能硬件图谱"><meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hardware.jasonlin.tech/og/zhangwei.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="张巍 Zhang Wei"><meta name="twitter:description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。">
+<meta name="twitter:title" content="Zhang Wei"><meta name="twitter:description" content="中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。…">
 <meta name="twitter:image" content="https://hardware.jasonlin.tech/og/zhangwei.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"张巍 Zhang Wei","alternateName":"Zhang Wei","jobTitle":"逐际动力创始人 · 南科大教授","worksFor":{"@type":"Organization","name":"LimX Dynamics"},"description":"中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。","url":"https://hardware.jasonlin.tech/p/zhangwei.html","image":"https://hardware.jasonlin.tech/og/zhangwei.png"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Zhang Wei", "alternateName": "张巍", "jobTitle": "Founder of LimX · SUSTech Professor", "worksFor": {"@type": "Organization", "name": "LimX Dynamics"}, "description": "中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。", "url": "https://hardware.jasonlin.tech/p/zhangwei.html", "image": "https://hardware.jasonlin.tech/og/zhangwei.png"}}</script>
 <style>
 :root{--bg:#000;--card:#1d1d1f;--fg:#f5f5f7;--mut:#a1a1a6;--blue:#2997ff}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
@@ -46,19 +48,23 @@ li a,.bio a{color:var(--blue);text-decoration:none}
 <button class="langtoggle" id="langtoggle" type="button" aria-label="切换语言 / Toggle language"><span class="i18n-zh">EN</span><span class="i18n-en">中</span></button>
 <div class="wrap">
 <a class="eyebrow" href="/"><span class="i18n-zh">智能硬件图谱</span><span class="i18n-en">Hardware Startup Graph</span> ↗</a>
-<div class="avatar mono" style="background:linear-gradient(145deg,rgba(48,209,88,.92),rgba(48,209,88,.5));box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 0 7px rgba(48,209,88,.14)">ZW</div>
-<h1><span class="i18n-zh">张巍 Zhang Wei</span><span class="i18n-en">Zhang Wei</span></h1>
+<img class="avatar" src="/assets/people/zhangwei.jpg" alt="Zhang Wei" width="108" height="108" loading="eager">
+<h1><span class="i18n-zh">张巍</span><span class="i18n-en">Zhang Wei</span></h1>
 <p class="org">LimX Dynamics</p>
 <p class="role"><span class="i18n-zh">逐际动力创始人 · 南科大教授</span><span class="i18n-en">Founder of LimX · SUSTech Professor</span></p>
-<div class="fields"><span class="tag">robotics</span></div>
+<div class="fields"><span class="tag">robotics</span><span class="tag">humanoid</span></div>
 <div class="bio i18n-zh">中科大→普渡博士→Berkeley博后→俄亥俄终身教授→南科大。2022.1深圳创办逐际。Oli人形2025。A轮5亿。阿里/蔚来/联想/京东。</div><div class="bio i18n-en">USTC Automation. Purdue stats MS+ECE PhD. UC Berkeley postdoc. Ohio State tenured prof. SUSTech Shenzhen. LimX Jan 2022. Oli humanoid 2025. 500M yuan Series A. Alibaba/NIO Capital/Lenovo/JD.</div>
-<a class="cta" href="/?node=zhangwei"><span class="i18n-zh">在关系图谱中查看 张巍 →</span><span class="i18n-en">View Zhang Wei in the graph →</span></a>
+<a class="cta" href="/?node=zhangwei"><span class="i18n-zh">在关系图谱中查看 Zhang Wei →</span><span class="i18n-en">View Zhang Wei in the graph →</span></a><button class="cta cta-share" onclick="shareThis(this)"><span class="i18n-zh">分享</span><span class="i18n-en">Share</span></button>
 
-<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul><li><span class="y">2024</span> LimX W1</li><li><span class="y">2025</span> LimX Oli humanoid</li></ul>
-<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>深圳机器人公司</span></a><a class="nbr" href="/p/pengzhihui.html"><b>彭志辉（稚晖君） Peng Zhihui</b><span>深圳具身智能创始人</span></a>
+<h2><span class="i18n-zh">时间线</span><span class="i18n-en">Timeline</span></h2><ul></ul>
+<h2><span class="i18n-zh">关系网络</span><span class="i18n-en">Connections</span></h2><a class="nbr" href="/p/wangxingxing.html"><b>王兴兴 Wang Xingxing</b><span>Shenzhen robot companies</span></a><a class="nbr" href="/p/pengzhihui.html"><b>彭志辉（稚晖君） Peng Zhihui</b><span>Shenzhen embodied AI founders</span></a>
 <a class="back" href="/"><span class="i18n-zh">← 返回完整图谱</span><span class="i18n-en">← Back to the graph</span></a>
 </div>
 <script>(function(){var b=document.getElementById('langtoggle');if(!b)return;b.addEventListener('click',function(){var en=document.documentElement.classList.contains('lang-en');var n=en?'zh':'en';document.documentElement.className='lang-'+n;try{localStorage.setItem('graphLang',n)}catch(e){}});})();</script>
+<style>.cta-share{margin-left:8px;background:transparent;color:#0a84ff;border:1px solid rgba(255,255,255,.18);cursor:pointer;font:inherit;font-weight:600}</style>
+<script>function shareThis(b){var u=document.querySelector('link[rel=canonical]').href,t=document.title,d=(document.querySelector('meta[name=description]')||{}).content||'';
+if(navigator.share){navigator.share({title:t,text:d,url:u}).catch(function(){});return;}
+try{navigator.clipboard.writeText(u).then(function(){var o=b.innerHTML;b.textContent='已复制链接 · Copied';setTimeout(function(){b.innerHTML=o},1600)})}catch(e){}}</script>
 <script>(function(){try{
 var UA=navigator.userAgent||'';
 if(/bot|crawl|spider|slurp|headless|lighthouse|bingpreview|facebookexternalhit/i.test(UA))return;
