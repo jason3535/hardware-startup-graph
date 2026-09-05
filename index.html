@@ -156,7 +156,7 @@
     {
       "@type": "DataDownload",
       "encodingFormat": "application/json",
-      "contentUrl": "https://graph-mcp.992978142.workers.dev/mcp",
+      "contentUrl": "https://graph-mcp.jasonlin.tech/mcp",
       "description": "Read-only MCP (Model Context Protocol) endpoint — query every person, bilingual bio and relationship from any AI client."
     }
   ]
@@ -7055,18 +7055,18 @@ applyLanguage = function(lang) {
     <h3 class="mcp-card-title">Open this graph in any AI</h3>
     <p class="mcp-card-desc">A read-only MCP server exposes every person, bilingual bio and relationship in this graph. Connect it in Claude, Cursor or any MCP client and ask questions directly.</p>
     <div class="mcp-url-row">
-      <code id="mcp-url">https://graph-mcp.992978142.workers.dev/mcp</code>
+      <code id="mcp-url">https://graph-mcp.jasonlin.tech/mcp</code>
       <button id="mcp-copy" type="button">Copy</button>
     </div>
     <div class="mcp-card-foot">
       <span class="mcp-clients">Claude · Cursor · MCP clients</span>
-      <a class="mcp-card-link" href="https://graph-mcp.992978142.workers.dev/" target="_blank" rel="noopener">How to connect →</a>
+      <a class="mcp-card-link" href="https://graph-mcp.jasonlin.tech/" target="_blank" rel="noopener">How to connect →</a>
     </div>
   </div>
 </div>
 <script>
 (function(){
-  var badge=document.getElementById('mcp-badge'),toggle=document.getElementById('mcp-badge-toggle'),copy=document.getElementById('mcp-copy'),url='https://graph-mcp.992978142.workers.dev/mcp';
+  var badge=document.getElementById('mcp-badge'),toggle=document.getElementById('mcp-badge-toggle'),copy=document.getElementById('mcp-copy'),url='https://graph-mcp.jasonlin.tech/mcp';
   if(!badge||!toggle)return;
   function setOpen(o){badge.setAttribute('data-open',o);toggle.setAttribute('aria-expanded',o);}
   toggle.addEventListener('click',function(e){e.stopPropagation();setOpen(badge.getAttribute('data-open')!=='true');});
