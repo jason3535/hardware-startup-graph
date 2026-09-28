@@ -420,6 +420,11 @@ body.no-insights #graph-container {
   padding: 3px 0;
   cursor: default;
 }
+
+.legend-row.lg-click { cursor: pointer; border-radius: 6px; padding-left: 4px; padding-right: 6px; margin-left: -4px; transition: background .15s ease, opacity .15s ease; }
+.legend-row.lg-click:hover { background: rgba(255,255,255,0.08); }
+.legend-row.lg-active { background: rgba(255,255,255,0.14); }
+.legend-row.lg-dim { opacity: .45; }
 .legend-dot {
   width: 8px;
   height: 8px;
@@ -1127,7 +1132,10 @@ body.no-insights #graph-container {
     <button class="filter-pill" data-filter="companion">Companions & Toys</button>
     <button class="filter-pill" data-filter="wearable">Wearables</button>
     <button class="filter-pill" data-filter="ai-device">AI Devices</button>
-    <button class="filter-pill" data-filter="consumer">Consumer</button>
+    <button class="filter-pill" data-filter="desktop-fab">Desktop Fabrication</button>
+    <button class="filter-pill" data-filter="imaging">Imaging &amp; Display</button>
+    <button class="filter-pill" data-filter="power-mobility">Power &amp; Mobility</button>
+    <button class="filter-pill" data-filter="gear">Accessories</button>
     <button class="filter-pill" data-filter="smart-home">Smart Home</button>
     <button class="filter-pill" data-filter="drones">Drones</button>
     <button class="filter-pill" data-filter="health">Health & BCI</button>
@@ -1365,61 +1373,65 @@ const scholars = [
   ]
  },
  {
-  "id": "ivyross",
-  "name": "Ivy Ross",
-  "org": "Google",
-  "title": "Chief Design Officer, Consumer Devices",
-  "field": ["consumer", "smart-home"],
-  "bio": "Leads hardware design across Google's consumer devices — Pixel, Nest, and the wearables line. A jewelry designer by training whose work is in the Smithsonian, she brought a materials-and-craft sensibility to a company built on software, pushing fabric finishes and warmer forms into Pixel and Nest. Co-author of 'Your Brain on Art' on how aesthetics shape cognition.",
-  "papers": [
-   {
-    "y": "2014",
-    "t": "加入 Google 领导硬件设计"
-   },
-   {
-    "y": "2016",
-    "t": "Pixel 一代"
-   },
-   {
-    "y": "2019",
-    "t": "Nest 产品线整合"
-   },
-   {
-    "y": "2023",
-    "t": "《Your Brain on Art》出版"
-   },
-   {
-    "y": "2025",
-    "t": "米兰设计周 Google 装置《Making the Invisible Visible》(与光影艺术家 Lachlan Turczan)"
-   }
-  ]
- },
+ "id": "ivyross",
+ "name": "Ivy Ross",
+ "org": "Google",
+ "title": "Chief Design Officer, Consumer Devices",
+ "field": [
+  "smart-home"
+ ],
+ "bio": "Leads hardware design across Google's consumer devices — Pixel, Nest, and the wearables line. A jewelry designer by training whose work is in the Smithsonian, she brought a materials-and-craft sensibility to a company built on software, pushing fabric finishes and warmer forms into Pixel and Nest. Co-author of 'Your Brain on Art' on how aesthetics shape cognition.",
+ "papers": [
+  {
+   "y": "2014",
+   "t": "加入 Google 领导硬件设计"
+  },
+  {
+   "y": "2016",
+   "t": "Pixel 一代"
+  },
+  {
+   "y": "2019",
+   "t": "Nest 产品线整合"
+  },
+  {
+   "y": "2023",
+   "t": "《Your Brain on Art》出版"
+  },
+  {
+   "y": "2025",
+   "t": "米兰设计周 Google 装置《Making the Invisible Visible》(与光影艺术家 Lachlan Turczan)"
+  }
+ ]
+},
  {
-  "id": "gustav",
-  "name": "Gustav Söderström",
-  "org": "Spotify",
-  "title": "Co-President & Chief Product/Technology Officer",
-  "field": ["consumer"],
-  "bio": "Has run product and technology at Spotify since 2009, building the recommendation systems that made Discover Weekly a cultural artifact. Came from hardware — founded Kenet Works, a mobile startup acquired by Yahoo — and argues that the hard part of consumer AI is not the model but the feedback loop between what people say they want and what they actually play.",
-  "papers": [
-   {
-    "y": "2009",
-    "t": "加入 Spotify 任 CPO"
-   },
-   {
-    "y": "2015",
-    "t": "Discover Weekly 发布"
-   },
-   {
-    "y": "2022",
-    "t": "出任联席总裁"
-   },
-   {
-    "y": "2026",
-    "t": "出任 Spotify 联席 CEO(与 Alex Norström);Daniel Ek 转任执行董事长"
-   }
-  ]
- },
+ "id": "gustav",
+ "name": "Gustav Söderström",
+ "org": "Spotify",
+ "title": "Co-President & Chief Product/Technology Officer",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Has run product and technology at Spotify since 2009, building the recommendation systems that made Discover Weekly a cultural artifact. Came from hardware — founded Kenet Works, a mobile startup acquired by Yahoo — and argues that the hard part of consumer AI is not the model but the feedback loop between what people say they want and what they actually play.",
+ "papers": [
+  {
+   "y": "2009",
+   "t": "加入 Spotify 任 CPO"
+  },
+  {
+   "y": "2015",
+   "t": "Discover Weekly 发布"
+  },
+  {
+   "y": "2022",
+   "t": "出任联席总裁"
+  },
+  {
+   "y": "2026",
+   "t": "出任 Spotify 联席 CEO(与 Alex Norström);Daniel Ek 转任执行董事长"
+  }
+ ]
+},
  {
   "id": "lipbutan",
   "name": "Lip-Bu Tan",
@@ -1763,53 +1775,57 @@ const scholars = [
   ]
  },
  {
-  "id": "taoye",
-  "name": "Tao Ye",
-  "org": "Bambu Lab",
-  "title": "Founder of Bambu Lab · ex-DJI",
-  "field": ["consumer"],
-  "bio": "USTC astronomy and physics, PhD at Konstanz. At DJI he went from engineer to head of the consumer drone line that carried most of the revenue, then left in Nov 2020 with four colleagues. The Bambu Lab X1 (2022) earned the iPhone-of-3D-printing label for a reason: multi-colour via AMS, 600 mm/s class motion, and a closed-loop stack that made desktop printing work without tuning. H2D added laser cutting and engraving to the same body. Bambu is now the volume leader in consumer FDM and the target of the industry's incumbent: on 17 Sep 2026 an East Texas jury found willful infringement of four Stratasys patents covering purge towers, path generation and bed-levelling force detection across the X1, P1 and A1 lines, awarding $27.6M, with a fifth patent still to be tried. In April 2026 the Unified Patent Court in The Hague refused Stratasys preliminary measures against the H2C in Europe.",
-  "papers": [
-   {
-    "y": "2022",
-    "t": "Bambu Lab X1 · AMS multi-colour"
-   },
-   {
-    "y": "2025",
-    "t": "H2D — printing plus laser"
-   },
-   {
-    "y": "2026",
-    "t": "Stratasys wins $27.6M US verdict; UPC denies EU injunction"
-   }
-  ]
- },
+ "id": "taoye",
+ "name": "Tao Ye",
+ "org": "Bambu Lab",
+ "title": "Founder of Bambu Lab · ex-DJI",
+ "field": [
+  "desktop-fab"
+ ],
+ "bio": "USTC astronomy and physics, PhD at Konstanz. At DJI he went from engineer to head of the consumer drone line that carried most of the revenue, then left in Nov 2020 with four colleagues. The Bambu Lab X1 (2022) earned the iPhone-of-3D-printing label for a reason: multi-colour via AMS, 600 mm/s class motion, and a closed-loop stack that made desktop printing work without tuning. H2D added laser cutting and engraving to the same body. Bambu is now the volume leader in consumer FDM and the target of the industry's incumbent: on 17 Sep 2026 an East Texas jury found willful infringement of four Stratasys patents covering purge towers, path generation and bed-levelling force detection across the X1, P1 and A1 lines, awarding $27.6M, with a fifth patent still to be tried. In April 2026 the Unified Patent Court in The Hague refused Stratasys preliminary measures against the H2C in Europe.",
+ "papers": [
+  {
+   "y": "2022",
+   "t": "Bambu Lab X1 · AMS multi-colour"
+  },
+  {
+   "y": "2025",
+   "t": "H2D — printing plus laser"
+  },
+  {
+   "y": "2026",
+   "t": "Stratasys wins $27.6M US verdict; UPC denies EU injunction"
+  }
+ ]
+},
  {
-  "id": "wanglei",
-  "name": "Wang Lei",
-  "org": "EcoFlow",
-  "title": "Founder of EcoFlow · Ex-DJI Battery Chief",
-  "field": ["consumer"],
-  "bio": "HK PolyU BS, HKU PhD (battery tech). Founded DJI battery R&D dept 2014. Left at 29 (2017), founded EcoFlow. Global #1 portable power station brand. 5M+ users, ~8B yuan 2024 revenue. Pursuing dual-track IPO: US listing for at least $300M, plus China A-share IPO advisory signed with CICC. Sequoia / Hillhouse backed; valuation >$1B post-Series B.",
-  "papers": [
-   {
-    "y": "2018",
-    "t": "EcoFlow RIVER"
-   },
-   {
-    "y": "2021",
-    "t": "EcoFlow DELTA Pro"
-   },
-   {
-    "y": "2023",
-    "t": "DELTA Pro Ultra"
-   },
-   {
-    "y": "2025",
-    "t": "Dual-track IPO US + China A-share"
-   }
-  ]
- },
+ "id": "wanglei",
+ "name": "Wang Lei",
+ "org": "EcoFlow",
+ "title": "Founder of EcoFlow · Ex-DJI Battery Chief",
+ "field": [
+  "power-mobility"
+ ],
+ "bio": "HK PolyU BS, HKU PhD (battery tech). Founded DJI battery R&D dept 2014. Left at 29 (2017), founded EcoFlow. Global #1 portable power station brand. 5M+ users, ~8B yuan 2024 revenue. Pursuing dual-track IPO: US listing for at least $300M, plus China A-share IPO advisory signed with CICC. Sequoia / Hillhouse backed; valuation >$1B post-Series B.",
+ "papers": [
+  {
+   "y": "2018",
+   "t": "EcoFlow RIVER"
+  },
+  {
+   "y": "2021",
+   "t": "EcoFlow DELTA Pro"
+  },
+  {
+   "y": "2023",
+   "t": "DELTA Pro Ultra"
+  },
+  {
+   "y": "2025",
+   "t": "Dual-track IPO US + China A-share"
+  }
+ ]
+},
  {
   "id": "pengbin",
   "name": "Peng Bin",
@@ -1873,23 +1889,25 @@ const scholars = [
   ]
  },
  {
-  "id": "zhipai",
-  "name": "Chen Yiqi",
-  "org": "Zhipai",
-  "title": "Founder of Zhipai · DJI-Invested",
-  "field": ["consumer"],
-  "bio": "Post-90s Chaoshan entrepreneur. Founded Zhipai 3D printing. 1.6B yuan revenue 2024. DJI strategic investment 2025 (triggered Bambu Lab founder public response). Target 5B yuan revenue in 3 years.",
-  "papers": [
-   {
-    "y": "2023",
-    "t": "Zhipai 3D printers"
-   },
-   {
-    "y": "2025",
-    "t": "DJI strategic investment"
-   }
-  ]
- },
+ "id": "zhipai",
+ "name": "Chen Yiqi",
+ "org": "Zhipai",
+ "title": "Founder of Zhipai · DJI-Invested",
+ "field": [
+  "desktop-fab"
+ ],
+ "bio": "Post-90s Chaoshan entrepreneur. Founded Zhipai 3D printing. 1.6B yuan revenue 2024. DJI strategic investment 2025 (triggered Bambu Lab founder public response). Target 5B yuan revenue in 3 years.",
+ "papers": [
+  {
+   "y": "2023",
+   "t": "Zhipai 3D printers"
+  },
+  {
+   "y": "2025",
+   "t": "DJI strategic investment"
+  }
+ ]
+},
  {
   "id": "yuhao",
   "name": "Yu Hao",
@@ -1991,135 +2009,145 @@ const scholars = [
   ]
  },
  {
-  "id": "carlpei",
-  "name": "Carl Pei",
-  "org": "Nothing",
-  "title": "Founder of Nothing · OnePlus Co-founder",
-  "field": ["ai-device", "consumer"],
-  "bio": "Born 1989 Beijing, grew up Sweden. Stockholm Sch of Econ dropout. Nokia intern, Meizu, OPPO 2012. Co-founded OnePlus Dec 2013 with Pete Lau. Left Oct 2020. Nothing London Jan 2021. Transparent Glyph Interface design. Raised a $200M Series C at a $1.3B valuation (Sep 2025, led by Tiger Global with GV, EQT, Qualcomm Ventures, Tapestry, Highland Europe and Nikhil Kamath) to build AI-native devices and Nothing's own 'hyper-customized,' proactive OS. In Mar 2026 Pei argued AI agents will make traditional smartphone apps obsolete; Nothing's first AI-native device — explicitly not a phone — is slated for 2026.",
-  "papers": [
-   {
-    "y": "2014",
-    "t": "OnePlus One"
-   },
-   {
-    "y": "2022",
-    "t": "Nothing Phone (1)"
-   },
-   {
-    "y": "2024",
-    "t": "Nothing Phone (2a)"
-   },
-   {
-    "y": "2025",
-    "t": "$200M Series C at $1.3B; building AI-native OS"
-   },
-   {
-    "y": "2026",
-    "t": "First AI-native device (not a phone) planned"
-   }
-  ]
- },
+ "id": "carlpei",
+ "name": "Carl Pei",
+ "org": "Nothing",
+ "title": "Founder of Nothing · OnePlus Co-founder",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Born 1989 Beijing, grew up Sweden. Stockholm Sch of Econ dropout. Nokia intern, Meizu, OPPO 2012. Co-founded OnePlus Dec 2013 with Pete Lau. Left Oct 2020. Nothing London Jan 2021. Transparent Glyph Interface design. Raised a $200M Series C at a $1.3B valuation (Sep 2025, led by Tiger Global with GV, EQT, Qualcomm Ventures, Tapestry, Highland Europe and Nikhil Kamath) to build AI-native devices and Nothing's own 'hyper-customized,' proactive OS. In Mar 2026 Pei argued AI agents will make traditional smartphone apps obsolete; Nothing's first AI-native device — explicitly not a phone — is slated for 2026.",
+ "papers": [
+  {
+   "y": "2014",
+   "t": "OnePlus One"
+  },
+  {
+   "y": "2022",
+   "t": "Nothing Phone (1)"
+  },
+  {
+   "y": "2024",
+   "t": "Nothing Phone (2a)"
+  },
+  {
+   "y": "2025",
+   "t": "$200M Series C at $1.3B; building AI-native OS"
+  },
+  {
+   "y": "2026",
+   "t": "First AI-native device (not a phone) planned"
+  }
+ ]
+},
  {
-  "id": "liujingkang",
-  "name": "Liu Jingkang",
-  "org": "Insta360",
-  "title": "Founder of Insta360 · 1st Post-90 STAR Board",
-  "field": ["consumer"],
-  "bio": "Born 1991 Zhongshan. Nanjing Univ Software 2014. Rejected Tencent. IDG angel $1M. Insta360 2015 Shenzhen. 360-cam global #1 5 years 50%+. 5.57B yuan 2024. STAR Board IPO Jun 2025 +285% record. 1st post-90 STAR Board founder.",
-  "papers": [
-   {
-    "y": "2016",
-    "t": "Insta360 Nano"
-   },
-   {
-    "y": "2020",
-    "t": "Insta360 ONE R"
-   },
-   {
-    "y": "2023",
-    "t": "Insta360 X3"
-   },
-   {
-    "y": "2025",
-    "t": "影石创新科创板上市(688775),发行价 47.27 元、募资 19.38 亿,首日市值超 700 亿"
-   }
-  ]
- },
+ "id": "liujingkang",
+ "name": "Liu Jingkang",
+ "org": "Insta360",
+ "title": "Founder of Insta360 · 1st Post-90 STAR Board",
+ "field": [
+  "imaging"
+ ],
+ "bio": "Born 1991 Zhongshan. Nanjing Univ Software 2014. Rejected Tencent. IDG angel $1M. Insta360 2015 Shenzhen. 360-cam global #1 5 years 50%+. 5.57B yuan 2024. STAR Board IPO Jun 2025 +285% record. 1st post-90 STAR Board founder.",
+ "papers": [
+  {
+   "y": "2016",
+   "t": "Insta360 Nano"
+  },
+  {
+   "y": "2020",
+   "t": "Insta360 ONE R"
+  },
+  {
+   "y": "2023",
+   "t": "Insta360 X3"
+  },
+  {
+   "y": "2025",
+   "t": "影石创新科创板上市(688775),发行价 47.27 元、募资 19.38 亿,首日市值超 700 亿"
+  }
+ ]
+},
  {
-  "id": "yangmeng",
-  "name": "Yang Meng",
-  "org": "Anker",
-  "title": "Founder of Anker Innovations",
-  "field": ["consumer"],
-  "bio": "Born 1982 Changsha. Peking Univ CS, UT Austin MS. Google senior engineer + Founder's Award. Resigned 2011. Anker brand California. Global #1 charging. Shenzhen IPO 2020. Expanded: Eufy, Soundcore, Nebula. 28.5B wealth 2026.",
-  "papers": [
-   {
-    "y": "2011",
-    "t": "Anker portable chargers"
-   },
-   {
-    "y": "2018",
-    "t": "Eufy RoboVac"
-   },
-   {
-    "y": "2020",
-    "t": "Anker IPO"
-   },
-   {
-    "y": "2025",
-    "t": "安克创新全年营收 305.14 亿元(+23.5%),净利 25.45 亿元(+20.4%)"
-   }
-  ]
- },
+ "id": "yangmeng",
+ "name": "Yang Meng",
+ "org": "Anker",
+ "title": "Founder of Anker Innovations",
+ "field": [
+  "gear"
+ ],
+ "bio": "Born 1982 Changsha. Peking Univ CS, UT Austin MS. Google senior engineer + Founder's Award. Resigned 2011. Anker brand California. Global #1 charging. Shenzhen IPO 2020. Expanded: Eufy, Soundcore, Nebula. 28.5B wealth 2026.",
+ "papers": [
+  {
+   "y": "2011",
+   "t": "Anker portable chargers"
+  },
+  {
+   "y": "2018",
+   "t": "Eufy RoboVac"
+  },
+  {
+   "y": "2020",
+   "t": "Anker IPO"
+  },
+  {
+   "y": "2025",
+   "t": "安克创新全年营收 305.14 亿元(+23.5%),净利 25.45 亿元(+20.4%)"
+  }
+ ]
+},
  {
-  "id": "yehongxin",
-  "name": "Ye Hongxin",
-  "org": "Laifen",
-  "title": "Founder of Laifen · Dyson Challenger",
-  "field": ["consumer"],
-  "bio": "Born 1986 Lishui Zhejiang. Poor family, collected garbage with father. Age 8 made lightbulbs from batteries. 1st million on Taobao. Built manned flying vehicle prototypes. Sold electric skateboard co. Mastered high-speed motor 2017. Laifen Dongguan 2019. Dyson killer at 1/3 price. Swift 4 CES 2026 115K RPM. Fortune 40 Under 40 China 2024.",
-  "papers": [
-   {
-    "y": "2021",
-    "t": "Laifen LF03 hair dryer"
-   },
-   {
-    "y": "2025",
-    "t": "Laifen Swift 4 CES 2026"
-   },
-   {
-    "y": "2025",
-    "t": "Laifen 1st flagship Shenzhen"
-   }
-  ]
- },
+ "id": "yehongxin",
+ "name": "Ye Hongxin",
+ "org": "Laifen",
+ "title": "Founder of Laifen · Dyson Challenger",
+ "field": [
+  "gear"
+ ],
+ "bio": "Born 1986 Lishui Zhejiang. Poor family, collected garbage with father. Age 8 made lightbulbs from batteries. 1st million on Taobao. Built manned flying vehicle prototypes. Sold electric skateboard co. Mastered high-speed motor 2017. Laifen Dongguan 2019. Dyson killer at 1/3 price. Swift 4 CES 2026 115K RPM. Fortune 40 Under 40 China 2024.",
+ "papers": [
+  {
+   "y": "2021",
+   "t": "Laifen LF03 hair dryer"
+  },
+  {
+   "y": "2025",
+   "t": "Laifen Swift 4 CES 2026"
+  },
+  {
+   "y": "2025",
+   "t": "Laifen 1st flagship Shenzhen"
+  }
+ ]
+},
  {
-  "id": "zhangqingsen",
-  "name": "Zhang Qingsen",
-  "org": "UGREEN",
-  "title": "Founder of UGREEN · Data Cable to IPO",
-  "field": ["consumer"],
-  "bio": "Born 1983 Putian Fujian. International Finance degree. Came to Shenzhen 2007 for foreign trade. Started in Huaqiangbei with 250K yuan 2009. UGREEN 2011 with a data cable. Top Tmall digital seller in 2yrs. 100+ countries. Overseas 50.4% surpassed domestic 2023. ChiNext IPO Jul 2024 +114%. 13B wealth 2025.",
-  "papers": [
-   {
-    "y": "2011",
-    "t": "UGREEN data cables"
-   },
-   {
-    "y": "2023",
-    "t": "UGREEN NAS/storage expansion"
-   },
-   {
-    "y": "2024",
-    "t": "UGREEN ChiNext IPO +114%"
-   },
-   {
-    "y": "2025",
-    "t": "绿联科技营收 94.91 亿元(+53.83%)、净利 7.05 亿元(+52.42%)"
-   }
-  ]
- },
+ "id": "zhangqingsen",
+ "name": "Zhang Qingsen",
+ "org": "UGREEN",
+ "title": "Founder of UGREEN · Data Cable to IPO",
+ "field": [
+  "gear"
+ ],
+ "bio": "Born 1983 Putian Fujian. International Finance degree. Came to Shenzhen 2007 for foreign trade. Started in Huaqiangbei with 250K yuan 2009. UGREEN 2011 with a data cable. Top Tmall digital seller in 2yrs. 100+ countries. Overseas 50.4% surpassed domestic 2023. ChiNext IPO Jul 2024 +114%. 13B wealth 2025.",
+ "papers": [
+  {
+   "y": "2011",
+   "t": "UGREEN data cables"
+  },
+  {
+   "y": "2023",
+   "t": "UGREEN NAS/storage expansion"
+  },
+  {
+   "y": "2024",
+   "t": "UGREEN ChiNext IPO +114%"
+  },
+  {
+   "y": "2025",
+   "t": "绿联科技营收 94.91 亿元(+53.83%)、净利 7.05 亿元(+52.42%)"
+  }
+ ]
+},
  {
   "id": "jesselyu",
   "name": "Jesse Lyu",
@@ -2365,23 +2393,25 @@ const scholars = [
   ]
  },
  {
-  "id": "zhangbo",
-  "name": "Zhang Bo",
-  "org": "Sharge",
-  "title": "Founder of SHARGE · AI Glasses Disruptor",
-  "field": ["wearable", "consumer"],
-  "bio": "Founded SHARGE Shenzhen 2020. Team from phone+drone cos (DJI alumni). Hermes of power banks 1299 yuan. 200M yuan charging 2024 60% overseas. CES 2025 AI glasses sold out pre-show 999 yuan price disruptor. ~100M A+ round Dec 2025.",
-  "papers": [
-   {
-    "y": "2022",
-    "t": "SHARGE premium power banks"
-   },
-   {
-    "y": "2025",
-    "t": "SHARGE loomos AI glasses 999 yuan"
-   }
-  ]
- },
+ "id": "zhangbo",
+ "name": "Zhang Bo",
+ "org": "Sharge",
+ "title": "Founder of SHARGE · AI Glasses Disruptor",
+ "field": [
+  "wearable"
+ ],
+ "bio": "Founded SHARGE Shenzhen 2020. Team from phone+drone cos (DJI alumni). Hermes of power banks 1299 yuan. 200M yuan charging 2024 60% overseas. CES 2025 AI glasses sold out pre-show 999 yuan price disruptor. ~100M A+ round Dec 2025.",
+ "papers": [
+  {
+   "y": "2022",
+   "t": "SHARGE premium power banks"
+  },
+  {
+   "y": "2025",
+   "t": "SHARGE loomos AI glasses 999 yuan"
+  }
+ ]
+},
  {
   "id": "wangxingxing",
   "name": "Wang Xingxing",
@@ -2733,109 +2763,122 @@ const scholars = [
   ]
  },
  {
-  "id": "yuanqian",
-  "name": "Yuan Qian",
-  "org": "Photon Leap",
-  "title": "President of Photon Leap",
-  "field": ["consumer"],
-  "bio": "Ex-P&G/vivo. CTO ex-Dreame+Tsinghua. Founded Mar 2025. Multi-100M angel in 3 months. AI action camera vs Insta360/DJI.",
-  "papers": [
-   {
-    "y": "2025",
-    "t": "Photon Leap AI camera"
-   }
-  ]
- },
+ "id": "yuanqian",
+ "name": "Yuan Qian",
+ "org": "Photon Leap",
+ "title": "President of Photon Leap",
+ "field": [
+  "imaging"
+ ],
+ "bio": "Ex-P&G/vivo. CTO ex-Dreame+Tsinghua. Founded Mar 2025. Multi-100M angel in 3 months. AI action camera vs Insta360/DJI.",
+ "papers": [
+  {
+   "y": "2025",
+   "t": "Photon Leap AI camera"
+  }
+ ]
+},
  {
-  "id": "luoyuanjue",
-  "name": "Luo Yuanjue",
-  "org": "Apeman",
-  "title": "Founder of Apeman · Unicorn",
-  "field": ["consumer"],
-  "bio": "Apeman 2016 Shenzhen. Monthly >100M by yr 3. Walmart 2019. >2B yuan/yr overseas. Unicorn 2021 (Midea Capital).",
-  "papers": [
-   {
-    "y": "2019",
-    "t": "Apeman Walmart"
-   },
-   {
-    "y": "2021",
-    "t": "Apeman unicorn"
-   }
-  ]
- },
+ "id": "luoyuanjue",
+ "name": "Luo Yuanjue",
+ "org": "Apeman",
+ "title": "Founder of Apeman · Unicorn",
+ "field": [
+  "imaging"
+ ],
+ "bio": "Apeman 2016 Shenzhen. Monthly >100M by yr 3. Walmart 2019. >2B yuan/yr overseas. Unicorn 2021 (Midea Capital).",
+ "papers": [
+  {
+   "y": "2019",
+   "t": "Apeman Walmart"
+  },
+  {
+   "y": "2021",
+   "t": "Apeman unicorn"
+  }
+ ]
+},
  {
-  "id": "liangxiaoling",
-  "name": "Liang Xiaoling",
-  "org": "TENWAYS",
-  "title": "Founder of TENWAYS · E-Bike",
-  "field": ["consumer"],
-  "bio": "85-gen. E-bike for Europe 97.7%. Hillhouse 21%/Tencent/Alibaba. HK IPO Feb 2026. ~1.7B yuan.",
-  "papers": [
-   {
-    "y": "2026",
-    "t": "TENWAYS HK IPO filing"
-   }
-  ]
- },
+ "id": "liangxiaoling",
+ "name": "Liang Xiaoling",
+ "org": "TENWAYS",
+ "title": "Founder of TENWAYS · E-Bike",
+ "field": [
+  "power-mobility"
+ ],
+ "bio": "85-gen. E-bike for Europe 97.7%. Hillhouse 21%/Tencent/Alibaba. HK IPO Feb 2026. ~1.7B yuan.",
+ "papers": [
+  {
+   "y": "2026",
+   "t": "TENWAYS HK IPO filing"
+  }
+ ]
+},
  {
-  "id": "heshiyou",
-  "name": "He Shiyou",
-  "org": "Baseus",
-  "title": "Founder of Baseus",
-  "field": ["consumer"],
-  "bio": "Baseus 2011 Shenzhen. 90M+ units/yr. GaN charger global #1. 2100+ patents. Anker's #1 Chinese rival.",
-  "papers": [
-   {
-    "y": "2018",
-    "t": "Baseus GaN #1"
-   },
-   {
-    "y": "2025",
-    "t": "Baseus vs Anker"
-   }
-  ]
- },
+ "id": "heshiyou",
+ "name": "He Shiyou",
+ "org": "Baseus",
+ "title": "Founder of Baseus",
+ "field": [
+  "gear"
+ ],
+ "bio": "Baseus 2011 Shenzhen. 90M+ units/yr. GaN charger global #1. 2100+ patents. Anker's #1 Chinese rival.",
+ "papers": [
+  {
+   "y": "2018",
+   "t": "Baseus GaN #1"
+  },
+  {
+   "y": "2025",
+   "t": "Baseus vs Anker"
+  }
+ ]
+},
  {
-  "id": "zhongbo",
-  "name": "Zhong Bo",
-  "org": "XGIMI",
-  "title": "Founder of XGIMI · Projector King",
-  "field": ["consumer"],
-  "bio": "UESTC. Tencent stock 2M to 100M+. XGIMI 2012 Chengdu. China #1 projector. STAR Board 2021.",
-  "papers": [
-   {
-    "y": "2021",
-    "t": "XGIMI STAR Board IPO"
-   },
-   {
-    "y": "2025",
-    "t": "极米科技营收 34.67 亿元(+1.85%)、净利 1.43 亿元(+19.4%),结束连续两年下滑"
-   }
-  ]
- },
+ "id": "zhongbo",
+ "name": "Zhong Bo",
+ "org": "XGIMI",
+ "title": "Founder of XGIMI · Projector King",
+ "field": [
+  "imaging"
+ ],
+ "bio": "UESTC. Tencent stock 2M to 100M+. XGIMI 2012 Chengdu. China #1 projector. STAR Board 2021.",
+ "papers": [
+  {
+   "y": "2021",
+   "t": "XGIMI STAR Board IPO"
+  },
+  {
+   "y": "2025",
+   "t": "极米科技营收 34.67 亿元(+1.85%)、净利 1.43 亿元(+19.4%),结束连续两年下滑"
+  }
+ ]
+},
  {
-  "id": "gaolufeng",
-  "name": "Gao Lufeng",
-  "org": "Ninebot-Segway",
-  "title": "Co-founder Ninebot · Acquired Segway",
-  "field": ["consumer", "embodied-ai"],
-  "bio": "Beihang. 2015 acquired Segway. Xiaomi ecosystem. STAR Board 2020. ~25B yuan market cap.",
-  "papers": [
-   {
-    "y": "2015",
-    "t": "Acquired Segway"
-   },
-   {
-    "y": "2020",
-    "t": "STAR Board IPO"
-   },
-   {
-    "y": "2025",
-    "t": "九号公司营收 212.8 亿元(+49.9%)、净利 17.6 亿元(+62.2%);电动两轮车销 409 万台"
-   }
-  ]
- },
+ "id": "gaolufeng",
+ "name": "Gao Lufeng",
+ "org": "Ninebot-Segway",
+ "title": "Co-founder Ninebot · Acquired Segway",
+ "field": [
+  "embodied-ai",
+  "power-mobility"
+ ],
+ "bio": "Beihang. 2015 acquired Segway. Xiaomi ecosystem. STAR Board 2020. ~25B yuan market cap.",
+ "papers": [
+  {
+   "y": "2015",
+   "t": "Acquired Segway"
+  },
+  {
+   "y": "2020",
+   "t": "STAR Board IPO"
+  },
+  {
+   "y": "2025",
+   "t": "九号公司营收 212.8 亿元(+49.9%)、净利 17.6 亿元(+62.2%);电动两轮车销 409 万台"
+  }
+ ]
+},
  {
   "id": "qiandongqi",
   "name": "Qian Dongqi",
@@ -2859,63 +2902,69 @@ const scholars = [
   ]
  },
  {
-  "id": "wangjianjun",
-  "name": "Wang Jianjun",
-  "org": "xTool / Makeblock",
-  "title": "Founder of xTool · Laser Engraver King",
-  "field": ["consumer"],
-  "bio": "80-gen from Anhui. Northwestern Polytechnical Univ aircraft design 2010. Came to Shenzhen to build robots. Founded Makeblock 2013 for STEAM education, raised 1B+ yuan at 2.5B valuation. After education market crashed (double reduction policy), pivoted to xTool laser engravers 2021 targeting global consumers. Near 100% growth YoY since. 2024 H1: revenue +90%, profit +80%. Revenue exceeds 2B yuan. Kickstarter crowdfund $2.6M+ for laser cutter. Forbes 30 Under 30 China 2013.",
-  "papers": [
-   {
-    "y": "2013",
-    "t": "Makeblock STEAM education platform"
-   },
-   {
-    "y": "2021",
-    "t": "xTool laser engraver launch"
-   },
-   {
-    "y": "2025",
-    "t": "xTool revenue >2B yuan"
-   }
-  ]
- },
+ "id": "wangjianjun",
+ "name": "Wang Jianjun",
+ "org": "xTool / Makeblock",
+ "title": "Founder of xTool · Laser Engraver King",
+ "field": [
+  "desktop-fab"
+ ],
+ "bio": "80-gen from Anhui. Northwestern Polytechnical Univ aircraft design 2010. Came to Shenzhen to build robots. Founded Makeblock 2013 for STEAM education, raised 1B+ yuan at 2.5B valuation. After education market crashed (double reduction policy), pivoted to xTool laser engravers 2021 targeting global consumers. Near 100% growth YoY since. 2024 H1: revenue +90%, profit +80%. Revenue exceeds 2B yuan. Kickstarter crowdfund $2.6M+ for laser cutter. Forbes 30 Under 30 China 2013.",
+ "papers": [
+  {
+   "y": "2013",
+   "t": "Makeblock STEAM education platform"
+  },
+  {
+   "y": "2021",
+   "t": "xTool laser engraver launch"
+  },
+  {
+   "y": "2025",
+   "t": "xTool revenue >2B yuan"
+  }
+ ]
+},
  {
-  "id": "tangwenxuan",
-  "name": "Tang Wenxuan",
-  "org": "LiberLive",
-  "title": "Founder of LiberLive · Stringless Guitar 1B Revenue",
-  "field": ["consumer"],
-  "bio": "Former DJI engineer. Met co-founder Jinsen while sharing a dorm at DJI in 2016. Founded Unknown Planet (Weizhi Xingqiu) in Songshan Lake 2016. Backed by Li Zexiang through Songshan Lake International Robot Research Institute (A round). After 5 years of R&D, launched LiberLive C1 stringless guitar Apr 2023 — users learn to play in 5 minutes via app. 2023 revenue: 110M yuan. 2024 revenue: 570M yuan (5x growth). #1 in instruments on Tmall/JD/Douyin. C2 launched Aug 2025. Cumulative sales exceeded 1B yuan. Another DJI-alumni success from Li Zexiang's XbotPark.",
-  "papers": [
-   {
-    "y": "2023",
-    "t": "LiberLive C1 stringless guitar"
-   },
-   {
-    "y": "2025",
-    "t": "LiberLive C2 + 1B cumulative sales"
-   }
-  ]
- },
+ "id": "tangwenxuan",
+ "name": "Tang Wenxuan",
+ "org": "LiberLive",
+ "title": "Founder of LiberLive · Stringless Guitar 1B Revenue",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Former DJI engineer. Met co-founder Jinsen while sharing a dorm at DJI in 2016. Founded Unknown Planet (Weizhi Xingqiu) in Songshan Lake 2016. Backed by Li Zexiang through Songshan Lake International Robot Research Institute (A round). After 5 years of R&D, launched LiberLive C1 stringless guitar Apr 2023 — users learn to play in 5 minutes via app. 2023 revenue: 110M yuan. 2024 revenue: 570M yuan (5x growth). #1 in instruments on Tmall/JD/Douyin. C2 launched Aug 2025. Cumulative sales exceeded 1B yuan. Another DJI-alumni success from Li Zexiang's XbotPark.",
+ "papers": [
+  {
+   "y": "2023",
+   "t": "LiberLive C1 stringless guitar"
+  },
+  {
+   "y": "2025",
+   "t": "LiberLive C2 + 1B cumulative sales"
+  }
+ ]
+},
  {
-  "id": "taoshizheng",
-  "name": "Tao Shizheng",
-  "org": "ePropulsion",
-  "title": "Co-founder of ePropulsion · Electric Outboard Motors",
-  "field": ["consumer"],
-  "bio": "HKUST graduate, fellow lab member with DJI founder Frank Wang under Prof. Li Zexiang. All 4 co-founders from HKUST. Started researching electric outboard motors in Li Zexiang's lab 2012. Founded ePropulsion in Songshan Lake 2014 on Li's advice. Self-developed core components after supply chain issues. Products: 1-140kW electric outboard + inboard motors + batteries. Global #2 in electric outboard shipments. HQ moved to new 10K sqm factory in Songshan Lake Robot Base 2022.",
-  "papers": [
-   {
-    "y": "2014",
-    "t": "ePropulsion founded in Songshan Lake"
-   },
-   {
-    "y": "2022",
-    "t": "ePropulsion new 10K sqm factory"
-   }
-  ]
- },
+ "id": "taoshizheng",
+ "name": "Tao Shizheng",
+ "org": "ePropulsion",
+ "title": "Co-founder of ePropulsion · Electric Outboard Motors",
+ "field": [
+  "power-mobility"
+ ],
+ "bio": "HKUST graduate, fellow lab member with DJI founder Frank Wang under Prof. Li Zexiang. All 4 co-founders from HKUST. Started researching electric outboard motors in Li Zexiang's lab 2012. Founded ePropulsion in Songshan Lake 2014 on Li's advice. Self-developed core components after supply chain issues. Products: 1-140kW electric outboard + inboard motors + batteries. Global #2 in electric outboard shipments. HQ moved to new 10K sqm factory in Songshan Lake Robot Base 2022.",
+ "papers": [
+  {
+   "y": "2014",
+   "t": "ePropulsion founded in Songshan Lake"
+  },
+  {
+   "y": "2022",
+   "t": "ePropulsion new 10K sqm factory"
+  }
+ ]
+},
  {
   "id": "zhongzhifeng",
   "name": "Zhong Zhifeng",
@@ -3025,19 +3074,21 @@ const scholars = [
   ]
  },
  {
-  "id": "linyuan",
-  "name": "Lin Yuan",
-  "org": "Species Origin",
-  "title": "Founder of Species Origin · Ex-DJI Senior Engineer",
-  "field": ["consumer"],
-  "bio": "Former DJI senior engineer. Founded Species Origin (Wuzhong Qiyuan), making high-speed hair dryers competing with Laifen and Dyson. Leveraged DJI's high-speed motor expertise — cost dropped from hundreds of yuan to 1/10th. Part of the 2025 DJI alumni startup wave. Represents the trend of DJI motor/drone tech flowing into consumer appliances.",
-  "papers": [
-   {
-    "y": "2024",
-    "t": "Species Origin high-speed hair dryer"
-   }
-  ]
- },
+ "id": "linyuan",
+ "name": "Lin Yuan",
+ "org": "Species Origin",
+ "title": "Founder of Species Origin · Ex-DJI Senior Engineer",
+ "field": [
+  "gear"
+ ],
+ "bio": "Former DJI senior engineer. Founded Species Origin (Wuzhong Qiyuan), making high-speed hair dryers competing with Laifen and Dyson. Leveraged DJI's high-speed motor expertise — cost dropped from hundreds of yuan to 1/10th. Part of the 2025 DJI alumni startup wave. Represents the trend of DJI motor/drone tech flowing into consumer appliances.",
+ "papers": [
+  {
+   "y": "2024",
+   "t": "Species Origin high-speed hair dryer"
+  }
+ ]
+},
  {
   "id": "shijun",
   "name": "Shi Jun",
@@ -3341,23 +3392,25 @@ const scholars = [
   ]
  },
  {
-  "id": "chenxuedong",
-  "name": "Chen Xuedong",
-  "org": "Snapmaker",
-  "title": "Founder of Snapmaker · Kickstarter 3D Print Record",
-  "field": ["consumer"],
-  "bio": "Born 1989 Quanzhou Fujian. Won International Robot Olympiad championship in high school, admitted to Xiamen Univ. Built multiple robots in college. Worked 2 years at AVIC Xian Research Institute. Founded Snapmaker 2016 in Shenzhen Nanshan. 3-in-1: 3D printing + laser engraving + CNC. Kickstarter records: 2017 $2.27M (#3 3D print ever), 2019 Snapmaker 2.0 $7.85M (highest tech crowdfund ever at time), 2025 U1 $20.6M (highest 3D print crowdfund in history, 150M+ yuan). B round 2025: hundreds of millions, led by Hillhouse + Meituan, Shunwei + Cowin followed.",
-  "papers": [
-   {
-    "y": "2017",
-    "t": "Snapmaker 1st Kickstarter $2.27M"
-   },
-   {
-    "y": "2025",
-    "t": "U1 Kickstarter $20.6M global record, B round Hillhouse+Meituan"
-   }
-  ]
- },
+ "id": "chenxuedong",
+ "name": "Chen Xuedong",
+ "org": "Snapmaker",
+ "title": "Founder of Snapmaker · Kickstarter 3D Print Record",
+ "field": [
+  "desktop-fab"
+ ],
+ "bio": "Born 1989 Quanzhou Fujian. Won International Robot Olympiad championship in high school, admitted to Xiamen Univ. Built multiple robots in college. Worked 2 years at AVIC Xian Research Institute. Founded Snapmaker 2016 in Shenzhen Nanshan. 3-in-1: 3D printing + laser engraving + CNC. Kickstarter records: 2017 $2.27M (#3 3D print ever), 2019 Snapmaker 2.0 $7.85M (highest tech crowdfund ever at time), 2025 U1 $20.6M (highest 3D print crowdfund in history, 150M+ yuan). B round 2025: hundreds of millions, led by Hillhouse + Meituan, Shunwei + Cowin followed.",
+ "papers": [
+  {
+   "y": "2017",
+   "t": "Snapmaker 1st Kickstarter $2.27M"
+  },
+  {
+   "y": "2025",
+   "t": "U1 Kickstarter $20.6M global record, B round Hillhouse+Meituan"
+  }
+ ]
+},
  {
   "id": "zhengyong",
   "name": "Zheng Yong",
@@ -3399,23 +3452,25 @@ const scholars = [
   ]
  },
  {
-  "id": "jinlinglin",
-  "name": "Jin Linglin",
-  "org": "Dangbei",
-  "title": "Founder & CEO of Dangbei · China Projector #1 Brand",
-  "field": ["consumer"],
-  "bio": "Founded Dangbei (Dangbei Keji) in 2013 in Hangzhou. Built it into China's #1 smart projector brand. Holds over 50% of the laser projector market — every other laser projector sold in China is a Dangbei. October 2025: launched 8 new products in the most comprehensive product launch in global smart projection history. Focus: hardware + content + service ecosystem. Competes with XGIMI, Hisense, and BenQ globally.",
-  "papers": [
-   {
-    "y": "2013",
-    "t": "Founded Dangbei"
-   },
-   {
-    "y": "2025",
-    "t": "Laser projector 50%+ market share, 8 new products"
-   }
-  ]
- },
+ "id": "jinlinglin",
+ "name": "Jin Linglin",
+ "org": "Dangbei",
+ "title": "Founder & CEO of Dangbei · China Projector #1 Brand",
+ "field": [
+  "imaging"
+ ],
+ "bio": "Founded Dangbei (Dangbei Keji) in 2013 in Hangzhou. Built it into China's #1 smart projector brand. Holds over 50% of the laser projector market — every other laser projector sold in China is a Dangbei. October 2025: launched 8 new products in the most comprehensive product launch in global smart projection history. Focus: hardware + content + service ecosystem. Competes with XGIMI, Hisense, and BenQ globally.",
+ "papers": [
+  {
+   "y": "2013",
+   "t": "Founded Dangbei"
+  },
+  {
+   "y": "2025",
+   "t": "Laser projector 50%+ market share, 8 new products"
+  }
+ ]
+},
  {
   "id": "sunxuefeng",
   "name": "Sun Xuefeng",
@@ -3467,27 +3522,29 @@ const scholars = [
   ]
  },
  {
-  "id": "jamesdyson",
-  "name": "James Dyson",
-  "org": "Dyson",
-  "title": "Founder & Chief Engineer · Bagless Vacuum Pioneer",
-  "field": ["embodied-ai", "consumer"],
-  "bio": "Sir James Dyson, born 1947 in Norfolk, UK. Industrial designer who revolutionized vacuum cleaners with bagless cyclone technology — took 5,127 prototypes to get it right. Built Dyson into a global hardware empire: vacuums, air purifiers, hair care (Supersonic, Airwrap), fans, and lighting. Record 20M+ products sold in 2024. Investing heavily in robotics and AI-driven cleaning tech. Knighted 2007. James Dyson Award has supported young hardware engineers for 20+ years. Net worth estimated $13-26B.",
-  "papers": [
-   {
-    "y": "1993",
-    "t": "Launched DC01 — first bagless cyclone vacuum"
-   },
-   {
-    "y": "2016",
-    "t": "Supersonic hair dryer, disrupted beauty hardware"
-   },
-   {
-    "y": "2024",
-    "t": "20M+ products sold, record year"
-   }
-  ]
- },
+ "id": "jamesdyson",
+ "name": "James Dyson",
+ "org": "Dyson",
+ "title": "Founder & Chief Engineer · Bagless Vacuum Pioneer",
+ "field": [
+  "embodied-ai"
+ ],
+ "bio": "Sir James Dyson, born 1947 in Norfolk, UK. Industrial designer who revolutionized vacuum cleaners with bagless cyclone technology — took 5,127 prototypes to get it right. Built Dyson into a global hardware empire: vacuums, air purifiers, hair care (Supersonic, Airwrap), fans, and lighting. Record 20M+ products sold in 2024. Investing heavily in robotics and AI-driven cleaning tech. Knighted 2007. James Dyson Award has supported young hardware engineers for 20+ years. Net worth estimated $13-26B.",
+ "papers": [
+  {
+   "y": "1993",
+   "t": "Launched DC01 — first bagless cyclone vacuum"
+  },
+  {
+   "y": "2016",
+   "t": "Supersonic hair dryer, disrupted beauty hardware"
+  },
+  {
+   "y": "2024",
+   "t": "20M+ products sold, record year"
+  }
+ ]
+},
  {
   "id": "palmerluckey",
   "name": "Palmer Luckey",
@@ -3512,27 +3569,29 @@ const scholars = [
   ]
  },
  {
-  "id": "jesperkouthoofd",
-  "name": "Jesper Kouthoofd",
-  "org": "Teenage Engineering",
-  "title": "Founder & CEO · Nothing Creative Lead",
-  "field": ["consumer"],
-  "bio": "Swedish designer. Co-founded Teenage Engineering in 2005 with David Eriksson, Jens Rudberg, and David Mollstedt. Previously co-founded Acne (creative collective). Known for OP-1 synthesizer, Pocket Operators — Bauhaus/Ulm School-influenced design philosophy. Named Creative Lead of Nothing in 2021, designed Nothing Ear (1) transparent aesthetic and product language. Collaborated with IKEA, Rabbit Inc., and Panic (Playdate console). One of the most influential hardware design figures globally.",
-  "papers": [
-   {
-    "y": "2011",
-    "t": "OP-1 synthesizer — design icon"
-   },
-   {
-    "y": "2021",
-    "t": "Named Nothing Creative Lead, defined product language"
-   },
-   {
-    "y": "2023",
-    "t": "Designed Rabbit R1 hardware"
-   }
-  ]
- },
+ "id": "jesperkouthoofd",
+ "name": "Jesper Kouthoofd",
+ "org": "Teenage Engineering",
+ "title": "Founder & CEO · Nothing Creative Lead",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Swedish designer. Co-founded Teenage Engineering in 2005 with David Eriksson, Jens Rudberg, and David Mollstedt. Previously co-founded Acne (creative collective). Known for OP-1 synthesizer, Pocket Operators — Bauhaus/Ulm School-influenced design philosophy. Named Creative Lead of Nothing in 2021, designed Nothing Ear (1) transparent aesthetic and product language. Collaborated with IKEA, Rabbit Inc., and Panic (Playdate console). One of the most influential hardware design figures globally.",
+ "papers": [
+  {
+   "y": "2011",
+   "t": "OP-1 synthesizer — design icon"
+  },
+  {
+   "y": "2021",
+   "t": "Named Nothing Creative Lead, defined product language"
+  },
+  {
+   "y": "2023",
+   "t": "Designed Rabbit R1 hardware"
+  }
+ ]
+},
  {
   "id": "huangwang",
   "name": "Huang Wang",
@@ -3583,28 +3642,30 @@ const scholars = [
   ]
  },
  {
-  "id": "niravpatel",
-  "name": "Nirav Patel",
-  "org": "Framework Computer",
-  "title": "Founder & CEO · Modular Laptop Pioneer",
-  "field": ["consumer"],
-  "region": "overseas",
-  "bio": "Carnegie Mellon ECE grad. Apple software engineer (2009-2012). Founding Head of Hardware at Oculus VR (2012-2019), worked directly with Palmer Luckey. Left in 2019, founded Framework Computer Jan 2020 — building modular, repairable laptops to fight e-waste. Expanded to Framework Laptop 12, 13, 16, and Desktop by 2025. Offices in SF and Taipei. Leading the right-to-repair hardware movement.",
-  "papers": [
-   {
-    "y": "2012",
-    "t": "Founding Head of Hardware, Oculus VR"
-   },
-   {
-    "y": "2020",
-    "t": "Founded Framework Computer"
-   },
-   {
-    "y": "2025",
-    "t": "Framework Desktop launched, multi-product line"
-   }
-  ]
- },
+ "id": "niravpatel",
+ "name": "Nirav Patel",
+ "org": "Framework Computer",
+ "title": "Founder & CEO · Modular Laptop Pioneer",
+ "field": [
+  "ai-device"
+ ],
+ "region": "overseas",
+ "bio": "Carnegie Mellon ECE grad. Apple software engineer (2009-2012). Founding Head of Hardware at Oculus VR (2012-2019), worked directly with Palmer Luckey. Left in 2019, founded Framework Computer Jan 2020 — building modular, repairable laptops to fight e-waste. Expanded to Framework Laptop 12, 13, 16, and Desktop by 2025. Offices in SF and Taipei. Leading the right-to-repair hardware movement.",
+ "papers": [
+  {
+   "y": "2012",
+   "t": "Founding Head of Hardware, Oculus VR"
+  },
+  {
+   "y": "2020",
+   "t": "Founded Framework Computer"
+  },
+  {
+   "y": "2025",
+   "t": "Framework Desktop launched, multi-product line"
+  }
+ ]
+},
  {
   "id": "jamespark",
   "name": "James Park",
@@ -3647,33 +3708,37 @@ const scholars = [
   ]
  },
  {
-  "id": "langzhao",
-  "name": "Langzhao Founder",
-  "org": "Langzhao Intelligence",
-  "title": "Founder · DJI-background Team · Mihoyo Invested",
-  "field": ["consumer"],
-  "bio": "Core team from DJI background. Desktop-grade smart textile factory for women's DIY. Mihoyo participated in new round, Apr 2026.",
-  "papers": [
-   {
-    "y": "2026",
-    "t": "Langzhao desktop textile factory"
-   }
-  ]
- },
+ "id": "langzhao",
+ "name": "Langzhao Founder",
+ "org": "Langzhao Intelligence",
+ "title": "Founder · DJI-background Team · Mihoyo Invested",
+ "field": [
+  "desktop-fab"
+ ],
+ "bio": "Core team from DJI background. Desktop-grade smart textile factory for women's DIY. Mihoyo participated in new round, Apr 2026.",
+ "papers": [
+  {
+   "y": "2026",
+   "t": "Langzhao desktop textile factory"
+  }
+ ]
+},
  {
-  "id": "unicus",
-  "name": "Xu Hao",
-  "org": "UNICUS",
-  "title": "Founder · CUHK Graphics PhD · Ex-DJI Smart Manufacturing",
-  "field": ["consumer"],
-  "bio": "CUHK computer graphics PhD, ex-DJI smart manufacturing head. Personalized LEGO of the AI era, with LEGO Maker brick model. Million USD round, Apr 2026.",
-  "papers": [
-   {
-    "y": "2026",
-    "t": "LEGO Maker brick model"
-   }
-  ]
- },
+ "id": "unicus",
+ "name": "Xu Hao",
+ "org": "UNICUS",
+ "title": "Founder · CUHK Graphics PhD · Ex-DJI Smart Manufacturing",
+ "field": [
+  "companion"
+ ],
+ "bio": "CUHK computer graphics PhD, ex-DJI smart manufacturing head. Personalized LEGO of the AI era, with LEGO Maker brick model. Million USD round, Apr 2026.",
+ "papers": [
+  {
+   "y": "2026",
+   "t": "LEGO Maker brick model"
+  }
+ ]
+},
  {
   "id": "olwx",
   "name": "Oula Wanxiang Founder",
@@ -3913,19 +3978,21 @@ const scholars = [
   ]
  },
  {
-  "id": "yuexingtong",
-  "name": "Hu Yufei",
-  "org": "Yuexingtong",
-  "title": "Founder · Serial Entrepreneur · AI E-paper Sub-screen",
-  "field": ["consumer"],
-  "bio": "Serial entrepreneur. AI-driven e-paper second screen for smartphones. Personalized info display + active info gathering. Monthly sales grew 10x; first month overseas broke 10K. Cumulative 100M+ yuan rounds, Apr 2026.",
-  "papers": [
-   {
-    "y": "2026",
-    "t": "AI e-paper sub-screen for phones"
-   }
-  ]
- },
+ "id": "yuexingtong",
+ "name": "Hu Yufei",
+ "org": "Yuexingtong",
+ "title": "Founder · Serial Entrepreneur · AI E-paper Sub-screen",
+ "field": [
+  "imaging"
+ ],
+ "bio": "Serial entrepreneur. AI-driven e-paper second screen for smartphones. Personalized info display + active info gathering. Monthly sales grew 10x; first month overseas broke 10K. Cumulative 100M+ yuan rounds, Apr 2026.",
+ "papers": [
+  {
+   "y": "2026",
+   "t": "AI e-paper sub-screen for phones"
+  }
+ ]
+},
  {
   "id": "lingjitc",
   "name": "Yang Bing",
@@ -4277,59 +4344,65 @@ const scholars = [
   ]
  },
  {
-  "id": "suleyman",
-  "name": "Mustafa Suleyman",
-  "org": "Microsoft AI",
-  "title": "CEO of Microsoft AI · Copilot & MAI Models",
-  "field": ["ai-device", "consumer"],
-  "bio": "Co-founded DeepMind (2010) and Inflection AI (2022); since March 2024 the CEO of Microsoft AI, leading Copilot and Microsoft's consumer AI. At Build 2026 he unveiled the in-house MAI family of seven multimodal models (text, image, voice, transcription and coding) for 'long-term self-sufficiency,' plus a Copilot 'super app' and the Scout agent. Microsoft's hardware push spans Copilot+ PCs and teased ambient devices — 'office badges' and 'desk companions' — alongside a sweeping NVIDIA partnership to run AI agents across Windows devices and the cloud.",
-  "papers": [
-   {
-    "y": "2024",
-    "t": "Becomes CEO of Microsoft AI"
-   },
-   {
-    "y": "2026",
-    "t": "MAI model family + Copilot super app (Build 2026)"
-   }
-  ]
- },
+ "id": "suleyman",
+ "name": "Mustafa Suleyman",
+ "org": "Microsoft AI",
+ "title": "CEO of Microsoft AI · Copilot & MAI Models",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Co-founded DeepMind (2010) and Inflection AI (2022); since March 2024 the CEO of Microsoft AI, leading Copilot and Microsoft's consumer AI. At Build 2026 he unveiled the in-house MAI family of seven multimodal models (text, image, voice, transcription and coding) for 'long-term self-sufficiency,' plus a Copilot 'super app' and the Scout agent. Microsoft's hardware push spans Copilot+ PCs and teased ambient devices — 'office badges' and 'desk companions' — alongside a sweeping NVIDIA partnership to run AI agents across Windows devices and the cloud.",
+ "papers": [
+  {
+   "y": "2024",
+   "t": "Becomes CEO of Microsoft AI"
+  },
+  {
+   "y": "2026",
+   "t": "MAI model family + Copilot super app (Build 2026)"
+  }
+ ]
+},
  {
-  "id": "panospanay",
-  "name": "Panos Panay",
-  "org": "Amazon (Devices & Services)",
-  "title": "Head of Amazon Devices · Ex-Microsoft Surface Chief",
-  "field": ["ai-device", "consumer"],
-  "bio": "Built and led Microsoft's Surface line for ~20 years (Chief Product Officer) before joining Amazon in 2023 to run its Devices & Services group. Oversaw Alexa+, the generative-AI relaunch of Alexa, and is re-tiering Amazon's hardware into entry / core / signature (premium) lines, teasing future Alexa+ wearables and AR glasses. Also reportedly behind an Alexa+-powered, AI-first mobile project codenamed 'Transformer.' A central figure in Amazon's bid to challenge Apple in consumer AI hardware.",
-  "papers": [
-   {
-    "y": "2023",
-    "t": "Joins Amazon to lead Devices & Services"
-   },
-   {
-    "y": "2026",
-    "t": "Alexa+ devices; premium tier + 'Transformer' AI phone"
-   }
-  ]
- },
+ "id": "panospanay",
+ "name": "Panos Panay",
+ "org": "Amazon (Devices & Services)",
+ "title": "Head of Amazon Devices · Ex-Microsoft Surface Chief",
+ "field": [
+  "ai-device"
+ ],
+ "bio": "Built and led Microsoft's Surface line for ~20 years (Chief Product Officer) before joining Amazon in 2023 to run its Devices & Services group. Oversaw Alexa+, the generative-AI relaunch of Alexa, and is re-tiering Amazon's hardware into entry / core / signature (premium) lines, teasing future Alexa+ wearables and AR glasses. Also reportedly behind an Alexa+-powered, AI-first mobile project codenamed 'Transformer.' A central figure in Amazon's bid to challenge Apple in consumer AI hardware.",
+ "papers": [
+  {
+   "y": "2023",
+   "t": "Joins Amazon to lead Devices & Services"
+  },
+  {
+   "y": "2026",
+   "t": "Alexa+ devices; premium tier + 'Transformer' AI phone"
+  }
+ ]
+},
  {
-  "id": "osterloh",
-  "name": "Rick Osterloh",
-  "org": "Google",
-  "title": "Google SVP Devices · Android XR & Pixel",
-  "field": ["wearable", "consumer"],
-  "bio": "Senior VP leading Google's merged Platforms & Devices group (Pixel, Android, Chrome, Photos) since a 2024 reorg that put hardware and Android under one roof; previously president of Motorola. At I/O 2026 he helped unveil Android XR smart glasses built with Samsung and eyewear partners Warby Parker and Gentle Monster — Gemini-powered audio and display eyewear shipping Oct 14 2026 ($799 base; a screenless audio variant at $299 in November; a Gentle Monster premium model in early 2027). It is Google's most direct answer yet to Meta's Ray-Ban glasses, with Gemini as the primary interface for navigation, translation and search.",
-  "papers": [
-   {
-    "y": "2024",
-    "t": "Leads merged Platforms & Devices org"
-   },
-   {
-    "y": "2026",
-    "t": "Android XR Gemini glasses (ship Oct 14, $799/$299)"
-   }
-  ]
- },
+ "id": "osterloh",
+ "name": "Rick Osterloh",
+ "org": "Google",
+ "title": "Google SVP Devices · Android XR & Pixel",
+ "field": [
+  "wearable"
+ ],
+ "bio": "Senior VP leading Google's merged Platforms & Devices group (Pixel, Android, Chrome, Photos) since a 2024 reorg that put hardware and Android under one roof; previously president of Motorola. At I/O 2026 he helped unveil Android XR smart glasses built with Samsung and eyewear partners Warby Parker and Gentle Monster — Gemini-powered audio and display eyewear shipping Oct 14 2026 ($799 base; a screenless audio variant at $299 in November; a Gentle Monster premium model in early 2027). It is Google's most direct answer yet to Meta's Ray-Ban glasses, with Gemini as the primary interface for navigation, translation and search.",
+ "papers": [
+  {
+   "y": "2024",
+   "t": "Leads merged Platforms & Devices org"
+  },
+  {
+   "y": "2026",
+   "t": "Android XR Gemini glasses (ship Oct 14, $799/$299)"
+  }
+ ]
+},
  {
   "id": "bosworth",
   "name": "Andrew Bosworth",
@@ -4838,7 +4911,9 @@ const scholars = [
  "name": "Magnus Wanberg",
  "org": "reMarkable",
  "title": "Founder & CEO of reMarkable · paper tablets",
- "field": ["consumer"],
+ "field": [
+  "imaging"
+ ],
  "bio": "Founder and CEO of reMarkable, the Oslo company that turned the e-paper writing tablet into a category: reMarkable 1 (2017), reMarkable 2 (2020), then the color Paper Pro (2024) and, in 2026, a four-device family including Paper Pro Move and Paper Pure. Profitable on hardware plus a Connect subscription, with several million tablets sold and one of Europe's few consumer-hardware unicorns.",
  "papers": [
   {
@@ -4890,7 +4965,9 @@ const scholars = [
  "name": "Anjan Katta",
  "org": "Daylight Computer",
  "title": "Founder & CEO of Daylight Computer · Live Paper tablet",
- "field": ["consumer"],
+ "field": [
+  "imaging"
+ ],
  "bio": "Founder and CEO of Daylight Computer, maker of the DC-1 — a 60 Hz reflective 'Live Paper' tablet that reads like paper in sunlight with no blue light. Shipped in 2024 and became a cult productivity device in 2026, with strong followings in China and the UK. Positions the company against attention-economy hardware: a calm computer rather than a faster screen.",
  "papers": [
   {
@@ -5038,9 +5115,57 @@ const scholars = [
   }
  ]
 },
-  {"id": "hugobarra", "name": "Hugo Barra", "org": "Meta Superintelligence Labs", "title": "Consumer hardware veteran · Android, Xiaomi, Oculus", "field": ["wearable", "ai-device", "consumer"], "bio": "Has shipped consumer hardware on three continents and in three eras: VP of Android product at Google through the Nexus years, then global VP at Xiaomi from 2013, the hire that announced China's phone makers as international competitors, then head of Oculus VR at Facebook from 2017 through the Quest launches. Left in 2021, built the Detect COVID test, then co-founded /dev/agents on an operating system for agents and Dreamer on autonomous assistants. In March 2026 Meta acqui-hired Dreamer and he rejoined under Alexandr Wang in Superintelligence Labs, working on agents that run across Meta's apps and wearables. His standing argument: there is no MVP in hardware.", "papers": [{"y": 2013, "t": "Joined Xiaomi as global VP"}, {"y": 2017, "t": "Head of Oculus VR at Facebook"}, {"y": 2026, "t": "Returned to Meta via the Dreamer acqui-hire"}]},
+  {
+ "id": "hugobarra",
+ "name": "Hugo Barra",
+ "org": "Meta Superintelligence Labs",
+ "title": "Consumer hardware veteran · Android, Xiaomi, Oculus",
+ "field": [
+  "wearable",
+  "ai-device"
+ ],
+ "bio": "Has shipped consumer hardware on three continents and in three eras: VP of Android product at Google through the Nexus years, then global VP at Xiaomi from 2013, the hire that announced China's phone makers as international competitors, then head of Oculus VR at Facebook from 2017 through the Quest launches. Left in 2021, built the Detect COVID test, then co-founded /dev/agents on an operating system for agents and Dreamer on autonomous assistants. In March 2026 Meta acqui-hired Dreamer and he rejoined under Alexandr Wang in Superintelligence Labs, working on agents that run across Meta's apps and wearables. His standing argument: there is no MVP in hardware.",
+ "papers": [
+  {
+   "y": 2013,
+   "t": "Joined Xiaomi as global VP"
+  },
+  {
+   "y": 2017,
+   "t": "Head of Oculus VR at Facebook"
+  },
+  {
+   "y": 2026,
+   "t": "Returned to Meta via the Dreamer acqui-hire"
+  }
+ ]
+},
   {"id": "nikitarudin", "name": "Nikita Rudin", "org": "Flexion Robotics", "title": "Co-founder & CEO of Flexion · humanoid autonomy", "field": ["embodied-ai"], "bio": "Did his PhD at ETH Zurich's Robotic Systems Lab on massively parallel reinforcement learning for legged robots — the line of work that made sim-to-real locomotion routine rather than remarkable. Co-founded Flexion in Zurich to build the layer most humanoid companies are missing: not the body but the brain, a whole-body control and planning stack that takes a natural-language task and turns it into motion. Raised a $50M Series A in November 2025 from DST Global, NVIDIA's NVentures, redalpine, Prosus and Moonfire, and shipped Reflect v1.0 in June 2026 for long-horizon missions.", "papers": [{"y": 2022, "t": "Massively parallel RL for legged locomotion (ETH RSL)"}, {"y": 2025, "t": "$50M Series A"}, {"y": 2026, "t": "Reflect v1.0 robot intelligence platform"}]},
-  {"id": "caitlinkalinowski", "name": "Caitlin Kalinowski", "org": "Independent (ex-OpenAI)", "title": "Hardware leader · Apple, Meta VR, OpenAI robotics", "field": ["ai-device", "embodied-ai", "consumer"], "bio": "One of the few people who has run hardware engineering at Apple, Meta and OpenAI. Built MacBook enclosures at Apple, then spent a decade at Meta leading VR hardware from the first Oculus Rift through Quest and the Orion AR prototype. Joined OpenAI in November 2024 to stand up its robotics and consumer-hardware effort, and resigned in March 2026 over the company's Department of Defense agreement, objecting publicly to surveillance without judicial oversight and lethal autonomy without human authorization. Her thesis on the current moment is that AI hardware is at the very beginning, not the peak, because the models finally justify new form factors.", "papers": [{"y": 2014, "t": "Led Oculus VR hardware engineering at Meta"}, {"y": 2024, "t": "Joined OpenAI to lead robotics and hardware"}, {"y": 2026, "t": "Resigned over OpenAI's DoD agreement"}]},
+  {
+ "id": "caitlinkalinowski",
+ "name": "Caitlin Kalinowski",
+ "org": "Independent (ex-OpenAI)",
+ "title": "Hardware leader · Apple, Meta VR, OpenAI robotics",
+ "field": [
+  "ai-device",
+  "embodied-ai"
+ ],
+ "bio": "One of the few people who has run hardware engineering at Apple, Meta and OpenAI. Built MacBook enclosures at Apple, then spent a decade at Meta leading VR hardware from the first Oculus Rift through Quest and the Orion AR prototype. Joined OpenAI in November 2024 to stand up its robotics and consumer-hardware effort, and resigned in March 2026 over the company's Department of Defense agreement, objecting publicly to surveillance without judicial oversight and lethal autonomy without human authorization. Her thesis on the current moment is that AI hardware is at the very beginning, not the peak, because the models finally justify new form factors.",
+ "papers": [
+  {
+   "y": 2014,
+   "t": "Led Oculus VR hardware engineering at Meta"
+  },
+  {
+   "y": 2024,
+   "t": "Joined OpenAI to lead robotics and hardware"
+  },
+  {
+   "y": 2026,
+   "t": "Resigned over OpenAI's DoD agreement"
+  }
+ ]
+},
   {"id": "ericjang", "name": "Eric Jang", "org": "Independent (ex-1X)", "title": "Robot learning · ex-VP of AI at 1X, ex-Google Brain", "field": ["embodied-ai"], "bio": "Left Google Brain, where he worked on robot learning and generative models, to become VP of AI at 1X in 2022, and spent four years building the learning stack behind NEO — the home humanoid 1X now sells at $20,000 with consumer deliveries starting in 2026. Argued early and loudly that humanoids should learn end-to-end from data rather than be scripted, and that the honest version of the product ships with a human teleoperator in the loop. Stepped down in January 2026 with the line that the Overton window on general-purpose robotics had already shifted; Mohi Khansari took over robot learning.", "papers": [{"y": 2022, "t": "Joined 1X as VP of AI"}, {"y": 2025, "t": "NEO home humanoid unveiled"}, {"y": 2026, "t": "Left 1X after four years"}]},
   {"id": "reinerpope", "name": "Reiner Pope", "org": "MatX", "title": "Founder & CEO of MatX · LLM-specific silicon", "field": ["chips"], "bio": "Worked on large-model serving at Google, where the bottleneck was never abstract, and left in 2024 with Mike Gunter to found MatX on a narrow premise: build a chip that does nothing but run and train large language models, and give up everything a general-purpose GPU spends area on. Raised a Series A above $100M led by Spark with Jane Street, Nat Friedman and Daniel Gross, then a $500M Series B in February 2026 co-led by Leopold Aschenbrenner's Situational Awareness and Jane Street, taking MatX past $600M raised. The forthcoming MatX One is claimed to beat any other chip on throughput while holding the lowest latency.", "papers": [{"y": 2024, "t": "Founded MatX"}, {"y": 2025, "t": ">$100M Series A led by Spark Capital"}, {"y": 2026, "t": "$500M Series B · MatX One announced"}]},
   {"id": "alexkendall", "name": "Alex Kendall", "org": "Wayve", "title": "Co-founder & CEO of Wayve · end-to-end driving", "field": ["embodied-ai"], "bio": "Cambridge PhD who co-founded Wayve in 2017 on a position that was contrarian then and mainstream now: drive with a single end-to-end learned model, no HD maps, no hand-written rule stack, and let the same driver generalise across cities and vehicles. Wayve raised a $1.2B Series D in February 2026 from NVIDIA, Microsoft and Uber at an $8.6B valuation, extended it to $1.5B in April with AMD, Qualcomm and Arm, and for the first time took money directly from carmakers — Mercedes-Benz, Nissan and Stellantis. The Nissan partnership puts its driver assistance into production vehicles from 2027.", "papers": [{"y": 2017, "t": "Co-founded Wayve"}, {"y": 2026, "t": "$1.2B Series D at $8.6B, extended to $1.5B"}, {"y": 2027, "t": "Nissan production deployment (announced)"}]},
@@ -5833,7 +5958,7 @@ let currentLang = "zh";
 const i18n = {
   en: {
     navTitle: "Hardware Startup Graph", searchPlaceholder: "Search founders...",
-    filterAll: "All", filter_embodied_ai: "Embodied AI", filter_companion: "Companions & Toys", filter_wearable: "Wearables", filter_ai_device: "AI Devices", filter_consumer: "Consumer", filter_smart_home: "Smart Home", filter_drones: "Drones", filter_health: "Health & BCI", filter_chips: "Chips & Sensors",
+    filterAll: "All", filter_embodied_ai: "Embodied AI", filter_companion: "Companions & Toys", filter_wearable: "Wearables", filter_ai_device: "AI Devices", filter_desktop_fab: "Desktop Fabrication", filter_imaging: "Imaging & Display", filter_power_mobility: "Power & Mobility", filter_gear: "Accessories", filter_smart_home: "Smart Home", filter_drones: "Drones", filter_health: "Health & BCI", filter_chips: "Chips & Sensors",
     stats: (s, c) => `${s} founders · ${c} connections`,
     legendOrgs: "Background", legendConns: "Connections",
     legendDeepMind: "DJI Alumni", legendOpenAI: "Xiaomi Ecosystem", legendAnthropic: "Huawei/OPPO", legendMeta: "Robotics", legendStanford: "Consumer Electronics", legendUniversity: "AR/VR", legendStartup: "Overseas",
@@ -5844,7 +5969,7 @@ const i18n = {
   },
   zh: {
     navTitle: "智能硬件图谱", searchPlaceholder: "搜索创始人...",
-    filterAll: "全部", filter_embodied_ai: "具身智能", filter_companion: "AI 陪伴与玩具", filter_wearable: "智能穿戴", filter_ai_device: "AI 原生设备", filter_consumer: "消费电子", filter_smart_home: "智能家居", filter_drones: "无人机", filter_health: "健康与脑机", filter_chips: "AI 芯片与传感",
+    filterAll: "全部", filter_embodied_ai: "具身智能", filter_companion: "AI 陪伴与玩具", filter_wearable: "智能穿戴", filter_ai_device: "AI 原生设备", filter_desktop_fab: "桌面制造", filter_imaging: "影像与显示", filter_power_mobility: "能源与出行", filter_gear: "配件与个护", filter_smart_home: "智能家居", filter_drones: "无人机", filter_health: "健康与脑机", filter_chips: "AI 芯片与传感",
     stats: (s, c) => `${s} 位创始人 · ${c} 条关系`,
     legendOrgs: "背景来源", legendConns: "关系类型",
     legendDeepMind: "大疆系", legendOpenAI: "小米生态", legendAnthropic: "华为/OPPO系", legendMeta: "机器人", legendStanford: "消费电子", legendUniversity: "AR/VR", legendStartup: "海外",
@@ -6358,7 +6483,7 @@ function applyLanguage(lang) {
   document.getElementById("nav-stats").textContent = t.stats(scholars.length, connections.length);
 
   // Filter pills
-  const pillMap = { all: t.filterAll, "embodied-ai": t.filter_embodied_ai, "companion": t.filter_companion, "wearable": t.filter_wearable, "ai-device": t.filter_ai_device, "consumer": t.filter_consumer, "smart-home": t.filter_smart_home, "drones": t.filter_drones, "health": t.filter_health, "chips": t.filter_chips };
+  const pillMap = { all: t.filterAll, "embodied-ai": t.filter_embodied_ai, "companion": t.filter_companion, "wearable": t.filter_wearable, "ai-device": t.filter_ai_device, "desktop-fab": t.filter_desktop_fab, "imaging": t.filter_imaging, "power-mobility": t.filter_power_mobility, "gear": t.filter_gear, "smart-home": t.filter_smart_home, "drones": t.filter_drones, "health": t.filter_health, "chips": t.filter_chips };
   document.querySelectorAll(".filter-pill").forEach(btn => {
     btn.textContent = pillMap[btn.dataset.filter] || btn.textContent;
   });
@@ -7122,6 +7247,51 @@ var body=JSON.stringify({type:'view',path:'graph-hw:'+location.pathname+location
 if(navigator.sendBeacon)navigator.sendBeacon('https://stats.jasonlin.tech',new Blob([body],{type:'text/plain'}));
 else fetch('https://stats.jasonlin.tech',{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true});
 }catch(e){}})();
+
+// ===== 图例可点筛选(2026-09-28)：按节点实际渲染颜色匹配，与筛选按钮互斥 =====
+(function(){
+  if(typeof nodeGroups==='undefined'||typeof linkLines==='undefined')return;
+  var legend=document.getElementById('legend'); if(!legend)return;
+  var rows=[].slice.call(legend.querySelectorAll('.legend-row')).filter(function(r){return r.querySelector('.legend-dot');});
+  if(!rows.length)return;
+  var probe=document.createElement('span'); probe.style.display='none'; document.body.appendChild(probe);
+  function norm(c){ probe.style.color=''; probe.style.color=c; return getComputedStyle(probe).color; }
+  var active=null;
+  function clearAll(){
+    active=null;
+    rows.forEach(function(r){r.classList.remove('lg-active');r.classList.remove('lg-dim');});
+    nodeGroups.style('opacity',null); linkLines.style('opacity',null);
+  }
+  rows.forEach(function(row){
+    var dot=row.querySelector('.legend-dot');
+    row.classList.add('lg-click');
+    row.setAttribute('role','button'); row.setAttribute('tabindex','0');
+    function run(){
+      if(active===row){ clearAll(); return; }
+      var target=norm(getComputedStyle(dot).backgroundColor);
+      var match={};
+      nodeGroups.each(function(d){
+        var c=this.querySelector('.node-circle');
+        if(c&&norm(getComputedStyle(c).fill)===target) match[d.id]=1;
+      });
+      active=row;
+      rows.forEach(function(r){ r.classList.toggle('lg-active',r===row); r.classList.toggle('lg-dim',r!==row); });
+      document.querySelectorAll('.filter-pill').forEach(function(b){b.classList.remove('active');});
+      var allPill=document.querySelector('.filter-pill[data-filter="all"]'); if(allPill)allPill.classList.remove('active');
+      nodeGroups.style('opacity',function(d){return match[d.id]?1:0.04;});
+      linkLines.style('opacity',function(l){
+        var a=typeof l.source==='object'?l.source.id:l.source, b=typeof l.target==='object'?l.target.id:l.target;
+        return (match[a]&&match[b])?0.5:0.02;
+      });
+    }
+    row.addEventListener('click',run);
+    row.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();run();} });
+  });
+  document.querySelectorAll('.filter-pill').forEach(function(b){ b.addEventListener('click',function(){
+    active=null; rows.forEach(function(r){r.classList.remove('lg-active');r.classList.remove('lg-dim');});
+  });});
+})();
+
 </script>
 <!--SITE_INDEX_START--><style>/* 站点地图:排在页脚里,与版权信息同一套视觉语言;同时给爬虫通向 /p/ 分享页的路径。
 默认收起,但不能用 display:none 藏(只给爬虫看的链接会被判作弊)。 */
