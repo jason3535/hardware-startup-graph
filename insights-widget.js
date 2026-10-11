@@ -5,6 +5,272 @@
 // ============================================================
 
 const INSIGHTS_DATA = [
+{
+  "id": "d-robotics-mecka-robot-infra-2026-10",
+  "date": "2026-10-07",
+  "type": "funding",
+  "graphs": [
+    "hardware",
+    "investor"
+  ],
+  "pinned": false,
+  "title": "卖铲人拿钱：地瓜机器人 4 亿美元 C 轮、红杉领投机器人动作数据公司 Mecka AI 6,000 万美元",
+  "body": "**9 月 17 日，地瓜机器人完成 4 亿美元 C 轮，未来资产领投、美团战投参投**，其旭日系列机器人芯片累计出货已超 800 万片；**10 月 7 日，红杉领投机器人动作数据公司 Mecka AI 6,000 万美元 B 轮，投后估值 5 亿美元**，英伟达与微软 M12 跟投。Mecka 的做法是付费让普通人佩戴传感器录制日常动作，再把数据卖给具身智能公司，结构上就是机器人版的 Scale AI；同赛道的 XDOF 9 月初也在以约 12 亿美元估值谈新一轮。两笔钱放在一起看，**资本正从人形整机转向芯片与数据这两层基础设施**——整机估值越来越贵且同质化，卖铲子的反而更容易把账讲清楚。",
+  "persons": [
+    {
+      "id": "drobotics",
+      "name": "Wang Cong"
+    }
+  ],
+  "sources": [
+    {
+      "label": "财联社",
+      "url": "https://www.chinastarmarket.cn/detail/2486320"
+    },
+    {
+      "label": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/07/robot-data-startup-mecka-ai-nabs-60m-from-sequoia"
+    }
+  ]
+},
+{
+  "id": "meta-connect-2026-audio-glasses-2026-09",
+  "date": "2026-09-23",
+  "type": "trend",
+  "graphs": [
+    "hardware"
+  ],
+  "pinned": false,
+  "title": "Meta Connect 2026：349 美元无摄像头 Audio 眼镜，Display 眼镜出海——CES 宣布的「海外无限期推迟」被推翻",
+  "body": "**9 月 23 日的 Meta Connect 2026 上，Meta 发布了 349 美元的 Ray-Ban Meta Audio 眼镜**：没有摄像头，只保留音频与 AI 助手，续航 12 小时，10 月 13 日发货；Ray-Ban Meta Gen 3 起售 449 美元。更重要的是**带显示的 Ray-Ban Display（799 美元）同步进入加拿大与英国，法国、意大利、德国 10 月 13 日跟进**——今年 1 月 CES 上 Meta 曾宣布海外发售无限期推迟，本站 9 月 16 日那条洞察也引用了这个判断，现在被推翻了。两条线合起来是同一个策略：**用无摄像头的低价款扩大用户盘子、消解隐私争议，用显示款在海外建立先发位置**。对国内 AI 眼镜厂商而言，349 美元这个价位比 Display 的技术更有压力。",
+  "persons": [
+    {
+      "id": "zuckerberg",
+      "name": "Mark Zuckerberg"
+    },
+    {
+      "id": "bosworth",
+      "name": "Andrew Bosworth"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Meta 官方博客",
+      "url": "https://www.meta.com/blog/meta-connect-2026-everything-we-announced/"
+    },
+    {
+      "label": "Engadget",
+      "url": "https://www.engadget.com/2267230/everything-announced-at-meta-connect-2026/"
+    },
+    {
+      "label": "Road to VR",
+      "url": "https://roadtovr.com/meta-ray-ban-display-int-launch-connect-2026/"
+    }
+  ]
+},
+{
+  "id": "sabi-eeg-cap-khosla-seed-2026-10",
+  "date": "2026-10-09",
+  "type": "non-consensus",
+  "graphs": [
+    "hardware",
+    "investor"
+  ],
+  "pinned": false,
+  "title": "Sabi：Khosla 领投 5,000 万美元种子轮，脑机接口做成一顶 EEG 棒球帽",
+  "body": "**10 月 9 日，脑机接口公司 Sabi 宣布完成 5,000 万美元种子轮，Khosla Ventures 领投**，Accel、Initialized、DST、Collaborative Fund 及前 OpenAI 首席产品官 Kevin Weil 跟投。产品形态是一顶内置 EEG 电极的棒球帽：非侵入、隔着头发不用导电凝胶，靠**超过 10 万小时的标注脑电数据**训练解码模型，原型机计划在 CES 2027 展出。CEO Rahul Chhabra，CTO Atmadeep Banerjee 是 NeurIPS 2023 脑解码论文 MindEye 的共同一作。非共识之处在于：**当 Neuralink 把赌注压在植入精度上时，Sabi 赌的是数据规模能补偿信号质量**——这是大模型路线对硬件路线的又一次正面挑战，种子轮就给到 5,000 万美元，说明有一批投资人信这个方向。",
+  "persons": [
+    {
+      "id": "vinodkhosla",
+      "name": "Vinod Khosla"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Sabi 新闻稿（GlobeNewswire）",
+      "url": "https://www.manilatimes.net/2026/10/10/tmt-newswire/globenewswire/sabi-raises-50-million-seed-round-led-by-khosla-ventures-to-put-a-brain-ai-interface-inside-a-baseball-cap/2442864"
+    },
+    {
+      "label": "Forbes",
+      "url": "https://www.forbes.com/sites/rashishrivastava/2026/10/09/vinod-khosla-backs-an-ai-startup-building-a-mind-reading-baseball-cap/"
+    }
+  ]
+},
+{
+  "id": "frontier-price-war-anthropic-ipo-2026-10",
+  "date": "2026-10-07",
+  "type": "trend",
+  "graphs": [
+    "ai-scholar",
+    "investor"
+  ],
+  "pinned": false,
+  "title": "IPO 前的价格战：Haiku 5.5 输入 0.10 美元/百万 token，GPT-6.1 Sol 定价为 Astra 的五分之一；Anthropic IPO 推迟到 11 月",
+  "body": "**10 月 7 日 Anthropic 发布 Claude Haiku 5.5，10 万 token 以内的输入价压到每百万 0.10 美元**（输出 0.50 美元）；一周前的 DevDay 上，**OpenAI 发布 GPT-6.1 Sol，每百万 token 输入 2 美元、输出 10 美元，官方口径是 GPT-6 Astra 标准价的五分之一**。与此同时，据 WSJ 9 月 18 日报道，**Anthropic 把 IPO 时间表推到 11 月，先交出三季度财报再上市**。三件事放在一起看：两家头部实验室都在用小模型打价格战争夺 API 份额，而 Anthropic 需要在招股书里证明降价之后毛利仍然撑得住——**定价策略第一次直接和上市窗口绑在了一起**。",
+  "persons": [
+    {
+      "id": "altman",
+      "name": "Sam Altman"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Anthropic",
+      "url": "https://www.anthropic.com/claude-haiku-5-5"
+    },
+    {
+      "label": "Unite.ai（DevDay）",
+      "url": "https://www.unite.ai/openai-unveils-gpt-6-1-sol-at-devday-with-new-codex-and-chatgpt-tools/"
+    },
+    {
+      "label": "Investing.com 转 WSJ",
+      "url": "https://www.investing.com/news/stock-market-news/anthropic-delays-ipo-staging-to-november-amid-ai-fears-wsj-says-4907941"
+    }
+  ]
+},
+{
+  "id": "openai-fires-safety-researchers-2026-10",
+  "date": "2026-10-08",
+  "type": "relationship",
+  "graphs": [
+    "ai-scholar"
+  ],
+  "pinned": false,
+  "title": "OpenAI 解雇三名安全研究员，同周八位前员工接受 NYMag 访谈、三人出席纽约市议会听证",
+  "body": "**10 月 1 日，OpenAI 以「在既定流程之外处理敏感信息、破坏信任」为由与三名安全研究员解约**，10 月 8 日三人——Mikita Balesni、Tomek Korbak、Jasmine Wang——公开发信否认不当行为，称此举会对内部提出安全疑虑的人产生寒蝉效应。同一周，**《纽约》杂志联合 Asterisk 刊出封面故事，访谈了八位离开 OpenAI、Anthropic 与 DeepMind 的研究者**，Daniel Kokotajlo 是其中之一；10 月 5 日他与另外两人出席纽约市议会关于 AI 安全的听证会。从图谱关系看，**「前安全团队成员」正在从松散的个人变成一个有组织发声的群体**，这与 2024 年 Kokotajlo 拒签禁止贬损协议离职时的孤立处境已经完全不同。",
+  "persons": [
+    {
+      "id": "kokotajlo",
+      "name": "Daniel Kokotajlo"
+    }
+  ],
+  "sources": [
+    {
+      "label": "TechCrunch 10/1",
+      "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/"
+    },
+    {
+      "label": "TechCrunch 10/8",
+      "url": "https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/"
+    },
+    {
+      "label": "Techmeme（NYMag 封面）",
+      "url": "https://www.techmeme.com/261005/p20"
+    },
+    {
+      "label": "Fortune（听证会）",
+      "url": "https://fortune.com/2026/10/05/new-york-city-council-hearing-openai-anthropic-ai-safety-google-meta/"
+    }
+  ]
+},
+{
+  "id": "usv-900m-fund-smaller-partnership-2026-10",
+  "date": "2026-10-08",
+  "type": "non-consensus",
+  "graphs": [
+    "investor"
+  ],
+  "pinned": false,
+  "title": "USV 新一期募 9 亿美元、GP 从八人减到四人：AI 时代的风投是「钱更多、人更少」",
+  "body": "**10 月 8 日，Union Square Ventures 宣布新一期募资共 9 亿美元**：早期基金 5 亿美元（上一期 2.75 亿，接近翻倍）加 4 亿美元机会基金。更反常识的是人员结构：**普通合伙人从八位减到四位**，Fred Wilson、Nick Grossman、Rebecca Kaden、Mike Mignano 留任，Brad Burnham、Albert Wenger、Andy Weissman、John Buttrick 转任顾问但保留董事席位（官网核心投资团队列五人，另含合伙人 Nikhil Raman）。USV 自己的解释是：AI 让每个合伙人能覆盖的研究与尽调量成倍增加，**基金规模可以涨，合伙人数却应该减**。这与过去二十年「募更大的基金就要配更大的团队」的行业惯性相反，也是第一家明确把「AI 替代初级投资人力」写进募资公告的老牌机构。",
+  "persons": [],
+  "sources": [
+    {
+      "label": "USV 官方博客",
+      "url": "https://www.usv.com/writing/the-next-chapter-of-usv"
+    },
+    {
+      "label": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-08/union-square-ventures-doubles-fund-size-shrinks-team-for-ai-era"
+    }
+  ]
+},
+{
+  "id": "softbank-openai-final-10b-gulf-fund-2026-10",
+  "date": "2026-10-09",
+  "type": "funding",
+  "graphs": [
+    "investor"
+  ],
+  "pinned": false,
+  "title": "孙正义付完对 OpenAI 的最后 100 亿美元（累计 646 亿、持股约 13%），转头向海湾募最高 1,000 亿美元新基金",
+  "body": "**10 月 1 日，软银通过愿景基金二期完成对 OpenAI 的第三笔也是最后一笔 100 亿美元出资**，累计投入约 646 亿美元、持股约 13%，这笔钱来自 9 月 24 日定价的 111 亿美元高收益债。**10 月 9 日，FT 报道软银正与海湾主权资本洽谈，拟募集最高 1,000 亿美元的新基金**，方向不是再投模型公司，而是收购成熟企业、用 AI 与机器人（含软银自己的机器人部门）改造其运营，谈判仍在早期。两件事的顺序值得注意：**对 OpenAI 的这笔出资已经靠发债而不是自有现金，下一个千亿基金则要靠外部 LP**——软银在 AI 上的仓位已经重到必须用别人的钱继续加仓。",
+  "persons": [
+    {
+      "id": "masason",
+      "name": "Masayoshi Son"
+    },
+    {
+      "id": "samaltman",
+      "name": "Sam Altman"
+    }
+  ],
+  "sources": [
+    {
+      "label": "软银公告",
+      "url": "https://group.softbank/en/news/press/20261001"
+    },
+    {
+      "label": "Japan Times 转 FT",
+      "url": "https://www.japantimes.co.jp/business/2026/10/09/companies/softbank-ai-gulf-investors/"
+    }
+  ]
+},
+{
+  "id": "jony-ive-defends-ferrari-luce-2026-10",
+  "date": "2026-10-07",
+  "type": "non-consensus",
+  "graphs": [
+    "designer",
+    "hardware"
+  ],
+  "pinned": false,
+  "title": "Jony Ive 都灵回应法拉利 Luce 差评：「做出又新又不同的垃圾很容易」",
+  "body": "**10 月 7 日，Jony Ive 在都灵的 Wave by Vento 活动上首次回应法拉利 Luce（售价约 61.5 万美元）发布后的大面积差评**。他的原话是：「做出又新又不同但其实是垃圾的东西，这很容易；难的是做出又新又不同、而且它的新正是因为它更好的东西，这才是我们想做的。」这是 LoveFrom 第一次为一辆车的内饰与交互负责，也是 Ive 离开苹果后第一次公开为作品辩护。放在图谱里看，**这与他在 OpenAI 的硬件项目被推迟到 2027 年是同一个问题的两面：脱离苹果的工业体系之后，「Ive 式的克制」能否在别人的产品里成立，市场正在给出第一轮答案**。",
+  "persons": [
+    {
+      "id": "jonyive",
+      "name": "Jony Ive"
+    }
+  ],
+  "sources": [
+    {
+      "label": "The Straits Times（转载）",
+      "url": "https://www.redhot.sg/jony-ive-defends-us-615-000-ferrari-luce-design-panned-by-critics-725427.html"
+    },
+    {
+      "label": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-07/jony-ive-defends-615-000-ferrari-luce-design-panned-by-critics"
+    }
+  ]
+},
+{
+  "id": "figma-agent-ga-ai-credits-2026-10",
+  "date": "2026-10-06",
+  "type": "trend",
+  "graphs": [
+    "designer"
+  ],
+  "pinned": false,
+  "title": "Figma agent 结束测试正式上线，同日开始扣 AI 积分：agent 从赠品变成计价单位",
+  "body": "**10 月 6 日，Figma agent 结束 beta 进入正式可用，同日起 Agent 与 Weave 开始消耗 AI 积分**——测试期间不计费，现在按 prompt 复杂度浮动扣减。Figma 官方博客同时给出了产品设计师用 agent 的三种典型方式：从文字描述生成可交互原型、在既有设计系统内批量改组件、把设计稿解释给工程师。对设计工具行业来说，**这是 agent 第一次从「吸引订阅的赠品」变成「单独计价的消耗品」**，意味着 Figma 判断用户已经离不开它。后续值得看的是积分价格与 Dylan Field 在上市后要回答的毛利问题怎么平衡。",
+  "persons": [
+    {
+      "id": "dylanfield",
+      "name": "Dylan Field"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Figma 博客",
+      "url": "https://www.figma.com/blog/3-ways-product-designers-use-the-figma-agent/"
+    },
+    {
+      "label": "Figma Help：AI 积分 FAQ",
+      "url": "https://help.figma.com/hc/en-us/articles/42614902212887-AI-credit-updates-FAQ"
+    }
+  ]
+},
   {"id": "noam-brown-agent-swarms-2026-09", "date": "2026-09-17", "type": "research", "graphs": ["ai-scholar"], "pinned": false, "title": "Noam Brown 上 Dwarkesh：智能体集群与递归自我改进，OpenAI 的推理线下一步不是更大的单模型", "body": "**9 月 17 日，OpenAI 推理研究负责人 Noam Brown 做客 Dwarkesh Podcast，80 分钟谈「智能体集群（agent swarms）与递归自我改进」**。他的核心判断有两条：一是**下一阶段的能力增量来自多个智能体并行、互相验证与分工，而不是继续把单个模型做大**——这延续了他从 Libratus、Pluribus 到 o1 一贯的「用推理时算力换训练时算力」路线；二是递归自我改进已经从哲学问题变成工程日程表，瓶颈在评估而不在训练。放到图谱里看，这与 Jeff Dean 的 Discovery Loop、Inherent 的 Faraday 是同一条线的三个入口：**「AI 做科研」的竞争正在从模型规模转向实验闭环的组织方式**。Brown 是 OpenAI 系里少数把方法论讲得最完整的人，这期值得对照 8 月 Sutton 谈持续学习那期一起读。", "persons": [{"id": "noambrown", "name": "Noam Brown"}], "sources": [{"label": "双语全文(AI Podcast)", "url": "https://aipodcast.jasonlin.tech/#/episode/noambrown-dwarkesh-2026"}]},
   {"id": "big-tech-glasses-fall-2026-09", "date": "2026-09-16", "type": "trend", "graphs": ["hardware", "investor"], "pinned": true, "title": "巨头 2026 秋集体下场眼镜：Snap 定价 2,195 美元、Google 秋季上市、Meta 卖断货——创业公司的窗口在关一半", "body": "**9 月 16 日，Snap 公布消费版 Specs 的细节：售价 2,195 美元，200 美元可退定金预订，美英法秋季发货，Verizon 为运营商合作方。** 同一个秋天里，Google 在 I/O 2026 上发布了与 Gentle Monster、Warby Parker 联名的 Android XR 眼镜，无显示音频款「今秋先上」；Meta 的 Ray-Ban Display（799 美元，含 Neural Band 肌电腕带）自去年秋上市后**在美国几乎所有门店售罄、等待名单排到 2026 年中**，但 CES 上宣布英法意加的海外上市**无限期推迟**、优先保美国供货。三家动作合起来读：**供给端不是没需求，是产能与光学良率跟不上；需求端被 Meta 一家占走 82–87% 的份额**（2025 年 700 万副）。对图谱里的眼镜创业公司，这意味着两件事——Even Realities 七月那笔 1.5 亿美元是踩着窗口关闭前融的；Rokid 与 XREAL 的港股 IPO 要在巨头新品铺货的同一个季度里定价。Snap 把价格定在 2,195 美元反而是好消息：它把自己划出了消费市场，留给了开发者。", "persons": [{"id": "evanspiegel", "name": "Evan Spiegel"}, {"id": "zuckerberg", "name": "Mark Zuckerberg"}, {"id": "bosworth", "name": "Andrew Bosworth"}, {"id": "osterloh", "name": "Rick Osterloh"}, {"id": "wangxiaoyi", "name": "Wang Xiaoyi"}], "sources": [{"label": "Bloomberg 9/16", "url": "https://www.bloomberg.com/news/features/2026-09-16/snap-shares-more-details-about-2-195-specs-ar-glasses-plus-verizon-partnership"}, {"label": "Google 官方(今秋上市)", "url": "https://blog.google/products-and-platforms/platforms/android/android-xr-io-2026/"}, {"label": "UploadVR(Display 售罄)", "url": "https://www.uploadvr.com/meta-ray-ban-display-sold-out-early-adopters-struggle/"}, {"label": "Android Central(海外推迟)", "url": "https://www.androidcentral.com/apps-software/meta/meta-ray-ban-display-updates-ces-2026"}]},
   {"id": "three-ceos-ai-risk-week-2026-09", "date": "2026-09-15", "type": "non-consensus", "graphs": ["ai-scholar", "hardware"], "pinned": false, "title": "一周之内三位 CEO 对 AI 风险的三种表态：Dario 说是警告信号、黄仁勋说是骗局、马斯克在中间", "body": "**9 月 13 日，Dario Amodei 上 CBS Sunday Morning 的 24 分钟专访**，把「AI 可能杀死所有人」的警告定性为「警告信号，而不是五级火警」，并提出让第三方安全评估机构介入的三步方案；同一周他在 Face the Nation 上说美中 AI 竞赛是「最难的两难」。**9 月 14 日，黄仁勋在 All-In 峰会**上把末日论直接叫作「骗局（hoax）」，认为超级智能在实践中已经到来、谁赢得 AI 谁赢得未来——对谈中途特朗普打进电话。**9 月 15 日，马斯克和 Gwynne Shotwell 同一舞台**，被问到 Dario 的警告时没有站队，转而讲 SpaceX 与 Tesla 该不该合并、Terafab 自建芯片厂、以及「同行评审」在 AI 安全里该扮演什么角色。三个人的分歧不是技术判断的分歧——三家都在全速训练——而是**对监管介入的态度**：Anthropic 主动要第三方评估，NVIDIA 认为监管叙事本身是对手的武器，xAI 把问题转移到硬件自主。图谱里这三个节点今年的每一次公开表态，都在为同一件事定价：谁来决定前沿模型能不能发布。", "persons": [{"id": "damodei", "name": "Dario Amodei"}, {"id": "jensen", "name": "Jensen Huang"}, {"id": "elon", "name": "Elon Musk"}], "sources": [{"label": "Dario × CBS 双语全文", "url": "https://aipodcast.jasonlin.tech/#/episode/dario-cbssunda-2026"}, {"label": "黄仁勋 × All-In 双语全文", "url": "https://aipodcast.jasonlin.tech/#/episode/jensen-allinpod-2026b"}, {"label": "马斯克 × All-In 双语全文", "url": "https://aipodcast.jasonlin.tech/#/episode/elon-allinpod-2026"}]},
